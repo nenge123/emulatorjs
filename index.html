@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="gba-ctrl-menu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="icon.png?">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height">
+    <title>Document</title>
+    <style>
+        body{margin: 0px;padding: 0px;
+        background:#000;color:#fff}
+    </style>
+</head>
+<body>
+    <div style="width: 100%;height:100%;position:absolute;left: 0px;top: 0px;right:0px;z-index: 11;">
+        <div  id="nenge-game" ></div</div>
+    <script src="emulator.js"></script>
+    <script src="NengeApp.js"></script>
+    <script>
+        let EJS_DEBUG_XX = true;
+        //23293496=>6516272=>16777216
+        //40070712=>6516272=>33554432
+        //let aa = new NengeApp('rr2.img','psx','#game');
+        ///let aa = new NengeApp('r.n64','n64','#game');
+        NengeApp.CALL(function(){
+            this.SET({
+                'runpage':'index.html',
+                'ad_page':'ad.html',
+                'vjson':'v.json',
+                'webrtc-adapter':'webrtc-adapter.js',
+                'extractzip':'extractzip.min.js',
+                'extract7z':'extract7z.min.js',
+                'libunrar':'libunrar.min.js',
+                'libunrarmem':'libunrar.js.mem',
+                stopMusic:true, //stop music running
+                //Arrow:'left',  //open arrow key
+                SETKEY:(GamepadMap,G,GamepadMapBtn)=>{
+                    //console.log(GamepadMap,G,GamepadMapBtn);
+                    //GamepadMap keystate 键值对照 GamepadMap[0] is B
+                    //G is on show button 显示按钮 G.B show B key
+                    //GamepadMap customize key func 自定义按键函数
+                    //GamepadMap{
+                        //set B to xx event 设置B按钮
+                        //G.B = 'B::myxx';GamepadMap['xx'] = G.B;
+                        //xx:function(elm,ejs_data,event){
+                            //this == ejs_this(new EJS)
+                        //}
+                }
+            });
+            //this.elm = "#game";
+            let s = location.search.substr(1).split('&');
+            let cacheName = localStorage.getItem(this.cacheName);
+            if(cacheName){
+                cacheName = JSON.parse(cacheName);
+            }
+            for(let i = 0;i<s.length;i++){
+                let c = s[i].split('='),
+                    name = decodeURIComponent(c[1]) ;
+                    console.log(name);
+                if(c[0]=='game')this.config.gameUrl = name;
+                else if(c[0]=='core'){
+                    if(name=='gba'&&cacheName&&cacheName.system=='vbanext') this.config.system = 'vbanext';
+                    else this.config.system = name;
+                }
+            }
+            //this.ELM();
+            if(this.config.gameUrl&&this.config.system) return this.RUN();
+            else{
+                EJS.DB_SELECT('roms').then(
+                    db=>{
+                        db.getAll(result=>{
+                            let HTML = ``;
+                            let time = new Date()['valueOf']();
+                            for (let index in result) {
+                                const data = result[index];
+                                //data:image/jpeg;base64,
+                                let base64 = data.screenshot&&window.URL.createObjectURL(new Blob([ data.screenshot ], {type:"image/png" }))||'';
+                                HTML += `<div style="order:${time - data.lastaccess};"><div><img title="" style="height:160px;aspect-ratio: auto 240/160;max-width:240px;" src="${base64}" onerror="this.src='icon/retroarch.png'"></div><div style="text-align: center;"><button style="width:180px;" onclick="location.href='?core=${data.key.split('-')[0]}&game=${encodeURIComponent(data.key.split('-').slice(1).join('-'))}'">打开Open:${data.key}</button></div></div>`;
+                            }
+                            let HTML2 = '';
+                                HTML2 +=`<option value="">必须选择核心Must select core before loading game</option>`;
+                            for(var i in this.coreSupport){
+                                HTML2 += `<option value="${i}">${i.toUpperCase()} :支持support ${this.coreSupport[i].join('|')}</option>`;
+                            };
+                            let HTML3 = '';
+                            [
+                                'gb-宝可梦 - 比卡超.7z',
+                                'gb-宝可梦 - 水晶版ckn.7z',
+                                'snes-第三次超级机器人大战sfc.7z',
+                                'gb-三国英雄传 - 傲视天下.7z',
+                                'gb-勇者斗恶龙 - 怪兽仙境.7z',
+                                'nes-重装机兵.7z'
+
+                            ].forEach(val => {
+                                let m = val.split('-'),name = m.slice(1).join('-');
+                                HTML3 += `<div><div><img title="" style="height:160px;aspect-ratio: auto 240/160;max-width:240px;" src="${'rooms/'+name.replace('.7z','.png')}"></div><div style="text-align: center;"><button style="width:180px;" onclick="location.href='?core=${m[0]}&game=${encodeURIComponent('rooms/'+name)}'">打开Open:${val}</button></div></div>`;
+                                
+                                
+                            });
+
+                            this.ELM().innerHTML = `<div style="text-align: center;"><h3>功能选择option select<button onclick="NengeApp.SETCONFIG();">保存设置 save config</button> | bios:<select name="bios"><option value="1">启用</option><option value="0">关闭</option></select></h3>核心选择Cores select：<select name="system">${HTML2}</select> &nbsp; <label><button type="button" onclick="NengeApp.upload((result,b)=>NengeApp.RUN(b,result))">添加游戏 loading game</button></label></div><div style="text-align: center;"> &nbsp; <label>语言language：<select name="translate"><option value="1">中文</option><option value="0">英文</option></select></label></div><div style="text-align: center;"><label>音乐Sound:<select name="music"><option value="1">关闭音乐close</option><option value="0">开启音乐open</option></select></label></div><div style="text-align: center;"><label> 方向键Arrow keys:<select name="arrow"><option value="left">十字键cross key</option><option value="">摇杆STICK key</option></select></label></div><h3 style="text-align: center;">已添加游戏列表 Added games list</h3><div style="display: flex;flex-wrap: wrap;justify-content: space-around;align-items: stretch;">${HTML}</div><h3 style="text-align: center;">可下载游戏 download games list</h3><div style="display: flex;flex-wrap: wrap;justify-content: space-around;align-items: stretch;">${HTML3}</div>`;
+                            if(cacheName){
+                                for (let ckey in cacheName) {
+                                    if(cacheName[ckey] != undefined){
+                                        document.getElementsByName(ckey)[0].value = cacheName[ckey];
+                                    }
+                                }
+                            }
+                        })
+                    }
+                )
+            }
+        });
+        //let aa = new NengeApp('口袋妖怪改版 特别篇赤[15.4汉化版].rar','vbanext','#game');
+        //let aa = new NengeApp('lll.gba','vbanext','#game');
+        //let aa = new NengeApp('kov.zip','arcade','#game');
+        //aa.config.Arrow = 'left';
+        //aa.config.biosUrl = 'arcade.7z';
+        //aa.config.stopMusic = true;
+        //aa.RUN('蝙蝠侠2.nes','nes','#game');
+        //( new EJS())['on']('start-game', EJS_onGameStart);
+    </script>
+</body>
+</html>
