@@ -15306,13 +15306,19 @@ function (_0x14da87, _0x57407e, _0x2fa590) {
                                     ',{passive:false})'
                                 ).replace(
                                     '_emscripten_memcpy_big(dest,src,num){',
-                                    '_emscripten_memcpy_big(dest,src,num){if(!Module.roomdest)Module.roomdest=dest;console.log(dest,src,num);'
+                                    '_emscripten_memcpy_big(dest,src,num){if(!Module.roomdest)Module.roomdest=dest;'
                                 );
                                 if(this.system=='vbanext'){
                                     RetroarchTxt = RetroarchTxt.replace(
-                                    '_emscripten_set_canvas_element_size(target,width,height){',
-                                    '_emscripten_set_canvas_element_size(target,width,height){height=400;'
-                                );
+                                        '_emscripten_set_canvas_element_size(target,width,height){',
+                                        '_emscripten_set_canvas_element_size(target,width,height){height=400;'
+                                    );
+                                }
+                                if(this.system=='gba'){
+                                    RetroarchTxt = RetroarchTxt.replace(
+                                        'function _RWebCamInit(caps1,caps2,width,height){',
+                                        'function _RWebCamInit(caps1,caps2,width,height){if(Module.stopMusic) {console.log("禁用录像");return 0;'
+                                    );
                                 }
                                 //_emscripten_set_canvas_element_size(target, width, height)
                                 let Link = window.URL.createObjectURL(new Blob([RetroarchTxt])),

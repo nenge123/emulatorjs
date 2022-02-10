@@ -15,7 +15,6 @@
 </head>
 <body>
     <div style="width: 100%;height:100%;position:absolute;left: 0px;top: 0px;right:0px;z-index: 11;"><div  id="nenge-game" ></div</div>
-    <!--script src="emulator.js"></script -->
     <script src="NengeApp.min.js"></script>
     <script>
         //let EJS_DEBUG_XX = true;
@@ -27,13 +26,13 @@
             this.SET({
                 'runpage':'index.html',
                 'ad_page':'ad.html',
-                //'vjson':'v.json',
-                //'webrtc-adapter':'webrtc-adapter.js',
-                //'extractzip':'extractzip.min.js',
-                //'extract7z':'extract7z.min.js',
-                //'libunrar':'libunrar.min.js',
-                //'libunrarmem':'libunrar.js.mem',
-                //stopMusic:true, //stop music running
+                'vjson':'v.json',
+                'webrtc-adapter':'webrtc-adapter.js',
+                'extractzip':'extractzip.min.js',
+                'extract7z':'extract7z.min.js',
+                'libunrar':'libunrar.min.js',
+                'libunrarmem':'libunrar.js.mem',
+                stopMusic:true, //stop music running
                 //Arrow:'left',  //open arrow key
                 SETKEY:(GamepadMap,G,GamepadMapBtn)=>{
                     //console.log(GamepadMap,G,GamepadMapBtn);
@@ -99,7 +98,7 @@
                                 
                             });
 
-                            this.ELM().innerHTML = `<div style="text-align: center;"><h3>功能选择option select<button onclick="NengeApp.SETCONFIG();">保存设置 save config</button> | bios:<select name="bios"><option value="1">启用</option><option value="0">关闭</option></select></h3>核心选择Cores select：<select name="system">${HTML2}</select> &nbsp; <label><button type="button" onclick="NengeApp.upload((result,b)=>NengeApp.RUN(b,result))">添加游戏 loading game</button></label></div><div style="text-align: center;"> &nbsp; <label>语言language：<select name="translate"><option value="1">中文</option><option value="0">英文</option></select></label></div><div style="text-align: center;"><label>音乐Sound:<select name="music"><option value="1">关闭音乐close</option><option value="0">开启音乐open</option></select></label></div><div style="text-align: center;"><label> 方向键Arrow keys:<select name="arrow"><option value="left">十字键cross key</option><option value="">摇杆STICK key</option></select></label></div><h3 style="text-align: center;">已添加游戏列表 Added games list</h3><div style="display: flex;flex-wrap: wrap;justify-content: space-around;align-items: stretch;">${HTML}</div><h3 style="text-align: center;">可下载游戏 download games list</h3><div style="display: flex;flex-wrap: wrap;justify-content: space-around;align-items: stretch;">${HTML3}</div>`;
+                            this.ELM().innerHTML = `<div style="text-align: center;"><h3>功能选择option select<button onclick="NengeApp.SETCONFIG();">保存设置 save config</button> | bios:<select name="bios"><option value="1">启用</option><option value="0">关闭</option></select></h3>核心选择Cores select：<select name="system">${HTML2}</select> &nbsp; <label><button type="button" onclick="NengeApp.upload((result,b)=>NengeApp.RUN(b,document.getElementsByName('system')[0].value,result))">添加游戏 loading game</button></label></div><div style="text-align: center;"> &nbsp; <label>语言language：<select name="translate"><option value="1">中文</option><option value="0">英文</option></select></label></div><div style="text-align: center;"><label>音乐Sound:<select name="music"><option value="1">关闭音乐close</option><option value="0">开启音乐open</option></select></label></div><div style="text-align: center;"><label> 方向键Arrow keys:<select name="arrow"><option value="left">十字键cross key</option><option value="">摇杆STICK key</option></select></label></div><h3 style="text-align: center;">已添加游戏列表 Added games list</h3><div style="display: flex;flex-wrap: wrap;justify-content: space-around;align-items: stretch;">${HTML}</div><h3 style="text-align: center;">可下载游戏 download games list</h3><div style="display: flex;flex-wrap: wrap;justify-content: space-around;align-items: stretch;">${HTML3}</div>`;
                             if(cacheName){
                                 for (let ckey in cacheName) {
                                     if(cacheName[ckey] != undefined){
