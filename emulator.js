@@ -14642,12 +14642,11 @@ function (_0x14da87, _0x57407e, _0x2fa590) {
                     GetWorkerLink = Link=>{
                         if(!Link) return Link;
                         if(Link.search(/^\/[^\/]/) == 0){
-                            let loc = location.origin;
+                            let loc = EJS.ROOT.split('/').splice(0,3).join('/');
                             Link = loc+'/'+Link;
 
-                        }else if(Link.search('//') == -1){
-                            let loc = location.href.split('?')[0].split('/').slice(0,-1).join('/');
-                            Link = loc+'/'+Link;
+                        }else if(Link.search(/\/\//) == -1){
+                            Link = EJS.ROOT+Link;
                         }
                         return Link;
                     },
@@ -18443,7 +18442,7 @@ if (null === BtnDATA.virtualGamepadContainer) {
                                             let time = new Date()['valueOf']();
                                             resultData.forEach(data=>{
                                                 if(data.key&&!/-part-\d+$/ ['test'](data.key)){
-                                                    HTML += `<div style="order:${time - data.lastaccess||0}"><h3>${data.filename}</h3><img src="${data.screenshot&&window.URL.createObjectURL(new Blob([ data.screenshot ], {type:"image/png" }))||''}"><span>${data.key.split('-')[0]}</span><p>${getSize(data.filesize)}<div class="${BtnDATA.classNames['dialog-buttons']}" style="z-index: 2;position: relative;"><a href="#" onclick="return false" data-cache="remove" data-romkey="${data.key}" data-romsize="${data.filesize}">${this.translate('Remove')}</a><a href="#" onclick="return false" data-cache="load" data-romkey="${data.key}" data-romsize="${data.filesize}" class="${BtnDATA.classNames['btn-quit']}">${this.translate('Load this Game')}</a></div></div>`;
+                                                    HTML += `<div style="order:${time - data.lastaccess||0}"><h3>${data.filename}</h3><img src="${data.screenshot&&window.URL.createObjectURL(new Blob([ data.screenshot ], {type:"image/png" }))||EJS.ROOT+'zan.jpg'}"><span>${data.key.split('-')[0]}</span><p>${getSize(data.filesize)}<div class="${BtnDATA.classNames['dialog-buttons']}" style="z-index: 2;position: relative;"><a href="#" onclick="return false" data-cache="remove" data-romkey="${data.key}" data-romsize="${data.filesize}">${this.translate('Remove')}</a><a href="#" onclick="return false" data-cache="load" data-romkey="${data.key}" data-romsize="${data.filesize}" class="${BtnDATA.classNames['btn-quit']}">${this.translate('Load this Game')}</a></div></div>`;
                                                 }
                                             });
                                             HTML = `<div class="ejs--cachelist">${HTML}</div>`;
@@ -19275,6 +19274,12 @@ class ejs_class{
     };
     eventListeners = [];
 };
+let ejs_root = document.currentScript.src.split('?')[0];
+if(ejs_root.split('/').length>4){
+    if(!/\/$/.test(ejs_root))ejs_root = ejs_root.split('/').slice(0,-1).join('/')+'/';
+}else{
+    ejs_root = ejs_root+'/'
+}
 ((ejs)=>{
     let _nN,_dD = {
         'defaults':{},
@@ -19741,8 +19746,10 @@ class ejs_class{
             }
             ARG.success(Buf);
         },
+        ROOT:(typeof NengeApp != 'undefined')&&NengeApp.dir||(typeof EJS_ROOT != 'undefined')&&EJS_ROOT||ejs_root
     };
     for(_nN in _dD)Object.defineProperty(ejs,_nN,{value:_dD[_nN]});
 })(ejs_class);
+    console.log(document.currentScript.src);
     _0x17edbf.default = ejs_class;
 }])['default'];

@@ -558,13 +558,14 @@ let NengeApp = new class{
             }
         }
     }
-    RUN(name,Buf) {
+    RUN(name,core,Buf) {
         this.ELM();
         if(name)this.config.gameUrl = name;
+        if(core)this.config.system = core;
         if(Buf)this.config.gameBuf = Buf;
         this.SETCONFIG();
         if(!this.config.system) return;
-        if(!this.translate||this.translate==0){
+        if(this.translate !=  undefined&&(this.translate==0|| this.translate==false)){
             this.config.translate = {};
             delete this.config.translate;
         }
