@@ -63,13 +63,16 @@
                 EJS.DB_SELECT('roms').then(
                     db=>{
                         db.getAll(result=>{
-                            let HTML = ``;
+                            let HTML = ``,links=[];
                             let time = new Date()['valueOf']();
                             for (let index in result) {
                                 const data = result[index];
+                                let cores = data.key.split('-')[0];
+                                if(cores=="gba"&&cacheName.system=='vbanext') cores = 'vbanext';
                                 //data:image/jpeg;base64,
-                                let base64 = data.screenshot&&window.URL.createObjectURL(new Blob([ data.screenshot ], {type:"image/png" }))||'';
-                                HTML += `<div style="order:${time - data.lastaccess};"><div><img title="" style="height:160px;aspect-ratio: auto 240/160;max-width:240px;" src="${base64}" onerror="this.src='icon/retroarch.png'"></div><div style="text-align: center;"><button style="width:180px;" onclick="location.href='${this.config.runpage}?core=${data.key.split('-')[0]}&game=${encodeURIComponent(data.key.split('-').slice(1).join('-'))}'">打开Open:${data.key}</button></div></div>`;
+                                let imglink = data.screenshot&&window.URL.createObjectURL(new Blob([ data.screenshot ], {type:"image/png" }));
+                                if(data.screenshot)links.push(imglink);
+                                HTML += `<div style="order:${time - data.lastaccess};"><div><img title="" style="height:160px;aspect-ratio: auto 240/160;max-width:240px;" src="${imglink||''}" onerror="this.src='icon/retroarch.png'"></div><div style="text-align: center;"><button style="width:180px;" onclick="location.href='${this.config.runpage}?core=${cores}&game=${encodeURIComponent(data.key.split('-').slice(1).join('-'))}'">打开Open:${data.key}</button></div></div>`;
                             }
                             let HTML2 = '';
                                 HTML2 +=`<option value="">必须选择核心Must select core before loading game</option>`;
@@ -100,6 +103,9 @@
                                     }
                                 }
                             }
+                            links.forEach(val=>{
+                                window.URL.revokeObjectURL(val);
+                            })
                         })
                     }
                 )

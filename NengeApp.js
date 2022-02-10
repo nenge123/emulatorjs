@@ -1,4 +1,3 @@
-console.log(document.currentScript.src);
 let Fileurl = document.currentScript.src.split('/').slice(0,-1);
 let NengeApp = new class{
     dir = Fileurl.join('/')+'/';
@@ -60,7 +59,7 @@ let NengeApp = new class{
                 else location.href = href;
             },
             'NDSScreenOver':function(ejs_data){
-                ejs_data.Module.canvas.classList.toggle('ejs--ndsscreen');
+                ejs_data.Module.canvas.classList.toggle('ejs--screen-'+this.system);
 
             },
             'Cache2Manage':function(){
@@ -383,6 +382,8 @@ let NengeApp = new class{
             "GBC - Pastel Mix":"GBC混合",
             "GBC - Red":"GBC红色",
             "GBC - Yellow":"GBC黄色",
+            "Download BIOS":"下载BIOS",
+            "BIOS ready":"BIOS 完成",
             
         },
     };
@@ -549,9 +550,15 @@ let NengeApp = new class{
         switch (core) {
             case 'msx':
             case 'sega':
-            case 'segaCD':
+                case 'segaCD':
             case 'psx':
                 bios = core+'.7z'
+            break;
+            case 'gb':
+            case 'gbc':
+            case 'gba':
+            case 'vbanext':
+                bios = 'gba.7z';
             break;
             case 'mame':
             case 'mame2003':
