@@ -15,7 +15,8 @@
 </head>
 <body>
     <div style="width: 100%;height:100%;position:absolute;left: 0px;top: 0px;right:0px;z-index: 11;"><div  id="nenge-game" ></div</div>
-    <script src="NengeApp.min.js"></script>
+    <script src="emulator.js"></script>
+    <script src="NengeApp.js"></script>
     <script>
         //let EJS_DEBUG_XX = true;
         //23293496=>6516272=>16777216
@@ -24,8 +25,14 @@
         ///let aa = new NengeApp('r.n64','n64','#game');
         NengeApp.CALL(function(){
             this.SET({
-                'runpage':'index.html',
+                'runpage':'test.html',
                 'ad_page':'ad.html',
+                'vjson':'v.json',
+                'webrtc-adapter':'webrtc-adapter.js',
+                'extractzip':'extractzip.min.js',
+                'extract7z':'extract7z.min.js',
+                'libunrar':'libunrar.min.js',
+                'libunrarmem':'libunrar.js.mem',
                 stopMusic:true, //stop music running
                 //Arrow:'left',  //open arrow key
                 SETKEY:(GamepadMap,G,GamepadMapBtn)=>{

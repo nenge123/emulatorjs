@@ -418,6 +418,41 @@ let NengeApp = new class{
         'mame2003': ['zip'],
         'mame': ['zip']
     };
+    coreSystem = {
+        'psx': 'psx',
+        'nds': 'nds',
+        'nes': 'nes',
+        'fc': 'nes',
+        'sfc': 'snes',
+        'snes': 'snes',
+        'snes2002': 'snes2002',
+        'snes2005': 'snes2005',
+        'snes2010': 'snes2010',
+        'gb': 'gb',
+        'gbc': 'gb',
+        'gba': 'gba',
+        'vbanext': 'vbanext',
+        'vb': 'vb',
+        'n64': 'n64',
+        '3do': '3do',
+        'segaMS': 'sega',
+        'segaGG': 'sega',
+        'segaMD': 'sega',
+        'segaCD': 'segacd',
+        'sega32x': '32x',
+        'segaSaturn': 'saturn',
+        'ngp': 'ngp',
+        'pce': 'pce',
+        'msx': 'bluemsx',
+        'atari2600': 'a2600',
+        'atari7800': 'a7800',
+        'lynx': 'lynx',
+        'ws': 'ws',
+        'arcade': 'arcade',
+        'fba0.2.97.29': 'fba0.2.97.29',
+        'jaguar': 'jaguar',
+        'mame2003': 'mame2003'
+    };
     setRecord(obj){
         let Mime;
         [
@@ -514,6 +549,7 @@ let NengeApp = new class{
         switch (core) {
             case 'msx':
             case 'sega':
+            case 'segaCD':
             case 'psx':
                 bios = core+'.7z'
             break;
@@ -522,7 +558,12 @@ let NengeApp = new class{
             case 'fba0.2.97.29':
             case 'arcade':
                 bios = 'arcade.7z';
-                break;
+            break;
+            case 'segaGG':
+                bios = 'bios.gg';
+            case 'bluemsx':
+                bios = 'msx.gg';
+            break;
             default:
                 break;
         }
@@ -558,16 +599,18 @@ let NengeApp = new class{
     }
     RUN(name,core,Buf) {
         this.ELM();
+        this.SETCONFIG();
         if(name)this.config.gameUrl = name;
         if(core)this.config.system = core;
         if(Buf)this.config.gameBuf = Buf;
-        this.SETCONFIG();
         if(!this.config.system) return;
         if(this.translate !=  undefined&&(this.translate==0|| this.translate==false)){
             this.config.translate = {};
             delete this.config.translate;
         }
-        if(this.bios) this.config.biosUrl = this.getbios(this.config.system);
+        if(this.config.system=='fc')this.config.system = 'nes';
+        if(this.config.system=='sfc')this.config.system = 'snes';
+        if(this.bios) this.config.biosUrl = this.getbios(this.coreSystem[this.config.system]);
         let time=setInterval((()=>{
             this.ready&&(clearInterval(time),window.emu=new EJS(this.elm,this.config))
         }),500);}
@@ -575,5 +618,12 @@ let NengeApp = new class{
     ReadFile(FILES) {
         for(let e in FILES){if(e=='version')continue;let t=e.split(".")[0];"libunrar.js.mem"==e&&(t="libunrarmem"),"v.json"==e&&(t="vjson"),this.config[t]=window.URL.createObjectURL(new Blob([FILES[e]])),delete FILES[e]}FILES=null,this.addjs(this.config.emulator,(()=>{window.URL.revokeObjectURL(this.config.emulator),delete this.config.emulator,this.ready=!0}));
     }
-    async todownload(v,s){let f = await fetch('https://www.emulatorjs.com/cores/'+v+'?v='+s);if(f.status==404) return console.log(v+' not down');let data = await f.arrayBuffer();if(f.status!='404'&&data.byteLength!=0){let buf = new Uint8Array(data.slice(0xc));buf.set([0x37, 0x7a, 0xbc, 0xaf, 0x27, 0x1c, 0x0, 0x3], 0x0);this.download(buf,v.replace('.data','.7z'));}}async downloadCore(v){for(let i in v){if(i=="fba0.2.97.29")continue;if(i=="pceCD")continue;if(i=='mame'){for(let s =1;s<7;s++)await this.todownload(i+'-'+s+'-wasm.data',v[i].version);; continue;}if(i=='atari2600') continue;if(i=='atari7800') continue;if(i=='segaGG') continue;if(i=='segaMD') continue;if(i=='segaMS') continue;if(i=='segaCD') continue;if(i=='segaSaturn') continue;if(i=='sega32x') continue;if(v[i].asmjs) await this.todownload(i+'-asmjs.data',v[i].version);if(i=='n64'&&v[i].asmjs) await this.todownload(i+'-legacy-asmjs.data',v[i].version);if(v[i].wasm) await this.todownload(i+'-wasm.data',v[i].version);}return v;}SET(data){for(var i in data=data||{},data)this.config[i]=data[i];}CALL(cb){if(this.ready){cb.call(this);}else{let time = setInterval(()=>{if(this.ready){clearInterval(time);cb.call(this);}},500)}}addjs(file, cb) {let elm=document.createElement("script");elm.src=file,elm.onload=()=>cb(),document.body.appendChild(elm);}ELM() {let game = document.querySelector(this.elm),elm;if (!game) {elm = document.createElement('div');document.body.appendChild(elm);elm.style.cssText=`width: 100%;height:100%;position:absolute;left: 0px;top: 0px;right:0px;z-index: 11;`;elm.innerHTML = `<div  id="${this.elm.replace('#','')}" ></div>`;}return document.querySelector(this.elm);}async downEJS() {let EJS = await localforage.getItem('EJS');if (!EJS || EJS.version != this.version) {let response = await fetch(this.dir + 'EJS.7z'),elm = this.ELM();let havesize = 0,downsize = response.headers.get("Content-Length") || 1024;const reader = response.body.getReader();const stream=new ReadableStream({start(e){let a=()=>{reader.read().then((({done:t,value:l})=>{if(t)return e.close(),void(a=null);havesize+=l.length,elm.innerHTML="EJS.7z complete "+Math.floor(havesize/downsize*100)+"%speed "+Math.floor(havesize/1024)+"KB",e.enqueue(l),a()}))};a()}});;let FetchData = await (new Response(stream).arrayBuffer());let worker = new Worker(window.URL.createObjectURL(new Blob([`importScripts("${this.dir}extract7z.min.js");`], {'type': 'application/javascript'})));let Files = {version: this.version};worker.onmessage=a=>{a.data.data?Files[a.data.file]=a.data.data:1==a.data.t&&(localforage.setItem("EJS",Files).then(()=>this.ReadFile(Files)))};worker.postMessage(new Uint8Array(FetchData));} else {this.ReadFile(EJS);}}
+    async todownload(v,s){let f = await fetch('https://www.emulatorjs.com/cores/'+v+'?v='+s);if(f.status==404) return console.log(v+' not down');let data = await f.arrayBuffer();if(f.status!='404'&&data.byteLength!=0){
+        let buf = new Uint8Array(data);
+        if(buf[0] != 0x37&&buf[1] != 0x7a){buf = buf.slice(0xc);
+        buf.set([0x37, 0x7a, 0xbc, 0xaf, 0x27, 0x1c, 0x0, 0x3], 0x0);}
+        this.download(buf,v.replace('.data','.7z'));}
+
+
+}async downloadCore(v){for(let i in v){if(i=="fba0.2.97.29")continue;if(i=="pceCD")continue;if(i=='mame'){for(let s =1;s<7;s++)await this.todownload(i+'-'+s+'-wasm.data',v[i].version);; continue;}if(i=='atari2600') continue;if(i=='atari7800') continue;if(i=='segaGG') continue;if(i=='segaMD') continue;if(i=='segaMS') continue;if(i=='segaCD') continue;if(i=='segaSaturn') continue;if(i=='sega32x') continue;if(v[i].asmjs) await this.todownload(i+'-asmjs.data',v[i].version);if(i=='n64'&&v[i].asmjs) await this.todownload(i+'-legacy-asmjs.data',v[i].version);if(v[i].wasm) await this.todownload(i+'-wasm.data',v[i].version);}return v;}SET(data){for(var i in data=data||{},data)this.config[i]=data[i];}CALL(cb){if(this.ready){cb.call(this);}else{let time = setInterval(()=>{if(this.ready){clearInterval(time);cb.call(this);}},500)}}addjs(file, cb) {let elm=document.createElement("script");elm.src=file,elm.onload=()=>cb(),document.body.appendChild(elm);}ELM() {let game = document.querySelector(this.elm),elm;if (!game) {elm = document.createElement('div');document.body.appendChild(elm);elm.style.cssText=`width: 100%;height:100%;position:absolute;left: 0px;top: 0px;right:0px;z-index: 11;`;elm.innerHTML = `<div  id="${this.elm.replace('#','')}" ></div>`;}return document.querySelector(this.elm);}async downEJS() {let EJS = await localforage.getItem('EJS');if (!EJS || EJS.version != this.version) {let response = await fetch(this.dir + 'EJS.7z'),elm = this.ELM();let havesize = 0,downsize = response.headers.get("Content-Length") || 1024;const reader = response.body.getReader();const stream=new ReadableStream({start(e){let a=()=>{reader.read().then((({done:t,value:l})=>{if(t)return e.close(),void(a=null);havesize+=l.length,elm.innerHTML="EJS.7z complete "+Math.floor(havesize/downsize*100)+"%speed "+Math.floor(havesize/1024)+"KB",e.enqueue(l),a()}))};a()}});;let FetchData = await (new Response(stream).arrayBuffer());let worker = new Worker(window.URL.createObjectURL(new Blob([`importScripts("${this.dir}extract7z.min.js");`], {'type': 'application/javascript'})));let Files = {version: this.version};worker.onmessage=a=>{a.data.data?Files[a.data.file]=a.data.data:1==a.data.t&&(localforage.setItem("EJS",Files).then(()=>this.ReadFile(Files)))};worker.postMessage(new Uint8Array(FetchData));} else {this.ReadFile(EJS);}}
 };
