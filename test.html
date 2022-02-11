@@ -18,13 +18,17 @@
     <script src="emulator.js"></script>
     <script src="NengeApp.js"></script>
     <script>
-        //let EJS_DEBUG_XX = true;
+        let EJS_DEBUG_XX = true;
         //23293496=>6516272=>16777216
         //40070712=>6516272=>33554432
         //let aa = new NengeApp('rr2.img','psx','#game');
         ///let aa = new NengeApp('r.n64','n64','#game');
         NengeApp.CALL(function(){
             this.SET({
+                URL_REPLACE:str=>{
+                    str = str.replace(/^.+?\/cores\//,this.dir+'cores/').replace('.data','.7z');
+                    return str;
+                },
                 'runpage':'test.html',
                 'ad_page':'ad.html',
                 'vjson':'v.json',

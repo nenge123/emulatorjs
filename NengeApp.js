@@ -1,7 +1,7 @@
 let Fileurl = document.currentScript.src.split('/').slice(0,-1);
 let NengeApp = new class{
     dir = Fileurl.join('/')+'/';
-    version = 1.3;
+    version = 1.4;
     config = {
         'gameId':122,
 /*
@@ -18,25 +18,26 @@ let NengeApp = new class{
         'color':undefined,
 */
         'OptionSet':{
-            'screenRecord':{
-                'label':'Start Screen Recording',
-                'options': {},
-            },
+            //'screenRecord':{
+            //    label:'Start Screen Recording',
+            //    options:{}
+            //},
             'NengePanel':{
                 'label':'Nenge\'s Panel',
                 'options':{
+                    'screenRecord':'Start Screen Recording',
                     'downloadsrm':'DownLoad SRM',
-                    'uploadsrm':'Upload SRM',
                     'downloadstate':'DownLoad State',
-                    'uploadstate':'Upload State',
                     'downloadsrm':'DownLoad SRM',
                     'reload':'Reload Page',
-                    'fastforward':'Fast Forward',
-                    "Cache2Manage":"Cache Manage",
                     "NDSScreenOver":"NDS Screen Over",
                     "HomePage":"Home Page",
+                    "Cache2Manage":"Cache Manage",
+                    'uploadsrm':'Upload SRM',
+                    'uploadstate':'Upload State',
                     'tosavesrm':'Saved SRM',
                     'toloadsrm':'Loaded SRM',
+                    'fastforward':'Fast Forward',
                 }
             },
         },
@@ -132,11 +133,10 @@ let NengeApp = new class{
             },
             'screenRecord':function(ejs_data,event){
                 let elm = event.target,
-                    config = this.config,
-                    btxt = config.OptionSet.screenRecord.label,
-                    ctxt = this.translate[btxt] || btxt,
+                    btxt = 'Start Screen Recording',
+                    ctxt = this.translate(btxt) || btxt,
                     dtxt = 'Stop Screen Recording',
-                    etxt = this.translate[dtxt] || dtxt;
+                    etxt = this.translate(dtxt) || dtxt;
                 if(!ejs_data.recorder)ejs_data.recorder = NengeApp.setRecord(ejs_data);
                 if(!ejs_data.recorder) elm.parentNode.remove();
                 if(elm.textContent == etxt){
