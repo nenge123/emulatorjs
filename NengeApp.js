@@ -1,7 +1,7 @@
 let Fileurl = document.currentScript.src.split('/').slice(0,-1);
 let NengeApp = new class{
     dir = Fileurl.join('/')+'/';
-    version = 1.6;
+    version = 1.7;
     config = {
         'gameId':122,
 /*
@@ -26,20 +26,26 @@ let NengeApp = new class{
                 'label':'Nenge\'s Panel',
                 'options':{
                     'screenRecord':'Start Screen Recording',
+                    'reload':'Reload Page',
+                    "tofullScreen":"Full Screen ?",
+                    "HomePage":"Home Page",
+                    'fastforward':'Fast Forward',
+                    'COMBOKEY':'COMBOKEY',
+                }
+            },
+            'FilePanel':{
+                'label':'File\'s Panel',
+                'options':{
                     'downloadsrm':'DownLoad SRM',
                     'downloadstate':'DownLoad State',
                     'downloadsrm':'DownLoad SRM',
-                    'reload':'Reload Page',
-                    "NDSScreenOver":"NDS Screen Over",
-                    "HomePage":"Home Page",
                     "Cache2Manage":"Cache Manage",
                     'uploadsrm':'Upload SRM',
                     'uploadstate':'Upload State',
                     'tosavesrm':'Saved SRM',
                     'toloadsrm':'Loaded SRM',
-                    'fastforward':'Fast Forward',
                 }
-            },
+            }
         },
         onsavestate: async function(){
             EJS.STATE_SAVE(this).then(result=>{
@@ -53,13 +59,17 @@ let NengeApp = new class{
             });
         },
         OptionCall:{
-            
+            'COMBOKEY':function(EJS_DATA,event){
+                let elm = event.target,color = elm.style.color;
+                EJS_DATA.Module.cwrap('simulate_input', 'null', ['number', 'number', 'number'])(0,24,color!='red'?0x7fff:0);
+                elm.style.color = color!='red'?'red':'';
+            },
             'HomePage':function(){
                 let href = this.config.HomePage || this.config.runpage|| location.origin;
                 if(location.href == href) location.reload();
                 else location.href = href;
             },
-            'NDSScreenOver':function(ejs_data){
+            'tofullScreen':function(ejs_data){
                 ejs_data.Module.canvas.classList.toggle('ejs--screen-'+this.system);
 
             },
@@ -151,6 +161,7 @@ let NengeApp = new class{
             }
         },
         'translate':{
+            "File\'s Panel":"文件面板",
             "Nenge's Panel":'能哥面板',
             'DownLoad SRM':'下载电子存档',
             "Upload SRM":"上传电子存档",
@@ -164,7 +175,7 @@ let NengeApp = new class{
             "SELECT":'选择',
             "START":'开始',
             "MENU":'菜单',
-            "NDS Screen Over":"让NDS屏幕占满",
+            "Full Screen ?":"让屏幕占满?",
             "Loading...":"载入中",
             "OpenGBA RTC":"开启GBARTC",
             "Network Error":"网络错误！",

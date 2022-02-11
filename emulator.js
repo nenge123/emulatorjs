@@ -12194,6 +12194,8 @@ function (_0x14da87, _0x57407e, _0x2fa590) {
     +'@media screen and (orientation: landscape) {'
     +'.ejs--057800d021995e1347ec07cb748672 canvas.ejs--screen-nds{margin-top:calc(100vh * -0.5);height:calc(100vh * 2) !important;}'
     +'.ejs--057800d021995e1347ec07cb748672 canvas.ejs--screen-gba{margin-top:calc(100vh * -0.5);height:calc(100vh * 2) !important;}'
+    //segaMD
+    +'.ejs--057800d021995e1347ec07cb748672 canvas.ejs--screen-segaMD{width:100% !important;}'
     +'}'
     //nds
     //100vw * 450 / 600 * 256 / 384 * -1
@@ -15251,7 +15253,11 @@ function (_0x14da87, _0x57407e, _0x2fa590) {
 
                         }
                         if('n64' === ejsThis.system){
-                            retroarchCfg += 'input_libretro_device_p1 = 5\n';
+                            retroarchCfg += 'input_libretro_device_p1 = 5\n'
+                            +'audio_out_rate = "96000"\n'
+                            +'auto_remaps_enable = "true"\n'
+                            +'audio_resampler = "sinc"\n'
+                            +'audio_sync = "true""\n';
                         }
                         retroarchCfg += 'fastforward_ratio = 1.0\n',
                         retroarchCfg += 'video_smooth = false\n';
@@ -15611,8 +15617,11 @@ function (_0x14da87, _0x57407e, _0x2fa590) {
                                 EJS.DB_SELECT('roms').then(result=>EJS_DATA.romdb=result);
                         return !1;
                     };
+                    if(this.system == 'n64')this.config.stopMusic = false;
                     if(!this.config.stopMusic)_0x455c85(LoadingQS(`.${html_set['start-game']}`), 'ontouchstart' in document&&'touchstart'||'click',event=>ON_START_GAME(event));
-                    else ON_START_GAME();
+                    else {
+                        ON_START_GAME();
+                    }
             }
         },
         _0x4a2390 = _0x2c1832(0xa1);
@@ -16271,45 +16280,52 @@ function (_0x14da87, _0x57407e, _0x2fa590) {
                 //缓存管理页面
                 let cacheElm = this.elements.dialogs.cache,
                     container = this.elements.container;
-                cacheElm.innerHTML = `<div class="${BtnDATA.classNames['dialog-container']}"><div class="${BtnDATA.classNames['dialog-title']}"><h4>${this.translate('Cache Manager')}</h4></div><div class="${BtnDATA.classNames['dialog-content']}"></div><div class="${BtnDATA.classNames['dialog-buttons']}"><a href="#" onclick="return false" class="${BtnDATA.classNames['btn-cancel']}" data-cache="cancel">${this.translate('Close')}</a><a href="#" onclick="return false" data-cache="clear">${this.translate('All Clear')}</a></div></div>`; 
-                EVENT_SET.call(this, cacheElm, 'click', event=>{
-                    let elm = event.target,btn = elm&&elm.getAttribute('data-cache');
-                    if("cancel" == btn){
-                        unHidden(cacheElm,  !0);
-                        container['focus']();
-                    }else if("clear" == btn){
-                        EJS.DB_SELECT('roms').then(db=>db.clear());
-                        EJS.DB_SELECT('romsdata').then(db=>db.clear());
-                        cacheElm.querySelector('.'+BtnDATA.classNames['dialog-content']).innerHTML = `<div style="text-align:center">${this.translate('Empty')}</div>`;
-                    }else if("remove" == btn){
-                        let key = elm.getAttribute('data-romkey'),
-                            size = elm.getAttribute('data-romsize');
-                        if(key&&size){
-                            EJS.DB_ROMS_DELBATH(key,size).then(result=>{
-                                console.log(result);
-                                elm.parentNode.parentNode.remove();
-                            });
-                        }
-                    }else if("load" == btn){
-                        let key = elm.getAttribute('data-romkey').split('-'),
-                            gamename = key.slice(1).join('-');
-                        if(this.startName.search(gamename)!=-1){
-                            return;
-                        }else if(this.system == 'vbanext'&&key[0] == 'gba'){
-                            this.config.gameUrl = gamename;
-                            EJS.DB_READ_KEY('romsdata',key.join('-')).then(result=>{
-                                this.READ_GAME_DATA(this.config.gameUrl,result.data)
+                cacheElm.innerHTML = `<div class="${BtnDATA.classNames['dialog-container']}"><div class="${BtnDATA.classNames['dialog-title']}"><h4>${this.translate('Cache Manager')}</h4></div><div class="${BtnDATA.classNames['dialog-content']}"></div><div class="${BtnDATA.classNames['dialog-buttons']}"><a href="#" onclick="return false" class="${BtnDATA.classNames['btn-cancel']}" data-cache="cancel">${this.translate('Close')}</a><a href="#" onclick="return false" data-cache="clear">${this.translate('All Clear')}</a></div></div>`;
+                this.ContainerEvent(
+                    [
+                        cacheElm,
+                        event=>{
+                            let elm = event.target,btn = elm&&elm.getAttribute('data-cache');
+                            if("cancel" == btn){
                                 unHidden(cacheElm,  !0);
-                            });
-                        }else if(this.config.runpage){
-                            location.href = `${this.config.runpage}?core=${key[0]}&game=${gamename}`;
+                                container['focus']();
+                            }else if("clear" == btn){
+                                EJS.DB_SELECT('roms').then(db=>db.clear());
+                                EJS.DB_SELECT('romsdata').then(db=>db.clear());
+                                cacheElm.querySelector('.'+BtnDATA.classNames['dialog-content']).innerHTML = `<div style="text-align:center">${this.translate('Empty')}</div>`;
+                            }else if("remove" == btn){
+                                let key = elm.getAttribute('data-romkey'),
+                                    size = elm.getAttribute('data-romsize');
+                                if(key&&size){
+                                    EJS.DB_ROMS_DELBATH(key,size).then(result=>{
+                                        console.log(result);
+                                        elm.parentNode.parentNode.remove();
+                                    });
+                                }
+                            }else if("load" == btn){
+                                let key = elm.getAttribute('data-romkey').split('-'),
+                                    gamename = key.slice(1).join('-');
+                                if(this.startName.search(gamename)!=-1){
+                                    return;
+                                }else if(this.system == 'vbanext'&&key[0] == 'gba'){
+                                    this.config.gameUrl = gamename;
+                                    EJS.DB_READ_KEY('romsdata',key.join('-')).then(result=>{
+                                        this.READ_GAME_DATA(this.config.gameUrl,result.data)
+                                        unHidden(cacheElm,  !0);
+                                    });
+                                }else if(this.config.runpage){
+                                    location.href = `${this.config.runpage}?core=${key[0]}&game=${gamename}`;
 
-                        }
-
-                    }
-                    event.stopPropagation();
-                    return !1;
-                });
+                                }
+                            }
+                            event.stopPropagation();
+                            return !1;
+                        },
+                        ['click']
+                        //'ontouchstart' in document ? 'touchend':'mousedown'
+                    ]
+                )
+                //EVENT_SET.call(this, cacheElm, 'click', event=>{});
             },
             'showLoading': function (_0x108b55) {
                 _0x4d8495.show('modal-6ed698f3d04061f5', {
@@ -16325,7 +16341,7 @@ function (_0x14da87, _0x57407e, _0x2fa590) {
             'setCheatDialog': function () {
                 var _0xa88a13 = this;
                 if (_0xa88a13.elements.dialogs['cheat']) {
-                    _0xa88a13.elements.dialogs['cheat'].innerHTML = `<div class="${BtnDATA.classNames['dialog-container']}"><div class="${BtnDATA.classNames['dialog-title']}"><h4>${this.translate('Cheats')}</h4></div><div class="${BtnDATA.classNames['dialog-content']}"><div class="${BtnDATA.classNames['cheats-list']}"></div></div><div class="${BtnDATA.classNames['dialog-buttons']}"><a href="#" onclick="return false" class="${BtnDATA.classNames['cheats-add']}">${this.translate('Add Cheat')}</a><a href="#" onclick="return false" class="${BtnDATA.classNames['btn-submit']}">OK</a><a href="#" onclick="return false" class="${BtnDATA.classNames['btn-cancel']}">${this.translate('Close')}</a></div></div>\n\n<div class="${BtnDATA.classNames['modal']} ${BtnDATA.classNames['micromodal-slide']}" id="modal-85cd7a1c543a484b" aria-hidden="true"><div class="${BtnDATA.classNames['modal__overlay']}" tabindex="-1" data-modal-close><div class="${BtnDATA.classNames['modal__container']}" style="width:100%" role="dialog" aria-modal="true" aria-labelledby="modal-85cd7a1c543a484b-title"><div class="${BtnDATA.classNames['modal__header']}"><h2 class="${BtnDATA.classNames['modal__title']}" id="modal-85cd7a1c543a484b-title">    ${this.translate('Add Cheat Code')}    </h2><button class="${BtnDATA.classNames['modal__close']}" aria-label="Close modal" data-modal-close></button></div><main class="${BtnDATA.classNames['modal__content']}" id="modal-85cd7a1c543a484b-content"><div class="${BtnDATA.classNames['modal__errmsg']}"></div><strong>${this.translate('Code')}</strong><br /><textarea style="width:100%;height:80px;" class="${BtnDATA.classNames['cheat-code-input']}"></textarea><br /><strong>${this.translate('Description')}</strong><br /><input type="text" class="${BtnDATA.classNames['cheat-name-input']}" /><br /></main><footer class="${BtnDATA.classNames['modal__footer']}"><button class="${BtnDATA.classNames['modal__btn']} ${BtnDATA.classNames['modal__btn-primary']}">${this.translate('Submit')}</button><button class="${BtnDATA.classNames['modal__btn']}" data-modal-close aria-label="Close">${this.translate('Close')}</button></footer></div></div></div>`;
+                    _0xa88a13.elements.dialogs['cheat'].innerHTML = `<div class="${BtnDATA.classNames['dialog-container']}"><div class="${BtnDATA.classNames['dialog-title']}"><h4>${this.translate('Cheats')}</h4></div><div class="${BtnDATA.classNames['dialog-content']}"><div class="${BtnDATA.classNames['cheats-list']}"></div></div><div class="${BtnDATA.classNames['dialog-buttons']}"><a href="#" onclick="return false" class="${BtnDATA.classNames['cheats-add']}">${this.translate('Add Cheat')}</a><a href="#" onclick="return false" class="${BtnDATA.classNames['btn-submit']}">${this.translate('OK')}</a><a href="#" onclick="return false" class="${BtnDATA.classNames['btn-cancel']}">${this.translate('Close')}</a></div></div>\n\n<div class="${BtnDATA.classNames['modal']} ${BtnDATA.classNames['micromodal-slide']}" id="modal-85cd7a1c543a484b" aria-hidden="true"><div class="${BtnDATA.classNames['modal__overlay']}" tabindex="-1" data-modal-close><div class="${BtnDATA.classNames['modal__container']}" style="width:100%" role="dialog" aria-modal="true" aria-labelledby="modal-85cd7a1c543a484b-title"><div class="${BtnDATA.classNames['modal__header']}"><h2 class="${BtnDATA.classNames['modal__title']}" id="modal-85cd7a1c543a484b-title">    ${this.translate('Add Cheat Code')}    </h2><button class="${BtnDATA.classNames['modal__close']}" aria-label="Close modal" data-modal-close></button></div><main class="${BtnDATA.classNames['modal__content']}" id="modal-85cd7a1c543a484b-content"><div class="${BtnDATA.classNames['modal__errmsg']}"></div><strong>${this.translate('Code')}</strong><br /><textarea style="width:100%;height:80px;" class="${BtnDATA.classNames['cheat-code-input']}"></textarea><br /><strong>${this.translate('Description')}</strong><br /><input type="text" class="${BtnDATA.classNames['cheat-name-input']}" /><br /></main><footer class="${BtnDATA.classNames['modal__footer']}"><button class="${BtnDATA.classNames['modal__btn']} ${BtnDATA.classNames['modal__btn-primary']}">${this.translate('Submit')}</button><button class="${BtnDATA.classNames['modal__btn']}" data-modal-close aria-label="Close">${this.translate('Close')}</button></footer></div></div></div>`;
                     var _0x17edbf = _0xa88a13.elements.dialogs['cheat'].querySelector('#modal-85cd7a1c543a484b');
                     EVENT_SET.call(this, _0xa88a13.elements.dialogs['cheat'].querySelector('.' ['concat'](BtnDATA.classNames['cheats-add'])), 'click', function (_0x2a74b5) {
                         return _0x4d8495.show('modal-85cd7a1c543a484b', {
@@ -17071,6 +17087,9 @@ if (null === BtnDATA.virtualGamepadContainer) {
         },
         S = this.system,
         ctrlSTICK_key = ['RIGHT','UP','LEFT','DOWN'];
+    if(GamepadMap[2]=='INSERT COIN'){
+        G.SELECT = GamepadMap[2];
+    }
     if(['gba','vbanext','gb'].includes(S)){
         delkey('1,9');
         G.Y += '::Fast Forward';
@@ -17080,12 +17099,12 @@ if (null === BtnDATA.virtualGamepadContainer) {
         ArrowOut = 'left';
     }else if('n64' == S){
         delkey('1,9,10');
-        G.X += '::R';
-        G.Y += '::Z';
+        G.X += '::Z';
+        G.Y += '::R';
         G.R += '::L';
         G.L += '::COMBOKEY';
-        GamepadMap[12] = G.X;
-        GamepadMap[11] = G.Y;
+        GamepadMap[12] = G.Y;
+        GamepadMap[11] = G.X;
         GamepadMap[23] = G.R;
         GamepadMap['COMBOKEY'] = G.L;
         ArrowOut = 'center';
@@ -17104,13 +17123,6 @@ if (null === BtnDATA.virtualGamepadContainer) {
         GamepadMap[8] = G.B;
 
 
-    }else{
-        console.log(S);
-    };
-    if(GamepadMap[2]=='INSERT COIN'){
-        G.SELECT = GamepadMap[2];
-        //GamepadMap[2]=G.SELECT;
-
     }
     GamepadMap['MENU'] = 'MENU';
     if(this.config.SETKEY)this.config.SETKEY(GamepadMap,G,GamepadMapBtn);
@@ -17124,7 +17136,6 @@ if (null === BtnDATA.virtualGamepadContainer) {
     BtnDATA.virtualGamepadContainer = CreatElm('div', {'class': PadCreatB('ejs-virtual-gamepad',0),'hidden': ''});
     container.appendChild(BtnDATA.virtualGamepadContainer);
     BtnDATA.virtualGamepadContainer.innerHTML = `<div class="${PadCreatB('virtual-gamepad',0)} virtual-gamepad-${this.system}" style="display: block;">${ArrowElm(ArrowOut)}<div class="${PadCreatB('top',0)}">${PadCreatB(G.L)}${PadCreatB(G.L2)}${PadCreatB(G.L3)}${PadCreatB(G.R)}${PadCreatB(G.R2)}${PadCreatB(G.R3)}</div><div class="${PadCreatB('left',0)}"></div><div class="${PadCreatB('center',0)}">${PadCreatB(G.SELECT)}${PadCreatB(G.START)}${PadCreatB('MENU')}</div><div class="${PadCreatB('right',0)}">${PadCreatB(G.A)}${PadCreatB(G.B)}${PadCreatB(G.X)}${PadCreatB(G.Y)}</div></div>`;
-    console.log(initBool);
     if(initBool)unHidden(BtnDATA.virtualGamepadContainer, !initBool);
     if(ArrowOut != 'left'){
         var ctrlSTICK = _0x3a58c8.a['create']({
@@ -17176,8 +17187,9 @@ if (null === BtnDATA.virtualGamepadContainer) {
     }
     if ("ontouchstart" in document) ETYPE = ['touchstart', 'touchmove', 'touchcancel', 'touchend'];
     this.SEND = e=>SENDsyncInput(e);
-    ETYPE.forEach(
-        val=>container.addEventListener(val,event=>{
+    this.ContainerEvent([
+        BtnDATA.virtualGamepadContainer,
+        event=>{
             let ct = event.changedTouches && event.changedTouches[0],
             cte = ct && document.elementFromPoint(ct.pageX, ct.pageY),
             elm = cte ||event.target,
@@ -17204,13 +17216,14 @@ if (null === BtnDATA.virtualGamepadContainer) {
                         if (!isNaN(key)&&this.mousedownHold)keyState[key] = 1;
                     }
                 }
-                event.preventDefault();
-                event.stopPropagation();
-                SENDsyncInput(keyState);
-                return false;
             }
-        },{passive:false})
-    );
+            event.preventDefault();
+            event.stopPropagation();
+            SENDsyncInput(keyState);
+            return false;
+        },
+        ETYPE
+    ]);
     } else {
         //隐藏或者显示菜单
         unHidden(BtnDATA.virtualGamepadContainer, !initBool);
@@ -18920,20 +18933,64 @@ class ejs_listeners {
         var ejsThis = this.emulator,
         container = ejsThis.elements.container;
         let UI_RESIZE = event => {
-            var _0x17edbf = container['clientHeight'],
-                elements = _0x23ffa1.call(ejsThis, '.' ['concat'](BindClassName({
-                    'ejs__menu__container': !0x0
-                }), ' [role="menu"]'));
-            Array.from(elements).forEach(function (keyName) {
-                keyName.style.maxHeight = '' ['concat'](_0x17edbf - 0x5f, 'px'), keyName.style.overflow = 'auto';
-            }), EJS_DATA.Module && EJS_DATA.Module.canvas, container['clientWidth'] / container['clientHeight'] < 1.3 ? _0x3a8e2f(container, BindClassName({
-                'portrait': !0x0
-            }), !0) : _0x3a8e2f(container, BindClassName({
-                'portrait': !0x0
-            }), !1);
+            var clientHeight = container['clientHeight'];
+            document.querySelectorAll(`.${BindClassName({'ejs__menu__container': !0x0})} [role="menu"]`).forEach(
+                elm=>{
+                    elm.style.maxHeight =  `${clientHeight - 95}px`;
+                    elm.style.overflow = 'auto';
+                }
+            );
+            if(container['clientWidth'] / container['clientHeight'] < 1.3){
+                _0x3a8e2f(container, BindClassName({'portrait': !0x0}), !0)
+            }else{
+                _0x3a8e2f(container, BindClassName({'portrait': !0x0}), !1);
+            }
         };
         window.addEventListener('resize', event => UI_RESIZE(event));
         UI_RESIZE();
+        ejsThis.ContainerEvent([
+            event=>{
+                let type = event.type;
+                if(type == 'start-game'){
+                    UI_RESIZE();
+                    _0x3a8e2f(container, BindClassName({'game-started': !0x0}), !0);
+                }else if(type=="'blur'"){
+                    var _0x17edbf = event.currentTarget;
+                    setTimeout(() => {
+                        _0x17edbf.contains(document.activeElement) || EVENT_RUN.call(ejsThis, ejsThis.elements, 'blurgame');
+                    }, 0);
+
+                }else if(type=="'focus'"){
+                    console.log('111');
+                    var _0x17edbf = event.currentTarget;
+                    setTimeout(() => {
+                        _0x17edbf.contains(document.activeElement) && EVENT_RUN.call(ejsThis, ejsThis.elements, 'focusgame');
+                    }, 0);
+                }else{
+                    setTimeout(() => {UI_RESIZE();}, 300);
+                }
+            },
+            ['start-game','enterfullscreen','exitfullscreen','blur','focus']
+        ]);
+        
+        /*
+        EVENT_SET.call(ejsThis, container, 'start-game', event => {
+            UI_RESIZE();
+            _0x3a8e2f(container, BindClassName({'game-started': !0x0}), !0);
+        });
+        EVENT_SET.call(ejsThis, container, 'blur', event => {
+            var _0x17edbf = event.currentTarget;
+            setTimeout(() => {
+                _0x17edbf.contains(document.activeElement) || EVENT_RUN.call(ejsThis, ejsThis.elements, 'blurgame');
+            }, 0);
+        });
+        EVENT_SET.call(ejsThis, container, 'focus', event => {
+            console.log('111');
+            var _0x17edbf = event.currentTarget;
+            setTimeout(() => {
+                _0x17edbf.contains(document.activeElement) && EVENT_RUN.call(ejsThis, ejsThis.elements, 'focusgame');
+            }, 0);
+        });
         EVENT_SET.call(ejsThis, container, 'enterfullscreen', event => {
             setTimeout(() => {
                 UI_RESIZE();
@@ -18943,26 +19000,7 @@ class ejs_listeners {
             setTimeout(() => {
                 UI_RESIZE();
             }, 300);
-        });
-        EVENT_SET.call(ejsThis, container, 'start-game', event => {
-
-            UI_RESIZE();
-            _0x3a8e2f(container, BindClassName({
-                'game-started': !0x0
-            }), !0);
-        });
-        EVENT_SET.call(ejsThis, container, 'blur', event => {
-            var _0x17edbf = event.currentTarget;
-            setTimeout(() => {
-                _0x17edbf.contains(document.activeElement) || EVENT_RUN.call(ejsThis, ejsThis.elements, 'blurgame');
-            }, 0);
-        });
-        EVENT_SET.call(ejsThis, container, 'focus', event => {
-            var _0x17edbf = event.currentTarget;
-            setTimeout(() => {
-                _0x17edbf.contains(document.activeElement) && EVENT_RUN.call(ejsThis, ejsThis.elements, 'focusgame');
-            }, 0);
-        });
+        });*/
     }
 
     media() {
@@ -18970,33 +19008,37 @@ class ejs_listeners {
             elements = ejsThis.elements,
             settings = elements.settings,
             container = elements.container;
-                        let hideclass = ejsThis.config['classNames']['hideControls'];
+            let hideclass = ejsThis.config['classNames']['hideControls'];
             let dialogs = document.querySelector(`.${BindClassName({'ejs__dialogs': !0x0})}`);
-            ['contextmenu',ejsThis.touch?'touchend':'mousedown'].forEach(val=>dialogs.addEventListener(val,function(event){
-                if(event.target == this&&ejsThis.started){
-                    let type = event.type;
-                    if(!ejsThis.lightgun&&MENU_SET.contextMenu){
-                        //右键菜单事件
-                        if(type == 'contextmenu'){
-                            MENU_SET.toggleContextMenu.call(ejsThis, event,  !0);
-                            event.preventDefault();
-                        }else if(['mousedown','touchend'].includes(type)){
-                            if(MENU_SET.contextMenu.show){
-                                MENU_SET.toggleContextMenu.call(ejsThis, event, !1);
+            ejsThis.ContainerEvent([
+                dialogs,
+                event=>{
+                    if(ejsThis.started){
+                        let type = event.type;
+                        if(!ejsThis.touch&&!ejsThis.lightgun&&MENU_SET.contextMenu){
+                            //右键菜单事件
+                            if(type == 'contextmenu'){
+                                MENU_SET.toggleContextMenu.call(ejsThis, event,  !0);
+                                event.preventDefault();
+                            }else if('mousedown' == type){
+                                if(MENU_SET.contextMenu.show){
+                                    MENU_SET.toggleContextMenu.call(ejsThis, event, !1);
+                                }
                             }
                         }
+                        if(settings&&settings.menu){
+                            //底部导航菜单事件
+                            if(ejsThis.VirtualGamepad.hidden&&document.querySelector('.'+hideclass)){
+                                ejsThis.toggleControls(true);
+                            }else if(!document.querySelector('.'+hideclass)){
+                                ejsThis.toggleControls(false);
+                            } 
+                        }
                     }
-                    if(settings&&settings.menu){
-                        //底部导航菜单事件
-                        
-                        if(ejsThis.VirtualGamepad.hidden&&document.querySelector('.'+hideclass)){
-                            ejsThis.toggleControls(true);
-                        }else if(!document.querySelector('.'+hideclass)){
-                            ejsThis.toggleControls(false);
-                        } 
-                    }
-                }
-            }));
+                },
+                ['contextmenu',ejsThis.touch?'touchend':'mousedown'],
+                true
+            ]);
         EVENT_SET.call(ejsThis, ejsThis.game, 'volumechange', event=>{
             ejsThis.storage['set']({
                 'volume': ejsThis.volume,
@@ -19292,14 +19334,16 @@ class ejs_class{
     loadState(_0x3c6414) {
         BtnDATA.loadState(_0x3c6414, 0);
     }
-    on(_0x44ca1b, _0x2e6552) {
-        EVENT_SET.call(this, this.elements.container, _0x44ca1b, _0x2e6552);
+    on(type, func) {
+        this.ContainerEvent([func,[type]]);
     }
-    once(_0x9f0e03, _0x44b98a) {
-        _0x455c85.call(this, this.elements.container, _0x9f0e03, _0x44b98a);
+    once(type, func) {
+        let data={};
+        data[type] = func;
+        this.ContainerEvent([data,true]);
     }
-    off(_0x343615, _0x2023ff) {
-        _0x20109b(this.elements.container, _0x343615, _0x2023ff);
+    off(type, func) {
+        this.ContainerEvent([func,[type]],true);
     }
     OptionSet(normalOption){
         let normalOptions = {};
@@ -19331,6 +19375,104 @@ class ejs_class{
             return value
         };
 
+    }
+    ContainerEvent(obj,bool){
+        if(!this.__EVENT){
+            this.__EVENT = [];
+            let container = this.elements.container;
+            [
+                'touchstart', 'touchmove', 'touchcancel', 'touchend',
+                'mousedown', 'mouseup', 'mousemove', 'mouseout', 'mouseove',
+                'contextmenu',
+                'keyup','keydown','click',
+                'start-game','enterfullscreen','exitfullscreen','blur','focus'
+            ].forEach(val=>{
+                container.addEventListener(val,event=>{
+                    let type = event.type,
+                        Path = event.path;
+                        for(let findex = 0;findex<this.__EVENT.length;findex++){
+                            let fobj = this.__EVENT[findex];
+                            if(!fobj) return ;
+                            if(fobj[0] instanceof Function){
+                                if(fobj[1] instanceof Array&&!fobj[1].includes(type)) continue ;
+                                fobj[0]&&fobj[0].call(this,event);
+                            }else if(fobj[0] instanceof Element&&fobj[1]){
+                                if(Path.includes(fobj[0])){
+                                    if(fobj[3]&&event.target != fobj[0]) continue;
+                                    if(fobj[2] instanceof Array&&!fobj[2].includes(type)) continue ;
+                                    if(fobj[1] instanceof Function){
+                                        fobj[1].call(this,event);
+                                    }else if(fobj[1] instanceof Object &&typeof fobj[1][type] == 'function'){
+                                        fobj[1][type].call(this,event);
+                                        if(fobj[2]){
+                                            delete this.__EVENT[findex];
+                                        }
+                                    }
+                                    if(event.target == fobj[0]){
+                                        event.stopPropagation();
+                                    }
+                                }
+                            }else if(fobj[0] instanceof Object &&fobj[0][type] instanceof Function){
+                                fobj[0][type].call(this,event);
+                                if(fobj[1]){
+                                    delete this.__EVENT[findex];
+                                }
+                            }
+                        }
+                },{passive:false});
+            })
+
+        }
+        if(bool){
+            for(let findex = 0;findex<this.__EVENT.length;findex++){
+                let fobj = this.__EVENT[findex];
+                if(fobj[0] instanceof Element){
+                    if(obj[1] instanceof Function&&fobj[1]==obj[1]){
+                        if(obj[2] instanceof Array){
+                            let arr = [];
+                            fobj[2].forEach(val=>{
+                                if(!obj[2].includes(val)){
+                                    arr.push(val);
+                                }
+                            });
+                            if(arr.length==0)this.__EVENT[findex] = null;
+                            else this.__EVENT[findex][2] = arr;
+                        }else{
+                            this.__EVENT[findex] = null;
+                        }
+                    }else if(obj[1] instanceof Object){
+                        for(let e in obj[1]){
+                            if(obj[1][e] == fobj[1][e]){
+                                this.__EVENT[findex][1][e] = null;
+                                delete this.__EVENT[findex][1][e];
+                            }
+                        }
+                    }
+                }else if(obj[0] instanceof Function&&obj[0]==fobj[0]){
+                    if(obj[1] instanceof Array){
+                        let arr = [];
+                        fobj[1].forEach(val=>{
+                            if(!obj[1].includes(val)){
+                                arr.push(val);
+                            }
+                        });
+                        if(arr.length==0)this.__EVENT[findex] = null;
+                        else this.__EVENT[findex][1] = arr;
+                    }else{
+                        this.__EVENT[findex] = null;
+                    }
+                }else if(obj instanceof Object){
+                    for(let k in obj[0]){
+                        if(obj[0][k] == fobj[0][k]){
+                            this.__EVENT[findex][0][k] = null;
+                            delete this.__EVENT[findex][0][k];
+                        }
+                    }
+                }
+            }
+        }else{
+            this.__EVENT.push(obj);      
+        }
     }
     URL_REPLACE(val){
         if(this.config.URL_REPLACE) return this.config.URL_REPLACE(val);
@@ -19496,7 +19638,7 @@ if(ejs_root.split('/').length>4){
             let key = typeof url != 'string' ? this.GET_KEY(url):url;
                 return await this.DB_READ_KEY('roms',key);
         },
-        MAX_LEN:4194304,
+        MAX_LEN:3194304,
         STATE_LOAD: async function (url,Buf){
             let Module = EJS_DATA.Module;
             if(!Module._load_state&&!Module._cmd_load_state) return false;
@@ -19515,8 +19657,10 @@ if(ejs_root.split('/').length>4){
                         let len = Buf&&Buf.length||result.state.length,
                             run = ()=>{
                             Module.cwrap('load_state', 'number', ['string', 'number'])(name, 0);
-                            EJS_DATA.FS.unlink(name);
-                            complete(true);
+                            setTimeout(()=>{
+                                complete(true);
+                                EJS_DATA.FS.unlink(name);
+                            },500);
                         };
                         if(len>this.MAX_LEN)setTimeout(()=>run(),len/15000);
                         else run();
@@ -19529,7 +19673,7 @@ if(ejs_root.split('/').length>4){
                             setTimeout(()=>{
                                 complete(true);
                                 EJS_DATA.FS.unlink(name);
-                            },len/15000);
+                            },500);
                         };
                         if(len>this.MAX_LEN)setTimeout(()=>run(),len/15000);
                         else run();
@@ -19585,8 +19729,10 @@ if(ejs_root.split('/').length>4){
                     });
                     setTimeout(()=>{
                         result.state = EJS_DATA.FS.readFile(name);
-                        EJS_DATA.FS.unlink(name);
-                        func();
+                        setTimeout(()=>{
+                            EJS_DATA.FS.unlink(name);
+                            func();
+                        },500);
                     },800);
                 }else{
                     return complete(false);
