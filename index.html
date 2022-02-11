@@ -63,15 +63,14 @@
                 EJS.DB_SELECT('roms').then(
                     db=>{
                         db.getAll(result=>{
-                            let HTML = ``,links=[];
+                            let HTML = ``;
                             let time = new Date()['valueOf']();
                             for (let index in result) {
                                 const data = result[index];
                                 let cores = data.key.split('-')[0];
                                 if(cores=="gba"&&cacheName.system=='vbanext') cores = 'vbanext';
                                 //data:image/jpeg;base64,
-                                let imglink = data.screenshot&&window.URL.createObjectURL(new Blob([ data.screenshot ], {type:"image/png" }));
-                                if(data.screenshot)links.push(imglink);
+                                let imglink = data.screenshot&&window.URL.createObjectURL(new Blob([data.screenshot], {type:"image/png" }));
                                 HTML += `<div style="order:${time - data.lastaccess};"><div><img title="" style="height:160px;aspect-ratio: auto 240/160;max-width:240px;" src="${imglink||''}" onerror="this.src='icon/retroarch.png'"></div><div style="text-align: center;"><button style="width:180px;" onclick="location.href='${this.config.runpage}?core=${cores}&game=${encodeURIComponent(data.key.split('-').slice(1).join('-'))}'">打开Open:${data.key}</button></div></div>`;
                             }
                             let HTML2 = '';
@@ -103,9 +102,6 @@
                                     }
                                 }
                             }
-                            links.forEach(val=>{
-                                window.URL.revokeObjectURL(val);
-                            })
                         })
                     }
                 )

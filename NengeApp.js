@@ -1,7 +1,7 @@
 let Fileurl = document.currentScript.src.split('/').slice(0,-1);
 let NengeApp = new class{
     dir = Fileurl.join('/')+'/';
-    version = 1.4;
+    version = 1.6;
     config = {
         'gameId':122,
 /*

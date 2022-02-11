@@ -14700,18 +14700,18 @@ function (_0x14da87, _0x57407e, _0x2fa590) {
                         });
                     };
                     EVENT_SET.call(ejsThis, ejsThis.elements.container, 'start-game', (_0x3d9f57)=>{
-                        console.log(this.startName);
-                        let closeAD = LoadingQS(`.${html_set['close-ad']}`);
-                        closeAD.hidden = false;
-                        EVENT_SET.call(ejsThis,closeAD, 'pointerdown',event=>{
-                            closeAD.parentNode.remove();
-                        });
-                        let filetype = this.startName.split('.').pop(),isgb = ['gb','gbc'];
+                        let filetype = this.startName.split('.').pop(),
+                            isgb = ['gb','gbc'];
                         if(isgb.includes(this.system)){         
                             EJS_DATA.Module.canvas.classList.add('ejs--screen-gb');
                         }else if(isgb.includes(filetype)){         
                             EJS_DATA.Module.canvas.classList.add('ejs--screen-gba-gb');
                         }
+                        let closeAD = LoadingQS(`.${html_set['close-ad']}`);
+                        closeAD.hidden = false;
+                        EVENT_SET.call(ejsThis,closeAD, 'pointerdown',event=>{
+                            closeAD.parentNode.remove();
+                        });
                         ejsThis.started = true, ejsThis.playing = true, unHidden(LoadingQS(`.${html_set['loading-info']}`), true);
                         if (BtnDATA && (BtnDATA.virtualGamepadContainer == 'undefined' || BtnDATA.virtualGamepadContainer === null)) {
                             HookControls.toggleControls.call(ejsThis, true);
@@ -15270,9 +15270,14 @@ function (_0x14da87, _0x57407e, _0x2fa590) {
 
                             }
                         }
-                        EJS_DATA.FS.createDataFile('/etc', 'retroarch.cfg', retroarchCfg,  !0,  !0);
                         EJS_DATA.FS.createFolder('/home/web_user', '.config',  !0,  !0);
                         EJS_DATA.FS.createFolder('/home/web_user/.config', 'retroarch',  !0,  !0);
+                        if(this.system == 'n64'){
+                            //retroarchCfg += 'mupen64plus-Framerate = "Fullspeed"\nmupen64plus-cpucore = "pure_interpreter"\nvideo_driver = "vulkan"\naudio_driver = "rwebaudio"';
+                            EJS_DATA.FS.createDataFile('/home/web_user/.config/retroarch', 'retroarch.cfg', retroarchCfg,  !0,  !0);
+                        }else{
+                            EJS_DATA.FS.createDataFile('/etc', 'retroarch.cfg', retroarchCfg,  !0,  !0);
+                        }
                         EJS_DATA.FS.createDataFile('/home/web_user/.config/retroarch', 'retroarch-core-options.cfg', coreOptionCfg,  !0,  !0);
                         if('gba' === this.system){
                             ///etc/mGBA/mGBA.cfg.
@@ -15606,7 +15611,7 @@ function (_0x14da87, _0x57407e, _0x2fa590) {
                                 EJS.DB_SELECT('roms').then(result=>EJS_DATA.romdb=result);
                         return !1;
                     };
-                    if(!this.config.stopMusic)_0x455c85(LoadingQS(`.${html_set['start-game']}`), 'click touchstart',event=>ON_START_GAME(event));
+                    if(!this.config.stopMusic)_0x455c85(LoadingQS(`.${html_set['start-game']}`), 'ontouchstart' in document&&'touchstart'||'click',event=>ON_START_GAME(event));
                     else ON_START_GAME();
             }
         },
@@ -16190,7 +16195,7 @@ function (_0x14da87, _0x57407e, _0x2fa590) {
                 if('nes' === this.system){
                     [10,11,12,13,14,15,16,17,18,19,20,21,22,23].forEach(val=>delete ctrlSettings[val]);
                 }
-                var  ctrl_list = [2,3,4,5,6,7,8,0,9,1,10,11,12,13,14,15,19,18,17,16,23,22,21,20,24,25,26],
+                var  ctrl_list = [2,3,4,5,6,7,8,0,9,1,10,11,12,13,14,15,19,18,17,16,23,22,21,20,40,41,42],
                 creatCtrlElm = index=>{
                     let elm = this.elements.dialogs.gamepad,
                         dt2 = `[data-index="${index}"][data-type="2"]`,
@@ -16991,6 +16996,7 @@ function (_0x14da87, _0x57407e, _0x2fa590) {
             },
 'toggleVirtualGamepad': function (initBool) {
     //虚拟按键
+if(initBool == undefined) initBool = 'disabled' != MENU_SET.storage['get']('virtual-gamepad')?true:false;
 this.gamepadisShow = initBool;
 if (null === BtnDATA.virtualGamepadContainer) {
     let container = this.elements.container,
@@ -17118,6 +17124,7 @@ if (null === BtnDATA.virtualGamepadContainer) {
     BtnDATA.virtualGamepadContainer = CreatElm('div', {'class': PadCreatB('ejs-virtual-gamepad',0),'hidden': ''});
     container.appendChild(BtnDATA.virtualGamepadContainer);
     BtnDATA.virtualGamepadContainer.innerHTML = `<div class="${PadCreatB('virtual-gamepad',0)} virtual-gamepad-${this.system}" style="display: block;">${ArrowElm(ArrowOut)}<div class="${PadCreatB('top',0)}">${PadCreatB(G.L)}${PadCreatB(G.L2)}${PadCreatB(G.L3)}${PadCreatB(G.R)}${PadCreatB(G.R2)}${PadCreatB(G.R3)}</div><div class="${PadCreatB('left',0)}"></div><div class="${PadCreatB('center',0)}">${PadCreatB(G.SELECT)}${PadCreatB(G.START)}${PadCreatB('MENU')}</div><div class="${PadCreatB('right',0)}">${PadCreatB(G.A)}${PadCreatB(G.B)}${PadCreatB(G.X)}${PadCreatB(G.Y)}</div></div>`;
+    console.log(initBool);
     if(initBool)unHidden(BtnDATA.virtualGamepadContainer, !initBool);
     if(ArrowOut != 'left'){
         var ctrlSTICK = _0x3a58c8.a['create']({
@@ -17201,11 +17208,6 @@ if (null === BtnDATA.virtualGamepadContainer) {
                 event.stopPropagation();
                 SENDsyncInput(keyState);
                 return false;
-            }else if(BtnDATA.virtualGamepadContainer.hidden){
-                if(container.classList.contains(hideclass)){
-                    this.toggleControls(true);
-                }
-
             }
         },{passive:false})
     );
@@ -18168,7 +18170,7 @@ if (null === BtnDATA.virtualGamepadContainer) {
                 MENU_SET.storage['set'](_0x2c1832);
                 'shader' === optionName && BtnDATA.setShader(optionValue);
                 if('virtual-gamepad' === optionName){
-                    BtnDATA.toggleVirtualGamepad.call(this, 'enabled' === optionValue);
+                    this.VirtualGamepad = 'enabled' === optionValue;
                 }
             },
             'updateCoreOptions': function (optionName, optionValue) {
@@ -18295,15 +18297,11 @@ if (null === BtnDATA.virtualGamepadContainer) {
                 let normalOption = MENU_SET.normalOptions,
                     NormalConfig = {
                         'orientation':MENU_SET.storage['get']('orientation'),
-                        'shader':MENU_SET.storage['get']('shader')
+                        'shader':MENU_SET.storage['get']('shader'),
+                        'virtual-gamepad':MENU_SET.storage['get']('virtual-gamepad')
                     };
                     normalOption = this.OptionSet(normalOption);
-                    NormalConfig['virtual-gamepad'] = MENU_SET.storage['get']('virtual-gamepad');
-                    EVENT_SET.call(this, this.elements.container, 'start-game',()=> {
-                        //启动虚拟按键
-                        BtnDATA.toggleVirtualGamepad.call(this,'enabled' === NormalConfig['virtual-gamepad']);
-                });
-                MENU_SET.setOptionMenuItem.call(this, normalOption, NormalConfig);
+                    MENU_SET.setOptionMenuItem.call(this, normalOption, NormalConfig);
                 
                 
                 EVENT_SET.call(this, this.elements.container, 'start-game', ()=>{
@@ -18328,8 +18326,13 @@ if (null === BtnDATA.virtualGamepadContainer) {
                     Object.keys(MENU_SET.coreOptionsValues).forEach((_0x51fc4e, _0x4b3613)=>{
                         MENU_SET.updateCoreOptions.call(this, _0x51fc4e, MENU_SET.coreOptionsValues[_0x51fc4e]);
                     });
-
-                    'nds' == this.system && (EJS_DATA.Module['_fast_forward_2'] ? EJS_DATA.Module['_fast_forward_2'](0x1) : EJS_DATA.Module['_fast_forward'] && EJS_DATA.Module['_fast_forward'](0x1));
+                    if('nds' == this.system){
+                        if(EJS_DATA.Module['_fast_forward_2']){
+                            EJS_DATA.Module['_fast_forward_2'](0x1);
+                        }else if(EJS_DATA.Module['_fast_forward']){
+                            EJS_DATA.Module['_fast_forward'](0x1);
+                        }
+                    }
                 });
             },
             'updateCoreOptionMenuItems': function () {
@@ -18538,9 +18541,13 @@ if (null === BtnDATA.virtualGamepadContainer) {
                                 if (resultData) {
                                         if(resultData.length>0){
                                             let time = new Date()['valueOf']();
+                                            if(this.IMGLINK)for(let ll in this.IMGLINK)window.URL.revokeObjectURL(this.IMGLINK[ll]);
+                                            this.IMGLINK = [];
                                             resultData.forEach(data=>{
                                                 if(data.key&&!/-part-\d+$/ ['test'](data.key)){
-                                                    HTML += `<div style="order:${time - data.lastaccess||0}"><h3>${data.filename}</h3><img src="${data.screenshot&&window.URL.createObjectURL(new Blob([ data.screenshot ], {type:"image/png" }))||EJS.ROOT+'zan.jpg'}"><span>${data.key.split('-')[0]}</span><p>${getSize(data.filesize)}<div class="${BtnDATA.classNames['dialog-buttons']}" style="z-index: 2;position: relative;"><a href="#" onclick="return false" data-cache="remove" data-romkey="${data.key}" data-romsize="${data.filesize}">${this.translate('Remove')}</a><a href="#" onclick="return false" data-cache="load" data-romkey="${data.key}" data-romsize="${data.filesize}" class="${BtnDATA.classNames['btn-quit']}">${this.translate('Load this Game')}</a></div></div>`;
+                                                    let imglink = data.screenshot&&window.URL.createObjectURL(new Blob([ data.screenshot ], {type:"image/png" }));
+                                                    if(imglink)this.IMGLINK.push(imglink);
+                                                    HTML += `<div style="order:${time - data.lastaccess||0}"><h3>${data.filename}</h3><img src="${imglink||EJS.ROOT+'zan.jpg'}"><span>${data.key.split('-')[0]}</span><p>${getSize(data.filesize)}<div class="${BtnDATA.classNames['dialog-buttons']}" style="z-index: 2;position: relative;"><a href="#" onclick="return false" data-cache="remove" data-romkey="${data.key}" data-romsize="${data.filesize}">${this.translate('Remove')}</a><a href="#" onclick="return false" data-cache="load" data-romkey="${data.key}" data-romsize="${data.filesize}" class="${BtnDATA.classNames['btn-quit']}">${this.translate('Load this Game')}</a></div></div>`;
                                                 }
                                             });
                                             HTML = `<div class="ejs--cachelist">${HTML}</div>`;
@@ -18552,7 +18559,6 @@ if (null === BtnDATA.virtualGamepadContainer) {
                             });
                         });
                         return  !1;
-
                 },
                 'QuickSave':()=>{
                     BtnDATA.quickSaveState();
@@ -18560,12 +18566,10 @@ if (null === BtnDATA.virtualGamepadContainer) {
                 'QuickLoad':()=>{
                     BtnDATA.quickLoadState()
                 }
-
             },
             'toggleContextMenu': function (event, bool) {
                 //右键菜单事件处理
                 let contextMenu = MENU_SET.contextMenu;
-                MENU_SET.MenuOpen = bool;
                 if(contextMenu){
                     if(bool){
                         contextMenu.style.display = 'block';
@@ -18574,7 +18578,10 @@ if (null === BtnDATA.virtualGamepadContainer) {
                     }else{
                         contextMenu.style.display = 'none';
                     }
+                }else{
+                    return ;
                 }
+                contextMenu.show = bool;
             },
             'create': function (_0x42e40d) {
                 MENU_SET.storage = new _0x2f61ba(this, 'ejs_' ['concat'](this.system, '_settings'));
@@ -18925,7 +18932,7 @@ class ejs_listeners {
                 'portrait': !0x0
             }), !1);
         };
-        EVENT_SET.call(ejsThis, window, 'resize', event => UI_RESIZE(event));
+        window.addEventListener('resize', event => UI_RESIZE(event));
         UI_RESIZE();
         EVENT_SET.call(ejsThis, container, 'enterfullscreen', event => {
             setTimeout(() => {
@@ -18960,26 +18967,36 @@ class ejs_listeners {
 
     media() {
         var ejsThis = this.emulator,
-            container = ejsThis.elements.container;
-        if(!ejsThis.touch&&!ejsThis.lightgun&&ejsThis.config.contextMenu){
-            //右键菜单
-            EVENT_SET.call(ejsThis, container, 'contextmenu', event=>{
-                let elm = event.target;
-                if(elm.classList.contains(BindClassName({'ejs__dialogs': !0x0}))){
-                    MENU_SET.toggleContextMenu.call(ejsThis, event,  !0);
+            elements = ejsThis.elements,
+            settings = elements.settings,
+            container = elements.container;
+                        let hideclass = ejsThis.config['classNames']['hideControls'];
+            let dialogs = document.querySelector(`.${BindClassName({'ejs__dialogs': !0x0})}`);
+            ['contextmenu',ejsThis.touch?'touchend':'mousedown'].forEach(val=>dialogs.addEventListener(val,function(event){
+                if(event.target == this&&ejsThis.started){
+                    let type = event.type;
+                    if(!ejsThis.lightgun&&MENU_SET.contextMenu){
+                        //右键菜单事件
+                        if(type == 'contextmenu'){
+                            MENU_SET.toggleContextMenu.call(ejsThis, event,  !0);
+                            event.preventDefault();
+                        }else if(['mousedown','touchend'].includes(type)){
+                            if(MENU_SET.contextMenu.show){
+                                MENU_SET.toggleContextMenu.call(ejsThis, event, !1);
+                            }
+                        }
+                    }
+                    if(settings&&settings.menu){
+                        //底部导航菜单事件
+                        
+                        if(ejsThis.VirtualGamepad.hidden&&document.querySelector('.'+hideclass)){
+                            ejsThis.toggleControls(true);
+                        }else if(!document.querySelector('.'+hideclass)){
+                            ejsThis.toggleControls(false);
+                        } 
+                    }
                 }
-                event.preventDefault();
-            }, !1);
-            EVENT_SET.call(ejsThis, container, 'mousedown', event=>{
-                let elm = event.target;
-                if(MENU_SET.MenuOpen&&elm.classList.contains(BindClassName({'ejs__dialogs': !0x0}))){
-                    MENU_SET.toggleContextMenu.call(ejsThis, event, !1);
-                }
-            }, !1);
-		EVENT_SET.call(ejsThis, container, 'mousewheel', event=>{
-            event.stopPropagation();
-        }, !1);
-        }
+            }));
         EVENT_SET.call(ejsThis, ejsThis.game, 'volumechange', event=>{
             ejsThis.storage['set']({
                 'volume': ejsThis.volume,
@@ -19032,7 +19049,6 @@ class ejs_listeners {
                 buttons['gamepad'], 
                 'click', event=>{
                     unHidden(elements.dialogs['gamepad'], !1);
-                    ejsThis.toggleControls(!1);
                 }, 
             'mute'
             );
@@ -19298,7 +19314,8 @@ class ejs_class{
     OptionCall(OptionValue,ejs_data,other){
         let OptionFunction = this.config.OptionCall;
         if(OptionFunction&&OptionFunction[OptionValue]){
-            this.elements.settings['popup'].hidden = true;
+            MENU_SET.showMenuPanel.call(this, 'home',  !0);
+            MENU_SET.toggleMenu.call(this, !0x1);
             OptionFunction[OptionValue].call(this,ejs_data,other,OptionValue);
             return true;
         }
@@ -19318,6 +19335,14 @@ class ejs_class{
     URL_REPLACE(val){
         if(this.config.URL_REPLACE) return this.config.URL_REPLACE(val);
         return val;
+    }
+    get VirtualGamepad(){
+        if(!BtnDATA.virtualGamepadContainer)BtnDATA.toggleVirtualGamepad.call(this);
+        return BtnDATA.virtualGamepadContainer;
+    }
+    set VirtualGamepad(bool){
+        BtnDATA.toggleVirtualGamepad.call(this,bool);
+        return !bool;
     }
     get playing() {
         return Boolean(this.ready && !this.paused);
@@ -19459,6 +19484,7 @@ if(ejs_root.split('/').length>4){
                             EJS_DATA.FS.unlink(this.GET_NAME(url,'rtc'));
                         }
                         result.srm = u8;
+                        result.lastaccess = new Date()['valueOf']();
                         roms.put(result,ok=>{
                             complete(ok);
                         });
@@ -19470,9 +19496,10 @@ if(ejs_root.split('/').length>4){
             let key = typeof url != 'string' ? this.GET_KEY(url):url;
                 return await this.DB_READ_KEY('roms',key);
         },
+        MAX_LEN:4194304,
         STATE_LOAD: async function (url,Buf){
             let Module = EJS_DATA.Module;
-            if(!Module._load_state || !Module._cmd_load_state) return false;
+            if(!Module._load_state&&!Module._cmd_load_state) return false;
             let key = typeof url != 'string' ? this.GET_KEY(url):url,result,name;
             if(!(Buf instanceof Uint8Array)){
                 Buf = undefined;
@@ -19481,20 +19508,31 @@ if(ejs_root.split('/').length>4){
             return new Promise(complete=>{
                 if(Buf||result&&result.state){
                     if(Module._load_state){
+                        console.log('load sate');
                         name = 'game.state';
                         if(url&&'arcade' === url.system)Module.cwrap('get_state_info', 'string', [])();
                         EJS_DATA.FS.createDataFile('/', name,Buf||result.state,!0,!0);
-                        Module.cwrap('load_state', 'number', ['string', 'number'])(name, 0);
-                        EJS_DATA.FS.unlink(name);
-                        complete(true);
+                        let len = Buf&&Buf.length||result.state.length,
+                            run = ()=>{
+                            Module.cwrap('load_state', 'number', ['string', 'number'])(name, 0);
+                            EJS_DATA.FS.unlink(name);
+                            complete(true);
+                        };
+                        if(len>this.MAX_LEN)setTimeout(()=>run(),len/15000);
+                        else run();
                     }else if(Module._cmd_load_state){
                         name = this.GET_NAME(url,'state');
                         EJS_DATA.FS.writeFile(name,Buf||result.state);
-                        Module.cwrap('cmd_load_state', '', [])();
-                        setTimeout(()=>{
-                            complete(true);
-                            EJS_DATA.FS.unlink(name);
-                        },800);
+                        let len = Buf&&Buf.length||result.state.length,
+                            run = ()=>{
+                            Module.cwrap('cmd_load_state', '', [])();
+                            setTimeout(()=>{
+                                complete(true);
+                                EJS_DATA.FS.unlink(name);
+                            },len/15000);
+                        };
+                        if(len>this.MAX_LEN)setTimeout(()=>run(),len/15000);
+                        else run();
                     }else{
                         complete(false);    
                     }
@@ -19509,8 +19547,7 @@ if(ejs_root.split('/').length>4){
                 key = typeof url != 'string' ? this.GET_KEY(url):url,
                 name = this.GET_NAME(url,'state'),
                 roms = await this.DB_SELECT('roms'),
-                result = await this.DB_READ_KEY(roms,key);
-                if(!result) return ;
+                result = await this.DB_READ_KEY(roms,key)||{};
             return new Promise(complete=>{
                 let func = ()=>{
                     if(!result.state) return complete(false);
@@ -19519,6 +19556,10 @@ if(ejs_root.split('/').length>4){
                         complete(true);
                         delete result.state;
                         return;
+                    }
+                    if(!result.key){
+                        result['key'] = key;
+                        result['filename'] = this.startName;
                     }
                     result.lastaccess = new Date()['valueOf']();
                     roms.put(result,ok=>{
