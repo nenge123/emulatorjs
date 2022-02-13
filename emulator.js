@@ -17217,8 +17217,6 @@ if (null === BtnDATA.virtualGamepadContainer) {
                     }
                 }
             }
-            event.preventDefault();
-            event.stopPropagation();
             SENDsyncInput(keyState);
             return false;
         },
@@ -18599,7 +18597,7 @@ if (null === BtnDATA.virtualGamepadContainer) {
             'create': function (_0x42e40d) {
                 MENU_SET.storage = new _0x2f61ba(this, 'ejs_' ['concat'](this.system, '_settings'));
                 var _0x17edbf = CreatElm('div', _0xa949a8(this.config.selectors.controls.wrapper));
-                if(this.config.contextMenu){
+                if(!this.touch&&this.config.contextMenu){
                     MENU_SET.contextMenu = CreatElm('div', {'class': BindClassName({'ejs__contextmenu': !0x0}),'style': 'position: absolute; display:none;z-index:9'});
                     let HTML = '';
                     for(let menuKey in this.config.contextMenu){
@@ -18948,59 +18946,27 @@ class ejs_listeners {
         };
         window.addEventListener('resize', event => UI_RESIZE(event));
         UI_RESIZE();
-        ejsThis.ContainerEvent([
-            event=>{
-                let type = event.type;
-                if(type == 'start-game'){
+        ejsThis.ContainerEvent({
+            'start-game':event=>{
                     UI_RESIZE();
                     _0x3a8e2f(container, BindClassName({'game-started': !0x0}), !0);
-                }else if(type=="'blur'"){
+            },
+            'enterfullscreen':event=>setTimeout(() => {UI_RESIZE();}, 300),
+            'exitfullscreen':event=>setTimeout(() => {UI_RESIZE();}, 300),
+            'blur':event=>{
                     var _0x17edbf = event.currentTarget;
                     setTimeout(() => {
                         _0x17edbf.contains(document.activeElement) || EVENT_RUN.call(ejsThis, ejsThis.elements, 'blurgame');
                     }, 0);
-
-                }else if(type=="'focus'"){
+            },
+            'focus':event=>{
                     console.log('111');
                     var _0x17edbf = event.currentTarget;
                     setTimeout(() => {
                         _0x17edbf.contains(document.activeElement) && EVENT_RUN.call(ejsThis, ejsThis.elements, 'focusgame');
                     }, 0);
-                }else{
-                    setTimeout(() => {UI_RESIZE();}, 300);
-                }
             },
-            ['start-game','enterfullscreen','exitfullscreen','blur','focus']
-        ]);
-        
-        /*
-        EVENT_SET.call(ejsThis, container, 'start-game', event => {
-            UI_RESIZE();
-            _0x3a8e2f(container, BindClassName({'game-started': !0x0}), !0);
         });
-        EVENT_SET.call(ejsThis, container, 'blur', event => {
-            var _0x17edbf = event.currentTarget;
-            setTimeout(() => {
-                _0x17edbf.contains(document.activeElement) || EVENT_RUN.call(ejsThis, ejsThis.elements, 'blurgame');
-            }, 0);
-        });
-        EVENT_SET.call(ejsThis, container, 'focus', event => {
-            console.log('111');
-            var _0x17edbf = event.currentTarget;
-            setTimeout(() => {
-                _0x17edbf.contains(document.activeElement) && EVENT_RUN.call(ejsThis, ejsThis.elements, 'focusgame');
-            }, 0);
-        });
-        EVENT_SET.call(ejsThis, container, 'enterfullscreen', event => {
-            setTimeout(() => {
-                UI_RESIZE();
-            }, 300);
-        });
-        EVENT_SET.call(ejsThis, container, 'exitfullscreen', event => {
-            setTimeout(() => {
-                UI_RESIZE();
-            }, 300);
-        });*/
     }
 
     media() {
@@ -19335,15 +19301,74 @@ class ejs_class{
         BtnDATA.loadState(_0x3c6414, 0);
     }
     on(type, func) {
-        this.ContainerEvent([func,[type]]);
+        this.SET_EVENT(type,[func]);
     }
     once(type, func) {
         let data={};
         data[type] = func;
-        this.ContainerEvent([data,true]);
+        this.SET_EVENT(type,[func,true]);
     }
     off(type, func) {
-        this.ContainerEvent([func,[type]],true);
+        this.SET_EVENT(type,[func],true);
+    }
+    __EVENT = {};
+    SET_EVENT(type,obj,bool){
+        if(!this.__EVENT[type]){
+            this.__EVENT[type] = [];
+            this.elements.container.addEventListener(type,event=>{
+                let type = event.type,
+                Path = Array.from(event.composedPath());
+                console.log(Path);
+                for(let findex =0;findex<this.__EVENT[type].length;findex++){
+                    let fobj =  this.__EVENT[type][findex];
+                    if(!fobj) return ;
+                    if(fobj[0] instanceof Function){
+                        fobj[0](event);
+                        if(fobj[1]===true){
+                            delete this.__EVENT[type][findex];
+                        }
+                    }else if(fobj[0] instanceof Element){
+                        if(event.target==fobj[0] || Path.includes(fobj[0])){
+                            if(fobj[2]===true&&event.target != fobj[0]) continue;
+                            fobj[1].call(this,event);
+                            if(fobj[3]===true){
+                                delete this.__EVENT[type][findex];
+                            }
+                        }
+                    }
+                }
+            },{passive:false});
+        }
+        if(bool){
+            for(let findex =0;findex<this.__EVENT[type];findex++){
+                let fobj =  this.__EVENT[type][findex];
+                if(!fobj) return ;
+                if(fobj[0] instanceof Function&&fobj[0]==obj[0]){ 
+                    delete this.__EVENT[type][findex];
+                }else if(fobj[0] instanceof Element&&fobj[0]==obj[0]&&fobj[1]==obj[1]){
+                    delete this.__EVENT[type][findex];
+                }
+            }
+        }else{
+            this.__EVENT[type].push(obj);
+        }
+    }
+    ContainerEvent(obj,bool){
+        if(obj instanceof Array){
+            if(obj[0] instanceof Function&& obj[1] instanceof Array){
+                for(let index =0;index< obj[1].length;index++){
+                    this.SET_EVENT(obj[1][index],[obj[0],obj[2]],bool);
+                }
+            }else if(obj[0] instanceof Element&&obj[1] instanceof Function&& obj[2] instanceof Array){
+                for(let index =0;index< obj[2].length;index++){
+                    this.SET_EVENT(obj[2][index],[obj[0],obj[1],obj[3],obj[4]],bool);
+                }
+            }
+        }else if(obj instanceof Object){
+            for(var i in obj){
+                this.SET_EVENT(i,[obj[i]],bool);
+            }
+        }
     }
     OptionSet(normalOption){
         let normalOptions = {};
@@ -19375,104 +19400,6 @@ class ejs_class{
             return value
         };
 
-    }
-    ContainerEvent(obj,bool){
-        if(!this.__EVENT){
-            this.__EVENT = [];
-            let container = this.elements.container;
-            [
-                'touchstart', 'touchmove', 'touchcancel', 'touchend',
-                'mousedown', 'mouseup', 'mousemove', 'mouseout', 'mouseove',
-                'contextmenu',
-                'keyup','keydown','click',
-                'start-game','enterfullscreen','exitfullscreen','blur','focus'
-            ].forEach(val=>{
-                container.addEventListener(val,event=>{
-                    let type = event.type,
-                        Path = event.path;
-                        for(let findex = 0;findex<this.__EVENT.length;findex++){
-                            let fobj = this.__EVENT[findex];
-                            if(!fobj) return ;
-                            if(fobj[0] instanceof Function){
-                                if(fobj[1] instanceof Array&&!fobj[1].includes(type)) continue ;
-                                fobj[0]&&fobj[0].call(this,event);
-                            }else if(fobj[0] instanceof Element&&fobj[1]){
-                                if(Path.includes(fobj[0])){
-                                    if(fobj[3]&&event.target != fobj[0]) continue;
-                                    if(fobj[2] instanceof Array&&!fobj[2].includes(type)) continue ;
-                                    if(fobj[1] instanceof Function){
-                                        fobj[1].call(this,event);
-                                    }else if(fobj[1] instanceof Object &&typeof fobj[1][type] == 'function'){
-                                        fobj[1][type].call(this,event);
-                                        if(fobj[2]){
-                                            delete this.__EVENT[findex];
-                                        }
-                                    }
-                                    if(event.target == fobj[0]){
-                                        event.stopPropagation();
-                                    }
-                                }
-                            }else if(fobj[0] instanceof Object &&fobj[0][type] instanceof Function){
-                                fobj[0][type].call(this,event);
-                                if(fobj[1]){
-                                    delete this.__EVENT[findex];
-                                }
-                            }
-                        }
-                },{passive:false});
-            })
-
-        }
-        if(bool){
-            for(let findex = 0;findex<this.__EVENT.length;findex++){
-                let fobj = this.__EVENT[findex];
-                if(fobj[0] instanceof Element){
-                    if(obj[1] instanceof Function&&fobj[1]==obj[1]){
-                        if(obj[2] instanceof Array){
-                            let arr = [];
-                            fobj[2].forEach(val=>{
-                                if(!obj[2].includes(val)){
-                                    arr.push(val);
-                                }
-                            });
-                            if(arr.length==0)this.__EVENT[findex] = null;
-                            else this.__EVENT[findex][2] = arr;
-                        }else{
-                            this.__EVENT[findex] = null;
-                        }
-                    }else if(obj[1] instanceof Object){
-                        for(let e in obj[1]){
-                            if(obj[1][e] == fobj[1][e]){
-                                this.__EVENT[findex][1][e] = null;
-                                delete this.__EVENT[findex][1][e];
-                            }
-                        }
-                    }
-                }else if(obj[0] instanceof Function&&obj[0]==fobj[0]){
-                    if(obj[1] instanceof Array){
-                        let arr = [];
-                        fobj[1].forEach(val=>{
-                            if(!obj[1].includes(val)){
-                                arr.push(val);
-                            }
-                        });
-                        if(arr.length==0)this.__EVENT[findex] = null;
-                        else this.__EVENT[findex][1] = arr;
-                    }else{
-                        this.__EVENT[findex] = null;
-                    }
-                }else if(obj instanceof Object){
-                    for(let k in obj[0]){
-                        if(obj[0][k] == fobj[0][k]){
-                            this.__EVENT[findex][0][k] = null;
-                            delete this.__EVENT[findex][0][k];
-                        }
-                    }
-                }
-            }
-        }else{
-            this.__EVENT.push(obj);      
-        }
     }
     URL_REPLACE(val){
         if(this.config.URL_REPLACE) return this.config.URL_REPLACE(val);
