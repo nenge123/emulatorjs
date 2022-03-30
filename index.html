@@ -132,7 +132,7 @@
                                 name = game.split('-').slice(1).join('-'),
                                 exname = name.replace(/-part-\d+/,'');
                             html += '<li><img src="zan.jpg" data-src="/userdata/'+core+'/screenshots/'+exname.split('.').slice(0,-1).join('.')+'.png"><p style="color:red">system:'+core+'</p><p><button onclick="self.emu=new EJS(\'#' + elm
-                                .id + '\',{gameurl:\'' + exname + '\',system:\'' + core + '\'})">Run:' +
+                                .id + '\',{gameurl:\'' + exname + '\',system:\'' + core + '\',language:\'zh\'})">Run:' +
                                 game + '</button></p><p><button onclick="' + TM +
                                 '.removeItem(\'data-rooms\',\'' + game + '\').then(result=>{this.parentNode.parentNode.remove()});">remove 删除</button></p></li>';
                         }
@@ -205,7 +205,7 @@
                     name = game.split('-').slice(1).join('-');
                 html2 += '<li><img src="rooms/' + name.replace('.jpg', '.png') +
                     '"><p><button onclick="self.emu=new EJS(\'#' + elm.id + '\',{gameurl:\'rooms/' + name +
-                    '\',system:\'' + core + '\'})">Run:' + game + '</button></p></li>';
+                    '\',system:\'' + core + '\',language:\'zh\'})">Run:' + game + '</button></p></li>';
             });
             resultElm.innerHTML = '<ul class="game-list">' + html2 + '</ul>';
         }
