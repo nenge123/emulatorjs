@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmulatorJS online</title>
+    <style>
+        body {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .game-dir,
+        .game-list {
+            list-style: none;
+            padding: 10px;
+            font-size: 12px;
+        }
+
+        .game-list,
+        .game-menu {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: flex-end;
+        }
+
+        .game-list li {
+            max-width: 300px;
+            text-align: center;
+            padding: 10px;
+            margin: 2px;
+        }
+
+        .game-list img {
+            max-width: 100%;
+            width: 160px;
+        }
+
+        .game-cores {
+            padding: 20px;
+            font-size: 16px;
+        }
+
+        .game-cores img {
+            width: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--script src="assets/js/e.js"></script-->
+    <script src="assets/js/NengeDBFS.js"></script>
+    <app-emujs language="zh" style="width: 100%;height:100vh !important;"></app-emujs>
+    <script>
+        self.MyEJS = function (elm) {
+            this.IMGS = {};
+            Object.defineProperty(this, 'ROOM_Upload', {
+                value: (system, id) => {
+                    let _system;
+                    if (system == 'mgba') {
+                        _system = 'mgba';
+                        system = 'gba';
+                    }
+                    let input = document.createElement('input');
+                    input.type = 'file';
+                    input.onchange = (event) => {
+                        let file = event.target.files[0],
+                            fileName = file.name;
+                        console.log(event.target.files[0]);
+                        let reader = new FileReader;
+                        reader.onload = e => {
+                            let buf = new Uint8Array(e.target.result);
+                            this.setItem('data-rooms', system + '-' + fileName, {
+                                contents: buf,
+                                filesize: buf.length,
+                                timestamp: new Date,
+                                type: "Uint8Array"
+                            }).then(e => {
+                                let config = {
+                                    'gameurl': fileName,
+                                    'system': system
+                                };
+                                if (_system) {
+                                    config['_system'] = _system;
+                                }
+                                self.emu = new EJS(id, config);
+                                buf = null;
+                            })
+                        };
+                        reader.readAsArrayBuffer(file);
+                        input.remove();
+                    }
+                    input.click();
+                }
+            });
+            elm.innerHTML = '<div class="game-menu"></div><div class="game-result"></div>';
+            let T = this,
+                TM = 'NengeDBFS';
+            let menu = document.querySelector('.game-menu');
+            let resultElm = document.querySelector('.game-result');
+            let EventData = {
+                'user data 用户记录': async () => {
+                    let data = await T.getRemoteSet('userdata');
+                    console.log(data);
+                    if (data && data.entries) {
+                        let html = "";
+                        for (var i in data.entries) {
+                            let time = data.entries[i].timestamp;
+                            let file = i.split('/').pop();
+                            if (file.indexOf('.') != -1) html += '<li>' + i + '<p>' + time
+                            .toLocaleString() + '<button onclick="let file=\'' + file + '\';if(file)' + TM +
+                                '.getContent(\'userdata\',\'' + i + '\').then(result=>' + TM +
+                                '.download(file,result));">download</button> - <button onclick="let file=\'' + file + '\';if(file)' + TM +
+                                '.removeItem(\'userdata\',\'' + i + '\').then(result=>{this.parentNode.parentNode.remove()});">remove</button></p></li>'
+                        }
+                        if (html) {
+                            resultElm.innerHTML = '<ul class="game-dir">' + html + '</ul>';
+                        }
+                    }
+                },
+                'Room data 游戏记录': async () => {
+                    let data = await T.getAllKeys('data-rooms');
+                    let html = "";
+                    if (data) {
+                        for (var i = 0; i < data.length; i++) {
+                            let game = data[i],
+                                core = game.split('-')[0],
+                                name = game.split('-').slice(1).join('-'),
+                                exname = name.replace(/-part-\d+/,'');
+                            html += '<li><img src="zan.jpg" data-src="/userdata/'+core+'/screenshots/'+exname.split('.').slice(0,-1).join('.')+'.png"><p style="color:red">system:'+core+'</p><p><button onclick="self.emu=new EJS(\'#' + elm
+                                .id + '\',{gameurl:\'' + exname + '\',system:\'' + core + '\'})">Run:' +
+                                game + '</button></p><p><button onclick="' + TM +
+                                '.removeItem(\'data-rooms\',\'' + game + '\').then(result=>{this.parentNode.parentNode.remove()});">remove 删除</button></p></li>';
+                        }
+                        if (html) {
+                            resultElm.innerHTML = '<ul class="game-list">' + html + '</ul>';
+                        }
+                        document.querySelectorAll('img[data-src]').forEach(async elm=>{
+                            let src = elm.getAttribute('data-src');
+                            if(this.IMGS[src])return elm.src=this.IMGS[src];
+                            let buf = await this.getContent('userdata',src);
+                            if(buf){
+                                this.IMGS[src] = window.URL.createObjectURL(new Blob([buf]));
+                                elm.src = this.IMGS[src];
+                            }
+                        });
+                    }
+                },
+                'add game 添加本地游戏': () => {
+                    let data = {
+                        "nes": "NES | Famicom Disk System ",
+                        "snes": "SNES",
+                        "gb": "Game Boy | Color",
+                        "gba": "Game Boy Advance ",
+                        "mgb": "Game Boy Advance[old]",
+                        "vb": "Virtual Boy ",
+                        "n64": "Nintendo 64",
+                        "nds": "Nintendo DS",
+                        "segams": "Sega Master System",
+                        "segagg": "Sega Game Gear",
+                        "segamd": "Sega Mega Drive",
+                        "sega32x": "Sega 32X",
+                        "segasaturn": "Sega Saturn",
+                        "segacd": "Sega CD",
+                        "a2600": "Atari 2600",
+                        "a7800": "Atari 7800",
+                        "lynx": "Atari Lynx",
+                        "jaguar": "Atari Jaguar",
+                        "wanderswan": "Wanderswan | Color",
+                        "msx": "MSX",
+                        "ngp": "Neo Geo Poket",
+                        "tg16": "TurboGrafs-16 | PC Engine",
+                        "pcfx": "PC-FX",
+                        "3do": "3DO",
+                        "psx": "PlayStation",
+                        "arcade": "Arcade"
+                    };
+                    let html = "";
+                    for (var i in data) {
+                        html += '<li onclick="' + TM + '.ROOM_Upload(\'' + i + '\',\'#' + elm.id +
+                            '\')"><img src="assets/images/' + i +
+                            '.png" onerror="this.src=\'zan.jpg\'"><p>' + data[i] + '</p></li>';
+                    }
+                    resultElm.innerHTML = '<ul class="game-list game-cores">' + html + '</ul>';
+                }
+            }
+            let setE = (btn, i) => btn.addEventListener('click', e => EventData[i]());
+            for (var i in EventData) {
+                let btn = document.createElement('button');
+                btn.innerHTML = i;
+                setE(btn, i);
+                menu.appendChild(btn);
+            }
+            let html2 = "";
+            ['gb-宝可梦 - 比卡超.7z', 'gb-宝可梦 - 水晶版ckn.7z', 'snes-第三次超级机器人大战sfc.7z', 'gb-三国英雄传 - 傲视天下.7z',
+                'gb-勇者斗恶龙 - 怪兽仙境.7z', 'nes-重装机兵.7z'
+            ].forEach(val => {
+
+                let game = val,
+                    core = game.split('-')[0],
+                    name = game.split('-').slice(1).join('-');
+                html2 += '<li><img src="rooms/' + name.replace('.7z', '.png') +
+                    '"><p><button onclick="self.emu=new EJS(\'#' + elm.id + '\',{gameurl:\'rooms/' + name +
+                    '\',system:\'' + core + '\'})">Run:' + game + '</button></p></li>';
+            });
+            resultElm.innerHTML = '<ul class="game-list">' + html2 + '</ul>';
+        }
+    </script>
+</body>
+
+</html>
