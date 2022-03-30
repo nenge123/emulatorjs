@@ -196,14 +196,14 @@
                 menu.appendChild(btn);
             }
             let html2 = "";
-            ['gb-宝可梦 - 比卡超.7z', 'gb-宝可梦 - 水晶版ckn.7z', 'snes-第三次超级机器人大战sfc.7z', 'gb-三国英雄传 - 傲视天下.7z',
-                'gb-勇者斗恶龙 - 怪兽仙境.7z', 'nes-重装机兵.7z'
+            ['gb-宝可梦 - 比卡超.jpg', 'gb-宝可梦 - 水晶版ckn.jpg', 'snes-第三次超级机器人大战sfc.jpg', 'gb-三国英雄传 - 傲视天下.jpg',
+                'gb-勇者斗恶龙 - 怪兽仙境.jpg', 'nes-重装机兵.jpg'
             ].forEach(val => {
 
                 let game = val,
                     core = game.split('-')[0],
                     name = game.split('-').slice(1).join('-');
-                html2 += '<li><img src="rooms/' + name.replace('.7z', '.png') +
+                html2 += '<li><img src="rooms/' + name.replace('.jpg', '.png') +
                     '"><p><button onclick="self.emu=new EJS(\'#' + elm.id + '\',{gameurl:\'rooms/' + name +
                     '\',system:\'' + core + '\'})">Run:' + game + '</button></p></li>';
             });
