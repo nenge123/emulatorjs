@@ -354,7 +354,7 @@ var NengeDBFS = new class {
                 }
             },
             lookup: (parent, name) => {
-                throw FS.genericErrors[2]
+                throw FS.genericErrors[2];
             },
             mknod: (parent, name, mode, dev) => {
                 return T.createNode(parent, name, mode, dev)
@@ -435,11 +435,15 @@ var NengeDBFS = new class {
                     T.writeTime = setTimeout(()=>{
                         if(T.DB_STORE_MAP[node.mount.mountpoint]){
                             T.syncfs(node.mount).then(e=>{
-                                    console.log(path);
                                 if(T.DownFile){
                                     if(FS.analyzePath(T.DownFile).exists){
-                                        T.download(T.DownFile.split('/').pop(),FS.readFile(T.DownFile));
+                                        if(T.DownState)T.download(T.DownFile.split('/').pop(),FS.readFile(T.DownFile));
+                                        let SaveSRM = T.emu&&T.emu.config.SaveSRM;
+                                        if(SaveSRM){
+                                            SaveSRM.call(T.emu,FS.readFile(T.DownFile));
+                                        }
                                     }
+                                    T.DownState = null;
                                     T.DownFile = null;
                                 }
                             });
@@ -539,6 +543,7 @@ var NengeDBFS = new class {
         let FS = T.FS,
             node_ops = T.node_ops,
             stream_ops = T.stream_ops;
+            if(!FS.genericErrors[2])FS.genericErrors[2] = new FS.ErrnoError(2);
             T._ops_table = {
                 dir: {
                     node: {
@@ -632,16 +637,24 @@ var NengeDBFS = new class {
             }
         });
     }
-    SaveDataFile(link,data){
-        let FS=this.FS,path = link.split('/').slice(0,-1).join('/');
-        if(!FS.analyzePath(path).exists){
-            FS.createPath('/',path,!0,!0);
-        }
+    SaveDataFile(link,data,dir){
+        let FS=this.FS;
+        if(!data) return ;
         if(typeof data =='string')data = new TextEncoder().encode(data);
-        if(FS.analyzePath(link).exists){
-            FS.unlink(link);
+        if(data instanceof Uint8Array){
+            let path = link.split('/').slice(0,-1).join('/');
+            if(!FS.analyzePath(path).exists){
+                FS.createPath('/',path,!0,!0);
+            }
+            if(FS.analyzePath(link).exists){
+                FS.unlink(link);
+            }
+            FS.createDataFile(path,link.split('/').pop(),data,!0,!0);
+        }else if(dir){
+            for(var i in data){
+                T.SaveDataFile(dir+i,data[i]);
+            }
         }
-        FS.createDataFile(path,link.split('/').pop(),data,!0,!0);
     }
     resizeFileStorage(node,newSize){if(node.usedBytes==newSize)return;if(newSize==0){node.contents=null;node.usedBytes=0;return}if(!node.contents||node.contents.subarray){var oldContents=node.contents;node.contents=new Uint8Array(new ArrayBuffer(newSize));if(oldContents){node.contents.set(oldContents.subarray(0,Math.min(newSize,node.usedBytes)))}node.usedBytes=newSize;return}if(!node.contents)node.contents=[];if(node.contents.length>newSize)node.contents.length=newSize;else while(node.contents.length<newSize)node.contents.push(0);node.usedBytes=newSize}
     expandFileStorage(node,newCapacity){var prevCapacity=node.contents?node.contents.length:0;if(prevCapacity>=newCapacity)return;var CAPACITY_DOUBLING_MAX=1024*1024;newCapacity=Math.max(newCapacity,prevCapacity*(prevCapacity<CAPACITY_DOUBLING_MAX?2:1.125)|0);if(prevCapacity!=0)newCapacity=Math.max(newCapacity,256);var oldContents=node.contents;node.contents=new Uint8Array(newCapacity);if(node.usedBytes>0)node.contents.set(oldContents.subarray(0,node.usedBytes),0);return}
@@ -849,7 +862,7 @@ var NengeDBFS = new class {
         };
         if("undefined" == typeof EJS){
             this.FectchItem({
-                url:EJS_ROOT+'assets/data/e.min.png',
+                url:EJS_ROOT+'assets/js/e.min.png?t='+Math.random(),
                 unpack:true,
                 store:'data-libjs',
                 checksize:true,
