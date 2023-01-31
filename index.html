@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <meta content="target-densitydpi=device-dpi,width=device-width,user-scalable=no,maximum-scale=1,minimum-scale=1" name="viewport"/>
+    <meta content="retroarch web os" name="description"/>
+    <meta content="Emulatorjs" name="keywords"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="yes" name="mobile-web-app-capable"/>
+    <meta content="Emulatorjs" name="apple-mobile-web-app-title"/>
+    <meta content="Emulatorjs" name="application-name"/>
+    <meta content="#759091" name="msapplication-TileColor"/>
+    <meta content="#759091" name="theme-color"/>
+    <meta http-equiv="cache-control" content="no-cache" />
+    <link rel="stylesheet" href="scss_emujs.css?1675178303" />
+    <title>Emulatorjs</title>
+</head>
+
+<body>
+    
+    <div class="ejs-ad">
+        <p>core by www.emulatorjs.com </p>
+        <iframe src="https://www.emulatorjs.com/ad.html" style="border: none;width: 100%;height: 400px;"></iframe>
+
+    </div>
+    <section class="core-list">
+        <div class="container">
+        <h1>Supported Consoles(mame/Arcade not complete)</h1>
+        <ul class="consoles">
+        <li><p data-system="nes">NES | Famicom Disk System (nestopia)</p></li>
+        <li><p data-system="snes">SNES(snes9x)</p></li>
+        <li><p data-system="gb">Game Boy | Color(gambatte)</p></li>
+        <li><p data-system="gba">Game Boy Advance(mGba)</p></li>
+        <li><p data-system="vbanext">Game Boy Advance(vbanext)</p></li>
+        <li><p data-system="vb">Virtual Boy </p></li>
+        <li><p data-system="n64">Nintendo 64</p></li>
+        <li><p data-system="nds">Nintendo DS</p></li>
+        <li><p data-system="segams">Sega Master System</p></li>
+        <li><p data-system="segagg">Sega Game Gear</p></li>
+        <li><p data-system="segamd">Sega Mega Drive</p></li>
+        <li><p data-system="sega32x">Sega 32X</p></li>
+        <li><p data-system="segasaturn">Sega Saturn</p></li>
+        <li><p data-system="segacd">Sega CD</p></li>
+        <li><p data-system="a2600">Atari 2600</p></li>
+        <li><p data-system="a5200">Atari 5200</p></li>
+        <li><p data-system="a7800">Atari 7800</p></li>
+        <li><p data-system="lynx">Atari Lynx</p></li>
+        <li><p data-system="jaguar">Atari Jaguar</p></li>
+        <li><p data-system="wanderswan">Wanderswan | Color</p></li>
+        <li><p data-system="msx">MSX</p></li>
+        <li><p data-system="ngp">Neo Geo Poket</p></li>
+        <li><p data-system="tg16">TurboGrafs-16 | PC Engine</p></li>
+        <li><p data-system="pcfx">PC-FX</p></li>
+        <li><p data-system="3do">3DO</p></li>
+        <li><p data-system="psx">PlayStation(pcsx_rearmed)</p></li>
+        <li><p data-system="beetle-psx">PlayStation(beetle-psx)</p></li>
+        <li><p data-system="px68k">Sharp - X68000</p></li>
+        <li><p data-system="amiga">Amiga</p></li>
+        <li><p data-system="arcade">Arcade(FBA v0.2.97.42 ROMs set)</p></li>
+        <li><p data-system="fbneo">Arcade(fbneo)</p></li>
+        <li><p data-system="mame2003">Arcade(mame2003)</p></li>
+        <li><p data-system="mame0.243">Arcade(mame0.243)</p></li>
+        <li><p data-system="mame">Arcade(mame)</p></li>
+        <li class="separator"></li>
+        </ul>
+        <h1>Others</h1>
+        <ul class="consoles">
+        <li><p data-system="zeldacalssic">Zelda Classic </p></li>
+        <li><p data-system="openbor">OpenBOR </p></li>
+        <li class="separator"></li>
+        </ul>
+        </div>
+        </section>
+    <div style="position:fixed;left:0px;right:0px;top:0px;bottom:0px;" hidden>
+        <div id="game"></div>
+    </div>
+
+    <script src="common.js?453252" type="text/javascript"></script>
+    <!--script src="Disk.js" type="text/javascript"></script-->
+    <!--script src="emulator_4.99_19_Nenge.js" type="text/javascript"></script -->
+    <script type="text/javascript">
+        Nenge.docload(async function () {
+                let T = this,I = T.I;
+                T.Libzip = 'zip.min.js';//低版本IOS可能不兼容 如果不是对中文有必要要求,用 extractzip.min.js 替代
+                T.DB_NAME = 'Emulatorjs'; //定义 indexdb name
+                T.LibStore = 'data-libjs';//定义 储存js文件表
+                T.version = 5;
+                T.DB_STORE_MAP = {//所有表
+                    'data-patch': {},
+                    'data-parent': {},
+                    'data-rooms': { 'system': false},
+                    'data-system': {},
+                    'data-bios': { 'system': false },
+                    'retroarch': { 'timestamp': false },
+                    'userdata': { 'timestamp': false },
+                    'openbor-save': { 'timestamp': false },
+                    'data-libjs': {},
+                };
+                T.RootPath = location.pathname;//site root
+                T.lang = await T.FetchItem({
+                    url:T.RootPath+'i18n/'+T.i18nName+'.json?'+T.time,
+                    type:'json',
+                    version:T.version
+                });
+                await T.addJS('emulator_4.99_19_Nenge.js?'+Math.random());
+                Nttr('.core-list').click(
+                    e=>{
+                        let elm = e.target;
+                        if(I.elm(elm)&&elm.dataset.system){
+                            T.$('#game').parentNode.hidden = false;
+                            new EJS('#game',{
+                                gameUrl:'',
+                                system:elm.dataset.system,
+                                gameId: '', //set Unique ID on Netplay
+                                biosUrl:'',
+                                cheats: '', //set check code like  'aabbccdd xx\naabbccdd xx\n'
+                                gameparenturl: '',
+                                gamepatchurl: '', //add ips .. game patch
+                            });
+                            T.$('.ejs-ad').remove();
+                            Nttr('.core-list').remove();   
+                        }
+                    }
+                );
+            });
+        var EJS_DEBUG_ = true;
+    </script>
+</body>
+
+</html>
