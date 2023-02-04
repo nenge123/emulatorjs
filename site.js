@@ -3,7 +3,7 @@
         script = d.createElement('script'),
         slm=d.currentScript,
         JSpath = slm.src.split('/').slice(0,-1).join('/')+'/';
-    script.src = 'common.min.js?'+Math.random();
+    script.src = 'common.min.js?5345435';
     d.body.appendChild(script);
     d.addEventListener('NengeReady',async e=>{
         let T = e.detail,I = T.I;

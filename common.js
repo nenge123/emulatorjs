@@ -173,7 +173,7 @@ const Nenge = new class NengeCores {
         if (!ARG || I.str(ARG)) ARG = {
             'url': ARG || '/'
         };
-        let ab = 'arrayBuffer',
+        let arrbuff = 'arrayBuffer',
             urlname = F.getname(ARG.url),
             key = ARG.key || urlname || 'index.php',
             keyname = ARG.key == F.LibKey ? key + urlname : key,
@@ -206,6 +206,7 @@ const Nenge = new class NengeCores {
                 }
             }
         }
+        
         response = await F.FetchStart(ARG).catch(e=>ARG.error&&ARG.error(e.message));
         if(!response) return callback(result);
         headers = F.FetchHeader(response, ARG);
@@ -231,12 +232,12 @@ const Nenge = new class NengeCores {
             response.body.cancel();
             return success(headers);
         }
-        response = ARG.process ? await F.StreamResponse(response, ARG,headers) : response;
-        if(ARG.unpack)ARG.type = ab; 
-        ARG.type = ARG.type || ab;
-        let contents = await response[ARG.type]();
+        let responseQuest = I.func(ARG.process) ? await F.StreamResponse(response, ARG,headers) : response;
+        if(ARG.unpack)ARG.type = arrbuff; 
+        ARG.type = ARG.type || arrbuff;
+        let contents = await responseQuest[ARG.type]();
         let type = headers.type, filesize = headers["byteLength"] || 0, filetype = headers['content-type'];
-        if (ARG.type == ab && I.arrBuff(contents)) {
+        if (ARG.type == arrbuff && I.arrBuff(contents)) {
             contents = new I.O[11](contents);
             if (ARG.Filter) contents = ARG.Filter(contents);
             type = I.N(11);
@@ -251,6 +252,7 @@ const Nenge = new class NengeCores {
             await Store.put(keyname, T.I.assign({ contents, timestamp: new Date, filesize, filetype, version, type, password }, ARG.dataOption));
             Store = null;
         }
+        
         if (ARG.unpack && I.u8obj(contents)) {
             contents = await unFile(contents, password);
             if (!contents.byteLength) {
@@ -449,7 +451,8 @@ const Nenge = new class NengeCores {
         return await T.addJS(await T.getScript(js,ARG));
     }
     async loadLibjs(name,process) {
-        return await this.addJS(await this.F.getLibjs(name,process));
+        let T = this,F=T.F;
+        return await T.addJS(await F.getLibjs(name,process),null,F.getExt(name)=='css');
     }
     unFile(u8, process, ARG) {
         return this.F.unFile(u8, this.I.assign({ process }, ARG||{}));
@@ -627,7 +630,7 @@ const Nenge = new class NengeCores {
         Libjs = {};
         LibKey = 'script-';
         async StreamResponse(response, ARG,headers) {
-            let T=this.T,num = s => Number(s), maxLength = num(headers['content-length'] || 0), downtext = ARG && ARG.downtext ? ARG.downtext : '', havesize = 0, status = {
+            let num = s => Number(s), maxLength = num(headers['content-length'] || 0), downtext = ARG.downtext ? ARG.downtext : '', havesize = 0, status = {
                 done: !1, value: !1
             }, reader = response.body.getReader();
             return new Response(new ReadableStream({
@@ -642,7 +645,7 @@ const Nenge = new class NengeCores {
                         if (maxLength&&havesize<maxLength) statustext = downtext + Math.floor(havesize / maxLength * 100) + '%';
                         else statustext = downtext + Math.floor(havesize * 10 / 1024) / 10 + 'KB';
                         //下载进度
-                        ARG && ARG.process && ARG.process(ARG.filename+' '+statustext, maxLength, havesize, speedsize);
+                        ARG.process((ARG.filename?ARG.filename+' ':'')+statustext, maxLength, havesize, speedsize);
                         status = await reader.read();
                     }
                     ctrler.close();
@@ -859,20 +862,18 @@ const Nenge = new class NengeCores {
         async getLibjs(jsfile,process) {
             let F = this, T = F.T,file = F.getname(jsfile.replace(/\.zip$/,'.js'));
             if (F.Libjs[jsfile]) return F.Libjs[jsfile];
-            if(!process) process = e=>console.log(e);
+            //if(!process) process = e=>console.log(e);
             let contents = await T.getStore(T.LibStore).data(F.LibKey + file, T.version);
             if (!contents) {
                 if (/\.zip$/.test(jsfile)) await F.callaction('loadZip',process);;
                 //if(jsfile === 'extractzip.zip')jsfile = 'extractzip.min.js';
                 contents = await T.FetchItem({
                     url: F.getpath(jsfile)+'?'+T.time,
-                    'store': T.LibStore,
-                    'key': F.LibKey,
-                    'unpack': true,
-                    'filename': file,
-                    'process':e=>{
-                        process(e)
-                    }
+                    store: T.LibStore,
+                    key: F.LibKey,
+                    unpack: true,
+                    filename: file,
+                    process
                 });
             }
             if (contents) {
