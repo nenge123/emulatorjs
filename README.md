@@ -54,20 +54,29 @@ source  by www.emulatorjs.com
         'mupen64plus-nx':'mupen64plus-nx',
         'vbanext':'vbanext',
         
-        'mame-1': 'mame-1',
-        'mame-2': 'mame-2',
-        'mame-3': 'mame-3',
-        'mame-4': 'mame-4',
-        'mame-5': 'mame-5',
-        'mame-6': 'mame-6',
-        'mame-7': 'mame-7',
+        'mame-1': 'mame',
+        'mame-2': 'mame',
+        'mame-3': 'mame',
+        'mame-4': 'mame',
+        'mame-5': 'mame',
+        'mame-6': 'mame',
+        'mame-7': 'mame',
+        
+        'mame-1': 'mame0.243',
+        'mame-2': 'mame0.243',
+        'mame-3': 'mame0.243',
+        'mame-4': 'mame0.243',
+        'mame-5': 'mame0.243',
+        'mame-6': 'mame0.243',
+        'mame-7': 'mame0.243',
+        'mame-8': 'mame0.243',
 
 
 
     };
     let jsonUrl = str=> `https://www.emulatorjs.com/api/v?name=${str}&_t=${Nenge.time}`;
     let CoreUrl = str=>`https://www.emulatorjs.com/cores/${str}?v=${Nenge.time}`;
-    let func = [];
+    let func = [],kk={};
     Nenge.I.toArr(CoreSystemList,entry=>{
         func.push(async e=>{
             await Nenge.FetchItem({
@@ -98,13 +107,15 @@ source  by www.emulatorjs.com
                     Nenge.down(entry[0]+'-asmjs.7z',data)
                 }
             });
+            if(kk[entry[1]]) return;
             await Nenge.FetchItem({
-                url:jsonUrl(entry[0]),
+                url:jsonUrl(entry[1]),
                 type:'text',
                 success(data){
-                    Nenge.down(entry[0]+'.json',data)
+                    Nenge.down(entry[1]+'.json',data)
                 }
             });
+            kk[entry[1]] = true;
         });
     });
     let xx;
