@@ -1,6 +1,5 @@
 var EJS = function (modules) {
     var installedModules = {};
-
     function _require(moduleId) {
         if (installedModules[moduleId]) return installedModules[moduleId]['exports'];
         var moduleItem = installedModules[moduleId] = {
@@ -4105,17 +4104,17 @@ var EJS = function (modules) {
     }());
 }, function (es_module, es_exports, es_require) {
     var _export_322 = es_require(0x142);
-    'string' == typeof _export_322 && (_export_322 = [
-        [es_module['i'], _export_322, '']
-    ]);
+    /**block css
+    if('string' == typeof _export_322){
+        _export_322 = [[es_module['i'], _export_322, '']]
+    }
     var _0x4a7a9e = {
         'hmr': !0x0,
         'transform': void 0x0,
         'insertInto': void 0x0
     };
-    /**block css */
-    //es_require(0x144)(_export_322, _0x4a7a9e);
-    /**block css */
+    es_require(0x144)(_export_322, _0x4a7a9e);
+    block css */
     _export_322['locals'] && (es_module['exports'] = _export_322['locals']);
 }, function (es_module, es_exports, es_require) {
     var _0x2f3a35, _0x18fbbd, _0xa48483;
@@ -7930,195 +7929,197 @@ var EJS = function (modules) {
             }
         }(void 0x0 !== _0x3993b9 ? _0x3993b9 : 'undefined' != typeof window ? window : 'undefined' != typeof self ? self : this);
     } ['call'](this, es_require(0x2f)));
-}, function cssdata(es_module, es_exports, es_require) {
+}, function EJS_CSSDATA(es_module, es_exports, es_require) {
 
-    (es_exports = es_module['exports'] = es_require(0x143)(!0x1))['push']([es_module['i'], '@keyframes ejs--c2532bfe04554193cc42b3be753700{0%{opacity:0.5;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}@keyframes ejs--7cadf43f3d9eb17c7e3c36de84973b{from{opacity:0}to{opacity:1}}@keyframes ejs--9bd947b3e6427453595f083d740a7c{from{}to{box-shadow:1px 3px 15px 8px #222,0px 7px 10px 0px #111,inset 0px 0px 1px 0px rgba(250,250,250,0.2),inset 8px 5px 35px 0px rgba(0,0,0,0.5)}}:root{--ejs-primary-color: 26, 175, 255}.ejs--de6433374cb30211f10e148b320b2f{height:100%}.ejs--7a5f920ceffb2913f6dbda780573cf{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;height:100%;width:100%;direction:ltr;font-family:Avenir,\x22Avenir Next\x22,\x22Helvetica Neue\x22,\x22Segoe UI\x22,Helvetica,Arial,sans-serif;font-size:14px;font-variant-numeric:tabular-nums;font-weight:500;line-height:1.7;max-width:100%;min-width:200px;position:relative;text-shadow:none;transition:box-shadow 0.3s ease}.ejs--7a5f920ceffb2913f6dbda780573cf a{color:#ddd;text-decoration:none}.ejs--7a5f920ceffb2913f6dbda7805' + ('73cf button{font:inherit;line-height:inherit;width:auto}.ejs--7a5f920ceffb2913f6dbda780573cf ul{list-style:none;margin:0;padding:0}.ejs--7a5f920ceffb2913f6dbda780573cf:focus{outline:0}.ejs--7a5f920ceffb2913f6dbda780573cf *:is(input,textarea){-webkit-user-select:all;-moz-user-select:all;-ms-user-select:all;user-select:all;touch-action:auto}.ejs--f3a002bba9836fe4ebfed357a45521{box-sizing:border-box}.ejs--f3a002bba9836fe4ebfed357a45521 *,.ejs--f3a002bba9836fe4ebfed357a45521 *::after,.ejs--f3a002bba9836fe4ebfed357a45521 *::before{box-sizing:inherit}.ejs--f3a002bba9836fe4ebfed357a45521 a,.ejs--f3a002bba9836fe4ebfed357a45521 button,.ejs--f3a002bba9836fe4ebfed357a45521 input,.ejs--f3a002bba9836fe4ebfed357a45521 label{touch-action:manipulation}.ejs--008adea3c1ef33a8fc94892a1e97e6{background-color:transparent}.ejs--008adea3c1ef33a8fc94892a1e97e6 li{display:inline-block;background:#fff;border:1px solid #ccc;font-size:12px}.ejs--008adea3c1ef33a8fc94892a1e97e6 li a{color:#000}.ejs--a891fe6f6e4cc43') + ('e11a6d8cf4a2dbb,.ejs--0ddc742668e636837948f68cade3e2,.ejs--0ddc742668e636837948f68cade3e2 label{font-size:12px}.ejs--9af1c81949dbc3652bee73a340152c{color:#fff !important}.ejs--0ddc742668e636837948f68cade3e2 input[type=checkbox]{display:inline-block;margin:0}.ejs--85a95eb6bf74a40ab61b91a91e5bff{position:absolute;width:100%;height:100%;top:0;z-index:9999;background:rgba(0,0,0,0.3) !important;color:#fff;text-align:center}.ejs--d169a219343bc32dd4aecc3f6b7f25{position:absolute;width:300px;top:50%;margin-left:-150px;margin-top:-50px;left:50%;background:rgba(0,0,0,0.8) !important;padding:15px 0}.ejs--782e3572812f983b3a150eec177391{text-align:center;font-size:13px}.ejs--c426dd1d179aa351e6cec47e1d9438,.ejs--31e7e81db48819ee35ec6f50378a2e,.ejs--20d4eb2646d396f558a645dc0574f1,.ejs--4de05306c8b099bdeb4585571ac095{font-size:12px}.ejs--c7957d8666bb6b8fc7c3e9c021aaf8{background:rgba(16,16,16,0.9);border-radius:3px;font-size:13px;min-width:180px;padding:8px}.ejs--c7957d8666bb6b8fc7c3e9c021aaf8 li{padd') + ('ing:4px 11px;text-align:center}.ejs--c7957d8666bb6b8fc7c3e9c021aaf8 li a{color:#999;display:block;font-size:13px}.ejs--c7957d8666bb6b8fc7c3e9c021aaf8 li:hover{background:rgba(var(--ejs-primary-color), 1);border-radius:4px;box-shadow:0 0 0 5px rgba(var(--ejs-primary-color), 0.5);outline:0}.ejs--c7957d8666bb6b8fc7c3e9c021aaf8 li:hover a{color:#fff}.ejs--c7957d8666bb6b8fc7c3e9c021aaf8 li:last-child{border:0}.ejs--3a16fd9a56aec8059089709cbb16f4{display:block !important;position:absolute;left:50% !important;top:50% !important;transform:translate(-50%, -50%) !important;visibility:visible !important;margin-top:0 !important}.ejs--3a16fd9a56aec8059089709cbb16f4 .ejs--f3a1903d935f6cf720d4a0498db62a{background-color:transparent}.ejs--3a16fd9a56aec8059089709cbb16f4 .ejs--f3a1903d935f6cf720d4a0498db62a:after{content:\x22\x22;position:absolute;border-left:20px solid transparent;border-right:20px solid #a7a7a77d;border-top:20px solid #a7a7a77d;border-bottom:20px solid transparent;right:0}.ejs--3a16fd9a56ae') + ('c8059089709cbb16f4 .ejs--f3a1903d935f6cf720d4a0498db62a a{right:4px;top:4px;position:absolute;border:none;padding:0;width:15px;height:15px;z-index:99}.ejs--3a16fd9a56aec8059089709cbb16f4 .ejs--f3a1903d935f6cf720d4a0498db62a a:before{content:\x22\x22;border-bottom:1px solid #fff;transform:rotate(45deg) translateY(-45%);width:15px;height:15px;display:block;position:absolute;top:0;right:0}.ejs--3a16fd9a56aec8059089709cbb16f4 .ejs--f3a1903d935f6cf720d4a0498db62a a:after{content:\x22\x22;border-bottom:1px solid #fff;width:15px;height:15px;display:block;position:absolute;right:0;background:transparent;top:0;transform:rotate(-45deg) translateY(-50%) translateX(0%)}.ejs--3a16fd9a56aec8059089709cbb16f4 iframe{position:relative !important;width:300px !important;height:250px !important;margin:0 auto !important;border:none !important;background:none !important;overflow:hidden !important;display:block !important}a.ejs--73f9b4e94a7a1fe74e11107d5ab2ef{display:flex;justify-content:center;text-shadow:0px 1px 1px r') + ('gba(0,0,0,0.5);font-size:20px;line-height:45px;text-transform:uppercase;font-weight:bolder;position:relative;text-decoration:none;width:200px;height:45px;margin:0 auto;border:0;color:#fff !important;border-radius:35px;text-align:center;background-color:rgba(var(--ejs-primary-color), 1)}a.ejs--73f9b4e94a7a1fe74e11107d5ab2ef:active{box-shadow:0px 0px 0px 0px #222,0px 3px 7px 0px #111,inset 0px 1px 1px 0px rgba(250,250,250,0.2),inset 0px -10px 35px 5px rgba(0,0,0,0.5);top:1px}a.ejs--73f9b4e94a7a1fe74e11107d5ab2ef:hover{animation:ejs--9bd947b3e6427453595f083d740a7c 1.2s linear infinite alternate}.ejs--8732295ca5c4902a060d34706a8146{background:transparent;border:0;border-radius:3px;color:inherit;cursor:pointer;flex-shrink:0;overflow:visible;padding:7px;position:relative;transition:all 0.3s ease}.ejs--8732295ca5c4902a060d34706a8146 svg{display:block;fill:currentColor;height:18px;pointer-events:none;width:18px}.ejs--8732295ca5c4902a060d34706a8146:focus{outline:0}.ejs--8732295ca5c4902a060d3470') + ('6a8146.ejs--a83b6c705e103e81a7762d0ed5e64b{box-shadow:0 0 0 5px rgba(var(--ejs-primary-color), 0.5);outline:0}.ejs--8732295ca5c4902a060d34706a8146:not(.ejs--b1238136ec472a92297159882cf4b8) .ejs--ec731619062226d943da67f5d83009,.ejs--8732295ca5c4902a060d34706a8146.ejs--b1238136ec472a92297159882cf4b8 .ejs--dc7068585e3d84fe0e676864c1439e,.ejs--8732295ca5c4902a060d34706a8146:not(.ejs--b1238136ec472a92297159882cf4b8) .ejs--0c6561f9155750b0aeeed6da5da7bf,.ejs--8732295ca5c4902a060d34706a8146.ejs--b1238136ec472a92297159882cf4b8 .ejs--13d64e30c1333cc99391af48ddabaa{display:none}.ejs--d5f430a99a1619b3434bf58e34a99c .ejs--8732295ca5c4902a060d34706a8146 svg{filter:drop-shadow(0 1px 1px rgba(0,0,0,0.15))}.ejs--d5f430a99a1619b3434bf58e34a99c .ejs--8732295ca5c4902a060d34706a8146.ejs--a83b6c705e103e81a7762d0ed5e64b,.ejs--d5f430a99a1619b3434bf58e34a99c .ejs--8732295ca5c4902a060d34706a8146:hover,.ejs--d5f430a99a1619b3434bf58e34a99c .ejs--8732295ca5c4902a060d34706a8146[aria-expanded=\x27true\x27]{background:rgb') + ('a(var(--ejs-primary-color), 1);color:#fff}.ejs--d5f430a99a1619b3434bf58e34a99c .ejs--8732295ca5c4902a060d34706a8146[disabled],.ejs--d5f430a99a1619b3434bf58e34a99c .ejs--8732295ca5c4902a060d34706a8146[disabled]:hover{background:transparent;color:#4b4b4b}.ejs--f3a002bba9836fe4ebfed357a45521 ::-webkit-media-controls{display:none}.ejs--1acedc5ed6816abe96dd27d910fd74{align-items:center;display:flex;justify-content:flex-start;text-align:center}.ejs--1acedc5ed6816abe96dd27d910fd74>.ejs--8732295ca5c4902a060d34706a8146,.ejs--1acedc5ed6816abe96dd27d910fd74 .ejs--f1aa376719b564cae0e653157cde14,.ejs--1acedc5ed6816abe96dd27d910fd74 .ejs--90d2780f99bcc76fdb6b0378a7238e,.ejs--1acedc5ed6816abe96dd27d910fd74 .ejs--c7bfb2d1b75a40fdaaf90624bea9e7,.ejs--1acedc5ed6816abe96dd27d910fd74 .ejs--36ceeeec0df37a9cf4bbe05fa204ec{margin-left:5px}.ejs--1acedc5ed6816abe96dd27d910fd74 .ejs--c7bfb2d1b75a40fdaaf90624bea9e7+.ejs--8732295ca5c4902a060d34706a8146,.ejs--1acedc5ed6816abe96dd27d910fd74>.ejs--8732295ca5c4902a06') + ('0d34706a8146+.ejs--c7bfb2d1b75a40fdaaf90624bea9e7,.ejs--1acedc5ed6816abe96dd27d910fd74>.ejs--8732295ca5c4902a060d34706a8146+.ejs--8732295ca5c4902a060d34706a8146,.ejs--1acedc5ed6816abe96dd27d910fd74 .ejs--f1aa376719b564cae0e653157cde14+.ejs--8732295ca5c4902a060d34706a8146{margin-left:2px}.ejs--1acedc5ed6816abe96dd27d910fd74>.ejs--8732295ca5c4902a060d34706a8146:first-child,.ejs--1acedc5ed6816abe96dd27d910fd74>.ejs--8732295ca5c4902a060d34706a8146:first-child+[data-btn=\x27pause\x27]{margin-left:0}.ejs--1acedc5ed6816abe96dd27d910fd74>.ejs--8732295ca5c4902a060d34706a8146:first-child+[data-btn=\x27netplay\x27]{margin-right:auto}.ejs--1acedc5ed6816abe96dd27d910fd74 .ejs--36ceeeec0df37a9cf4bbe05fa204ec{max-width:120px;align-items:center;display:flex;flex:1;position:relative;margin-left:auto}.ejs--1acedc5ed6816abe96dd27d910fd74 .ejs--36ceeeec0df37a9cf4bbe05fa204ec input[type=\x27range\x27]{margin-left:5px;position:relative;z-index:2}@media (max-width: 768px){.ejs--1acedc5ed6816abe96dd27d910fd74 .ejs--36ceeeec0df') + ('37a9cf4bbe05fa204ec{max-width:135px}}.ejs--1acedc5ed6816abe96dd27d910fd74:empty{display:none}@media (min-width: 768px){.ejs--1acedc5ed6816abe96dd27d910fd74>.ejs--8732295ca5c4902a060d34706a8146,.ejs--1acedc5ed6816abe96dd27d910fd74 .ejs--c7bfb2d1b75a40fdaaf90624bea9e7,.ejs--1acedc5ed6816abe96dd27d910fd74 .ejs--f1aa376719b564cae0e653157cde14,.ejs--1acedc5ed6816abe96dd27d910fd74 .ejs--90d2780f99bcc76fdb6b0378a7238e{margin-left:10px}}.ejs--d5f430a99a1619b3434bf58e34a99c .ejs--1acedc5ed6816abe96dd27d910fd74{background:linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.7));border-bottom-left-radius:inherit;border-bottom-right-radius:inherit;bottom:0;color:#fff;left:0;padding:20px 5px 5px;position:absolute;right:0;transition:opacity 0.4s ease-in-out, transform 0.4s ease-in-out;z-index:3}@media (min-width: 768px){.ejs--d5f430a99a1619b3434bf58e34a99c .ejs--1acedc5ed6816abe96dd27d910fd74{padding:0 10px 10px}}@media (max-width: 768px){.ejs--d5f430a99a1619b3434bf58e34a99c .ejs--1acedc5ed6816abe96dd27d910f') + ('d74{transform:translate(-50%, 0) !important;width:300px;max-height:260px;display:flex;flex-wrap:wrap;align-items:flex-start;background:rgba(0,0,0,0.9);padding:10px;z-index:999;left:50%;bottom:0;opacity:0;z-index:-1}.ejs--d5f430a99a1619b3434bf58e34a99c .ejs--1acedc5ed6816abe96dd27d910fd74>button,.ejs--d5f430a99a1619b3434bf58e34a99c .ejs--1acedc5ed6816abe96dd27d910fd74>div{width:135px;margin-left:2px !important;margin-right:0 !important;line-height:1}.ejs--d5f430a99a1619b3434bf58e34a99c .ejs--1acedc5ed6816abe96dd27d910fd74 svg{float:left}.ejs--d5f430a99a1619b3434bf58e34a99c .ejs--1acedc5ed6816abe96dd27d910fd74 .ejs--74c6d4176d27e37a19d2e9e61de8f4{position:static;color:#fff;background:transparent;opacity:1;padding:0;transform:scale(0.8) !important;font-size:12px}.ejs--d5f430a99a1619b3434bf58e34a99c .ejs--1acedc5ed6816abe96dd27d910fd74 .ejs--74c6d4176d27e37a19d2e9e61de8f4::before{display:none}.ejs--d5f430a99a1619b3434bf58e34a99c .ejs--1acedc5ed6816abe96dd27d910fd74 .ejs--36ceeeec0df37a9cf4') + ('bbe05fa204ec .ejs--74c6d4176d27e37a19d2e9e61de8f4{display:none}.ejs--d5f430a99a1619b3434bf58e34a99c .ejs--1acedc5ed6816abe96dd27d910fd74 .ejs--e8274f91a3d68f381fcc9d51db9c72 button,.ejs--d5f430a99a1619b3434bf58e34a99c .ejs--1acedc5ed6816abe96dd27d910fd74 .ejs--c7bfb2d1b75a40fdaaf90624bea9e7 button{width:100%}.ejs--d5f430a99a1619b3434bf58e34a99c .ejs--1acedc5ed6816abe96dd27d910fd74 .ejs--50ea0ce6747ecfa5147eba0d14e2ff{display:none}}@media (max-width: 768px){.ejs--7da7949f602347007818e6d192eb23 .ejs--1acedc5ed6816abe96dd27d910fd74.ejs--a03cf4c79123fcf49b2b6eb2ee856c{opacity:1 !important;transform:translate(-50%, 0%) !important;z-index:1000}}.ejs--d5f430a99a1619b3434bf58e34a99c.ejs--1b8cb7f2294b1eb5de5238daea3513 .ejs--1acedc5ed6816abe96dd27d910fd74{opacity:0;pointer-events:none;transform:translateY(100%)}.ejs--7a5f920ceffb2913f6dbda780573cf [data-btn=\x27fullscreen\x27]{display:none}.ejs--19409fe2057ab935a7e46abb5b4f49 [data-btn=\x27fullscreen\x27]{display:inline-block}.ejs--c7bfb2d1b75a40fdaaf90624') + ('bea9e7{display:flex;position:relative}.ejs--c7bfb2d1b75a40fdaaf90624bea9e7 .ejs--8732295ca5c4902a060d34706a8146 svg{transition:transform 0.3s ease}.ejs--c7bfb2d1b75a40fdaaf90624bea9e7 .ejs--8732295ca5c4902a060d34706a8146[aria-expanded=\x27true\x27] svg{transform:rotate(90deg)}.ejs--c7bfb2d1b75a40fdaaf90624bea9e7 .ejs--8732295ca5c4902a060d34706a8146[aria-expanded=\x27true\x27] .ejs--74c6d4176d27e37a19d2e9e61de8f4{display:none}@media (max-width: 768px){.ejs--c7bfb2d1b75a40fdaaf90624bea9e7 .ejs--8732295ca5c4902a060d34706a8146[aria-expanded=\x27true\x27] .ejs--74c6d4176d27e37a19d2e9e61de8f4{display:initial}}.ejs--013213afedeeb6878089b1ca1b4e47{animation:ejs--c2532bfe04554193cc42b3be753700 0.2s ease;background:rgba(16,16,16,0.9);border-radius:4px;bottom:100%;box-shadow:0 1px 2px rgba(0,0,0,0.15);color:#4f5b5f;font-size:16px;margin-bottom:10px;position:absolute;right:-3px;text-align:left;white-space:nowrap;z-index:3}@media (max-width: 768px){.ejs--013213afedeeb6878089b1ca1b4e47{left:0;right:auto}}.ejs--013213') + ('afedeeb6878089b1ca1b4e47>div{overflow:hidden;transition:height 0.35s cubic-bezier(0.4, 0, 0.2, 1),width 0.35s cubic-bezier(0.4, 0, 0.2, 1)}.ejs--013213afedeeb6878089b1ca1b4e47::after{border:4px solid transparent;border-top-color:rgba(16,16,16,0.9);content:\x27\x27;height:0;position:absolute;right:15px;top:100%;width:0}.ejs--013213afedeeb6878089b1ca1b4e47 [role=\x27menu\x27]{padding:7px}@media (max-width: 768px){.ejs--013213afedeeb6878089b1ca1b4e47 [role=\x27menu\x27]{line-height:2}}.ejs--013213afedeeb6878089b1ca1b4e47 [role=\x27menuitem\x27],.ejs--013213afedeeb6878089b1ca1b4e47 [role=\x27menuitemradio\x27]{margin-top:2px}.ejs--013213afedeeb6878089b1ca1b4e47 [role=\x27menuitem\x27]:first-child,.ejs--013213afedeeb6878089b1ca1b4e47 [role=\x27menuitemradio\x27]:first-child{margin-top:0}.ejs--013213afedeeb6878089b1ca1b4e47 .ejs--8732295ca5c4902a060d34706a8146{align-items:center;color:#999;display:flex;font-size:13px;padding:4px 11px;user-select:none;width:100%}.ejs--013213afedeeb6878089b1ca1b4e47 .ejs--8732295ca5c4902a060d34706a814') + ('6>span{align-items:inherit;display:flex;width:100%}.ejs--013213afedeeb6878089b1ca1b4e47 .ejs--8732295ca5c4902a060d34706a8146::after{border:4px solid transparent;content:\x27\x27;position:absolute;top:50%;transform:translateY(-50%)}.ejs--013213afedeeb6878089b1ca1b4e47 .ejs--0b4cdb4057d1a4623e60836ccc6275{padding-right:28px}.ejs--013213afedeeb6878089b1ca1b4e47 .ejs--0b4cdb4057d1a4623e60836ccc6275::after{border-left-color:rgba(79,91,95,0.8);right:5px}.ejs--013213afedeeb6878089b1ca1b4e47 .ejs--0b4cdb4057d1a4623e60836ccc6275.ejs--a83b6c705e103e81a7762d0ed5e64b::after,.ejs--013213afedeeb6878089b1ca1b4e47 .ejs--0b4cdb4057d1a4623e60836ccc6275:hover::after{border-left-color:currentColor}.ejs--013213afedeeb6878089b1ca1b4e47 .ejs--a7ad9de0cb0ca672b6703c50de7db9{font-weight:500;margin:7px;margin-bottom:3px;padding-left:28px;position:relative;width:calc(100% - 14px)}@media (max-width: 768px){.ejs--013213afedeeb6878089b1ca1b4e47 .ejs--a7ad9de0cb0ca672b6703c50de7db9{line-height:2}}.ejs--013213afedeeb687808') + ('9b1ca1b4e47 .ejs--a7ad9de0cb0ca672b6703c50de7db9::after{border-right-color:rgba(79,91,95,0.8);left:7px}.ejs--013213afedeeb6878089b1ca1b4e47 .ejs--a7ad9de0cb0ca672b6703c50de7db9::before{background:#b7c5cd;box-shadow:0 1px 0 #fff;content:\x27\x27;height:1px;left:0;margin-top:4px;overflow:hidden;position:absolute;right:0;top:100%}.ejs--013213afedeeb6878089b1ca1b4e47 .ejs--a7ad9de0cb0ca672b6703c50de7db9.ejs--a83b6c705e103e81a7762d0ed5e64b::after,.ejs--013213afedeeb6878089b1ca1b4e47 .ejs--a7ad9de0cb0ca672b6703c50de7db9:hover::after{border-right-color:currentColor}.ejs--013213afedeeb6878089b1ca1b4e47 .ejs--8732295ca5c4902a060d34706a8146[role=\x27menuitemradio\x27]{padding-left:7px}.ejs--013213afedeeb6878089b1ca1b4e47 .ejs--8732295ca5c4902a060d34706a8146[role=\x27menuitemradio\x27]::before,.ejs--013213afedeeb6878089b1ca1b4e47 .ejs--8732295ca5c4902a060d34706a8146[role=\x27menuitemradio\x27]::after{border-radius:100%}.ejs--013213afedeeb6878089b1ca1b4e47 .ejs--8732295ca5c4902a060d34706a8146[role=\x27menuitemradio\x27]::befor') + ('e{background:rgba(204,204,204,0.1);content:\x27\x27;display:block;flex-shrink:0;height:16px;margin-right:10px;transition:all 0.3s ease;width:16px}.ejs--013213afedeeb6878089b1ca1b4e47 .ejs--8732295ca5c4902a060d34706a8146[role=\x27menuitemradio\x27]::after{background:#fff;border:0;height:6px;left:12px;opacity:0;top:50%;transform:translateY(-50%) scale(0);transition:transform 0.3s ease, opacity 0.3s ease;width:6px}.ejs--013213afedeeb6878089b1ca1b4e47 .ejs--8732295ca5c4902a060d34706a8146[role=\x27menuitemradio\x27][aria-checked=\x27true\x27]::before{background:rgba(var(--ejs-primary-color), 1)}.ejs--013213afedeeb6878089b1ca1b4e47 .ejs--8732295ca5c4902a060d34706a8146[role=\x27menuitemradio\x27][aria-checked=\x27true\x27]::after{opacity:1;transform:translateY(-50%) scale(1)}.ejs--013213afedeeb6878089b1ca1b4e47 .ejs--8732295ca5c4902a060d34706a8146[role=\x27menuitemradio\x27].ejs--a83b6c705e103e81a7762d0ed5e64b::before,.ejs--013213afedeeb6878089b1ca1b4e47 .ejs--8732295ca5c4902a060d34706a8146[role=\x27menuitemradio\x27]:hover::before{backgro') + ('und:rgba(0,0,0,0.1)}.ejs--013213afedeeb6878089b1ca1b4e47 .ejs--f91e90fe7cabc875aff9a431bf5389{align-items:center;display:flex;margin-left:auto;margin-right:-5px;overflow:hidden;padding-left:25px;pointer-events:none}@media (max-width: 768px){.ejs--3464f4dc60866db801859648ec92cb .ejs--013213afedeeb6878089b1ca1b4e47{left:auto;right:0}}.ejs--e8274f91a3d68f381fcc9d51db9c72{position:relative}.ejs--93b777c74e38cef84eb9ed727c473b{animation:ejs--c2532bfe04554193cc42b3be753700 0.2s ease;background:rgba(16,16,16,0.9);border-radius:4px;bottom:100%;box-shadow:0 1px 2px rgba(0,0,0,0.15);color:#4f5b5f;font-size:16px;margin-bottom:10px;position:absolute;right:-3px;text-align:left;white-space:nowrap;z-index:3;padding:7px}.ejs--65d5006322417d2267bc2d4fa5fecc{align-items:center;color:#999;display:flex;font-size:13px;padding:4px 11px;user-select:none;width:100%}.ejs--65d5006322417d2267bc2d4fa5fecc.ejs--68d337c212ec6a5bc43125440d422b,.ejs--65d5006322417d2267bc2d4fa5fecc:hover{background:rgba(var(--ejs-prim') + ('ary-color), 1);color:#fff;border-radius:5px}.ejs--f3a002bba9836fe4ebfed357a45521 input[type=\x27range\x27]{-webkit-appearance:none;background:transparent;border:0;border-radius:28px;color:rgba(var(--ejs-primary-color), 1);display:block;height:20px;margin:0;padding:0;transition:box-shadow 0.3s ease;width:100%}.ejs--f3a002bba9836fe4ebfed357a45521 input[type=\x27range\x27]::-webkit-slider-runnable-track{background:transparent;border:0;border-radius:3px;height:6px;transition:box-shadow 0.3s ease;user-select:none;background-image:linear-gradient(to right, currentColor var(--value, 0%), transparent var(--value, 0%))}.ejs--f3a002bba9836fe4ebfed357a45521 input[type=\x27range\x27]::-webkit-slider-thumb{background:#fff;border:0;border-radius:100%;box-shadow:0 1px 1px rgba(0,0,0,0.15),0 0 0 1px rgba(47,52,61,0.2);height:14px;position:relative;transition:all 0.2s ease;width:14px;-webkit-appearance:none;margin-top:-4px}.ejs--f3a002bba9836fe4ebfed357a45521 input[type=\x27range\x27]::-moz-range-track{background:transparent;') + ('border:0;border-radius:3px;height:6px;transition:box-shadow 0.3s ease;user-select:none}.ejs--f3a002bba9836fe4ebfed357a45521 input[type=\x27range\x27]::-moz-range-thumb{background:#fff;border:0;border-radius:100%;box-shadow:0 1px 1px rgba(0,0,0,0.15),0 0 0 1px rgba(47,52,61,0.2);height:14px;position:relative;transition:all 0.2s ease;width:14px}.ejs--f3a002bba9836fe4ebfed357a45521 input[type=\x27range\x27]::-moz-range-progress{background:currentColor;border-radius:3px;height:6px}.ejs--f3a002bba9836fe4ebfed357a45521 input[type=\x27range\x27]::-ms-track{background:transparent;border:0;border-radius:3px;height:6px;transition:box-shadow 0.3s ease;user-select:none;color:transparent}.ejs--f3a002bba9836fe4ebfed357a45521 input[type=\x27range\x27]::-ms-fill-upper{background:transparent;border:0;border-radius:3px;height:6px;transition:box-shadow 0.3s ease;user-select:none}.ejs--f3a002bba9836fe4ebfed357a45521 input[type=\x27range\x27]::-ms-fill-lower{background:transparent;border:0;border-radius:3px;height:6px;transition:box-sh') + ('adow 0.3s ease;user-select:none;background:currentColor}.ejs--f3a002bba9836fe4ebfed357a45521 input[type=\x27range\x27]::-ms-thumb{background:#fff;border:0;border-radius:100%;box-shadow:0 1px 1px rgba(0,0,0,0.15),0 0 0 1px rgba(47,52,61,0.2);height:14px;position:relative;transition:all 0.2s ease;width:14px;margin-top:0}.ejs--f3a002bba9836fe4ebfed357a45521 input[type=\x27range\x27]::-ms-tooltip{display:none}.ejs--f3a002bba9836fe4ebfed357a45521 input[type=\x27range\x27]:focus{outline:0}.ejs--f3a002bba9836fe4ebfed357a45521 input[type=\x27range\x27]::-moz-focus-outer{border:0}.ejs--f3a002bba9836fe4ebfed357a45521 input[type=\x27range\x27].ejs--a83b6c705e103e81a7762d0ed5e64b::-webkit-slider-runnable-track{box-shadow:0 0 0 5px rgba(var(--ejs-primary-color), 0.5);outline:0}.ejs--f3a002bba9836fe4ebfed357a45521 input[type=\x27range\x27].ejs--a83b6c705e103e81a7762d0ed5e64b::-moz-range-track{box-shadow:0 0 0 5px rgba(var(--ejs-primary-color), 0.5);outline:0}.ejs--f3a002bba9836fe4ebfed357a45521 input[type=\x27range\x27].ejs--a83b6c705e103e8') + ('1a7762d0ed5e64b::-ms-track{box-shadow:0 0 0 5px rgba(var(--ejs-primary-color), 0.5);outline:0}.ejs--f3a002bba9836fe4ebfed357a45521.ejs--d5f430a99a1619b3434bf58e34a99c input[type=\x27range\x27]::-webkit-slider-runnable-track{background-color:rgba(255,255,255,0.25)}.ejs--f3a002bba9836fe4ebfed357a45521.ejs--d5f430a99a1619b3434bf58e34a99c input[type=\x27range\x27]::-moz-range-track{background-color:rgba(255,255,255,0.25)}.ejs--f3a002bba9836fe4ebfed357a45521.ejs--d5f430a99a1619b3434bf58e34a99c input[type=\x27range\x27]::-ms-track{background-color:rgba(255,255,255,0.25)}.ejs--f3a002bba9836fe4ebfed357a45521.ejs--d5f430a99a1619b3434bf58e34a99c input[type=\x27range\x27]:active::-webkit-slider-thumb{box-shadow:0 1px 1px rgba(0,0,0,0.15),0 0 0 1px rgba(47,52,61,0.2),0 0 0 3px rgba(255,255,255,0.5)}.ejs--f3a002bba9836fe4ebfed357a45521.ejs--d5f430a99a1619b3434bf58e34a99c input[type=\x27range\x27]:active::-moz-range-thumb{box-shadow:0 1px 1px rgba(0,0,0,0.15),0 0 0 1px rgba(47,52,61,0.2),0 0 0 3px rgba(255,255,255,0.5)}.ejs--f3a') + ('002bba9836fe4ebfed357a45521.ejs--d5f430a99a1619b3434bf58e34a99c input[type=\x27range\x27]:active::-ms-thumb{box-shadow:0 1px 1px rgba(0,0,0,0.15),0 0 0 1px rgba(47,52,61,0.2),0 0 0 3px rgba(255,255,255,0.5)}.ejs--90d2780f99bcc76fdb6b0378a7238e{font-size:14px}.ejs--90d2780f99bcc76fdb6b0378a7238e+.ejs--90d2780f99bcc76fdb6b0378a7238e::before{content:\x27\\2044\x27;margin-right:10px}@media (max-width: 767px){.ejs--90d2780f99bcc76fdb6b0378a7238e+.ejs--90d2780f99bcc76fdb6b0378a7238e{display:none}}.ejs--d5f430a99a1619b3434bf58e34a99c .ejs--90d2780f99bcc76fdb6b0378a7238e{text-shadow:0 1px 1px rgba(0,0,0,0.15)}.ejs--74c6d4176d27e37a19d2e9e61de8f4{background:rgba(255,255,255,0.9);border-radius:3px;bottom:100%;box-shadow:0 1px 2px rgba(0,0,0,0.15);color:#4f5b5f;font-size:14px;font-weight:500;left:50%;line-height:1.3;margin-bottom:10px;opacity:0;padding:5px 7.5px;pointer-events:none;position:absolute;transform:translate(-50%, 10px) scale(0.8);transform-origin:50% 100%;transition:transform 0.2s 0.1s ease, opaci') + ('ty 0.2s 0.1s ease;white-space:nowrap;z-index:2}.ejs--74c6d4176d27e37a19d2e9e61de8f4::before{border-left:4px solid transparent;border-right:4px solid transparent;border-top:4px solid rgba(255,255,255,0.9);bottom:-4px;content:\x27\x27;height:0;left:50%;position:absolute;transform:translateX(-50%);width:0;z-index:2}.ejs--7a5f920ceffb2913f6dbda780573cf .ejs--8732295ca5c4902a060d34706a8146:hover .ejs--74c6d4176d27e37a19d2e9e61de8f4,.ejs--7a5f920ceffb2913f6dbda780573cf .ejs--8732295ca5c4902a060d34706a8146.ejs--a83b6c705e103e81a7762d0ed5e64b .ejs--74c6d4176d27e37a19d2e9e61de8f4,.ejs--6ea27aa07e60d1d6e4c9782740028a{opacity:1;transform:translate(-50%, 0) scale(1)}.ejs--7a5f920ceffb2913f6dbda780573cf .ejs--8732295ca5c4902a060d34706a8146:hover .ejs--74c6d4176d27e37a19d2e9e61de8f4{z-index:3}.ejs--1acedc5ed6816abe96dd27d910fd74>.ejs--8732295ca5c4902a060d34706a8146:first-child .ejs--74c6d4176d27e37a19d2e9e61de8f4,.ejs--1acedc5ed6816abe96dd27d910fd74>.ejs--8732295ca5c4902a060d34706a8146:first-child+.ejs--8') + ('732295ca5c4902a060d34706a8146 .ejs--74c6d4176d27e37a19d2e9e61de8f4{left:0;transform:translate(0, 10px) scale(0.8);transform-origin:0 100%}.ejs--1acedc5ed6816abe96dd27d910fd74>.ejs--8732295ca5c4902a060d34706a8146:first-child .ejs--74c6d4176d27e37a19d2e9e61de8f4::before,.ejs--1acedc5ed6816abe96dd27d910fd74>.ejs--8732295ca5c4902a060d34706a8146:first-child+.ejs--8732295ca5c4902a060d34706a8146 .ejs--74c6d4176d27e37a19d2e9e61de8f4::before{left:16px}.ejs--1acedc5ed6816abe96dd27d910fd74>.ejs--8732295ca5c4902a060d34706a8146:last-child .ejs--74c6d4176d27e37a19d2e9e61de8f4{left:auto;right:0;transform:translate(0, 10px) scale(0.8);transform-origin:100% 100%}.ejs--1acedc5ed6816abe96dd27d910fd74>.ejs--8732295ca5c4902a060d34706a8146:last-child .ejs--74c6d4176d27e37a19d2e9e61de8f4::before{left:auto;right:16px;transform:translateX(50%)}.ejs--1acedc5ed6816abe96dd27d910fd74>.ejs--8732295ca5c4902a060d34706a8146:first-child:hover .ejs--74c6d4176d27e37a19d2e9e61de8f4,.ejs--1acedc5ed6816abe96dd27d910fd74>.ej') + ('s--8732295ca5c4902a060d34706a8146:first-child.ejs--a83b6c705e103e81a7762d0ed5e64b .ejs--74c6d4176d27e37a19d2e9e61de8f4,.ejs--1acedc5ed6816abe96dd27d910fd74>.ejs--8732295ca5c4902a060d34706a8146:first-child .ejs--6ea27aa07e60d1d6e4c9782740028a,.ejs--1acedc5ed6816abe96dd27d910fd74>.ejs--8732295ca5c4902a060d34706a8146:first-child+.ejs--8732295ca5c4902a060d34706a8146:hover .ejs--74c6d4176d27e37a19d2e9e61de8f4,.ejs--1acedc5ed6816abe96dd27d910fd74>.ejs--8732295ca5c4902a060d34706a8146:first-child+.ejs--8732295ca5c4902a060d34706a8146.ejs--a83b6c705e103e81a7762d0ed5e64b .ejs--74c6d4176d27e37a19d2e9e61de8f4,.ejs--1acedc5ed6816abe96dd27d910fd74>.ejs--8732295ca5c4902a060d34706a8146:first-child+.ejs--8732295ca5c4902a060d34706a8146 .ejs--6ea27aa07e60d1d6e4c9782740028a,.ejs--1acedc5ed6816abe96dd27d910fd74>.ejs--8732295ca5c4902a060d34706a8146:last-child:hover .ejs--74c6d4176d27e37a19d2e9e61de8f4,.ejs--1acedc5ed6816abe96dd27d910fd74>.ejs--8732295ca5c4902a060d34706a8146:last-child.ejs--a83b6c705e103e81a7') + ('762d0ed5e64b .ejs--74c6d4176d27e37a19d2e9e61de8f4,.ejs--1acedc5ed6816abe96dd27d910fd74>.ejs--8732295ca5c4902a060d34706a8146:last-child .ejs--6ea27aa07e60d1d6e4c9782740028a{transform:translate(0, 0) scale(1)}.ejs--d5f430a99a1619b3434bf58e34a99c{background:#000;color:#bcbcbc;overflow:hidden}.ejs--d5f430a99a1619b3434bf58e34a99c.ejs--da54136ccf8c6b0b16d98e8b8e8b88{overflow:visible}.ejs--057800d021995e1347ec07cb748672{background:#333;border-radius:inherit;height:100%;overflow:hidden;position:relative;text-align:center;z-index:0}.ejs--057800d021995e1347ec07cb748672>*{height:100% !important}.ejs--057800d021995e1347ec07cb748672 canvas{height:100% !important;width:auto !important;max-width:100% !important}.ejs--64f1256f556fb94454b930cb3ea7f2 .ejs--057800d021995e1347ec07cb748672 canvas{height:auto !important;width:100% !important}.ejs--7da7949f602347007818e6d192eb23{opacity:1}.ejs--7da7949f602347007818e6d192eb23 .ejs--057800d021995e1347ec07cb748672{opacity:1;background-color:transparent}.ejs--f1') + ('aa376719b564cae0e653157cde14{flex:1;left:7px;margin-right:14px;position:relative}.ejs--f1aa376719b564cae0e653157cde14 input[type=\x27range\x27],.ejs--f8d706413436fd119cf01aaf5a9d9d{margin-left:-7px;margin-right:-7px;width:calc(100% + 14px)}.ejs--f1aa376719b564cae0e653157cde14 input[type=\x27range\x27]{position:relative;z-index:2}.ejs--f1aa376719b564cae0e653157cde14 .ejs--74c6d4176d27e37a19d2e9e61de8f4{font-size:14px;left:0}.ejs--f8d706413436fd119cf01aaf5a9d9d{-webkit-appearance:none;background:transparent;border:0;border-radius:100px;height:6px;left:0;margin-top:-3px;padding:0;position:absolute;top:50%}.ejs--f8d706413436fd119cf01aaf5a9d9d::-webkit-progress-bar{background:transparent;transition:width 0.2s ease}.ejs--f8d706413436fd119cf01aaf5a9d9d::-webkit-progress-value{background:currentColor;border-radius:100px;min-width:6px}.ejs--f8d706413436fd119cf01aaf5a9d9d::-moz-progress-bar{background:currentColor;border-radius:100px;min-width:6px;transition:width 0.2s ease}.ejs--f8d706413436fd119cf01aaf5a9') + ('d9d::-ms-fill{border-radius:100px;transition:width 0.2s ease}.ejs--d5f430a99a1619b3434bf58e34a99c .ejs--f8d706413436fd119cf01aaf5a9d9d{box-shadow:0 1px 1px rgba(0,0,0,0.15);color:rgba(255,255,255,0.25)}.ejs--bd0222e58d71b0a304d6037dfcffd5 .ejs--f8d706413436fd119cf01aaf5a9d9d{color:rgba(183,197,205,0.66)}.ejs--d5f430a99a1619b3434bf58e34a99c.ejs--2521e1257996f264de36e77cc9c5ee .ejs--f8d706413436fd119cf01aaf5a9d9d{background-color:rgba(255,255,255,0.25)}.ejs--bd0222e58d71b0a304d6037dfcffd5.ejs--2521e1257996f264de36e77cc9c5ee .ejs--f8d706413436fd119cf01aaf5a9d9d{background-color:rgba(183,197,205,0.66)}.ejs--d31688f864f56d6426ebbf2217d6ee{height:100%;overflow:hidden;position:absolute;top:0;width:100%}.ejs--5e71fd80268afbb1d588e40b993508{background:rgba(0,0,0,0.8);height:100%;overflow:auto;position:relative;text-align:center;z-index:9999}.ejs--5e71fd80268afbb1d588e40b993508 h4{color:#ccc;font-size:24px;margin:0;padding:10px}.ejs--8005476e024127364d230c0f4c72e1{display:flex;align-items:center') + (';vertical-align:middle;align-content:center;justify-content:space-around;font-size:1.5em}.ejs--8abe1d2bc8d34697952f4ae16785a5,.ejs--1e0f0672f67d0e96592314c9ed78b0{display:block}.ejs--d7e6a6a8f38bfaa256fe5d709a8258{background:transparent;display:block;position:absolute;top:0;width:100%;z-index:10001}.ejs--b183f581b5336c4908ad258d3e1cc7{display:block}.ejs--158ea9dd34e3e7af2d837f8b05babb{display:block}.ejs--3f0897a8158ba363a0ee0afe4da7c5{display:block}.ejs--38cc09882a55e98c76168dbe838aa0{height:100%;margin:0 auto;max-width:800px;overflow:hidden;position:relative;width:100%}.ejs--3f0897a8158ba363a0ee0afe4da7c5 input[type=\x27text\x27]{background-color:#fff;border:1px solid #000;font-size:12px;font-weight:700}.ejs--f3a002bba9836fe4ebfed357a45521 ::-webkit-scrollbar{width:8px;height:16px;background-color:transparent}.ejs--f3a002bba9836fe4ebfed357a45521 ::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3);border-radius:10px;background-color:transparent}.ejs--f3a002bba9836fe4eb') + ('fed357a45521 ::-webkit-scrollbar-thumb{border-radius:0;-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3);background-color:#f5f5f5}.ejs--f3a002bba9836fe4ebfed357a45521{scrollbar-face-color:#F5F5F5;scrollbar-highlight-color:transparent;scrollbar-3dlight-color:transparent;scrollbar-darkshadow-color:transparent;scrollbar-Shadow-color:transparent;scrollbar-arrow-color:#fff;scrollbar-track-color:transparent;scrollbar-width:thin;scrollbar-color:transparent #f5f5f5}.ejs--5e71fd80268afbb1d588e40b993508 *{color:#bcbcbc !important;border:unset}.ejs--5e71fd80268afbb1d588e40b993508 a:focus{background:inherit}.ejs--5e71fd80268afbb1d588e40b993508 input,.ejs--5e71fd80268afbb1d588e40b993508 textarea{color:#000 !important}.ejs--5e71fd80268afbb1d588e40b993508 .ejs--b373c9d5029d49324fb8ac3ece96c1{float:none}.ejs--5e71fd80268afbb1d588e40b993508 .ejs--a5e2629abb9a5bcbc8b2c1307922d2{height:calc(100% - 145px);overflow:auto}.ejs--5e71fd80268afbb1d588e40b993508 .ejs--a5e2629abb9a5bcbc8b2c1307922d2 a{border:none}') + ('.ejs--5e71fd80268afbb1d588e40b993508 .ejs--580e3c22e63f8a1eb29694fd0b141b{margin-top:10px}.ejs--5e71fd80268afbb1d588e40b993508 .ejs--580e3c22e63f8a1eb29694fd0b141b a{border-radius:.25rem;font-size:.875rem;padding-left:1rem;padding-right:1rem;padding-top:.5rem;padding-bottom:.5rem;display:inline-block;background-color:rgba(var(--ejs-primary-color), 1);margin:0 10px;color:#fff !important}.ejs--5e71fd80268afbb1d588e40b993508 .ejs--580e3c22e63f8a1eb29694fd0b141b a.ejs--ad20569e1449d7b8e99e6465960456{background-color:#929292}.ejs--5e71fd80268afbb1d588e40b993508 .ejs--8e7922427f460a31935084b7acfb1a{opacity:1}.ejs--5e71fd80268afbb1d588e40b993508 .ejs--8e7922427f460a31935084b7acfb1a li{display:inline-block;float:none}.ejs--5e71fd80268afbb1d588e40b993508 .ejs--8e7922427f460a31935084b7acfb1a li.ejs--68d337c212ec6a5bc43125440d422b{border-bottom:1px solid #fff;background-color:#ffffff}.ejs--5e71fd80268afbb1d588e40b993508 .ejs--8e7922427f460a31935084b7acfb1a li a{padding:2px 5px;color:#bcbcbc  !imp') + ('ortant}.ejs--5e71fd80268afbb1d588e40b993508 .ejs--8e7922427f460a31935084b7acfb1a li.ejs--68d337c212ec6a5bc43125440d422b a{color:#000 !important}.ejs--5e71fd80268afbb1d588e40b993508 .ejs--31eb28817642bb1bfe0a2c422108bb{opacity:1}.ejs--5e71fd80268afbb1d588e40b993508 .ejs--f932566a0af5314da834324c901978{opacity:1}.ejs--5e71fd80268afbb1d588e40b993508 .ejs--f932566a0af5314da834324c901978 div.ejs--c233fb69cbef43078bc39e9d1efac8{background-color:transparent}.ejs--5e71fd80268afbb1d588e40b993508 .ejs--f932566a0af5314da834324c901978 div.ejs--c233fb69cbef43078bc39e9d1efac8:hover{background-color:#2d2d2d}.ejs--d169a219343bc32dd4aecc3f6b7f25{opacity:1}.ejs--ad20569e1449d7b8e99e6465960456{float:none}.ejs--bdb54e9fc47f9805b506b746e897bf{float:none}.ejs--67d03ee7480b871ad6507d6319a839{float:none}.ejs--c2d931157456c1d438d40a2f66af2c{float:none}.ejs--5e71fd80268afbb1d588e40b993508 .ejs--f932566a0af5314da834324c901978 a.ejs--6604c83041a275a78837c452a71dd8,.ejs--99150e15f962c63c689cadc81ef40d{float:none;p') + ('adding:0.1rem 0.5rem;background-color:rgba(var(--ejs-primary-color), 1);color:#fff !important;border-radius:0.25rem;cursor:pointer}.ejs--71527b6509aa48afce3ce1a11c02f0{float:none}.ejs--7ad35768e3f6b9faf97db01d5b60ae{float:none}.ejs--9c403e5e107a3e4374ba244b636400{float:none}.ejs--d6a46533fa6e510a571af5c28b440a{float:none}.ejs--d6a46533fa6e510a571af5c28b440a table{font-size:0.8rem;padding:0 10px}.ejs--d6a46533fa6e510a571af5c28b440a thead{background-color:rgba(50,50,50,0.66)}.ejs--d6a46533fa6e510a571af5c28b440a tbody tr:hover{background-color:#2d2d2d}.ejs--d6a46533fa6e510a571af5c28b440a tbody td{padding:10px 0}.ejs--d6a46533fa6e510a571af5c28b440a tbody td svg{width:12px;vertical-align:middle}.ejs--d6a46533fa6e510a571af5c28b440a table td:nth-child(1),.ejs--d6a46533fa6e510a571af5c28b440a table td:nth-child(2),.ejs--d6a46533fa6e510a571af5c28b440a table td:nth-child(3){text-align:center;width:30%}.ejs--57ca9b3853cc7de731483cfcc95a59{float:none}.ejs--0885d5e25e19127b6b516014426a1b{float:none}') + ('.ejs--25023d28756fdb9dfbbfb6dccb8677{float:none}.ejs--75b3a8d35aacc6424ed7422fdeaaaa{float:none}.ejs--eefdf28d69ed2d20f197308981bb61{float:none}.ejs--eefdf28d69ed2d20f197308981bb61 table{font-size:0.8rem;padding:0 10px}.ejs--eefdf28d69ed2d20f197308981bb61 thead,.ejs--eefdf28d69ed2d20f197308981bb61 tbody,.ejs--eefdf28d69ed2d20f197308981bb61 tfoot,.ejs--d6a46533fa6e510a571af5c28b440a thead,.ejs--d6a46533fa6e510a571af5c28b440a tbody,.ejs--d6a46533fa6e510a571af5c28b440a tfoot{background:transparent;text-align:left}.ejs--eefdf28d69ed2d20f197308981bb61 tbody tr:hover{background-color:#2d2d2d}.ejs--eefdf28d69ed2d20f197308981bb61 tr td:nth-child(1),.ejs--eefdf28d69ed2d20f197308981bb61 tr td:nth-child(3){width:80px}.ejs--9e670880bb57e824400fa00f09aaad,.ejs--2b4e3c245b7b25dfdac5e09155a68e,.ejs--572b0b3a0345a6b01b01a15a02842c,.ejs--a7d7f80c8999469c991ea452a85dd9{float:none}.ejs--2b4e3c245b7b25dfdac5e09155a68e{max-width:320px;margin:0 auto;text-align:left;width:100%}.ejs--952c974392296e7f643d51db3') + ('80157{height:100%;overflow:hidden;position:absolute;top:0;width:100%}.ejs--0d7e216cf12ae73705b5d5bb0452fc{float:none}.ejs--c0a5e71f6613caab66d6ae15a5a00f{color:rgba(255,255,255,0.8);font-size:0.8rem;padding:5px;text-align:left;text-shadow:1px 1px 1px #000;position:absolute;z-index:998}.ejs--c0a5e71f6613caab66d6ae15a5a00f.ejs--04f0471d5de3dffea09ac3d539d0bc{width:100%;height:calc(100% - 42px)}.ejs--c0a5e71f6613caab66d6ae15a5a00f.ejs--04f0471d5de3dffea09ac3d539d0bc .ejs--f817e633c82da74c3f82a1007e9aa8{display:block}.ejs--c0a5e71f6613caab66d6ae15a5a00f .ejs--0b77f56df0c6023120dd9ffaa37dcd{display:block}.ejs--c0a5e71f6613caab66d6ae15a5a00f .ejs--4f88570c8af219fec07219dbd9dbbe{display:inline-block;width:30px;color:#fff;position:relative;cursor:pointer}.ejs--c0a5e71f6613caab66d6ae15a5a00f .ejs--4f88570c8af219fec07219dbd9dbbe svg{width:30px;fill:#fff;opacity:0.5}.ejs--c0a5e71f6613caab66d6ae15a5a00f .ejs--4f88570c8af219fec07219dbd9dbbe span.ejs--3ee5963a7747179cf98ce8ce095a5f{position:absolute') + (';left:0;top:4px;text-align:center;color:#fff;width:100%;height:100%}.ejs--c0a5e71f6613caab66d6ae15a5a00f .ejs--f817e633c82da74c3f82a1007e9aa8{display:none;width:100%;height:calc(100% - 80px);z-index:1001;max-width:300px}.ejs--c0a5e71f6613caab66d6ae15a5a00f .ejs--f817e633c82da74c3f82a1007e9aa8 .ejs--258ae7dfee4b10b7568161e6a48636{height:calc(100% - 60px);word-break:break-all;overflow-y:auto;font-size:0.9rem;color:#fff !important;text-shadow:2px 2px 3px #000}.ejs--c0a5e71f6613caab66d6ae15a5a00f .ejs--f817e633c82da74c3f82a1007e9aa8 .ejs--0e8443aac737c78260c3c5e0370276{height:55px;margin-top:5px;border:1px solid #fff;display:flex}.ejs--c0a5e71f6613caab66d6ae15a5a00f .ejs--f817e633c82da74c3f82a1007e9aa8 .ejs--0e8443aac737c78260c3c5e0370276 textarea{padding:1px;font-size:14px;max-height:55px;height:55px !important;width:calc(100% - 80px) !important;background:transparent;color:#fff !important}.ejs--c0a5e71f6613caab66d6ae15a5a00f .ejs--f817e633c82da74c3f82a1007e9aa8 .ejs--0e8443aac737c78260c3') + ('c5e0370276 button{font-size:20px;width:80px;text-transform:uppercase}.ejs--666d4296310579687cf3cf3d2cf951{display:none}.ejs--a8753b9c4fe32d12bb6605d4a20ef2,.ejs--e7e06622e3c04957c2ebb05c5adec0{display:none;cursor:pointer}@media (max-width: 768px){.ejs--7da7949f602347007818e6d192eb23 .ejs--666d4296310579687cf3cf3d2cf951{display:inline-block;width:30px;height:30px;color:#fff;position:absolute;top:5px;right:5px;opacity:0.5;z-index:999}.ejs--7da7949f602347007818e6d192eb23 .ejs--666d4296310579687cf3cf3d2cf951 svg{fill:currentColor}}.ejs--7da7949f602347007818e6d192eb23 .ejs--a8753b9c4fe32d12bb6605d4a20ef2{display:inline-block;width:30px;height:30px;color:#fff;position:absolute;top:5px;right:5px;opacity:0.6;z-index:999}@media (max-width: 768px){.ejs--7da7949f602347007818e6d192eb23 .ejs--a8753b9c4fe32d12bb6605d4a20ef2{right:45px}}.ejs--7da7949f602347007818e6d192eb23 .ejs--e7e06622e3c04957c2ebb05c5adec0{display:inline-block;width:30px;height:30px;color:#fff;position:absolute;top:5px;right:45px;') + ('opacity:0.6;z-index:999}@media (max-width: 768px){.ejs--7da7949f602347007818e6d192eb23 .ejs--e7e06622e3c04957c2ebb05c5adec0{right:85px}}.ejs--ca9ea317b9bd20abfc8c0463ac5bbe{background:transparent}.ejs--2440e3b831017ff8327c939e2a4413{display:none;position:fixed;bottom:30px;width:100%;position:absolute;bottom:50px;-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}@media (max-width: 768px){.ejs--2440e3b831017ff8327c939e2a4413{bottom:10px}}.ejs--2440e3b831017ff8327c939e2a4413 .ejs--b8d8b771d0bbb94e2bbd03054f53fd{position:absolute;bottom:250px;width:100%}.ejs--2440e3b831017ff8327c939e2a4413 .ejs--c83d70cb63c933edc073c7fe92e32b{display:none;position:absolute;bottom:20px;width:125px;height:125px;left:10px}.ejs--2440e3b831017ff8327c939e2a4413 .ejs--6e7015634623fd6a82e6a7d3488c84{position:absolute;font-size:20px;width:50px;height:50px;text-align:center;line-height:50px;border:1px solid #ccc;border-radius:50%;font-size:30px;font-weight:bold;background-color:rgba(255,255,255,0.') + ('15);-webkit-touch-callout:none;-webkit-user-select:none;user-select:none;touch-action:none}.ejs--2440e3b831017ff8327c939e2a4413 .ejs--49fa47c86a131e4ca8fb268bfdde89{position:absolute;bottom:10px;height:30px;width:124px;right:20px;margin-left:-62px}.ejs--2440e3b831017ff8327c939e2a4413 .ejs--49fa47c86a131e4ca8fb268bfdde89 .ejs--6e7015634623fd6a82e6a7d3488c84{width:60px;height:30px;font-size:12px;font-weight:bolder;border-radius:5px;border:1px solid #ccc;line-height:30px;text-align:center;text-transform:uppercase}.ejs--2440e3b831017ff8327c939e2a4413 .ejs--7d2b19f77fd0ccabf94dc1ca39ae18{position:absolute;bottom:60px;width:130px;height:130px;right:10px}.ejs--2440e3b831017ff8327c939e2a4413 .ejs--6e7015634623fd6a82e6a7d3488c84{width:50px;height:50px;text-align:center;line-height:44px;border:1px solid #ccc;border-radius:50%;font-size:12px;font-weight:bold;transition:all 0.2s;line-height:1;display:flex;align-items:center;align-content:center;justify-content:center}.ejs--2440e3b831017ff8327c939e') + ('2a4413 .ejs--6e7015634623fd6a82e6a7d3488c84.ejs--d708d9d486f1eca73a593d5c09f8ad{background-color:#000000ad}.ejs--2440e3b831017ff8327c939e2a4413 .ejs--6e7015634623fd6a82e6a7d3488c84 img{width:100%}.ejs--2440e3b831017ff8327c939e2a4413 .ejs--e7e4800b31773c5d47b84c75cc6cf7{left:0}.ejs--2440e3b831017ff8327c939e2a4413 .ejs--76fa7567879f97f5991c50ac600735{left:64px}.ejs--2440e3b831017ff8327c939e2a4413 .ejs--2592ce9b796695f4941e00f0972644,.ejs--2440e3b831017ff8327c939e2a4413 .ejs--b8e92dfa494924e1bde9486a0be217,.ejs--2440e3b831017ff8327c939e2a4413 .ejs--28a32587453e5bbcf95f746657f15f,.ejs--2440e3b831017ff8327c939e2a4413 .ejs--fad921b4fce16af564d7597e8de5f2,.ejs--2440e3b831017ff8327c939e2a4413 .ejs--6f79544eaf1d4b6e8a7609b506d988,.ejs--2440e3b831017ff8327c939e2a4413 .ejs--2afd974f6d46005a1e522dca4485e8,.ejs--2440e3b831017ff8327c939e2a4413 .ejs--d64fa2a822535d54379899a24f6e77,.ejs--2440e3b831017ff8327c939e2a4413 .ejs--10621f07d4508631aa3abcdb124a83,.ejs--2440e3b831017ff8327c939e2a4413 .ejs--7930') + ('ee9bb7ae2fa6e2f7b5568f1e98,.ejs--2440e3b831017ff8327c939e2a4413 .ejs--2226100d4c5408c2699e942aabb31c,.ejs--2440e3b831017ff8327c939e2a4413 .ejs--3a43805a8ec126ef388abd5ceb54b2,.ejs--2440e3b831017ff8327c939e2a4413 .ejs--d40828f231043de3a0f9c0637091d1,.ejs--2440e3b831017ff8327c939e2a4413 .ejs--7db312734c1e18065c434e8f96e893{display:none}.ejs--2440e3b831017ff8327c939e2a4413 .ejs--2592ce9b796695f4941e00f0972644,.ejs--2440e3b831017ff8327c939e2a4413 .ejs--b4c6d9bdbbd3dcfc8fa82689ecf448{top:80px;left:-25px}.ejs--2440e3b831017ff8327c939e2a4413 .ejs--b8e92dfa494924e1bde9486a0be217,.ejs--2440e3b831017ff8327c939e2a4413 .ejs--b7c456c7dd7a616a55965bb134323b{top:80px;left:30px}.ejs--2440e3b831017ff8327c939e2a4413 .ejs--fad921b4fce16af564d7597e8de5f2,.ejs--2440e3b831017ff8327c939e2a4413 .ejs--87c940c15830daa967b08e67e9b87e{top:20px;left:-25px}.ejs--2440e3b831017ff8327c939e2a4413 .ejs--6f79544eaf1d4b6e8a7609b506d988,.ejs--2440e3b831017ff8327c939e2a4413 .ejs--fbd499578ebef494fbcd1c9114cd1d{top:20px;left') + (':30px}.ejs--2440e3b831017ff8327c939e2a4413 .ejs--28a32587453e5bbcf95f746657f15f,.ejs--2440e3b831017ff8327c939e2a4413 .ejs--7930ee9bb7ae2fa6e2f7b5568f1e98,.ejs--2440e3b831017ff8327c939e2a4413 .ejs--10621f07d4508631aa3abcdb124a83{top:80px;left:85px}.ejs--2440e3b831017ff8327c939e2a4413 .ejs--2afd974f6d46005a1e522dca4485e8,.ejs--2440e3b831017ff8327c939e2a4413 .ejs--2226100d4c5408c2699e942aabb31c,.ejs--2440e3b831017ff8327c939e2a4413 .ejs--d64fa2a822535d54379899a24f6e77{top:20px;left:85px}.ejs--2440e3b831017ff8327c939e2a4413 .ejs--6febbc4be9f01b015178d52120d930,.ejs--2440e3b831017ff8327c939e2a4413 .ejs--05e1505b655c8ef151de9ba2c47fb5,.ejs--2440e3b831017ff8327c939e2a4413 .ejs--017bc19e138d2e63c92520db378e1d,.ejs--2440e3b831017ff8327c939e2a4413 .ejs--1474a869d502ac0c04d535c96f9795,.ejs--2440e3b831017ff8327c939e2a4413 .ejs--9c96e9c7f33171cf0fedfc85ca53fa,.ejs--2440e3b831017ff8327c939e2a4413 .ejs--c39b270a2774fd4bd3858e5f0892c0,.ejs--2440e3b831017ff8327c939e2a4413 .ejs--353cf6be7120854ae25fede87') + ('ce136{display:none}.ejs--914358605501b11476e86626b2ff16{position:absolute;bottom:30px;width:120px;height:120px;left:23px;user-select:none}@media (min-width: 480px){.ejs--914358605501b11476e86626b2ff16{width:130px;height:130px}}.ejs--be66239219d594001da38f91c9ad02{opacity:0.7}.ejs--be66239219d594001da38f91c9ad02,.ejs--9dbb9be3403878e912527181e2d41b{touch-action:none;position:absolute;top:0;left:0;width:100%;height:100%}.ejs--f9c7797bdf05569bdc13b4f2074270{width:36px;height:100%;transform:translate(-50%, 0%);position:absolute;left:50%;border-radius:5px;overflow:hidden}.ejs--f9c7797bdf05569bdc13b4f2074270:before{content:\x22\x22;position:absolute;top:0;left:50%;z-index:1;transform:translate(-50%, 0%);width:0;height:0;border:8px solid;border-color:transparent transparent #333 transparent}.ejs--f9c7797bdf05569bdc13b4f2074270:after{content:\x22\x22;position:absolute;bottom:0;left:50%;z-index:1;transform:translate(-50%, 0);width:0;height:0;border:8px solid;border-color:#333 transparent transparent transp') + ('arent}.ejs--2645f3bad105488a313c5e30dab74f{width:100%;height:36px;transform:translate(0%, -50%);position:absolute;left:0;top:50%;border-radius:5px;overflow:hidden}.ejs--2645f3bad105488a313c5e30dab74f:before{content:\x22\x22;position:absolute;left:0;top:50%;z-index:1;transform:translate(0%, -50%);width:0;height:0;border:8px solid;border-color:transparent #333 transparent transparent}.ejs--2645f3bad105488a313c5e30dab74f:after{content:\x22\x22;position:absolute;right:0;top:50%;z-index:1;transform:translate(0%, -50%);width:0;height:0;border:8px solid;border-color:transparent transparent transparent #333}.ejs--a57cf324c8ff108947112e35e589b5,.ejs--4873d94c18140ab195da609b40b71a{position:absolute;width:100%;height:100%;background:#787878}.ejs--bd9311b0a4f654af6ab5ba28bcf358 .ejs--2645f3bad105488a313c5e30dab74f:before{border-right-color:#fff}.ejs--704d45ea060cc6809451a0d9d47ad7 .ejs--2645f3bad105488a313c5e30dab74f:after{border-left-color:#fff}.ejs--f0b89ca5b5621659af184c8e012ccb .ejs--f9c7797bdf05569bdc13') + ('b4f2074270:before{border-bottom-color:#fff}.ejs--8de361d6b01eaa181f8db4ac3eb7af .ejs--f9c7797bdf05569bdc13b4f2074270:after{border-top-color:#fff}.ejs--d534874cabeb9d2a907a812e5b8cd0 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--87c940c15830daa967b08e67e9b87e,.ejs--d534874cabeb9d2a907a812e5b8cd0 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--fbd499578ebef494fbcd1c9114cd1d{display:none}.ejs--d534874cabeb9d2a907a812e5b8cd0 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--b7c456c7dd7a616a55965bb134323b{left:20px;top:80px}.ejs--d534874cabeb9d2a907a812e5b8cd0 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--b4c6d9bdbbd3dcfc8fa82689ecf448{left:81px;top:40px}.ejs--3e7ce32418477db21b1c6caed189d9 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--87c940c15830daa967b08e67e9b87e{left:40px;top:0}.ejs--3e7ce32418477db21b1c6caed189d9 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--fbd499578ebef494fbcd1c9114cd1d{left:0;top:40px}.ejs--3e7ce32418477db21b1c6caed189d9 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--b7c456c7dd7a616a55965bb134') + ('323b{top:80px;left:40px}.ejs--3e7ce32418477db21b1c6caed189d9 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--b4c6d9bdbbd3dcfc8fa82689ecf448{top:40px;left:80px}.ejs--9213ba9ca7bc508e87ca7a2cefa397 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--87c940c15830daa967b08e67e9b87e{left:40px;top:0}.ejs--9213ba9ca7bc508e87ca7a2cefa397 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--fbd499578ebef494fbcd1c9114cd1d{left:0;top:40px}.ejs--9213ba9ca7bc508e87ca7a2cefa397 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--b7c456c7dd7a616a55965bb134323b{top:80px;left:40px}.ejs--9213ba9ca7bc508e87ca7a2cefa397 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--b4c6d9bdbbd3dcfc8fa82689ecf448{top:40px;left:80px}.ejs--9213ba9ca7bc508e87ca7a2cefa397 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--7930ee9bb7ae2fa6e2f7b5568f1e98{display:flex;top:-40px;left:0px}.ejs--9213ba9ca7bc508e87ca7a2cefa397 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--2226100d4c5408c2699e942aabb31c{display:flex;top:-40px;left:80px}.ejs--cbac8c123fcc678ad946a27592156c .ejs--24') + ('40e3b831017ff8327c939e2a4413 .ejs--7930ee9bb7ae2fa6e2f7b5568f1e98{left:20px;top:20px;display:flex}.ejs--cbac8c123fcc678ad946a27592156c .ejs--2440e3b831017ff8327c939e2a4413 .ejs--2226100d4c5408c2699e942aabb31c{left:80px;top:0;display:flex}.ejs--cbac8c123fcc678ad946a27592156c .ejs--2440e3b831017ff8327c939e2a4413 .ejs--b7c456c7dd7a616a55965bb134323b{left:20px;top:80px}.ejs--cbac8c123fcc678ad946a27592156c .ejs--2440e3b831017ff8327c939e2a4413 .ejs--b4c6d9bdbbd3dcfc8fa82689ecf448{left:80px;top:60px}.ejs--cbac8c123fcc678ad946a27592156c .ejs--2440e3b831017ff8327c939e2a4413 .ejs--87c940c15830daa967b08e67e9b87e,.ejs--cbac8c123fcc678ad946a27592156c .ejs--2440e3b831017ff8327c939e2a4413 .ejs--fbd499578ebef494fbcd1c9114cd1d{display:none}.ejs--b4b0898f13bf4668a6e0077f43964a .ejs--2440e3b831017ff8327c939e2a4413 .ejs--87c940c15830daa967b08e67e9b87e,.ejs--b4b0898f13bf4668a6e0077f43964a .ejs--2440e3b831017ff8327c939e2a4413 .ejs--fbd499578ebef494fbcd1c9114cd1d,.ejs--b4b0898f13bf4668a6e0077f43964a .ejs--24') + ('40e3b831017ff8327c939e2a4413 .ejs--d64fa2a822535d54379899a24f6e77,.ejs--b4b0898f13bf4668a6e0077f43964a .ejs--2440e3b831017ff8327c939e2a4413 .ejs--b4c6d9bdbbd3dcfc8fa82689ecf448,.ejs--b4b0898f13bf4668a6e0077f43964a .ejs--2440e3b831017ff8327c939e2a4413 .ejs--b7c456c7dd7a616a55965bb134323b,.ejs--b4b0898f13bf4668a6e0077f43964a .ejs--2440e3b831017ff8327c939e2a4413 .ejs--10621f07d4508631aa3abcdb124a83{display:flex}.ejs--49834279a72803b358c2a283342698 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--7930ee9bb7ae2fa6e2f7b5568f1e98,.ejs--49834279a72803b358c2a283342698 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--2226100d4c5408c2699e942aabb31c{display:flex}.ejs--23587cee2522ccb891f58a95e3cab8 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--87c940c15830daa967b08e67e9b87e,.ejs--23587cee2522ccb891f58a95e3cab8 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--fbd499578ebef494fbcd1c9114cd1d,.ejs--23587cee2522ccb891f58a95e3cab8 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--d64fa2a822535d54379899a24f6e77,.ejs--23587cee2522cc') + ('b891f58a95e3cab8 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--b4c6d9bdbbd3dcfc8fa82689ecf448,.ejs--23587cee2522ccb891f58a95e3cab8 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--b7c456c7dd7a616a55965bb134323b,.ejs--23587cee2522ccb891f58a95e3cab8 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--10621f07d4508631aa3abcdb124a83,.ejs--23587cee2522ccb891f58a95e3cab8 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--e7e4800b31773c5d47b84c75cc6cf7,.ejs--25a102181c6e79af65fe086f151c4f .ejs--2440e3b831017ff8327c939e2a4413 .ejs--87c940c15830daa967b08e67e9b87e,.ejs--25a102181c6e79af65fe086f151c4f .ejs--2440e3b831017ff8327c939e2a4413 .ejs--fbd499578ebef494fbcd1c9114cd1d,.ejs--25a102181c6e79af65fe086f151c4f .ejs--2440e3b831017ff8327c939e2a4413 .ejs--d64fa2a822535d54379899a24f6e77,.ejs--25a102181c6e79af65fe086f151c4f .ejs--2440e3b831017ff8327c939e2a4413 .ejs--b4c6d9bdbbd3dcfc8fa82689ecf448,.ejs--25a102181c6e79af65fe086f151c4f .ejs--2440e3b831017ff8327c939e2a4413 .ejs--b7c456c7dd7a616a55965bb134323b,.ejs--25a102181c6e79a') + ('f65fe086f151c4f .ejs--2440e3b831017ff8327c939e2a4413 .ejs--10621f07d4508631aa3abcdb124a83,.ejs--25a102181c6e79af65fe086f151c4f .ejs--2440e3b831017ff8327c939e2a4413 .ejs--e7e4800b31773c5d47b84c75cc6cf7{display:none}.ejs--23587cee2522ccb891f58a95e3cab8 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--2592ce9b796695f4941e00f0972644,.ejs--23587cee2522ccb891f58a95e3cab8 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--b8e92dfa494924e1bde9486a0be217,.ejs--23587cee2522ccb891f58a95e3cab8 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--28a32587453e5bbcf95f746657f15f,.ejs--23587cee2522ccb891f58a95e3cab8 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--fad921b4fce16af564d7597e8de5f2,.ejs--23587cee2522ccb891f58a95e3cab8 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--6f79544eaf1d4b6e8a7609b506d988,.ejs--23587cee2522ccb891f58a95e3cab8 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--2afd974f6d46005a1e522dca4485e8,.ejs--23587cee2522ccb891f58a95e3cab8 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--7db312734c1e18065c434e8f96e893,.ejs--25a') + ('102181c6e79af65fe086f151c4f .ejs--2440e3b831017ff8327c939e2a4413 .ejs--2592ce9b796695f4941e00f0972644,.ejs--25a102181c6e79af65fe086f151c4f .ejs--2440e3b831017ff8327c939e2a4413 .ejs--b8e92dfa494924e1bde9486a0be217,.ejs--25a102181c6e79af65fe086f151c4f .ejs--2440e3b831017ff8327c939e2a4413 .ejs--28a32587453e5bbcf95f746657f15f,.ejs--25a102181c6e79af65fe086f151c4f .ejs--2440e3b831017ff8327c939e2a4413 .ejs--fad921b4fce16af564d7597e8de5f2,.ejs--25a102181c6e79af65fe086f151c4f .ejs--2440e3b831017ff8327c939e2a4413 .ejs--6f79544eaf1d4b6e8a7609b506d988,.ejs--25a102181c6e79af65fe086f151c4f .ejs--2440e3b831017ff8327c939e2a4413 .ejs--2afd974f6d46005a1e522dca4485e8,.ejs--25a102181c6e79af65fe086f151c4f .ejs--2440e3b831017ff8327c939e2a4413 .ejs--7db312734c1e18065c434e8f96e893{display:flex}.ejs--23587cee2522ccb891f58a95e3cab8 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--7db312734c1e18065c434e8f96e893,.ejs--25a102181c6e79af65fe086f151c4f .ejs--2440e3b831017ff8327c939e2a4413 .ejs--7db312734c1e18065c434e8f96e8') + ('93{width:100px;left:-50px}.ejs--cbcbce2bfd0aa13f6bebbbf8a0e974 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--87c940c15830daa967b08e67e9b87e,.ejs--cbcbce2bfd0aa13f6bebbbf8a0e974 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--fbd499578ebef494fbcd1c9114cd1d,.ejs--cbcbce2bfd0aa13f6bebbbf8a0e974 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--9c96e9c7f33171cf0fedfc85ca53fa,.ejs--cbcbce2bfd0aa13f6bebbbf8a0e974 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--c39b270a2774fd4bd3858e5f0892c0,.ejs--cbcbce2bfd0aa13f6bebbbf8a0e974 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--e7e4800b31773c5d47b84c75cc6cf7,.ejs--cbcbce2bfd0aa13f6bebbbf8a0e974 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--353cf6be7120854ae25fede87ce136{display:none}.ejs--cbcbce2bfd0aa13f6bebbbf8a0e974 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--b7c456c7dd7a616a55965bb134323b{top:80px;left:-80px}.ejs--cbcbce2bfd0aa13f6bebbbf8a0e974 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--b4c6d9bdbbd3dcfc8fa82689ecf448{top:20px;left:-80px}.ejs--cbcbce2bfd0aa13f6bebbbf8a0e') + ('974 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--1474a869d502ac0c04d535c96f9795{top:50px;left:85px;display:flex}.ejs--cbcbce2bfd0aa13f6bebbbf8a0e974 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--017bc19e138d2e63c92520db378e1d{top:50px;left:-20px;display:flex}.ejs--cbcbce2bfd0aa13f6bebbbf8a0e974 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--05e1505b655c8ef151de9ba2c47fb5{top:80px;left:30px;display:flex}.ejs--cbcbce2bfd0aa13f6bebbbf8a0e974 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--6febbc4be9f01b015178d52120d930{top:20px;left:30px;display:flex}.ejs--cbcbce2bfd0aa13f6bebbbf8a0e974 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--c83d70cb63c933edc073c7fe92e32b{display:flex;left:20px}.ejs--cbcbce2bfd0aa13f6bebbbf8a0e974 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--9c96e9c7f33171cf0fedfc85ca53fa{display:flex;top:-35px;left:85px}.ejs--cbcbce2bfd0aa13f6bebbbf8a0e974 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--c39b270a2774fd4bd3858e5f0892c0{display:flex;top:-35px;left:-25px}.ejs--cbcbce2bfd0aa13f6bebbbf8a0e974 ') + ('.ejs--2440e3b831017ff8327c939e2a4413 .ejs--353cf6be7120854ae25fede87ce136{display:flex;top:-35px;left:30px}.ejs--cbcbce2bfd0aa13f6bebbbf8a0e974 .ejs--914358605501b11476e86626b2ff16{bottom:150px}.ejs--c46c519e67f0f7ff83ba0b4d208683 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--7930ee9bb7ae2fa6e2f7b5568f1e98,.ejs--c46c519e67f0f7ff83ba0b4d208683 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--2226100d4c5408c2699e942aabb31c{display:flex}.ejs--c46c519e67f0f7ff83ba0b4d208683 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--c83d70cb63c933edc073c7fe92e32b{display:flex;left:20px}.ejs--c46c519e67f0f7ff83ba0b4d208683 .ejs--914358605501b11476e86626b2ff16{bottom:150px}.ejs--c46c519e67f0f7ff83ba0b4d208683 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--3a43805a8ec126ef388abd5ceb54b2{display:flex;top:-40px;left:30px}.ejs--c46c519e67f0f7ff83ba0b4d208683 .ejs--2440e3b831017ff8327c939e2a4413 .ejs--d40828f231043de3a0f9c0637091d1{display:flex;top:-40px;left:85px}.ejs--eefec939452eb92fad035932d0f47c{float:none}.ejs--f1f43b27') + ('384834c8c22c6f81d0c5ae{position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.6);display:flex;justify-content:center;align-items:center}.ejs--c4ee33766a01ed0356c3ec07898e96{background-color:rgba(0,0,0,0.8);border:1px solid rgba(238,238,238,0.2);padding:30px;min-width:200px;max-width:500px;max-height:100vh;border-radius:4px;overflow-y:auto;box-sizing:border-box}.ejs--a073f32023da1ced805c5f95a4e81c{display:flex;justify-content:space-between;align-items:center}.ejs--ed44f59bb8cd49177586b140658c6c{background-color:transparent;padding:0}.ejs--81470ba5e6a6d68014839ad4d9a977{margin-top:0 !important;margin-bottom:0 !important;font-weight:600 !important;font-size:1.25rem;line-height:1.25 !important;color:rgba(var(--ejs-primary-color), 1) !important}.ejs--c3c85789c2a7f56d8b26dba75b7e1f{background:transparent;border:0}.ejs--a073f32023da1ced805c5f95a4e81c .ejs--c3c85789c2a7f56d8b26dba75b7e1f:before{content:\x22\\2715\x22}.ejs--db44f5520e6f4fd0dd34b478bb9ee8{margin-top:0.5rem;margin-botto') + ('m:0.5rem;line-height:1.5;color:rgba(0,0,0,0.8);text-align:left}.ejs--db44f5520e6f4fd0dd34b478bb9ee8 input,.ejs--db44f5520e6f4fd0dd34b478bb9ee8 select{height:2rem;display:block}.ejs--db44f5520e6f4fd0dd34b478bb9ee8 input,.ejs--db44f5520e6f4fd0dd34b478bb9ee8 select,.ejs--db44f5520e6f4fd0dd34b478bb9ee8 textarea{font-size:1rem;padding:0.4rem;max-width:100%;color:#000 !important;background-color:#fff !important;margin:0}.ejs--319bcec5dee9444e1a2a53d6503b7c{color:#fff !important;font-size:.875rem;padding-left:1rem;padding-right:1rem;padding-top:.5rem;padding-bottom:.5rem;background-color:#929292;color:rgba(0,0,0,0.8);border-radius:.25rem;border-style:none;border-width:0;cursor:pointer;-webkit-appearance:button;text-transform:none;overflow:visible;line-height:1.15;margin:0;will-change:transform;-moz-osx-font-smoothing:grayscale;-webkit-backface-visibility:hidden;backface-visibility:hidden;-webkit-transform:translateZ(0);transform:translateZ(0);transition:-webkit-transform .25s ease-out;transit') + ('ion:transform .25s ease-out;transition:transform .25s ease-out,-webkit-transform .25s ease-out}.ejs--319bcec5dee9444e1a2a53d6503b7c:focus,.ejs--319bcec5dee9444e1a2a53d6503b7c:hover{-webkit-transform:scale(1.05);transform:scale(1.05)}.ejs--eaf3c1cba25d415d92ac48d7db34dd{background-color:rgba(var(--ejs-primary-color), 1)}.ejs--940087708c06b6129ce2bfa45f1d89{color:#f00 !important}@keyframes ejs--9d7aa2bd5ee276be085e5b2a0bbc2e{from{opacity:0}to{opacity:1}}@keyframes ejs--184b7558ffeb569c1790654537477b{from{opacity:1}to{opacity:0}}@keyframes ejs--8b069266f76099cc6bc220f6ea56cc{from{transform:translateY(15%)}to{transform:translateY(0)}}@keyframes ejs--379a464ad0e66ea5fc601e5f2fd73e{from{transform:translateY(0)}to{transform:translateY(-10%)}}.ejs--bef295f3125e9ba83d4f3677264bae{display:none}.ejs--bef295f3125e9ba83d4f3677264bae.ejs--60c17e0d149099f207b06f27edae6a{position:absolute;top:0;display:block;height:100%;width:100%}.ejs--bef295f3125e9ba83d4f3677264bae[aria-hidden=\x22false\x22] .ejs--f1f43b2') + ('7384834c8c22c6f81d0c5ae{animation:ejs--9d7aa2bd5ee276be085e5b2a0bbc2e 0.3s cubic-bezier(0, 0, 0.2, 1)}.ejs--bef295f3125e9ba83d4f3677264bae[aria-hidden=\x22false\x22] .ejs--c4ee33766a01ed0356c3ec07898e96{animation:ejs--8b069266f76099cc6bc220f6ea56cc 0.3s cubic-bezier(0, 0, 0.2, 1)}.ejs--bef295f3125e9ba83d4f3677264bae[aria-hidden=\x22true\x22] .ejs--f1f43b27384834c8c22c6f81d0c5ae{animation:ejs--184b7558ffeb569c1790654537477b 0.3s cubic-bezier(0, 0, 0.2, 1)}.ejs--bef295f3125e9ba83d4f3677264bae[aria-hidden=\x22true\x22] .ejs--c4ee33766a01ed0356c3ec07898e96{animation:ejs--379a464ad0e66ea5fc601e5f2fd73e 0.3s cubic-bezier(0, 0, 0.2, 1)}.ejs--bef295f3125e9ba83d4f3677264bae .ejs--c4ee33766a01ed0356c3ec07898e96,.ejs--bef295f3125e9ba83d4f3677264bae .ejs--f1f43b27384834c8c22c6f81d0c5ae{will-change:transform}.ejs--e686b5f4b8f94b017dce6aa34938a5{position:absolute;left:5px;bottom:45px;max-width:50%}.ejs--48741994500b16cfabc909661adbc0{margin-top:3px;padding:10px;background-color:rgba(16,16,16,0.9);color:#fff}.ejs--4c3') + ('e63d4005bd8a0468e9c74a35f62{padding-left:2.25rem;position:relative;padding:0.2em 0;clear:both}.ejs--4c3e63d4005bd8a0468e9c74a35f62:hover{background-color:rgba(0,0,0,0.8)}.ejs--4c3e63d4005bd8a0468e9c74a35f62 input[type=checkbox]{position:absolute;z-index:-1;opacity:0;box-sizing:border-box;width:auto}.ejs--4c3e63d4005bd8a0468e9c74a35f62 label{position:relative;margin-bottom:0;vertical-align:top;word-break:break-word;width:100%}.ejs--4c3e63d4005bd8a0468e9c74a35f62 label::before{position:absolute;top:.325rem;display:block;height:1rem;content:\x22\x22;background-color:#fff;border:#adb5bd solid 1px;left:-2.25rem;width:1.75rem;pointer-events:all;border-radius:.5rem}.ejs--4c3e63d4005bd8a0468e9c74a35f62 label::after{position:absolute;display:block;content:\x22\x22;background-repeat:no-repeat;background-position:center center;top:calc(.325rem + 2px);left:calc(-2.25rem + 2px);width:calc(1rem - 4px);height:calc(1rem - 4px);background-color:#adb5bd;border-radius:.5rem;transition:background-color .15s ease-in-o') + ('ut,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-transform .15s ease-in-out;transition:transform .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;transition:transform .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-transform .15s ease-in-out}.ejs--4c3e63d4005bd8a0468e9c74a35f62 input:checked+label::before{color:#fff;border-color:rgba(var(--ejs-primary-color), 1);background-color:rgba(var(--ejs-primary-color), 1)}.ejs--4c3e63d4005bd8a0468e9c74a35f62 input:checked+label::after{background-color:#fff;-webkit-transform:translateX(0.75rem);transform:translateX(0.75rem)}.ejs--90bcdd71cd0d2307e9ee0dffa916da{position:absolute;padding:0.1rem 0.5rem;background-color:rgba(var(--ejs-primary-color), 1);color:#fff !important;border-radius:0.25rem;cursor:pointer;right:.025rem;top:0}.ejs--7a5f920ceffb2913f6dbda780573cf:fullscreen{background:#000;border-rad') + ('ius:0 !important;height:100%;margin:0;width:100%}.ejs--7a5f920ceffb2913f6dbda780573cf:fullscreen canvas{height:100% !important;max-width:100%;min-width:0;width:auto}.ejs--7a5f920ceffb2913f6dbda780573cf:fullscreen .ejs--057800d021995e1347ec07cb748672{height:100%;width:100%}.ejs--7a5f920ceffb2913f6dbda780573cf:fullscreen .ejs--8732295ca5c4902a060d34706a8146 .ejs--2b3dd6e2e26c0f0dc4ac5779dedd5e{display:block}.ejs--7a5f920ceffb2913f6dbda780573cf:fullscreen .ejs--8732295ca5c4902a060d34706a8146 .ejs--2b3dd6e2e26c0f0dc4ac5779dedd5e+svg{display:none}.ejs--7a5f920ceffb2913f6dbda780573cf:-webkit-full-screen{background:#000;border-radius:0 !important;height:100%;margin:0;width:100%}.ejs--7a5f920ceffb2913f6dbda780573cf:-webkit-full-screen canvas{height:100% !important;max-width:100%;min-width:0;width:auto}.ejs--7a5f920ceffb2913f6dbda780573cf:-webkit-full-screen .ejs--057800d021995e1347ec07cb748672{height:100%;width:100%}.ejs--7a5f920ceffb2913f6dbda780573cf:-webkit-full-screen .ejs--8732295ca5c4902') + ('a060d34706a8146 .ejs--2b3dd6e2e26c0f0dc4ac5779dedd5e{display:block}.ejs--7a5f920ceffb2913f6dbda780573cf:-webkit-full-screen .ejs--8732295ca5c4902a060d34706a8146 .ejs--2b3dd6e2e26c0f0dc4ac5779dedd5e+svg{display:none}.ejs--7a5f920ceffb2913f6dbda780573cf:-moz-full-screen{background:#000;border-radius:0 !important;height:100%;margin:0;width:100%}.ejs--7a5f920ceffb2913f6dbda780573cf:-moz-full-screen canvas{height:100% !important;max-width:100%;min-width:0;width:auto}.ejs--7a5f920ceffb2913f6dbda780573cf:-moz-full-screen .ejs--057800d021995e1347ec07cb748672{height:100%;width:100%}.ejs--7a5f920ceffb2913f6dbda780573cf:-moz-full-screen .ejs--8732295ca5c4902a060d34706a8146 .ejs--2b3dd6e2e26c0f0dc4ac5779dedd5e{display:block}.ejs--7a5f920ceffb2913f6dbda780573cf:-moz-full-screen .ejs--8732295ca5c4902a060d34706a8146 .ejs--2b3dd6e2e26c0f0dc4ac5779dedd5e+svg{display:none}.ejs--7a5f920ceffb2913f6dbda780573cf:-ms-fullscreen{background:#000;border-radius:0 !important;height:100%;margin:0;width:100%}.ejs--') + ('7a5f920ceffb2913f6dbda780573cf:-ms-fullscreen canvas{height:100% !important;max-width:100%;min-width:0;width:auto}.ejs--7a5f920ceffb2913f6dbda780573cf:-ms-fullscreen .ejs--057800d021995e1347ec07cb748672{height:100%;width:100%}.ejs--7a5f920ceffb2913f6dbda780573cf:-ms-fullscreen .ejs--8732295ca5c4902a060d34706a8146 .ejs--2b3dd6e2e26c0f0dc4ac5779dedd5e{display:block}.ejs--7a5f920ceffb2913f6dbda780573cf:-ms-fullscreen .ejs--8732295ca5c4902a060d34706a8146 .ejs--2b3dd6e2e26c0f0dc4ac5779dedd5e+svg{display:none}.ejs--412041671de21945d3e028b6ae84c9{background:#000;border-radius:0 !important;height:100%;margin:0;width:100%;bottom:0;left:0;position:fixed;right:0;top:0;z-index:10000000}.ejs--412041671de21945d3e028b6ae84c9 canvas{height:100% !important;max-width:100%;min-width:0;width:auto}.ejs--412041671de21945d3e028b6ae84c9 .ejs--057800d021995e1347ec07cb748672{height:100%;width:100%}.ejs--412041671de21945d3e028b6ae84c9 .ejs--8732295ca5c4902a060d34706a8146 .ejs--2b3dd6e2e26c0f0dc4ac5779dedd5e{disp') + ('lay:block}.ejs--412041671de21945d3e028b6ae84c9 .ejs--8732295ca5c4902a060d34706a8146 .ejs--2b3dd6e2e26c0f0dc4ac5779dedd5e+svg{display:none}.ejs--7a5f920ceffb2913f6dbda780573cf.ejs--64f1256f556fb94454b930cb3ea7f2:fullscreen canvas{width:100%;height:auto !important}.ejs--7a5f920ceffb2913f6dbda780573cf.ejs--64f1256f556fb94454b930cb3ea7f2:-webkit-full-screen canvas{width:100%;height:auto !important}.ejs--7a5f920ceffb2913f6dbda780573cf.ejs--64f1256f556fb94454b930cb3ea7f2:-moz-full-screen{width:100%;height:auto !important}.ejs--7a5f920ceffb2913f6dbda780573cf.ejs--64f1256f556fb94454b930cb3ea7f2:-ms-fullscreen{width:100%;height:auto !important}.ejs--33643265135cf89e6c0a0d9866d6f1{transition:none !important}.ejs--6f0e996cd15e5fb6be0256918531d7{clip:rect(1px, 1px, 1px, 1px);overflow:hidden;border:0 !important;height:1px !important;padding:0 !important;position:absolute !important;width:1px !important}.ejs--7a5f920ceffb2913f6dbda780573cf [hidden]{display:none !important}\n'), '']), es_exports['locals'] = {
-        'ejs-wrapper': 'ejs--de6433374cb30211f10e148b320b2f',
-        'ejs': 'ejs--7a5f920ceffb2913f6dbda780573cf',
-        'ejs--full-ui': 'ejs--f3a002bba9836fe4ebfed357a45521',
-        'controls-tabs': 'ejs--008adea3c1ef33a8fc94892a1e97e6',
-        'gamepad': 'ejs--a891fe6f6e4cc43e11a6d8cf4a2dbb',
-        'gamepad-remapping-axis': 'ejs--0ddc742668e636837948f68cade3e2',
-        'gamepad-name': 'ejs--9af1c81949dbc3652bee73a340152c',
-        'overlay': 'ejs--85a95eb6bf74a40ab61b91a91e5bff',
-        'key-setting-popup': 'ejs--d169a219343bc32dd4aecc3f6b7f25',
-        'loading-info': 'ejs--782e3572812f983b3a150eec177391',
-        'p1': 'ejs--c426dd1d179aa351e6cec47e1d9438',
-        'p2': 'ejs--31e7e81db48819ee35ec6f50378a2e',
-        'p3': 'ejs--20d4eb2646d396f558a645dc0574f1',
-        'p4': 'ejs--4de05306c8b099bdeb4585571ac095',
-        'ejs__contextmenu': 'ejs--c7957d8666bb6b8fc7c3e9c021aaf8',
-        'ad-11': 'ejs--3a16fd9a56aec8059089709cbb16f4',
-        'close-ad': 'ejs--f3a1903d935f6cf720d4a0498db62a',
-        'start-game': 'ejs--73f9b4e94a7a1fe74e11107d5ab2ef',
-        'pulse': 'ejs--9bd947b3e6427453595f083d740a7c',
-        'ejs__control': 'ejs--8732295ca5c4902a060d34706a8146',
-        'ejs__tab-focus': 'ejs--a83b6c705e103e81a7762d0ed5e64b',
-        'ejs__control--pressed': 'ejs--b1238136ec472a92297159882cf4b8',
-        'icon--pressed': 'ejs--ec731619062226d943da67f5d83009',
-        'icon--not-pressed': 'ejs--dc7068585e3d84fe0e676864c1439e',
-        'label--pressed': 'ejs--0c6561f9155750b0aeeed6da5da7bf',
-        'label--not-pressed': 'ejs--13d64e30c1333cc99391af48ddabaa',
-        'ejs--video': 'ejs--d5f430a99a1619b3434bf58e34a99c',
-        'ejs__controls': 'ejs--1acedc5ed6816abe96dd27d910fd74',
-        'ejs__progress': 'ejs--f1aa376719b564cae0e653157cde14',
-        'ejs__time': 'ejs--90d2780f99bcc76fdb6b0378a7238e',
-        'ejs__menu': 'ejs--c7bfb2d1b75a40fdaaf90624bea9e7',
-        'ejs__volume': 'ejs--36ceeeec0df37a9cf4bbe05fa204ec',
-        'ejs__tooltip': 'ejs--74c6d4176d27e37a19d2e9e61de8f4',
-        'ejs__disk': 'ejs--e8274f91a3d68f381fcc9d51db9c72',
-        'ejs__hotkey': 'ejs--50ea0ce6747ecfa5147eba0d14e2ff',
-        'game-started': 'ejs--7da7949f602347007818e6d192eb23',
-        'ejs__controls_show': 'ejs--a03cf4c79123fcf49b2b6eb2ee856c',
-        'ejs--hide-controls': 'ejs--1b8cb7f2294b1eb5de5238daea3513',
-        'ejs--fullscreen-enabled': 'ejs--19409fe2057ab935a7e46abb5b4f49',
-        'ejs__menu__container': 'ejs--013213afedeeb6878089b1ca1b4e47',
-        'ejs-popup': 'ejs--c2532bfe04554193cc42b3be753700',
-        'ejs__control--forward': 'ejs--0b4cdb4057d1a4623e60836ccc6275',
-        'ejs__control--back': 'ejs--a7ad9de0cb0ca672b6703c50de7db9',
-        'ejs__menu__value': 'ejs--f91e90fe7cabc875aff9a431bf5389',
-        'ejs__menu_right': 'ejs--3464f4dc60866db801859648ec92cb',
-        'ejs__disk__container': 'ejs--93b777c74e38cef84eb9ed727c473b',
-        'ejs__disk__index': 'ejs--65d5006322417d2267bc2d4fa5fecc',
-        'active': 'ejs--68d337c212ec6a5bc43125440d422b',
-        'ejs__tooltip--visible': 'ejs--6ea27aa07e60d1d6e4c9782740028a',
-        'ejs--menu-open': 'ejs--da54136ccf8c6b0b16d98e8b8e8b88',
-        'ejs__video-wrapper': 'ejs--057800d021995e1347ec07cb748672',
-        'portrait': 'ejs--64f1256f556fb94454b930cb3ea7f2',
-        'ejs__progress__buffer': 'ejs--f8d706413436fd119cf01aaf5a9d9d',
-        'ejs--audio': 'ejs--bd0222e58d71b0a304d6037dfcffd5',
-        'ejs--loading': 'ejs--2521e1257996f264de36e77cc9c5ee',
-        'ejs__dialogs': 'ejs--d31688f864f56d6426ebbf2217d6ee',
-        'ejs__dialog': 'ejs--5e71fd80268afbb1d588e40b993508',
-        'ejs__focus_notice__container': 'ejs--8005476e024127364d230c0f4c72e1',
-        'ejs__cheat__container': 'ejs--8abe1d2bc8d34697952f4ae16785a5',
-        'ejs__cache__container': 'ejs--1e0f0672f67d0e96592314c9ed78b0',
-        'ejs__loading__container': 'ejs--d7e6a6a8f38bfaa256fe5d709a8258',
-        'ejs__load-state__container': 'ejs--b183f581b5336c4908ad258d3e1cc7',
-        'ejs__netplay__container': 'ejs--158ea9dd34e3e7af2d837f8b05babb',
-        'ejs__gamepad__container': 'ejs--3f0897a8158ba363a0ee0afe4da7c5',
-        'dialog-container': 'ejs--38cc09882a55e98c76168dbe838aa0',
-        'dialog-title': 'ejs--b373c9d5029d49324fb8ac3ece96c1',
-        'dialog-content': 'ejs--a5e2629abb9a5bcbc8b2c1307922d2',
-        'dialog-buttons': 'ejs--580e3c22e63f8a1eb29694fd0b141b',
-        'btn-cancel': 'ejs--ad20569e1449d7b8e99e6465960456',
-        'tabs': 'ejs--8e7922427f460a31935084b7acfb1a',
-        'tabs-content': 'ejs--31eb28817642bb1bfe0a2c422108bb',
-        'tabs-panel': 'ejs--f932566a0af5314da834324c901978',
-        'button-container': 'ejs--c233fb69cbef43078bc39e9d1efac8',
-        'btn-submit': 'ejs--bdb54e9fc47f9805b506b746e897bf',
-        'btn-create-room': 'ejs--67d03ee7480b871ad6507d6319a839',
-        'btn-quit': 'ejs--c2d931157456c1d438d40a2f66af2c',
-        'set': 'ejs--6604c83041a275a78837c452a71dd8',
-        'btn-join-room': 'ejs--99150e15f962c63c689cadc81ef40d',
-        'netplay-player-name': 'ejs--71527b6509aa48afce3ce1a11c02f0',
-        'netplay-player-name-input': 'ejs--7ad35768e3f6b9faf97db01d5b60ae',
-        'netplay-player-name-set': 'ejs--9c403e5e107a3e4374ba244b636400',
-        'netplay-roomlist': 'ejs--d6a46533fa6e510a571af5c28b440a',
-        'netplay-create-room': 'ejs--57ca9b3853cc7de731483cfcc95a59',
-        'netplay-room-name-input': 'ejs--0885d5e25e19127b6b516014426a1b',
-        'netplay-room-password-input': 'ejs--25023d28756fdb9dfbbfb6dccb8677',
-        'netplay-create-room-set': 'ejs--75b3a8d35aacc6424ed7422fdeaaaa',
-        'netplay-room': 'ejs--eefdf28d69ed2d20f197308981bb61',
-        'cheats-add': 'ejs--9e670880bb57e824400fa00f09aaad',
-        'cheats-list': 'ejs--2b4e3c245b7b25dfdac5e09155a68e',
-        'cheat-code-input': 'ejs--572b0b3a0345a6b01b01a15a02842c',
-        'cheat-name-input': 'ejs--a7d7f80c8999469c991ea452a85dd9',
-        'ejs__widgets': 'ejs--952c974392296e7f643d51db380157',
-        'ejs__widget': 'ejs--0d7e216cf12ae73705b5d5bb0452fc',
-        'ejs__widget_netplay': 'ejs--c0a5e71f6613caab66d6ae15a5a00f',
-        'with-chat-box': 'ejs--04f0471d5de3dffea09ac3d539d0bc',
-        'chat-box': 'ejs--f817e633c82da74c3f82a1007e9aa8',
-        'netplay-players': 'ejs--0b77f56df0c6023120dd9ffaa37dcd',
-        'chat-toggle': 'ejs--4f88570c8af219fec07219dbd9dbbe',
-        'chat-count': 'ejs--3ee5963a7747179cf98ce8ce095a5f',
-        'chat-messages': 'ejs--258ae7dfee4b10b7568161e6a48636',
-        'chat-input': 'ejs--0e8443aac737c78260c3c5e0370276',
-        'ejs__widget_controls_toggle': 'ejs--666d4296310579687cf3cf3d2cf951',
-        'ejs__widget_load_srm': 'ejs--a8753b9c4fe32d12bb6605d4a20ef2',
-        'ejs__widget_save_srm': 'ejs--e7e06622e3c04957c2ebb05c5adec0',
-        'ejs-virtual-gamepad': 'ejs--ca9ea317b9bd20abfc8c0463ac5bbe',
-        'virtual-gamepad': 'ejs--2440e3b831017ff8327c939e2a4413',
-        'top': 'ejs--b8d8b771d0bbb94e2bbd03054f53fd',
-        'left': 'ejs--c83d70cb63c933edc073c7fe92e32b',
-        'buttons': 'ejs--6e7015634623fd6a82e6a7d3488c84',
-        'center': 'ejs--49fa47c86a131e4ca8fb268bfdde89',
-        'right': 'ejs--7d2b19f77fd0ccabf94dc1ca39ae18',
-        'touch': 'ejs--d708d9d486f1eca73a593d5c09f8ad',
-        'b_select': 'ejs--e7e4800b31773c5d47b84c75cc6cf7',
-        'b_start': 'ejs--76fa7567879f97f5991c50ac600735',
-        'b_1': 'ejs--2592ce9b796695f4941e00f0972644',
-        'b_2': 'ejs--b8e92dfa494924e1bde9486a0be217',
-        'b_3': 'ejs--28a32587453e5bbcf95f746657f15f',
-        'b_4': 'ejs--fad921b4fce16af564d7597e8de5f2',
-        'b_5': 'ejs--6f79544eaf1d4b6e8a7609b506d988',
-        'b_6': 'ejs--2afd974f6d46005a1e522dca4485e8',
-        'b_z': 'ejs--d64fa2a822535d54379899a24f6e77',
-        'b_c': 'ejs--10621f07d4508631aa3abcdb124a83',
-        'b_l': 'ejs--7930ee9bb7ae2fa6e2f7b5568f1e98',
-        'b_r': 'ejs--2226100d4c5408c2699e942aabb31c',
-        'b_l2': 'ejs--3a43805a8ec126ef388abd5ceb54b2',
-        'b_r2': 'ejs--d40828f231043de3a0f9c0637091d1',
-        'b_insert_coin': 'ejs--7db312734c1e18065c434e8f96e893',
-        'b_a': 'ejs--b4c6d9bdbbd3dcfc8fa82689ecf448',
-        'b_b': 'ejs--b7c456c7dd7a616a55965bb134323b',
-        'b_x': 'ejs--87c940c15830daa967b08e67e9b87e',
-        'b_y': 'ejs--fbd499578ebef494fbcd1c9114cd1d',
-        'b_c1': 'ejs--6febbc4be9f01b015178d52120d930',
-        'b_c2': 'ejs--05e1505b655c8ef151de9ba2c47fb5',
-        'b_c3': 'ejs--017bc19e138d2e63c92520db378e1d',
-        'b_c4': 'ejs--1474a869d502ac0c04d535c96f9795',
-        'b_z_t': 'ejs--9c96e9c7f33171cf0fedfc85ca53fa',
-        'b_l_t': 'ejs--c39b270a2774fd4bd3858e5f0892c0',
-        'b_r_t': 'ejs--353cf6be7120854ae25fede87ce136',
-        'dpad-container': 'ejs--914358605501b11476e86626b2ff16',
-        'dpad-bg': 'ejs--be66239219d594001da38f91c9ad02',
-        'dpad-front': 'ejs--9dbb9be3403878e912527181e2d41b',
-        'dpad-1': 'ejs--f9c7797bdf05569bdc13b4f2074270',
-        'dpad-2': 'ejs--2645f3bad105488a313c5e30dab74f',
-        'dpad-1-bg': 'ejs--a57cf324c8ff108947112e35e589b5',
-        'dpad-2-bg': 'ejs--4873d94c18140ab195da609b40b71a',
-        'dpad-left': 'ejs--bd9311b0a4f654af6ab5ba28bcf358',
-        'dpad-right': 'ejs--704d45ea060cc6809451a0d9d47ad7',
-        'dpad-up': 'ejs--f0b89ca5b5621659af184c8e012ccb',
-        'dpad-down': 'ejs--8de361d6b01eaa181f8db4ac3eb7af',
-        'ejs-virtual-gamepad-style-1': 'ejs--d534874cabeb9d2a907a812e5b8cd0',
-        'ejs-virtual-gamepad-style-2': 'ejs--3e7ce32418477db21b1c6caed189d9',
-        'ejs-virtual-gamepad-style-3': 'ejs--9213ba9ca7bc508e87ca7a2cefa397',
-        'ejs-virtual-gamepad-style-4': 'ejs--cbac8c123fcc678ad946a27592156c',
-        'ejs-virtual-gamepad-style-5': 'ejs--b4b0898f13bf4668a6e0077f43964a',
-        'ejs-virtual-gamepad-style-6': 'ejs--49834279a72803b358c2a283342698',
-        'ejs-virtual-gamepad-style-10': 'ejs--23587cee2522ccb891f58a95e3cab8',
-        'ejs-virtual-gamepad-style-7': 'ejs--25a102181c6e79af65fe086f151c4f',
-        'ejs-virtual-gamepad-style-8': 'ejs--cbcbce2bfd0aa13f6bebbbf8a0e974',
-        'ejs-virtual-gamepad-style-9': 'ejs--c46c519e67f0f7ff83ba0b4d208683',
-        'modal': 'ejs--eefec939452eb92fad035932d0f47c',
-        'modal__overlay': 'ejs--f1f43b27384834c8c22c6f81d0c5ae',
-        'modal__container': 'ejs--c4ee33766a01ed0356c3ec07898e96',
-        'modal__header': 'ejs--a073f32023da1ced805c5f95a4e81c',
-        'modal__footer': 'ejs--ed44f59bb8cd49177586b140658c6c',
-        'modal__title': 'ejs--81470ba5e6a6d68014839ad4d9a977',
-        'modal__close': 'ejs--c3c85789c2a7f56d8b26dba75b7e1f',
-        'modal__content': 'ejs--db44f5520e6f4fd0dd34b478bb9ee8',
-        'modal__btn': 'ejs--319bcec5dee9444e1a2a53d6503b7c',
-        'modal__btn-primary': 'ejs--eaf3c1cba25d415d92ac48d7db34dd',
-        'modal__errmsg': 'ejs--940087708c06b6129ce2bfa45f1d89',
-        'micromodal-slide': 'ejs--bef295f3125e9ba83d4f3677264bae',
-        'is-open': 'ejs--60c17e0d149099f207b06f27edae6a',
-        'mmfadeIn': 'ejs--9d7aa2bd5ee276be085e5b2a0bbc2e',
-        'mmslideIn': 'ejs--8b069266f76099cc6bc220f6ea56cc',
-        'mmfadeOut': 'ejs--184b7558ffeb569c1790654537477b',
-        'mmslideOut': 'ejs--379a464ad0e66ea5fc601e5f2fd73e',
-        'ejs-toast': 'ejs--e686b5f4b8f94b017dce6aa34938a5',
-        'ejs-toast-item': 'ejs--48741994500b16cfabc909661adbc0',
-        'ejs-switch': 'ejs--4c3e63d4005bd8a0468e9c74a35f62',
-        'ejs-delete-cheat': 'ejs--90bcdd71cd0d2307e9ee0dffa916da',
-        'icon--exit-fullscreen': 'ejs--2b3dd6e2e26c0f0dc4ac5779dedd5e',
-        'ejs--fullscreen-fallback': 'ejs--412041671de21945d3e028b6ae84c9',
-        'ejs--no-transition': 'ejs--33643265135cf89e6c0a0d9866d6f1',
-        'ejs__sr-only': 'ejs--6f0e996cd15e5fb6be0256918531d7',
-        'ejs-fade-in': 'ejs--7cadf43f3d9eb17c7e3c36de84973b'
-    };
+        console.log(es_module,0x143);
+        (es_exports = es_module['exports'] = es_require(0x143)(!0x1)).push([es_module['i'],'','']);
+        es_exports['locals'] = {
+            'ejs-wrapper': 'ejs--de6433374cb30211f10e148b320b2f',
+            'ejs': 'ejs--7a5f920ceffb2913f6dbda780573cf',
+            'ejs--full-ui': 'ejs--f3a002bba9836fe4ebfed357a45521',
+            'controls-tabs': 'ejs--008adea3c1ef33a8fc94892a1e97e6',
+            'gamepad': 'ejs--a891fe6f6e4cc43e11a6d8cf4a2dbb',
+            'gamepad-remapping-axis': 'ejs--0ddc742668e636837948f68cade3e2',
+            'gamepad-name': 'ejs--9af1c81949dbc3652bee73a340152c',
+            'overlay': 'ejs--85a95eb6bf74a40ab61b91a91e5bff',
+            'key-setting-popup': 'ejs--d169a219343bc32dd4aecc3f6b7f25',
+            'loading-info': 'ejs--782e3572812f983b3a150eec177391',
+            'p1': 'ejs--c426dd1d179aa351e6cec47e1d9438',
+            'p2': 'ejs--31e7e81db48819ee35ec6f50378a2e',
+            'p3': 'ejs--20d4eb2646d396f558a645dc0574f1',
+            'p4': 'ejs--4de05306c8b099bdeb4585571ac095',
+            'ejs__contextmenu': 'ejs--c7957d8666bb6b8fc7c3e9c021aaf8',
+            'ad-11': 'ejs--3a16fd9a56aec8059089709cbb16f4',
+            'close-ad': 'ejs--f3a1903d935f6cf720d4a0498db62a',
+            'start-game': 'ejs--73f9b4e94a7a1fe74e11107d5ab2ef',
+            'pulse': 'ejs--9bd947b3e6427453595f083d740a7c',
+            'ejs__control': 'ejs--8732295ca5c4902a060d34706a8146',
+            'ejs__tab-focus': 'ejs--a83b6c705e103e81a7762d0ed5e64b',
+            'ejs__control--pressed': 'ejs--b1238136ec472a92297159882cf4b8',
+            'icon--pressed': 'ejs--ec731619062226d943da67f5d83009',
+            'icon--not-pressed': 'ejs--dc7068585e3d84fe0e676864c1439e',
+            'label--pressed': 'ejs--0c6561f9155750b0aeeed6da5da7bf',
+            'label--not-pressed': 'ejs--13d64e30c1333cc99391af48ddabaa',
+            'ejs--video': 'ejs--d5f430a99a1619b3434bf58e34a99c',
+            'ejs__controls': 'ejs--1acedc5ed6816abe96dd27d910fd74',
+            'ejs__progress': 'ejs--f1aa376719b564cae0e653157cde14',
+            'ejs__time': 'ejs--90d2780f99bcc76fdb6b0378a7238e',
+            'ejs__menu': 'ejs--c7bfb2d1b75a40fdaaf90624bea9e7',
+            'ejs__volume': 'ejs--36ceeeec0df37a9cf4bbe05fa204ec',
+            'ejs__tooltip': 'ejs--74c6d4176d27e37a19d2e9e61de8f4',
+            'ejs__disk': 'ejs--e8274f91a3d68f381fcc9d51db9c72',
+            'ejs__hotkey': 'ejs--50ea0ce6747ecfa5147eba0d14e2ff',
+            'game-started': 'ejs--7da7949f602347007818e6d192eb23',
+            'ejs__controls_show': 'ejs--a03cf4c79123fcf49b2b6eb2ee856c',
+            'ejs--hide-controls': 'ejs--1b8cb7f2294b1eb5de5238daea3513',
+            'ejs--fullscreen-enabled': 'ejs--19409fe2057ab935a7e46abb5b4f49',
+            'ejs__menu__container': 'ejs--013213afedeeb6878089b1ca1b4e47',
+            'ejs-popup': 'ejs--c2532bfe04554193cc42b3be753700',
+            'ejs__control--forward': 'ejs--0b4cdb4057d1a4623e60836ccc6275',
+            'ejs__control--back': 'ejs--a7ad9de0cb0ca672b6703c50de7db9',
+            'ejs__menu__value': 'ejs--f91e90fe7cabc875aff9a431bf5389',
+            'ejs__menu_right': 'ejs--3464f4dc60866db801859648ec92cb',
+            'ejs__disk__container': 'ejs--93b777c74e38cef84eb9ed727c473b',
+            'ejs__disk__index': 'ejs--65d5006322417d2267bc2d4fa5fecc',
+            'active': 'ejs--68d337c212ec6a5bc43125440d422b',
+            'ejs__tooltip--visible': 'ejs--6ea27aa07e60d1d6e4c9782740028a',
+            'ejs--menu-open': 'ejs--da54136ccf8c6b0b16d98e8b8e8b88',
+            'ejs__video-wrapper': 'ejs--057800d021995e1347ec07cb748672',
+            'portrait': 'ejs--64f1256f556fb94454b930cb3ea7f2',
+            'ejs__progress__buffer': 'ejs--f8d706413436fd119cf01aaf5a9d9d',
+            'ejs--audio': 'ejs--bd0222e58d71b0a304d6037dfcffd5',
+            'ejs--loading': 'ejs--2521e1257996f264de36e77cc9c5ee',
+            'ejs__dialogs': 'ejs--d31688f864f56d6426ebbf2217d6ee',
+            'ejs__dialog': 'ejs--5e71fd80268afbb1d588e40b993508',
+            'ejs__focus_notice__container': 'ejs--8005476e024127364d230c0f4c72e1',
+            'ejs__cheat__container': 'ejs--8abe1d2bc8d34697952f4ae16785a5',
+            'ejs__cache__container': 'ejs--1e0f0672f67d0e96592314c9ed78b0',
+            'ejs__loading__container': 'ejs--d7e6a6a8f38bfaa256fe5d709a8258',
+            'ejs__load-state__container': 'ejs--b183f581b5336c4908ad258d3e1cc7',
+            'ejs__netplay__container': 'ejs--158ea9dd34e3e7af2d837f8b05babb',
+            'ejs__gamepad__container': 'ejs--3f0897a8158ba363a0ee0afe4da7c5',
+            'dialog-container': 'ejs--38cc09882a55e98c76168dbe838aa0',
+            'dialog-title': 'ejs--b373c9d5029d49324fb8ac3ece96c1',
+            'dialog-content': 'ejs--a5e2629abb9a5bcbc8b2c1307922d2',
+            'dialog-buttons': 'ejs--580e3c22e63f8a1eb29694fd0b141b',
+            'btn-cancel': 'ejs--ad20569e1449d7b8e99e6465960456',
+            'tabs': 'ejs--8e7922427f460a31935084b7acfb1a',
+            'tabs-content': 'ejs--31eb28817642bb1bfe0a2c422108bb',
+            'tabs-panel': 'ejs--f932566a0af5314da834324c901978',
+            'button-container': 'ejs--c233fb69cbef43078bc39e9d1efac8',
+            'btn-submit': 'ejs--bdb54e9fc47f9805b506b746e897bf',
+            'btn-create-room': 'ejs--67d03ee7480b871ad6507d6319a839',
+            'btn-quit': 'ejs--c2d931157456c1d438d40a2f66af2c',
+            'set': 'ejs--6604c83041a275a78837c452a71dd8',
+            'btn-join-room': 'ejs--99150e15f962c63c689cadc81ef40d',
+            'netplay-player-name': 'ejs--71527b6509aa48afce3ce1a11c02f0',
+            'netplay-player-name-input': 'ejs--7ad35768e3f6b9faf97db01d5b60ae',
+            'netplay-player-name-set': 'ejs--9c403e5e107a3e4374ba244b636400',
+            'netplay-roomlist': 'ejs--d6a46533fa6e510a571af5c28b440a',
+            'netplay-create-room': 'ejs--57ca9b3853cc7de731483cfcc95a59',
+            'netplay-room-name-input': 'ejs--0885d5e25e19127b6b516014426a1b',
+            'netplay-room-password-input': 'ejs--25023d28756fdb9dfbbfb6dccb8677',
+            'netplay-create-room-set': 'ejs--75b3a8d35aacc6424ed7422fdeaaaa',
+            'netplay-room': 'ejs--eefdf28d69ed2d20f197308981bb61',
+            'cheats-add': 'ejs--9e670880bb57e824400fa00f09aaad',
+            'cheats-list': 'ejs--2b4e3c245b7b25dfdac5e09155a68e',
+            'cheat-code-input': 'ejs--572b0b3a0345a6b01b01a15a02842c',
+            'cheat-name-input': 'ejs--a7d7f80c8999469c991ea452a85dd9',
+            'ejs__widgets': 'ejs--952c974392296e7f643d51db380157',
+            'ejs__widget': 'ejs--0d7e216cf12ae73705b5d5bb0452fc',
+            'ejs__widget_netplay': 'ejs--c0a5e71f6613caab66d6ae15a5a00f',
+            'with-chat-box': 'ejs--04f0471d5de3dffea09ac3d539d0bc',
+            'chat-box': 'ejs--f817e633c82da74c3f82a1007e9aa8',
+            'netplay-players': 'ejs--0b77f56df0c6023120dd9ffaa37dcd',
+            'chat-toggle': 'ejs--4f88570c8af219fec07219dbd9dbbe',
+            'chat-count': 'ejs--3ee5963a7747179cf98ce8ce095a5f',
+            'chat-messages': 'ejs--258ae7dfee4b10b7568161e6a48636',
+            'chat-input': 'ejs--0e8443aac737c78260c3c5e0370276',
+            'ejs__widget_controls_toggle': 'ejs--666d4296310579687cf3cf3d2cf951',
+            'ejs__widget_load_srm': 'ejs--a8753b9c4fe32d12bb6605d4a20ef2',
+            'ejs__widget_save_srm': 'ejs--e7e06622e3c04957c2ebb05c5adec0',
+            'ejs-virtual-gamepad': 'ejs--ca9ea317b9bd20abfc8c0463ac5bbe',
+            'virtual-gamepad': 'ejs--2440e3b831017ff8327c939e2a4413',
+            'top': 'ejs--b8d8b771d0bbb94e2bbd03054f53fd',
+            'left': 'ejs--c83d70cb63c933edc073c7fe92e32b',
+            'buttons': 'ejs--6e7015634623fd6a82e6a7d3488c84',
+            'center': 'ejs--49fa47c86a131e4ca8fb268bfdde89',
+            'right': 'ejs--7d2b19f77fd0ccabf94dc1ca39ae18',
+            'touch': 'ejs--d708d9d486f1eca73a593d5c09f8ad',
+            'b_select': 'ejs--e7e4800b31773c5d47b84c75cc6cf7',
+            'b_start': 'ejs--76fa7567879f97f5991c50ac600735',
+            'b_1': 'ejs--2592ce9b796695f4941e00f0972644',
+            'b_2': 'ejs--b8e92dfa494924e1bde9486a0be217',
+            'b_3': 'ejs--28a32587453e5bbcf95f746657f15f',
+            'b_4': 'ejs--fad921b4fce16af564d7597e8de5f2',
+            'b_5': 'ejs--6f79544eaf1d4b6e8a7609b506d988',
+            'b_6': 'ejs--2afd974f6d46005a1e522dca4485e8',
+            'b_z': 'ejs--d64fa2a822535d54379899a24f6e77',
+            'b_c': 'ejs--10621f07d4508631aa3abcdb124a83',
+            'b_l': 'ejs--7930ee9bb7ae2fa6e2f7b5568f1e98',
+            'b_r': 'ejs--2226100d4c5408c2699e942aabb31c',
+            'b_l2': 'ejs--3a43805a8ec126ef388abd5ceb54b2',
+            'b_r2': 'ejs--d40828f231043de3a0f9c0637091d1',
+            'b_insert_coin': 'ejs--7db312734c1e18065c434e8f96e893',
+            'b_a': 'ejs--b4c6d9bdbbd3dcfc8fa82689ecf448',
+            'b_b': 'ejs--b7c456c7dd7a616a55965bb134323b',
+            'b_x': 'ejs--87c940c15830daa967b08e67e9b87e',
+            'b_y': 'ejs--fbd499578ebef494fbcd1c9114cd1d',
+            'b_c1': 'ejs--6febbc4be9f01b015178d52120d930',
+            'b_c2': 'ejs--05e1505b655c8ef151de9ba2c47fb5',
+            'b_c3': 'ejs--017bc19e138d2e63c92520db378e1d',
+            'b_c4': 'ejs--1474a869d502ac0c04d535c96f9795',
+            'b_z_t': 'ejs--9c96e9c7f33171cf0fedfc85ca53fa',
+            'b_l_t': 'ejs--c39b270a2774fd4bd3858e5f0892c0',
+            'b_r_t': 'ejs--353cf6be7120854ae25fede87ce136',
+            'dpad-container': 'ejs--914358605501b11476e86626b2ff16',
+            'dpad-bg': 'ejs--be66239219d594001da38f91c9ad02',
+            'dpad-front': 'ejs--9dbb9be3403878e912527181e2d41b',
+            'dpad-1': 'ejs--f9c7797bdf05569bdc13b4f2074270',
+            'dpad-2': 'ejs--2645f3bad105488a313c5e30dab74f',
+            'dpad-1-bg': 'ejs--a57cf324c8ff108947112e35e589b5',
+            'dpad-2-bg': 'ejs--4873d94c18140ab195da609b40b71a',
+            'dpad-left': 'ejs--bd9311b0a4f654af6ab5ba28bcf358',
+            'dpad-right': 'ejs--704d45ea060cc6809451a0d9d47ad7',
+            'dpad-up': 'ejs--f0b89ca5b5621659af184c8e012ccb',
+            'dpad-down': 'ejs--8de361d6b01eaa181f8db4ac3eb7af',
+            'ejs-virtual-gamepad-style-1': 'ejs--d534874cabeb9d2a907a812e5b8cd0',
+            'ejs-virtual-gamepad-style-2': 'ejs--3e7ce32418477db21b1c6caed189d9',
+            'ejs-virtual-gamepad-style-3': 'ejs--9213ba9ca7bc508e87ca7a2cefa397',
+            'ejs-virtual-gamepad-style-4': 'ejs--cbac8c123fcc678ad946a27592156c',
+            'ejs-virtual-gamepad-style-5': 'ejs--b4b0898f13bf4668a6e0077f43964a',
+            'ejs-virtual-gamepad-style-6': 'ejs--49834279a72803b358c2a283342698',
+            'ejs-virtual-gamepad-style-10': 'ejs--23587cee2522ccb891f58a95e3cab8',
+            'ejs-virtual-gamepad-style-7': 'ejs--25a102181c6e79af65fe086f151c4f',
+            'ejs-virtual-gamepad-style-8': 'ejs--cbcbce2bfd0aa13f6bebbbf8a0e974',
+            'ejs-virtual-gamepad-style-9': 'ejs--c46c519e67f0f7ff83ba0b4d208683',
+            'modal': 'ejs--eefec939452eb92fad035932d0f47c',
+            'modal__overlay': 'ejs--f1f43b27384834c8c22c6f81d0c5ae',
+            'modal__container': 'ejs--c4ee33766a01ed0356c3ec07898e96',
+            'modal__header': 'ejs--a073f32023da1ced805c5f95a4e81c',
+            'modal__footer': 'ejs--ed44f59bb8cd49177586b140658c6c',
+            'modal__title': 'ejs--81470ba5e6a6d68014839ad4d9a977',
+            'modal__close': 'ejs--c3c85789c2a7f56d8b26dba75b7e1f',
+            'modal__content': 'ejs--db44f5520e6f4fd0dd34b478bb9ee8',
+            'modal__btn': 'ejs--319bcec5dee9444e1a2a53d6503b7c',
+            'modal__btn-primary': 'ejs--eaf3c1cba25d415d92ac48d7db34dd',
+            'modal__errmsg': 'ejs--940087708c06b6129ce2bfa45f1d89',
+            'micromodal-slide': 'ejs--bef295f3125e9ba83d4f3677264bae',
+            'is-open': 'ejs--60c17e0d149099f207b06f27edae6a',
+            'mmfadeIn': 'ejs--9d7aa2bd5ee276be085e5b2a0bbc2e',
+            'mmslideIn': 'ejs--8b069266f76099cc6bc220f6ea56cc',
+            'mmfadeOut': 'ejs--184b7558ffeb569c1790654537477b',
+            'mmslideOut': 'ejs--379a464ad0e66ea5fc601e5f2fd73e',
+            'ejs-toast': 'ejs--e686b5f4b8f94b017dce6aa34938a5',
+            'ejs-toast-item': 'ejs--48741994500b16cfabc909661adbc0',
+            'ejs-switch': 'ejs--4c3e63d4005bd8a0468e9c74a35f62',
+            'ejs-delete-cheat': 'ejs--90bcdd71cd0d2307e9ee0dffa916da',
+            'icon--exit-fullscreen': 'ejs--2b3dd6e2e26c0f0dc4ac5779dedd5e',
+            'ejs--fullscreen-fallback': 'ejs--412041671de21945d3e028b6ae84c9',
+            'ejs--no-transition': 'ejs--33643265135cf89e6c0a0d9866d6f1',
+            'ejs__sr-only': 'ejs--6f0e996cd15e5fb6be0256918531d7',
+            'ejs-fade-in': 'ejs--7cadf43f3d9eb17c7e3c36de84973b'
+        };
 }, function (es_module, es_exports) {
 
     es_module['exports'] = function (_0x11498a) {
@@ -9248,7 +9249,7 @@ var EJS = function (modules) {
                 I
             }, 1);
             D.speed = T.speed;
-            D.runaction = T.runaction;
+            D.callaction = T.callaction;
         }
         action = {};
         DB = {};
@@ -9289,7 +9290,7 @@ var EJS = function (modules) {
             let node = M.MEMFS.createNode(len < 3 ? M.FS.root : null, len < 3 ? mount.mountpoint.split('/').pop() : mount.mountpoint.replace(/^\//, ''), 16384 | 511, 0);
             if (M.getStore(mount)) {
                 if (!M.__mount) M.__mount = [];
-                M.__mount.push(M.syncfs(mount, txt => M.runaction('DiskReadyOut', [txt])));
+                M.__mount.push(M.syncfs(mount, txt => M.callaction('DiskReadyOut', txt)));
             }
             return node;
         }
@@ -9366,7 +9367,7 @@ var EJS = function (modules) {
                 }
                 return msg + path;
             })));
-            M.runaction('indexdb-sync', [IsReady, result]);
+            M.callaction('indexdb-sync', IsReady, result);
             return result.join("\n");
         }
         loadLocalEntry(path) {
@@ -9574,7 +9575,6 @@ var EJS = function (modules) {
                 let Timer = setInterval(() => {
                     if (M.updateTime && Timer != M.updateTime) {
                         clearInterval(Timer);
-                        console.log(stream);
                         reject('other update');
                     }
                     if (stream.fd == null || M.FS.streams[stream.fd] == null) {
@@ -9608,6 +9608,7 @@ var EJS = function (modules) {
             if (this.FS.analyzePath(file).exists) return this.FS.readFile(file);
         }
         MKFILE(path, data, bool) {
+            if(!this.Module) return;
             let FS = this.FS,
                 dir = path.split('/');
             if (dir.length) dir = dir.slice(0, -1).join('/');
@@ -11702,7 +11703,15 @@ var EJS = function (modules) {
                         },
                         _0x2fb1d8 = function () {
 
-                            ejs_Controller['hideLoading']['call'](_0x14c3c2), ejs_Controller['connected'] = !0x0, ['n64', 'mupen64plus', 'mupen64plus2', 'mupen64plus-nx']['includes'](_0x14c3c2['system']) || ejs_loader['Module']['_fast_forward_2'], toggleHidden(_0x14c3c2['elements']['buttons']['loadState'], !0x0), toggleHidden(_0x14c3c2['elements']['buttons']['saveState'], !0x0), ejs_Controller['resetCheat'](), toggleHidden(_0x14c3c2['elements']['buttons']['cheat'], !0x0), toggleHidden(ejs_data['contextMenu']['querySelectorAll']('ul li')['item'](0x1), !0x0), toggleHidden(ejs_data['contextMenu']['querySelectorAll']('ul li')['item'](0x2), !0x0), Array['from'](_0x14c3c2['elements']['buttons']['play'])['forEach'](function (_0x39b266) {
+                            ejs_Controller['hideLoading']['call'](_0x14c3c2);
+                            ejs_Controller['connected'] = !0x0;
+                             ['n64', 'mupen64plus', 'mupen64plus2', 'mupen64plus-nx']['includes'](_0x14c3c2['system']) || ejs_loader['Module']['_fast_forward_2'];
+                             toggleHidden(_0x14c3c2['elements']['buttons']['loadState'], !0x0);
+                             toggleHidden(_0x14c3c2['elements']['buttons']['saveState'], !0x0);
+                            ejs_Controller['resetCheat'](), toggleHidden(_0x14c3c2['elements']['buttons']['cheat'], !0x0);
+                            toggleHidden(ejs_data['contextMenu']['querySelectorAll']('ul li')['item'](0x1), !0x0);
+                            toggleHidden(ejs_data['contextMenu']['querySelectorAll']('ul li')['item'](0x2), !0x0);
+                             Array['from'](_0x14c3c2['elements']['buttons']['play'])['forEach'](function (_0x39b266) {
                                 toggleHidden(_0x39b266, !0x0);
                             });
                             var _0x2dcea6 = _0x14c3c2['elements']['dialogs']['netplay']['querySelector']('.' ['concat'](ejs_Controller['classNames']['netplay-room'])),
@@ -12680,7 +12689,7 @@ var EJS = function (modules) {
                     });
                 } else {
                     let key = T.F.getKeyName(E['startName']),
-                        path = "/data/saves/" + E['system'] + '/';
+                        path = ejs_loader.savefullpath + '/';
                     DISK.MKFILE(path + key + '.state', _0x421707, 1);
                     DISK.MKFILE(path + key + '.png', _0x5ab2e7['detail']['screenshot'], 1);
                     //userdata.setData(path+key+'.state',_0x421707).then(e=>{
@@ -12709,7 +12718,7 @@ var EJS = function (modules) {
                     E['config']['onloadstate']['call'](null, E['loadState']);
                 } else {
                     let key = T.F.getKeyName(E['startName']),
-                        path = "/data/saves/" + E['system'] + '/' + key + '.state',
+                        path = ejs_loader.savefullpath+ '/' + key + '.state',
                         FS = ejs_loader.FS;
                     if (FS.analyzePath(path).exists) {
                         //ejs_loader.FS.readFile(path+key+'.state');
@@ -12790,9 +12799,7 @@ var EJS = function (modules) {
                 ejs_Controller['toggleShader'](0x0);
                  _0x2cdff1();
                  ejs_Controller['toggleShader'](0x1);
-                 if(ejs_loader.FS.analyzePath(ejs_loader.screenshots+'/screenshot.png').exists){
-                    return ejs_loader.FS.readFile(ejs_loader.screenshots+'/screenshot.png');
-                 }else if(ejs_loader.FS.analyzePath('screenshot.png').exists){
+                 if(ejs_loader.FS.analyzePath('screenshot.png').exists){
                     return ejs_loader.FS['readFile']('screenshot.png');
                  }else{
                     return new Uint8Array(0);
@@ -13694,9 +13701,7 @@ var EJS = function (modules) {
             _0x5d028c['appendChild'](_0xd97053), ContainerSelector['call'](this, '.' ['concat'](getClassName('ejs__widgets')))['appendChild'](_0x5d028c), this['elements']['widgets']['netplay'] = _0x5d028c;
         },
         'setControllToggleWidgets': function () {
-            var _0x7da5c3 = this,
-                _0x14faca = this,
-                _0x49c9a2 = _0xf5893f('div', {
+            var E = this,_0x49c9a2 = _0xf5893f('div', {
                     'class': getElmClassName({
                         'ejs__widget': !0x0,
                         'ejs__widget_controls_toggle': !0x0
@@ -13705,27 +13710,27 @@ var EJS = function (modules) {
                 _0x168c70 = _0xf5893f('div');
             _0x49c9a2['appendChild'](_0x168c70), ContainerSelector['call'](this, '.' ['concat'](getClassName('ejs__widgets')))['appendChild'](_0x49c9a2), this['elements']['widgets']['controlToggle'] = _0x49c9a2, addEvent(this['elements']['container'], 'click touchstart', function (_0x391cad) {
 
-                if (!_0x14faca['started']) return !0x1;
-                _0x7da5c3['elements']['controls']['contains'](_0x391cad['target']) || _0x49c9a2['contains'](_0x391cad['target']) || (toggleHidden(_0x7da5c3['elements']['controls']['querySelector'](getClassName('ejs__menu__container',1)), !0x0), _0x7da5c3.runaction('toggleControls', [!0x1]), _0x7da5c3['elements']['controls']['classList']['toggle'](getClassName('ejs__controls_show'), !0x1));
+                if (!E['started']) return !0x1;
+                E['elements']['controls']['contains'](_0x391cad['target']) || _0x49c9a2['contains'](_0x391cad['target']) || (toggleHidden(E['elements']['controls']['querySelector'](getClassName('ejs__menu__container',1)), !0x0), E.callaction('toggleControls', !0x1), E['elements']['controls']['classList']['toggle'](getClassName('ejs__controls_show'), !0x1));
             }), addEvent(_0x49c9a2, 'click', function (_0x47d40c) {
 
-                _0x7da5c3['elements']['controls']['classList']['toggle'](getClassName('ejs__controls_show')), _0x47d40c['stopPropagation']();
-            }), addEvent['call'](_0x14faca, _0x14faca['elements']['container'], 'start-game', function () {
+                E['elements']['controls']['classList']['toggle'](getClassName('ejs__controls_show')), _0x47d40c['stopPropagation']();
+            }), addEvent['call'](E, E['elements']['container'], 'start-game', function () {
 
                 console.log(9999);
-                ejs_loader['Module']['_event_load_save_files']&&ejs_loader['Module']['_event_load_save_files']();
+                ejs_loader['Module']['_event_load_save_files']&&ejs_loader['Module']['cwrap']('event_load_save_files', '', [])();
                 /*
                 ejs_Controller['saveSavFiles'] && ejs_Controller['saveSavFiles']();
-                var saveExt = 'srm';
-                'nds' === _0x14faca['system'] && (saveExt = 'dsv'), ['melonds', 'zc210']['includes'](_0x14faca['system']) && (saveExt = 'sav');
-                var _0x11e6e8 = _0x14faca['startName']['split']('/')['pop']()['split']('.'),
-                    _0x2897c8 = _0x11e6e8['slice'](0x0, _0x11e6e8['length'] - 0x1)['join']('.');
-                if (!ejs_loader.FS.analyzePath('/data/saves/' ['concat'](_0x14faca['savepath'], '/')['concat'](_0x2897c8, '.')['concat'](saveExt)).exists) return !0x1;
-                if (ejs_loader.FS.analyzePath('/data/saves/' ['concat'](_0x2897c8, '.')['concat'](saveExt)).exists) {
+                var E['gameSaveExt'] = 'srm';
+                'nds' === E['system'] && (E['gameSaveExt'] = 'dsv'), ['melonds', 'zc210']['includes'](E['system']) && (E['gameSaveExt'] = 'sav');
+                var _0x11e6e8 = E['startName']['split']('/')['pop']()['split']('.'),
+                    E['gameName'] = _0x11e6e8['slice'](0x0, _0x11e6e8['length'] - 0x1)['join']('.');
+                if (!ejs_loader.FS.analyzePath('/data/saves/' ['concat'](E['savepath'], '/')['concat'](E['gameName'], '.')['concat'](E['gameSaveExt'])).exists) return !0x1;
+                if (ejs_loader.FS.analyzePath('/data/saves/' ['concat'](E['gameName'], '.')['concat'](E['gameSaveExt'])).exists) {
                     console.log(555);
-                    ejs_loader.FS['writeFile']('/data/saves/' ['concat'](_0x14faca['savepath'], '/')['concat'](_0x2897c8, '.')['concat'](saveExt), ejs_loader.FS['readFile']('/data/saves/' ['concat'](_0x2897c8, '.')['concat'](saveExt)));
+                    ejs_loader.FS['writeFile']('/data/saves/' ['concat'](E['savepath'], '/')['concat'](E['gameName'], '.')['concat'](E['gameSaveExt']), ejs_loader.FS['readFile']('/data/saves/' ['concat'](E['gameName'], '.')['concat'](E['gameSaveExt'])));
                     ejs_loader['Module']['_event_load_save_files']();
-                    ejs_loader.FS['unlink']('/data/saves/' ['concat'](_0x2897c8, '.')['concat'](saveExt));
+                    ejs_loader.FS['unlink']('/data/saves/' ['concat'](E['gameName'], '.')['concat'](E['gameSaveExt']));
                     ejs_loader.FS['syncfs'](function (_0x5da297) {})
                 }
                 */
@@ -13737,16 +13742,17 @@ var EJS = function (modules) {
                         'title': T.getLang('Import save file')
                     }, '<svg stroke-width=\x221.5\x22 viewBox=\x220 0 24 24\x22 fill=\x22none\x22 xmlns=\x22http://www.w3.org/2000/svg\x22><path d=\x22M3 6.5V5C3 3.89543 3.89543 3 5 3H16.1716C16.702 3 17.2107 3.21071 17.5858 3.58579L20.4142 6.41421C20.7893 6.78929 21 7.29799 21 7.82843V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V17.5\x22 stroke=\x22currentColor\x22 stroke-linecap=\x22round\x22 stroke-linejoin=\x22round\x22/><path d=\x22M8 3H16V8.4C16 8.73137 15.7314 9 15.4 9H8.6C8.26863 9 8 8.73137 8 8.4V3Z\x22 stroke=\x22currentColor\x22 stroke-linecap=\x22round\x22 stroke-linejoin=\x22round\x22/><path d=\x22M18 21V13.6C18 13.2686 17.7314 13 17.4 13H15\x22 stroke=\x22currentColor\x22 stroke-linecap=\x22round\x22 stroke-linejoin=\x22round\x22/><path d=\x22M6 21V17.5\x22 stroke=\x22currentColor\x22 stroke-linecap=\x22round\x22 stroke-linejoin=\x22round\x22/><path d=\x22M12 12H1M1 12L4 9M1 12L4 15\x22 stroke=\x22currentColor\x22 stroke-linecap=\x22round\x22 stroke-linejoin=\x22round\x22/></svg>'),
                     _0x26e7ee = _0xf5893f('div');
-                _0x1205b7['appendChild'](_0x26e7ee), ContainerSelector['call'](_0x7da5c3, '.' ['concat'](getClassName('ejs__widgets')))['appendChild'](_0x1205b7);
+                _0x1205b7['appendChild'](_0x26e7ee), ContainerSelector['call'](E, '.' ['concat'](getClassName('ejs__widgets')))['appendChild'](_0x1205b7);
                 var _0xcbba9a = null;
                 (_0xcbba9a = _0xf5893f('input'))['type'] = 'file', _0xcbba9a['onchange'] = function _0x33a5b6(_0x11db4a) {
                     var _0x1069e1, _0x3ebca7 = _0x11db4a['target']['files'];
                     _0x3ebca7['length'] > 0x0 && ((_0x1069e1 = new FileReader())['file_name'] = _0x3ebca7[0x0]['name'], _0x1069e1['onload'] = function () {
                         var _0x501883 = new Uint8Array(_0x1069e1['result']);
-                        ejs_loader.FS['writeFile']('/data/saves/' ['concat'](_0x14faca['savepath'], '/')['concat'](_0x2897c8, '.')['concat'](saveExt), _0x501883);
+                        console.log(_0x501883);
+                        ejs_loader.FS['writeFile']('/data/saves/' ['concat'](E['savepath'], '/')['concat'](E['gameName'], '.')['concat'](E['gameSaveExt']), _0x501883);
                         ejs_loader['Module']['_event_load_save_files']();
-                    }, _0x1069e1['readAsArrayBuffer'](_0x3ebca7[0x0])), (_0xcbba9a = _0xf5893f('input'))['type'] = 'file', _0xcbba9a['onchange'] = _0x33a5b6, _0xcbba9a['accept'] = '.srm,.sav,.dsv,.mcr', _0x14faca['system']['includes'](['psx', 'psx-legacy']) && (_0xcbba9a['accept'] = '.srm,.mcr');
-                }, _0xcbba9a['accept'] = '.srm,.sav,.dsv,.mcr', _0x14faca['system']['includes'](['psx', 'psx-legacy']) && (_0xcbba9a['accept'] = '.srm,.mcr'), addEvent(_0x1205b7, 'click', function (_0x3ea374) {
+                    }, _0x1069e1['readAsArrayBuffer'](_0x3ebca7[0x0])), (_0xcbba9a = _0xf5893f('input'))['type'] = 'file', _0xcbba9a['onchange'] = _0x33a5b6, _0xcbba9a['accept'] = '.srm,.sav,.dsv,.mcr', E['system']['includes'](['psx', 'psx-legacy']) && (_0xcbba9a['accept'] = '.srm,.mcr');
+                }, _0xcbba9a['accept'] = '.srm,.sav,.dsv,.mcr', E['system']['includes'](['psx', 'psx-legacy']) && (_0xcbba9a['accept'] = '.srm,.mcr'), addEvent(_0x1205b7, 'click', function (_0x3ea374) {
 
                     _0xcbba9a['click'](), _0x3ea374['stopPropagation']();
                 });
@@ -13758,12 +13764,12 @@ var EJS = function (modules) {
                         'title': T.getLang('Export save file')
                     }, '<svg stroke-width=\x221.5\x22 viewBox=\x220 0 24 24\x22 fill=\x22none\x22 xmlns=\x22http://www.w3.org/2000/svg\x22><path d=\x22M3 7.5V5C3 3.89543 3.89543 3 5 3H16.1716C16.702 3 17.2107 3.21071 17.5858 3.58579L20.4142 6.41421C20.7893 6.78929 21 7.29799 21 7.82843V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V16.5\x22 stroke=\x22currentColor\x22 stroke-linecap=\x22round\x22 stroke-linejoin=\x22round\x22/><path d=\x22M6 21V17\x22 stroke=\x22currentColor\x22 stroke-linecap=\x22round\x22 stroke-linejoin=\x22round\x22/><path d=\x22M18 21V13.6C18 13.2686 17.7314 13 17.4 13H15\x22 stroke=\x22currentColor\x22 stroke-linecap=\x22round\x22 stroke-linejoin=\x22round\x22/><path d=\x22M16 3V8.4C16 8.73137 15.7314 9 15.4 9H13.5\x22 stroke=\x22currentColor\x22 stroke-linecap=\x22round\x22 stroke-linejoin=\x22round\x22/><path d=\x22M8 3V6\x22 stroke=\x22currentColor\x22 stroke-linecap=\x22round\x22 stroke-linejoin=\x22round\x22/><path d=\x22M1 12H12M12 12L9 9M12 12L9 15\x22 stroke=\x22currentColor\x22 stroke-linecap=\x22round\x22 stroke-linejoin=\x22round\x22/></svg>'),
                     _0xc5a39e = _0xf5893f('div');
-                _0xa3c7ec['appendChild'](_0xc5a39e), ContainerSelector['call'](_0x7da5c3, '.' ['concat'](getClassName('ejs__widgets')))['appendChild'](_0xa3c7ec), addEvent(_0xa3c7ec, 'click', function (_0x54db54) {
-                    var _0x5cfabe = '/data/saves/' ['concat'](_0x14faca['savepath'], '/')['concat'](_0x2897c8, '.')['concat'](saveExt);
-                    '' != _0x14faca['config']['savename'] && (_0x5cfabe = '/data/saves/' ['concat'](_0x14faca['savepath'], '/')['concat'](_0x14faca['config']['savename'], '.')['concat'](saveExt));
+                _0xa3c7ec['appendChild'](_0xc5a39e), ContainerSelector['call'](E, '.' ['concat'](getClassName('ejs__widgets')))['appendChild'](_0xa3c7ec), addEvent(_0xa3c7ec, 'click', function (_0x54db54) {
+                    var _0x5cfabe = '/data/saves/' ['concat'](E['savepath'], '/')['concat'](E['gameName'], '.')['concat'](E['gameSaveExt']);
+                    '' != E['config']['savename'] && (_0x5cfabe = '/data/saves/' ['concat'](E['savepath'], '/')['concat'](E['config']['savename'], '.')['concat'](E['gameSaveExt']));
                     try {
                         var _0x42ffd5 = ejs_loader.FS['readFile'](_0x5cfabe);
-                        Object(_export_53['saveAs'])(new Blob([_0x42ffd5]), _0x2897c8 + '.' + saveExt);
+                        Object(_export_53['saveAs'])(new Blob([_0x42ffd5]), E['gameName'] + '.' + E['gameSaveExt']);
                     } catch (_0x4647e7) {}
                     _0x54db54['stopPropagation']();
                 });
@@ -14069,48 +14075,47 @@ var EJS = function (modules) {
             });
         }
         container() {
-            var _0x36900f, _0x2b267d = this['emulator'],
-                _0x4f593e = _0x2b267d['elements'],
-                _0x46f48a = _0x2b267d;
-            addEvent['call'](_0x46f48a, _0x4f593e['container'], 'mousemove mouseleave touchstart touchmove enterfullscreen exitfullscreen start-game', function (_0x9be0f4) {
+            var _0x36900f, E = this['emulator'],
+                _0x4f593e = E['elements'];
+            addEvent['call'](E, _0x4f593e['container'], 'mousemove mouseleave touchstart touchmove enterfullscreen exitfullscreen start-game', function (_0x9be0f4) {
                 var _0x1a6dbb = _0x4f593e['controls'];
                 _0x1a6dbb && 'enterfullscreen' === _0x9be0f4['type'] && (_0x1a6dbb['pressed'] = !0x1, _0x1a6dbb['hover'] = !0x1);
                 var _0x3f88fd = 0x0;
-                ['touchstart', 'touchmove', 'mousemove', 'start-game']['includes'](_0x9be0f4['type']) && (_0x46f48a.runaction('toggleControls', [!0x0]), _0x3f88fd = _0x46f48a['touch'] ? 0xbb8 : 0x7d0), clearTimeout(_0x36900f), _0x36900f = setTimeout(function () {
+                ['touchstart', 'touchmove', 'mousemove', 'start-game']['includes'](_0x9be0f4['type']) && (E.callaction('toggleControls', !0x0), _0x3f88fd = E['touch'] ? 0xbb8 : 0x7d0), clearTimeout(_0x36900f), _0x36900f = setTimeout(function () {
 
-                    return _0x46f48a.runaction('toggleControls', [!0x1]);
+                    return E.callaction('toggleControls', !0x1);
                 }, _0x3f88fd), _0x4f593e['controls']['setAttribute']('data-timer', _0x36900f);
-            }), addEvent['call'](_0x46f48a, window, 'resize', function (_0x31d49e) {
-                var _0x2d9e32 = _0x46f48a['elements']['container']['clientHeight'],
-                    _0x231eed = ContainerSelectorAll['call'](_0x46f48a, '.' ['concat'](getClassName('ejs__menu__container'), ' [role=\x22menu\x22]'));
+            }), addEvent['call'](E, window, 'resize', function (_0x31d49e) {
+                var _0x2d9e32 = E['elements']['container']['clientHeight'],
+                    _0x231eed = ContainerSelectorAll['call'](E, '.' ['concat'](getClassName('ejs__menu__container'), ' [role=\x22menu\x22]'));
                 Array['from'](_0x231eed)['forEach'](function (_0x33d1de) {
 
                     _0x33d1de['style']['maxHeight'] = '' ['concat'](_0x2d9e32 - 0x89, 'px'), _0x33d1de['style']['overflow'] = 'auto';
-                }), ejs_loader['Module'] && ejs_loader['Module']['canvas'], _0x46f48a['elements']['container']['clientWidth'] / _0x46f48a['elements']['container']['clientHeight'] < 1.3 ? _0x279293(_0x46f48a['elements']['container'], getClassName('portrait'), !0x0) : _0x279293(_0x46f48a['elements']['container'], getClassName('portrait'), !0x1);
-            }), callEvent['call'](_0x46f48a, window, 'resize'), addEvent['call'](_0x46f48a, _0x46f48a['elements']['container'], 'enterfullscreen', function (_0x5b41b0) {
+                }), ejs_loader['Module'] && ejs_loader['Module']['canvas'], E['elements']['container']['clientWidth'] / E['elements']['container']['clientHeight'] < 1.3 ? _0x279293(E['elements']['container'], getClassName('portrait'), !0x0) : _0x279293(E['elements']['container'], getClassName('portrait'), !0x1);
+            }), callEvent['call'](E, window, 'resize'), addEvent['call'](E, E['elements']['container'], 'enterfullscreen', function (_0x5b41b0) {
                 setTimeout(function () {
 
-                    callEvent['call'](_0x46f48a, window, 'resize');
+                    callEvent['call'](E, window, 'resize');
                 }, 0x12c);
-            }), addEvent['call'](_0x46f48a, _0x46f48a['elements']['container'], 'exitfullscreen', function (_0xa21ed9) {
+            }), addEvent['call'](E, E['elements']['container'], 'exitfullscreen', function (_0xa21ed9) {
                 setTimeout(function () {
 
-                    callEvent['call'](_0x46f48a, window, 'resize');
+                    callEvent['call'](E, window, 'resize');
                 }, 0x12c);
-            }), addEvent['call'](_0x46f48a, _0x46f48a['elements']['container'], 'start-game', function (_0x4945c8) {
+            }), addEvent['call'](E, E['elements']['container'], 'start-game', function (_0x4945c8) {
                 var _0x173e25 = window['document']['createEvent']('UIEvents');
-                _0x173e25['initUIEvent']('resize', !0x0, !0x1, window, 0x0), window['dispatchEvent'](_0x173e25), _0x279293(_0x46f48a['elements']['container'], getClassName('game-started'), !0x0);
-            }), addEvent['call'](_0x46f48a, _0x46f48a['elements']['container'], 'blur', function (_0x272c11) {
+                _0x173e25['initUIEvent']('resize', !0x0, !0x1, window, 0x0), window['dispatchEvent'](_0x173e25), _0x279293(E['elements']['container'], getClassName('game-started'), !0x0);
+            }), addEvent['call'](E, E['elements']['container'], 'blur', function (_0x272c11) {
                 var _0x13810b = _0x272c11['currentTarget'];
                 setTimeout(function () {
 
-                    _0x13810b['contains'](document['activeElement']) || callEvent['call'](_0x46f48a, _0x46f48a['elements'], 'blurgame');
+                    _0x13810b['contains'](document['activeElement']) || callEvent['call'](E, E['elements'], 'blurgame');
                 }, 0x0);
-            }), addEvent['call'](_0x46f48a, _0x46f48a['elements']['container'], 'focus', function (_0x15e2f7) {
+            }), addEvent['call'](E, E['elements']['container'], 'focus', function (_0x15e2f7) {
                 var _0x3f8f53 = _0x15e2f7['currentTarget'];
                 setTimeout(function () {
 
-                    _0x3f8f53['contains'](document['activeElement']) && callEvent['call'](_0x46f48a, _0x46f48a['elements'], 'focusgame');
+                    _0x3f8f53['contains'](document['activeElement']) && callEvent['call'](E, E['elements'], 'focusgame');
                 }, 0x0);
             });
         }
@@ -14164,41 +14169,41 @@ var EJS = function (modules) {
         }
         controls() {
             var _0x23e2ac = this,
-                _0x30c0ad = this['emulator'],
-                _0x3b6b01 = _0x30c0ad['elements'],
+                E = this['emulator'],
+                _0x3b6b01 = E['elements'],
                 _0xadf263 = _0x31055e['isIE'] ? 'change' : 'input';
             if (this['bind'](_0x3b6b01['buttons']['mute'], 'click', function () {
 
-                    _0x30c0ad['muted'] = !_0x30c0ad['muted'];
+                    E['muted'] = !E['muted'];
                 }, 'mute'), this['bind'](_0x3b6b01['buttons']['fullscreen'], 'click', function () {
 
-                    _0x30c0ad['fullscreen']['toggle']();
+                    E['fullscreen']['toggle']();
                 }, 'fullscreen'), this['bind'](_0x3b6b01['buttons']['gamepad'], 'click', function () {
 
-                    _0x30c0ad.runaction('toggleControls', [!0x1]), toggleHidden(_0x3b6b01['dialogs']['gamepad'], !0x1);
+                    E.callaction('toggleControls',!0x1), toggleHidden(_0x3b6b01['dialogs']['gamepad'], !0x1);
                 }, 'mute'), this['bind'](_0x3b6b01['buttons']['saveState'], 'click', function () {
 
-                    callEvent['call'](_0x30c0ad, _0x30c0ad['elements']['container'], 'savestate-start', !0x1, {});
+                    callEvent['call'](E, E['elements']['container'], 'savestate-start', !0x1, {});
                     var _0xe311a2 = ejs_Controller['saveState'](),
                         _0x124d32 = ejs_Controller['getScreenData']();
-                    callEvent['call'](_0x30c0ad, _0x30c0ad['elements']['container'], 'savestate', !0x1, {
+                    callEvent['call'](E, E['elements']['container'], 'savestate', !0x1, {
                         'state': _0xe311a2,
                         'screenshot': _0x124d32
                     });
                 }, 'mute'), this['bind'](_0x3b6b01['buttons']['loadState'], 'click', function () {
 
-                    callEvent['call'](_0x30c0ad, _0x30c0ad['elements']['container'], 'loadstate', !0x1, {});
+                    callEvent['call'](E, E['elements']['container'], 'loadstate', !0x1, {});
                 }, 'mute'), this['bind'](_0x3b6b01['buttons']['settings'], 'click', function (_0x533495) {
 
-                    _0x533495['stopPropagation'](), ejs_data['toggleMenu']['call'](_0x30c0ad, _0x533495);
+                    _0x533495['stopPropagation'](), ejs_data['toggleMenu']['call'](E, _0x533495);
                 }), this['bind'](_0x3b6b01['buttons']['settings'], 'keyup', function (_0x4f69f7) {
                     var _0x30fc8e = _0x4f69f7['which'];
-                    [0xd, 0x20]['includes'](_0x30fc8e) && (0xd !== _0x30fc8e ? (_0x4f69f7['preventDefault'](), _0x4f69f7['stopPropagation'](), ejs_data['toggleMenu']['call'](_0x30c0ad, _0x4f69f7)) : ejs_data['focusFirstMenuItem']['call'](_0x30c0ad, null, !0x0));
+                    [0xd, 0x20]['includes'](_0x30fc8e) && (0xd !== _0x30fc8e ? (_0x4f69f7['preventDefault'](), _0x4f69f7['stopPropagation'](), ejs_data['toggleMenu']['call'](E, _0x4f69f7)) : ejs_data['focusFirstMenuItem']['call'](E, null, !0x0));
                 }, null, !0x1), this['bind'](_0x3b6b01['settings']['menu'], 'keydown', function (_0x5e8d12) {
 
-                    0x1b === _0x5e8d12['which'] && ejs_data['toggleMenu']['call'](_0x30c0ad, _0x5e8d12);
+                    0x1b === _0x5e8d12['which'] && ejs_data['toggleMenu']['call'](E, _0x5e8d12);
                 }), _0x31055e['isIos']) {
-                var _0x14daec = ContainerSelectorAll['call'](_0x30c0ad, 'input[type=\x22range\x22]');
+                var _0x14daec = ContainerSelectorAll['call'](E, 'input[type=\x22range\x22]');
                 Array['from'](_0x14daec)['forEach'](function (_0x29f13e) {
                     return _0x23e2ac['bind'](_0x29f13e, _0xadf263, function (_0x2a0a70) {
 
@@ -14206,18 +14211,18 @@ var EJS = function (modules) {
                     });
                 });
             }
-            _0x31055e['isWebkit'] && Array['from'](ContainerSelectorAll['call'](_0x30c0ad, 'input[type=\x22range\x22]'))['forEach'](function (_0x23dfd3) {
+            _0x31055e['isWebkit'] && Array['from'](ContainerSelectorAll['call'](E, 'input[type=\x22range\x22]'))['forEach'](function (_0x23dfd3) {
 
                 _0x23e2ac['bind'](_0x23dfd3, 'input', function (_0x1869e7) {
 
-                    return ejs_data['updateRangeFill']['call'](_0x30c0ad, _0x1869e7['target']);
+                    return ejs_data['updateRangeFill']['call'](E, _0x1869e7['target']);
                 });
             }), this['bind'](_0x3b6b01['inputs']['volume'], _0xadf263, function (_0x45d42b) {
 
-                _0x30c0ad['volume'] = _0x45d42b['target']['value'];
+                E['volume'] = _0x45d42b['target']['value'];
             }, 'volume'), this['bind'](_0x3b6b01['controls'], 'mouseenter mouseleave', function (_0x4220b0) {
 
-                'mouseleave' === _0x4220b0['type'] && null === _0x4220b0['toElement'] ? _0x3b6b01['controls']['hover'] = !0x0 : _0x3b6b01['controls']['hover'] = !_0x30c0ad['touch'] && 'mouseenter' === _0x4220b0['type'];
+                'mouseleave' === _0x4220b0['type'] && null === _0x4220b0['toElement'] ? _0x3b6b01['controls']['hover'] = !0x0 : _0x3b6b01['controls']['hover'] = !E['touch'] && 'mouseenter' === _0x4220b0['type'];
             }), this['bind'](_0x3b6b01['controls'], 'mousedown mouseup touchstart touchend touchcancel', function (_0x2beca0) {
 
                 if (['mousedown', 'touchstart']['includes'](_0x2beca0['type'])) {
@@ -14232,11 +14237,11 @@ var EJS = function (modules) {
                     _0x3b6b01['controls']['setAttribute']('data-timer2', _0x372abf);
                 }
             }), this['bind'](_0x3b6b01['controls'], 'focusin focusout', function (_0x3e8fa0) {
-                var _0x40cd0b = _0x30c0ad['config'],
-                    _0x538f89 = _0x30c0ad['elements'],
+                var _0x40cd0b = E['config'],
+                    _0x538f89 = E['elements'],
                     _0x1e18fe = 'focusin' === _0x3e8fa0['type'],
                     _0x18d06f = _0x538f89['controls']['getAttribute']('data-timer');
-                if (_0x279293(_0x538f89['controls'], _0x40cd0b['classNames']['noTransition'], _0x1e18fe), _0x30c0ad.runaction('toggleControls', [_0x1e18fe]), _0x1e18fe) {
+                if (_0x279293(_0x538f89['controls'], _0x40cd0b['classNames']['noTransition'], _0x1e18fe), E.callaction('toggleControls', _0x1e18fe), _0x1e18fe) {
                     setTimeout(function () {
 
                         _0x279293(_0x538f89['controls'], _0x40cd0b['classNames']['noTransition'], !0x1);
@@ -14244,7 +14249,7 @@ var EJS = function (modules) {
                     var _0x394e5b = _0x23e2ac['touch'] ? 0xbb8 : 0xfa0;
                     clearTimeout(_0x18d06f), _0x18d06f = setTimeout(function () {
 
-                        return _0x30c0ad.runaction('toggleControls', [!0x1]);
+                        return E.callaction('toggleControls', !0x1);
                     }, _0x394e5b), _0x538f89['controls']['setAttribute']('data-timer', _0x18d06f);
                 }
             }), this['bind'](_0x3b6b01['inputs']['volume'], 'wheel', function (_0x2ede29) {
@@ -14255,8 +14260,8 @@ var EJS = function (modules) {
                     _0x2197be = _0x2adb35[0x0],
                     _0x327e2f = _0x2adb35[0x1],
                     _0x345fb0 = Math['sign'](Math['abs'](_0x2197be) > Math['abs'](_0x327e2f) ? _0x2197be : _0x327e2f);
-                _0x30c0ad['increaseVolume'](_0x345fb0 / 0x32);
-                var _0x38c838 = _0x30c0ad['game']['volume'];
+                E['increaseVolume'](_0x345fb0 / 0x32);
+                var _0x38c838 = E['game']['volume'];
                 (0x1 === _0x345fb0 && _0x38c838 < 0x1 || -0x1 === _0x345fb0 && _0x38c838 > 0x0) && _0x2ede29['preventDefault']();
             }, 'volume', !0x1), this['bind'](_0x3b6b01['controls'], 'contextmenu', function (_0x521f76) {
                 _0x521f76['stopPropagation']();
@@ -14285,124 +14290,125 @@ var EJS = function (modules) {
     }
     class ejs_install {
         defaultConfig = {
-            'volume': 0.5,
-            'muted': !0x1,
+            volume: 0.5,
+            muted: !0x1,
             /*
             多国语言
             */
-            'i18n': {
-                'restart': 'Restart',
-                'play': 'Play',
-                'pause': 'Pause',
-                'played': 'Played',
-                'volume': 'Volume',
-                'mute': 'Mute (F9)',
-                'unmute': 'Unmute (F9)',
-                'enterFullscreen': 'Enter fullscreen',
-                'exitFullscreen': 'Exit fullscreen',
-                'settings': 'Settings',
-                'saveState': 'Save State',
-                'loadState': 'Load State',
-                'disk': 'Disk',
-                'netplay': 'Netplay',
-                'gamepad': 'Controls Settings',
-                'cheat': 'Cheats',
-                'menuBack': 'Go back to previous menu',
-                'normal': 'Normal',
-                'all': 'All',
-                'reset': 'Reset',
-                'disabled': 'Disabled',
-                'enabled': 'Enabled',
-                'playNow': 'Play Now'
+            i18n: {
+                restart: 'Restart',
+                play: 'Play',
+                pause: 'Pause',
+                played: 'Played',
+                volume: 'Volume',
+                mute: 'Mute (F9)',
+                unmute: 'Unmute (F9)',
+                enterFullscreen: 'Enter fullscreen',
+                exitFullscreen: 'Exit fullscreen',
+                settings: 'Settings',
+                saveState: 'Save State',
+                loadState: 'Load State',
+                disk: 'Disk',
+                netplay: 'Netplay',
+                gamepad: 'Controls Settings',
+                cheat: 'Cheats',
+                menuBack: 'Go back to previous menu',
+                normal: 'Normal',
+                all: 'All',
+                reset: 'Reset',
+                disabled: 'Disabled',
+                enabled: 'Enabled',
+                playNow: 'Play Now'
             },
-            'listeners': {
-                'play': null,
-                'pause': null,
-                'restart': null,
-                'rewind': null,
-                'mute': null,
-                'volume': null,
-                'fullscreen': null
+            listeners: {
+                play: null,
+                pause: null,
+                restart: null,
+                rewind: null,
+                mute: null,
+                volume: null,
+                fullscreen: null
             },
-            'events': ['ready'],
-            'selectors': {
-                'editable': 'input, textarea, select, [contenteditable]',
-                'container': '.ejs',
-                'controls': {
-                    'container': null,
-                    'wrapper': '.jes__controls'
+            events: ['ready'],
+            selectors: {
+                editable: 'input, textarea, select, [contenteditable]',
+                container: '.ejs',
+                controls: {
+                    container: null,
+                    wrapper: '.jes__controls'
                 },
-                'buttons': {
-                    'play': '[data-btn=\x22play\x22]',
-                    'pause': '[data-btn=\x22pause\x22]',
-                    'mute': '[data-btn=\x22mute\x22]',
-                    'fullscreen': '[data-btn=\x22fullscreen\x22]',
-                    'settings': '[data-btn=\x22settings\x22]',
-                    'saveState': '[data-btn=\x22save-state\x22]',
-                    'loadState': '[data-btn=\x22load-state\x22]',
-                    'gamepad': '[data-btn=\x22gamepad\x22]',
-                    'netplay': '[data-btn=\x22netplay\x22]',
-                    'cheat': '[data-btn=\x22cheat\x22]'
+                buttons: {
+                    play: '[data-btn=\x22play\x22]',
+                    pause: '[data-btn=\x22pause\x22]',
+                    mute: '[data-btn=\x22mute\x22]',
+                    fullscreen: '[data-btn=\x22fullscreen\x22]',
+                    settings: '[data-btn=\x22settings\x22]',
+                    saveState: '[data-btn=\x22save-state\x22]',
+                    loadState: '[data-btn=\x22load-state\x22]',
+                    gamepad: '[data-btn=\x22gamepad\x22]',
+                    netplay: '[data-btn=\x22netplay\x22]',
+                    cheat: '[data-btn=\x22cheat\x22]'
                 },
-                'inputs': {
-                    'volume': '[data-range=\x22volume\x22]'
+                inputs: {
+                    volume: '[data-range=\x22volume\x22]'
                 }
             },
-            'classNames': {
-                'type': 'ejs--video',
-                'video': 'ejs__video-wrapper',
-                'poster': 'ejs__poster',
-                'posterEnabled': 'ejs__poster-enabled',
-                'control': 'ejs__control',
-                'controlPressed': 'ejs__control--pressed',
-                'playing': 'ejs--playing',
-                'paused': 'ejs--paused',
-                'stopped': 'ejs--stopped',
-                'loading': 'ejs--loading',
-                'hover': 'ejs--hover',
-                'tooltip': 'ejs__tooltip',
-                'hotkey': 'ejs__hotkey',
-                'hidden': 'ejs__sr-only',
-                'hideControls': 'ejs--hide-controls',
-                'isIos': 'ejs--is-ios',
-                'isTouch': 'ejs--is-touch',
-                'uiSupported': 'ejs--full-ui',
-                'noTransition': 'ejs--no-transition',
-                'menu': {
-                    'value': 'ejs__menu__value',
-                    'badge': 'ejs__badge',
-                    'open': 'ejs--menu-open'
+            classNames: {
+                type: 'ejs--video',
+                video: 'ejs__video-wrapper',
+                poster: 'ejs__poster',
+                posterEnabled: 'ejs__poster-enabled',
+                control: 'ejs__control',
+                controlPressed: 'ejs__control--pressed',
+                playing: 'ejs--playing',
+                paused: 'ejs--paused',
+                stopped: 'ejs--stopped',
+                loading: 'ejs--loading',
+                hover: 'ejs--hover',
+                tooltip: 'ejs__tooltip',
+                hotkey: 'ejs__hotkey',
+                hidden: 'ejs__sr-only',
+                hideControls: 'ejs--hide-controls',
+                isIos: 'ejs--is-ios',
+                isTouch: 'ejs--is-touch',
+                uiSupported: 'ejs--full-ui',
+                noTransition: 'ejs--no-transition',
+                menu: {
+                    value: 'ejs__menu__value',
+                    badge: 'ejs__badge',
+                    open: 'ejs--menu-open'
                 },
-                'fullscreen': {
-                    'enabled': 'ejs--fullscreen-enabled',
-                    'fallback': 'ejs--fullscreen-fallback'
+                fullscreen: {
+                    enabled: 'ejs--fullscreen-enabled',
+                    fallback: 'ejs--fullscreen-fallback'
                 },
-                'tabFocus': 'ejs__tab-focus'
-            }
+                tabFocus: 'ejs__tab-focus'
+            },
+            gameParentUrl:[],
+            offline:!1,
         };
         elements = {
-            'container': null,
-            'buttons': {},
-            'display': {},
-            'inputs': {},
-            'settings': {
-                'popup': null,
-                'menu': null,
-                'panels': {},
-                'buttons': {}
+            container: null,
+            buttons: {},
+            display: {},
+            inputs: {},
+            settings: {
+                popup: null,
+                menu: null,
+                panels: {},
+                buttons: {}
             },
-            'dialogs': {
-                'gamepad': null,
-                'loading': null,
-                'netplay': null
+            dialogs: {
+                gamepad: null,
+                loading: null,
+                netplay: null
             },
-            'widgets': {}
+            widgets: {}
         };
         fullscreen = {
-            'active': !0x1
+            active: !0x1
         };
         mode = 0x2;
-        system = '';
         hash = '';
         lightgun = !0x1;
         mouse = !0x1;
@@ -14414,7 +14420,6 @@ var EJS = function (modules) {
         started = !0x1;
         focused = !0x1;
         RootPath = T.RootPath || location.pathname;
-        offline = !1;
         constructor(divID, Configs) {
             var E = this;
             if (!I.elm(divID)) {
@@ -14431,6 +14436,7 @@ var EJS = function (modules) {
                 I
             }, 1);
             E.runaction = T.runaction;
+            E.callaction = T.callaction;
             Configs['gameParentUrl'] = Configs['gameParentUrl'] || [];
             if (I.str(Configs['gameParentUrl'])) Configs['gameParentUrl'] = [Configs['gameParentUrl']];
             E['version'] = _export_52['a'];
@@ -14449,7 +14455,8 @@ var EJS = function (modules) {
             E['savepath'] = E['config']['system'];
             E['cheats'] || (E['cheats'] = []);
             E['color'] = E['config']['color'];
-            ['melonds', 'segaSaturn', 'mame']['includes'](Configs['system']) && (E['mode'] = 0x1);
+            //['melonds', 'segaSaturn', 'mame']['includes'](Configs['system']) && (E['mode'] = 0x1);
+            if(E['system'] == 'mame')E['system'] = 'mame0.193';
             E['config']['url'] = '';
             /**
              * 绑定对应CSSname
@@ -14472,7 +14479,6 @@ var EJS = function (modules) {
             }
             E['config']['selectors']['controls']['wrapper'] = '.' ['concat'](getClassName('ejs__controls'));
             E['config']['selectors']['container'] = '.' ['concat'](getClassName('ejs'));
-            E['system'] = E['config']['system'];
             E['config']['mute'] = !0x0;
             E['eventListeners'] = [];
             E['listeners'] = new ejs_listeners(E);
@@ -14500,9 +14506,9 @@ var EJS = function (modules) {
             E['elements']['container']['appendChild'](_0xf5893f('div', {
                 'class': getClassName('ejs__dialogs')
             }));
-            E.runaction('addStyleHook');
+            E.callaction('addStyleHook');
             ejs_Controller['setup']['call'](E);
-            E.runaction('build');
+            E.callaction('build');
             E['listeners']['container']();
             E['listeners']['global']();
             E['fullscreen'] = new ejs_fullscreen(E);
@@ -14570,10 +14576,10 @@ var EJS = function (modules) {
             return Boolean(this['game']['muted']);
         }
         get system() {
-            return this['config']['system'];
+            return this.config.system;
         }
         set system(system) {
-            this['config']['system'] = system;
+            this.config.system = system;
         }
         SelectorAll(str) {
 
@@ -14612,18 +14618,36 @@ var EJS = function (modules) {
             }
 
         };
+        /**
+        *@description 初始化
+        *@author Nenge
+        *@date 2023-02-01 08:23:10
+        */
         create() {
             /**
-             * 初始化
+             * @var {ejs_install} 实例化的ejs_install
              */
             var E = this,
-                ElmContainer = E['elements']['container'];
-            window['URL'] = window['URL'] || window['webkitURL'];
-            var _0x387ca6 = !0x1,
-                _0x30a04a = !0x1,
-                _0x418c39 = !0x1,
+                ElmContainer = E['elements']['container'],
+            /**
+             * @var {string}  核心系统类型
+             */
+                RealSystemName,//记录真实核心
+            /**
+             * @var {array} 核心支持扩展名
+             */
+                RealSystemExt,
+                /**
+                 * @var 写入数据长度
+                 */
                 ejs_sizelength = 0x0,
+                /**
+                 * @var 是否当前Module 待删
+                 */
                 isLoadModule = !0x1,
+                /**
+                 * @var 扩展名列表
+                 */
                 SystemFileExt = {
                     'psx': ['bin', 'iso', 'cue', 'img', 'mdf', 'pbp', 'toc', 'cbn', 'm3u'],
                     'nds': ['nds', 'bin'],
@@ -14799,7 +14823,7 @@ var EJS = function (modules) {
                 return Promise['reject'](_0x397d99);
             });
             addEvent['call'](E, ElmContainer, 'start-game', function (_0x1ea849) {
-                E['started'] = !0x0, E['playing'] = !0x0, toggleHidden(LoadingInfo, !0x0), E.runaction('toggleControls', [!0x0]);
+                E['started'] = !0x0, E['playing'] = !0x0, toggleHidden(LoadingInfo, !0x0), E.callaction('toggleControls', !0x0);
                 var _0x2b7716 = getClassName('ejs__tooltip--visible'),
                     _0x5044e3 = E['elements']['buttons']['gamepad']['querySelector'](getClassName('ejs__tooltip',1));
                 _0x279293(_0x5044e3, _0x2b7716, !0x0), setTimeout(function () {
@@ -15057,23 +15081,30 @@ var EJS = function (modules) {
                          * 获取核心信息
                          * 注意此文件含有新版核心 加密信息,
                          */
+                        let system = E['system'];
                         return T.FetchItem({
-                            url: `https://www.emulatorjs.com/api/v?name=${E['system']}&_t=${T.time}`,
+                            url: `https://www.emulatorjs.com/api/v?name=${system}&_t=${T.time}`,
                             type: 'json',
-                            success: (JsonData, headers) => E.runaction('Wasm_ReadInfo', [JsonData, headers]),
+                            success: (JsonData, headers) => E.callaction('Wasm_ReadInfo',JsonData, headers),
                             error() {
-                                //网络异常
-                                console.log('local');
+                                //网络异常 本地测试
+                                console.log('local json');
                                 E.offline = !0;
                                 return T.FetchItem({
-                                    url: E.RootPath + 'json/' + E['system'] + '.json',
+                                    url: E.RootPath + 'json/' + system + '.json',
                                     type: 'json',
-                                    success: (JsonData, headers) => E.runaction('Wasm_ReadInfo', [JsonData, headers]),
+                                    success: (JsonData, headers) => E.callaction('Wasm_ReadInfo', JsonData, headers),
                                 });
                             }
                         });
                     },
-                    Wasm_ReadInfo(JsonData, headers) {
+                    /**
+                     * 读取返回的配置信息
+                     * @param {JSON} JsonData 配置数据数据
+                     * @param {JSON} headers 返回信息文件头
+                     * @returns {Function} 下载WASM
+                     */
+                    async Wasm_ReadInfo(JsonData, headers) {
                         console.log('/api/v?name= 加载核心配置信息 新版核心此处有加密信息 旧版则可用缓存下来', JsonData, headers);
                         var CoreRealName = CoreSystemList[E['system']],
                             isOrgin = !0x1,
@@ -15092,10 +15123,11 @@ var EJS = function (modules) {
                             N64LeaAcy = !0x1,
                             ElmBtn = E['elements']['buttons'];
                         if (!CoreRealName) CoreRealName = E['system'];
-                        E.CoreRealName = CoreRealName;
+                        RealSystemName = CoreRealName;
                         var CoreEnv = JsonData[E['system']];
                         //替换默认扩展名
                         if (JsonData['extensions']) SystemFileExt[CoreRealName] = JsonData['extensions'];
+                        RealSystemExt = SystemFileExt[CoreRealName];
                         //替换核心参数
                         if (JsonData['options']) ejs_loader['coreOptions'] = JsonData['options'];
                         //disk-control
@@ -15122,12 +15154,12 @@ var EJS = function (modules) {
                         if (!btnSettings && !btnVolume) ElmBtn['fullscreen']['style']['marginLeft'] = 'auto';
                         if (!btnScreenshot) toggleHidden(ElmContainer['querySelector']('.' ['concat'](getClassName('ejs__contextmenu'), ' li:nth-child(1)')), !0x0);
                         if (CoreEnv instanceof Array) {
-                            CoreVersion = CoreEnv[0x0] ? CoreEnv[0x0] : 0x1;
-                            CoreState = Boolean(CoreEnv[0x1] >> 0x0);
-                            CoreAsmjs = Boolean(CoreEnv[0x2] >> 0x0);
-                            CoreWasm = Boolean(CoreEnv[0x3] >> 0x0);
-                            CoreCheat = Boolean(CoreEnv[0x4] >> 0x0);
-                        } else {
+                            CoreVersion = CoreEnv[0x0] ? CoreEnv[0x0] : 1;
+                            CoreState = Boolean(CoreEnv[0x1]);
+                            CoreAsmjs = Boolean(CoreEnv[0x2]);
+                            CoreWasm = Boolean(CoreEnv[0x3]);
+                            CoreCheat = Boolean(CoreEnv[0x4]);
+                        } else if(CoreEnv){
                             Boolean(CoreEnv['netplay']);
                             CoreVersion = CoreEnv['version'] ? CoreEnv['version'] : 0x1;
                             CoreState = Boolean(CoreEnv['state']);
@@ -15135,7 +15167,6 @@ var EJS = function (modules) {
                             CoreWasm = Boolean(CoreEnv['wasm']);
                             CoreCheat = Boolean(CoreEnv['cheat']);
                         }
-
                         if (CoreCheat) ejs_Controller['allowCheat'] = !0x0;
                         if (headers) {
                             ejs_loader['newCoreKey'] = headers['key'];
@@ -15153,57 +15184,7 @@ var EJS = function (modules) {
                          * 需要检测游戏文件名
                          */
                         if ('mame' == E['system'] || 'mame0.193' == E['system'] || 'mame0.243' == E['system']) {
-                            var gameName = T.F.getname(E['config']['gameUrl']),
-                                mameCheckUrl;
-                            if ('mame0.243' == E['system']) {
-                                mameCheckUrl = 'https://www.emulatorjs.com/api/mame0.243?name=' + gameName
-                            } else {
-                                mameCheckUrl = 'https://www.emulatorjs.com/api/mame?name=' + gameName;
-                            }
-                            if ('mame' == E['system'] || 'mame0.193' == E['system']) {
-                                T.FetchItem({
-                                    url: mameCheckUrl,
-                                    type: 'text',
-                                    success(text) {
-                                        console.log(text, mameCheckUrl);
-                                        var _0x4697b4 = text['split']('|');
-                                        ejs_loader['coreFileName'] = '' ['concat'](E['system'], '-')['concat'](_0x4697b4[0x0]);
-                                        CoreState = '1' === _0x4697b4[0x1];
-                                        if (I.elm(ElmBtn['saveState'])) toggleHidden(ElmBtn['saveState'], !CoreState);
-                                        if (I.elm(ElmBtn['loadState'])) toggleHidden(ElmBtn['loadState'], !CoreState);
-                                        if (_0x4697b4[0x0]) {
-                                            if (EnvVariable['wasm'] && CoreWasm) {
-                                                dbCoreName = '' ['concat'](E['system'], '-')['concat'](_0x4697b4[0x0], '-wasm.data'), isLoadModule = !0x0
-
-                                            } else {
-                                                _0x4697b4.innerHTML = '<strong style=\x22color:#f00;text-shadow: 0px 0px 3px;\x22>Webassembly support is not detected in this browser</strong>';
-                                                dbCoreName = ''
-
-                                            }
-                                            if (dbCoreName) E.runaction('Wasm_Download', [dbCoreName, CoreVersion]);
-                                        } else {
-                                            _0x4697b4.innerHTML = '<strong style=\x22color:#f00;text-shadow: 0px 0px 3px;\x22>Unsupported Game</strong>';
-                                        }
-                                    },
-                                    error() {
-                                        LoadingP3.innerHTML = '<strong style=\x22color:#f00;text-shadow: 0px 0px 3px;\x22>Network Error</strong>';
-                                    }
-                                })
-                            } else {
-                                T.FetchItem({
-                                    url: mameCheckUrl,
-                                    type: 'json',
-                                    success(JsonResult) {
-                                        for (var _0x1c3af4 in (CoreState = 'supported' == JsonResult['savestate'], JsonResult['files'])) E['config']['gameParentUrl']['push'](JsonResult['files'][_0x1c3af4]);
-                                        ejs_loader['coreFileName'] = '' ['concat'](E['system'], '-')['concat'](JsonResult['index']), TypeCheck['element'](ElmBtn['saveState']) && toggleHidden(ElmBtn['saveState'], !CoreState), TypeCheck['element'](ElmBtn['loadState']) && toggleHidden(ElmBtn['loadState'], !CoreState), !CoreState && TypeCheck['element'](ElmBtn['netplay']) && ElmBtn['netplay']['remove'](), 0x0 == JsonResult['length'] ? LoadingP3.innerHTML = '<strong style=\x22color:#f00;text-shadow: 0px 0px 3px;\x22>Unsupported Game</strong>' : (EnvVariable['wasm'] && CoreWasm ? (dbCoreName = '' ['concat'](E['system'], '-')['concat'](JsonResult['index'], '-wasm.data'), isLoadModule = !0x0) : (LoadingP3.innerHTML = '<strong style=\x22color:#f00;text-shadow: 0px 0px 3px;\x22>Webassembly support is not detected in this browser</strong>', dbCoreName = ''),
-                                            dbCoreName && E.runaction('Wasm_Download', [dbCoreName, CoreVersion]));
-
-                                    },
-                                    error() {
-                                        LoadingP3.innerHTML = '<strong style=\x22color:#f00;text-shadow: 0px 0px 3px;\x22>Network Error</strong>';
-                                    }
-                                })
-                            }
+                            return await E.callaction('Wasm_Mame_Check_Rooms');
                         } else {
                             var errorText = 'Please upgrade your browser to the latest version';
                             if (EnvVariable['wasm'] && CoreWasm) {
@@ -15232,13 +15213,184 @@ var EJS = function (modules) {
                                 errorText = 'Your browser does not support WebGL2';
                                 dbCoreName = null;
                             }
+                        }
+                        
+                        if (dbCoreName) E.callaction('Wasm_Download', dbCoreName, CoreVersion);
+                        else LoadingP3.innerHTML = '<strong style="color:#f00;text-shadow: 0px 0px 3px;">' + errorText + '</strong>';
+                        if (I.elm(ElmBtn['saveState'])) toggleHidden(ElmBtn['saveState'], !CoreState);
+                        if (I.elm(ElmBtn['loadState'])) toggleHidden(ElmBtn['loadState'], !CoreState);
+                        ejs_Controller['stateSupported'] = CoreState;
+                    },
+                    /**
+                     * 
+                     * @returns 下载MAME核心
+                     */
+                    async Wasm_Mame_Check_Rooms(){
+                        let checkUrl;
+                        if(!E['config']['gameUrl']){
+                            return E.callaction('MAME_NENGE_SET_ROOMS');
+                        }else{
+                            let roomname = T.F.getname(E['config']['gameUrl']),systemName = E['system']=='mame0.243'?'mame0.243':'mame';
+                            T.FetchItem({
+                                url: 'https://www.emulatorjs.com/api/'+systemName+'?name=',
+                                type: 'text',
+                                success(result) {
+                                    let index = E.callaction('MAME_SHOW_INFO',result);
+                                    if(index){
+                                        E.callaction('Wasm_Download',systemName+'-'+index+'-wasm.data',ejs_loader['coreFileVersion']);
+                                    }else{
+                                        LoadingP3.innerHTML = '<strong style=\x22color:#f00;text-shadow: 0px 0px 3px;\x22>'+T.getLang('Unsupported Game')+'</strong>'
+                                    }
+                                },
+                                error(){
+                                    LoadingP3.innerHTML = '<strong style=\x22color:#f00;text-shadow: 0px 0px 3px;\x22>'+T.getLang('Network Error')+'</strong>';
+                                }
+                            });
+                        }
+                    },
+                    NENGE_ROOMS_WELCOME_UI(list){
+                        let Div = T.$append(ejs_loader.loading,T.$ca('div',{class:'nenge-write-rooms'}));
+                        Div.innerHTML = `
+                        <ul class="nenge-menu">
+                            ${list.map(v=>`<li>${T.getLang(v)}</li>`).join("")}
+                        </ul>
+                        <div class="is_down"></div>
+                        <div class="is_write"></div>
+                        <div class="storage_data"></div>
+                        <p class="info-message">${T.getLang('uncompressed:auto check zip/7z/rar4,BIOS awayls to uncompressed load.')}</p>`;
+                        return Div;
+                    },
+                    MAME_NENGE_SET_ROOMS(){
+                        let Div = E.callaction('NENGE_ROOMS_WELCOME_UI',[
+                            'Import rooms',
+                            'Import and decompressed*',
+                            'View Rooms Storage',
+                        ]),
+                            GameSystem = E['system'],
+                            nDiv = Nttr(Div),
+                            ElmIsDown = nDiv.$('.is_down'),
+                            ElmIsWrite = nDiv.$('.is_write'),
+                            ElmStorage = nDiv.$('.storage_data'),
+                            nList = I.toArr(nDiv.$('.nenge-menu').children),
+                            systemName = E['system']=='mame0.243'?'mame0.243':'mame';;
+                        E['MAMEDATA'] = {};
+                        console.log(GameSystem);
+                        nDiv.$('.info-message').innerHTML += `<hr>`+T.getLang('MAME must select a rooms name to check!');
+                        if(nList&&nList.length>0){
+                            [0,1].forEach(index=>
+                                Nttr(nList[index]).click(
+                                    e=>E.callaction('upload',
+                                    async file=>await E.callaction(
+                                        'GAME_NENGE_ADD_LIST',
+                                        file.name,
+                                        file,
+                                        GameSystem,
+                                        ElmIsWrite,
+                                        index,
+                                        'Set Rooms',
+                                        async name=>{
+                                            if(T.F.getExt(name)!='zip') return true;
+                                        }
+                                    ))
+                                )
+                            );
+                            Nttr(nList[2]).click(
+                                e=>E.callaction('GAME_NENGE_ADD_ROOMS',GameSystem,ElmStorage,'Set Rooms')
+                            );
+                        }
+                        Nttr(ElmIsWrite).click(async e=>{
+                            let elm = e.target;
+                            if(I.elm(elm)){
+                                let data = elm.dataset;
+                                if(!data)return;
+                                if(data.path){
+                                    let name = data.path;
+                                    let result = await E.callaction('MAME_CHECK_ROOM_NAME',name,systemName);
+                                    E.callaction('MAME_SHOW_INFO',result,ElmIsDown,name);
+                                }
+                            }
+                        });
+                        Nttr(ElmStorage).click(async e=>{
+                            let elm = e.target;
+                            if(I.elm(elm)){
+                                let data = elm.dataset;
+                                if(!data)return;
+                                if(data.name){
+                                    let name = data.name.replace(E['system']+'-','');
+                                    let result = await E.callaction('MAME_CHECK_ROOM_NAME',name,systemName);
+                                    E.callaction('MAME_SHOW_INFO',result,ElmIsDown,name);
+                                }else if(data.remove){
+                                    ejs_install.DB.rooms.remove(data.remove);
+                                    elm.parentNode.parentNode.remove();
+                                }
+                            }
+                        });
+                        Nttr(ElmIsDown).click(e=>{
+                            let elm = e.target;
+                            if(I.elm(elm)){
+                                let data = elm.dataset;
+                                if(data.bios){
+                                    if(E['config']['biosUrl']&&I.str(E['config']['biosUrl'])){
+                                        E['config']['biosUrl'] = [E['config']['biosUrl']];
+                                    }else{
+                                        E['config']['biosUrl'] = [];
+                                    }
+                                    if(!E['config']['biosUrl'].includes(data.bios))E['config']['biosUrl'].push(data.bios)
+                                }else if(data.name&&data.index){
+                                    Nttr(ElmIsWrite).remove();
+                                    Nttr(ElmStorage).remove();
+                                    Nttr(ElmIsDown).remove();
+                                    nDiv.remove();
+                                    E['config']['gameUrl'] = data.name;
+                                    E.callaction('Wasm_Download',systemName+'-'+data.index+'-wasm.data',ejs_loader['coreFileVersion']);
+                                }
+                            }
+                        });
 
-                            if (dbCoreName) return E.runaction('Wasm_Download', [dbCoreName, CoreVersion]);
-                            else LoadingP3.innerHTML = '<strong style="color:#f00;text-shadow: 0px 0px 3px;">' + errorText + '</strong>';
+                    },
+                    MAME_CHECK_ROOM_NAME(RoomName,systemName){
+                        return T.FetchItem({url:'https://www.emulatorjs.com/api/'+systemName+'?name='+RoomName,type:'text'});
+                    },
+                    MAME_SHOW_INFO(result,ElmIsDown,RoomName){
+                        let html="",index,CoreState=!0,ElmBtn = E['elements']['buttons'];
+                        if(result.charAt(0)=='{'){
+                            let JsonResult = I.Json(result);
+                            CoreState = 'supported' == JsonResult['savestate'];
+                            index =JsonResult['index'];
+                                if(ElmIsDown){
+                                    I.toArr(JsonResult,entry=>{
+                                        if(I.str(entry[1])){
+                                            html+=`<p>${T.getLang('mame '+entry[0])}:${entry[1]}</p>`
+                                        }else if(entry[0]=='files'&&entry.length>0){
+                                            html+=`<h6>${T.getLang('mame '+entry[0])}</h6>`;
+                                            I.toArr(entry[1],value=>{
+                                                html+=`<p>${value}<button data-bios="${value}">${T.getLang('must click when you run')}</button></p>`
+                                            })
+                                        }
+                                    })
+                            }else{
+                                if(JsonResult['files'])E['config']['biosUrl'] = JsonResult['files'];
+                            }
+                        }else if(result&&result.charAt(0) !='|'){
+                            let entry = result.split('|');
+                            if(entry[0])index =entry[0];
+                            if(entry[1])CoreState = entry[1] == 1;
+                            if(ElmIsDown){
+                            html+=`<p>${T.getLang('mame index')}:${entry[0]}</p>`;
+                            html+=`<p>${T.getLang('mame savestate')}:${entry[1]}</p>`;
+                            }
+                            
+
                         }
                         if (I.elm(ElmBtn['saveState'])) toggleHidden(ElmBtn['saveState'], !CoreState);
                         if (I.elm(ElmBtn['loadState'])) toggleHidden(ElmBtn['loadState'], !CoreState);
                         ejs_Controller['stateSupported'] = CoreState;
+                        if(ElmIsDown){
+                            if(!index)ElmIsDown.innerHTML  = `<h3>${RoomName}</h3>`+T.getLang('this rooms can not run in:')+E['system'];
+                            else ElmIsDown.innerHTML = `<h3>${RoomName}</h3>${html}<p><button data-index="${index}" data-name="${RoomName}">${T.getLang('Run this!')}</button></p>`;
+                        }else{
+                            return index;
+                        }
                     },
                     Wasm_Download(coreName, coreVersion) {
                         console.log('读取/下载 wasm file 若需加载指定核心(旧版)修改这里');
@@ -15252,7 +15404,7 @@ var EJS = function (modules) {
                         return T.FetchItem({
                             url,
                             key,
-                            store: 'data-system',
+                            store:ejs_install.DB.system,
                             dataOption: {
                                 version: coreVersion,
                                 system: E['system'] == 'vbanext' ? 'gba' : E['system'],
@@ -15264,8 +15416,8 @@ var EJS = function (modules) {
                                  * 检查是否合法7z压缩包
                                  * 还原原始wasm.data非合法文件
                                  */
-                                let mime = T.F.checkBuffer(wasmU8);
-                                if (!mime || !['zip', '7z'].includes(mime)) {
+                                let mime = T.F.CheckExt(wasmU8);
+                                if (!mime || !['zip', '7z','rar'].includes(mime)) {
                                     wasmU8 = wasmU8['slice'](0xc);
                                     wasmU8['set']([0x37, 0x7a, 0xbc, 0xaf, 0x27, 0x1c, 0x0, 0x3], 0x0);
                                 }
@@ -15277,17 +15429,17 @@ var EJS = function (modules) {
                                      * 兼容旧版未解压
                                      * 检查是否合法7z压缩包
                                      */
-                                    let mime = T.F.checkBuffer(wasmU8);
-                                    if (!mime || !['zip', '7z'].includes(mime)) {
+                                    let mime = T.F.CheckExt(wasmU8);
+                                    if (!mime || !['zip', '7z','rar'].includes(mime)) {
                                         wasmU8 = wasmU8['slice'](0xc);
                                         wasmU8['set']([0x37, 0x7a, 0xbc, 0xaf, 0x27, 0x1c, 0x0, 0x3], 0x0);
                                     }
                                     T.unFile(wasmU8, e => {
                                         LoadingP1.innerHTML = `${T.getLang('Decompress Game Core')} ${e}`;
-                                    }).then(data => E.runaction('Wasm_ReadFile', [data]));
+                                    }).then(data => E.callaction('Wasm_ReadFile', data));
 
                                 } else if (wasmU8) {
-                                    E.runaction('Wasm_ReadFile', [wasmU8]);
+                                    E.callaction('Wasm_ReadFile', wasmU8);
                                 }
                                 wasmU8 = null;
 
@@ -15303,21 +15455,8 @@ var EJS = function (modules) {
                     Wasm_ReadFile(datalist) {
                         console.log('读取并解压wasmfile');
                         let wasmAsmjs;
-                        I.toArr(datalist, entry => {
-                            var entryName = T.F.getname(entry[0]),
-                                entryExt = entryName['split']('.')['pop']();
-                            ejs_loader['coreFileData'][entryName] = entry[1];
-                            if ('js' === entryExt && !entryName['includes']('.worker.js')) {
-                                wasmAsmjs = new TextDecoder().decode(entry[1]);
-                            } else if ('mem' === entryExt) {
-                                ejs_loader['memData'] = entry[1];
-                            } else if ('wasm' === entryExt) {
-                                ejs_loader['wasmData'] = entry[1]
-                            }
-                        });
-                        datalist = null;
                         const Module = {
-                            'TOTAL_MEMORY': 0x10000000,
+                            //'TOTAL_MEMORY': 0x10000000,
                             'noInitialRun': !0x0,
                             'arguments': [],
                             'preRun': [],
@@ -15330,6 +15469,12 @@ var EJS = function (modules) {
                             'printErr': function (text) {
 
                                 'undefined' != typeof EJS_DEBUG_ && !0x0 === EJS_DEBUG_ && console['log'](text);
+                                if(RealSystemName){
+                                    if(SAVE_EVENT_TEXT[RealSystemName]&&SAVE_EVENT_TEXT[RealSystemName].includes(text)){
+                                        ejs_Controller['saveSavFiles']();
+                                        E['isAutoSave'] = true;
+                                    }
+                                }
                             },
                             'totalDependencies': 0x0,
                             'monitorRunDependencies': function (left) {},
@@ -15356,28 +15501,45 @@ var EJS = function (modules) {
                                 });
                             }
                         };
+                        I.toArr(datalist, entry => {
+                            var entryName = T.F.getname(entry[0]),
+                                entryExt = entryName['split']('.')['pop']();
+                            ejs_loader['coreFileData'][entryName] = entry[1];
+                            if ('js' === entryExt && !entryName['includes']('.worker.js')) {
+                                wasmAsmjs = new TextDecoder().decode(entry[1]);
+                            } else if ('mem' === entryExt) {
+                                ejs_loader['memData'] = entry[1];
+                            } else if ('wasm' === entryExt) {
+                                Module['wasmBinary'] = entry[1]
+                            }
+                        });
+                        datalist = null;
+                        const SAVE_EVENT_TEXT = {
+                            'gba':[
+                                '[libretro INFO] GBA Savedata: Savedata synced',
+                                '[libretro INFO] GB Memory: Savedata synced'
+                            ]
+                        };
                         I.defines(ejs_loader,{Module},1,1);
                         if ('openbor' == E['system']) {
                             Module['preRun'] = [function () {
                                 ENV['SDL_EMSCRIPTEN_KEYBOARD_ELEMENT'] = '#canvas';
                             }]
                         }
-                        if (null !== ejs_loader['wasmData']) {
-                            Module['wasmBinary'] = ejs_loader['wasmData'];
-                            Module['wasmBinary'] = ejs_loader['wasmData'];
-                            E.runaction('Memory_Reset');
+                        if (null !== Module['wasmBinary']) {
+                            //E.callaction('Memory_Reset');
                             Module['monitorRunDependencies'] = function (left) {
-                                0x0 === left && E.runaction('Wasm_Ready');
+                                0x0 === left && E.callaction('Wasm_Ready');
                             };
                             Module['onRuntimeInitialized'] = function () {}
                         } else {
                             /**memdata */
-                            E.runaction('Memory_Reset');
+                            //E.callaction('Memory_Reset');
                             Module['monitorRunDependencies'] = function (_0x3244b5) {};
                             Module['onRuntimeInitialized'] = function () {
                                 if (ejs_loader['Module'] && ejs_loader['Module'].FS) ejs_loader.FS = ejs_loader['Module'].FS;
                                 else ejs_loader.FS = window.FS;
-                                E.runaction('Wasm_Ready');
+                                E.callaction('Wasm_Ready');
                             }
                         }
                         /**
@@ -15385,7 +15547,7 @@ var EJS = function (modules) {
                          * wasmAsmjs.replace(/Module\["run"\]\*=\s*run;/,'if(!Module.FS)Module.FS=FS;Module["run"] = run;')
                          */
                         wasmAsmjs = wasmAsmjs.replace(/Module\["run"\]\*=\s*run;/,'if(!Module.FS)Module.FS=FS;Module["run"] = run;');
-                        let result = (new Function('Module',wasmAsmjs+`var EmulatorJS,EmulatorJS_;return {EmulatorJS,EmulatorJS_};`))(Module)||{};
+                        let result = (new Function('Module',wasmAsmjs+`if(typeof ENV !='undefined')window.ENV = ENV;var EmulatorJS,EmulatorJS_;return {EmulatorJS,EmulatorJS_};`))(Module)||{};
                         if (void 0x0 === window['addRunDependency']) {
                             if ('undefined' != typeof result.EmulatorJS) {
                                 result.EmulatorJS(Module);
@@ -15395,34 +15557,34 @@ var EJS = function (modules) {
                                 ??memData模式
                                 */
                                 var Mark = regeneratorRuntime['mark'](
-                                    function _0xdce8b4() {
-                                        return regeneratorRuntime['wrap'](function (_0x117afe) {
+                                    function mark_func() {
+                                        return regeneratorRuntime['wrap'](function (event) {
 
-                                            for (;;) switch (_0x117afe['prev'] = _0x117afe['next']) {
+                                            for (;;) switch (event['prev'] = event['next']) {
                                                 case 0x0:
-                                                    return _0x117afe['next'] = 0x2, result.EmulatorJS_(Module);
+                                                    return event['next'] = 0x2, result.EmulatorJS_(Module);
                                                 case 0x2:
-                                                    I.defines(ejs_loader,{Module:_0x117afe['sent']},1,1);
-                                                    //ejs_loader['Module'] = _0x117afe['sent'];
-                                                    null !== ejs_loader['memData'] && E.runaction('MemData_Reset', [ejs_loader['memData']]);
+                                                    I.defines(ejs_loader,{Module:event['sent']},1,1);
+                                                    //ejs_loader['Module'] = event['sent'];
+                                                    null !== ejs_loader['memData'] && E.callaction('MemData_Reset', ejs_loader['memData']);
                                                 case 0x4:
                                                 case 'end':
-                                                    return _0x117afe['stop']();
+                                                    return event['stop']();
                                             }
-                                        }, _0xdce8b4);
+                                        }, mark_func);
                                     }
                                 );
+                                
                                 (
                                     function () {
                                         return new Promise((callback, error) => {
-                                            var _0x449b41 = Mark['apply'](this, arguments);
-
-                                            function run_next(_0x237ec7) {
-                                                _0x1be57e(_0x449b41, callback, error, run_next, run_throw, 'next', _0x237ec7);
+                                            var _f_Mark = Mark['apply'](this, arguments);
+                                            function run_next(func) {
+                                                _0x1be57e(_f_Mark, callback, error, run_next, run_throw, 'next', func);
                                             }
 
-                                            function run_throw(_0xbe13bc) {
-                                                _0x1be57e(_0x449b41, callback, error, run_next, run_throw, 'throw', _0xbe13bc);
+                                            function run_throw(func) {
+                                                _0x1be57e(_f_Mark, callback, error, run_next, run_throw, 'throw', func);
                                             }
                                             run_next(void 0x0);
                                         });
@@ -15430,7 +15592,7 @@ var EJS = function (modules) {
                                 ejs_loader['newCore'] = !0x0
                             }
                             if (null !== ejs_loader['memData'] && !ejs_loader['newCore']) {
-                                E.runaction('MemData_Reset', [ejs_loader['memData']]);
+                                E.callaction('MemData_Reset', ejs_loader['memData']);
                             }
                             I.defines(ejs_loader,{FS:Module.FS},1);
                             if ('undefined' != typeof EJS_DEBUG_ && !0x0 === EJS_DEBUG_) {
@@ -15464,8 +15626,8 @@ var EJS = function (modules) {
                          */
                         DISK.SetModule(Module);
                         DISK.DB = {
-                            '/data': T.getStore('userdata'),
-                            '/Saves': T.getStore('openbor-save'),
+                            '/data': ejs_install.DB.saves,
+                            '/Saves': ejs_install.DB.openbor,
                         };
                         I.defines(ejs_loader, {
                             DISK
@@ -15479,15 +15641,17 @@ var EJS = function (modules) {
                         'undefined' != typeof IDBFS ? FS['mount'](IDBFS, {}, '/data/saves') : FS['mount'](FS['filesystems']['IDBFS'], {}, '/data/saves');
                         */
                         FS['mkdir']('/shader');
-                        ejs_loader.screenshots = '/data/screenshots';
+                        //ejs_loader.screenshots = '/data/screenshots';
+                        ejs_loader.savefullpath = '/data/saves/' + E['savepath'];
                         if ('openbor' != E['system']) {
                             FS['mount'](DISK, {}, '/data');
                             FS['mkdir']('/data/saves');
-                            FS['mkdir'](ejs_loader.screenshots);
-                            FS['mkdir']('/data/saves/' + E['savepath']);
+                            //FS['mkdir'](ejs_loader.screenshots);
+                            FS['mkdir'](ejs_loader.savefullpath);
                         } else {
                             FS['mount'](DISK, {}, '/Saves');
                         }
+                        console.log(ejs_loader.savefullpath);
                         await DISK.mountReady();
                         var _0x46794c = !0x1,
                             _0x40a9fc = null,
@@ -15505,8 +15669,8 @@ var EJS = function (modules) {
                                 if (['melonds', 'zc210']['includes'](E['system'])) SaveExt = 'sav';
                                 var GameName = E['startName']['split']('/')['pop']()['split']('.'),
                                     FileName = GameName['slice'](0x0, GameName['length'] - 0x1)['join']('.'),
-                                    SavePath = '/data/saves/' + E['savepath'] + '/' + E['config']['savename'] + '.' + SaveExt,
-                                    newPath = '/data/saves/' + E['savepath'] + '/' + FileName + '.' + SaveExt;
+                                    SavePath = ejs_loader.savefullpath + '/' + E['config']['savename'] + '.' + SaveExt,
+                                    newPath = ejs_loader.savefullpath + '/' + FileName + '.' + SaveExt;
                                 if (FS.analyzePath(SavePath).exists) {
                                     //var SaveU8 = FS['readFile'](SavePath);
                                     //FS['writeFile'](newPath, new Uint8Array(SaveU8));
@@ -15518,21 +15682,18 @@ var EJS = function (modules) {
                              */
                         (function () {
                             return;
-                            var saveExt = 'srm';
-                            'nds' === E['system'] && (saveExt = 'dsv');
-                            ['melonds', 'zc210']['includes'](E['system']) && (saveExt = 'sav');
                             /**
                              * 每四秒 自动同步保存
                              */
                             window['setInterval'](function () {
                                 if (E['started']) {
                                     var gameName = T.getKeyName(E['startName']),
-                                        path = `/data/saves/${E['savepath']}/${gameName}.${saveExt}`,
+                                        path = `${ejs_loader.savefullpath}/${gameName}.${E['gameSaveExt']}`,
                                         _0x14c54c = [];
                                     ejs_Controller['saveSavFiles'] && ejs_Controller['saveSavFiles']();
                                     if ('' != E['config']['savename']) {
                                         if (FS.analyzePath(path).exists) {
-                                            FS['writeFile'](`/data/saves/${E['savepath']}/${E['config']['savename']}.${saveExt}`, FS['readFile'](path));
+                                            FS['writeFile'](`${ejs_loader.savefullpath}/${E['config']['savename']}.${E['gameSaveExt']}`, FS['readFile'](path));
                                         }
                                     }
                                 }
@@ -15540,10 +15701,9 @@ var EJS = function (modules) {
                         }());
                         ejs_Controller['initShaders']();
                         var cfgText = '';
-                        cfgText += 'savefile_directory = /data/saves/' + E['savepath'] +
+                        cfgText += 'savefile_directory = '+ejs_loader.savefullpath +
                             '\nsystem_directory = /\n' +
-                            '\nsavestate_directory = /data/saves/' + E['savepath'] +
-                            '\nscreenshot_directory = "'+ejs_loader.screenshots+'"' +
+                            '\nsavestate_directory = '+ejs_loader.savefullpath +
                             '\nvideo_vsync = true' +
                             '\nscreenshot_directory = /' +
                             '\nvideo_shader = /shader/shader.glslp' +
@@ -15619,45 +15779,49 @@ var EJS = function (modules) {
                             }, !0x1)),
                             FS['createDataFile']('/home/web_user/.config/retroarch', 'retroarch-core-options.cfg', _0x3c3a9f, !0x0, !0x0), FS['createDataFile']('/etc', 'retroarch-core-options.cfg', _0x3c3a9f, !0x0, !0x0));
                         if (E['config']['biosUrl']) {
-                            E.runaction('GAME_ReadBios');
+                            E.callaction('GAME_ReadBios');
                         } else {
-                            E.runaction('GAME_ParentData');
+                            E.callaction('GAME_ParentData');
                         }
                     },
-                    GAME_ReadBios(){
-                        let url = E['config']['biosUrl'],
-                            system =  E['system'] == 'vbanext' ? 'gba' : E['system'];
-                        return T.FetchItem({
-                            url,
-                            store: 'data-bios',
-                            autounpack: true, //根据大小是否自动解压
-                            dataOption: {
-                                system
-                            },
-                            success(u8) {
-                                if (I.u8obj(u8)) {
-                                    DISK.MKFILE(T.F.getname(url), u8, 1);
-                                    ejs_sizelength += u8.byteLength;
-                                }else if(u8){
-                                    I.toArr(
-                                        u8,
-                                        entry=>{
-                                            DISK.MKFILE(T.F.getname(entry[0]), entry[1], 1);
-                                            ejs_sizelength += entry[1].byteLength;
+                    async GAME_ReadBios(){
+                        let urlList = E['config']['biosUrl'],system =  E['system'] == 'vbanext' ? 'gba' : E['system'];
+                        if(urlList){
+                            if(I.str(urlList))urlList = [urlList];
+                            await I.Async(urlList.map(async url=>{
+                                T.FetchItem({
+                                    url,
+                                    store:ejs_install.DB.bios,
+                                    autounpack:E['system'].startsWith('mame')?false:true, //根据大小是否自动解压
+                                    dataOption: {
+                                        system
+                                    },
+                                    success(u8) {
+                                        if (I.u8obj(u8)) {
+                                            DISK.MKFILE(T.F.getname(url), u8, 1);
+                                            ejs_sizelength += u8.byteLength;
+                                        }else if(u8){
+                                            I.toArr(
+                                                u8,
+                                                entry=>{
+                                                    DISK.MKFILE(entry[0], entry[1], 1);
+                                                    ejs_sizelength += entry[1].byteLength;
+                                                }
+                                            );
                                         }
-                                    );
-                                }
-                                E.runaction('GAME_ParentData');
-                                u8 = null;
-                            },
-                            process(e) {
-                                LoadingP2.innerHTML = T.getLang('Download BIOS')+' '+e;
-                            },
-                            error(e) {
-                                LoadingP2.innerHTML = '<strong style=\x22color:#f00;text-shadow: 0px 0px 3px;\x22>' + e.message, '</strong>';
-                                E.runaction('GAME_ParentData');
-                            }
-                        });
+                                        u8 = null;
+                                    },
+                                    process(e) {
+                                        LoadingP2.innerHTML = T.getLang('Download BIOS')+' '+e;
+                                    },
+                                    error(e) {
+                                        LoadingP2.innerHTML = '<strong style=\x22color:#f00;text-shadow: 0px 0px 3px;\x22>' + e.message, '</strong>';
+                                        E.callaction('GAME_ParentData');
+                                    }
+                                });
+                            }));
+                            E.callaction('GAME_ParentData');
+                        };
                     },
                     async GAME_ParentData(){
                         var UrlList = E['config']['gameParentUrl'],
@@ -15682,7 +15846,7 @@ var EJS = function (modules) {
                                 }
                                 return T.FetchItem({
                                     url: sUrl,
-                                    store: 'data-rooms',
+                                    store:ejs_install.DB.rooms,
                                     key,
                                     dataOption: {
                                         system
@@ -15700,7 +15864,7 @@ var EJS = function (modules) {
                                                 } else {
                                                     I.toArr(data, entry => {
                                                         ejs_sizelength += entry[1].byteLength;
-                                                        DISK.MKFILE('/data/saves/' + E['savepath'] + '/mame/' + entry[0], entry[1], 1);
+                                                        DISK.MKFILE(ejs_loader.savefullpath + '/mame/' + entry[0], entry[1], 1);
                                                     });
                                                 }
                                             })
@@ -15720,7 +15884,7 @@ var EJS = function (modules) {
                                 });
                             }));
                         }
-                        E.runaction('GAME_Patch');
+                        E.callaction('GAME_Patch');
                     },
                     async GAME_Patch(){
                         if(E['config']['gamePatchUrl']){
@@ -15730,7 +15894,7 @@ var EJS = function (modules) {
                                 url,
                                 upack: true,
                                 //key:'patch-'+GameName,
-                                //store:'data-rooms',
+                                //store:ejs_install.DB.rooms',
                                 //dataOption:{
                                 //    'system':GameSystem
                                 //},
@@ -15757,11 +15921,11 @@ var EJS = function (modules) {
                                         );
                                     }
                                     u8 = null;
-                                    E.runaction('GAME_Rooms');
+                                    E.callaction('GAME_Rooms');
                                 },
                                 error(e) {
                                     LoadingP3.innerHTML = `<strong style="color:#f00;text-shadow: 0px 0px 3px;">${e.message}</strong>`;
-                                    E.runaction('GAME_Rooms');
+                                    E.callaction('GAME_Rooms');
                                 },
                                 process(e) {
                                     LoadingP3.innerHTML = `${T.getLang('Loading Game Data')} ${e}`;
@@ -15769,7 +15933,7 @@ var EJS = function (modules) {
 
                             });
                         }
-                        E.runaction('GAME_Rooms');
+                        E.callaction('GAME_Rooms');
                     },
                     async GAME_Rooms(){
                         console.log('读取游戏文件');
@@ -15795,12 +15959,12 @@ var EJS = function (modules) {
                             /**
                              * 自定义 写入文件
                              */
-                            return E.runaction('GAME_NENGE_WriteRooms',[GameSystem]);
+                            return E.callaction('GAME_NENGE_WriteRooms',GameSystem);
                         }
                         return T.FetchItem({
                             url: GameUrl,
                             key: GameSystem + '-' + GameName,
-                            store: 'data-rooms',
+                            store: ejs_install.DB.rooms,
                             dataOption: {
                                 'system': GameSystem
                             },
@@ -15808,17 +15972,17 @@ var EJS = function (modules) {
                             success(data) {
                                 if(I.u8obj(data)){
                                     ejs_sizelength += data.byteLength;
-                                    DISK.MKFILE(E.runaction('Game_GetRoomPath',[GameName]),data);
+                                    DISK.MKFILE(E.callaction('GAME_GET_PATH',GameName),data);
                                 }else if(data){
                                     I.toArr(data,entry=>{
                                         if (/^__MACOSX/.test(entry[0])) {
                                             return;
                                         }
                                         ejs_sizelength += entry[1].byteLength;
-                                        DISK.MKFILE(E.runaction('Game_GetRoomPath',[entry[0]]),entry[1]);
+                                        DISK.MKFILE(E.callaction('GAME_GET_PATH',entry[0]),entry[1]);
                                     })
                                 }
-                                E.runaction('GAME_START');
+                                E.callaction('GAME_START');
                                 data = null;
                             },
                             error(e) {
@@ -15830,105 +15994,57 @@ var EJS = function (modules) {
 
                         });
                     },
-                    Game_GetRoomPath(path){
+                    GAME_GET_PATH(path){
                         path = T.F.getname(path);
                         let ext = T.F.getExt(path);
-                        if(SystemFileExt[CoreSystemList[E['system']]]['includes'](ext)){
-                            E['startName'] = path;
-                        }
-                        if ('openbor' == E['system'] && SystemFileExt[CoreSystemList[E['system']]]['includes'](ext)) {
-                            path =  'Paks/' + path;
-                            E['startName'] = path;
-                            return path;
+                        console.log(RealSystemExt);
+                        if(RealSystemExt['includes'](ext)){
+                            if('openbor' == E['system']){
+                                path =  'Paks/' + path;
+                                E['startName'] = path;
+                            }else{
+                                E['startName'] = path;
+                            }
                         }
                         return path;
                     },
                     async GAME_NENGE_WriteRooms(GameSystem){
-                        let Div = T.$append(ejs_loader.loading,T.$ca('div',{class:'nenge-write-rooms'})),bhtml="";
-                        I.toArr(
-                            await T.getStore('data-bios').cursor('system',1,IDBKeyRange.only(GameSystem)),
-                            entry=>{
-                                let path = I.str(entry)?entry:entry[0];
-                                bhtml += `<div><p>BIOS:${path}</p><p><span data-remvebios="${path}">${T.getLang('Delete')}</span><span data-writebios="${path}">${T.getLang('Write Bios')}</span></p></div>`;
-                            }
-                        );
-                        Div.innerHTML = `
-                        <ul class="nenge-menu">
-                            <li>${T.getLang('Import rooms')}</li>
-                            <li>${T.getLang('Import and compressed*')}</li>
-                            <li>${T.getLang('View Storage')}</li>
-                            <li>${T.getLang('Import Bios')}</li>
-                        </ul>
-                        <div class="is_write">${bhtml}</div>
-                        <div class="storage_data"></div>
-                        <p>${T.getLang('uncompressed:auto check zip/7z/rar4,BIOS awayls to uncompressed load.')}</p>`;
+                        
+                        let Div = E.callaction('NENGE_ROOMS_WELCOME_UI',[
+                            'Import rooms',
+                            'Import and decompressed*',
+                            'View Rooms Storage',
+                            'Import Bios*',
+                        ]),    
+                            nDiv = Nttr(Div),
+                            ElmIsWrite = nDiv.$('.is_write'),
+                            ElmStorage = nDiv.$('.storage_data');
+                        ElmIsWrite.innerHTML = await E.callaction('GAME_NENGE_GET_BIOS_LIST',GameSystem);
                         I.toArr(Nttr(Div).$('.nenge-menu').children,(elm,index)=>{
                             if(index==3){
                                 Nttr(elm).click(
                                     e=>{
-                                        E.runaction('upload',[files=>{
-                                            I.toArr(files,async file=>{
+                                        E.callaction(
+                                            'upload',
+                                            async file=>{
                                                 let u8 = await T.unFile(file);
-                                                await T.getStore('data-bios').setData(file.name,u8,{
-                                                    system:GameSystem
-                                                });
-                                                if(I,u8obj(u8)){
-                                                    ejs_sizelength += u8.byteLength;
-                                                    DISK.MKFILE(file.name,u8);
-                                                }else{
-                                                    I.toArr(
-                                                        u8,
-                                                        entry=>{
-                                                            ejs_sizelength += entry[1].byteLength;
-                                                            DISK.MKFILE(entry[0],entry[1]);
-                                                        }
-                                                    );
-                                                }
-                                            })
-                                        }])
+                                                E.callaction('GAME_NENGE_ADD_BIOS',file.name,u8,GameSystem,ElmIsWrite);
+                                            }
+                                        )
                                     }
                                 )
                             }else if(index==2){
-                                Nttr(elm).click(
-                                    async e=>{
-                                        let key,list2;
-                                        key = IDBKeyRange.only(GameSystem);
-                                        let list = await T.getStore('data-rooms').keys({only:1,index:'system',Range:IDBKeyRange.only(GameSystem)}),html="";
-                                        if(E['config']['system'] == 'gba'){
-                                            list2 = await T.getStore('data-rooms').keys({only:1,index:'system',Range:IDBKeyRange.only('gb')});
-                                            if(list2){
-                                                if(I.array(list2))list = (list||[]).concat(list2);
-                                            }
-                                        }
-                                        if(list){
-                                            I.toArr(list,entry=>{
-                                                let path,filename;
-                                                if(I.str(entry)){
-                                                    filename = entry.replace(/^[a-z0-9]+\-/,'');
-                                                    path = entry;
-                                                }else{
-                                                    filename = entry[0].replace(/^[a-z0-9]+\-/,'');
-                                                    path = entry[0];
-                                                }
-                                                html+=`<li><p>${path}</p><p><span data-remove="${path}">${T.getLang('Delete')}</span><span data-name="${path}">${T.getLang('Write in')}</span></p></li>`;
-                                            });
-                                        }
-                                        Nttr(Div).$('.storage_data').innerHTML = `<ul>${html}</ul>`;
-                                    }
-                                )
+                                Nttr(elm).click(e=>E.callaction('GAME_NENGE_ADD_ROOMS',GameSystem,ElmStorage));
                             }else if(index==0||index==1){
                                 Nttr(elm).click(
                                     e=>{
-                                        E.runaction('upload',[files=>{
-                                            I.toArr(files,async file=>{
-                                                let u8;
-                                                if(index==1)u8 = await T.unFile(file);
-                                                else u8 = new Uint8Array(await file.arrayBuffer());
-                                                await E.runaction('GAME_NENGE_ADD_LIST',[file.name,u8,GameSystem,Div]);
+                                        E.callaction(
+                                            'upload',
+                                            async file=>{
+                                                await E.callaction('GAME_NENGE_ADD_LIST',file.name,file,GameSystem,ElmIsWrite,index);
                                                 file=null;
-                                                u8 = null;
-                                            })
-                                        }])
+                                            }
+                                        )
                                     }
                                 )
                             }
@@ -15939,10 +16055,10 @@ var EJS = function (modules) {
                                 let name = elm.dataset.name;
                                 if(name){
                                     elm.removeAttribute('data-name');
-                                    await E.runaction('GAME_NENGE_ADD_LIST',[name,null,GameSystem,Div]);
+                                    await E.callaction('GAME_NENGE_ADD_LIST',name,null,GameSystem,ElmIsWrite);
                                 }else if(elm.dataset.remove){
                                     elm.parentNode.parentNode.remove();
-                                    T.getStore('data-rooms').remove(elm.dataset.remove);
+                                    ejs_install.DB.rooms.remove(elm.dataset.remove);
                                 }
 
                             }
@@ -15954,66 +16070,125 @@ var EJS = function (modules) {
                                 if(path){
                                     E['startName'] = path;
                                     Nttr(Div).remove();
-                                    E.runaction('GAME_START');
+                                    E.callaction('GAME_START');
                                 }else if(elm.dataset.removebios){
                                     elm.parentNode.parentNode.remove();
-                                    T.getStore('data-rooms').remove(elm.dataset.removebios);
+                                    ejs_install.DB.bios.remove(elm.dataset.removebios);
                                 }else if(elm.dataset.writebios){
-                                    elm.removeAttribute('data-writebios');
-                                    elm.innerHTML = T.getLang('Write complete');
-                                    let data = await T.getStore('data-bios').data(elm.dataset.writebios);
-                                    if(I.u8obj(data)){
-                                        ejs_sizelength += data.byteLength;
-                                        DISK.MKFILE(elm.dataset.writebios,data);}
-                                    else  I.toArr(data,entry=>{
-                                        if(/^(__MACOSX|\.)/.test(entry[0])) return ;
-                                        ejs_sizelength += entry[1].byteLength;
-                                        DISK.MKFILE(T.F.getname(entry[0]),entry[1]);
-                                    });
-                                    T.getStore('data-rooms').remove(elm.dataset.writebios);
+                                    E.callaction('GAME_NENGE_ADD_BIOS',elm.dataset.writebios,null,GameSystem,elm);
                                 }
                             }
                         });
 
                     },
-                    async GAME_NENGE_ADD_LIST(path,u8,system,Div){
-                        let pathname,havedata = !1;
+                    async GAME_NENGE_ADD_LIST(path,u8,system,ElmIsWrite,index,text,check){
+                        console.log(path,u8,system,ElmIsWrite,index,text,check);
+                        let pathname=path,havedata = !1;
+                        if(!text)text = 'Run Start';
                         if(!u8){
-                            u8 = await T.getStore('data-rooms').data(path);
-                            pathname = path.replace(/^[z-z0-9\-]+\-/,'');
+                            u8 = await ejs_install.DB.rooms.data(path);
+                            pathname = path.replace(/^[a-z0-9\-]+\-/i,'');
                         }else if(u8){
+                            if(index)u8 = await T.unFile(u8);
+                            else if(I.blob(u8))u8 = new Uint8Array(await u8.arrayBuffer());
                             havedata = !0;
                             pathname = path;
                         }
                         if(I.u8obj(u8)){
-                            if(havedata)await T.getStore('data-rooms').setData(system+'-'+pathname,u8,{filesize:u8.byteLength,system});
-                            pathname = E.runaction('Game_GetRoomPath',[pathname]);
+                            if(check&&await check(pathname)) return;
+                            if(havedata)await ejs_install.DB.rooms.setData(system+'-'+pathname,u8,{filesize:u8.byteLength,system});
+                            pathname = E.callaction('GAME_GET_PATH',pathname);
                             DISK.MKFILE(pathname,u8);
                             ejs_sizelength += u8.byteLength;
-                            T.$append(Nttr(Div).$('.is_write'),T.$ct('div',`${pathname}<span data-path="${pathname}">${T.getLang('Run Start')}</span>`));
+                            T.$append(ElmIsWrite,T.$ct('div',`${pathname}<span data-path="${pathname}">${T.getLang(text)}</span>`));
                         }else{
                             I.toArr(u8,async entry=>{
                                 if(/^(__MACOSX|\.)/.test(entry[0])) return ;
-                                let filename = E.runaction('Game_GetRoomPath',[T.F.getname(entry[0])]);
+                                let filename = T.F.getname(entry[0]);
+                                if(check&&await check(filename)) return;
+                                filename = E.callaction('GAME_GET_PATH',filename);
                                 if(havedata){
-                                    await T.getStore('data-rooms').setData(system+'-'+filename,entry[1],{filesize:entry[1].byteLength,system});
+                                    await ejs_install.DB.rooms.setData(system+'-'+filename,entry[1],{filesize:entry[1].byteLength,system});
                                 };
                                 DISK.MKFILE(filename,entry[1]);
                                 ejs_sizelength += entry[1].byteLength;
-                                T.$append(Nttr(Div).$('.is_write'),T.$ct('div',`${filename}<span data-path="${filename}">${T.getLang('Run Start')}</span>`));
+                                T.$append(ElmIsWrite,T.$ct('div',`${filename}<span data-path="${filename}">${T.getLang(text)}</span>`));
 
                             })
                         }
                         u8=null;
                     },
+                    async GAME_NENGE_ADD_ROOMS(GameSystem,elm,text){
+                        let key,list2;
+                        key = IDBKeyRange.only(GameSystem);
+                        let list = await ejs_install.DB.rooms.keys({only:1,index:'system',Range:IDBKeyRange.only(GameSystem)}),html="";
+                        if(E['config']['system'] == 'gba'){
+                            list2 = await ejs_install.DB.rooms.keys({only:1,index:'system',Range:IDBKeyRange.only('gb')});
+                            if(list2){
+                                if(I.array(list2))list = (list||[]).concat(list2);
+                            }
+                        }
+                        if(list){
+                            I.toArr(list,entry=>{
+                                let path,filename;
+                                if(I.str(entry)){
+                                    if(E['config']['system'] == 'vbanext'&&/\.(gb|gbc)$/i.test(entry)) return;
+                                    filename = entry.replace(/^[a-z0-9]+\-/,'');
+                                    path = entry;
+                                }
+                                html+=`<li><p>${path}</p><p><span data-remove="${path}">${T.getLang('Delete')}</span><span data-name="${path}">${T.getLang(text||'Write in')}</span></p></li>`;
+                            });
+                        }
+                        elm.innerHTML = `<ul>${html}</ul>`;
+
+                    },
+                    async GAME_NENGE_ADD_BIOS(path,data,system,elm){
+                        if(!data){
+                            elm.removeAttribute('data-writebios');
+                            elm.innerHTML = T.getLang('Write complete');
+                            data = await ejs_install.DB.bios.data(path);
+                        }else{
+                            if(I.blob(data))data = new Uint8Array(await file.arrayBuffer());
+                            await ejs_install.DB.bios.setData(path,data,{
+                                system
+                            });
+                            T.$append(elm,T.$ct('div',`<div><p>BIOS:${path}</p><p><span>${T.getLang('Write complete')}</span></p></div>`))
+
+                        }
+                        if(I.u8obj(data)){
+                            ejs_sizelength += data.byteLength;
+                            DISK.MKFILE(path);}
+                        else  I.toArr(data,entry=>{
+                            if(/^(__MACOSX|\.)/.test(entry[0]) || !I.u8obj(entry[1])) return ;
+                            ejs_sizelength += entry[1].byteLength;
+                            DISK.MKFILE(entry[0],entry[1]);
+                        });
+                        data = null;
+                    },
+                    async GAME_NENGE_GET_BIOS_LIST(GameSystem){
+                        let bhtml="";
+                        I.toArr(
+                            await ejs_install.DB.bios.keys({index:'system',Range:IDBKeyRange.only(GameSystem)}),
+                            entry=>{
+                                let path = I.str(entry)?entry:entry[0];
+                                bhtml += `<div><p>BIOS:${path}</p><p><span data-remvebios="${path}">${T.getLang('Delete')}</span><span data-writebios="${path}">${T.getLang('Write Bios')}</span></p></div>`;
+                            }
+                        );
+                        return bhtml;
+                    },
                     GAME_START(gamePath) {
                         if (!E['startName'] && gamePath) E['startName'] = gamePath;
                         if (!E['startName']) {
                             LoadingP3.innerHTML = 'Core name error';
-                            return E.runaction('GAME_NENGE_WriteRooms',E['config']['system']);
+                            return E.callaction('GAME_NENGE_WriteRooms',E['config']['system']);
                         }
+                        E['gameName'] = T.F.getKeyName(E['startName']);
+                        var saveExt = 'srm';
+                        'nds' === E['system'] && (saveExt = 'dsv'), ['melonds', 'zc210']['includes'](E['system']) && (saveExt = 'sav');
+                        E['gameSaveExt'] = saveExt;
                         try {
-                            E.runaction('Memory_Reset'), PatchToContent();
+                            //E.callaction('Memory_Reset');
+                            PatchToContent();
                             var ArgInfo = [E['startName'], ejs_loader['hash'] + ejs_loader['hash2'] + ejs_loader['hash3']];
                             /**
                              * 为什么离线不能运行 因为新版核心是使用随机hash,目前不知道他的算法,其HASH在获取api?name=gba中header头里面的key2 
@@ -16045,13 +16220,14 @@ var EJS = function (modules) {
                         input.onchange = e => {
                             let files = e.target.files;
                             if (files && files.length > 0) {
-                                return func(files);
+                                I.toArr(files,file=> func(file));
                             }
                             input.remove();
                         };
                         input.click();
                     },
                     Memory_Reset() {
+                        /*
                         if (isLoadModule) {
                             ejs_loader.Module['TOTAL_MEMORY'] = 0x0;
                             if ('jaguar' == E['system']) {
@@ -16073,6 +16249,7 @@ var EJS = function (modules) {
                                 ejs_loader.Module['TOTAL_MEMORY'] = 0x0;
                             }
                         } else {
+                        */
                             if ('nes' == E['system']) {
                                 ejs_loader.Module['TOTAL_MEMORY'] = 0x8000000;
                             }
@@ -16089,7 +16266,7 @@ var EJS = function (modules) {
                             if ('gba' == E['system']) {
                                 ejs_loader.Module['TOTAL_MEMORY'] = 0x10000000;
                             }
-                        }
+                        //}
                         if ('undefined' != typeof EJS_MEMORY) ejs_loader.Module['TOTAL_MEMORY'] = EJS_MEMORY;
                     },
                     MemData_Reset(len) {
@@ -16107,19 +16284,19 @@ var EJS = function (modules) {
                 }
             );
             if(!E['config']['gameUrl']){
+                /**
+                 * 未设置游戏文件直接先运行后上传
+                 */
                 toggleHidden(LoadingBtnStart, !0x0);
-                return E.runaction('PlayNow');
-            }
-            onceEvent(LoadingBtnStart, 'click touchstart', function (event) {
-                /*点击PLAY NOW 运行*/
-                if ('clientX' in event && 'clientY' in event && 0x0 != event['clientX'] && 0x0 != event['clientY'] || event instanceof TouchEvent) {
+                return E.callaction('PlayNow');
+            }else{
+                onceEvent(LoadingBtnStart, 'click touchstart', function (event) {
+                    /*点击PLAY NOW 运行*/
                     toggleHidden(LoadingBtnStart, !0x0);
-                    E.runaction('PlayNow');
-                } else if (0x1 == E['mode']) {
-                    toggleHidden(LoadingBtnStart, !0x0), E.runaction('PlayNow');
-                }
-                return !1;
-            });
+                    E.callaction('PlayNow');
+                    return !1;
+                });
+            }
         }
     }
     I.defines(ejs_install, {
@@ -16141,5 +16318,7 @@ var EJS = function (modules) {
 
         },
     });
-    es_exports['default'] = ejs_install;
-}])['default'];
+    I.defines(es_module,{exports:ejs_install},1,1);
+    //es_exports['default'] = ejs_install;
+    //es_module['exports'] = ejs_install;
+}]);

@@ -21,11 +21,6 @@ source  by www.emulatorjs.com
         'vb': 'vb',
         'n64': 'n64',
         '3do': '3do',
-        'segaMS': 'sega',
-        'segaGG': 'sega',
-        'segaMD': 'sega',
-        'segaCD': 'segacd',
-        'sega32x': '32x',
         'segaSaturn': 'saturn',
         'ngp': 'ngp',
         'pce': 'pce',
@@ -41,7 +36,34 @@ source  by www.emulatorjs.com
         'jaguar': 'jaguar',
         'mame2003': 'mame2003',
         'mame0.193': 'mame',
-        //'mame0.243': 'mame0.243'
+        //'mame0.243': 'mame0.243',
+        'sega': 'sega',
+        'segaMS': 'sega',
+        'segaGG': 'sega',
+        'segaMD': 'sega',
+        'segaCD': 'segacd',
+        'sega32x': '32x',
+        'zc210':'zc210',
+        'openbor':'openbor',
+        'n64-legacy':'n64-legacy',
+        'amiga':'amiga',
+        'px68k':'px68k',
+        'beetle-psx':'beetle-psx',
+        'mupen64plus':'mupen64plus',
+        'mupen64plus2':'mupen64plus2',
+        'mupen64plus-nx':'mupen64plus-nx',
+        'vbanext':'vbanext',
+        
+        'mame-1': 'mame-1',
+        'mame-2': 'mame-2',
+        'mame-3': 'mame-3',
+        'mame-4': 'mame-4',
+        'mame-5': 'mame-5',
+        'mame-6': 'mame-6',
+        'mame-7': 'mame-7',
+
+
+
     };
     let jsonUrl = str=> `https://www.emulatorjs.com/api/v?name=${str}&_t=${Nenge.time}`;
     let CoreUrl = str=>`https://www.emulatorjs.com/cores/${str}?v=${Nenge.time}`;
@@ -49,7 +71,7 @@ source  by www.emulatorjs.com
     Nenge.I.toArr(CoreSystemList,entry=>{
         func.push(async e=>{
             await Nenge.FetchItem({
-                url:CoreUrl(entry[1]+'-wasm.data'),
+                url:CoreUrl(entry[0]+'-wasm.data'),
                 Filter(wasmU8){
                     let mime = Nenge.F.checkBuffer(wasmU8);
                     if (!mime || !['zip', '7z'].includes(mime)) {
@@ -59,11 +81,11 @@ source  by www.emulatorjs.com
                     return wasmU8;
                 },
                 success(data){
-                    Nenge.down(entry[1]+'-wasm.7z',data)
+                    Nenge.down(entry[0]+'-wasm.7z',data)
                 }
             });
             await Nenge.FetchItem({
-                url:CoreUrl(entry[1]+'-asmjs.data'),
+                url:CoreUrl(entry[0]+'-asmjs.data'),
                 Filter(wasmU8){
                     let mime = Nenge.F.checkBuffer(wasmU8);
                     if (!mime || !['zip', '7z'].includes(mime)) {
@@ -73,7 +95,14 @@ source  by www.emulatorjs.com
                     return wasmU8;
                 },
                 success(data){
-                    Nenge.down(entry[1]+'-asmjs.7z',data)
+                    Nenge.down(entry[0]+'-asmjs.7z',data)
+                }
+            });
+            await Nenge.FetchItem({
+                url:jsonUrl(entry[0]),
+                type:'text',
+                success(data){
+                    Nenge.down(entry[0]+'.json',data)
                 }
             });
         });

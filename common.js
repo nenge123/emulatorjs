@@ -8,7 +8,6 @@ const Nenge = new class NengeCores {
         'forumsicon': { 'timestamp': false },
         'document': { 'timestamp': false },
     };
-    Libzip = 'zip.min.js';
     LibStore = 'data-js';
     Encoding = 'GBK';
     maxsize = 0x6400000;
@@ -37,6 +36,9 @@ const Nenge = new class NengeCores {
             if(I.mobile)alert(e.message);
             else console.log(e);
         });
+        T.triger(document,'NengeStart',{detail:T});
+        T.docload(e=>T.triger(document,'NengeReady',{detail:T}));
+        
     }
     get date() {
         return new Date();
@@ -171,7 +173,8 @@ const Nenge = new class NengeCores {
         if (!ARG || I.str(ARG)) ARG = {
             'url': ARG || '/'
         };
-        let urlname = F.getname(ARG.url),
+        let ab = 'arrayBuffer',
+            urlname = F.getname(ARG.url),
             key = ARG.key || urlname || 'index.php',
             keyname = ARG.key == F.LibKey ? key + urlname : key,
             result, version = ARG.version, headers = {},
@@ -191,6 +194,7 @@ const Nenge = new class NengeCores {
             },
             success = (result)=>result&&ARG.success && ARG.success(result, headers);
         //delete ARG.store;
+        if(!ARG.filename)ARG.filename = urlname;
         if(ARG.onLine){
             ARG.unset = navigator.onLine;
         }
@@ -227,15 +231,15 @@ const Nenge = new class NengeCores {
             response.body.cancel();
             return success(headers);
         }
-        response = ARG.process ? await F.StreamResponse(response, ARG) : response;
-        if(ARG.unpack)ARG.type = 'arrayBuffer'; 
-        ARG.type = ARG.type || 'arrayBuffer';
+        response = ARG.process ? await F.StreamResponse(response, ARG,headers) : response;
+        if(ARG.unpack)ARG.type = ab; 
+        ARG.type = ARG.type || ab;
         let contents = await response[ARG.type]();
         let type = headers.type, filesize = headers["byteLength"] || 0, filetype = headers['content-type'];
-        if (ARG.type == 'arrayBuffer' && I.arrBuff(contents)) {
+        if (ARG.type == ab && I.arrBuff(contents)) {
             contents = new I.O[11](contents);
             if (ARG.Filter) contents = ARG.Filter(contents);
-            type = 'Uint8Array';
+            type = I.N(11);
             filesize = contents.byteLength;
             if(ARG.autounpack&&filesize<T.maxsize*.3){
                 ARG.unpack = true;
@@ -267,12 +271,17 @@ const Nenge = new class NengeCores {
                 let contents2;
                 await I.Async(I.toArr(contents).map(async entry => {
                     let [name, data] = entry,
-                        filename = name.split('/').pop(),
+                        filename = F.getname(name),
                         filetype = F.gettype(filename),
                         filedata = F.getFileText(data,ARG.decode,filetype,filename);
                     F.Libjs[filename] = filedata;
                     Store.put(ARG.key + filename, I.assign({
-                        'contents': filedata, 'timestamp': T.date, 'filesize': data.byteLength, 'version': T.version,filetype,'type':I.blob(filedata)? 'File':'String'
+                        'contents': filedata, 
+                        'timestamp': T.date, 
+                        'filesize': data.byteLength, 
+                        'version': T.version,
+                        filetype,
+                        'type':I.blob(filedata)? 'File':'String'
                     }, ARG.dataOption)
                     );
                     if (ARG.filename == filename) {
@@ -361,16 +370,35 @@ const Nenge = new class NengeCores {
         if(!R.action) return ;
         if (R.action[action] instanceof Function) {
             if (typeof data =='undefined' || data==null) return R.action[action].call(R);
-            if (typeof data !='string'&&data.length) return R.action[action].apply(R, data);
+            if (typeof data !='string'&&data.length) return R.action[action].apply(R, data||[]);
             return R.action[action].call(R,data);
         } else {
             console.log('lost action:' + action,data);
         }
     }
+    callaction(action){
+        let R = this;
+        if(!R.action||!action) return ;
+        let arg = Array.from(arguments),func = R.action[arg.shift()];
+        if (func&&func instanceof Function) {
+            return func.apply(R,arg);
+        } else {
+            console.log('lost action:' + action,arg);
+        }
+    }
+    bindaction(action){
+        let R = this;
+        if(!R.action||!action || !R.action[action]) return ;
+        return R.action[action].bind(R);
+    }
     addJS(buf, cb, iscss,id) {
-        let T = this,F=T.F;
+        let T = this,F=T.F,I=T.I;
+            if(I.blob(buf)){
+                id = F.getKeyName(buf.name);
+                if(buf.type=='text/css')iscss = true;
+            }
             if(id&&T.$('#link_'+id))return;
-        let re = false, script = T.$ce(!iscss ? 'script' : 'link'), func = callback => {
+            let re = false, script = T.$ce(!iscss ? 'script' : 'link'), func = callback => {
             if (!/^(blob:)?https?:\/\//.test(buf) && !/(\.js$|\.css$)/.test(buf)) {
                 re = true;
                 buf = F.URL(buf, F.gettype(!iscss ? 'js' : 'css'));
@@ -408,9 +436,6 @@ const Nenge = new class NengeCores {
             if(!ARG.key)ARG.key = F.LibKey;
         }
         ARG.version = ARG.version || T.version;
-        if(process){
-            ARG.process = e=>process(`${T.getLang('download js:')}:${F.getname(js)} - ${e}`);
-        }
         let data = await T.FetchItem(ARG);
         if(!bool){
             return await T.addJS(data); 
@@ -423,8 +448,8 @@ const Nenge = new class NengeCores {
     async addScript(js,ARG){
         return await T.addJS(await T.getScript(js,ARG));
     }
-    async loadLibjs(name) {
-        return await this.addJS(await this.F.getLibjs(name));
+    async loadLibjs(name,process) {
+        return await this.addJS(await this.F.getLibjs(name,process));
     }
     unFile(u8, process, ARG) {
         return this.F.unFile(u8, this.I.assign({ process }, ARG||{}));
@@ -454,6 +479,9 @@ const Nenge = new class NengeCores {
             Boolean,//20
             Headers,//21
         ];
+        N(num){
+            return this.O[num].name;
+        }
         assign(){
             return this.O[1].assign.apply(null,arguments);
         }
@@ -547,18 +575,23 @@ const Nenge = new class NengeCores {
         define(o, p, attr, bool,rw) {
             let configurable = rw?true:false;
             this.O[1].defineProperty(o, p, !bool ? attr : { get() { return attr },configurable});
+            return o;
         }
         defines(o, attr, bool,rw) {
-            if (bool) return this.toArr(attr, entry => this.define(o, entry[0], entry[1], 1,rw));
-            this.O[1].defineProperties(o, attr);
+            if (bool)this.toArr(attr, entry => this.define(o, entry[0], entry[1], 1,rw));
+            else this.O[1].defineProperties(o, attr);
+            return o;
         }
         textdecode(u8, charset) {
             return new TextDecoder(charset || 'utf8').decode(u8);
         }
-        toJson(post) {
+        Json(post){
             let I = this,O=I.O;
             if (I.u8obj(post)) post = I.textdecode(post);
-            return JSON.stringify(typeof post == 'string' ? (new O[6]('return ' + post))() : post);
+            return typeof post == 'string' ? (new O[6]('return ' + post))() : post;
+        }
+        toJson(post) {
+            return JSON.stringify(this.Json(post));
         }
         constructor(T) {
             let I = this,O=I.O,func="var O = I.O;";
@@ -585,7 +618,7 @@ const Nenge = new class NengeCores {
                 'bool':20,
                 'header':21,
             }).forEach( entry => {
-                func += `I.define(I,'${entry[0]}',{value(obj){`+(entry[1]==17?`return obj ==  O[${entry[1]}];`:['objArr','str'].includes(entry[0])?`return obj!=O[16]&&obj!=O[17]&&obj.constructor.name == O[${entry[1]}].name;`:`return obj instanceof O[${entry[1]}];`)+`}});`;
+                func += `I.define(I,'${entry[0]}',{value(obj){`+(entry[1]==17?`return obj ==  O[${entry[1]}];`:['objArr','str'].includes(entry[0])?`return obj!=O[16]&&obj!=O[17]&&obj.constructor.name == I.N(${entry[1]});`:`return obj instanceof O[${entry[1]}];`)+`}});`;
             });
             (new O[6]('I',func))(I);
         }
@@ -593,9 +626,8 @@ const Nenge = new class NengeCores {
     F = new class NengeUtil {
         Libjs = {};
         LibKey = 'script-';
-        LibUrl = {};
-        async StreamResponse(response, ARG) {
-            let num = s => Number(s), maxLength = num(response.headers.get('content-length') || 0), downtext = ARG && ARG.downtext ? ARG.downtext : '', havesize = 0, status = {
+        async StreamResponse(response, ARG,headers) {
+            let T=this.T,num = s => Number(s), maxLength = num(headers['content-length'] || 0), downtext = ARG && ARG.downtext ? ARG.downtext : '', havesize = 0, status = {
                 done: !1, value: !1
             }, reader = response.body.getReader();
             return new Response(new ReadableStream({
@@ -610,7 +642,7 @@ const Nenge = new class NengeCores {
                         if (maxLength&&havesize<maxLength) statustext = downtext + Math.floor(havesize / maxLength * 100) + '%';
                         else statustext = downtext + Math.floor(havesize * 10 / 1024) / 10 + 'KB';
                         //下载进度
-                        ARG && ARG.process && ARG.process(statustext, maxLength, havesize, speedsize);
+                        ARG && ARG.process && ARG.process(ARG.filename+' '+statustext, maxLength, havesize, speedsize);
                         status = await reader.read();
                     }
                     ctrler.close();
@@ -671,98 +703,7 @@ const Nenge = new class NengeCores {
             return fetch(url, data);
         }
         THEN = f => this.I.Async(f);
-        async unRAR(u8, ARG,src) {
-            let F = this, I = F.I, { process, password, filename } = ARG;
-            if (I.blob(u8)) {
-                if (u8.name) filename = u8.name;
-                u8 = new I.O[11](await u8.arrayBuffer());
-            }
-            src = src || 'extractrar.zip';
-            if (!F.LibUrl[src]) F.LibUrl[src] = F.URL(await F.getLibjs(src,process));
-            let url = F.LibUrl[src], worker = new Worker(url);
-            return I.Async(complete => {
-                let contents = {};
-                worker.onmessage = result => {
-                    let data = result.data, t = data.t;
-                    if (1 === t) {
-                        complete(contents);
-                        result.target['terminate']();
-                    } else if (2 === t) {
-                        contents[data.file] = data.data;
-                    } else if (4 === t && data.total > 0 && data.total >= data.current) {
-                        process && process(ARG.packtext + ' ' + (data.file ? F.getname(data.file) : filename || '') + ' ' + Math.floor(Number(data.current) / Number(data.total) * 100) + '%', data.total, data.current);
-                    } else if (-1 == t) {
-                        console.log(result);
-                        let password = prompt(F.T.getLang(data.message), ARG.password || '');
-                        contents.password = password;
-                        ARG.password = password;
-                        worker.postMessage({ password });
-                    }
-                },
-                    worker.onerror = error => {
-                        alert('RAR/7Z解压失败!');
-                        worker.close();
-                        console.log(error);
-                        complete(u8);
-                    };
-                worker.postMessage({ 'contents': u8, password });
-            });
-
-        }
-        async un7z(u8, ARG) {
-            return this.unRAR(u8, ARG,'extract7z.zip');
-        }
         zipJs = 'zip.min.js';
-        async unZip(u8, ARG = {}) {
-            let F=this,T=F.T;
-            if (T.Libzip != F.zipJs)return this.unRAR(u8, ARG,T.Libzip);
-            else if(!window.zip)await T.loadScript(T.Libzip,{process:ARG.process});
-            let { process, password, packtext } = ARG, I=F.I;
-            let zipReader = new zip.ZipReader(I.blob(u8) ? new zip.BlobReader(u8) : new zip.Uint8ArrayReader(u8));
-            let entries = await zipReader.getEntries({
-                filenameEncoding: T.Encoding,
-            }), passok = false;
-            if (entries.length > 0) {
-                let contents = {};
-                await I.Async(
-                    entries.map(
-                        async entry => {
-                            if (entry.directory) return;
-                            let opt = {
-                                'onprogress': (a, b) => process && process(packtext + entry.filename + ':' + Math.ceil(a * 100 / b) + '%')
-                            };
-                            if (!entry.encrypted) {
-                                contents[entry.filename] = await entry.getData(new zip.Uint8ArrayWriter(), opt);
-                            } else {
-                                opt.password = password;
-                                if (!passok) {
-                                    while (passok) {
-                                        if (!opt.password) {
-                                            opt.password = window.prompt('need a password', opt.password || '');
-                                        }
-                                        try {
-                                            contents[entry.filename] = await entry.getData(new zip.Uint8ArrayWriter(), opt);
-                                            contents.password = opt.password;
-                                            passok = true;
-                                        } catch (e) {
-                                            opt.password = '';
-                                        }
-                                    }
-                                } else {
-                                    contents[entry.filename] = await entry.getData(new zip.Uint8ArrayWriter(), opt);
-                                }
-                            }
-                            return true;
-                        }
-                    )
-                );
-                zipReader.close();
-                delete F.ZipPassword;
-                return contents;
-            } else {
-                return I.blob(u8) ? new I.O[11](u8.arrayBuffer()) : u8;
-            }
-        }
         async ZipCreate(password,process) {
             let F=this,T=F.T;
             if (!window.zip) await T.loadScript(F.zipJs,{process});
@@ -772,49 +713,173 @@ const Nenge = new class NengeCores {
             let F = this,I=F.I;
             if (!ZipWriter) ZipWriter = await F.ZipCreate(password);
             if (I.file(files)) await ZipWriter.add(files.name, new zip.BlobReader(files), options);
-            else await I.Async(Array.from(files).map(async file => await ZipWriter.add(file.name, new zip.BlobReader(file), options)));
+            else await I.Async(I.toArr(files).map(async file => await ZipWriter.add(file.name, new zip.BlobReader(file), options)));
             return await ZipWriter.close(comment);
         }
+        mime_preg = {
+            "7z": /^377ABCAF271C/, 
+            "rar": /^52617221/, 
+            "zip": /^504B0304/, 
+            "png": /^89504E470D0A1A0A/, 
+            "gif": /^47494638/, 
+            "jpg": /^FFD8FF/, 
+            "webp": /^52494646/, 
+            "pdf": /^255044462D312E/,
+        };
+        CheckExt(u8){
+            let F = this, I = F.I,buf = u8.slice(0,16),textext = F.bindaction('textext');
+            let text = I.blob(buf)? buf.arrayBuffer():I.str(buf)?new TextEncoder().encode(buf):buf;
+            return I.await(text)?I.Async(async e=>e(textext(await text))):textext(text);
+        }
+        action = {
+            textext(s){
+                let F = this, I = F.I,text = I.toArr(I.arrBuff(s)?new I.O[11](s):s).map(v => v.toString(16).padStart(2, 0).toLocaleUpperCase()).join(''),result = I.toArr(F.mime_preg).filter(entry=>entry[1].test(text));
+                if(result[0]) return result[0][0];
+                return '';
+            },            
+            async rar(u8, ARG,src) {
+                let F = this, I = F.I,process;
+                if (I.blob(u8)) {
+                    if (!ARG.filename&&u8.name) ARG.filename = u8.name;
+                    u8 = new I.O[11](await u8.arrayBuffer());
+                }
+                src = src || 'libunrar.min.zip';
+                if (!F.Libjs[src]) await F.getLibjs(src,process);
+                let url = F.Libjs[src],
+                    worker = new Worker(url),packtext;
+                if(ARG.process){
+                    if(!ARG.filename)packtext = F.T.getLang('Decompress:')+packtext+'=&gt;';
+                    else packtext = F.T.getLang('Decompress:');
+                    process = data=>ARG.process(packtext+(data.file ? F.getname(data.file) : ARG.filename || '') + ' ' + Math.floor(Number(data.current) / Number(data.total) * 100) + '%', data.total, data.current);
+                }
+                return I.Async(complete => {
+                    let contents = {};
+                    worker.onmessage = result => {
+                        let data = result.data, t = data.t;
+                        if (1 === t) {
+                            complete(contents);
+                            result.target['terminate']();
+                        } else if (2 === t) {
+                            contents[data.file] = data.data;
+                        } else if (4 === t && data.total > 0 && data.total >= data.current) {
+                            process && process(data);
+                        } else if (-1 == t) {
+                            let password = prompt(F.T.getLang(data.message), ARG.password || '');
+                            if(!password){complete(contents);return result.target['terminate']();}
+                            if(ARG.unpack)contents.password = password;
+                            ARG.password = password;
+                            worker.postMessage({ password });
+                        }
+                    },
+                    worker.onerror = error => {
+                        complete(u8);
+                        worker.terminate();
+                    };
+                    worker.postMessage({ 'contents': u8,password:'password' });
+                });
+
+            },
+            '7z':async function(u8, ARG){
+                return this.callaction('rar',u8, ARG,'extract7z.zip');
+            },
+            async zip(u8, ARG = {}) {
+                let F=this,T=F.T;
+                if (T.Libzip != F.zipJs)return this.callaction('rar',u8, ARG,T.Libzip);
+                else await F.callaction('loadZip',ARG.process);
+                let { process, password, filename} = ARG, I=F.I;
+                let zipReader = new zip.ZipReader(I.blob(u8) ? new zip.BlobReader(u8) : new zip.Uint8ArrayReader(u8));
+                let entries = await zipReader.getEntries({
+                    filenameEncoding: T.Encoding,
+                }), passok = false;
+                if (entries.length > 0) {
+                    let contents = {},packtext,opt={};
+                    if(filename)packtext = F.T.getLang('Decompress:')+packtext+'=&gt;';
+                    else packtext = F.T.getLang('Decompress:');
+                    if(process){
+                        opt['onprogress'] = (a,b)=>a&&b&&a<=b&& process(packtext + entry.filename + ':' + Math.ceil(a * 100 / b) + '%');
+                    }
+                    await I.Async(
+                        entries.map(
+                            async entry => {
+                                if (entry.directory) return;
+                                if (!entry.encrypted) {
+                                    contents[entry.filename] = await entry.getData(new zip.Uint8ArrayWriter(), opt);
+                                } else {
+                                    opt.password = password;
+                                    if (!passok) {
+                                        while (passok) {
+                                            if (!opt.password) {
+                                                opt.password = window.prompt('need a password', opt.password || '');
+                                            }
+                                            try {
+                                                contents[entry.filename] = await entry.getData(new zip.Uint8ArrayWriter(), opt);
+                                                contents.password = opt.password;
+                                                passok = true;
+                                            } catch (e) {
+                                                opt.password = '';
+                                            }
+                                        }
+                                    } else {
+                                        contents[entry.filename] = await entry.getData(new zip.Uint8ArrayWriter(), opt);
+                                    }
+                                }
+                                return true;
+                            }
+                        )
+                    );
+                    zipReader.close();
+                    delete F.ZipPassword;
+                    return contents;
+                } else {
+                    return I.blob(u8) ? new I.O[11](u8.arrayBuffer()) : u8;
+                }
+            },
+            loadZip(process){
+                let F=this,T =F.T
+                if(window.zip||F.Libjs[T.Libzip])return;
+                if(!window.zip&&T.Libzip==F.zipJs) return T.loadScript(F.zipJs,{process});
+                else if(!F.Libjs[T.Libzip]) return F.getLibjs(T.Libzip,process);
+                console.log(T.Libzip);
+                //getLibjs
+            }
+            
+        };
         async unFile(u8, ARG = {}) {
             let F = this, I = F.I;
-            if (I.str(ARG)) ARG.unMode = {'unMode': ARG};
             if(I.await(u8))u8 = await u8;
-            ARG.packtext = ARG.packtext || '';
-            if (ARG.unMode && F[ARG.unMode]) return await F[ARG.unMode](u8, ARG);
-            let action = null, u8Mime;
-            if (I.blob(u8)) {
-                if (u8.name) {
-                    let type = F.getExt(u8.name);
-                    ARG.filename = u8.name;
-                    if (type == 'zip') action = 'unZip';
-                    else if (type == 'rar') action = 'unRAR';
-                    else if (type == '7z') action = 'un7z';
-                } else if (u8.type) {
-                    let mime = u8.type.split('/').pop();
-                    if (/zip/.test(mime)) action = 'unZip';
-                    else if (/rar/.test(mime)) action = 'unRAR';
-                    else if (/7z/.test(mime)) action = 'un7z';
-                }
-                if (!action) {
-                    u8 = new I.O[11](await u8.arrayBuffer());
-                    u8Mime = F.checkBuffer(u8);
-                }
-            } else if (I.u8obj(u8)) {
-                u8Mime = F.checkBuffer(u8);
-            } else if (I.arrBuff(u8.buffer)) {
-                u8 = new I.O[11](u8.buffer);
-                u8Mime = F.checkBuffer(u8);
-            } else if (I.array(u8)) {
-                u8 = new I.O[11](u8);
-                u8Mime = F.checkBuffer(u8);
+            if (I.array(u8))u8 = new I.O[11](u8);
+            let ext = await F.CheckExt(u8);
+                console.log(ext);
+            if(F.action[ext]){
+                if(!ARG.PassExt|| !ARG.PassExt.includes(zip))return await F.callaction(ext,u8,ARG);
             }
-            if (!action&&u8Mime) {
-                if (u8Mime == 'zip') action = 'unZip';
-                else if (u8Mime == 'rar') action = 'unRAR';
-                else if (u8Mime == '7z') action = 'un7z';
-            }
-            if (action && F[action]) return await F[action](u8, ARG);
+            if (I.blob(u8))u8 = new I.O[11](await u8.arrayBuffer());
             return u8;
+        }
+        async getLibjs(jsfile,process) {
+            let F = this, T = F.T,file = F.getname(jsfile.replace(/\.zip$/,'.js'));
+            if (F.Libjs[jsfile]) return F.Libjs[jsfile];
+            if(!process) process = e=>console.log(e);
+            let contents = await T.getStore(T.LibStore).data(F.LibKey + file, T.version);
+            if (!contents) {
+                if (/\.zip$/.test(jsfile)) await F.callaction('loadZip',process);;
+                //if(jsfile === 'extractzip.zip')jsfile = 'extractzip.min.js';
+                contents = await T.FetchItem({
+                    url: F.getpath(jsfile)+'?'+T.time,
+                    'store': T.LibStore,
+                    'key': F.LibKey,
+                    'unpack': true,
+                    'filename': file,
+                    'process':e=>{
+                        process(e)
+                    }
+                });
+            }
+            if (contents) {
+                F.Libjs[jsfile] = F.URL(contents);
+            }
+            contents = null;
+            return F.Libjs[jsfile]
         }
         getname(str) {
             return (str || '').split('/').pop().split('?')[0].split('#')[0];
@@ -825,7 +890,7 @@ const Nenge = new class NengeCores {
         }
         getFileText(contents,decode,filetype,filename){
             let F = this,T=F.T,I=T.I;
-            if(filename&&!decode&&!(/(text|javascript)/.test(filetype))){
+            if(filename&&!decode || !(/(text|javascript)/.test(filetype))){
                 return new File([contents], filename, {'type': filetype});
             }
             if(!decode)return contents;
@@ -845,7 +910,8 @@ const Nenge = new class NengeCores {
             return this.getname(name).split('.').pop().toLowerCase();
         }
         getKeyName(name){
-            return this.getname(name).split('.')[0];
+            let s = this.getname(name).split('.');
+            return s.pop(),s.join('.');
         }
         gettype(type) {
             let F = this;
@@ -858,14 +924,11 @@ const Nenge = new class NengeCores {
             }
             return F.mime_list[type] || 'application/octet-stream';
         }
-        mime_preg = {
-            "7z": /^377ABCAF271C/, "rar": /^52617221/, "zip": /^504B0304/, "png": /^89504E470D0A1A0A/, "gif": /^47494638/, "jpg": /^FFD8FF/, "webp": /^52494646/, "pdf": /^255044462D312E/,
-        };
         mime_map = {
             'text/javascript': ['js'], 'text/css': ['css', 'style'], 'text/html': ['html', 'htm', 'php'], 'text/plain': ['txt'], 'text/xml': ['xml', 'vml', 'svg'], 'image': ['jpg', 'jpeg', 'png', 'gif', 'webp'], 'application': ['pdf'], 'application/x-zip-compressed': ['zip'], 'application/x-rar-compressed': ['rar'], 'application/x-7z-compressed': ['7z']
         };
         checkBuffer(u8, defalut) {
-            let head = Array.from(u8.slice(0, 8)).map(v => v.toString(16).padStart(2, 0).toLocaleUpperCase()).join('');
+            let head = this.I.toArr(u8.slice(0, 8)).map(v => v.toString(16).padStart(2, 0).toLocaleUpperCase()).join('');
             if (head) {
                 let result = this.I.toArr(this.mime_preg).filter(entry => entry[1].test(head))[0];
                 if (result) return result[0];
@@ -875,7 +938,7 @@ const Nenge = new class NengeCores {
         URL(u8, type) {
             let F = this, I = F.I;
             if (I.u8obj(u8)) {
-                if (!type) type = F.gettype(F.checkBuffer(u8));
+                if (!type) type = F.gettype(F.CheckExt(u8));
             } else if (I.str(u8)) {
                 if (/^(blob|http)/.test(u8) || /^\/?[\w\-_\u4e00-\u9FA5:\/\.\?\^\+ =%&@#~]+$/.test(u8)) return u8;
                 if (!type) type = F.gettype('js');
@@ -1028,11 +1091,11 @@ const Nenge = new class NengeCores {
             } else if (contents.byteLength && contents.byteLength > maxsize) {
                 if (contents.__proto__.constructor != I.O[11]) contents = new I.O[11](contents.buffer || contents);
                 I.assign(result, {
-                    contents, 'filesize': contents.byteLength, 'type': 'Uint8Array'
+                    contents, 'filesize': contents.byteLength, 'type': I.N(11)
                 });
             }
             if (result.contents) {
-                if (!data.type && !result.type) result.type = 'Uint8Array';
+                if (!data.type && !result.type) result.type = I.N(11);
                 if (data.contents) {
                     delete data.contents;
                     I.assign(data, result);
@@ -1195,7 +1258,7 @@ const Nenge = new class NengeCores {
                 dbName = dbName || T.DB_NAME;
                 let I = T.I,func=`var I = T.I;I.defines(S, { T,I,table:'${table}',dbName:'${dbName}' }, 1,1);`;
                 I.toArr(['getItem', 'setItem', 'removeItem', 'getAllData', 'getContent', 'setContent', 'getAllKeys', 'getAllCursor', 'clearDB', 'deleteDB'],val=>{
-                    func += `I.define(S, '${val}', {value:function(){let arr = ['${table}'].concat(Array.from(arguments));return T.${val}.apply(T, arr);}});`;
+                    func += `I.define(S, '${val}', {value:function(){let arr = ['${table}'].concat(I.toArr(arguments));return T.${val}.apply(T, arr);}});`;
                 });
                 (new Function('S','T',func))(this,T);
             }
@@ -1252,39 +1315,6 @@ const Nenge = new class NengeCores {
                 return list;
             }
         };
-        async getLibjs(jsfile,process) {
-            let F = this, T = F.T,file = jsfile.replace(/\.zip$/,'.js');
-            if (F.Libjs[file]) return F.Libjs[file];
-            let contents = await T.getStore(T.LibStore).data(F.LibKey + file, T.version);
-            if (!contents) {
-                if (/\.zip$/.test(jsfile)&&!window.zip) await T.loadScript(T.Libzip+'?'+T.time,{process});
-                if (file != T.Libzip) {
-                    //if(jsfile === 'extractzip.zip')jsfile = 'extractzip.min.js';
-                    contents = await T.FetchItem({
-                        url: T.JSpath + jsfile+'?'+T.time,
-                        'store': T.LibStore,
-                        'key': F.LibKey,
-                        'unpack': true,
-                        'filename': file,
-                        'process':e=>{
-                            process&&process(`${T.getLang('download')}:${jsfile}`)
-                        }
-                    });
-                }
-            }
-            if (/rar\.js$/.test(file)) {
-                let memurl = F.URL(await F.getLibjs(file+'.mem'));
-                let rarurl = F.URL(contents);
-                contents = `var dataToPass=[],password,Readyfunc,isReady = new Promise(res=>Readyfunc=res);;self.Module={locateFile:()=>'` + memurl + `',monitorRunDependencies:function(t){0 == t && setTimeout(()=>Readyfunc(),100);},onRuntimeInitialized:function(){}};
-                importScripts('` + rarurl + `');let unrar=function(t,e){let n=readRARContent(t.map((function(t){return{name:t.name,content:new Uint8Array(t.content)}})),e,(function(t,e,n){postMessage({t:4,current:n,total:e,name:t})})),o=function(t){if("file"===t.type)postMessage({t:2,file:t.fullFileName,size:t.fileSize,data:t.fileContent});else{if("dir"!==t.type)throw"Unknown type";Object.keys(t.ls).forEach((function(e){o(t.ls[e])}))}};return o(n),postMessage({t:1}),n};onmessage=async (message)=>{if(message.data.contents)dataToPass.push({name:"test.rar",content:message.data.contents});if(message.data.password)password=message.data.password;isReady.then(e=>unrar(dataToPass,password||undefined)).catch(message=>{if(['Uncaught Missing password','Missing password'].includes(message))return postMessage({t:-1,message})});};`;
-                F.Libjs[file] = new File([contents], file, {
-                    'type': F.gettype('js'), 'x-content-type-options': 'nosniff'
-                });
-            } else if (contents) {
-                F.Libjs[file] = contents;
-            }
-            return F.Libjs[file];
-        }
         get dbname() {
             return this.T.DB_NAME;
         }
@@ -1292,6 +1322,8 @@ const Nenge = new class NengeCores {
             let F = this, I = T.I;
             if(!T.Libzip)T.Libzip = F.zipJs;
             I.defines(F, { I, T }, 1);
+            F.callaction = T.callaction;
+            F.bindaction = T.bindaction;
         }
     }(this);
     on(elm, evt, fun, opt, cap) {
@@ -1358,20 +1390,20 @@ const Nenge = new class NengeCores {
             /*因此 如果仅仅操作属性(Attribute),可以比元素出现前提前定义.否则最好文档加载完毕再定义,并不会影响事件触发 */
             constructor() {
                 super();
-                T.runaction('TAG-' + this.tagName, [this, 'init']);
+                T.callaction('TAG-' + this.tagName, this, 'init');
             }
             connectedCallback() {
                 /*文档document中出现时触发*/
-                T.runaction('TAG-' + this.tagName, [this, 'connect']);
+                T.callaction('TAG-' + this.tagName, this, 'connect');
 
             }
             attributeChangedCallback(name, oldValue, newValue) {
                 /*attribute增加、删除或者修改某个属性时被调用。*/
-                T.runaction('TAG-' + this.tagName, [this, 'attribute', { name, oldValue, newValue }]);
+                T.callaction('TAG-' + this.tagName, this, 'attribute', { name, oldValue, newValue });
             }
             disconnectedCallback() {
                 /*custom element 文档 DOM 节点上移除时被调用*/
-                T.runaction('TAG-' + this.tagName, [this, 'disconnect']);
+                T.callaction('TAG-' + this.tagName, this, 'disconnect');
             }
         });
     }
@@ -1397,14 +1429,17 @@ const Nenge = new class NengeCores {
         return new Error(msg);
     }
     triger(target, type, evtdata) {
-        if (!evtdata) evtdata = { target };
-        else if (!evtdata.target) evtdata.target = target;
-        return this.dispatch(target, new Event(type, evtdata));
+        let T = this;
+        if(T.I.str(target))target = T.$(target);
+        if (!evtdata) evtdata = {};
+        else if (!evtdata.detail) evtdata.detail = target;
+        if(!evtdata.hasOwnProperty('cancelable'))evtdata.cancelable = true;
+        return T.dispatch(target, new CustomEvent(type, evtdata));
 
     }
     dispatch(obj, evt) {
         if (!obj) return evt;
-        return this.$(obj).dispatchEvent(evt);
+        return obj.dispatchEvent(evt);
     }
     down(name, buf, type) {
         return this.F.download(name, buf, type);
@@ -1428,7 +1463,7 @@ const Nenge = new class NengeCores {
             //更新电池电量
             //更新电池充电时间
             //更新电池放电时间
-            val => ARG.val && this.on(battery, val, e => this.runaction(ARG.val, [e, battery]))
+            val => ARG.val && this.on(battery, val, e => this.callaction(ARG.val, e, battery))
         );
     }
     getLang(name,arg) {
@@ -1648,7 +1683,7 @@ const Nenge = new class NengeCores {
             this.obj.remove();
         }
         get children(){
-            return Array.from(this.obj.children);
+            return this.I.toArr(this.obj.children);
         }
         get parentNode(){
             return this.obj.parentNode;
@@ -1726,12 +1761,12 @@ const Nenge = new class NengeCores {
                 T.on(obj,'pointerup',e=>{
                     let elm = e.target;
                     if(elm==obj){
-                        return W.runaction('close',[elm,e]);
+                        return W.callaction('close',elm,e);
                     }
                     let nAction = elm&&T.attr(elm,'data-naction');
                     if(nAction){
                         T.stopEvent(e);
-                        return W.runaction(nAction,[elm,e]);
+                        return W.callaction(nAction,elm,e);
                     }
                 });
             },
@@ -1748,11 +1783,11 @@ const Nenge = new class NengeCores {
             super(obj,T);
             if(!this.obj)return;
             const W = this;
-            W.runaction = T.runaction;
-            if(!W.$('.container'))W.runaction('installWindow');
-            W.runaction('installEvent');
-            W.runaction('installHeaderEvent');
-            W.runaction('initConfig',[config]);
+            W.callaction = T.callaction;
+            if(!W.$('.container'))W.callaction('installWindow');
+            W.callaction('installEvent');
+            W.callaction('installHeaderEvent');
+            W.callaction('initConfig',config);
         }
         title(str){
             this.$('.a-header .title').innerHTML = str;
@@ -1785,3 +1820,4 @@ const nWindow = (obj,config)=>{
     }
     return elm&&elm.Nttr;
 };
+Nenge.triger(document,'NengeLoad',{detail:Nenge});
