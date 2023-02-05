@@ -23,40 +23,43 @@
             'data-libjs': {},
         };
         T.RootPath = JSpath; //site root,if you use my file set T.JSpath
-        /**
-         * set lang
-         */
-        T.lang = await T.FetchItem({
-            url: T.RootPath + 'i18n/' + T.i18nName + '.json?' + T.time,
-            type: 'json',
-            version: T.version
-        });
-        /**
-         * loading emulatorjs
-         */
-        await T.loadLibjs(T.RootPath+'emulator_4.99_19_Nenge.min.zip?'+T.time,e=>{
-           //e is file download process
-           console.log(e);
-        });
-        /**
-         * loading css
-         */
-        await T.loadLibjs('scss_emujs.css');
-        /**
-         * bind DB to EJS
-         */
-        I.defines(window.EJS,{
-            DB:{
-                'libjs':T.getStore('data-libjs'),
-                'patch':T.getStore('data-patch'),
-                'parent':T.getStore('data-parent'),
-                'rooms':T.getStore('data-rooms'),
-                'system':T.getStore('data-system'),
-                'bios':T.getStore('data-bios'),
-                'saves':T.getStore('data-saves'),
-                'openbor':T.getStore('data-openbor'),
-            }
-        },1);
-        Nenge.triger(document,'EJSREADY',{detail:Nenge});
+        T.action['installEJS'] = async ()=>{
+            /**
+             * set lang
+             */
+            T.lang = await T.FetchItem({
+                url: T.RootPath + 'i18n/' + T.i18nName + '.json?' + T.time,
+                type: 'json',
+                version: T.version
+            });
+            /**
+             * loading emulatorjs
+             */
+            await T.loadLibjs(T.RootPath+'emulator_4.99_19_Nenge.min.zip?'+T.time,e=>{
+            //e is file download process
+            console.log(e);
+            });
+            /**
+             * loading css
+             */
+            await T.loadLibjs('scss_emujs.css');
+            /**
+             * bind DB to EJS
+             */
+            I.defines(window.EJS,{
+                DB:{
+                    'libjs':T.getStore('data-libjs'),
+                    'patch':T.getStore('data-patch'),
+                    'parent':T.getStore('data-parent'),
+                    'rooms':T.getStore('data-rooms'),
+                    'system':T.getStore('data-system'),
+                    'bios':T.getStore('data-bios'),
+                    'saves':T.getStore('data-saves'),
+                    'openbor':T.getStore('data-openbor'),
+                }
+            },1);
+
+        }
+        T.triger(document,'EJSREADY',{detail:T});
     });
 })()

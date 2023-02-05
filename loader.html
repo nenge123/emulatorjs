@@ -18,11 +18,12 @@
             /**
              * other 
             */
-            T.action['TAG-APP-EMU'] = (elm,status)=>{
+            T.action['TAG-APP-EMU'] = async (elm,status)=>{
                 if(status=='connect'){
-                    if(elm.ok) return;
+                    if(elm.dataset.install) return;
+                    if(typeof EJS =="undefined" )await T.callaction('installEJS');
                     let config = I.toObj(elm.dataset),div = T.$append(elm,T.$ce('div'));
-                    elm.ok = true;
+                    elm.setAttribute ('data-install',1);
                     elm.hidden = false;
                     new EJS(div,config);
                 }

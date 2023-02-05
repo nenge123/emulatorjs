@@ -18,7 +18,7 @@
             let T = e.detail,I = T.I;
             /**
             * base method
-            */
+           if(typeof EJS =="undefined" )await T.callaction('installEJS');
            T.$('#game').hidden = false;
             new EJS('#game',{
                 gameUrl:'',
@@ -29,12 +29,15 @@
                 gameparenturl: '',
                 gamepatchurl: '', //add ips .. game patch
             });
-            /**
-             * other method
             */
-            T.action['TAG-APP-EMU'] = (elm,status)=>{
+            /**
+             * best method
+            */
+            T.action['TAG-APP-EMU'] = async (elm,status)=>{
+                
                 if(status=='connect'){
-                    if(elm.ok) return;
+                    if(elm.dataset.install) return;
+                    if(typeof EJS =="undefined" )await T.callaction('installEJS');//这样做避免全局污染 只有存在<app-emu>才进行插入js
                     let config = I.toObj(elm.dataset),div = T.$append(elm,T.$ce('div'));
                     elm.ok = true;
                     elm.hidden = false;
