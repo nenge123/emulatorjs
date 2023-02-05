@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <app-emu data-system="gba" style="position:fixed;left:0px;right:0px;top:0px;bottom:0px;" hidden></app-emu>
+    <script type="text/javascript">
+        var d=document,script = d.createElement('script'),slm=d.currentScript,
+        JSpath = slm.src.split('/').slice(0,-1).join('/')+'/';//if you use path
+        script.src = 'loader.js';
+        d.body.appendChild(script);
+        d.addEventListener('EJSREADY',async e=>{
+            let T = e.detail,I = T.I;
+            /**
+             * other 
+            */
+            T.action['TAG-APP-EMU'] = (elm,status)=>{
+                if(status=='connect'){
+                    if(elm.ok) return;
+                    let config = I.toObj(elm.dataset),div = T.$append(elm,T.$ce('div'));
+                    elm.ok = true;
+                    elm.hidden = false;
+                    new EJS(div,config);
+                }
+            };
+            T.customElement('app-emu');
+        });
+    </script>
+</body>
+</html>

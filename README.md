@@ -1,7 +1,54 @@
-# emulatorjs
-source  by www.emulatorjs.com
+# how to use on your website/blog
+- loader
+    ```html
 
-# warning 请常备份核心 以及本地化流程(Localization process)
+    <div style="position:fixed;left:0px;right:0px;top:0px;bottom:0px;" hidden>
+        <div id="game"></div>
+    </div>
+
+    <app-emu data-system="gba" style="position:fixed;left:0px;right:0px;top:0px;bottom:0px;" hidden></app-emu>
+
+
+    <script type="text/javascript">
+        var d=document,script = d.createElement('script'),slm=d.currentScript,
+        JSpath = slm.src.split('/').slice(0,-1).join('/')+'/';//if you use path
+        script.src = 'https://emulatorjs.nenge.net/loader.js';
+        d.body.appendChild(script);
+        d.addEventListener('EJSREADY',async e=>{
+            let T = e.detail,I = T.I;
+            /**
+            * base method
+            */
+           T.$('#game').hidden = false;
+            new EJS('#game',{
+                gameUrl:'',
+                system:'gba',
+                gameId: '', //set Unique ID on Netplay
+                biosUrl:'',
+                cheats:'', //set check code like  'aabbccdd xx\naabbccdd xx\n'
+                gameparenturl: '',
+                gamepatchurl: '', //add ips .. game patch
+            });
+            /**
+             * other method
+            */
+            T.action['TAG-APP-EMU'] = (elm,status)=>{
+                if(status=='connect'){
+                    if(elm.ok) return;
+                    let config = I.toObj(elm.dataset),div = T.$append(elm,T.$ce('div'));
+                    elm.ok = true;
+                    elm.hidden = false;
+                    new EJS(div,config);
+                }
+            };
+            T.customElement('app-emu');
+        });
+    </script>
+    ```
+- emulatorjs
+  - cores/js source  by (https://www.emulatorjs.com)
+
+# backup cores 请常备份核心以免兼容性问题
 > the core some time will update.maybe save the cores to you local computer,backup!
 ```javascript
     //f12 console
@@ -35,7 +82,7 @@ source  by www.emulatorjs.com
         'fbneo': 'fbneo',
         'jaguar': 'jaguar',
         'mame2003': 'mame2003',
-        'mame0.193': 'mame',
+        //'mame0.193': 'mame',
         //'mame0.243': 'mame0.243',
         'sega': 'sega',
         'segaMS': 'sega',
@@ -62,17 +109,14 @@ source  by www.emulatorjs.com
         'mame-6': 'mame',
         'mame-7': 'mame',
         
-        'mame-1': 'mame0.243',
-        'mame-2': 'mame0.243',
-        'mame-3': 'mame0.243',
-        'mame-4': 'mame0.243',
-        'mame-5': 'mame0.243',
-        'mame-6': 'mame0.243',
-        'mame-7': 'mame0.243',
-        'mame-8': 'mame0.243',
-
-
-
+        'mame0.243-1': 'mame0.243',
+        'mame0.243-2': 'mame0.243',
+        'mame0.243-3': 'mame0.243',
+        'mame0.243-4': 'mame0.243',
+        'mame0.243-5': 'mame0.243',
+        'mame0.243-6': 'mame0.243',
+        'mame0.243-7': 'mame0.243',
+        'mame0.243-8': 'mame0.243',
     };
     let jsonUrl = str=> `https://www.emulatorjs.com/api/v?name=${str}&_t=${Nenge.time}`;
     let CoreUrl = str=>`https://www.emulatorjs.com/cores/${str}?v=${Nenge.time}`;
@@ -125,20 +169,5 @@ source  by www.emulatorjs.com
 ```
 
 # 如何使用自己的核心
-```javascript
-//search 搜索
-var LoadWasmData = function (coreName, coreVersion) 
-//at 在
-url: `${EmulatorCoresHost}/cores/${coreName}?v=${coreVersion}`,
-//add condition 增加判断即可
-```
-
-# 旧核心使用 旧核心在本仓库其他分支可下载.
-> 旧核心并不需要读取动态json因此下载好对应json后.
-```javascript
-//search
-T.FetchItem({
-    url: jsonUrl,
-    type: 'json',
-    success(JsonData, headers) {
-```
+> search 搜索 Wasm_Download
+> 增加判断条件即可

@@ -276,7 +276,7 @@ const Nenge = new class NengeCores {
                         filename = F.getname(name),
                         filetype = F.gettype(filename),
                         filedata = F.getFileText(data,ARG.decode,filetype,filename);
-                    F.Libjs[filename] = filedata;
+                    //F.Libjs[filename] = filedata;
                     Store.put(ARG.key + filename, I.assign({
                         'contents': filedata, 
                         'timestamp': T.date, 
@@ -852,7 +852,6 @@ const Nenge = new class NengeCores {
             if(I.await(u8))u8 = await u8;
             if (I.array(u8))u8 = new I.O[11](u8);
             let ext = await F.CheckExt(u8);
-                console.log(ext);
             if(F.action[ext]){
                 if(!ARG.PassExt|| !ARG.PassExt.includes(zip))return await F.callaction(ext,u8,ARG);
             }
@@ -860,12 +859,14 @@ const Nenge = new class NengeCores {
             return u8;
         }
         async getLibjs(jsfile,process) {
-            let F = this, T = F.T,file = F.getname(jsfile.replace(/\.zip$/,'.js'));
-            if (F.Libjs[jsfile]) return F.Libjs[jsfile];
-            //if(!process) process = e=>console.log(e);
+            let F = this, T = F.T,I=F.I,
+                jsname =F.getname(jsfile),
+                file = jsname.replace(/\.zip$/,'.js');
+                if (F.Libjs[jsname]) return F.Libjs[jsname];
+                if (F.Libjs[file]) return F.Libjs[file];
             let contents = await T.getStore(T.LibStore).data(F.LibKey + file, T.version);
             if (!contents) {
-                if (/\.zip$/.test(jsfile)) await F.callaction('loadZip',process);;
+                if (/\.zip$/.test(jsname)) await F.callaction('loadZip',process);;
                 //if(jsfile === 'extractzip.zip')jsfile = 'extractzip.min.js';
                 contents = await T.FetchItem({
                     url: F.getpath(jsfile)+'?'+T.time,
@@ -876,11 +877,15 @@ const Nenge = new class NengeCores {
                     process
                 });
             }
-            if (contents) {
-                F.Libjs[jsfile] = F.URL(contents);
+            if(contents){
+                if(I.objArr(contents)){
+                    F.I.toArr(contents,entry=>F.Libjs[entry[0]] = entry[1]&&F.URL(entry[1]));
+                }else{
+                    F.Libjs[jsname] = F.URL(contents);
+                }
             }
             contents = null;
-            return F.Libjs[jsfile]
+            return F.Libjs[jsname]
         }
         getname(str) {
             return (str || '').split('/').pop().split('?')[0].split('#')[0];
