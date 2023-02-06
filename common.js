@@ -2,11 +2,19 @@ const Nenge = new class NengeCores {
     version = 1;
     DB_NAME = 'XBBS';
     DB_STORE_MAP = {
-        'data-js': { 'timestamp': false },
+        'data-js': {
+            'timestamp': false
+        },
         'data-file': {},
-        'avatar': { 'timestamp': false },
-        'forumsicon': { 'timestamp': false },
-        'document': { 'timestamp': false },
+        'avatar': {
+            'timestamp': false
+        },
+        'forumsicon': {
+            'timestamp': false
+        },
+        'document': {
+            'timestamp': false
+        },
     };
     LibStore = 'data-js';
     Encoding = 'GBK';
@@ -18,27 +26,32 @@ const Nenge = new class NengeCores {
     JSpath = document.currentScript && document.currentScript.src.split('/').slice(0, -1).join('/') + '/';
     fps = 59;
     constructor() {
-        const T = this,I=T.I;
+        const T = this,
+            I = T.I;
         T.language = navigator.language;
         let lang = T.language.split('-');
-        if(lang[0]=='zh'){
-            if(lang[1]=='TW'){
+        if (lang[0] == 'zh') {
+            if (lang[1] == 'TW') {
                 lang = 'zh-hant';
-            }else{
+            } else {
                 lang = 'zh-hans';
             }
-        }else{
+        } else {
             lang = lang[0];
         }
         T.i18nName = lang;
         T.on(window, 'error', e => {
             //debug
-            if(I.mobile)alert(e.message);
+            if (I.mobile) alert(e.message);
             else console.log(e);
         });
-        T.triger(document,'NengeStart',{detail:T});
-        T.docload(e=>T.triger(document,'NengeReady',{detail:T}));
-        
+        T.triger(document, 'NengeStart', {
+            detail: T
+        });
+        T.docload(e => T.triger(document, 'NengeReady', {
+            detail: T
+        }));
+
     }
     get date() {
         return new Date();
@@ -55,8 +68,13 @@ const Nenge = new class NengeCores {
     async getItem(store, name, version, ARG = {}) {
         if (!name) return await this.getAllData(store, 1, ARG);
         let T = this,
-            F = T.F, maxsize = T.maxsize,
-            part = T.part, result = await F.dbGetItem(T.I.assign({ store, name }, ARG)),
+            F = T.F,
+            maxsize = T.maxsize,
+            part = T.part,
+            result = await F.dbGetItem(T.I.assign({
+                store,
+                name
+            }, ARG)),
             keyName = name.split(part)[0];
         if (result) {
             if (version && result.version && result.version != version) {
@@ -68,7 +86,10 @@ const Nenge = new class NengeCores {
                     if (k > 0) newkey += part + k;
                     if (newkey == name) returnBuf.set(result.contents, k * maxsize);
                     else {
-                        let subResult = await F.dbGetItem(T.I.assign(ARG, { store, 'name': newkey }));
+                        let subResult = await F.dbGetItem(T.I.assign(ARG, {
+                            store,
+                            'name': newkey
+                        }));
                         if (subResult) returnBuf.set(subResult.contents, k * maxsize);
                         else T.Err('lost file');
                     }
@@ -92,7 +113,11 @@ const Nenge = new class NengeCores {
         return result;
     }
     async setItem(store, name, data, dbName) {
-        let T = this, F = T.F,I=T.I, maxsize = T.maxsize, part = T.part;
+        let T = this,
+            F = T.F,
+            I = T.I,
+            maxsize = T.maxsize,
+            part = T.part;
         data = await F.contentsSize(data, maxsize);
         if (data.contents && data.contents.byteLength > maxsize) {
             let filesize = data.contents.byteLength;
@@ -101,49 +126,84 @@ const Nenge = new class NengeCores {
                 if (entry[0] != 'contents') basecontent[entry[0]] = entry[1];
             });
             return await I.Async(Array(Math.ceil(filesize / maxsize)).fill(name).map(async (v, k) => {
-                let key = v, start = k * maxsize;
+                let key = v,
+                    start = k * maxsize;
                 if (k > 0) key += part + k;
                 return await F.dbPutItem({
-                    store, 'data': I.assign({
+                    store,
+                    'data': I.assign({
                         'contents': new I.O[11](data.contents.subarray(start, filesize - start >= maxsize ? start + maxsize : filesize)),
-                    }, basecontent), 'name': key, dbName
+                    }, basecontent),
+                    'name': key,
+                    dbName
                 });
             }));
         }
-        return await F.dbPutItem({ store, data, name, dbName });
+        return await F.dbPutItem({
+            store,
+            data,
+            name,
+            dbName
+        });
     }
     async removeItem(store, name, ARG) {
-        let { clear, dbName } = ARG || {}, T = this,I=T.I, F = T.F;
+        let {
+            clear,
+            dbName
+        } = ARG || {}, T = this, I = T.I, F = T.F;
         if (clear) {
-            let contents = await F.dbGetItem(I.assign({ store, name }, ARG));
+            let contents = await F.dbGetItem(I.assign({
+                store,
+                name
+            }, ARG));
             if (contents && contents.filesize) {
                 return await I.Async(Array(Math.ceil(contents.filesize / T.maxsize)).fill(name.split(T.part)[0]).map(async (v, k) => {
                     let key = v;
                     if (k > 0) key += T.part + k;
-                    return await F.dbRemoveItem({ store, 'name': key }) + '\n';
+                    return await F.dbRemoveItem({
+                        store,
+                        'name': key
+                    }) + '\n';
                 }));
 
             }
         }
-        return await F.dbRemoveItem({ store, name, dbName });
+        return await F.dbRemoveItem({
+            store,
+            name,
+            dbName
+        });
     }
     async getAllData(store, only, ARG) {
         if (!store) return {};
-        return await this.F.dbGetAll(this.I.assign({ store, only }, ARG));
+        return await this.F.dbGetAll(this.I.assign({
+            store,
+            only
+        }, ARG));
     }
     async getContent(store, name, version, ARG) {
         let result = await this.getItem(store, name, version, ARG);
         return result && result.contents || result;
     }
     async setContent(store, name, contents, opt, dbName) {
-        let data = this.I.assign(opt || {}, { contents, 'timestamp': this.date });
+        let data = this.I.assign(opt || {}, {
+            contents,
+            'timestamp': this.date
+        });
         return await this.setItem(store, name, data, dbName);
     }
-    async getAllKeys(store, dbName,ARG) {
-        return await this.F.dbGetKeys(this.I.assign({ store, dbName },ARG||{}));
+    async getAllKeys(store, dbName, ARG) {
+        return await this.F.dbGetKeys(this.I.assign({
+            store,
+            dbName
+        }, ARG || {}));
     }
     async getAllCursor(store, index, only, ARG) {
-        return await this.F.dbGetCursor(this.I.assign({ store, index, only }, ARG));
+        return await this.F.dbGetCursor(this.I.assign({
+            store,
+            index,
+            only
+        }, ARG));
     }
     async clearDB(tables, dbName) {
         let F = this.F;
@@ -162,14 +222,17 @@ const Nenge = new class NengeCores {
         if (table instanceof T.F.StoreDatabase) return table;
         dbName = dbName || T.DB_NAME;
         if (!T.StoreData[dbName]) T.StoreData[dbName] = {};
-        let F = T.F, store = T.StoreData[dbName];
+        let F = T.F,
+            store = T.StoreData[dbName];
         if (!store[table]) {
             store[table] = new F.StoreDatabase(T, table, dbName);
         };
         return store[table];
     }
     async FetchItem(ARG) {
-        let T = this, F = T.F, I = T.I;
+        let T = this,
+            F = T.F,
+            I = T.I;
         if (!ARG || I.str(ARG)) ARG = {
             'url': ARG || '/'
         };
@@ -177,25 +240,27 @@ const Nenge = new class NengeCores {
             urlname = F.getname(ARG.url),
             key = ARG.key || urlname || 'index.php',
             keyname = ARG.key == F.LibKey ? key + urlname : key,
-            result, version = ARG.version, headers = {},
+            result, version = ARG.version,
+            headers = {},
             Store = ARG.store && T.getStore(ARG.store),
             response,
-            unFile = (buf, password) => F.unFile(buf, I.assign(ARG, { password })),
+            unFile = (buf, password) => F.unFile(buf, I.assign(ARG, {
+                password
+            })),
             callback = async result => {
-                if (result && result.contents) {
-                    if (result.type == 'unpack') {
-                        result = await unFile(result.contents, result.password);
-                        if (result.password) delete result.password;
+                    if (result && result.contents) {
+                        if (result.type == 'unpack') {
+                            result = await unFile(result.contents, result.password);
+                            if (result.password) delete result.password;
+                        } else result = result.contents;
                     }
-                    else result = result.contents;
-                }
-                success(result);
-                return result;
-            },
-            success = (result)=>result&&ARG.success && ARG.success(result, headers);
+                    success(result);
+                    return result;
+                },
+                success = (result) => result && ARG.success && ARG.success(result, headers);
         //delete ARG.store;
-        if(!ARG.filename)ARG.filename = urlname;
-        if(ARG.onLine){
+        if (!ARG.filename) ARG.filename = urlname;
+        if (ARG.onLine) {
             ARG.unset = navigator.onLine;
         }
         if (Store) {
@@ -206,20 +271,20 @@ const Nenge = new class NengeCores {
                 }
             }
         }
-        
-        response = await F.FetchStart(ARG).catch(e=>ARG.error&&ARG.error(e.message));
-        if(!response) return callback(result);
+
+        response = await F.FetchStart(ARG).catch(e => ARG.error && ARG.error(e.message));
+        if (!response) return callback(result);
         headers = F.FetchHeader(response, ARG);
-        I.exends(headers,response,['url','status','statusText']);
+        I.exends(headers, response, ['url', 'status', 'statusText']);
         let password = headers['password'] || ARG.password || undefined;
         if (response.status != 200) {
             //404 500
-            if(response.body){
+            if (response.body) {
                 response.body.cancel();
-                ARG.error && ARG.error(response.statusText,headers);
+                ARG.error && ARG.error(response.statusText, headers);
             }
-            if(ARG.type == 'head')success(headers);
-            return  callback(result);
+            if (ARG.type == 'head') success(headers);
+            return callback(result);
         } else if (result && result.filesize && headers["byteLength"] > 0) {
             if (result.filesize == headers["byteLength"]) {
                 response.body.cancel();
@@ -232,27 +297,37 @@ const Nenge = new class NengeCores {
             response.body.cancel();
             return success(headers);
         }
-        let responseQuest = I.func(ARG.process) ? await F.StreamResponse(response, ARG,headers) : response;
-        if(ARG.unpack)ARG.type = arrbuff; 
+        let responseQuest = I.func(ARG.process) ? await F.StreamResponse(response, ARG, headers) : response;
+        if (ARG.unpack) ARG.type = arrbuff;
         ARG.type = ARG.type || arrbuff;
         let contents = await responseQuest[ARG.type]();
-        let type = headers.type, filesize = headers["byteLength"] || 0, filetype = headers['content-type'];
+        let type = headers.type,
+            filesize = headers["byteLength"] || 0,
+            filetype = headers['content-type'];
         if (ARG.type == arrbuff && I.arrBuff(contents)) {
             contents = new I.O[11](contents);
             if (ARG.Filter) contents = ARG.Filter(contents);
             type = I.N(11);
             filesize = contents.byteLength;
-            if(ARG.autounpack&&filesize<T.maxsize*.3){
+            if (ARG.autounpack && filesize < T.maxsize * .3) {
                 ARG.unpack = true;
             }
         }
         ARG.dataOption = ARG.dataOption || {};
         if (Store && ARG.unpack && key === keyname && filesize > T.maxsize) {
             type = 'unpack';
-            await Store.put(keyname, T.I.assign({ contents, timestamp: new Date, filesize, filetype, version, type, password }, ARG.dataOption));
+            await Store.put(keyname, T.I.assign({
+                contents,
+                timestamp: new Date,
+                filesize,
+                filetype,
+                version,
+                type,
+                password
+            }, ARG.dataOption));
             Store = null;
         }
-        
+
         if (ARG.unpack && I.u8obj(contents)) {
             contents = await unFile(contents, password);
             if (!contents.byteLength) {
@@ -265,27 +340,26 @@ const Nenge = new class NengeCores {
         }
         if (Store && key !== keyname) {
             if (I.u8obj(contents)) {
-                contents = F.getFileText(contents,ARG.decode,ARG.mime || headers['content-type'] || F.gettype(''),urlname);
+                contents = F.getFileText(contents, ARG.decode, ARG.mime || headers['content-type'] || F.gettype(''), urlname);
                 type = 'File';
             } else if (I.str(contents)) {
                 type = headers['content-type'] || 'String';
-            } else if(type =='datalist'){
+            } else if (type == 'datalist') {
                 let contents2;
                 await I.Async(I.toArr(contents).map(async entry => {
                     let [name, data] = entry,
-                        filename = F.getname(name),
+                    filename = F.getname(name),
                         filetype = F.gettype(filename),
-                        filedata = F.getFileText(data,ARG.decode,filetype,filename);
+                        filedata = F.getFileText(data, ARG.decode, filetype, filename);
                     //F.Libjs[filename] = filedata;
                     Store.put(ARG.key + filename, I.assign({
-                        'contents': filedata, 
-                        'timestamp': T.date, 
-                        'filesize': data.byteLength, 
+                        'contents': filedata,
+                        'timestamp': T.date,
+                        'filesize': data.byteLength,
                         'version': T.version,
                         filetype,
-                        'type':I.blob(filedata)? 'File':'String'
-                    }, ARG.dataOption)
-                    );
+                        'type': I.blob(filedata) ? 'File' : 'String'
+                    }, ARG.dataOption));
                     if (ARG.filename == filename) {
                         contents2 = filedata;
                     }
@@ -295,58 +369,79 @@ const Nenge = new class NengeCores {
                 contents2 = null;
                 Store = null;
             }
-        }else if(ARG.decode){
-            contents = F.getFileText(contents,ARG.decode,type);
-            if(I.str(contents)){
+        } else if (ARG.decode) {
+            contents = F.getFileText(contents, ARG.decode, type);
+            if (I.str(contents)) {
                 type = 'String';
             }
         }
         if (Store) {
-            await Store.put(keyname, I.assign({ contents, filesize, filetype, version, type, password, timestamp: T.date }, ARG.dataOption));
+            await Store.put(keyname, I.assign({
+                contents,
+                filesize,
+                filetype,
+                version,
+                type,
+                password,
+                timestamp: T.date
+            }, ARG.dataOption));
         }
         ARG.success && ARG.success(contents, headers);
         return contents;
     }
     ajax(ARG) {
-        let T = this, I = T.I, F = T.F;
-        if (I.str(ARG)) ARG = { url: ARG };
+        let T = this,
+            I = T.I,
+            F = T.F;
+        if (I.str(ARG)) ARG = {
+            url: ARG
+        };
         return I.Async((resolve) => {
             const request = new XMLHttpRequest(ARG.paramsDictionary);
-            T.on(request,'error',e=>{
-                ARG.error&&ARG.error('net::ERR_FAILED');
+            T.on(request, 'error', e => {
+                ARG.error && ARG.error('net::ERR_FAILED');
                 resolve(null);
             });
             T.on(request, 'readystatechange', event => {
-                switch(request.readyState){
+                switch (request.readyState) {
                     case request.LOADING:
                     case request.OPENED:
                     case request.UNSENT:
-                    break;
+                        break;
                     case request.HEADERS_RECEIVED:
-                        I.defines(request,{headers:I.toObj((request.getAllResponseHeaders()||'').trim().split(/[\r\n]+/).map(line=>{let parts = line.split(': ');return [parts.shift(),parts.join(': ')];}).concat([['status',request.status],['statusText',request.statusText],['url',url]]))},1,1);
-                        if(ARG.type=='head'){
+                        I.defines(request, {
+                            headers: I.toObj((request.getAllResponseHeaders() || '').trim().split(/[\r\n]+/).map(line => {
+                                let parts = line.split(': ');
+                                return [parts.shift(), parts.join(': ')];
+                            }).concat([
+                                ['status', request.status],
+                                ['statusText', request.statusText],
+                                ['url', url]
+                            ]))
+                        }, 1, 1);
+                        if (ARG.type == 'head') {
                             request.abort();
                             ARG.success && ARG.success(request.headers);
                             resolve(request.headers);
                             return
                         }
-                    break;
-                    case request.DONE:                            
-                        if(request.status == 200){
+                        break;
+                    case request.DONE:
+                        if (request.status == 200) {
                             ARG.success && ARG.success(request.response, request.headers, request);
                             resolve(request.response);
-                        }else if(request.status > 0){
+                        } else if (request.status > 0) {
                             ARG.error && ARG.error(request.statusText, request.headers, request);
                             resolve(null);
                         }
-                    break;
+                        break;
                 }
             });
-            if(ARG.process){
-                T.on(request,'progress',e=>ARG.process(Math.ceil(100*e.loaded/e.total)+'%',e.total,e.loaded,0,request));
+            if (ARG.process) {
+                T.on(request, 'progress', e => ARG.process(Math.ceil(100 * e.loaded / e.total) + '%', e.total, e.loaded, 0, request));
             }
-            if(ARG.postProcess){
-                T.on(request.upload,'progress',e=>ARG.postProcess(Math.ceil(100*e.loaded/e.total)+'%',e.total,e.loaded,e));
+            if (ARG.postProcess) {
+                T.on(request.upload, 'progress', e => ARG.postProcess(Math.ceil(100 * e.loaded / e.total) + '%', e.total, e.loaded, e));
             }
             let evt = [
                 'abort', 'load', 'loadend', 'loadstart', 'progress', 'readystatechange', 'timeout'
@@ -355,168 +450,183 @@ const Nenge = new class NengeCores {
             if (request.upload && ARG.upload) {
                 evt.forEach(val => ARG.upload[val] && T.on(request.upload, val, e => ARG.upload[val](e, request)));
             }
-            let formData, url,type = ARG.type||"";
-            ARG.get = {};//I.assign({inajax:T.time},ARG.get||{});
+            let formData, url, type = ARG.type || "";
+            ARG.get = {}; //I.assign({inajax:T.time},ARG.get||{});
             url = I.get(ARG.url, ARG.get);
-            if(ARG.json){
+            if (ARG.json) {
                 formData = JSON.stringify(ARG.json);
-                ARG.headers = Object.assign({'accept':'application/json, text/plain, */*'},ARG.headers);
-            }else if (ARG.post) {
+                ARG.headers = Object.assign({
+                    'accept': 'application/json, text/plain, */*'
+                }, ARG.headers);
+            } else if (ARG.post) {
                 formData = I.post(ARG.post);
             }
             if (ARG.overType) request.overrideMimeType(ARG.overType);
-            if(type!='head')request.responseType = type;
+            if (type != 'head') request.responseType = type;
             request.open(!formData ? "GET" : "POST", url);
-            if(ARG.headers)I.toArr(ARG.headers,entry=>request.setRequestHeader(entry[0],entry[1]));
+            if (ARG.headers) I.toArr(ARG.headers, entry => request.setRequestHeader(entry[0], entry[1]));
             request.send(formData);
         });
     }
     runaction(action, data) {
         let R = this;
-        if(!R.action) return ;
+        if (!R.action) return;
         if (R.action[action] instanceof Function) {
-            if (typeof data =='undefined' || data==null) return R.action[action].call(R);
-            if (typeof data !='string'&&data.length) return R.action[action].apply(R, data||[]);
-            return R.action[action].call(R,data);
+            if (typeof data == 'undefined' || data == null) return R.action[action].call(R);
+            if (typeof data != 'string' && data.length) return R.action[action].apply(R, data || []);
+            return R.action[action].call(R, data);
         } else {
-            console.log('lost action:' + action,data);
+            console.log('lost action:' + action, data);
         }
     }
-    callaction(action){
+    callaction(action) {
         let R = this;
-        if(!R.action||!action) return ;
-        let arg = Array.from(arguments),func = R.action[arg.shift()];
-        if (func&&func instanceof Function) {
-            return func.apply(R,arg);
+        if (!R.action || !action) return;
+        let arg = Array.from(arguments),
+            func = R.action[arg.shift()];
+        if (func && func instanceof Function) {
+            return func.apply(R, arg);
         } else {
-            console.log('lost action:' + action,arg);
+            console.log('lost action:' + action, arg);
         }
     }
-    bindaction(action){
+    bindaction(action) {
         let R = this;
-        if(!R.action||!action || !R.action[action]) return ;
+        if (!R.action || !action || !R.action[action]) return;
         return R.action[action].bind(R);
     }
-    addJS(buf, cb, iscss,id) {
-        let T = this,F=T.F,I=T.I;
-            if(I.blob(buf)){
-                id = F.getKeyName(buf.name);
-                if(buf.type=='text/css')iscss = true;
-            }
-            if(id&&T.$('#link_'+id))return;
-            let re = false, script = T.$ce(!iscss ? 'script' : 'link'), func = callback => {
-            if (!/^(blob:)?https?:\/\//.test(buf) && !/(\.js$|\.css$)/.test(buf)) {
-                re = true;
-                buf = F.URL(buf, F.gettype(!iscss ? 'js' : 'css'));
-            }
-            
-            if (iscss) {
-                script.type = F.gettype('css');
-                script.href = buf;
-                script.rel = "stylesheet";
-            } else {
-                script.type = F.gettype('js');
-                script.src = buf;
-            }
-            if(id)script.setAttribute('id','link_'+id);
-            script.onload = e => {
-                callback && callback(e);
-                if (re) F.removeURL(buf);
-                buf = null;
-                if(!iscss)script.remove();
+    addJS(buf, cb, iscss, id) {
+        let T = this,
+            F = T.F,
+            I = T.I;
+        if (I.blob(buf)) {
+            id = F.getKeyName(buf.name);
+            if (buf.type == 'text/css') iscss = true;
+        }
+        if (id && T.$('#link_' + id)) return;
+        let re = false,
+            script = T.$ce(!iscss ? 'script' : 'link'),
+            func = callback => {
+                if (!/^(blob:)?https?:\/\//.test(buf) && !/(\.js$|\.css$)/.test(buf)) {
+                    re = true;
+                    buf = F.URL(buf, F.gettype(!iscss ? 'js' : 'css'));
+                }
+
+                if (iscss) {
+                    script.type = F.gettype('css');
+                    script.href = buf;
+                    script.rel = "stylesheet";
+                } else {
+                    script.type = F.gettype('js');
+                    script.src = buf;
+                }
+                if (id) script.setAttribute('id', 'link_' + id);
+                script.onload = e => {
+                    callback && callback(e);
+                    if (re) F.removeURL(buf);
+                    buf = null;
+                    if (!iscss) script.remove();
+                };
+                document[!iscss ? 'body' : 'head'].appendChild(script);
             };
-            document[!iscss ? 'body' : 'head'].appendChild(script);
-        };
         if (!cb) return T.I.Async((resolve, reject) => func(resolve, reject));
         else return func(cb), script;
 
     };
-    async loadScript(js,ARG,bool,process) {
-        ARG = ARG||{};
-        let T = this, F = T.F;
+    async loadScript(js, ARG, bool, process) {
+        ARG = ARG || {};
+        let T = this,
+            F = T.F;
         ARG.url = F.getpath(js);
-        if(bool){
+        if (bool) {
             ARG.type = 'text';
-        }else{
-            if(!ARG.store)ARG.store = T.LibStore;
-            if(!ARG.key)ARG.key = F.LibKey;
+        } else {
+            if (!ARG.store) ARG.store = T.LibStore;
+            if (!ARG.key) ARG.key = F.LibKey;
         }
         ARG.version = ARG.version || T.version;
         let data = await T.FetchItem(ARG);
-        if(!bool){
-            return await T.addJS(data); 
+        if (!bool) {
+            return await T.addJS(data);
         }
         return data;
     }
-    async getScript(js,ARG){
-        return this.loadScript(js,ARG,!0);
+    async getScript(js, ARG) {
+        return this.loadScript(js, ARG, !0);
     }
-    async addScript(js,ARG){
-        return await T.addJS(await T.getScript(js,ARG));
+    async addScript(js, ARG) {
+        return await T.addJS(await T.getScript(js, ARG));
     }
-    async loadLibjs(name,process) {
-        let T = this,F=T.F;
-        return await T.addJS(await F.getLibjs(name,process),null,F.getExt(name)=='css');
+    async loadLibjs(name, process) {
+        let T = this,
+            F = T.F;
+        return await T.addJS(await F.getLibjs(name, process), null, F.getExt(name) == 'css');
     }
     unFile(u8, process, ARG) {
-        return this.F.unFile(u8, this.I.assign({ process }, ARG||{}));
+        return this.F.unFile(u8, this.I.assign({
+            process
+        }, ARG || {}));
     }
-    async toZip(contents,process,options){
-        let T=this,F=T.F,I=T.I;
-        return I.Async(async complete=>{
-            let worker = new Worker(T.JSpath+'zip.js?'+T.time);
-            T.on(worker,'message',e=>{
+    async toZip(contents, process, options) {
+        let T = this,
+            F = T.F,
+            I = T.I;
+        return I.Async(async complete => {
+            let worker = new Worker(T.JSpath + 'zip.js?' + T.time);
+            T.on(worker, 'message', e => {
                 let data = e.data;
-                if(data.t==1){
+                if (data.t == 1) {
                     complete(data.contents);
                     e.target['terminate']();
-                }else if(data.t==2){
-                    process&&process(Math.ceil(100*data.current/data.total)+'%');
+                } else if (data.t == 2) {
+                    process && process(Math.ceil(100 * data.current / data.total) + '%');
                 }
             });
-            T.on(worker,'error',e=>{
+            T.on(worker, 'error', e => {
                 console.log(e);
                 complete(null);
                 worker['terminate']();
             });
-            worker.postMessage(Object({contents},options||{}));
+            worker.postMessage(Object({
+                contents
+            }, options || {}));
             contents = null;
         });
     }
     I = new class NengeType {
         O = [
-            Array,//0
-            Object,//1
-            HTMLFormElement,//2
-            DOMStringMap,//3
-            FormData,//4
-            NamedNodeMap,//5,
-            Function,//6
-            Blob,//7
-            File,//8
-            Promise,//9
-            URLSearchParams,//10
-            Uint8Array,//11,
-            HTMLFormElement,//12
-            Element,//13
-            CSSStyleDeclaration,//14
-            String,//15
-            undefined,//16
-            null,//17
-            Reflect,//18
-            ArrayBuffer,//19
-            Boolean,//20
-            Headers,//21
+            Array, //0
+            Object, //1
+            HTMLFormElement, //2
+            DOMStringMap, //3
+            FormData, //4
+            NamedNodeMap, //5,
+            Function, //6
+            Blob, //7
+            File, //8
+            Promise, //9
+            URLSearchParams, //10
+            Uint8Array, //11,
+            HTMLFormElement, //12
+            Element, //13
+            CSSStyleDeclaration, //14
+            String, //15
+            undefined, //16
+            null, //17
+            Reflect, //18
+            ArrayBuffer, //19
+            Boolean, //20
+            Headers, //21
         ];
-        N(num){
+        N(num) {
             return this.O[num].name;
         }
-        assign(){
-            return this.O[1].assign.apply(null,arguments);
+        assign() {
+            return this.O[1].assign.apply(null, arguments);
         }
-        exends(a,b,c){
-            if(c)this.toArr(c,v=>a[v]=b[v]);
-            else a = this.assign(a,b);
+        exends(a, b, c) {
+            if (c) this.toArr(c, v => a[v] = b[v]);
+            else a = this.assign(a, b);
             return a;
         }
         /**
@@ -525,12 +635,12 @@ const Nenge = new class NengeCores {
          * @param {Function|undefined} reject 
          * @returns {Promise} Promise
          */
-        Async(resolve,reject){
-            if(this.array(resolve)) return this.O[9].all(resolve);
-            return new this.O[9](resolve,reject);
+        Async(resolve, reject) {
+            if (this.array(resolve)) return this.O[9].all(resolve);
+            return new this.O[9](resolve, reject);
         }
         formdata = (obj) => new this.O[4](obj || undefined);
-        formget(obj){
+        formget(obj) {
             return new this.O[10](obj);
         }
         get mobile() {
@@ -542,7 +652,8 @@ const Nenge = new class NengeCores {
          * @returns {FormData} 表单对象
          */
         post(obj) {
-            let I = this, T = I.T;
+            let I = this,
+                T = I.T;
             let post = I.postobj(obj) ? obj : I.formdata(I.formelm(obj) ? obj : I.str(obj) ? T.$(obj) : undefined);
             if (I.objArr(obj)) I.toArr(obj, v => post.append(v[0], v[1]));
             return post;
@@ -554,7 +665,10 @@ const Nenge = new class NengeCores {
          * @returns {String} 地址
          */
         get(url, get) {
-            let I = this, str1 = '', str2 = '', urls = url.split('?');
+            let I = this,
+                str1 = '',
+                str2 = '',
+                urls = url.split('?');
             if (urls[1]) str1 = I.formget(urls[1]);
             if (get) str2 = I.formget(get);
             let data = I.formget(str1 + '&' + str2).toString().replace(/^(.+?)=&/, '$1&');
@@ -566,8 +680,9 @@ const Nenge = new class NengeCores {
          * @returns {object} JSON
          */
         toObj(obj) {
-            let I = this,O=I.O;
-            if(I.objArr(obj)) return obj;
+            let I = this,
+                O = I.O;
+            if (I.objArr(obj)) return obj;
             return O[1].fromEntries(I.toArr(obj));
         }
         /**
@@ -578,106 +693,124 @@ const Nenge = new class NengeCores {
          */
         toArr(obj, func) {
             if (!obj) return [];
-            let arr,I=this,O=I.O;
-            if(I.DOMmap(obj))obj = O[1].assign({},obj);
-            if(I.postobj(obj) || I.header(obj)){
+            let arr, I = this,
+                O = I.O;
+            if (I.DOMmap(obj)) obj = O[1].assign({}, obj);
+            if (I.postobj(obj) || I.header(obj)) {
                 arr = {};
-                obj.forEach((v,k)=>{
-                    if(!arr[k])arr[k] = v;
-                    else{
-                        if(!I.array(arr[k]))arr[k] = [arr[k]];
+                obj.forEach((v, k) => {
+                    if (!arr[k]) arr[k] = v;
+                    else {
+                        if (!I.array(arr[k])) arr[k] = [arr[k]];
                         arr[k].push(v);
                     }
                 });
                 obj = O[1].entries(arr);
             }
-            if(I.nodemap(obj))obj = O[0].from(obj).map(v=>[v.nodeName,v.nodeValue]);
-            if(!I.array(obj)){
-                if(obj.length)arr = O[0].from(obj);
-                else arr =  O[1].entries(obj);
-            }else{
+            if (I.nodemap(obj)) obj = O[0].from(obj).map(v => [v.nodeName, v.nodeValue]);
+            if (!I.array(obj)) {
+                if (obj.length) arr = O[0].from(obj);
+                else arr = O[1].entries(obj);
+            } else {
                 arr = obj;
             }
             if (I.func(func)) return arr.forEach(func);
             return arr;
         }
-        define(o, p, attr, bool,rw) {
-            let configurable = rw?true:false;
-            this.O[1].defineProperty(o, p, !bool ? attr : { get() { return attr },configurable});
+        define(o, p, attr, bool, rw) {
+            let configurable = rw ? true : false;
+            this.O[1].defineProperty(o, p, !bool ? attr : {
+                get() {
+                    return attr
+                },
+                configurable
+            });
             return o;
         }
-        defines(o, attr, bool,rw) {
-            if (bool)this.toArr(attr, entry => this.define(o, entry[0], entry[1], 1,rw));
+        defines(o, attr, bool, rw) {
+            if (bool) this.toArr(attr, entry => this.define(o, entry[0], entry[1], 1, rw));
             else this.O[1].defineProperties(o, attr);
             return o;
         }
         textdecode(u8, charset) {
             return new TextDecoder(charset || 'utf8').decode(u8);
         }
-        Json(post){
-            let I = this,O=I.O;
+        Json(post) {
+            let I = this,
+                O = I.O;
             if (I.u8obj(post)) post = I.textdecode(post);
             return typeof post == 'string' ? (new O[6]('return ' + post))() : post;
         }
         toJson(post) {
             return JSON.stringify(this.Json(post));
         }
-        empty(data){
-            if(!data) return true;
+        empty(data) {
+            if (!data) return true;
             //if(!isNaN(data)&&data*1==0) return true;
-            if(!this.toArr(data).length) return true;
+            if (!this.toArr(data).length) return true;
             return false;
         }
         constructor(T) {
-            let I = this,O=I.O,func="var O = I.O;";
-            I.define(I, 'T', {get: () => T,});
-            O[1].entries({
-                'array':0,
-                'obj': 1, 
-                'objArr':1,
-                'DOMmap':3,
-                'postobj': 4,
-                'nodemap':5,  
-                'blob':7, 
-                'file':8, 
-                'await': 9, 
-                'getobj': 10, 
-                'elm': 13, 
-                'func': 6,
-                'u8obj':11,
-                'formelm': 12, 
-                'styleobj':14,
-                'str':15,
-                'undefined':17,
-                'arrBuff':19,
-                'bool':20,
-                'header':21,
-            }).forEach( entry => {
-                func += `I.define(I,'${entry[0]}',{value(obj){`+(entry[1]==17?`return obj ==  O[${entry[1]}];`:['objArr','str'].includes(entry[0])?`return obj!=O[16]&&obj!=O[17]&&obj.constructor.name == I.N(${entry[1]});`:`return obj instanceof O[${entry[1]}];`)+`}});`;
+            let I = this,
+                O = I.O,
+                func = "var O = I.O;";
+            I.define(I, 'T', {
+                get: () => T,
             });
-            (new O[6]('I',func))(I);
+            O[1].entries({
+                'array': 0,
+                'obj': 1,
+                'objArr': 1,
+                'DOMmap': 3,
+                'postobj': 4,
+                'nodemap': 5,
+                'blob': 7,
+                'file': 8,
+                'await': 9,
+                'getobj': 10,
+                'elm': 13,
+                'func': 6,
+                'u8obj': 11,
+                'formelm': 12,
+                'styleobj': 14,
+                'str': 15,
+                'undefined': 17,
+                'arrBuff': 19,
+                'bool': 20,
+                'header': 21,
+            }).forEach(entry => {
+                func += `I.define(I,'${entry[0]}',{value(obj){` + (entry[1] == 17 ? `return obj ==  O[${entry[1]}];` : ['objArr', 'str'].includes(entry[0]) ? `return obj!=O[16]&&obj!=O[17]&&obj.constructor.name == I.N(${entry[1]});` : `return obj instanceof O[${entry[1]}];`) + `}});`;
+            });
+            (new O[6]('I', func))(I);
         }
     }(this);
     F = new class NengeUtil {
         Libjs = {};
         LibKey = 'script-';
-        async StreamResponse(response, ARG,headers) {
-            let num = s => Number(s), maxLength = num(headers['content-length'] || 0), downtext = ARG.downtext ? ARG.downtext : '', havesize = 0, status = {
-                done: !1, value: !1
-            }, reader = response.body.getReader();
+        async StreamResponse(response, ARG, headers) {
+            let num = s => Number(s),
+                maxLength = num(headers['content-length'] || 0),
+                downtext = ARG.downtext ? ARG.downtext : '',
+                havesize = 0,
+                status = {
+                    done: !1,
+                    value: !1
+                },
+                reader = response.body.getReader();
             return new Response(new ReadableStream({
                 async start(ctrler) {
                     while (!status.done) {
-                        let speedsize = 0, statustext = '';
+                        let speedsize = 0,
+                            statustext = '';
                         if (status.value) {
                             speedsize = num(status.value.length);
                             havesize += speedsize;
                             ctrler.enqueue(status.value);
                         }
-                        if (maxLength&&havesize<maxLength) statustext = downtext + Math.floor(havesize / maxLength * 100) + '%';
+                        if (maxLength && havesize < maxLength) statustext = downtext + Math.floor(havesize / maxLength * 100) + '%';
                         else statustext = downtext + Math.floor(havesize * 10 / 1024) / 10 + 'KB';
                         //下载进度
-                        ARG.process((ARG.filename?ARG.filename+' ':'')+statustext, maxLength, havesize, speedsize);
+                        ARG.process((ARG.filename ? ARG.filename + ' ' : '') + statustext, maxLength, havesize, speedsize);
                         status = await reader.read();
                     }
                     ctrler.close();
@@ -685,8 +818,8 @@ const Nenge = new class NengeCores {
             }));
         }
         FetchHeader(response, ARG) {
-            let I=this.I;
-            let headers = I.toObj(response.headers)||{};
+            let I = this.I;
+            let headers = I.toObj(response.headers) || {};
             (headers['content-type'] || this.gettype(ARG.url.split('/').pop() || 'html')).split(';').forEach((value, index) => {
                 value = value.trim().toLowerCase();
                 if (index == 0) headers['content-type'] = value;
@@ -702,8 +835,16 @@ const Nenge = new class NengeCores {
             });
         }
         async FetchStart(ARG) {
-            let F = this, I = F.I, { url, get, post } = ARG || {}, data = {};
-            url = I.get(ARG.url, get); data.headers = {};
+            let F = this,
+                I = F.I,
+                {
+                    url,
+                    get,
+                    post
+                } = ARG || {},
+                data = {};
+            url = I.get(ARG.url, get);
+            data.headers = {};
             ['headers', 'context', 'referrer', 'referrerPolicy', 'mode', 'credentials', 'redirect', 'integrity', 'cache'].forEach(val => {
                 if (ARG[val] != undefined) data[val] = ARG[val];
             });
@@ -715,7 +856,7 @@ const Nenge = new class NengeCores {
                 delete ARG.json;
                 data.headers['Accept'] = "application/json";
                 data.method = 'POST';
-            }else if (post) {
+            } else if (post) {
                 data.method = 'POST';
                 /**
                  * @var accent:mixed 发送JSON数据
@@ -737,130 +878,177 @@ const Nenge = new class NengeCores {
             //}
             return fetch(url, data);
         }
-        THEN = f => this.I.Async(f);
-        zipJs = 'zip.min.js';
-        async ZipCreate(password,process) {
-            let F=this,T=F.T;
-            if (!window.zip) await T.loadScript(F.zipJs,{process});
-            return new zip.ZipWriter(new zip.Uint8ArrayWriter(), { password });
-        }
-        async ZipAddFile(files, password, ZipWriter, options, comment) {
-            let F = this,I=F.I;
-            if (!ZipWriter) ZipWriter = await F.ZipCreate(password);
-            if (I.file(files)) await ZipWriter.add(files.name, new zip.BlobReader(files), options);
-            else await I.Async(I.toArr(files).map(async file => await ZipWriter.add(file.name, new zip.BlobReader(file), options)));
-            return await ZipWriter.close(comment);
-        }
+        zipsrc = 'zip.min.js';
         mime_preg = {
-            "7z": /^377ABCAF271C/, 
-            "rar": /^52617221/, 
-            "zip": /^504B0304/, 
-            "png": /^89504E470D0A1A0A/, 
-            "gif": /^47494638/, 
-            "jpg": /^FFD8FF/, 
-            "webp": /^52494646/, 
+            "7z": /^377ABCAF271C/,
+            "rar": /^52617221/,
+            "zip": /^504B0304/,
+            "png": /^89504E470D0A1A0A/,
+            "gif": /^47494638/,
+            "jpg": /^FFD8FF/,
+            "webp": /^52494646/,
             "pdf": /^255044462D312E/,
         };
-        CheckExt(u8){
-            let F = this, I = F.I,buf = u8.slice(0,16),textext = F.bindaction('textext');
-            let text = I.blob(buf)? buf.arrayBuffer():I.str(buf)?new TextEncoder().encode(buf):buf;
-            return I.await(text)?I.Async(async e=>e(textext(await text))):textext(text);
+        CheckExt(u8) {
+            let F = this,
+                I = F.I,
+                buf = u8.slice(0, 16),
+                textext = F.bindaction('textext');
+            let text = I.blob(buf) ? buf.arrayBuffer() : I.str(buf) ? new TextEncoder().encode(buf) : buf;
+            return I.await(text) ? I.Async(async e => e(textext(await text))) : textext(text);
         }
         action = {
-            textext(s){
-                let F = this, I = F.I,text = I.toArr(I.arrBuff(s)?new I.O[11](s):s).map(v => v.toString(16).padStart(2, 0).toLocaleUpperCase()).join(''),result = I.toArr(F.mime_preg).filter(entry=>entry[1].test(text));
-                if(result[0]) return result[0][0];
+            textext(s) {
+                let F = this,
+                    I = F.I,
+                    text = I.toArr(I.arrBuff(s) ? new I.O[11](s) : s).map(v => v.toString(16).padStart(2, 0).toLocaleUpperCase()).join(''),
+                    result = I.toArr(F.mime_preg).filter(entry => entry[1].test(text));
+                if (result[0]) return result[0][0];
                 return '';
-            },            
-            async rar(u8, ARG,src) {
-                let F = this, I = F.I,process;
+            },
+            async rar(u8, ARG, src) {
+                let F = this,
+                    I = F.I,
+                    process;
                 if (I.blob(u8)) {
-                    if (!ARG.filename&&u8.name) ARG.filename = u8.name;
-                    //u8 = new I.O[11](await u8.arrayBuffer());
+                    if (!ARG.filename && u8.name) ARG.filename = u8.name;
+                    u8 = new I.O[11](await u8.arrayBuffer());
                 }
                 src = src || 'libunrar.min.zip';
                 //F.Libjs[src] = F.T.JSpath+'libunrar.js';
-                if (!F.Libjs[src]) await F.getLibjs(src,process);
+                if (!F.Libjs[src]) await F.getLibjs(src, process);
                 let url = F.Libjs[src],
                     packtext;
-                if(ARG.process){
-                    if(!ARG.filename)packtext = F.T.getLang('Decompress:')+packtext+'=&gt;';
+                if (ARG.process) {
+                    if (ARG.filename) packtext = F.T.getLang('Decompress:') + ARG.filename + '=&gt;';
                     else packtext = F.T.getLang('Decompress:');
-                    process = data=>ARG.process(packtext+(data.file ? F.getname(data.file) : ARG.filename || '') + ' ' + Math.floor(Number(data.current) / Number(data.total) * 100) + '%', data.total, data.current);
+                    process = data => ARG.process(packtext + (data.file ? F.getname(data.file):'') + ' ' + Math.floor(Number(data.current) / Number(data.total) * 100) + '%', data.total, data.current);
                 }
                 return I.Async(complete => {
-                    let contents,worker = new Worker(url),getu8 = (bufs)=>I.u8obj(bufs)?complete(bufs):bufs.arrayBuffer().then(buf=>complete(new I.O[11](buf)));
+                    let contents, worker = new Worker(url);
                     worker.onmessage = result => {
-                        let data = result.data, t = data.t;
-                        if (1 === t) {
-                            if(contents)complete(contents);
-                            else getu8(u8);
-                            result.target['terminate']();
-                        } else if (2 === t) {
-                            if(!contents)contents={};
-                            contents[data.file] = data.data;
-                        } else if (4 === t && data.total > 0 && data.total >= data.current) {
-                            process && process(data);
-                        } else if (-1 == t) {
-                            let password = prompt(F.T.getLang(data.message), ARG.password || '');
-                            if(!password){complete(contents);return result.target['terminate']();}
-                            if(ARG.unpack)contents.password = password;
-                            ARG.password = password;
-                            worker.postMessage({ password });
-                        }
-                    },
-                    worker.onerror = async error => {
-                        getu8(u8);
-                        worker.terminate();
-                    };
-                    worker.postMessage({ 'contents': u8,password:ARG.password});
+                            let data = result.data,
+                                t = data.t;
+                            if (1 === t) {
+                                if (contents) complete(contents);
+                                else complete(u8);
+                                result.target['terminate']();
+                            } else if (2 === t) {
+                                if (!contents) contents = {};
+                                contents[data.file] = data.data;
+                            } else if (4 === t && data.total > 0 && data.total >= data.current) {
+                                process && process(data);
+                            } else if (-1 == t) {
+                                let password = prompt(F.T.getLang(data.message), ARG.password || '');
+                                if (!password) {
+                                    complete(u8);
+                                    return result.target['terminate']();
+                                }
+                                if (ARG.unpack) contents.password = password;
+                                ARG.password = password;
+                                worker.postMessage({
+                                    password
+                                });
+                            }
+                        },
+                        worker.onerror = async error => {
+                            complete(u8);
+                            worker.terminate();
+                        };
+                    worker.postMessage({
+                        'contents': u8,
+                        password: ARG.password
+                    });
                 });
 
             },
-            '7z':function(u8, ARG){
-                return this.callaction('rar',u8, ARG,'extract7z.zip');
+            '7z': function (u8, ARG) {
+                return this.callaction('rar', u8, ARG, 'extract7z.zip');
             },
             async zip(u8, ARG = {}) {
-                return this.callaction('rar',u8, ARG,this.T.Libzip);
+                if (this.T.Libzip == this.zipsrc) return this.callaction('zipjs', u8, ARG);
+                return this.callaction('rar', u8, ARG, this.T.Libzip);
+            },
+            async zipjs(u8, ARG) {
+                ARG = ARG || {};
+                let F = this,
+                    T = F.T;
+                if (!window.zip) await T.loadLibjs(T.JSpath + F.zipsrc);
+                var ZipFile = new zip.ZipReader(new zip[u8 instanceof Uint8Array ? 'Uint8ArrayReader' : 'BlobReader'](u8)),
+                    contents = {},
+                    password = undefined,
+                    getData = async entry => {
+                            contents[entry.filename] = await entry.getData(new zip.Uint8ArrayWriter(), {
+                                onprogress: (current, total) => ARG.process && ARG.process(entry.filename, current, total),
+                                password
+                            });
+                        },
+                        checkPassword = async entry => {
+                                try {
+                                    if (password == undefined) password = ARG.password;
+                                    await getData(entry);
+                                } catch (e) {
+                                    password = window.prompt(T.getLang('Invalid password'), password);
+                                    await checkPassword(entry);
+                                }
+                            },
+                            entrylist = await ZipFile.getEntries(),
+                            i = 0;
+                if (entrylist) {
+                    while (entrylist[i]) {
+                        let entry = entrylist[i];
+                        i++;
+                        if (entry.directory) continue;
+                        if (entry.encrypted && !password) {
+                            await checkPassword(entry)
+                        } else {
+                            await getData(entry);
+                        }
+                    }
+                }
+                return contents;
             }
-            
+
         };
         async unFile(u8, ARG = {}) {
-            let F = this, I = F.I;
-            if(I.await(u8))u8 = await u8;
-            if (I.array(u8))u8 = new I.O[11](u8);
+            let F = this,
+                I = F.I;
+            if (I.await(u8)) u8 = await u8;
+            if (I.array(u8)) u8 = new I.O[11](u8);
             let ext = await F.CheckExt(u8);
-            if(F.action[ext]){
-                if(!ARG.PassExt|| !ARG.PassExt.includes(zip))return await F.callaction(ext,u8,ARG);
+            if (F.action[ext]) {
+                if (!ARG.PassExt || !ARG.PassExt.includes(zip)) return await F.callaction(ext, u8, ARG);
             }
-            if (I.blob(u8))u8 = new I.O[11](await u8.arrayBuffer());
+            if (I.blob(u8)) u8 = new I.O[11](await u8.arrayBuffer());
             return u8;
         }
-        async getLibjs(jsfile,process) {
-            let F = this, T = F.T,I=F.I,
-                jsname =F.getname(jsfile),
-                file = jsname.replace(/\.zip$/,'.js');
-                if (F.Libjs[jsname]) return F.Libjs[jsname];
-                if (F.Libjs[file]) return F.Libjs[file];
+        async getLibjs(jsfile, process) {
+            let F = this,
+                T = F.T,
+                I = F.I,
+                jsname = F.getname(jsfile),
+                file = jsname.replace(/\.zip$/, '.js');
+            if (F.Libjs[jsname]) return F.Libjs[jsname];
+            if (F.Libjs[file]) return F.Libjs[file];
             let contents = await T.getStore(T.LibStore).data(F.LibKey + file, T.version);
             if (!contents) {
-                if (/\.zip$/.test(jsname))await F.getLibjs(T.Libzip,process);
+                if (/\.zip$/.test(jsname)) await F.getLibjs(T.Libzip, process);
                 //if(jsfile === 'extractzip.zip')jsfile = 'extractzip.min.js';
                 //console.log(jsfile);
                 contents = await T.FetchItem({
-                    url: F.getpath(jsfile)+'?'+T.time,
+                    url: F.getpath(jsfile) + '?' + T.time,
                     store: T.LibStore,
                     key: F.LibKey,
                     unpack: true,
                     filename: file,
-                    version:T.version,
+                    version: T.version,
                     process
                 });
             }
-            if(contents){
-                if(I.objArr(contents)){
-                    F.I.toArr(contents,entry=>F.Libjs[entry[0]] = entry[1]&&F.URL(entry[1]));
-                }else{
+            if (contents) {
+                if (I.objArr(contents)) {
+                    F.I.toArr(contents, entry => F.Libjs[entry[0]] = entry[1] && F.URL(entry[1]));
+                } else {
                     F.Libjs[jsname] = F.URL(contents);
                 }
             }
@@ -870,34 +1058,40 @@ const Nenge = new class NengeCores {
         getname(str) {
             return (str || '').split('/').pop().split('?')[0].split('#')[0];
         }
-        getpath(js){
-            let F = this,T=F.T,I=T.I;
+        getpath(js) {
+            let F = this,
+                T = F.T,
+                I = T.I;
             return /^(\/|https?:\/\/|static\/js\/|data\/|assets|blob\:)/.test(js) ? js : T.JSpath + js;
         }
-        getFileText(contents,decode,filetype,filename){
-            let F = this,T=F.T,I=T.I;
-            if(filename&&!decode || !(/(text|javascript)/.test(filetype))){
-                return new File([contents], filename, {'type': filetype});
+        getFileText(contents, decode, filetype, filename) {
+            let F = this,
+                T = F.T,
+                I = T.I;
+            if (filename && !decode || !(/(text|javascript)/.test(filetype))) {
+                return new File([contents], filename, {
+                    'type': filetype
+                });
             }
-            if(!decode)return contents;
-            if(filetype == 'datalist'){
-                I.toArr(contents,entry=>{
-                    if(/(text|javascript)/.test(F.gettype(entry[0]))){
-                        contents[entry[0]] =  decode(entry[1]);
+            if (!decode) return contents;
+            if (filetype == 'datalist') {
+                I.toArr(contents, entry => {
+                    if (/(text|javascript)/.test(F.gettype(entry[0]))) {
+                        contents[entry[0]] = decode(entry[1]);
                     }
                 });
-            }else if(I.u8obj(contents)){
-               return decode(contents);
+            } else if (I.u8obj(contents)) {
+                return decode(contents);
             }
             return contents;
 
         }
-        getExt(name){
+        getExt(name) {
             return this.getname(name).split('.').pop().toLowerCase();
         }
-        getKeyName(name){
+        getKeyName(name) {
             let s = this.getname(name).split('.');
-            return s.pop(),s.join('.');
+            return s.pop(), s.join('.');
         }
         gettype(type) {
             let F = this;
@@ -911,7 +1105,16 @@ const Nenge = new class NengeCores {
             return F.mime_list[type] || 'application/octet-stream';
         }
         mime_map = {
-            'text/javascript': ['js'], 'text/css': ['css', 'style'], 'text/html': ['html', 'htm', 'php'], 'text/plain': ['txt'], 'text/xml': ['xml', 'vml', 'svg'], 'image': ['jpg', 'jpeg', 'png', 'gif', 'webp'], 'application': ['pdf'], 'application/x-zip-compressed': ['zip'], 'application/x-rar-compressed': ['rar'], 'application/x-7z-compressed': ['7z']
+            'text/javascript': ['js'],
+            'text/css': ['css', 'style'],
+            'text/html': ['html', 'htm', 'php'],
+            'text/plain': ['txt'],
+            'text/xml': ['xml', 'vml', 'svg'],
+            'image': ['jpg', 'jpeg', 'png', 'gif', 'webp'],
+            'application': ['pdf'],
+            'application/x-zip-compressed': ['zip'],
+            'application/x-rar-compressed': ['rar'],
+            'application/x-7z-compressed': ['7z']
         };
         checkBuffer(u8, defalut) {
             let head = this.I.toArr(u8.slice(0, 8)).map(v => v.toString(16).padStart(2, 0).toLocaleUpperCase()).join('');
@@ -922,20 +1125,24 @@ const Nenge = new class NengeCores {
             return defalut || false;
         }
         URL(u8, type) {
-            let F = this, I = F.I;
+            let F = this,
+                I = F.I;
             if (I.u8obj(u8)) {
                 if (!type) type = F.gettype(F.CheckExt(u8));
             } else if (I.str(u8)) {
                 if (/^(blob|http)/.test(u8) || /^\/?[\w\-_\u4e00-\u9FA5:\/\.\?\^\+ =%&@#~]+$/.test(u8)) return u8;
                 if (!type) type = F.gettype('js');
             }
-            return window.URL.createObjectURL(I.blob(u8) ? u8 : new Blob([u8], { 'type': type }));
+            return window.URL.createObjectURL(I.blob(u8) ? u8 : new Blob([u8], {
+                'type': type
+            }));
         }
         removeURL(url) {
             return window.URL.revokeObjectURL(url);
         }
         download(name, buf, type) {
-            let I = this.I, href;
+            let I = this.I,
+                href;
             if (I.blob(name)) {
                 href = this.URL(name);
                 name = name.name || 'unknowfile';
@@ -953,7 +1160,10 @@ const Nenge = new class NengeCores {
             return window.indexedDB || window.webkitindexedDB;
         }
         dbSetMap(ARG) {
-            let F = this, I = F.I, T = F.T, info = F.dbMap || {};
+            let F = this,
+                I = F.I,
+                T = F.T,
+                info = F.dbMap || {};
             if (info && !info[F.dbname]) {
                 info[F.dbname] = T.DB_STORE_MAP;
             }
@@ -976,7 +1186,10 @@ const Nenge = new class NengeCores {
         }
         async dbLoad(ARG) {
             ARG = ARG || {};
-            let F = this, dbName = ARG.dbName || F.dbname, store = ARG.store, db = F.StoreList[dbName];
+            let F = this,
+                dbName = ARG.dbName || F.dbname,
+                store = ARG.store,
+                db = F.StoreList[dbName];
             if (store && F.dbCheckTable(store, db)) {
                 return db;
             } else if (!store && db) return db;
@@ -985,7 +1198,8 @@ const Nenge = new class NengeCores {
             return F.StoreList[dbName];
         }
         async dbInstall(info) {
-            let F = this, I = F.I;
+            let F = this,
+                I = F.I;
             console.log('install indexDB', info);
             return await I.Async(I.toArr(info).map(async infoItem => {
                 let [dbName, dbStore] = infoItem, db = F.StoreList[dbName], version;
@@ -999,14 +1213,14 @@ const Nenge = new class NengeCores {
                 let dblist = Object.keys(dbStore);
                 F.StoreList[dbName] = await F.dbOpen(
                     dbName, dbStore, version, {
-                    async success(db, resolve) {
-                        if (F.dbCheckTable(dblist, db) != dblist.length) {
-                            version = F.dbClose(db);
-                            return resolve(await F.dbOpen(dbName, dbStore, version));
+                        async success(db, resolve) {
+                            if (F.dbCheckTable(dblist, db) != dblist.length) {
+                                version = F.dbClose(db);
+                                return resolve(await F.dbOpen(dbName, dbStore, version));
+                            }
+                            return resolve(db);
                         }
-                        return resolve(db);
                     }
-                }
                 );
                 return dbName;
             }));
@@ -1038,7 +1252,8 @@ const Nenge = new class NengeCores {
         }
         async dbCreateObject(dbStore, db) {
             if (!dbStore || !db) return;
-            let F = this, I = F.I;
+            let F = this,
+                I = F.I;
             await I.Async(
                 I.toArr(dbStore).map(
                     async tableStore => {
@@ -1047,9 +1262,10 @@ const Nenge = new class NengeCores {
                             let storeObj = await db.createObjectStore(storeName);
                             if (storeData) {
                                 I.toArr(storeData, entry => storeObj.createIndex(
-                                    entry[0], entry[1] && entry[1].key || entry[0], entry[1] && entry[1].options || entry[1] || { 'unique': false }
-                                )
-                                )
+                                    entry[0], entry[1] && entry[1].key || entry[0], entry[1] && entry[1].options || entry[1] || {
+                                        'unique': false
+                                    }
+                                ))
                             }
                         }
                     }
@@ -1066,18 +1282,29 @@ const Nenge = new class NengeCores {
         async contentsSize(data, maxsize) {
             let I = this.I;
             if (I.await(data)) data = await data;
-            let contents = data.contents || data, result = {};
+            let contents = data.contents || data,
+                result = {};
             if (I.str(contents) && contents.length > maxsize) {
                 contents = new TextEncoder().encode(contents);
-                I.assign(result, { contents, filesize: contents.byteLength, 'type': 'String', });
+                I.assign(result, {
+                    contents,
+                    filesize: contents.byteLength,
+                    'type': 'String',
+                });
             } else if (I.blob(contents) && contents.size > maxsize) {
                 I.assign(result, {
-                    'contents': new I.O[11](await contents.arrayBuffer()), 'filetype': contents.type, 'filesize': contents.size, 'filename': contents.name, 'type': 'File'
+                    'contents': new I.O[11](await contents.arrayBuffer()),
+                    'filetype': contents.type,
+                    'filesize': contents.size,
+                    'filename': contents.name,
+                    'type': 'File'
                 });
             } else if (contents.byteLength && contents.byteLength > maxsize) {
                 if (contents.__proto__.constructor != I.O[11]) contents = new I.O[11](contents.buffer || contents);
                 I.assign(result, {
-                    contents, 'filesize': contents.byteLength, 'type': I.N(11)
+                    contents,
+                    'filesize': contents.byteLength,
+                    'type': I.N(11)
                 });
             }
             if (result.contents) {
@@ -1089,16 +1316,20 @@ const Nenge = new class NengeCores {
                     data = result;
                 }
             }
-            if (data.contents) ['version', 'password'].forEach(val => !data[val] && (delete data[val]));
+            if (data.contents)['version', 'password'].forEach(val => !data[val] && (delete data[val]));
             return data;
         }
         async dbSelect(ARG, ReadMode) {
-            let F = this, T = F.T;
-            if (F.I.str(ARG)) ARG = { 'store': ARG };
-            if(ARG.store instanceof F.StoreDatabase){
+            let F = this,
+                T = F.T;
+            if (F.I.str(ARG)) ARG = {
+                'store': ARG
+            };
+            if (ARG.store instanceof F.StoreDatabase) {
                 ARG.store = ARG.store.table;
             }
-            let store = ARG.store, db = await F.dbLoad(ARG);
+            let store = ARG.store,
+                db = await F.dbLoad(ARG);
             ReadMode = ReadMode ? "readonly" : "readwrite";
             if (!store) store = db.objectStoreNames[0];
             let tdb = db.transaction([store], ReadMode);
@@ -1109,46 +1340,63 @@ const Nenge = new class NengeCores {
             return tdb.objectStore(store);
         }
         async dbGetItem(ARG) {
-            let F=this,I = F.I;
+            let F = this,
+                I = F.I;
             if (I.str(ARG)) ARG = {
                 'name': ARG
             };
-            let name = ARG.name, DB = await F.dbSelect(ARG, !0);
+            let name = ARG.name,
+                DB = await F.dbSelect(ARG, !0);
             if (name) return I.Async(resolve => {
                 DB.get(name).onsuccess = e => resolve(e.target.result);
             });
         }
         async dbPutItem(ARG) {
-            let F=this,I=F.I, { data, name } = ARG || {}, DB = await F.dbSelect(ARG);
+            let F = this,
+                I = F.I,
+                {
+                    data,
+                    name
+                } = ARG || {},
+                DB = await F.dbSelect(ARG);
             return I.Async(resolve => {
                 DB.put(data, name).onsuccess = e => resolve(e.target.result);
             });
         }
         async dbRemoveItem(ARG) {
-            let F=this,I=F.I;
+            let F = this,
+                I = F.I;
             if (I.str(ARG)) ARG = {
                 'name': ARG
             };
-            let name = ARG.name, DB = await this.dbSelect(ARG);
+            let name = ARG.name,
+                DB = await this.dbSelect(ARG);
             if (name) return I.Async((resolve, reject) => {
                 DB.delete(name).onsuccess = e => resolve(`delete:${name}`);
             });
         }
         async dbGetAll(ARG) {
-            let F = this,I=F.I, T = F.T, DB = await F.dbSelect(ARG, !0);
+            let F = this,
+                I = F.I,
+                T = F.T,
+                DB = await F.dbSelect(ARG, !0);
             return I.Async(callback => {
                 let entries = {};
                 if (ARG.index) DB = DB.index(ARG.index);
                 DB.openCursor(ARG.Range).onsuccess = evt => {
                     let cursor = evt.target.result;
                     if (cursor) {
-                        if (ARG.only&& T.part && T.maxsize && I.u8obj(cursor.value.contents) && cursor.value.filesize > T.maxsize) {
-                            let skey = cursor.primaryKey.split(T.part), newkey = skey[0], index = skey[1] || 0;
+                        if (ARG.only && T.part && T.maxsize && I.u8obj(cursor.value.contents) && cursor.value.filesize > T.maxsize) {
+                            let skey = cursor.primaryKey.split(T.part),
+                                newkey = skey[0],
+                                index = skey[1] || 0;
                             if (!entries[newkey]) {
                                 let contents = new I.O[11](cursor.value.filesize);
                                 contents.set(cursor.value.contents, index * T.maxsize);
                                 delete cursor.value.contents;
-                                entries[newkey] = F.assign(cursor.value, { contents })
+                                entries[newkey] = F.assign(cursor.value, {
+                                    contents
+                                })
                             } else {
                                 entries[newkey].contents.set(cursor.value.contents, index * T.maxsize);
                             }
@@ -1163,25 +1411,34 @@ const Nenge = new class NengeCores {
             });
         }
         async dbGetKeys(ARG) {
-            let F=this,I=F.I;
-            if (I.str(ARG)) ARG = { 'dbName': ARG };
+            let F = this,
+                I = F.I;
+            if (I.str(ARG)) ARG = {
+                'dbName': ARG
+            };
             let DB = await F.dbSelect(ARG, !0);
             return I.Async(resolve => {
-                if(ARG.index&&DB.indexNames.contains(ARG.index)){
+                if (ARG.index && DB.indexNames.contains(ARG.index)) {
                     return DB.index(ARG.index).getAllKeys(ARG.Range).onsuccess = e => {
-                        resolve(ARG.only?I.toArr(e.target.result).filter(v=>!v.includes(F.T.part)):e.target.result)
+                        resolve(ARG.only ? I.toArr(e.target.result).filter(v => !v.includes(F.T.part)) : e.target.result)
                     };
                 }
                 return DB.getAllKeys().onsuccess = e => {
-                    resolve(ARG.only?I.toArr(e.target.result).filter(v=>!v.includes(F.T.part)):e.target.result)
+                    resolve(ARG.only ? I.toArr(e.target.result).filter(v => !v.includes(F.T.part)) : e.target.result)
                 };
             });
 
         }
         async dbGetCursor(ARG) {
-            let F=this,I=F.I;
-            if (I.str(ARG)) ARG = { 'index': ARG };
-            let index = ARG.index,T = F.T, DB = await F.dbSelect(ARG, !0), len = DB.indexNames.length;
+            let F = this,
+                I = F.I;
+            if (I.str(ARG)) ARG = {
+                'index': ARG
+            };
+            let index = ARG.index,
+                T = F.T,
+                DB = await F.dbSelect(ARG, !0),
+                len = DB.indexNames.length;
             if (len && !index) {
                 index = DB.indexNames[0];
             } else if (!len) {
@@ -1193,7 +1450,9 @@ const Nenge = new class NengeCores {
                     let cursor = evt.target.result;
                     if (cursor) {
                         if (!ARG.only || T.part && !cursor.primaryKey.includes(T.part)) {
-                            entries[cursor.primaryKey] = Object.fromEntries([[index, cursor.key]]);
+                            entries[cursor.primaryKey] = Object.fromEntries([
+                                [index, cursor.key]
+                            ]);
                         }
                         cursor.continue()
                     } else {
@@ -1204,15 +1463,22 @@ const Nenge = new class NengeCores {
 
         }
         async dbRemoveTable(tables, dbName) {
-            let F=this,I=F.I;
+            let F = this,
+                I = F.I;
             if (I.str(tables)) tables = [tables];
             return await I.Async(tables.map(async store => {
-                let DB = await F.dbSelect({ store, dbName });
+                let DB = await F.dbSelect({
+                    store,
+                    dbName
+                });
                 DB.clear();
             }));
         }
         dbClose(dbName) {
-            let F=this,I=F.I,isStr = I.str(dbName), db = isStr ? F.StoreList[dbName] : dbName;
+            let F = this,
+                I = F.I,
+                isStr = I.str(dbName),
+                db = isStr ? F.StoreList[dbName] : dbName;
             if (db) {
                 let version = db.version + 1;
                 db.close();
@@ -1242,16 +1508,22 @@ const Nenge = new class NengeCores {
         StoreDatabase = class {
             constructor(T, table, dbName) {
                 dbName = dbName || T.DB_NAME;
-                let I = T.I,func=`var I = T.I;I.defines(S, { T,I,table:'${table}',dbName:'${dbName}' }, 1,1);`;
-                I.toArr(['getItem', 'setItem', 'removeItem', 'getAllData', 'getContent', 'setContent', 'getAllKeys', 'getAllCursor', 'clearDB', 'deleteDB'],val=>{
+                let I = T.I,
+                    func = `var I = T.I;I.defines(S, { T,I,table:'${table}',dbName:'${dbName}' }, 1,1);`;
+                I.toArr(['getItem', 'setItem', 'removeItem', 'getAllData', 'getContent', 'setContent', 'getAllKeys', 'getAllCursor', 'clearDB', 'deleteDB'], val => {
                     func += `I.define(S, '${val}', {value:function(){let arr = ['${table}'].concat(I.toArr(arguments));return T.${val}.apply(T, arr);}});`;
                 });
-                (new Function('S','T',func))(this,T);
+                (new Function('S', 'T', func))(this, T);
             }
             setName(ARG) {
-                let D = this,I=D.I;
-                if (!ARG || typeof ARG =='boolean') ARG = { dbName:D.dbName};
-                else if(I.str(ARG)) ARG = {dbName:ARG};
+                let D = this,
+                    I = D.I;
+                if (!ARG || typeof ARG == 'boolean') ARG = {
+                    dbName: D.dbName
+                };
+                else if (I.str(ARG)) ARG = {
+                    dbName: ARG
+                };
                 return ARG;
             }
             get(name, version, ARG) {
@@ -1277,7 +1549,7 @@ const Nenge = new class NengeCores {
                 return this.setContent(name, data, opt, this.dbName);
             }
             keys(ARG) {
-                return this.getAllKeys(this.dbName,ARG||{});
+                return this.getAllKeys(this.dbName, ARG || {});
             }
             cursor(key, only, ARG) {
                 ARG = this.setName(ARG);
@@ -1305,15 +1577,20 @@ const Nenge = new class NengeCores {
             return this.T.DB_NAME;
         }
         constructor(T) {
-            let F = this, I = T.I;
-            if(!T.Libzip)T.Libzip = F.zipJs;
-            I.defines(F, { I, T }, 1);
+            let F = this,
+                I = T.I;
+            if (!T.Libzip) T.Libzip = F.zipsrc;
+            I.defines(F, {
+                I,
+                T
+            }, 1);
             F.callaction = T.callaction;
             F.bindaction = T.bindaction;
         }
     }(this);
     on(elm, evt, fun, opt, cap) {
-        elm = this.$(elm); if (!elm) return;
+        elm = this.$(elm);
+        if (!elm) return;
         elm.addEventListener(evt, fun, opt === false ? {
             passive: false
         } : opt, cap);
@@ -1325,7 +1602,8 @@ const Nenge = new class NengeCores {
     }
     once(elm, evt, fun, cap) {
         return this.on(elm, evt, fun, {
-            passive: false, once: true
+            passive: false,
+            once: true
         }, cap);
     }
     docload(f) {
@@ -1342,7 +1620,9 @@ const Nenge = new class NengeCores {
         });
     }
     $(e, f) {
-        let T = this, I = T.I, d = f || document;
+        let T = this,
+            I = T.I,
+            d = f || document;
         return e ? I.str(e) ? d.querySelector(e) : I.func(e) ? T.docload(e) : e : undefined;
     }
     $$(e, f) {
@@ -1357,14 +1637,17 @@ const Nenge = new class NengeCores {
         return elm;
     }
     $ca(e, attr) {
-        let T=this,I=T.I,elm = T.$ce(e);
-        if(attr)I.toArr(attr,entry=>{
-            elm.setAttribute(entry[0],entry[1]);
+        let T = this,
+            I = T.I,
+            elm = T.$ce(e);
+        if (attr) I.toArr(attr, entry => {
+            elm.setAttribute(entry[0], entry[1]);
         })
         return elm;
     }
-    $append(a,b){
-        a.appendChild(b);return b;
+    $append(a, b) {
+        a.appendChild(b);
+        return b;
     }
     $add(e, c) {
         return e.classList.add(c), e;
@@ -1385,7 +1668,11 @@ const Nenge = new class NengeCores {
             }
             attributeChangedCallback(name, oldValue, newValue) {
                 /*attribute增加、删除或者修改某个属性时被调用。*/
-                T.callaction('TAG-' + this.tagName, this, 'attribute', { name, oldValue, newValue });
+                T.callaction('TAG-' + this.tagName, this, 'attribute', {
+                    name,
+                    oldValue,
+                    newValue
+                });
             }
             disconnectedCallback() {
                 /*custom element 文档 DOM 节点上移除时被调用*/
@@ -1401,9 +1688,9 @@ const Nenge = new class NengeCores {
     docElm(str, mime) {
         return new DOMParser().parseFromString(str, mime || 'text/html');
     }
-    HTMLToTxt(str){
-        if(this.I.str(str))str = this.docElm(str);
-        if(str instanceof Document){
+    HTMLToTxt(str) {
+        if (this.I.str(str)) str = this.docElm(str);
+        if (str instanceof Document) {
             return str.body.textContent;
         }
         return "";
@@ -1416,10 +1703,10 @@ const Nenge = new class NengeCores {
     }
     triger(target, type, evtdata) {
         let T = this;
-        if(T.I.str(target))target = T.$(target);
+        if (T.I.str(target)) target = T.$(target);
         if (!evtdata) evtdata = {};
         else if (!evtdata.detail) evtdata.detail = target;
-        if(!evtdata.hasOwnProperty('cancelable'))evtdata.cancelable = true;
+        if (!evtdata.hasOwnProperty('cancelable')) evtdata.cancelable = true;
         return T.dispatch(target, new CustomEvent(type, evtdata));
 
     }
@@ -1452,12 +1739,12 @@ const Nenge = new class NengeCores {
             val => ARG.val && this.on(battery, val, e => this.callaction(ARG.val, e, battery))
         );
     }
-    getLang(name,arg) {
-        let result = this.lang&&this.lang[name]||name;
-        if(!this.lang[name])console.log(name);
-        if(arg&&result){
-            T.I.toArr(arg,entry=>{
-                result = result.replace(new RegExp('/\{'+entry[0]+'\}/','g'),entry[1]);
+    getLang(name, arg) {
+        let result = this.lang && this.lang[name] || name;
+        if (!this.lang[name]) console.log(name);
+        if (arg && result) {
+            T.I.toArr(arg, entry => {
+                result = result.replace(new RegExp('/\{' + entry[0] + '\}/', 'g'), entry[1]);
             });
         }
         return result
@@ -1488,26 +1775,33 @@ const Nenge = new class NengeCores {
     */
     Nttr = class Nttr {
         constructor(obj, T) {
-            T = T||Nenge;
-            let Nttr = this, I = T.I;
-            I.defines(Nttr, { T, I }, 1,1);
-            if(I.str(obj))obj = T.$(obj);
-            if(I.elm(obj)){
+            T = T || Nenge;
+            let Nttr = this,
+                I = T.I;
+            I.defines(Nttr, {
+                T,
+                I
+            }, 1, 1);
+            if (I.str(obj)) obj = T.$(obj);
+            if (I.elm(obj)) {
                 this.obj = obj;
-                if(obj.Nttr)this.resetNttr(obj.Nttr);
+                if (obj.Nttr) this.resetNttr(obj.Nttr);
                 else this.obj = obj;
-            }else{
+            } else {
                 this.resetNttr(obj);
             }
-            if(this.obj)I.defines(this.obj, { Nttr }, 1,true);
+            if (this.obj) I.defines(this.obj, {
+                Nttr
+            }, 1, true);
             else throw 'Nttr error';
         }
-        resetNttr(Nttr){
-            let N=this,I = N.I;
-            if(Nttr instanceof this.constructor){
-                N.eventList = I.assign({},Nttr.eventList);
+        resetNttr(Nttr) {
+            let N = this,
+                I = N.I;
+            if (Nttr instanceof this.constructor) {
+                N.eventList = I.assign({}, Nttr.eventList);
                 N.obj = Nttr.obj;
-                O[18].deleteProperty(Nttr.obj,'Nttr');
+                O[18].deleteProperty(Nttr.obj, 'Nttr');
             }
         }
         eventList = {};
@@ -1547,7 +1841,7 @@ const Nenge = new class NengeCores {
             this.I.assign(this.obj.style, data);
         }
         html(str) {
-            if (str != undefined){
+            if (str != undefined) {
                 this.obj.innerHTML = str;
                 return this;
             }
@@ -1562,11 +1856,11 @@ const Nenge = new class NengeCores {
         contains(name) {
             return this.cList.contains(name);
         }
-        get attrs(){
+        get attrs() {
             return this.T.I.toObj(this.obj.attributes);
         }
         set attrs(obj) {
-            this.T.I.toArr(obj,entry=>this.setAttr(entry[0],entry[1]));
+            this.T.I.toArr(obj, entry => this.setAttr(entry[0], entry[1]));
         }
         attr(k, v) {
             if (typeof v == 'undefined') return this.obj.getAttribute(k);
@@ -1579,7 +1873,7 @@ const Nenge = new class NengeCores {
             return this.attrs;
         }
         setAttrs(attr, value) {
-            if(!value&&typeof attr !='string') return this.attrs = attr;
+            if (!value && typeof attr != 'string') return this.attrs = attr;
             this.attr(attr, value);
             return this;
         }
@@ -1595,15 +1889,18 @@ const Nenge = new class NengeCores {
             this.obj.appendChild(obj);
             return this;
         }
-        appendTo(obj){
-            obj = obj||document.body;
+        appendTo(obj) {
+            obj = obj || document.body;
             obj.appendChild(this.obj);
             return this;
         }
         on(evt, func, opt) {
             let N = this;
             if (!N.eventList[evt]) N.eventList[evt] = [];
-            N.eventList[evt].push({ func, opt });
+            N.eventList[evt].push({
+                func,
+                opt
+            });
             return N.T.on(N.obj, evt, func, opt), N;
         }
         un(evtname, evtfunc) {
@@ -1611,7 +1908,10 @@ const Nenge = new class NengeCores {
             if (N.eventList[evtname]) {
                 let newlist = [];
                 N.eventList[evtname].forEach(val => {
-                    let { func, opt } = val;
+                    let {
+                        func,
+                        opt
+                    } = val;
                     if (evtfunc && evtfunc != func) {
                         newlist.push(val);
                         return
@@ -1623,7 +1923,10 @@ const Nenge = new class NengeCores {
             } else if (!evtname) {
                 N.I.toArr(N.eventList, entry => {
                     entry[1].forEach(val => {
-                        let { func, opt } = val;
+                        let {
+                            func,
+                            opt
+                        } = val;
                         N.removeEvent(entry[0], func, opt);
                     });
                     delete N.eventList[entry[0]];
@@ -1638,7 +1941,10 @@ const Nenge = new class NengeCores {
             return this.T.un(this.obj, evt, func, opt);
         }
         triger(type, opt) {
-            let N = this, data = this.I.assign({}, opt || {}, { target: N.obj });
+            let N = this,
+                data = this.I.assign({}, opt || {}, {
+                    target: N.obj
+                });
             if (N.eventList[type]) N.eventList[type].forEach(val => val.func.call(N.obj, data));
             else N.T.triger(N.obj, type, data);
         }
@@ -1646,16 +1952,18 @@ const Nenge = new class NengeCores {
             this.obj.dispatchEvent(evt);
         }
         bind(opt, type) {
-            let N = this, T = N.T, I = N.I;
-            if(!type){
-                type = N.I.mobile?'touchend':'click';
+            let N = this,
+                T = N.T,
+                I = N.I;
+            if (!type) {
+                type = N.I.mobile ? 'touchend' : 'click';
             }
             I.toArr(opt, entry => T.on(N.$(entry[0], this.obj), type, entry[1]));
         }
         click(func, type, opt) {
             let N = this;
-            if(!type){
-                type = N.I.mobile?'touchend':'click';
+            if (!type) {
+                type = N.I.mobile ? 'touchend' : 'click';
             }
             if (N.I.func(func)) N.un(type), N.on(type, func, opt || false);
             else N.triger(type, func);
@@ -1668,25 +1976,25 @@ const Nenge = new class NengeCores {
             this.un();
             this.obj.remove();
         }
-        get children(){
+        get children() {
             return this.I.toArr(this.obj.children);
         }
-        get parentNode(){
+        get parentNode() {
             return this.obj.parentNode;
         }
-        get rect(){
+        get rect() {
             return this.getBoundingClientRect();
         }
     };
-    nWindow = class nWindow extends this.Nttr{
+    nWindow = class nWindow extends this.Nttr {
         action = {
-            close(){
+            close() {
                 this.hidden = true;
             },
-            show(){
+            show() {
                 this.hidden = false;
             },
-            installWindow(){
+            installWindow() {
                 this.addClass('ajaxWindow');
                 this.html(`<div class="container">
                     <div class="a-header">
@@ -1701,109 +2009,131 @@ const Nenge = new class NengeCores {
                     <div class="a-footer" hidden></div>
                 </div>`);
             },
-            installHeaderEvent(){
-                let W = this,T=W.T,drag;
-                if(T.I.mobile){
-                    drag =  ['touchstart','touchmove','touchend'];
-                }else{
-                    drag = ['mousedown','mousemove','mouseup','mouseout'];
+            installHeaderEvent() {
+                let W = this,
+                    T = W.T,
+                    drag;
+                if (T.I.mobile) {
+                    drag = ['touchstart', 'touchmove', 'touchend'];
+                } else {
+                    drag = ['mousedown', 'mousemove', 'mouseup', 'mouseout'];
                 }
-                drag.forEach(v=>T.on(W.$('.a-header'),v,e=>{
-                    if(e.type=='mousedown'||e.type=='touchstart'){
-                        if(e){
-                            let {clientX,clientY} = e.type=='mousedown'?e:e.touches[0];
-                            W.HeaderPointPos = {clientX,clientY};
+                drag.forEach(v => T.on(W.$('.a-header'), v, e => {
+                    if (e.type == 'mousedown' || e.type == 'touchstart') {
+                        if (e) {
+                            let {
+                                clientX,
+                                clientY
+                            } = e.type == 'mousedown' ? e : e.touches[0];
+                            W.HeaderPointPos = {
+                                clientX,
+                                clientY
+                            };
                         }
                     }
-                    if(e.type=='mouseup'||e.type=='mouseout'||e.type=='touchend'){
+                    if (e.type == 'mouseup' || e.type == 'mouseout' || e.type == 'touchend') {
                         W.HeaderPointPos = false;
                     }
-                    if((e.type=='mousemove'||e.type=='touchmove')&&W.HeaderPointPos){
-                        let {clientX,clientY} = e.type=='mousemove'?e:e.touches[0],celm=W.$('.container'),rect = celm.getBoundingClientRect(),x="",y="";
-                        let newclientX = W.HeaderPointPos.clientX-clientX;
-                        let newclientY = W.HeaderPointPos.clientY-clientY;
+                    if ((e.type == 'mousemove' || e.type == 'touchmove') && W.HeaderPointPos) {
+                        let {
+                            clientX,
+                            clientY
+                        } = e.type == 'mousemove' ? e : e.touches[0], celm = W.$('.container'), rect = celm.getBoundingClientRect(), x = "", y = "";
+                        let newclientX = W.HeaderPointPos.clientX - clientX;
+                        let newclientY = W.HeaderPointPos.clientY - clientY;
                         y = rect.top - newclientY;
-                        y = 'top:'+y+'px;bottom:unset;';
-                        newclientX = newclientX||0;
+                        y = 'top:' + y + 'px;bottom:unset;';
+                        newclientX = newclientX || 0;
                         x = rect.left - newclientX;
-                        if(x<10||(x&&rect.width +x+15 > window.innerWidth)){
+                        if (x < 10 || (x && rect.width + x + 15 > window.innerWidth)) {
                             //clientX = parseFloat(celm.style.left);
                             x = parseFloat(celm.style.left);
-                            if(x<=10){
-                                x=10;
-                            }else if(x+10>window.innerWidth){x-=10;}
-                        }else{
-                        }
-                        x = 'left:'+x+'px;right:unset;width:'+rect.width+'px;';
-                        W.$('.container').style.cssText = x+y;
-                        W.HeaderPointPos = {clientX,clientY};
+                            if (x <= 10) {
+                                x = 10;
+                            } else if (x + 10 > window.innerWidth) {
+                                x -= 10;
+                            }
+                        } else {}
+                        x = 'left:' + x + 'px;right:unset;width:' + rect.width + 'px;';
+                        W.$('.container').style.cssText = x + y;
+                        W.HeaderPointPos = {
+                            clientX,
+                            clientY
+                        };
                     }
-                }),{
-                    passive:false
+                }), {
+                    passive: false
                 });
             },
-            installEvent(){   
-                let W = this,T=W.T,obj = W.obj;
-                T.on(obj,'pointerup',e=>{
+            installEvent() {
+                let W = this,
+                    T = W.T,
+                    obj = W.obj;
+                T.on(obj, 'pointerup', e => {
                     let elm = e.target;
-                    if(elm==obj){
-                        return W.callaction('close',elm,e);
+                    if (elm == obj) {
+                        return W.callaction('close', elm, e);
                     }
-                    let nAction = elm&&T.attr(elm,'data-naction');
-                    if(nAction){
+                    let nAction = elm && T.attr(elm, 'data-naction');
+                    if (nAction) {
                         T.stopEvent(e);
-                        return W.callaction(nAction,elm,e);
+                        return W.callaction(nAction, elm, e);
                     }
                 });
             },
-            initConfig(config){
-                let W= this,T = W.T;
-                if(config)T.I.toArr(config,entry=>{
-                    if(typeof W[entry[0]] == 'function'){
+            initConfig(config) {
+                let W = this,
+                    T = W.T;
+                if (config) T.I.toArr(config, entry => {
+                    if (typeof W[entry[0]] == 'function') {
                         W[entry[0]](entry[1]);
                     }
                 })
             }
         };
-        constructor(obj,T,config){
-            super(obj,T);
-            if(!this.obj)return;
+        constructor(obj, T, config) {
+            super(obj, T);
+            if (!this.obj) return;
             const W = this;
             W.callaction = T.callaction;
-            if(!W.$('.container'))W.callaction('installWindow');
+            if (!W.$('.container')) W.callaction('installWindow');
             W.callaction('installEvent');
             W.callaction('installHeaderEvent');
-            W.callaction('initConfig',config);
+            W.callaction('initConfig', config);
         }
-        title(str){
+        title(str) {
             this.$('.a-header .title').innerHTML = str;
         }
-        body(str){
+        body(str) {
             this.$('.a-body').innerHTML = str;
         }
-        footer(str){
+        footer(str) {
             this.$('.a-footer').innerHTML = str;
         }
-        hiddenFooter(){
+        hiddenFooter() {
             this.$('.a-footer').hidden = true;
         }
-        hiddenPath(path,bool){
-            this.$('.a-'+path).hidden = bool||false;
+        hiddenPath(path, bool) {
+            this.$('.a-' + path).hidden = bool || false;
         }
     };
 };
 const Nttr = (obj) => {
-    let T = Nenge, elm = T.$(obj);
-    if(obj instanceof T.Nttr) return obj;
+    let T = Nenge,
+        elm = T.$(obj);
+    if (obj instanceof T.Nttr) return obj;
     return elm ? !elm.Nttr ? new T.Nttr(elm, T) : elm.Nttr : undefined;
 };
-const nWindow = (obj,config)=>{
-    let T = Nenge,elm;
-    if(!obj)return new T.nWindow(T.$ce('div'),T,config).appendTo();
+const nWindow = (obj, config) => {
+    let T = Nenge,
+        elm;
+    if (!obj) return new T.nWindow(T.$ce('div'), T, config).appendTo();
     else elm = T.$(obj);
-    if(elm&&!(elm.Nttr instanceof T.nWindow)){
-        new T.nWindow(elm,T,config);
+    if (elm && !(elm.Nttr instanceof T.nWindow)) {
+        new T.nWindow(elm, T, config);
     }
-    return elm&&elm.Nttr;
+    return elm && elm.Nttr;
 };
-Nenge.triger(document,'NengeLoad',{detail:Nenge});
+Nenge.triger(document, 'NengeLoad', {
+    detail: Nenge
+});
