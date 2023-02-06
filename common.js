@@ -844,7 +844,7 @@ const Nenge = new class NengeCores {
                 if (F.Libjs[file]) return F.Libjs[file];
             let contents = await T.getStore(T.LibStore).data(F.LibKey + file, T.version);
             if (!contents) {
-                if (/\.zip$/.test(jsname))F.getLibjs(T.Libzip,process);
+                if (/\.zip$/.test(jsname))await F.getLibjs(T.Libzip,process);
                 //if(jsfile === 'extractzip.zip')jsfile = 'extractzip.min.js';
                 //console.log(jsfile);
                 contents = await T.FetchItem({
