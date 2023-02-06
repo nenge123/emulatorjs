@@ -59,6 +59,7 @@
     "Set Rooms":"使用它",
     "Decompress:":"解压",
     "Missing password":"缺少密码",
+    "Invalid password":"无效密码",
     "uncompressed:auto check zip/7z/rar4,BIOS awayls to uncompressed load.":"解压是自动检测,例如百毒网盘的文件改成XX.pdf下载到手机,导入xx.pdf仍会自动解压.BIOS会一直尝试解压,如果上传街机bios,请再套一层压缩.",
     "MAME must select a rooms name to check!":"MAME核心需要进行ROOM检测!",
     "this rooms can not run in:":"这个游戏不能运行在:",
