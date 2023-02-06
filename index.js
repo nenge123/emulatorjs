@@ -10,7 +10,7 @@
         //T.Libzip = 'zip.min.js'; //低版本IOS可能不兼容 如果不是对中文有必要要求,用 extractzip.min.js 替代
         T.DB_NAME = 'Emulatorjs'; //定义 indexdb name
         T.LibStore = 'data-libjs'; //定义 储存js文件表
-        T.version = 4;
+        T.version = 5;
         T.DB_STORE_MAP = { //所有表
             'data-patch': {
                 'system': false

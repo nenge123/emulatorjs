@@ -356,14 +356,18 @@ const Nenge = new class NengeCores {
                 evt.forEach(val => ARG.upload[val] && T.on(request.upload, val, e => ARG.upload[val](e, request)));
             }
             let formData, url,type = ARG.type||"";
-            ARG.get = I.assign({inajax:T.time},ARG.get||{});
+            ARG.get = {};//I.assign({inajax:T.time},ARG.get||{});
             url = I.get(ARG.url, ARG.get);
-            if (ARG.post) {
+            if(ARG.json){
+                formData = JSON.stringify(ARG.json);
+                ARG.headers = Object.assign({'accept':'application/json, text/plain, */*'},ARG.headers);
+            }else if (ARG.post) {
                 formData = I.post(ARG.post);
             }
             if (ARG.overType) request.overrideMimeType(ARG.overType);
             if(type!='head')request.responseType = type;
             request.open(!formData ? "GET" : "POST", url);
+            if(ARG.headers)I.toArr(ARG.headers,entry=>request.setRequestHeader(entry[0],entry[1]));
             request.send(formData);
         });
     }
@@ -456,6 +460,28 @@ const Nenge = new class NengeCores {
     }
     unFile(u8, process, ARG) {
         return this.F.unFile(u8, this.I.assign({ process }, ARG||{}));
+    }
+    async toZip(contents,process,options){
+        let T=this,F=T.F,I=T.I;
+        return I.Async(async complete=>{
+            let worker = new Worker(T.JSpath+'zip.js?'+T.time);
+            T.on(worker,'message',e=>{
+                let data = e.data;
+                if(data.t==1){
+                    complete(data.contents);
+                    e.target['terminate']();
+                }else if(data.t==2){
+                    process&&process(Math.ceil(100*data.current/data.total)+'%');
+                }
+            });
+            T.on(worker,'error',e=>{
+                console.log(e);
+                complete(null);
+                worker['terminate']();
+            });
+            worker.postMessage(Object({contents},options||{}));
+            contents = null;
+        });
     }
     I = new class NengeType {
         O = [
@@ -595,6 +621,12 @@ const Nenge = new class NengeCores {
         }
         toJson(post) {
             return JSON.stringify(this.Json(post));
+        }
+        empty(data){
+            if(!data) return true;
+            //if(!isNaN(data)&&data*1==0) return true;
+            if(!this.toArr(data).length) return true;
+            return false;
         }
         constructor(T) {
             let I = this,O=I.O,func="var O = I.O;";
@@ -744,25 +776,28 @@ const Nenge = new class NengeCores {
                 let F = this, I = F.I,process;
                 if (I.blob(u8)) {
                     if (!ARG.filename&&u8.name) ARG.filename = u8.name;
-                    u8 = new I.O[11](await u8.arrayBuffer());
+                    //u8 = new I.O[11](await u8.arrayBuffer());
                 }
                 src = src || 'libunrar.min.zip';
+                //F.Libjs[src] = F.T.JSpath+'libunrar.js';
                 if (!F.Libjs[src]) await F.getLibjs(src,process);
                 let url = F.Libjs[src],
-                    worker = new Worker(url),packtext;
+                    packtext;
                 if(ARG.process){
                     if(!ARG.filename)packtext = F.T.getLang('Decompress:')+packtext+'=&gt;';
                     else packtext = F.T.getLang('Decompress:');
                     process = data=>ARG.process(packtext+(data.file ? F.getname(data.file) : ARG.filename || '') + ' ' + Math.floor(Number(data.current) / Number(data.total) * 100) + '%', data.total, data.current);
                 }
                 return I.Async(complete => {
-                    let contents = {};
+                    let contents,worker = new Worker(url),getu8 = (bufs)=>I.u8obj(bufs)?complete(bufs):bufs.arrayBuffer().then(buf=>complete(new I.O[11](buf)));
                     worker.onmessage = result => {
                         let data = result.data, t = data.t;
                         if (1 === t) {
-                            complete(contents);
+                            if(contents)complete(contents);
+                            else getu8(u8);
                             result.target['terminate']();
                         } else if (2 === t) {
+                            if(!contents)contents={};
                             contents[data.file] = data.data;
                         } else if (4 === t && data.total > 0 && data.total >= data.current) {
                             process && process(data);
@@ -774,76 +809,19 @@ const Nenge = new class NengeCores {
                             worker.postMessage({ password });
                         }
                     },
-                    worker.onerror = error => {
-                        complete(u8);
+                    worker.onerror = async error => {
+                        getu8(u8);
                         worker.terminate();
                     };
-                    worker.postMessage({ 'contents': u8,password:'password' });
+                    worker.postMessage({ 'contents': u8,password:ARG.password});
                 });
 
             },
-            '7z':async function(u8, ARG){
+            '7z':function(u8, ARG){
                 return this.callaction('rar',u8, ARG,'extract7z.zip');
             },
             async zip(u8, ARG = {}) {
-                let F=this,T=F.T;
-                if (T.Libzip != F.zipJs)return this.callaction('rar',u8, ARG,T.Libzip);
-                else await F.callaction('loadZip',ARG.process);
-                let { process, password, filename} = ARG, I=F.I;
-                let zipReader = new zip.ZipReader(I.blob(u8) ? new zip.BlobReader(u8) : new zip.Uint8ArrayReader(u8));
-                let entries = await zipReader.getEntries({
-                    filenameEncoding: T.Encoding,
-                }), passok = false;
-                if (entries.length > 0) {
-                    let contents = {},packtext,opt={};
-                    if(filename)packtext = F.T.getLang('Decompress:')+packtext+'=&gt;';
-                    else packtext = F.T.getLang('Decompress:');
-                    if(process){
-                        opt['onprogress'] = (a,b)=>a&&b&&a<=b&& process(packtext + entry.filename + ':' + Math.ceil(a * 100 / b) + '%');
-                    }
-                    await I.Async(
-                        entries.map(
-                            async entry => {
-                                if (entry.directory) return;
-                                if (!entry.encrypted) {
-                                    contents[entry.filename] = await entry.getData(new zip.Uint8ArrayWriter(), opt);
-                                } else {
-                                    opt.password = password;
-                                    if (!passok) {
-                                        while (passok) {
-                                            if (!opt.password) {
-                                                opt.password = window.prompt('need a password', opt.password || '');
-                                            }
-                                            try {
-                                                contents[entry.filename] = await entry.getData(new zip.Uint8ArrayWriter(), opt);
-                                                contents.password = opt.password;
-                                                passok = true;
-                                            } catch (e) {
-                                                opt.password = '';
-                                            }
-                                        }
-                                    } else {
-                                        contents[entry.filename] = await entry.getData(new zip.Uint8ArrayWriter(), opt);
-                                    }
-                                }
-                                return true;
-                            }
-                        )
-                    );
-                    zipReader.close();
-                    delete F.ZipPassword;
-                    return contents;
-                } else {
-                    return I.blob(u8) ? new I.O[11](u8.arrayBuffer()) : u8;
-                }
-            },
-            loadZip(process){
-                let F=this,T =F.T
-                if(window.zip||F.Libjs[T.Libzip])return;
-                if(!window.zip&&T.Libzip==F.zipJs) return T.loadScript(F.zipJs,{process});
-                else if(!F.Libjs[T.Libzip]) return F.getLibjs(T.Libzip,process);
-                console.log(T.Libzip);
-                //getLibjs
+                return this.callaction('rar',u8, ARG,this.T.Libzip);
             }
             
         };
@@ -866,14 +844,16 @@ const Nenge = new class NengeCores {
                 if (F.Libjs[file]) return F.Libjs[file];
             let contents = await T.getStore(T.LibStore).data(F.LibKey + file, T.version);
             if (!contents) {
-                if (/\.zip$/.test(jsname)) await F.callaction('loadZip',process);;
+                if (/\.zip$/.test(jsname))F.getLibjs(T.Libzip,process);
                 //if(jsfile === 'extractzip.zip')jsfile = 'extractzip.min.js';
+                //console.log(jsfile);
                 contents = await T.FetchItem({
                     url: F.getpath(jsfile)+'?'+T.time,
                     store: T.LibStore,
                     key: F.LibKey,
                     unpack: true,
                     filename: file,
+                    version:T.version,
                     process
                 });
             }

@@ -16,8 +16,39 @@
     <meta http-equiv="cache-control" content="no-cache" />
     <title>Emulatorjs</title>
     <style>
-        .nenge-status+section .ad~h1,
-        .nenge-status+section .ad~ul {
+        .core-list .ad {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-evenly;
+    flex-wrap: wrap
+}
+
+.core-list .ad>div {
+    width: 300px;
+    text-align: center
+}
+
+.core-list .ad>div img {
+    height: 250px;
+    max-width: 100%
+}
+
+.core-list .ad>div iframe {
+    border: none;
+    margin: 0px auto;
+    height: 250px;
+    width: 300px;
+    display: block;
+    overflow: hidden
+}
+
+.core-list .ad>div h6 {
+    margin: 0px auto 5px;
+    text-align: center
+}
+
+        .nenge-status~section .ad~h1,
+        .nenge-status~section .ad~ul {
             display: none !important;
         }
     </style>
