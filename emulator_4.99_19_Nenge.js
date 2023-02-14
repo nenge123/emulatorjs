@@ -1,5 +1,6 @@
 var EJS = function (modules) {
     var installedModules = {};
+
     function _require(moduleId) {
         if (installedModules[moduleId]) return installedModules[moduleId]['exports'];
         var moduleItem = installedModules[moduleId] = {
@@ -27,7 +28,8 @@ var EJS = function (modules) {
         _require['r'] = function (moduleItem) {
             'undefined' != typeof Symbol && Symbol['toStringTag'] && Object['defineProperty'](moduleItem, Symbol['toStringTag'], {
                 'value': 'Module'
-            }), Object['defineProperty'](moduleItem, '__esModule', {
+            });
+            Object['defineProperty'](moduleItem, '__esModule', {
                 'value': !0x0
             });
         },
@@ -513,1055 +515,7 @@ var EJS = function (modules) {
 
         return 'object' == typeof _0x3df4d9 ? null !== _0x3df4d9 : 'function' == typeof _0x3df4d9;
     };
-}, function ajax_006_0x6(es_module, es_exports, es_require) {
-    (function (_0x143e97, _0x5b70f2, _0x5c7778) {
-        var _0x5e516e, _0x2fa559, _0x1d077c, _0x2c1a24;
-
-        function _0x1f7d16(_0x513c8d) {
-
-            return (_0x1f7d16 = 'function' == typeof Symbol && 'symbol' == typeof Symbol['iterator'] ? function (_0x4cc409) {
-                return typeof _0x4cc409;
-            } : function (_0x2c4e2f) {
-
-                return _0x2c4e2f && 'function' == typeof Symbol && _0x2c4e2f['constructor'] === Symbol && _0x2c4e2f !== Symbol['prototype'] ? 'symbol' : typeof _0x2c4e2f;
-            })(_0x513c8d);
-        }
-        _0x2c1a24 = function () {
-
-                return function (modules) {
-                    var installedModules = {};
-
-                    function _require(moduleId) {
-
-                        if (installedModules[moduleId]) return installedModules[moduleId]['exports'];
-                        var moduleItem = installedModules[moduleId] = {
-                            'i': moduleId,
-                            'l': !0x1,
-                            'exports': {}
-                        };
-                        return modules[moduleId]['call'](moduleItem['exports'], moduleItem, moduleItem['exports'], _require), moduleItem['l'] = !0x0, moduleItem['exports'];
-                    }
-                    return _require['m'] = modules, _require['c'] = installedModules, _require['d'] = function (_0x865eaa, _0x10b134, _0x5af7af) {
-
-                        _require['o'](_0x865eaa, _0x10b134) || Object['defineProperty'](_0x865eaa, _0x10b134, {
-                            'enumerable': !0x0,
-                            'get': _0x5af7af
-                        });
-                    }, _require['r'] = function (_0x2bcb33) {
-
-                        'undefined' != typeof Symbol && Symbol['toStringTag'] && Object['defineProperty'](_0x2bcb33, Symbol['toStringTag'], {
-                            'value': 'Module'
-                        }), Object['defineProperty'](_0x2bcb33, '__esModule', {
-                            'value': !0x0
-                        });
-                    }, _require['t'] = function (_0x6511e7, _0x3da99d) {
-
-                        if (0x1 & _0x3da99d && (_0x6511e7 = _require(_0x6511e7)), 0x8 & _0x3da99d) return _0x6511e7;
-                        if (0x4 & _0x3da99d && 'object' == _0x1f7d16(_0x6511e7) && _0x6511e7 && _0x6511e7['__esModule']) return _0x6511e7;
-                        var _0x380200 = Object['create'](null);
-                        if (_require['r'](_0x380200), Object['defineProperty'](_0x380200, 'default', {
-                                'enumerable': !0x0,
-                                'value': _0x6511e7
-                            }), 0x2 & _0x3da99d && 'string' != typeof _0x6511e7) {
-                            for (var _0x66420e in _0x6511e7) _require['d'](_0x380200, _0x66420e, function (_0x3e10e0) {
-                                return _0x6511e7[_0x3e10e0];
-                            } ['bind'](null, _0x66420e));
-                        }
-                        return _0x380200;
-                    }, _require['n'] = function (_0x51d884) {
-                        var _0x5bd2ef = _0x51d884 && _0x51d884['__esModule'] ? function () {
-
-                            return _0x51d884['default'];
-                        } : function () {
-                            return _0x51d884;
-                        };
-                        return _require['d'](_0x5bd2ef, 'a', _0x5bd2ef), _0x5bd2ef;
-                    }, _require['o'] = function (_0x356311, _0x2f9e1f) {
-
-                        return Object['prototype']['hasOwnProperty']['call'](_0x356311, _0x2f9e1f);
-                    }, _require['p'] = '', _require(_require['s'] = 0xd);
-                }(
-                    [
-                        function (es_module, es_exports, es_require) {
-                            'use strict';
-
-                            var _0x3440b5, _0x2254e8 = es_require(0x4),
-                                _0x451442 = Object['prototype']['toString'],
-                                _0xe1f44d = (_0x3440b5 = Object['create'](null), function (_0x133f55) {
-                                    var _0x1e8bb0 = _0x451442['call'](_0x133f55);
-                                    return _0x3440b5[_0x1e8bb0] || (_0x3440b5[_0x1e8bb0] = _0x1e8bb0['slice'](0x8, -0x1)['toLowerCase']());
-                                });
-
-                            function _0x2f0f60(_0x540227) {
-
-                                return _0x540227 = _0x540227['toLowerCase'](),
-                                    function (_0xb48fa2) {
-                                        return _0xe1f44d(_0xb48fa2) === _0x540227;
-                                    };
-                            }
-
-                            function _0x4ebe05(_0x34d4e8) {
-                                return Array['isArray'](_0x34d4e8);
-                            }
-
-                            function _0x38241d(_0x3547bc) {
-                                return void 0x0 === _0x3547bc;
-                            }
-                            var _0x35b9b7 = _0x2f0f60('ArrayBuffer');
-
-                            function _0x27e84a(_0x50e50e) {
-                                return null !== _0x50e50e && 'object' == _0x1f7d16(_0x50e50e);
-                            }
-
-                            function _0xf8ff25(_0x32d627) {
-
-                                if ('object' !== _0xe1f44d(_0x32d627)) return !0x1;
-                                var _0xb1874d = Object['getPrototypeOf'](_0x32d627);
-                                return null === _0xb1874d || _0xb1874d === Object['prototype'];
-                            }
-                            var _0x52a247 = _0x2f0f60('Date'),
-                                _0x263409 = _0x2f0f60('File'),
-                                _0x3756c4 = _0x2f0f60('Blob'),
-                                _0x2d2c39 = _0x2f0f60('FileList');
-
-                            function _0x1603b3(_0x523aeb) {
-
-                                return '[object Function]' === _0x451442['call'](_0x523aeb);
-                            }
-                            var _0x36b839 = _0x2f0f60('URLSearchParams');
-
-                            function _0x1ad061(_0x1ce062, _0x7e6083) {
-
-                                if (null != _0x1ce062) {
-                                    if ('object' != _0x1f7d16(_0x1ce062) && (_0x1ce062 = [_0x1ce062]), _0x4ebe05(_0x1ce062)) {
-                                        for (var _0x141c7f = 0x0, _0x5667f4 = _0x1ce062['length']; _0x141c7f < _0x5667f4; _0x141c7f++) _0x7e6083['call'](null, _0x1ce062[_0x141c7f], _0x141c7f, _0x1ce062);
-                                    } else {
-                                        for (var _0x5c51b2 in _0x1ce062) Object['prototype']['hasOwnProperty']['call'](_0x1ce062, _0x5c51b2) && _0x7e6083['call'](null, _0x1ce062[_0x5c51b2], _0x5c51b2, _0x1ce062);
-                                    }
-                                }
-                            }
-                            var _0x421bb0, _0x270c0c = (_0x421bb0 = 'undefined' != typeof Uint8Array && Object['getPrototypeOf'](Uint8Array), function (_0x3aaca8) {
-                                return _0x421bb0 && _0x3aaca8 instanceof _0x421bb0;
-                            });
-                            es_module['exports'] = {
-                                'isArray': _0x4ebe05,
-                                'isArrayBuffer': _0x35b9b7,
-                                'isBuffer': function (_0x25952b) {
-
-                                    return null !== _0x25952b && !_0x38241d(_0x25952b) && null !== _0x25952b['constructor'] && !_0x38241d(_0x25952b['constructor']) && 'function' == typeof _0x25952b['constructor']['isBuffer'] && _0x25952b['constructor']['isBuffer'](_0x25952b);
-                                },
-                                'isFormData': function (_0x2dd9d3) {
-
-                                    return _0x2dd9d3 && ('function' == typeof FormData && _0x2dd9d3 instanceof FormData || '[object FormData]' === _0x451442['call'](_0x2dd9d3) || _0x1603b3(_0x2dd9d3['toString']) && '[object FormData]' === _0x2dd9d3['toString']());
-                                },
-                                'isArrayBufferView': function (_0x91d70f) {
-
-                                    return 'undefined' != typeof ArrayBuffer && ArrayBuffer['isView'] ? ArrayBuffer['isView'](_0x91d70f) : _0x91d70f && _0x91d70f['buffer'] && _0x35b9b7(_0x91d70f['buffer']);
-                                },
-                                'isString': function (_0x35a4d5) {
-
-                                    return 'string' == typeof _0x35a4d5;
-                                },
-                                'isNumber': function (_0x10668f) {
-
-                                    return 'number' == typeof _0x10668f;
-                                },
-                                'isObject': _0x27e84a,
-                                'isPlainObject': _0xf8ff25,
-                                'isUndefined': _0x38241d,
-                                'isDate': _0x52a247,
-                                'isFile': _0x263409,
-                                'isBlob': _0x3756c4,
-                                'isFunction': _0x1603b3,
-                                'isStream': function (_0x389438) {
-
-                                    return _0x27e84a(_0x389438) && _0x1603b3(_0x389438['pipe']);
-                                },
-                                'isURLSearchParams': _0x36b839,
-                                'isStandardBrowserEnv': function () {
-
-                                    return ('undefined' == typeof navigator || 'ReactNative' !== navigator['product'] && 'NativeScript' !== navigator['product'] && 'NS' !== navigator['product']) && 'undefined' != typeof window && 'undefined' != typeof document;
-                                },
-                                'forEach': _0x1ad061,
-                                'merge': function _0x32b503() {
-                                    var _0x5e734c = {};
-
-                                    function _0x1d3951(_0x4987cc, _0x3a3373) {
-                                        _0xf8ff25(_0x5e734c[_0x3a3373]) && _0xf8ff25(_0x4987cc) ? _0x5e734c[_0x3a3373] = _0x32b503(_0x5e734c[_0x3a3373], _0x4987cc) : _0xf8ff25(_0x4987cc) ? _0x5e734c[_0x3a3373] = _0x32b503({}, _0x4987cc) : _0x4ebe05(_0x4987cc) ? _0x5e734c[_0x3a3373] = _0x4987cc['slice']() : _0x5e734c[_0x3a3373] = _0x4987cc;
-                                    }
-                                    for (var _0x1c55f7 = 0x0, _0x5f54bf = arguments['length']; _0x1c55f7 < _0x5f54bf; _0x1c55f7++) _0x1ad061(arguments[_0x1c55f7], _0x1d3951);
-                                    return _0x5e734c;
-                                },
-                                'extend': function (_0x58e316, _0x2119a8, _0x5d758f) {
-                                    return _0x1ad061(_0x2119a8, function (_0x53e007, _0x19f207) {
-
-                                        _0x58e316[_0x19f207] = _0x5d758f && 'function' == typeof _0x53e007 ? _0x2254e8(_0x53e007, _0x5d758f) : _0x53e007;
-                                    }), _0x58e316;
-                                },
-                                'trim': function (_0x180aee) {
-
-                                    return _0x180aee['trim'] ? _0x180aee['trim']() : _0x180aee['replace'](/^\s+|\s+$/g, '');
-                                },
-                                'stripBOM': function (_0x73a5b2) {
-
-                                    return 0xfeff === _0x73a5b2['charCodeAt'](0x0) && (_0x73a5b2 = _0x73a5b2['slice'](0x1)), _0x73a5b2;
-                                },
-                                'inherits': function (_0x3d808e, _0x2b384b, _0xb7b9f6, _0x47f42c) {
-
-                                    _0x3d808e['prototype'] = Object['create'](_0x2b384b['prototype'], _0x47f42c), _0x3d808e['prototype']['constructor'] = _0x3d808e, _0xb7b9f6 && Object['assign'](_0x3d808e['prototype'], _0xb7b9f6);
-                                },
-                                'toFlatObject': function (_0x3d5cd8, _0x4ea9ed, _0x55d635) {
-                                    var _0x673c2d, _0x440e65, _0x555f22, _0x58c86d = {};
-                                    _0x4ea9ed = _0x4ea9ed || {};
-                                    do {
-                                        for (_0x440e65 = (_0x673c2d = Object['getOwnPropertyNames'](_0x3d5cd8))['length']; _0x440e65-- > 0x0;) _0x58c86d[_0x555f22 = _0x673c2d[_0x440e65]] || (_0x4ea9ed[_0x555f22] = _0x3d5cd8[_0x555f22], _0x58c86d[_0x555f22] = !0x0);
-                                        _0x3d5cd8 = Object['getPrototypeOf'](_0x3d5cd8);
-                                    } while (_0x3d5cd8 && (!_0x55d635 || _0x55d635(_0x3d5cd8, _0x4ea9ed)) && _0x3d5cd8 !== Object['prototype']);
-                                    return _0x4ea9ed;
-                                },
-                                'kindOf': _0xe1f44d,
-                                'kindOfTest': _0x2f0f60,
-                                'endsWith': function (_0x52c565, _0x35bbe3, _0x26a90b) {
-
-                                    _0x52c565 = String(_0x52c565), (void 0x0 === _0x26a90b || _0x26a90b > _0x52c565['length']) && (_0x26a90b = _0x52c565['length']), _0x26a90b -= _0x35bbe3['length'];
-                                    var _0x45c2c4 = _0x52c565['indexOf'](_0x35bbe3, _0x26a90b);
-                                    return -0x1 !== _0x45c2c4 && _0x45c2c4 === _0x26a90b;
-                                },
-                                'toArray': function (_0xe74ff4) {
-
-                                    if (!_0xe74ff4) return null;
-                                    var _0x21766e = _0xe74ff4['length'];
-                                    if (_0x38241d(_0x21766e)) return null;
-                                    for (var _0x3bbf21 = new Array(_0x21766e); _0x21766e-- > 0x0;) _0x3bbf21[_0x21766e] = _0xe74ff4[_0x21766e];
-                                    return _0x3bbf21;
-                                },
-                                'isTypedArray': _0x270c0c,
-                                'isFileList': _0x2d2c39
-                            };
-                        },
-                        function (es_module, es_exports, es_require) {
-                            'use strict';
-
-                            var _export_0 = es_require(0x0);
-
-                            function _0x320a8c(_0x247554, _0x16839b, _0x58d32b, _0x11e069, _0x5cfc07) {
-
-                                Error['call'](this), this['message'] = _0x247554, this['name'] = 'AxiosError', _0x16839b && (this['code'] = _0x16839b), _0x58d32b && (this['config'] = _0x58d32b), _0x11e069 && (this['request'] = _0x11e069), _0x5cfc07 && (this['response'] = _0x5cfc07);
-                            }
-                            _export_0['inherits'](_0x320a8c, Error, {
-                                'toJSON': function () {
-
-                                    return {
-                                        'message': this['message'],
-                                        'name': this['name'],
-                                        'description': this['description'],
-                                        'number': this['number'],
-                                        'fileName': this['fileName'],
-                                        'lineNumber': this['lineNumber'],
-                                        'columnNumber': this['columnNumber'],
-                                        'stack': this['stack'],
-                                        'config': this['config'],
-                                        'code': this['code'],
-                                        'status': this['response'] && this['response']['status'] ? this['response']['status'] : null
-                                    };
-                                }
-                            });
-                            var _0x2e67e8 = _0x320a8c['prototype'],
-                                ERR_STATUS = {};
-                            ['ERR_BAD_OPTION_VALUE', 'ERR_BAD_OPTION', 'ECONNABORTED', 'ETIMEDOUT', 'ERR_NETWORK', 'ERR_FR_TOO_MANY_REDIRECTS', 'ERR_DEPRECATED', 'ERR_BAD_RESPONSE', 'ERR_BAD_REQUEST', 'ERR_CANCELED']['forEach'](function (value) {
-                                ERR_STATUS[value] = {
-                                    'value': value
-                                };
-                            }), Object['defineProperties'](_0x320a8c, ERR_STATUS), Object['defineProperty'](_0x2e67e8, 'isAxiosError', {
-                                'value': !0x0
-                            }), _0x320a8c['from'] = function (_0x1ce1c6, _0x2ac6c2, _0x2e6627, _0x8d7fc, _0x1cd539, _0x6725a9) {
-                                var _0x4a4d3a = Object['create'](_0x2e67e8);
-                                return _export_0['toFlatObject'](_0x1ce1c6, _0x4a4d3a, function (_0x32bcc3) {
-
-                                    return _0x32bcc3 !== Error['prototype'];
-                                }), _0x320a8c['call'](_0x4a4d3a, _0x1ce1c6['message'], _0x2ac6c2, _0x2e6627, _0x8d7fc, _0x1cd539), _0x4a4d3a['name'] = _0x1ce1c6['name'], _0x6725a9 && Object['assign'](_0x4a4d3a, _0x6725a9), _0x4a4d3a;
-                            }, es_module['exports'] = _0x320a8c;
-                        },
-                        function (es_module, es_exports, es_require) {
-                            'use strict';
-
-                            var _export_1 = es_require(0x1);
-
-                            function _0x31fda1(_0x526641) {
-
-                                _export_1['call'](this, null == _0x526641 ? 'canceled' : _0x526641, _export_1['ERR_CANCELED']), this['name'] = 'CanceledError';
-                            }
-                            es_require(0x0)['inherits'](_0x31fda1, _export_1, {
-                                '__CANCEL__': !0x0
-                            }), es_module['exports'] = _0x31fda1;
-                        },
-                        function (es_module, es_exports, es_require) {
-                            'use strict';
-                            console.log(es_module, es_exports);
-                            var _export_0 = es_require(0x0),
-                                _export_19 = es_require(0x13),
-                                _export_1 = es_require(0x1),
-                                _export_6 = es_require(0x6),
-                                _export_7 = es_require(0x7),
-                                _0x52787c = {
-                                    'Content-Type': 'application/x-www-form-urlencoded'
-                                };
-
-                            function _0x121781(_0x1c9ba1, _0x4d431d) {
-
-                                !_export_0['isUndefined'](_0x1c9ba1) && _export_0['isUndefined'](_0x1c9ba1['Content-Type']) && (_0x1c9ba1['Content-Type'] = _0x4d431d);
-                            }
-                            var _0x401dbd, _0x26ec06 = {
-                                'transitional': _export_6,
-                                'adapter': (('undefined' != typeof XMLHttpRequest || void 0x0 !== _0x143e97 && '[object process]' === Object['prototype']['toString']['call'](_0x143e97)) && (_0x401dbd = es_require(0x8)), _0x401dbd),
-                                'transformRequest': [function (_0x18c317, _0x4a946c) {
-
-                                    if (_export_19(_0x4a946c, 'Accept'), _export_19(_0x4a946c, 'Content-Type'), _export_0['isFormData'](_0x18c317) || _export_0['isArrayBuffer'](_0x18c317) || _export_0['isBuffer'](_0x18c317) || _export_0['isStream'](_0x18c317) || _export_0['isFile'](_0x18c317) || _export_0['isBlob'](_0x18c317)) return _0x18c317;
-                                    if (_export_0['isArrayBufferView'](_0x18c317)) return _0x18c317['buffer'];
-                                    if (_export_0['isURLSearchParams'](_0x18c317)) return _0x121781(_0x4a946c, 'application/x-www-form-urlencoded;charset=utf-8'), _0x18c317['toString']();
-                                    var _0x585a80, _0x4fce53 = _export_0['isObject'](_0x18c317),
-                                        _0x6da230 = _0x4a946c && _0x4a946c['Content-Type'];
-                                    if ((_0x585a80 = _export_0['isFileList'](_0x18c317)) || _0x4fce53 && 'multipart/form-data' === _0x6da230) {
-                                        var _0x552895 = this['env'] && this['env']['FormData'];
-                                        return _export_7(_0x585a80 ? {
-                                            'files[]': _0x18c317
-                                        } : _0x18c317, _0x552895 && new _0x552895());
-                                    }
-                                    return _0x4fce53 || 'application/json' === _0x6da230 ? (_0x121781(_0x4a946c, 'application/json'), function (es_module, es_exports, es_require) {
-
-                                        if (_export_0['isString'](es_module)) try {
-                                            return (0x0, JSON['parse'])(es_module), _export_0['trim'](es_module);
-                                        } catch (_0x4abc7b) {
-                                            if ('SyntaxError' !== _0x4abc7b['name']) throw _0x4abc7b;
-                                        }
-                                        return (0x0, JSON['stringify'])(es_module);
-                                    }(_0x18c317)) : _0x18c317;
-                                }],
-                                'transformResponse': [function (_0x469fc6) {
-                                    var _0x57fe36 = this['transitional'] || _0x26ec06['transitional'],
-                                        _0x1ecc9a = _0x57fe36 && _0x57fe36['silentJSONParsing'],
-                                        _0x383f1f = _0x57fe36 && _0x57fe36['forcedJSONParsing'],
-                                        _0x11ae50 = !_0x1ecc9a && 'json' === this['responseType'];
-                                    if (_0x11ae50 || _0x383f1f && _export_0['isString'](_0x469fc6) && _0x469fc6['length']) try {
-                                        return JSON['parse'](_0x469fc6);
-                                    } catch (_0x36a661) {
-                                        if (_0x11ae50) {
-                                            if ('SyntaxError' === _0x36a661['name']) throw _export_1['from'](_0x36a661, _export_1['ERR_BAD_RESPONSE'], this, null, this['response']);
-                                            throw _0x36a661;
-                                        }
-                                    }
-                                    return _0x469fc6;
-                                }],
-                                'timeout': 0x0,
-                                'xsrfCookieName': 'XSRF-TOKEN',
-                                'xsrfHeaderName': 'X-XSRF-TOKEN',
-                                'maxContentLength': -0x1,
-                                'maxBodyLength': -0x1,
-                                'env': {
-                                    'FormData': es_require(0x1b)
-                                },
-                                'validateStatus': function (_0x352373) {
-                                    return _0x352373 >= 0xc8 && _0x352373 < 0x12c;
-                                },
-                                'headers': {
-                                    'common': {
-                                        'Accept': 'application/json, text/plain, */*'
-                                    }
-                                }
-                            };
-                            _export_0['forEach'](['delete', 'get', 'head'], function (_0x4c0455) {
-                                _0x26ec06['headers'][_0x4c0455] = {};
-                            }), _export_0['forEach'](['post', 'put', 'patch'], function (_0x3d54d2) {
-
-                                _0x26ec06['headers'][_0x3d54d2] = _export_0['merge'](_0x52787c);
-                            }), es_module['exports'] = _0x26ec06;
-                        },
-                        function (es_module, es_exports, es_require) {
-                            'use strict';
-
-                            es_module['exports'] = function (_0x2af3b7, _0x1aaee2) {
-                                return function () {
-
-                                    for (var _0x2ac247 = new Array(arguments['length']), _0x1ed2b2 = 0x0; _0x1ed2b2 < _0x2ac247['length']; _0x1ed2b2++) _0x2ac247[_0x1ed2b2] = arguments[_0x1ed2b2];
-                                    return _0x2af3b7['apply'](_0x1aaee2, _0x2ac247);
-                                };
-                            };
-                        },
-                        function (es_module, es_exports, es_require) {
-                            'use strict';
-
-                            var _export_0 = es_require(0x0);
-
-                            function _0x164500(_0x3d9806) {
-
-                                return encodeURIComponent(_0x3d9806)['replace'](/%3A/gi, ':')['replace'](/%24/g, '$')['replace'](/%2C/gi, ',')['replace'](/%20/g, '+')['replace'](/%5B/gi, '[')['replace'](/%5D/gi, ']');
-                            }
-                            es_module['exports'] = function (_0x529361, _0x57b3d3, _0x191afa) {
-
-                                if (!_0x57b3d3) return _0x529361;
-                                var _0x3e8c43;
-                                if (_0x191afa) _0x3e8c43 = _0x191afa(_0x57b3d3);
-                                else {
-                                    if (_export_0['isURLSearchParams'](_0x57b3d3)) _0x3e8c43 = _0x57b3d3['toString']();
-                                    else {
-                                        var _0x363a21 = [];
-                                        _export_0['forEach'](_0x57b3d3, function (_0xb5343c, _0x51e514) {
-
-                                            null != _0xb5343c && (_export_0['isArray'](_0xb5343c) ? _0x51e514 += '[]' : _0xb5343c = [_0xb5343c], _export_0['forEach'](_0xb5343c, function (_0x11f52f) {
-
-                                                _export_0['isDate'](_0x11f52f) ? _0x11f52f = _0x11f52f['toISOString']() : _export_0['isObject'](_0x11f52f) && (_0x11f52f = JSON['stringify'](_0x11f52f)), _0x363a21['push'](_0x164500(_0x51e514) + '=' + _0x164500(_0x11f52f));
-                                            }));
-                                        }), _0x3e8c43 = _0x363a21['join']('&');
-                                    }
-                                }
-                                if (_0x3e8c43) {
-                                    var _0x8e2de7 = _0x529361['indexOf']('#'); - 0x1 !== _0x8e2de7 && (_0x529361 = _0x529361['slice'](0x0, _0x8e2de7)), _0x529361 += (-0x1 === _0x529361['indexOf']('?') ? '?' : '&') + _0x3e8c43;
-                                }
-                                return _0x529361;
-                            };
-                        },
-                        function (es_module, es_exports, es_require) {
-                            'use strict';
-
-                            es_module['exports'] = {
-                                'silentJSONParsing': !0x0,
-                                'forcedJSONParsing': !0x0,
-                                'clarifyTimeoutError': !0x1
-                            };
-                        },
-                        function (es_module, es_exports, es_require) {
-                            'use strict';
-
-                            var _export_0 = es_require(0x0);
-                            es_module['exports'] = function (_0xea52d9, _0x40225c) {
-                                _0x40225c = _0x40225c || new FormData();
-                                var _0xa6af5e = [];
-
-                                function _0x3fe0ef(_0x1a88d6) {
-
-                                    return null === _0x1a88d6 ? '' : _export_0['isDate'](_0x1a88d6) ? _0x1a88d6['toISOString']() : _export_0['isArrayBuffer'](_0x1a88d6) || _export_0['isTypedArray'](_0x1a88d6) ? 'function' == typeof Blob ? new Blob([_0x1a88d6]) : _0x5b70f2['from'](_0x1a88d6) : _0x1a88d6;
-                                }
-                                return function _0x13ce80(_0x5358d4, _0x1a1c8f) {
-
-                                    if (_export_0['isPlainObject'](_0x5358d4) || _export_0['isArray'](_0x5358d4)) {
-                                        if (-0x1 !== _0xa6af5e['indexOf'](_0x5358d4)) throw Error('Circular reference detected in ' + _0x1a1c8f);
-                                        _0xa6af5e['push'](_0x5358d4), _export_0['forEach'](_0x5358d4, function (_0x41fdb9, _0x55c23f) {
-
-                                            if (!_export_0['isUndefined'](_0x41fdb9)) {
-                                                var _0x39e134, _0x24cb2d = _0x1a1c8f ? _0x1a1c8f + '.' + _0x55c23f : _0x55c23f;
-                                                if (_0x41fdb9 && !_0x1a1c8f && 'object' == _0x1f7d16(_0x41fdb9)) {
-                                                    if (_export_0['endsWith'](_0x55c23f, '{}')) _0x41fdb9 = JSON['stringify'](_0x41fdb9);
-                                                    else {
-                                                        if (_export_0['endsWith'](_0x55c23f, '[]') && (_0x39e134 = _export_0['toArray'](_0x41fdb9))) return void _0x39e134['forEach'](function (_0x2214cc) {
-
-                                                            !_export_0['isUndefined'](_0x2214cc) && _0x40225c['append'](_0x24cb2d, _0x3fe0ef(_0x2214cc));
-                                                        });
-                                                    }
-                                                }
-                                                _0x13ce80(_0x41fdb9, _0x24cb2d);
-                                            }
-                                        }), _0xa6af5e['pop']();
-                                    } else _0x40225c['append'](_0x1a1c8f, _0x3fe0ef(_0x5358d4));
-                                }(_0xea52d9), _0x40225c;
-                            };
-                        },
-                        function (es_module, es_exports, es_require) {
-                            'use strict';
-                            console.log(es_module, es_exports);
-                            var _export_0 = es_require(0x0),
-                                _export_20 = es_require(0x14),
-                                _export_21 = es_require(0x15),
-                                _export_5 = es_require(0x5),
-                                _export_9 = es_require(0x9),
-                                _export_24 = es_require(0x18),
-                                _export_25 = es_require(0x19),
-                                _export_6 = es_require(0x6),
-                                _export_1 = es_require(0x1),
-                                _export_2 = es_require(0x2),
-                                _export_26 = es_require(0x1a);
-                            es_module['exports'] = function (_0x5a4ed6) {
-
-                                return new Promise(function (_0x5f4d86, _0x235d6f) {
-                                    var _0x529013, _0x5b8ccc = _0x5a4ed6['data'],
-                                        _0x310c1d = _0x5a4ed6['headers'],
-                                        _0xbf785a = _0x5a4ed6['responseType'];
-
-                                    function _0x2e88e1() {
-
-                                        _0x5a4ed6['cancelToken'] && _0x5a4ed6['cancelToken']['unsubscribe'](_0x529013), _0x5a4ed6['signal'] && _0x5a4ed6['signal']['removeEventListener']('abort', _0x529013);
-                                    }
-                                    _export_0['isFormData'](_0x5b8ccc) && _export_0['isStandardBrowserEnv']() && delete _0x310c1d['Content-Type'];
-                                    var _0x559b0c = new XMLHttpRequest();
-                                    if (_0x5a4ed6['auth']) {
-                                        var _0x372261 = _0x5a4ed6['auth']['username'] || '',
-                                            _0x23affb = _0x5a4ed6['auth']['password'] ? unescape(encodeURIComponent(_0x5a4ed6['auth']['password'])) : '';
-                                        _0x310c1d['Authorization'] = 'Basic ' + btoa(_0x372261 + ':' + _0x23affb);
-                                    }
-                                    var _0x4c9a93 = _export_9(_0x5a4ed6['baseURL'], _0x5a4ed6['url']);
-
-                                    function _0x363f0c() {
-
-                                        if (_0x559b0c) {
-                                            var _0x270728 = 'getAllResponseHeaders' in _0x559b0c ? _export_24(_0x559b0c['getAllResponseHeaders']()) : null,
-                                                _0x380169 = {
-                                                    'data': _0xbf785a && 'text' !== _0xbf785a && 'json' !== _0xbf785a ? _0x559b0c['response'] : _0x559b0c['responseText'],
-                                                    'status': _0x559b0c['status'],
-                                                    'statusText': _0x559b0c['statusText'],
-                                                    'headers': _0x270728,
-                                                    'config': _0x5a4ed6,
-                                                    'request': _0x559b0c
-                                                };
-                                            _export_20(function (_0x1cc3fd) {
-                                                _0x5f4d86(_0x1cc3fd), _0x2e88e1();
-                                            }, function (_0x1b6782) {
-                                                _0x235d6f(_0x1b6782), _0x2e88e1();
-                                            }, _0x380169), _0x559b0c = null;
-                                        }
-                                    }
-                                    if (_0x559b0c.open(_0x5a4ed6['method']['toUpperCase'](), _export_5(_0x4c9a93, _0x5a4ed6['params'], _0x5a4ed6['paramsSerializer']), !0x0), _0x559b0c['timeout'] = _0x5a4ed6['timeout'], 'onloadend' in _0x559b0c ? _0x559b0c['onloadend'] = _0x363f0c : _0x559b0c['onreadystatechange'] = function () {
-
-                                            _0x559b0c && 0x4 === _0x559b0c['readyState'] && (0x0 !== _0x559b0c['status'] || _0x559b0c['responseURL'] && 0x0 === _0x559b0c['responseURL']['indexOf']('file:')) && setTimeout(_0x363f0c);
-                                        }, _0x559b0c['onabort'] = function () {
-
-                                            _0x559b0c && (_0x235d6f(new _export_1('Request aborted', _export_1['ECONNABORTED'], _0x5a4ed6, _0x559b0c)), _0x559b0c = null);
-                                        }, _0x559b0c['onerror'] = function () {
-
-                                            _0x235d6f(new _export_1('Network Error', _export_1['ERR_NETWORK'], _0x5a4ed6, _0x559b0c, _0x559b0c)), _0x559b0c = null;
-                                        }, _0x559b0c['ontimeout'] = function () {
-                                            var _0x2d61d2 = _0x5a4ed6['timeout'] ? 'timeout of ' + _0x5a4ed6['timeout'] + 'ms exceeded' : 'timeout exceeded',
-                                                _0x35ecc6 = _0x5a4ed6['transitional'] || _export_6;
-                                            _0x5a4ed6['timeoutErrorMessage'] && (_0x2d61d2 = _0x5a4ed6['timeoutErrorMessage']), _0x235d6f(new _export_1(_0x2d61d2, _0x35ecc6['clarifyTimeoutError'] ? _export_1['ETIMEDOUT'] : _export_1['ECONNABORTED'], _0x5a4ed6, _0x559b0c)), _0x559b0c = null;
-                                        }, _export_0['isStandardBrowserEnv']()) {
-                                        var _0xe0ef2e = (_0x5a4ed6['withCredentials'] || _export_25(_0x4c9a93)) && _0x5a4ed6['xsrfCookieName'] ? _export_21['read'](_0x5a4ed6['xsrfCookieName']) : void 0x0;
-                                        _0xe0ef2e && (_0x310c1d[_0x5a4ed6['xsrfHeaderName']] = _0xe0ef2e);
-                                    }
-                                    'setRequestHeader' in _0x559b0c && _export_0['forEach'](_0x310c1d, function (_0x2f7ce1, _0x13927b) {
-
-                                        void 0x0 === _0x5b8ccc && 'content-type' === _0x13927b['toLowerCase']() ? delete _0x310c1d[_0x13927b] : _0x559b0c['setRequestHeader'](_0x13927b, _0x2f7ce1);
-                                    }), _export_0['isUndefined'](_0x5a4ed6['withCredentials']) || (_0x559b0c['withCredentials'] = !!_0x5a4ed6['withCredentials']), _0xbf785a && 'json' !== _0xbf785a && (_0x559b0c['responseType'] = _0x5a4ed6['responseType']), 'function' == typeof _0x5a4ed6['onDownloadProgress'] && _0x559b0c['addEventListener']('progress', _0x5a4ed6['onDownloadProgress']), 'function' == typeof _0x5a4ed6['onUploadProgress'] && _0x559b0c['upload'] && _0x559b0c['upload']['addEventListener']('progress', _0x5a4ed6['onUploadProgress']), (_0x5a4ed6['cancelToken'] || _0x5a4ed6['signal']) && (_0x529013 = function (_0x29d03d) {
-
-                                        _0x559b0c && (_0x235d6f(!_0x29d03d || _0x29d03d && _0x29d03d['type'] ? new _export_2() : _0x29d03d), _0x559b0c['abort'](), _0x559b0c = null);
-                                    }, _0x5a4ed6['cancelToken'] && _0x5a4ed6['cancelToken']['subscribe'](_0x529013), _0x5a4ed6['signal'] && (_0x5a4ed6['signal']['aborted'] ? _0x529013() : _0x5a4ed6['signal']['addEventListener']('abort', _0x529013))), _0x5b8ccc || (_0x5b8ccc = null);
-                                    var _0x3b4b28 = _export_26(_0x4c9a93);
-                                    _0x3b4b28 && -0x1 === ['http', 'https', 'file']['indexOf'](_0x3b4b28) ? _0x235d6f(new _export_1('Unsupported protocol ' + _0x3b4b28 + ':', _export_1['ERR_BAD_REQUEST'], _0x5a4ed6)) : _0x559b0c['send'](_0x5b8ccc);
-                                });
-                            };
-                        },
-                        function (es_module, es_exports, es_require) {
-                            'use strict';
-
-                            var _export_22 = es_require(0x16),
-                                _export_23 = es_require(0x17);
-                            es_module['exports'] = function (_0x40787c, _0x880810) {
-                                return _0x40787c && !_export_22(_0x880810) ? _export_23(_0x40787c, _0x880810) : _0x880810;
-                            };
-                        },
-                        function (es_module, es_exports, es_require) {
-                            'use strict';
-                            es_module['exports'] = function (_0x208f75) {
-                                return !(!_0x208f75 || !_0x208f75['__CANCEL__']);
-                            };
-                        },
-                        function (es_module, es_exports, es_require) {
-                            'use strict';
-
-                            var _export_0 = es_require(0x0);
-                            es_module['exports'] = function (_0x36b937, _0x4ee446) {
-
-                                _0x4ee446 = _0x4ee446 || {};
-                                var _0x23cdb7 = {};
-
-                                function _0x56b314(_0x3f86f5, _0x37558a) {
-
-                                    return _export_0['isPlainObject'](_0x3f86f5) && _export_0['isPlainObject'](_0x37558a) ? _export_0['merge'](_0x3f86f5, _0x37558a) : _export_0['isPlainObject'](_0x37558a) ? _export_0['merge']({}, _0x37558a) : _export_0['isArray'](_0x37558a) ? _0x37558a['slice']() : _0x37558a;
-                                }
-
-                                function _0x4c94a4(_0x5b34da) {
-
-                                    return _export_0['isUndefined'](_0x4ee446[_0x5b34da]) ? _export_0['isUndefined'](_0x36b937[_0x5b34da]) ? void 0x0 : _0x56b314(void 0x0, _0x36b937[_0x5b34da]) : _0x56b314(_0x36b937[_0x5b34da], _0x4ee446[_0x5b34da]);
-                                }
-
-                                function _0x2c8050(_0x179568) {
-
-                                    if (!_export_0['isUndefined'](_0x4ee446[_0x179568])) return _0x56b314(void 0x0, _0x4ee446[_0x179568]);
-                                }
-
-                                function _0xfdfd33(_0x3040c1) {
-
-                                    return _export_0['isUndefined'](_0x4ee446[_0x3040c1]) ? _export_0['isUndefined'](_0x36b937[_0x3040c1]) ? void 0x0 : _0x56b314(void 0x0, _0x36b937[_0x3040c1]) : _0x56b314(void 0x0, _0x4ee446[_0x3040c1]);
-                                }
-
-                                function _0xf0025e(_0x1ed284) {
-                                    return _0x1ed284 in _0x4ee446 ? _0x56b314(_0x36b937[_0x1ed284], _0x4ee446[_0x1ed284]) : _0x1ed284 in _0x36b937 ? _0x56b314(void 0x0, _0x36b937[_0x1ed284]) : void 0x0;
-                                }
-                                var _0x211a15 = {
-                                    'url': _0x2c8050,
-                                    'method': _0x2c8050,
-                                    'data': _0x2c8050,
-                                    'baseURL': _0xfdfd33,
-                                    'transformRequest': _0xfdfd33,
-                                    'transformResponse': _0xfdfd33,
-                                    'paramsSerializer': _0xfdfd33,
-                                    'timeout': _0xfdfd33,
-                                    'timeoutMessage': _0xfdfd33,
-                                    'withCredentials': _0xfdfd33,
-                                    'adapter': _0xfdfd33,
-                                    'responseType': _0xfdfd33,
-                                    'xsrfCookieName': _0xfdfd33,
-                                    'xsrfHeaderName': _0xfdfd33,
-                                    'onUploadProgress': _0xfdfd33,
-                                    'onDownloadProgress': _0xfdfd33,
-                                    'decompress': _0xfdfd33,
-                                    'maxContentLength': _0xfdfd33,
-                                    'maxBodyLength': _0xfdfd33,
-                                    'beforeRedirect': _0xfdfd33,
-                                    'transport': _0xfdfd33,
-                                    'httpAgent': _0xfdfd33,
-                                    'httpsAgent': _0xfdfd33,
-                                    'cancelToken': _0xfdfd33,
-                                    'socketPath': _0xfdfd33,
-                                    'responseEncoding': _0xfdfd33,
-                                    'validateStatus': _0xf0025e
-                                };
-                                return _export_0['forEach'](Object['keys'](_0x36b937)['concat'](Object['keys'](_0x4ee446)), function (_0x5f36b5) {
-                                    var _0x322674 = _0x211a15[_0x5f36b5] || _0x4c94a4,
-                                        _0x521829 = _0x322674(_0x5f36b5);
-                                    _export_0['isUndefined'](_0x521829) && _0x322674 !== _0xf0025e || (_0x23cdb7[_0x5f36b5] = _0x521829);
-                                }), _0x23cdb7;
-                            };
-                        },
-                        function (es_module, es_exports) {
-
-                            es_module['exports'] = {
-                                'version': '0.27.2'
-                            };
-                        },
-                        function (es_module, es_exports, es_require) {
-
-                            es_module['exports'] = es_require(0xe);
-                        },
-                        function (es_module, es_exports, es_require) {
-                            'use strict';
-
-                            var _export_0 = es_require(0x0),
-                                _export_4 = es_require(0x4),
-                                _export_15 = es_require(0xf),
-                                _export_11 = es_require(0xb),
-                                _0x1b5965 = function _0x4aee66(_0x2dcf6a) {
-                                    var _0x42fb2a = new _export_15(_0x2dcf6a),
-                                        _0x4d9443 = _export_4(_export_15['prototype']['request'], _0x42fb2a);
-                                    return _export_0['extend'](_0x4d9443, _export_15['prototype'], _0x42fb2a), _export_0['extend'](_0x4d9443, _0x42fb2a), _0x4d9443['create'] = function (_0x32847f) {
-                                        return _0x4aee66(_export_11(_0x2dcf6a, _0x32847f));
-                                    }, _0x4d9443;
-                                }(es_require(0x3));
-                            _0x1b5965['Axios'] = _export_15, _0x1b5965['CanceledError'] = es_require(0x2), _0x1b5965['CancelToken'] = es_require(0x1d), _0x1b5965['isCancel'] = es_require(0xa), _0x1b5965['VERSION'] = es_require(0xc)['version'], _0x1b5965['toFormData'] = es_require(0x7), _0x1b5965['AxiosError'] = es_require(0x1), _0x1b5965['Cancel'] = _0x1b5965['CanceledError'], _0x1b5965['all'] = function (_0x5eafb5) {
-
-                                return Promise['all'](_0x5eafb5);
-                            }, _0x1b5965['spread'] = es_require(0x1e), _0x1b5965['isAxiosError'] = es_require(0x1f), es_module['exports'] = _0x1b5965, es_module['exports']['default'] = _0x1b5965;
-                        },
-                        function (es_module, es_exports, es_require) {
-                            'use strict';
-
-                            var _export_0 = es_require(0x0),
-                                _export_5 = es_require(0x5),
-                                _export_16 = es_require(0x10),
-                                _export_17 = es_require(0x11),
-                                _export_11 = es_require(0xb),
-                                _export_9 = es_require(0x9),
-                                _export_28 = es_require(0x1c),
-                                _0xa33822 = _export_28['validators'];
-
-                            function _0x12c9ed(_0xfae051) {
-
-                                this['defaults'] = _0xfae051, this['interceptors'] = {
-                                    'request': new _export_16(),
-                                    'response': new _export_16()
-                                };
-                            }
-                            _0x12c9ed['prototype']['request'] = function (_0xf50bb0, _0x4e8900) {
-
-                                'string' == typeof _0xf50bb0 ? (_0x4e8900 = _0x4e8900 || {})['url'] = _0xf50bb0 : _0x4e8900 = _0xf50bb0 || {}, (_0x4e8900 = _export_11(this['defaults'], _0x4e8900))['method'] ? _0x4e8900['method'] = _0x4e8900['method']['toLowerCase']() : this['defaults']['method'] ? _0x4e8900['method'] = this['defaults']['method']['toLowerCase']() : _0x4e8900['method'] = 'get';
-                                var _0x20ffd1 = _0x4e8900['transitional'];
-                                void 0x0 !== _0x20ffd1 && _export_28['assertOptions'](_0x20ffd1, {
-                                    'silentJSONParsing': _0xa33822['transitional'](_0xa33822['boolean']),
-                                    'forcedJSONParsing': _0xa33822['transitional'](_0xa33822['boolean']),
-                                    'clarifyTimeoutError': _0xa33822['transitional'](_0xa33822['boolean'])
-                                }, !0x1);
-                                var _0x55f983 = [],
-                                    _0xbea424 = !0x0;
-                                this['interceptors']['request']['forEach'](function (_0x4761d1) {
-
-                                    'function' == typeof _0x4761d1['runWhen'] && !0x1 === _0x4761d1['runWhen'](_0x4e8900) || (_0xbea424 = _0xbea424 && _0x4761d1['synchronous'], _0x55f983['unshift'](_0x4761d1['fulfilled'], _0x4761d1['rejected']));
-                                });
-                                var _0x2e057d, _0x2a1d6e = [];
-                                if (this['interceptors']['response']['forEach'](function (_0x2d24c3) {
-
-                                        _0x2a1d6e['push'](_0x2d24c3['fulfilled'], _0x2d24c3['rejected']);
-                                    }), !_0xbea424) {
-                                    var _0x128352 = [_export_17, void 0x0];
-                                    for (Array['prototype']['unshift']['apply'](_0x128352, _0x55f983), _0x128352 = _0x128352['concat'](_0x2a1d6e), _0x2e057d = Promise['resolve'](_0x4e8900); _0x128352['length'];) _0x2e057d = _0x2e057d['then'](_0x128352['shift'](), _0x128352['shift']());
-                                    return _0x2e057d;
-                                }
-                                for (var _0x514f8e = _0x4e8900; _0x55f983['length'];) {
-                                    var _0x223699 = _0x55f983['shift'](),
-                                        _0x400999 = _0x55f983['shift']();
-                                    try {
-                                        _0x514f8e = _0x223699(_0x514f8e);
-                                    } catch (_0x561931) {
-                                        _0x400999(_0x561931);
-                                        break;
-                                    }
-                                }
-                                try {
-                                    _0x2e057d = _export_17(_0x514f8e);
-                                } catch (_0x847ce1) {
-                                    return Promise['reject'](_0x847ce1);
-                                }
-                                for (; _0x2a1d6e['length'];) _0x2e057d = _0x2e057d['then'](_0x2a1d6e['shift'](), _0x2a1d6e['shift']());
-                                return _0x2e057d;
-                            }, _0x12c9ed['prototype']['getUri'] = function (_0x199868) {
-
-                                _0x199868 = _export_11(this['defaults'], _0x199868);
-                                var _0x32e41e = _export_9(_0x199868['baseURL'], _0x199868['url']);
-                                return _export_5(_0x32e41e, _0x199868['params'], _0x199868['paramsSerializer']);
-                            }, _export_0['forEach'](['delete', 'get', 'head', 'options'], function (_0x942ba5) {
-
-                                _0x12c9ed['prototype'][_0x942ba5] = function (_0x2f5bab, _0x204e37) {
-
-                                    return this['request'](_export_11(_0x204e37 || {}, {
-                                        'method': _0x942ba5,
-                                        'url': _0x2f5bab,
-                                        'data': (_0x204e37 || {})['data']
-                                    }));
-                                };
-                            }), _export_0['forEach'](['post', 'put', 'patch'], function (_0x4136e8) {
-
-
-                                function _0x272a55(_0x2cc4df) {
-                                    return function (_0x37488b, _0x511dba, _0x134a3d) {
-
-                                        return this['request'](_export_11(_0x134a3d || {}, {
-                                            'method': _0x4136e8,
-                                            'headers': _0x2cc4df ? {
-                                                'Content-Type': 'multipart/form-data'
-                                            } : {},
-                                            'url': _0x37488b,
-                                            'data': _0x511dba
-                                        }));
-                                    };
-                                }
-                                _0x12c9ed['prototype'][_0x4136e8] = _0x272a55(), _0x12c9ed['prototype'][_0x4136e8 + 'Form'] = _0x272a55(!0x0);
-                            }), es_module['exports'] = _0x12c9ed;
-                        },
-                        function (es_module, es_exports, es_require) {
-                            'use strict';
-
-                            var _export_0 = es_require(0x0);
-
-                            function _0x5540bf() {
-
-                                this['handlers'] = [];
-                            }
-                            _0x5540bf['prototype']['use'] = function (_0x415416, _0x2c0e7f, _0x29ac2c) {
-
-                                return this['handlers']['push']({
-                                    'fulfilled': _0x415416,
-                                    'rejected': _0x2c0e7f,
-                                    'synchronous': !!_0x29ac2c && _0x29ac2c['synchronous'],
-                                    'runWhen': _0x29ac2c ? _0x29ac2c['runWhen'] : null
-                                }), this['handlers']['length'] - 0x1;
-                            }, _0x5540bf['prototype']['eject'] = function (_0x4a7ec9) {
-
-                                this['handlers'][_0x4a7ec9] && (this['handlers'][_0x4a7ec9] = null);
-                            }, _0x5540bf['prototype']['forEach'] = function (_0x4ed35a) {
-                                _export_0['forEach'](this['handlers'], function (_0x2e2edd) {
-                                    null !== _0x2e2edd && _0x4ed35a(_0x2e2edd);
-                                });
-                            }, es_module['exports'] = _0x5540bf;
-                        },
-                        function (es_module, es_exports, es_require) {
-                            'use strict';
-
-                            var _export_0 = es_require(0x0),
-                                _export_18 = es_require(0x12),
-                                _export_10 = es_require(0xa),
-                                _export_3 = es_require(0x3),
-                                _export_2 = es_require(0x2);
-
-                            function _0x44c8ae(_0x4559d3) {
-
-                                if (_0x4559d3['cancelToken'] && _0x4559d3['cancelToken']['throwIfRequested'](), _0x4559d3['signal'] && _0x4559d3['signal']['aborted']) throw new _export_2();
-                            }
-                            es_module['exports'] = function (_0x4183b5) {
-
-                                return _0x44c8ae(_0x4183b5), _0x4183b5['headers'] = _0x4183b5['headers'] || {}, _0x4183b5['data'] = _export_18['call'](_0x4183b5, _0x4183b5['data'], _0x4183b5['headers'], _0x4183b5['transformRequest']), _0x4183b5['headers'] = _export_0['merge'](_0x4183b5['headers']['common'] || {}, _0x4183b5['headers'][_0x4183b5['method']] || {}, _0x4183b5['headers']), _export_0['forEach'](['delete', 'get', 'head', 'post', 'put', 'patch', 'common'], function (_0x51e60c) {
-
-                                    delete _0x4183b5['headers'][_0x51e60c];
-                                }), (_0x4183b5['adapter'] || _export_3['adapter'])(_0x4183b5)['then'](function (_0x513e17) {
-
-                                    return _0x44c8ae(_0x4183b5), _0x513e17['data'] = _export_18['call'](_0x4183b5, _0x513e17['data'], _0x513e17['headers'], _0x4183b5['transformResponse']), _0x513e17;
-                                }, function (_0x2b9920) {
-
-                                    return _export_10(_0x2b9920) || (_0x44c8ae(_0x4183b5), _0x2b9920 && _0x2b9920['response'] && (_0x2b9920['response']['data'] = _export_18['call'](_0x4183b5, _0x2b9920['response']['data'], _0x2b9920['response']['headers'], _0x4183b5['transformResponse']))), Promise['reject'](_0x2b9920);
-                                });
-                            };
-                        },
-                        function (es_module, es_exports, es_require) {
-                            'use strict';
-
-                            var _export_0 = es_require(0x0),
-                                _export_3 = es_require(0x3);
-                            es_module['exports'] = function (_0x4c0e87, _0xa5d28c, _0x121020) {
-                                var _0x11347f = this || _export_3;
-                                return _export_0['forEach'](_0x121020, function (_0x5c855e) {
-
-                                    _0x4c0e87 = _0x5c855e['call'](_0x11347f, _0x4c0e87, _0xa5d28c);
-                                }), _0x4c0e87;
-                            };
-                        },
-                        function (es_module, es_exports, es_require) {
-                            'use strict';
-
-                            var _export_0 = es_require(0x0);
-                            es_module['exports'] = function (_0x32481b, _0xa88b1c) {
-
-                                _export_0['forEach'](_0x32481b, function (_0x1dc356, _0x2f94da) {
-
-                                    _0x2f94da !== _0xa88b1c && _0x2f94da['toUpperCase']() === _0xa88b1c['toUpperCase']() && (_0x32481b[_0xa88b1c] = _0x1dc356, delete _0x32481b[_0x2f94da]);
-                                });
-                            };
-                        },
-                        function (es_module, es_exports, es_require) {
-                            'use strict';
-                            var _export_1 = es_require(0x1);
-                            es_module['exports'] = function (_0x5078fb, _0x3a901c, _0x69f2a3) {
-                                var _0x220bdb = _0x69f2a3['config']['validateStatus'];
-                                _0x69f2a3['status'] && _0x220bdb && !_0x220bdb(_0x69f2a3['status']) ? _0x3a901c(new _export_1('Request failed with status code ' + _0x69f2a3['status'], [_export_1['ERR_BAD_REQUEST'], _export_1['ERR_BAD_RESPONSE']][Math['floor'](_0x69f2a3['status'] / 0x64) - 0x4], _0x69f2a3['config'], _0x69f2a3['request'], _0x69f2a3)) : _0x5078fb(_0x69f2a3);
-                            };
-                        },
-                        function (es_module, es_exports, es_require) {
-                            'use strict';
-
-                            var _export_0 = es_require(0x0);
-                            es_module['exports'] = _export_0['isStandardBrowserEnv']() ? {
-                                'write': function (_0x4d4087, _0x234e7c, _0xd94b89, _0x3d80e7, _0x92157a, _0x7f4115) {
-                                    var _0x2640bf = [];
-                                    _0x2640bf['push'](_0x4d4087 + '=' + encodeURIComponent(_0x234e7c)), _export_0['isNumber'](_0xd94b89) && _0x2640bf['push']('expires=' + new Date(_0xd94b89)['toGMTString']()), _export_0['isString'](_0x3d80e7) && _0x2640bf['push']('path=' + _0x3d80e7), _export_0['isString'](_0x92157a) && _0x2640bf['push']('domain=' + _0x92157a), !0x0 === _0x7f4115 && _0x2640bf['push']('secure'), document['cookie'] = _0x2640bf['join']('; ');
-                                },
-                                'read': function (_0x4b68e8) {
-                                    var _0x38f337 = document['cookie']['match'](new RegExp('(^|;\\s*)(' + _0x4b68e8 + ')=([^;]*)'));
-                                    return _0x38f337 ? decodeURIComponent(_0x38f337[0x3]) : null;
-                                },
-                                'remove': function (_0x5c4040) {
-
-                                    this['write'](_0x5c4040, '', Date['now']() - 0x5265c00);
-                                }
-                            } : {
-                                'write': function () {},
-                                'read': function () {
-                                    return null;
-                                },
-                                'remove': function () {}
-                            };
-                        },
-                        function (es_module, es_exports, es_require) {
-                            'use strict';
-
-                            es_module['exports'] = function (_0x5f066a) {
-
-                                return /^([a-z][a-z\d+\-.]*:)?\/\//i ['test'](_0x5f066a);
-                            };
-                        },
-                        function (es_module, es_exports, es_require) {
-                            'use strict';
-
-                            es_module['exports'] = function (_0x312ad9, _0x401966) {
-
-                                return _0x401966 ? _0x312ad9['replace'](/\/+$/, '') + '/' + _0x401966['replace'](/^\/+/, '') : _0x312ad9;
-                            };
-                        },
-                        function (es_module, es_exports, es_require) {
-                            'use strict';
-
-                            var _export_0 = es_require(0x0),
-                                _0x50dc3e = ['age', 'authorization', 'content-length', 'content-type', 'etag', 'expires', 'from', 'host', 'if-modified-since', 'if-unmodified-since', 'last-modified', 'location', 'max-forwards', 'proxy-authorization', 'referer', 'retry-after', 'user-agent'];
-                            es_module['exports'] = function (_0x269c78) {
-                                var _0x58e073, _0x1827f0, _0x2e3891, _0xf29fc0 = {};
-                                return _0x269c78 ? (_export_0['forEach'](_0x269c78['split']('\x0a'), function (_0x4db5ba) {
-
-                                    if (_0x2e3891 = _0x4db5ba['indexOf'](':'), _0x58e073 = _export_0['trim'](_0x4db5ba['substr'](0x0, _0x2e3891))['toLowerCase'](), _0x1827f0 = _export_0['trim'](_0x4db5ba['substr'](_0x2e3891 + 0x1)), _0x58e073) {
-                                        if (_0xf29fc0[_0x58e073] && _0x50dc3e['indexOf'](_0x58e073) >= 0x0) return;
-                                        _0xf29fc0[_0x58e073] = 'set-cookie' === _0x58e073 ? (_0xf29fc0[_0x58e073] ? _0xf29fc0[_0x58e073] : [])['concat']([_0x1827f0]) : _0xf29fc0[_0x58e073] ? _0xf29fc0[_0x58e073] + ', ' + _0x1827f0 : _0x1827f0;
-                                    }
-                                }), _0xf29fc0) : _0xf29fc0;
-                            };
-                        },
-                        function (es_module, es_exports, es_require) {
-                            'use strict';
-
-                            var _export_0 = es_require(0x0);
-                            es_module['exports'] = _export_0['isStandardBrowserEnv']() ? (function () {
-                                var _0x78744e, _0x230894 = /(msie|trident)/i ['test'](navigator['userAgent']),
-                                    _0xa33ba3 = document['createElement']('a');
-
-                                function _0x2b981b(_0x2b6a62) {
-                                    var _0x308434 = _0x2b6a62;
-                                    return _0x230894 && (_0xa33ba3['setAttribute']('href', _0x308434), _0x308434 = _0xa33ba3['href']), _0xa33ba3['setAttribute']('href', _0x308434), {
-                                        'href': _0xa33ba3['href'],
-                                        'protocol': _0xa33ba3['protocol'] ? _0xa33ba3['protocol']['replace'](/:$/, '') : '',
-                                        'host': _0xa33ba3['host'],
-                                        'search': _0xa33ba3['search'] ? _0xa33ba3['search']['replace'](/^\?/, '') : '',
-                                        'hash': _0xa33ba3['hash'] ? _0xa33ba3['hash']['replace'](/^#/, '') : '',
-                                        'hostname': _0xa33ba3['hostname'],
-                                        'port': _0xa33ba3['port'],
-                                        'pathname': '/' === _0xa33ba3['pathname']['charAt'](0x0) ? _0xa33ba3['pathname'] : '/' + _0xa33ba3['pathname']
-                                    };
-                                }
-                                return _0x78744e = _0x2b981b(window['location']['href']),
-                                    function (_0x21b8a1) {
-                                        var _0x583451 = _export_0['isString'](_0x21b8a1) ? _0x2b981b(_0x21b8a1) : _0x21b8a1;
-                                        return _0x583451['protocol'] === _0x78744e['protocol'] && _0x583451['host'] === _0x78744e['host'];
-                                    };
-                            }()) : function () {
-                                return !0x0;
-                            };
-                        },
-                        function (es_module, es_exports, es_require) {
-                            'use strict';
-
-                            es_module['exports'] = function (_0x3ac906) {
-                                var _0x12fdb7 = /^([-+\w]{1,25})(:?\/\/|:)/ ['exec'](_0x3ac906);
-                                return _0x12fdb7 && _0x12fdb7[0x1] || '';
-                            };
-                        },
-                        function (es_module, es_exports) {
-                            es_module['exports'] = null;
-                        },
-                        function (es_module, es_exports, es_require) {
-                            'use strict';
-
-                            var _0x1ff9af = es_require(0xc)['version'],
-                                _export_1 = es_require(0x1),
-                                _0x3b4edf = {};
-                            ['object', 'boolean', 'number', 'function', 'string', 'symbol']['forEach'](function (_0x58c355, _0x21a150) {
-                                _0x3b4edf[_0x58c355] = function (_0x1a56bc) {
-                                    return _0x1f7d16(_0x1a56bc) === _0x58c355 || 'a' + (_0x21a150 < 0x1 ? 'n ' : ' ') + _0x58c355;
-                                };
-                            });
-                            var _0x2389bd = {};
-                            _0x3b4edf['transitional'] = function (_0x403b86, _0x1dd1c3, _0x8f433d) {
-
-
-                                function _0x165bd0(_0x2ccba7, _0x3bb4be) {
-
-                                    return '[Axios v' + _0x1ff9af + ('] Transitional option \x27') + _0x2ccba7 + '\x27' + _0x3bb4be + (_0x8f433d ? '. ' + _0x8f433d : '');
-                                }
-                                return function (_0x30ff9f, _0x2f4ada, _0x2b9595) {
-
-                                    if (!0x1 === _0x403b86) throw new _export_1(_0x165bd0(_0x2f4ada, ' has been removed' + (_0x1dd1c3 ? ' in ' + _0x1dd1c3 : '')), _export_1['ERR_DEPRECATED']);
-                                    return _0x1dd1c3 && !_0x2389bd[_0x2f4ada] && (_0x2389bd[_0x2f4ada] = !0x0, console['warn'](_0x165bd0(_0x2f4ada, ' has been deprecated since v' + _0x1dd1c3 + (' and will be removed in the near future')))), !_0x403b86 || _0x403b86(_0x30ff9f, _0x2f4ada, _0x2b9595);
-                                };
-                            }, es_module['exports'] = {
-                                'assertOptions': function (_0x5bc41d, _0x50deda, _0x1224d8) {
-
-                                    if ('object' != _0x1f7d16(_0x5bc41d)) throw new _export_1('options must be an object', _export_1['ERR_BAD_OPTION_VALUE']);
-                                    for (var _0x4ade33 = Object['keys'](_0x5bc41d), _0x415c1f = _0x4ade33['length']; _0x415c1f-- > 0x0;) {
-                                        var _0x514e22 = _0x4ade33[_0x415c1f],
-                                            _0x145c48 = _0x50deda[_0x514e22];
-                                        if (_0x145c48) {
-                                            var _0x1d2555 = _0x5bc41d[_0x514e22],
-                                                _0x309764 = void 0x0 === _0x1d2555 || _0x145c48(_0x1d2555, _0x514e22, _0x5bc41d);
-                                            if (!0x0 !== _0x309764) throw new _export_1('option ' + _0x514e22 + ' must be ' + _0x309764, _export_1['ERR_BAD_OPTION_VALUE']);
-                                        } else {
-                                            if (!0x0 !== _0x1224d8) throw new _export_1('Unknown option ' + _0x514e22, _export_1['ERR_BAD_OPTION']);
-                                        }
-                                    }
-                                },
-                                'validators': _0x3b4edf
-                            };
-                        },
-                        function (es_module, es_exports, es_require) {
-                            'use strict';
-
-                            var _export_2 = es_require(0x2);
-
-                            function _0x4ef311(_0x2bef98) {
-
-                                if ('function' != typeof _0x2bef98) throw new TypeError('executor must be a function.');
-                                var _0xb3f4d9;
-                                this['promise'] = new Promise(function (_0x130338) {
-                                    _0xb3f4d9 = _0x130338;
-                                });
-                                var _0x5a348f = this;
-                                this['promise']['then'](function (_0x62da7f) {
-
-                                    if (_0x5a348f['_listeners']) {
-                                        var _0x1415fe, _0x445462 = _0x5a348f['_listeners']['length'];
-                                        for (_0x1415fe = 0x0; _0x1415fe < _0x445462; _0x1415fe++) _0x5a348f['_listeners'][_0x1415fe](_0x62da7f);
-                                        _0x5a348f['_listeners'] = null;
-                                    }
-                                }), this['promise']['then'] = function (_0x2555ee) {
-                                    var _0x16acfc, _0x32d356 = new Promise(function (_0xe51d3e) {
-
-                                        _0x5a348f['subscribe'](_0xe51d3e), _0x16acfc = _0xe51d3e;
-                                    })['then'](_0x2555ee);
-                                    return _0x32d356['cancel'] = function () {
-
-                                        _0x5a348f['unsubscribe'](_0x16acfc);
-                                    }, _0x32d356;
-                                }, _0x2bef98(function (_0x370653) {
-
-                                    _0x5a348f['reason'] || (_0x5a348f['reason'] = new _export_2(_0x370653), _0xb3f4d9(_0x5a348f['reason']));
-                                });
-                            }
-                            _0x4ef311['prototype']['throwIfRequested'] = function () {
-
-                                if (this['reason']) throw this['reason'];
-                            }, _0x4ef311['prototype']['subscribe'] = function (_0x4777f4) {
-
-                                this['reason'] ? _0x4777f4(this['reason']) : this['_listeners'] ? this['_listeners']['push'](_0x4777f4) : this['_listeners'] = [_0x4777f4];
-                            }, _0x4ef311['prototype']['unsubscribe'] = function (_0x548c42) {
-
-                                if (this['_listeners']) {
-                                    var _0x2cbe3b = this['_listeners']['indexOf'](_0x548c42); - 0x1 !== _0x2cbe3b && this['_listeners']['splice'](_0x2cbe3b, 0x1);
-                                }
-                            }, _0x4ef311['source'] = function () {
-                                var _0x2740e6;
-                                return {
-                                    'token': new _0x4ef311(function (_0x526ee8) {
-                                        _0x2740e6 = _0x526ee8;
-                                    }),
-                                    'cancel': _0x2740e6
-                                };
-                            }, es_module['exports'] = _0x4ef311;
-                        },
-                        function (es_module, es_exports, es_require) {
-                            'use strict';
-
-                            es_module['exports'] = function (_0x53f7c2) {
-                                return function (_0x2f6f5b) {
-                                    return _0x53f7c2['apply'](null, _0x2f6f5b);
-                                };
-                            };
-                        },
-                        function (es_module, es_exports, es_require) {
-                            'use strict';
-
-                            var _export_0 = es_require(0x0);
-                            es_module['exports'] = function (_0x3ad693) {
-
-                                return _export_0['isObject'](_0x3ad693) && !0x0 === _0x3ad693['isAxiosError'];
-                            };
-                        }
-                    ]);
-            },
-
-
-            'object' == _0x1f7d16(es_exports) && 'object' == _0x1f7d16(_0x5c7778) ? _0x5c7778['exports'] = _0x2c1a24() : (_0x2fa559 = [], void 0x0 === (_0x1d077c = 'function' == typeof (_0x5e516e = _0x2c1a24) ? _0x5e516e['apply'](es_exports, _0x2fa559) : _0x5e516e) || (
-                _0x5c7778['exports'] = _0x1d077c));
-    } ['call'](this, es_require(0x5e), es_require(0x146)['Buffer'], es_require(0x80)(es_module)));
-
-}, function id_007_0x7(es_module, es_exports, es_require) {
+}, , function id_007_0x7(es_module, es_exports, es_require) {
     var _0x1009eb = es_require(0x36)('wks'),
         _export_31 = es_require(0x1f),
         _0x7d3905 = es_require(0x2)['Symbol'],
@@ -1633,13 +587,13 @@ var EJS = function (modules) {
         _0x3e332b = function (_0x13b43a, _0x5726a3, _0x3b1b3b, _0x58d039) {
             var _0x755f4e = String(_export_26(_0x13b43a)),
                 _0x334c5f = '<' + _0x5726a3;
-            return '' !== _0x3b1b3b && (_0x334c5f += ' ' + _0x3b1b3b + '=\x22' + String(_0x58d039)['replace'](_0x5a99db, '&quot;') + '\x22'), _0x334c5f + '>' + _0x755f4e + '</' + _0x5726a3 + '>';
+            return '' !== _0x3b1b3b && (_0x334c5f += ' ' + _0x3b1b3b + '="' + String(_0x58d039)['replace'](_0x5a99db, '&quot;') + '"'), _0x334c5f + '>' + _0x755f4e + '</' + _0x5726a3 + '>';
         };
     es_module['exports'] = function (_0x35f692, _0x1faffd) {
         var _0x5ba665 = {};
         _0x5ba665[_0x35f692] = _0x1faffd(_0x3e332b), _export_0(_export_0['P'] + _export_0['F'] * _export_3(function () {
-            var _0x558ec1 = '' [_0x35f692]('\x22');
-            return _0x558ec1 !== _0x558ec1['toLowerCase']() || _0x558ec1['split']('\x22')['length'] > 0x3;
+            var _0x558ec1 = '' [_0x35f692]('"');
+            return _0x558ec1 !== _0x558ec1['toLowerCase']() || _0x558ec1['split']('"')['length'] > 0x3;
         }), 'String', _0x5ba665);
     };
 }, function id_015_0xf(es_module, es_exports) {
@@ -1783,375 +737,7 @@ var EJS = function (modules) {
         if (null == _0x16695c) throw TypeError('Can\x27t call method on  ' + _0x16695c);
         return _0x16695c;
     };
-}, function id_027_0x1b(es_module, es_exports, es_require) {
-    'use strict';
-
-    if (es_require(0xa)) {
-        var _export_32 = es_require(0x20),
-            _export_2 = es_require(0x2),
-            _export_3 = es_require(0x3),
-            _export_0 = es_require(0x0),
-            _export_65 = es_require(0x41),
-            _export_90 = es_require(0x5a),
-            _export_19 = es_require(0x13),
-            _export_44 = es_require(0x2c),
-            _export_30 = es_require(0x1e),
-            _export_16 = es_require(0x10),
-            _export_45 = es_require(0x2d),
-            _export_21 = es_require(0x15),
-            _export_8 = es_require(0x8),
-            _export_122 = es_require(0x7a),
-            _export_34 = es_require(0x22),
-            _export_28 = es_require(0x1c),
-            _export_15 = es_require(0xf),
-            _export_50 = es_require(0x32),
-            _export_5 = es_require(0x5),
-            _export_12 = es_require(0xc),
-            _export_82 = es_require(0x52),
-            _export_35 = es_require(0x23),
-            _export_37 = es_require(0x25),
-            _0x477a04 = es_require(0x24)['f'],
-            _export_84 = es_require(0x54),
-            _export_31 = es_require(0x1f),
-            _export_7 = es_require(0x7),
-            _export_24 = es_require(0x18),
-            _export_55 = es_require(0x37),
-            _export_51 = es_require(0x33),
-            _export_86 = es_require(0x56),
-            _export_42 = es_require(0x2a),
-            _export_58 = es_require(0x3a),
-            _export_43 = es_require(0x2b),
-            _export_85 = es_require(0x55),
-            _export_113 = es_require(0x71),
-            _export_11 = es_require(0xb),
-            _export_22 = es_require(0x16),
-            _0x40c3b5 = _export_11['f'],
-            _0x4e798b = _export_22['f'],
-            _0x30bf2a = _export_2['RangeError'],
-            _0x44165e = _export_2['TypeError'],
-            _0x1cefcb = _export_2['Uint8Array'],
-            _0x514393 = Array['prototype'],
-            _0x56d975 = _export_90['ArrayBuffer'],
-            _0x456bce = _export_90['DataView'],
-            _0x474fa0 = _export_24(0x0),
-            _0x3c30dc = _export_24(0x2),
-            _0x49fa46 = _export_24(0x3),
-            _0x2857c6 = _export_24(0x4),
-            _0x1bee3a = _export_24(0x5),
-            _0x39504a = _export_24(0x6),
-            _0x56e499 = _export_55(!0x0),
-            _0x5cbcc1 = _export_55(!0x1),
-            _0x1d8c9b = _export_86['values'],
-            _0x331784 = _export_86['keys'],
-            _0x2dc7c1 = _export_86['entries'],
-            _0x48f36e = _0x514393['lastIndexOf'],
-            _0x5c92a2 = _0x514393['reduce'],
-            _0x481282 = _0x514393['reduceRight'],
-            _0x237026 = _0x514393['join'],
-            _0x289d51 = _0x514393['sort'],
-            _0x3c175a = _0x514393['slice'],
-            _0x41f3e4 = _0x514393['toString'],
-            _0x1dc7ac = _0x514393['toLocaleString'],
-            _0x152346 = _export_7('iterator'),
-            _0x536d61 = _export_7('toStringTag'),
-            _0x40b0bb = _export_31('typed_constructor'),
-            _0x3326f5 = _export_31('def_constructor'),
-            _0x3841a7 = _export_65['CONSTR'],
-            _0x17eb97 = _export_65['TYPED'],
-            _0x3143a2 = _export_65['VIEW'],
-            _0x1263c0 = _export_24(0x1, function (_0x353dba, _0x4dff2f) {
-                return _0x24d41a(_export_51(_0x353dba, _0x353dba[_0x3326f5]), _0x4dff2f);
-            }),
-            _0xa34b66 = _export_3(function () {
-
-                return 0x1 === new _0x1cefcb(new Uint16Array([0x1])['buffer'])[0x0];
-            }),
-            _0x4403ba = !!_0x1cefcb && !!_0x1cefcb['prototype']['set'] && _export_3(function () {
-                new _0x1cefcb(0x1)['set']({});
-            }),
-            _0x259ed4 = function (_0x49a207, _0x3052ad) {
-                var _0x2eabdf = _export_21(_0x49a207);
-                if (_0x2eabdf < 0x0 || _0x2eabdf % _0x3052ad) throw _0x30bf2a('Wrong offset!');
-                return _0x2eabdf;
-            },
-            _0xe9165d = function (_0x3694b8) {
-                if (_export_5(_0x3694b8) && _0x17eb97 in _0x3694b8) return _0x3694b8;
-                throw _0x44165e(_0x3694b8 + (' is not a typed array!'));
-            },
-            _0x24d41a = function (_0x458eda, _0x2d1e16) {
-
-                if (!(_export_5(_0x458eda) && _0x40b0bb in _0x458eda)) throw _0x44165e('It is not a typed array constructor!');
-                return new _0x458eda(_0x2d1e16);
-            },
-            _0x5f1900 = function (_0x1f648b, _0xc0b437) {
-                return _0x8dfd2c(_export_51(_0x1f648b, _0x1f648b[_0x3326f5]), _0xc0b437);
-            },
-            _0x8dfd2c = function (_0x87c79, _0x362afb) {
-                for (var _0xd3f45b = 0x0, _0xe95fbf = _0x362afb['length'], _0x11de56 = _0x24d41a(_0x87c79, _0xe95fbf); _0xe95fbf > _0xd3f45b;) _0x11de56[_0xd3f45b] = _0x362afb[_0xd3f45b++];
-                return _0x11de56;
-            },
-            _0x4e9967 = function (_0x261129, _0x538a5b, _0x594441) {
-                _0x40c3b5(_0x261129, _0x538a5b, {
-                    'get': function () {
-                        return this['_d'][_0x594441];
-                    }
-                });
-            },
-            _0x207d18 = function (_0x3e9220) {
-                var _0x52ba87, _0xc8fd37, _0x4dde9c, _0x4c963a, _0x37f585, _0x37280a, _0x934d56 = _export_12(_0x3e9220),
-                    _0x387a0b = arguments['length'],
-                    _0x292201 = _0x387a0b > 0x1 ? arguments[0x1] : void 0x0,
-                    _0x4b61dd = void 0x0 !== _0x292201,
-                    _0x2c8911 = _export_84(_0x934d56);
-                if (null != _0x2c8911 && !_export_82(_0x2c8911)) {
-                    for (_0x37280a = _0x2c8911['call'](_0x934d56), _0x4dde9c = [], _0x52ba87 = 0x0; !(_0x37f585 = _0x37280a['next']())['done']; _0x52ba87++) _0x4dde9c['push'](_0x37f585['value']);
-                    _0x934d56 = _0x4dde9c;
-                }
-                for (_0x4b61dd && _0x387a0b > 0x2 && (_0x292201 = _export_19(_0x292201, arguments[0x2], 0x2)), _0x52ba87 = 0x0, _0xc8fd37 = _export_8(_0x934d56['length']), _0x4c963a = _0x24d41a(this, _0xc8fd37); _0xc8fd37 > _0x52ba87; _0x52ba87++) _0x4c963a[_0x52ba87] = _0x4b61dd ? _0x292201(_0x934d56[_0x52ba87], _0x52ba87) : _0x934d56[_0x52ba87];
-                return _0x4c963a;
-            },
-            _0x3e05b3 = function () {
-
-                for (var _0x1ae0b6 = 0x0, _0x4357bb = arguments['length'], _0x1fecb1 = _0x24d41a(this, _0x4357bb); _0x4357bb > _0x1ae0b6;) _0x1fecb1[_0x1ae0b6] = arguments[_0x1ae0b6++];
-                return _0x1fecb1;
-            },
-            _0x17cef8 = !!_0x1cefcb && _export_3(function () {
-
-                _0x1dc7ac['call'](new _0x1cefcb(0x1));
-            }),
-            _0x4d403a = function () {
-
-                return _0x1dc7ac['apply'](_0x17cef8 ? _0x3c175a['call'](_0xe9165d(this)) : _0xe9165d(this), arguments);
-            },
-            _0x4d6ee3 = {
-                'copyWithin': function (_0x5ab645, _0x21c3b0) {
-
-                    return _export_113['call'](_0xe9165d(this), _0x5ab645, _0x21c3b0, arguments['length'] > 0x2 ? arguments[0x2] : void 0x0);
-                },
-                'every': function (_0x3ea364) {
-
-                    return _0x2857c6(_0xe9165d(this), _0x3ea364, arguments['length'] > 0x1 ? arguments[0x1] : void 0x0);
-                },
-                'fill': function (_0xd29e19) {
-
-                    return _export_85['apply'](_0xe9165d(this), arguments);
-                },
-                'filter': function (_0x49b2b1) {
-                    return _0x5f1900(this, _0x3c30dc(_0xe9165d(this), _0x49b2b1, arguments['length'] > 0x1 ? arguments[0x1] : void 0x0));
-                },
-                'find': function (_0x30caa7) {
-
-                    return _0x1bee3a(_0xe9165d(this), _0x30caa7, arguments['length'] > 0x1 ? arguments[0x1] : void 0x0);
-                },
-                'findIndex': function (_0x576369) {
-
-                    return _0x39504a(_0xe9165d(this), _0x576369, arguments['length'] > 0x1 ? arguments[0x1] : void 0x0);
-                },
-                'forEach': function (_0x3a423f) {
-
-                    _0x474fa0(_0xe9165d(this), _0x3a423f, arguments['length'] > 0x1 ? arguments[0x1] : void 0x0);
-                },
-                'indexOf': function (_0x644a8) {
-
-                    return _0x5cbcc1(_0xe9165d(this), _0x644a8, arguments['length'] > 0x1 ? arguments[0x1] : void 0x0);
-                },
-                'includes': function (_0x106912) {
-
-                    return _0x56e499(_0xe9165d(this), _0x106912, arguments['length'] > 0x1 ? arguments[0x1] : void 0x0);
-                },
-                'join': function (_0x1bd010) {
-
-                    return _0x237026['apply'](_0xe9165d(this), arguments);
-                },
-                'lastIndexOf': function (_0x439e99) {
-                    return _0x48f36e['apply'](_0xe9165d(this), arguments);
-                },
-                'map': function (_0x864d64) {
-
-                    return _0x1263c0(_0xe9165d(this), _0x864d64, arguments['length'] > 0x1 ? arguments[0x1] : void 0x0);
-                },
-                'reduce': function (_0x171bbe) {
-
-                    return _0x5c92a2['apply'](_0xe9165d(this), arguments);
-                },
-                'reduceRight': function (_0x2e941b) {
-
-                    return _0x481282['apply'](_0xe9165d(this), arguments);
-                },
-                'reverse': function () {
-
-                    for (var _0x3ce8ed, _0x10f5fd = _0xe9165d(this)['length'], _0x56f4c7 = Math['floor'](_0x10f5fd / 0x2), _0x2c22e6 = 0x0; _0x2c22e6 < _0x56f4c7;) _0x3ce8ed = this[_0x2c22e6], this[_0x2c22e6++] = this[--_0x10f5fd], this[_0x10f5fd] = _0x3ce8ed;
-                    return this;
-                },
-                'some': function (_0x4c6957) {
-                    return _0x49fa46(_0xe9165d(this), _0x4c6957, arguments['length'] > 0x1 ? arguments[0x1] : void 0x0);
-                },
-                'sort': function (_0x4c5430) {
-                    return _0x289d51['call'](_0xe9165d(this), _0x4c5430);
-                },
-                'subarray': function (_0x2130e0, _0xa70a94) {
-                    var _0x10075c = _0xe9165d(this),
-                        _0x53a7ea = _0x10075c['length'],
-                        _0x166d87 = _export_34(_0x2130e0, _0x53a7ea);
-                    return new(_export_51(_0x10075c, _0x10075c[_0x3326f5]))(_0x10075c['buffer'], _0x10075c['byteOffset'] + _0x166d87 * _0x10075c['BYTES_PER_ELEMENT'], _export_8((void 0x0 === _0xa70a94 ? _0x53a7ea : _export_34(_0xa70a94, _0x53a7ea)) - _0x166d87));
-                }
-            },
-            _0x29abd6 = function (_0x355675, _0x7135f5) {
-                return _0x5f1900(this, _0x3c175a['call'](_0xe9165d(this), _0x355675, _0x7135f5));
-            },
-            _0x421db2 = function (_0x5967ac) {
-
-                _0xe9165d(this);
-                var _0x30c3c6 = _0x259ed4(arguments[0x1], 0x1),
-                    _0x321a83 = this['length'],
-                    _0x2a6c05 = _export_12(_0x5967ac),
-                    _0x21dbcf = _export_8(_0x2a6c05['length']),
-                    _0x45464e = 0x0;
-                if (_0x21dbcf + _0x30c3c6 > _0x321a83) throw _0x30bf2a('Wrong length!');
-                for (; _0x45464e < _0x21dbcf;) this[_0x30c3c6 + _0x45464e] = _0x2a6c05[_0x45464e++];
-            },
-            _0x2e8ef7 = {
-                'entries': function () {
-
-                    return _0x2dc7c1['call'](_0xe9165d(this));
-                },
-                'keys': function () {
-
-                    return _0x331784['call'](_0xe9165d(this));
-                },
-                'values': function () {
-
-                    return _0x1d8c9b['call'](_0xe9165d(this));
-                }
-            },
-            _0x1543e6 = function (_0x5973eb, _0x438a1a) {
-
-                return _export_5(_0x5973eb) && _0x5973eb[_0x17eb97] && 'symbol' != typeof _0x438a1a && _0x438a1a in _0x5973eb && String(+_0x438a1a) == String(_0x438a1a);
-            },
-            _0x571f4e = function (_0x2c59ed, _0x11565d) {
-                return _0x1543e6(_0x2c59ed, _0x11565d = _export_28(_0x11565d, !0x0)) ? _export_30(0x2, _0x2c59ed[_0x11565d]) : _0x4e798b(_0x2c59ed, _0x11565d);
-            },
-            _0x55dd1b = function (_0x12de65, _0x408b7e, _0x27bb17) {
-
-                return !(_0x1543e6(_0x12de65, _0x408b7e = _export_28(_0x408b7e, !0x0)) && _export_5(_0x27bb17) && _export_15(_0x27bb17, 'value')) || _export_15(_0x27bb17, 'get') || _export_15(_0x27bb17, 'set') || _0x27bb17['configurable'] || _export_15(_0x27bb17, 'writable') && !_0x27bb17['writable'] || _export_15(_0x27bb17, 'enumerable') && !_0x27bb17['enumerable'] ? _0x40c3b5(_0x12de65, _0x408b7e, _0x27bb17) : (_0x12de65[_0x408b7e] = _0x27bb17['value'], _0x12de65);
-            };
-        _0x3841a7 || (_export_22['f'] = _0x571f4e, _export_11['f'] = _0x55dd1b), _export_0(_export_0['S'] + _export_0['F'] * !_0x3841a7, 'Object', {
-            'getOwnPropertyDescriptor': _0x571f4e,
-            'defineProperty': _0x55dd1b
-        }), _export_3(function () {
-
-            _0x41f3e4['call']({});
-        }) && (_0x41f3e4 = _0x1dc7ac = function () {
-
-            return _0x237026['call'](this);
-        });
-        var _0x11e40d = _export_45({}, _0x4d6ee3);
-        _export_45(_0x11e40d, _0x2e8ef7), _export_16(_0x11e40d, _0x152346, _0x2e8ef7['values']), _export_45(_0x11e40d, {
-            'slice': _0x29abd6,
-            'set': _0x421db2,
-            'constructor': function () {},
-            'toString': _0x41f3e4,
-            'toLocaleString': _0x4d403a
-        }), _0x4e9967(_0x11e40d, 'buffer', 'b'), _0x4e9967(_0x11e40d, 'byteOffset', 'o'), _0x4e9967(_0x11e40d, 'byteLength', 'l'), _0x4e9967(_0x11e40d, 'length', 'e'), _0x40c3b5(_0x11e40d, _0x536d61, {
-            'get': function () {
-                return this[_0x17eb97];
-            }
-        }), es_module['exports'] = function (_0x53bc89, _0x57a148, _0x3e4685, _0x339afa) {
-            var _0x18447e = _0x53bc89 + ((_0x339afa = !!_0x339afa) ? 'Clamped' : '') + 'Array',
-                _0x2dba35 = 'get' + _0x53bc89,
-                _0x4444fb = 'set' + _0x53bc89,
-                _0x3ffa07 = _export_2[_0x18447e],
-                _0x4a9ce1 = _0x3ffa07 || {},
-                _0x5a1693 = _0x3ffa07 && _export_37(_0x3ffa07),
-                _0x286efa = !_0x3ffa07 || !_export_65['ABV'],
-                _0x166ab8 = {},
-                _0x3c9ff7 = _0x3ffa07 && _0x3ffa07['prototype'],
-                _0x169b13 = function (_0xc4d492, _0x365d0a) {
-                    _0x40c3b5(_0xc4d492, _0x365d0a, {
-                        'get': function () {
-                            return function (_0x278f6f, _0xe646f0) {
-                                var _0x45d81a = _0x278f6f['_d'];
-                                return _0x45d81a['v'][_0x2dba35](_0xe646f0 * _0x57a148 + _0x45d81a['o'], _0xa34b66);
-                            }(this, _0x365d0a);
-                        },
-                        'set': function (_0xd2a38d) {
-                            return function (_0x5f4d25, _0x32efce, _0x3924c6) {
-                                var _0x4714a7 = _0x5f4d25['_d'];
-                                _0x339afa && (_0x3924c6 = (_0x3924c6 = Math['round'](_0x3924c6)) < 0x0 ? 0x0 : _0x3924c6 > 0xff ? 0xff : 0xff & _0x3924c6), _0x4714a7['v'][_0x4444fb](_0x32efce * _0x57a148 + _0x4714a7['o'], _0x3924c6, _0xa34b66);
-                            }(this, _0x365d0a, _0xd2a38d);
-                        },
-                        'enumerable': !0x0
-                    });
-                };
-            _0x286efa ? (_0x3ffa07 = _0x3e4685(function (_0x518e23, _0x3dce41, _0x5426b9, _0x172d54) {
-
-                _export_44(_0x518e23, _0x3ffa07, _0x18447e, '_d');
-                var _0x5c7d8b, _0x4cc897, _0x2c3b5e, _0x1c05cd, _0x4b96a2 = 0x0,
-                    _0x12cdcd = 0x0;
-                if (_export_5(_0x3dce41)) {
-                    if (!(_0x3dce41 instanceof _0x56d975 || 'ArrayBuffer' == (_0x1c05cd = _export_50(_0x3dce41)) || 'SharedArrayBuffer' == _0x1c05cd)) return _0x17eb97 in _0x3dce41 ? _0x8dfd2c(_0x3ffa07, _0x3dce41) : _0x207d18['call'](_0x3ffa07, _0x3dce41);
-                    _0x5c7d8b = _0x3dce41, _0x12cdcd = _0x259ed4(_0x5426b9, _0x57a148);
-                    var _0x54b1fc = _0x3dce41['byteLength'];
-                    if (void 0x0 === _0x172d54) {
-                        if (_0x54b1fc % _0x57a148) throw _0x30bf2a('Wrong length!');
-                        if ((_0x4cc897 = _0x54b1fc - _0x12cdcd) < 0x0) throw _0x30bf2a('Wrong length!');
-                    } else {
-                        if ((_0x4cc897 = _export_8(_0x172d54) * _0x57a148) + _0x12cdcd > _0x54b1fc) throw _0x30bf2a('Wrong length!');
-                    }
-                    _0x2c3b5e = _0x4cc897 / _0x57a148;
-                } else _0x2c3b5e = _export_122(_0x3dce41), _0x5c7d8b = new _0x56d975(_0x4cc897 = _0x2c3b5e * _0x57a148);
-                for (_export_16(_0x518e23, '_d', {
-                        'b': _0x5c7d8b,
-                        'o': _0x12cdcd,
-                        'l': _0x4cc897,
-                        'e': _0x2c3b5e,
-                        'v': new _0x456bce(_0x5c7d8b)
-                    }); _0x4b96a2 < _0x2c3b5e;) _0x169b13(_0x518e23, _0x4b96a2++);
-            }), _0x3c9ff7 = _0x3ffa07['prototype'] = _export_35(_0x11e40d), _export_16(_0x3c9ff7, 'constructor', _0x3ffa07)) : _export_3(function () {
-                _0x3ffa07(0x1);
-            }) && _export_3(function () {
-                new _0x3ffa07(-0x1);
-            }) && _export_58(function (_0x2a06a7) {
-                new _0x3ffa07(), new _0x3ffa07(null), new _0x3ffa07(1.5), new _0x3ffa07(_0x2a06a7);
-            }, !0x0) || (_0x3ffa07 = _0x3e4685(function (_0x414673, _0x30d5ca, _0x5b9484, _0x1c1669) {
-                var _0x4dc9a1;
-                return _export_44(_0x414673, _0x3ffa07, _0x18447e), _export_5(_0x30d5ca) ? _0x30d5ca instanceof _0x56d975 || 'ArrayBuffer' == (_0x4dc9a1 = _export_50(_0x30d5ca)) || 'SharedArrayBuffer' == _0x4dc9a1 ? void 0x0 !== _0x1c1669 ? new _0x4a9ce1(_0x30d5ca, _0x259ed4(_0x5b9484, _0x57a148), _0x1c1669) : void 0x0 !== _0x5b9484 ? new _0x4a9ce1(_0x30d5ca, _0x259ed4(_0x5b9484, _0x57a148)) : new _0x4a9ce1(_0x30d5ca) : _0x17eb97 in _0x30d5ca ? _0x8dfd2c(_0x3ffa07, _0x30d5ca) : _0x207d18['call'](_0x3ffa07, _0x30d5ca) : new _0x4a9ce1(_export_122(_0x30d5ca));
-            }), _0x474fa0(_0x5a1693 !== Function['prototype'] ? _0x477a04(_0x4a9ce1)['concat'](_0x477a04(_0x5a1693)) : _0x477a04(_0x4a9ce1), function (_0x198879) {
-                _0x198879 in _0x3ffa07 || _export_16(_0x3ffa07, _0x198879, _0x4a9ce1[_0x198879]);
-            }), _0x3ffa07['prototype'] = _0x3c9ff7, _export_32 || (_0x3c9ff7['constructor'] = _0x3ffa07));
-            var _0x33d750 = _0x3c9ff7[_0x152346],
-                _0x7db752 = !!_0x33d750 && ('values' == _0x33d750['name'] || null == _0x33d750['name']),
-                _0x5e94bb = _0x2e8ef7['values'];
-            _export_16(_0x3ffa07, _0x40b0bb, !0x0), _export_16(_0x3c9ff7, _0x17eb97, _0x18447e), _export_16(_0x3c9ff7, _0x3143a2, !0x0), _export_16(_0x3c9ff7, _0x3326f5, _0x3ffa07), (_0x339afa ? new _0x3ffa07(0x1)[_0x536d61] == _0x18447e : _0x536d61 in _0x3c9ff7) || _0x40c3b5(_0x3c9ff7, _0x536d61, {
-                'get': function () {
-                    return _0x18447e;
-                }
-            }), _0x166ab8[_0x18447e] = _0x3ffa07, _export_0(_export_0['G'] + _export_0['W'] + _export_0['F'] * (_0x3ffa07 != _0x4a9ce1), _0x166ab8), _export_0(_export_0['S'], _0x18447e, {
-                'BYTES_PER_ELEMENT': _0x57a148
-            }), _export_0(_export_0['S'] + _export_0['F'] * _export_3(function () {
-
-                _0x4a9ce1['of']['call'](_0x3ffa07, 0x1);
-            }), _0x18447e, {
-                'from': _0x207d18,
-                'of': _0x3e05b3
-            }), 'BYTES_PER_ELEMENT' in _0x3c9ff7 || _export_16(_0x3c9ff7, 'BYTES_PER_ELEMENT', _0x57a148), _export_0(_export_0['P'], _0x18447e, _0x4d6ee3), _export_43(_0x18447e), _export_0(_export_0['P'] + _export_0['F'] * _0x4403ba, _0x18447e, {
-                'set': _0x421db2
-            }), _export_0(_export_0['P'] + _export_0['F'] * !_0x7db752, _0x18447e, _0x2e8ef7), _export_32 || _0x3c9ff7['toString'] == _0x41f3e4 || (_0x3c9ff7['toString'] = _0x41f3e4), _export_0(_export_0['P'] + _export_0['F'] * _export_3(function () {
-                new _0x3ffa07(0x1)['slice']();
-            }), _0x18447e, {
-                'slice': _0x29abd6
-            }), _export_0(_export_0['P'] + _export_0['F'] * (_export_3(function () {
-
-                return [0x1, 0x2]['toLocaleString']() != new _0x3ffa07([0x1, 0x2])['toLocaleString']();
-            }) || !_export_3(function () {
-
-                _0x3c9ff7['toLocaleString']['call']([0x1, 0x2]);
-            })), _0x18447e, {
-                'toLocaleString': _0x4d403a
-            }), _export_42[_0x18447e] = _0x7db752 ? _0x33d750 : _0x5e94bb, _export_32 || _0x7db752 || _export_16(_0x3c9ff7, _0x152346, _0x5e94bb);
-        };
-    } else es_module['exports'] = function () {};
-}, function id_028_0x1c(es_module, es_exports, es_require) {
+}, , function id_028_0x1c(es_module, es_exports, es_require) {
     var _export_5 = es_require(0x5);
     es_module['exports'] = function (_0x401af1, _0x5688dc) {
 
@@ -2351,20 +937,7 @@ var EJS = function (modules) {
 }, function indexbid_046_0x2e(es_module, es_exports, es_require) {
     console.log(es_module, es_exports);
     es_module['exports'] = () => {};
-}, function id_047_0x2f(es_module, es_exports) {
-    /*
-    var _0x35230c;
-    _0x35230c = (function () {
-        return this;
-    }());
-    try {
-        _0x35230c = _0x35230c || new Function('return this')();
-    } catch (_0x564626) {
-        'object' == typeof window && (_0x35230c = window);
-    }
-    */
-    es_module['exports'] = window;
-}, function id_048_0x30(es_module, es_exports, es_require) {
+}, , function id_048_0x30(es_module, es_exports, es_require) {
     var _export_25 = es_require(0x19);
     es_module['exports'] = Object('z')['propertyIsEnumerable'](0x0) ? Object : function (_0x3b9b6f) {
 
@@ -2394,7 +967,7 @@ var EJS = function (modules) {
         var _0x17fbf0, _0x5f193e = _export_4(_0x6e5996)['constructor'];
         return void 0x0 === _0x5f193e || null == (_0x17fbf0 = _export_4(_0x5f193e)[_0x33385e]) ? _0x2f0eb5 : _export_20(_0x17fbf0);
     };
-},, function saveAs_053_0x35(es_module, es_exports, es_require) {
+}, , function saveAs_053_0x35(es_module, es_exports, es_require) {
     (function (_0x46c728) {
         var _0x39e035, _0x7c34ef, _0x129747;
         _0x7c34ef = [], void 0x0 === (_0x129747 = 'function' == typeof (_0x39e035 = function () {
@@ -2483,7 +1056,7 @@ var EJS = function (modules) {
                 });
             _0x24613b['saveAs'] = _0x197ad0['saveAs'] = _0x197ad0, es_module['exports'] = _0x197ad0;
         }) ? _0x39e035['apply'](es_exports, _0x7c34ef) : _0x39e035) || (es_module['exports'] = _0x129747);
-    } ['call'](this, es_require(0x2f)));
+    } ['call'](this, window));
 }, function corejs_054_0x36(es_module, es_exports, es_require) {
     var _export_9 = es_require(0x9),
         _export_2 = es_require(0x2),
@@ -4071,766 +2644,7 @@ var EJS = function (modules) {
             }
         }), _0x4fffd2['webpackPolyfill'] = 0x1), _0x4fffd2;
     };
-},,, function id_131_0x83(es_module, es_exports, es_require) {
-    var _0x2f3a35, _0x18fbbd, _0xa48483;
-
-    function _0x576b1e(_0x102fa7) {
-
-        return (_0x576b1e = 'function' == typeof Symbol && 'symbol' == typeof Symbol['iterator'] ? function (_0x3a57c1) {
-            return typeof _0x3a57c1;
-        } : function (_0x164629) {
-
-            return _0x164629 && 'function' == typeof Symbol && _0x164629['constructor'] === Symbol && _0x164629 !== Symbol['prototype'] ? 'symbol' : typeof _0x164629;
-        })(_0x102fa7);
-    }! function (_0x37f679) {
-
-        'object' == _0x576b1e(es_exports) && void 0x0 !== es_module ? es_module['exports'] = _0x37f679() : (_0x18fbbd = [], void 0x0 === (_0xa48483 = 'function' == typeof (_0x2f3a35 = _0x37f679) ? _0x2f3a35['apply'](es_exports, _0x18fbbd) : _0x2f3a35) || (es_module['exports'] = _0xa48483));
-    }(function () {
-
-
-        function _0x2ba0b2() {}
-
-        function _0x35cc66(_0x32e0f4, _0x48578d) {
-
-            return this['identifier'] = _0x48578d['identifier'], this['position'] = _0x48578d['position'], this['frontPosition'] = _0x48578d['frontPosition'], this['collection'] = _0x32e0f4, this['defaults'] = {
-                'size': 0x64,
-                'threshold': 0.1,
-                'color': 'white',
-                'fadeTime': 0xfa,
-                'dataOnly': !0x1,
-                'restJoystick': !0x0,
-                'restOpacity': 0.5,
-                'mode': 'dynamic',
-                'zone': document['body'],
-                'lockX': !0x1,
-                'lockY': !0x1
-            }, this['config'](_0x48578d), 'dynamic' === this['options']['mode'] && (this['options']['restOpacity'] = 0x0), this['id'] = _0x35cc66['id'], _0x35cc66['id'] += 0x1, this['buildEl']()['stylize'](), this['instance'] = {
-                'el': this['ui']['el'],
-                'on': this['on']['bind'](this),
-                'off': this['off']['bind'](this),
-                'show': this['show']['bind'](this),
-                'hide': this['hide']['bind'](this),
-                'add': this['addToDom']['bind'](this),
-                'remove': this['removeFromDom']['bind'](this),
-                'destroy': this['destroy']['bind'](this),
-                'resetDirection': this['resetDirection']['bind'](this),
-                'computeDirection': this['computeDirection']['bind'](this),
-                'trigger': this['trigger']['bind'](this),
-                'position': this['position'],
-                'frontPosition': this['frontPosition'],
-                'ui': this['ui'],
-                'identifier': this['identifier'],
-                'id': this['id'],
-                'options': this['options']
-            }, this['instance'];
-        }
-
-        function _0x388233(_0x3db44a, _0x367bc2) {
-            var _0x27caad = this;
-            return _0x27caad['nipples'] = [], _0x27caad['idles'] = [], _0x27caad['actives'] = [], _0x27caad['ids'] = [], _0x27caad['pressureIntervals'] = {}, _0x27caad['manager'] = _0x3db44a, _0x27caad['id'] = _0x388233['id'], _0x388233['id'] += 0x1, _0x27caad['defaults'] = {
-                'zone': document['body'],
-                'multitouch': !0x1,
-                'maxNumberOfNipples': 0xa,
-                'mode': 'dynamic',
-                'position': {
-                    'top': 0x0,
-                    'left': 0x0
-                },
-                'catchDistance': 0xc8,
-                'size': 0x64,
-                'threshold': 0.1,
-                'color': 'white',
-                'fadeTime': 0xfa,
-                'dataOnly': !0x1,
-                'restJoystick': !0x0,
-                'restOpacity': 0.5,
-                'lockX': !0x1,
-                'lockY': !0x1
-            }, _0x27caad['config'](_0x367bc2), 'static' !== _0x27caad['options']['mode'] && 'semi' !== _0x27caad['options']['mode'] || (_0x27caad['options']['multitouch'] = !0x1), _0x27caad['options']['multitouch'] || (_0x27caad['options']['maxNumberOfNipples'] = 0x1), _0x27caad['updateBox'](), _0x27caad['prepareNipples'](), _0x27caad['bindings'](), _0x27caad['begin'](), _0x27caad['nipples'];
-        }
-
-        function _0x2a7ff9(_0x27cf5b) {
-            var _0x119813, _0x212949 = this;
-            return _0x212949['ids'] = {}, _0x212949['index'] = 0x0, _0x212949['collections'] = [], _0x212949['config'](_0x27cf5b), _0x212949['prepareCollections'](), _0x2b11bd['bindEvt'](window, 'resize', function (_0x5a42cd) {
-
-                clearTimeout(_0x119813), _0x119813 = setTimeout(function () {
-                    var _0x1b687c, _0x41aaef = _0x2b11bd['getScroll']();
-                    _0x212949['collections']['forEach'](function (_0x4d50eb) {
-
-                        _0x4d50eb['forEach'](function (_0x17e11d) {
-
-                            _0x1b687c = _0x17e11d['el']['getBoundingClientRect'](), _0x17e11d['position'] = {
-                                'x': _0x41aaef['x'] + _0x1b687c['left'],
-                                'y': _0x41aaef['y'] + _0x1b687c['top']
-                            };
-                        });
-                    });
-                }, 0x64);
-            }), _0x212949['collections'];
-        }
-        var _0x4ded36, _0x48747a = !!('ontouchstart' in window),
-            _0x228a73 = !!window['PointerEvent'],
-            _0x3486ce = !!window['MSPointerEvent'],
-            _0x1ce8c6 = {
-                'start': 'mousedown',
-                'move': 'mousemove',
-                'end': 'mouseup'
-            },
-            _0x1d3feb = {};
-        _0x228a73 ? _0x4ded36 = {
-            'start': 'pointerdown',
-            'move': 'pointermove',
-            'end': 'pointerup, pointercancel'
-        } : _0x3486ce ? _0x4ded36 = {
-            'start': 'MSPointerDown',
-            'move': 'MSPointerMove',
-            'end': 'MSPointerUp'
-        } : _0x48747a ? (_0x4ded36 = {
-            'start': 'touchstart',
-            'move': 'touchmove',
-            'end': 'touchend, touchcancel'
-        }, _0x1d3feb = _0x1ce8c6) : _0x4ded36 = _0x1ce8c6;
-        var _0x2b11bd = {
-            'distance': function (_0x3c3339, _0x45db09) {
-                var _0x5071c0 = _0x45db09['x'] - _0x3c3339['x'],
-                    _0x6d9e1f = _0x45db09['y'] - _0x3c3339['y'];
-                return Math['sqrt'](_0x5071c0 * _0x5071c0 + _0x6d9e1f * _0x6d9e1f);
-            },
-            'angle': function (_0x5dbec4, _0x2e985f) {
-                var _0x5e88fb = _0x2e985f['x'] - _0x5dbec4['x'],
-                    _0x3c6aa9 = _0x2e985f['y'] - _0x5dbec4['y'];
-                return _0x2b11bd['degrees'](Math['atan2'](_0x3c6aa9, _0x5e88fb));
-            },
-            'findCoord': function (_0x6b0d68, _0x40d578, _0x2dea6c) {
-                var _0x560bb6 = {
-                    'x': 0x0,
-                    'y': 0x0
-                };
-                return _0x2dea6c = _0x2b11bd['radians'](_0x2dea6c), _0x560bb6['x'] = _0x6b0d68['x'] - _0x40d578 * Math['cos'](_0x2dea6c), _0x560bb6['y'] = _0x6b0d68['y'] - _0x40d578 * Math['sin'](_0x2dea6c), _0x560bb6;
-            },
-            'radians': function (_0x1ceec9) {
-                return _0x1ceec9 * (Math['PI'] / 0xb4);
-            },
-            'degrees': function (_0x419db0) {
-                return _0x419db0 * (0xb4 / Math['PI']);
-            },
-            'bindEvt': function (_0x59ffab, _0x13d459, _0x4786fa) {
-
-                for (var _0x459902, _0xc55394 = _0x13d459['split'](/[ ,]+/g), _0x16ddce = 0x0; _0x16ddce < _0xc55394['length']; _0x16ddce += 0x1) _0x459902 = _0xc55394[_0x16ddce], _0x59ffab['addEventListener'] ? _0x59ffab['addEventListener'](_0x459902, _0x4786fa, !0x1) : _0x59ffab['attachEvent'] && _0x59ffab['attachEvent'](_0x459902, _0x4786fa);
-            },
-            'unbindEvt': function (_0x5dcf29, _0x2e2b9e, _0x2838b0) {
-
-                for (var _0x3d5436, _0xb47150 = _0x2e2b9e['split'](/[ ,]+/g), _0x5ceafd = 0x0; _0x5ceafd < _0xb47150['length']; _0x5ceafd += 0x1) _0x3d5436 = _0xb47150[_0x5ceafd], _0x5dcf29['removeEventListener'] ? _0x5dcf29['removeEventListener'](_0x3d5436, _0x2838b0) : _0x5dcf29['detachEvent'] && _0x5dcf29['detachEvent'](_0x3d5436, _0x2838b0);
-            },
-            'trigger': function (_0x5acd4e, _0x6e2801, _0x519c09) {
-                var _0x5e2d49 = new CustomEvent(_0x6e2801, _0x519c09);
-                _0x5acd4e['dispatchEvent'](_0x5e2d49);
-            },
-            'prepareEvent': function (_0x4fcea3) {
-
-                return _0x4fcea3['preventDefault'](), _0x4fcea3['type']['match'](/^touch/) ? _0x4fcea3['changedTouches'] : _0x4fcea3;
-            },
-            'getScroll': function () {
-
-                return {
-                    'x': void 0x0 !== window['pageXOffset'] ? window['pageXOffset'] : (document['documentElement'] || document['body']['parentNode'] || document['body'])['scrollLeft'],
-                    'y': void 0x0 !== window['pageYOffset'] ? window['pageYOffset'] : (document['documentElement'] || document['body']['parentNode'] || document['body'])['scrollTop']
-                };
-            },
-            'applyPosition': function (_0x34d4b9, _0x32bf67) {
-
-                _0x32bf67['top'] || _0x32bf67['right'] || _0x32bf67['bottom'] || _0x32bf67['left'] ? (_0x34d4b9['style']['top'] = _0x32bf67['top'], _0x34d4b9['style']['right'] = _0x32bf67['right'], _0x34d4b9['style']['bottom'] = _0x32bf67['bottom'], _0x34d4b9['style']['left'] = _0x32bf67['left']) : (_0x34d4b9['style']['left'] = _0x32bf67['x'] + 'px', _0x34d4b9['style']['top'] = _0x32bf67['y'] + 'px');
-            },
-            'getTransitionStyle': function (_0x5744be, _0x451c1a, _0x309f8d) {
-                var _0x345e67 = _0x2b11bd['configStylePropertyObject'](_0x5744be);
-                for (var _0x130251 in _0x345e67)
-                    if (_0x345e67['hasOwnProperty'](_0x130251)) {
-                        if ('string' == typeof _0x451c1a) _0x345e67[_0x130251] = _0x451c1a + ' ' + _0x309f8d;
-                        else {
-                            for (var _0x535a74 = '', _0x4a3575 = 0x0, _0x2a2721 = _0x451c1a['length']; _0x4a3575 < _0x2a2721; _0x4a3575 += 0x1) _0x535a74 += _0x451c1a[_0x4a3575] + ' ' + _0x309f8d + ', ';
-                            _0x345e67[_0x130251] = _0x535a74['slice'](0x0, -0x2);
-                        }
-                    } return _0x345e67;
-            },
-            'getVendorStyle': function (_0x1e47a2, _0x1bd805) {
-                var _0x4bcfac = _0x2b11bd['configStylePropertyObject'](_0x1e47a2);
-                for (var _0x4c372a in _0x4bcfac) _0x4bcfac['hasOwnProperty'](_0x4c372a) && (_0x4bcfac[_0x4c372a] = _0x1bd805);
-                return _0x4bcfac;
-            },
-            'configStylePropertyObject': function (_0x174e9b) {
-                var _0xff2582 = {};
-                return _0xff2582[_0x174e9b] = '', ['webkit', 'Moz', 'o']['forEach'](function (_0x579c52) {
-
-                    _0xff2582[_0x579c52 + _0x174e9b['charAt'](0x0)['toUpperCase']() + _0x174e9b['slice'](0x1)] = '';
-                }), _0xff2582;
-            },
-            'extend': function (_0x1f4208, _0x3e4a51) {
-                for (var _0x2b5c03 in _0x3e4a51) _0x3e4a51['hasOwnProperty'](_0x2b5c03) && (_0x1f4208[_0x2b5c03] = _0x3e4a51[_0x2b5c03]);
-                return _0x1f4208;
-            },
-            'safeExtend': function (_0x307d52, _0x1736bb) {
-                var _0x4c0bdf = {};
-                for (var _0x2e85c7 in _0x307d52) _0x307d52['hasOwnProperty'](_0x2e85c7) && _0x1736bb['hasOwnProperty'](_0x2e85c7) ? _0x4c0bdf[_0x2e85c7] = _0x1736bb[_0x2e85c7] : _0x307d52['hasOwnProperty'](_0x2e85c7) && (_0x4c0bdf[_0x2e85c7] = _0x307d52[_0x2e85c7]);
-                return _0x4c0bdf;
-            },
-            'map': function (_0x70f92d, _0x4dc52f) {
-
-                if (_0x70f92d['length']) {
-                    for (var _0x502285 = 0x0, _0x5f5d7c = _0x70f92d['length']; _0x502285 < _0x5f5d7c; _0x502285 += 0x1) _0x4dc52f(_0x70f92d[_0x502285]);
-                } else _0x4dc52f(_0x70f92d);
-            }
-        };
-        _0x2ba0b2['prototype']['on'] = function (_0x304328, _0x2eab21) {
-            var _0xdf6bc7, _0x261eb3 = this,
-                _0x1d2b26 = _0x304328['split'](/[ ,]+/g);
-            _0x261eb3['_handlers_'] = _0x261eb3['_handlers_'] || {};
-            for (var _0x400fbc = 0x0; _0x400fbc < _0x1d2b26['length']; _0x400fbc += 0x1) _0xdf6bc7 = _0x1d2b26[_0x400fbc], _0x261eb3['_handlers_'][_0xdf6bc7] = _0x261eb3['_handlers_'][_0xdf6bc7] || [], _0x261eb3['_handlers_'][_0xdf6bc7]['push'](_0x2eab21);
-            return _0x261eb3;
-        }, _0x2ba0b2['prototype']['off'] = function (_0xc8d34f, _0x1fad0e) {
-            var _0x145f02 = this;
-            return _0x145f02['_handlers_'] = _0x145f02['_handlers_'] || {}, void 0x0 === _0xc8d34f ? _0x145f02['_handlers_'] = {} : void 0x0 === _0x1fad0e ? _0x145f02['_handlers_'][_0xc8d34f] = null : _0x145f02['_handlers_'][_0xc8d34f] && _0x145f02['_handlers_'][_0xc8d34f]['indexOf'](_0x1fad0e) >= 0x0 && _0x145f02['_handlers_'][_0xc8d34f]['splice'](_0x145f02['_handlers_'][_0xc8d34f]['indexOf'](_0x1fad0e), 0x1), _0x145f02;
-        }, _0x2ba0b2['prototype']['trigger'] = function (_0x4c758d, _0x2942c7) {
-            var _0x3289a1, _0x1129d8 = this,
-                _0x2ace7d = _0x4c758d['split'](/[ ,]+/g);
-            _0x1129d8['_handlers_'] = _0x1129d8['_handlers_'] || {};
-            for (var _0x3ebd29 = 0x0; _0x3ebd29 < _0x2ace7d['length']; _0x3ebd29 += 0x1) _0x3289a1 = _0x2ace7d[_0x3ebd29], _0x1129d8['_handlers_'][_0x3289a1] && _0x1129d8['_handlers_'][_0x3289a1]['length'] && _0x1129d8['_handlers_'][_0x3289a1]['forEach'](function (_0x11aabb) {
-                _0x11aabb['call'](_0x1129d8, {
-                    'type': _0x3289a1,
-                    'target': _0x1129d8
-                }, _0x2942c7);
-            });
-        }, _0x2ba0b2['prototype']['config'] = function (_0x5035b6) {
-            var _0x1a381b = this;
-            _0x1a381b['options'] = _0x1a381b['defaults'] || {}, _0x5035b6 && (_0x1a381b['options'] = _0x2b11bd['safeExtend'](_0x1a381b['options'], _0x5035b6));
-        }, _0x2ba0b2['prototype']['bindEvt'] = function (_0x5a0f70, _0x1b8189) {
-            var _0x67d794 = this;
-            return _0x67d794['_domHandlers_'] = _0x67d794['_domHandlers_'] || {}, _0x67d794['_domHandlers_'][_0x1b8189] = function () {
-
-                'function' == typeof _0x67d794['on' + _0x1b8189] ? _0x67d794['on' + _0x1b8189]['apply'](_0x67d794, arguments) : console['warn']('[WARNING] : Missing \x22on' + _0x1b8189 + '\x22 handler.');
-            }, _0x2b11bd['bindEvt'](_0x5a0f70, _0x4ded36[_0x1b8189], _0x67d794['_domHandlers_'][_0x1b8189]), _0x1d3feb[_0x1b8189] && _0x2b11bd['bindEvt'](_0x5a0f70, _0x1d3feb[_0x1b8189], _0x67d794['_domHandlers_'][_0x1b8189]), _0x67d794;
-        }, _0x2ba0b2['prototype']['unbindEvt'] = function (_0x1da212, _0xbb5507) {
-            var _0x37c8ea = this;
-            return _0x37c8ea['_domHandlers_'] = _0x37c8ea['_domHandlers_'] || {}, _0x2b11bd['unbindEvt'](_0x1da212, _0x4ded36[_0xbb5507], _0x37c8ea['_domHandlers_'][_0xbb5507]), _0x1d3feb[_0xbb5507] && _0x2b11bd['unbindEvt'](_0x1da212, _0x1d3feb[_0xbb5507], _0x37c8ea['_domHandlers_'][_0xbb5507]), delete _0x37c8ea['_domHandlers_'][_0xbb5507], this;
-        }, _0x35cc66['prototype'] = new _0x2ba0b2(), _0x35cc66['constructor'] = _0x35cc66, _0x35cc66['id'] = 0x0, _0x35cc66['prototype']['buildEl'] = function (_0x3ba019) {
-
-            return this['ui'] = {}, this['options']['dataOnly'] ? this : (this['ui']['el'] = document['createElement']('div'), this['ui']['back'] = document['createElement']('div'), this['ui']['front'] = document['createElement']('div'), this['ui']['el']['className'] = 'nipple collection_' + this['collection']['id'], this['ui']['back']['className'] = 'back', this['ui']['front']['className'] = 'front', this['ui']['el']['setAttribute']('id', 'nipple_' + this['collection']['id'] + '_' + this['id']), this['ui']['el']['appendChild'](this['ui']['back']), this['ui']['el']['appendChild'](this['ui']['front']), this);
-        }, _0x35cc66['prototype']['stylize'] = function () {
-
-            if (this['options']['dataOnly']) return this;
-            var _0x553551 = this['options']['fadeTime'] + 'ms',
-                _0x1ecf8c = _0x2b11bd['getVendorStyle']('borderRadius', '50%'),
-                _0x5e6055 = _0x2b11bd['getTransitionStyle']('transition', 'opacity', _0x553551),
-                _0x33cd83 = {};
-            return _0x33cd83['el'] = {
-                'position': 'absolute',
-                'opacity': this['options']['restOpacity'],
-                'display': 'block',
-                'zIndex': 0x3e7
-            }, _0x33cd83['back'] = {
-                'position': 'absolute',
-                'display': 'block',
-                'width': this['options']['size'] + 'px',
-                'height': this['options']['size'] + 'px',
-                'marginLeft': -this['options']['size'] / 0x2 + 'px',
-                'marginTop': -this['options']['size'] / 0x2 + 'px',
-                'background': this['options']['color'],
-                'opacity': '.5'
-            }, _0x33cd83['front'] = {
-                'width': this['options']['size'] / 0x2 + 'px',
-                'height': this['options']['size'] / 0x2 + 'px',
-                'position': 'absolute',
-                'display': 'block',
-                'marginLeft': -this['options']['size'] / 0x4 + 'px',
-                'marginTop': -this['options']['size'] / 0x4 + 'px',
-                'background': this['options']['color'],
-                'opacity': '.5'
-            }, _0x2b11bd['extend'](_0x33cd83['el'], _0x5e6055), _0x2b11bd['extend'](_0x33cd83['back'], _0x1ecf8c), _0x2b11bd['extend'](_0x33cd83['front'], _0x1ecf8c), this['applyStyles'](_0x33cd83), this;
-        }, _0x35cc66['prototype']['applyStyles'] = function (_0x243d1f) {
-
-            for (var _0x377349 in this['ui'])
-                if (this['ui']['hasOwnProperty'](_0x377349)) {
-                    for (var _0x3d6fe2 in _0x243d1f[_0x377349]) this['ui'][_0x377349]['style'][_0x3d6fe2] = _0x243d1f[_0x377349][_0x3d6fe2];
-                } return this;
-        }, _0x35cc66['prototype']['addToDom'] = function () {
-
-            return this['options']['dataOnly'] || document['body']['contains'](this['ui']['el']) ? this : (this['options']['zone']['appendChild'](this['ui']['el']), this);
-        }, _0x35cc66['prototype']['removeFromDom'] = function () {
-
-            return this['options']['dataOnly'] || !document['body']['contains'](this['ui']['el']) ? this : (this['options']['zone']['removeChild'](this['ui']['el']), this);
-        }, _0x35cc66['prototype']['destroy'] = function () {
-
-            clearTimeout(this['removeTimeout']), clearTimeout(this['showTimeout']), clearTimeout(this['restTimeout']), this['trigger']('destroyed', this['instance']), this['removeFromDom'](), this['off']();
-        }, _0x35cc66['prototype']['show'] = function (_0x2f8968) {
-            var _0x32c7cc = this;
-            return _0x32c7cc['options']['dataOnly'] ? _0x32c7cc : (clearTimeout(_0x32c7cc['removeTimeout']), clearTimeout(_0x32c7cc['showTimeout']), clearTimeout(_0x32c7cc['restTimeout']), _0x32c7cc['addToDom'](), _0x32c7cc['restCallback'](), setTimeout(function () {
-
-                _0x32c7cc['ui']['el']['style']['opacity'] = 0x1;
-            }, 0x0), _0x32c7cc['showTimeout'] = setTimeout(function () {
-
-                _0x32c7cc['trigger']('shown', _0x32c7cc['instance']), 'function' == typeof _0x2f8968 && _0x2f8968['call'](this);
-            }, _0x32c7cc['options']['fadeTime']), _0x32c7cc);
-        }, _0x35cc66['prototype']['hide'] = function (_0x454efe) {
-            var _0x139de9 = this;
-            return _0x139de9['options']['dataOnly'] ? _0x139de9 : (_0x139de9['ui']['el']['style']['opacity'] = _0x139de9['options']['restOpacity'], clearTimeout(_0x139de9['removeTimeout']), clearTimeout(_0x139de9['showTimeout']), clearTimeout(_0x139de9['restTimeout']), _0x139de9['removeTimeout'] = setTimeout(function () {
-                var _0x5476eb = 'dynamic' === _0x139de9['options']['mode'] ? 'none' : 'block';
-                _0x139de9['ui']['el']['style']['display'] = _0x5476eb, 'function' == typeof _0x454efe && _0x454efe['call'](_0x139de9), _0x139de9['trigger']('hidden', _0x139de9['instance']);
-            }, _0x139de9['options']['fadeTime']), _0x139de9['options']['restJoystick'] && _0x139de9['restPosition'](), _0x139de9);
-        }, _0x35cc66['prototype']['restPosition'] = function (_0x14cceb) {
-            var _0x5a8ab0 = this;
-            _0x5a8ab0['frontPosition'] = {
-                'x': 0x0,
-                'y': 0x0
-            };
-            var _0x2731eb = _0x5a8ab0['options']['fadeTime'] + 'ms',
-                _0x5f0b0a = {};
-            _0x5f0b0a['front'] = _0x2b11bd['getTransitionStyle']('transition', ['top', 'left'], _0x2731eb);
-            var _0x97c61f = {
-                'front': {}
-            };
-            _0x97c61f['front'] = {
-                'left': _0x5a8ab0['frontPosition']['x'] + 'px',
-                'top': _0x5a8ab0['frontPosition']['y'] + 'px'
-            }, _0x5a8ab0['applyStyles'](_0x5f0b0a), _0x5a8ab0['applyStyles'](_0x97c61f), _0x5a8ab0['restTimeout'] = setTimeout(function () {
-
-                'function' == typeof _0x14cceb && _0x14cceb['call'](_0x5a8ab0), _0x5a8ab0['restCallback']();
-            }, _0x5a8ab0['options']['fadeTime']);
-        }, _0x35cc66['prototype']['restCallback'] = function () {
-            var _0x3f9445 = this,
-                _0x2a828d = {};
-            _0x2a828d['front'] = _0x2b11bd['getTransitionStyle']('transition', 'none', ''), _0x3f9445['applyStyles'](_0x2a828d), _0x3f9445['trigger']('rested', _0x3f9445['instance']);
-        }, _0x35cc66['prototype']['resetDirection'] = function () {
-
-            this['direction'] = {
-                'x': !0x1,
-                'y': !0x1,
-                'angle': !0x1
-            };
-        }, _0x35cc66['prototype']['computeDirection'] = function (_0x35187b) {
-            var _0x3c0462, _0x2b6615, _0x40e610, _0x688593 = _0x35187b['angle']['radian'],
-                _0x359d0c = Math['PI'] / 0x4,
-                _0x389349 = Math['PI'] / 0x2;
-            if (_0x688593 > _0x359d0c && _0x688593 < 0x3 * _0x359d0c && !_0x35187b['lockX'] ? _0x3c0462 = 'up' : _0x688593 > -_0x359d0c && _0x688593 <= _0x359d0c && !_0x35187b['lockY'] ? _0x3c0462 = 'left' : _0x688593 > 0x3 * -_0x359d0c && _0x688593 <= -_0x359d0c && !_0x35187b['lockX'] ? _0x3c0462 = 'down' : _0x35187b['lockY'] || (_0x3c0462 = 'right'), _0x35187b['lockY'] || (_0x2b6615 = _0x688593 > -_0x389349 && _0x688593 < _0x389349 ? 'left' : 'right'), _0x35187b['lockX'] || (_0x40e610 = _0x688593 > 0x0 ? 'up' : 'down'), _0x35187b['force'] > this['options']['threshold']) {
-                var _0x4683c9 = {};
-                for (var _0x5f1595 in this['direction']) this['direction']['hasOwnProperty'](_0x5f1595) && (_0x4683c9[_0x5f1595] = this['direction'][_0x5f1595]);
-                var _0x3bcb55 = {};
-                for (var _0x5f1595 in (this['direction'] = {
-                        'x': _0x2b6615,
-                        'y': _0x40e610,
-                        'angle': _0x3c0462
-                    }, _0x35187b['direction'] = this['direction'], _0x4683c9)) _0x4683c9[_0x5f1595] === this['direction'][_0x5f1595] && (_0x3bcb55[_0x5f1595] = !0x0);
-                if (_0x3bcb55['x'] && _0x3bcb55['y'] && _0x3bcb55['angle']) return _0x35187b;
-                _0x3bcb55['x'] && _0x3bcb55['y'] || this['trigger']('plain', _0x35187b), _0x3bcb55['x'] || this['trigger']('plain:' + _0x2b6615, _0x35187b), _0x3bcb55['y'] || this['trigger']('plain:' + _0x40e610, _0x35187b), _0x3bcb55['angle'] || this['trigger']('dir dir:' + _0x3c0462, _0x35187b);
-            }
-            return _0x35187b;
-        }, _0x388233['prototype'] = new _0x2ba0b2(), _0x388233['constructor'] = _0x388233, _0x388233['id'] = 0x0, _0x388233['prototype']['prepareNipples'] = function () {
-            var _0x171fd2 = this,
-                _0x251ada = _0x171fd2['nipples'];
-            _0x251ada['on'] = _0x171fd2['on']['bind'](_0x171fd2), _0x251ada['off'] = _0x171fd2['off']['bind'](_0x171fd2), _0x251ada['options'] = _0x171fd2['options'], _0x251ada['destroy'] = _0x171fd2['destroy']['bind'](_0x171fd2), _0x251ada['ids'] = _0x171fd2['ids'], _0x251ada['id'] = _0x171fd2['id'], _0x251ada['processOnMove'] = _0x171fd2['processOnMove']['bind'](_0x171fd2), _0x251ada['processOnEnd'] = _0x171fd2['processOnEnd']['bind'](_0x171fd2), _0x251ada['get'] = function (_0x285539) {
-
-                if (void 0x0 === _0x285539) return _0x251ada[0x0];
-                for (var _0x5a9649 = 0x0, _0x248d43 = _0x251ada['length']; _0x5a9649 < _0x248d43; _0x5a9649 += 0x1)
-                    if (_0x251ada[_0x5a9649]['identifier'] === _0x285539) return _0x251ada[_0x5a9649];
-                return !0x1;
-            };
-        }, _0x388233['prototype']['bindings'] = function () {
-            var _0x2b26e3 = this;
-            _0x2b26e3['bindEvt'](_0x2b26e3['options']['zone'], 'start'), _0x2b26e3['options']['zone']['style']['touchAction'] = 'none', _0x2b26e3['options']['zone']['style']['msTouchAction'] = 'none';
-        }, _0x388233['prototype']['begin'] = function () {
-            var _0x40e6cd = this,
-                _0x5052f1 = _0x40e6cd['options'];
-            if ('static' === _0x5052f1['mode']) {
-                var _0x24b13d = _0x40e6cd['createNipple'](_0x5052f1['position'], _0x40e6cd['manager']['getIdentifier']());
-                _0x24b13d['add'](), _0x40e6cd['idles']['push'](_0x24b13d);
-            }
-        }, _0x388233['prototype']['createNipple'] = function (_0xc1eee0, _0x52f92c) {
-            var _0x79031e = this,
-                _0x4f3a99 = _0x2b11bd['getScroll'](),
-                _0x3c7a74 = {},
-                _0xa495df = _0x79031e['options'];
-            if (_0xc1eee0['x'] && _0xc1eee0['y']) _0x3c7a74 = {
-                'x': _0xc1eee0['x'] - (_0x4f3a99['x'] + _0x79031e['box']['left']),
-                'y': _0xc1eee0['y'] - (_0x4f3a99['y'] + _0x79031e['box']['top'])
-            };
-            else {
-                if (_0xc1eee0['top'] || _0xc1eee0['right'] || _0xc1eee0['bottom'] || _0xc1eee0['left']) {
-                    var _0x1cb6cb = document['createElement']('DIV');
-                    _0x1cb6cb['style']['display'] = 'hidden', _0x1cb6cb['style']['top'] = _0xc1eee0['top'], _0x1cb6cb['style']['right'] = _0xc1eee0['right'], _0x1cb6cb['style']['bottom'] = _0xc1eee0['bottom'], _0x1cb6cb['style']['left'] = _0xc1eee0['left'], _0x1cb6cb['style']['position'] = 'absolute', _0xa495df['zone']['appendChild'](_0x1cb6cb);
-                    var _0x15293c = _0x1cb6cb['getBoundingClientRect']();
-                    _0xa495df['zone']['removeChild'](_0x1cb6cb), _0x3c7a74 = _0xc1eee0, _0xc1eee0 = {
-                        'x': _0x15293c['left'] + _0x4f3a99['x'],
-                        'y': _0x15293c['top'] + _0x4f3a99['y']
-                    };
-                }
-            }
-            var _0x47e90a = new _0x35cc66(_0x79031e, {
-                'color': _0xa495df['color'],
-                'size': _0xa495df['size'],
-                'threshold': _0xa495df['threshold'],
-                'fadeTime': _0xa495df['fadeTime'],
-                'dataOnly': _0xa495df['dataOnly'],
-                'restJoystick': _0xa495df['restJoystick'],
-                'restOpacity': _0xa495df['restOpacity'],
-                'mode': _0xa495df['mode'],
-                'identifier': _0x52f92c,
-                'position': _0xc1eee0,
-                'zone': _0xa495df['zone'],
-                'frontPosition': {
-                    'x': 0x0,
-                    'y': 0x0
-                }
-            });
-            return _0xa495df['dataOnly'] || (_0x2b11bd['applyPosition'](_0x47e90a['ui']['el'], _0x3c7a74), _0x2b11bd['applyPosition'](_0x47e90a['ui']['front'], _0x47e90a['frontPosition'])), _0x79031e['nipples']['push'](_0x47e90a), _0x79031e['trigger']('added ' + _0x47e90a['identifier'] + ':added', _0x47e90a), _0x79031e['manager']['trigger']('added ' + _0x47e90a['identifier'] + ':added', _0x47e90a), _0x79031e['bindNipple'](_0x47e90a), _0x47e90a;
-        }, _0x388233['prototype']['updateBox'] = function () {
-
-            this['box'] = this['options']['zone']['getBoundingClientRect']();
-        }, _0x388233['prototype']['bindNipple'] = function (_0x40f7b7) {
-            var _0xed1c3c, _0x1ca174 = this,
-                _0x7c8ec = function (_0x55fe0b, _0x153d3e) {
-
-                    _0xed1c3c = _0x55fe0b['type'] + ' ' + _0x153d3e['id'] + ':' + _0x55fe0b['type'], _0x1ca174['trigger'](_0xed1c3c, _0x153d3e);
-                };
-            _0x40f7b7['on']('destroyed', _0x1ca174['onDestroyed']['bind'](_0x1ca174)), _0x40f7b7['on']('shown hidden rested dir plain', _0x7c8ec), _0x40f7b7['on']('dir:up dir:right dir:down dir:left', _0x7c8ec), _0x40f7b7['on']('plain:up plain:right plain:down plain:left', _0x7c8ec);
-        }, _0x388233['prototype']['pressureFn'] = function (_0x582b13, _0x114774, _0x420e61) {
-            var _0x3cdbe3 = this,
-                _0x30939a = 0x0;
-            clearInterval(_0x3cdbe3['pressureIntervals'][_0x420e61]), _0x3cdbe3['pressureIntervals'][_0x420e61] = setInterval(function () {
-                var _0x5c2c5c = _0x582b13['force'] || _0x582b13['pressure'] || _0x582b13['webkitForce'] || 0x0;
-                _0x5c2c5c !== _0x30939a && (_0x114774['trigger']('pressure', _0x5c2c5c), _0x3cdbe3['trigger']('pressure ' + _0x114774['identifier'] + ':pressure', _0x5c2c5c), _0x30939a = _0x5c2c5c);
-            } ['bind'](_0x3cdbe3), 0x64);
-        }, _0x388233['prototype']['onstart'] = function (_0x4fbcac) {
-            var _0x5d84f3 = this,
-                _0x56ea51 = _0x5d84f3['options'];
-            return _0x4fbcac = _0x2b11bd['prepareEvent'](_0x4fbcac), _0x5d84f3['updateBox'](), (_0x2b11bd['map'](_0x4fbcac, function (_0x586a41) {
-
-                _0x5d84f3['actives']['length'] < _0x56ea51['maxNumberOfNipples'] && _0x5d84f3['processOnStart'](_0x586a41);
-            }), _0x5d84f3['manager']['bindDocument'](), !0x1);
-        }, _0x388233['prototype']['processOnStart'] = function (_0x449dc5) {
-            var _0x58a10d, _0x191fdf = this,
-                _0x5efb1a = _0x191fdf['options'],
-                _0x588849 = _0x191fdf['manager']['getIdentifier'](_0x449dc5),
-                _0x1dc887 = _0x449dc5['force'] || _0x449dc5['pressure'] || _0x449dc5['webkitForce'] || 0x0,
-                _0x47a261 = {
-                    'x': _0x449dc5['pageX'],
-                    'y': _0x449dc5['pageY']
-                },
-                _0x4a8f8d = _0x191fdf['getOrCreate'](_0x588849, _0x47a261);
-            _0x4a8f8d['identifier'] !== _0x588849 && _0x191fdf['manager']['removeIdentifier'](_0x4a8f8d['identifier']), _0x4a8f8d['identifier'] = _0x588849;
-            var _0x312ba2 = function (_0x5b385b) {
-
-                _0x5b385b['trigger']('start', _0x5b385b), _0x191fdf['trigger']('start ' + _0x5b385b['id'] + ':start', _0x5b385b), _0x5b385b['show'](), _0x1dc887 > 0x0 && _0x191fdf['pressureFn'](_0x449dc5, _0x5b385b, _0x5b385b['identifier']), _0x191fdf['processOnMove'](_0x449dc5);
-            };
-            if ((_0x58a10d = _0x191fdf['idles']['indexOf'](_0x4a8f8d)) >= 0x0 && _0x191fdf['idles']['splice'](_0x58a10d, 0x1), _0x191fdf['actives']['push'](_0x4a8f8d), _0x191fdf['ids']['push'](_0x4a8f8d['identifier']), 'semi' !== _0x5efb1a['mode']) _0x312ba2(_0x4a8f8d);
-            else {
-                if (!(_0x2b11bd['distance'](_0x47a261, _0x4a8f8d['position']) <= _0x5efb1a['catchDistance'])) return _0x4a8f8d['destroy'](), void _0x191fdf['processOnStart'](_0x449dc5);
-                _0x312ba2(_0x4a8f8d);
-            }
-            return _0x4a8f8d;
-        }, _0x388233['prototype']['getOrCreate'] = function (_0x5e8b6b, _0x12a0cc) {
-            var _0xcfead3, _0x5985bc = this,
-                _0x22bee7 = _0x5985bc['options'];
-            return /(semi|static)/ ['test'](_0x22bee7['mode']) ? (_0xcfead3 = _0x5985bc['idles'][0x0]) ? (_0x5985bc['idles']['splice'](0x0, 0x1), _0xcfead3) : 'semi' === _0x22bee7['mode'] ? _0x5985bc['createNipple'](_0x12a0cc, _0x5e8b6b) : (console['warn']('Coudln\x27t find the needed nipple.'), !0x1) : _0xcfead3 = _0x5985bc['createNipple'](_0x12a0cc, _0x5e8b6b);
-        }, _0x388233['prototype']['processOnMove'] = function (_0x51e0b0) {
-            var _0x48d43b = this,
-                _0x1d7240 = _0x48d43b['options'],
-                _0x30cd58 = _0x48d43b['manager']['getIdentifier'](_0x51e0b0),
-                _0x4eda28 = _0x48d43b['nipples']['get'](_0x30cd58);
-            if (!_0x4eda28) return console['error']('Found zombie joystick with ID ' + _0x30cd58), void _0x48d43b['manager']['removeIdentifier'](_0x30cd58);
-            _0x4eda28['identifier'] = _0x30cd58;
-            var _0x22bb09 = _0x4eda28['options']['size'] / 0x2,
-                _0x3d375c = {
-                    'x': _0x51e0b0['pageX'],
-                    'y': _0x51e0b0['pageY']
-                },
-                _0x457f35 = _0x2b11bd['distance'](_0x3d375c, _0x4eda28['position']),
-                _0x1eba74 = _0x2b11bd['angle'](_0x3d375c, _0x4eda28['position']),
-                _0x4c32d2 = _0x2b11bd['radians'](_0x1eba74),
-                _0x45f417 = _0x457f35 / _0x22bb09;
-            _0x457f35 > _0x22bb09 && (_0x457f35 = _0x22bb09, _0x3d375c = _0x2b11bd['findCoord'](_0x4eda28['position'], _0x457f35, _0x1eba74));
-            var _0x14359f = _0x3d375c['x'] - _0x4eda28['position']['x'],
-                _0x135891 = _0x3d375c['y'] - _0x4eda28['position']['y'];
-            _0x1d7240['lockX'] && (_0x135891 = 0x0), _0x1d7240['lockY'] && (_0x14359f = 0x0), _0x4eda28['frontPosition'] = {
-                'x': _0x14359f,
-                'y': _0x135891
-            }, _0x1d7240['dataOnly'] || _0x2b11bd['applyPosition'](_0x4eda28['ui']['front'], _0x4eda28['frontPosition']);
-            var _0x46c0a1 = {
-                'identifier': _0x4eda28['identifier'],
-                'position': _0x3d375c,
-                'force': _0x45f417,
-                'pressure': _0x51e0b0['force'] || _0x51e0b0['pressure'] || _0x51e0b0['webkitForce'] || 0x0,
-                'distance': _0x457f35,
-                'angle': {
-                    'radian': _0x4c32d2,
-                    'degree': _0x1eba74
-                },
-                'instance': _0x4eda28,
-                'lockX': _0x1d7240['lockX'],
-                'lockY': _0x1d7240['lockY']
-            };
-            (_0x46c0a1 = _0x4eda28['computeDirection'](_0x46c0a1))['angle'] = {
-                'radian': _0x2b11bd['radians'](0xb4 - _0x1eba74),
-                'degree': 0xb4 - _0x1eba74
-            }, _0x4eda28['trigger']('move', _0x46c0a1), _0x48d43b['trigger']('move ' + _0x4eda28['id'] + ':move', _0x46c0a1);
-        }, _0x388233['prototype']['processOnEnd'] = function (_0x3f2f82) {
-            var _0x22e99e = this,
-                _0x1e1fa5 = _0x22e99e['options'],
-                _0x4831d1 = _0x22e99e['manager']['getIdentifier'](_0x3f2f82),
-                _0xa09d32 = _0x22e99e['nipples']['get'](_0x4831d1),
-                _0x2d4e32 = _0x22e99e['manager']['removeIdentifier'](_0xa09d32['identifier']);
-            _0xa09d32 && (_0x1e1fa5['dataOnly'] || _0xa09d32['hide'](function () {
-
-                'dynamic' === _0x1e1fa5['mode'] && (_0xa09d32['trigger']('removed', _0xa09d32), _0x22e99e['trigger']('removed ' + _0xa09d32['id'] + ':removed', _0xa09d32), _0x22e99e['manager']['trigger']('removed ' + _0xa09d32['id'] + ':removed', _0xa09d32), _0xa09d32['destroy']());
-            }), clearInterval(_0x22e99e['pressureIntervals'][_0xa09d32['identifier']]), _0xa09d32['resetDirection'](), _0xa09d32['trigger']('end', _0xa09d32), _0x22e99e['trigger']('end ' + _0xa09d32['id'] + ':end', _0xa09d32), _0x22e99e['ids']['indexOf'](_0xa09d32['identifier']) >= 0x0 && _0x22e99e['ids']['splice'](_0x22e99e['ids']['indexOf'](_0xa09d32['identifier']), 0x1), _0x22e99e['actives']['indexOf'](_0xa09d32) >= 0x0 && _0x22e99e['actives']['splice'](_0x22e99e['actives']['indexOf'](_0xa09d32), 0x1), /(semi|static)/ ['test'](_0x1e1fa5['mode']) ? _0x22e99e['idles']['push'](_0xa09d32) : _0x22e99e['nipples']['indexOf'](_0xa09d32) >= 0x0 && _0x22e99e['nipples']['splice'](_0x22e99e['nipples']['indexOf'](_0xa09d32), 0x1), _0x22e99e['manager']['unbindDocument'](), /(semi|static)/ ['test'](_0x1e1fa5['mode']) && (_0x22e99e['manager']['ids'][_0x2d4e32['id']] = _0x2d4e32['identifier']));
-        }, _0x388233['prototype']['onDestroyed'] = function (_0x458241, _0x112e50) {
-            var _0x42cce4 = this;
-            _0x42cce4['nipples']['indexOf'](_0x112e50) >= 0x0 && _0x42cce4['nipples']['splice'](_0x42cce4['nipples']['indexOf'](_0x112e50), 0x1), _0x42cce4['actives']['indexOf'](_0x112e50) >= 0x0 && _0x42cce4['actives']['splice'](_0x42cce4['actives']['indexOf'](_0x112e50), 0x1), _0x42cce4['idles']['indexOf'](_0x112e50) >= 0x0 && _0x42cce4['idles']['splice'](_0x42cce4['idles']['indexOf'](_0x112e50), 0x1), _0x42cce4['ids']['indexOf'](_0x112e50['identifier']) >= 0x0 && _0x42cce4['ids']['splice'](_0x42cce4['ids']['indexOf'](_0x112e50['identifier']), 0x1), _0x42cce4['manager']['removeIdentifier'](_0x112e50['identifier']), _0x42cce4['manager']['unbindDocument']();
-        }, _0x388233['prototype']['destroy'] = function () {
-            var _0x4bf18 = this;
-            for (var _0x1122ea in (_0x4bf18['unbindEvt'](_0x4bf18['options']['zone'], 'start'), _0x4bf18['nipples']['forEach'](function (_0x2cbe5b) {
-                    _0x2cbe5b['destroy']();
-                }), _0x4bf18['pressureIntervals'])) _0x4bf18['pressureIntervals']['hasOwnProperty'](_0x1122ea) && clearInterval(_0x4bf18['pressureIntervals'][_0x1122ea]);
-            _0x4bf18['trigger']('destroyed', _0x4bf18['nipples']), _0x4bf18['manager']['unbindDocument'](), _0x4bf18['off']();
-        }, _0x2a7ff9['prototype'] = new _0x2ba0b2(), _0x2a7ff9['constructor'] = _0x2a7ff9, _0x2a7ff9['prototype']['prepareCollections'] = function () {
-            var _0x41b7af = this;
-            _0x41b7af['collections']['create'] = _0x41b7af['create']['bind'](_0x41b7af), _0x41b7af['collections']['on'] = _0x41b7af['on']['bind'](_0x41b7af), _0x41b7af['collections']['off'] = _0x41b7af['off']['bind'](_0x41b7af), _0x41b7af['collections']['destroy'] = _0x41b7af['destroy']['bind'](_0x41b7af), _0x41b7af['collections']['get'] = function (_0x51e471) {
-                var _0x155544;
-                return _0x41b7af['collections']['every'](function (_0x46c5f3) {
-
-                    return !(_0x155544 = _0x46c5f3['get'](_0x51e471));
-                }), _0x155544;
-            };
-        }, _0x2a7ff9['prototype']['create'] = function (_0x384591) {
-
-            return this['createCollection'](_0x384591);
-        }, _0x2a7ff9['prototype']['createCollection'] = function (_0x42c54a) {
-            var _0x2e729c = this,
-                _0x26661c = new _0x388233(_0x2e729c, _0x42c54a);
-            return _0x2e729c['bindCollection'](_0x26661c), _0x2e729c['collections']['push'](_0x26661c), _0x26661c;
-        }, _0x2a7ff9['prototype']['bindCollection'] = function (_0x330f5d) {
-            var _0x5aae9c, _0x3bcc83 = this,
-                _0x20fd2b = function (_0x3d12bf, _0x2dd546) {
-
-                    _0x5aae9c = _0x3d12bf['type'] + ' ' + _0x2dd546['id'] + ':' + _0x3d12bf['type'], _0x3bcc83['trigger'](_0x5aae9c, _0x2dd546);
-                };
-            _0x330f5d['on']('destroyed', _0x3bcc83['onDestroyed']['bind'](_0x3bcc83)), _0x330f5d['on']('shown hidden rested dir plain', _0x20fd2b), _0x330f5d['on']('dir:up dir:right dir:down dir:left', _0x20fd2b), _0x330f5d['on']('plain:up plain:right plain:down plain:left', _0x20fd2b);
-        }, _0x2a7ff9['prototype']['bindDocument'] = function () {
-            var _0x11d547 = this;
-            _0x11d547['binded'] || (_0x11d547['bindEvt'](document, 'move')['bindEvt'](document, 'end'), _0x11d547['binded'] = !0x0);
-        }, _0x2a7ff9['prototype']['unbindDocument'] = function (_0x530f3f) {
-            var _0x4cf4d2 = this;
-            Object['keys'](_0x4cf4d2['ids'])['length'] && !0x0 !== _0x530f3f || (_0x4cf4d2['unbindEvt'](document, 'move')['unbindEvt'](document, 'end'), _0x4cf4d2['binded'] = !0x1);
-        }, _0x2a7ff9['prototype']['getIdentifier'] = function (_0x6dc030) {
-            var _0x115f66;
-            return _0x6dc030 ? void 0x0 === (_0x115f66 = void 0x0 === _0x6dc030['identifier'] ? _0x6dc030['pointerId'] : _0x6dc030['identifier']) && (_0x115f66 = this['latest'] || 0x0) : _0x115f66 = this['index'], void 0x0 === this['ids'][_0x115f66] && (this['ids'][_0x115f66] = this['index'], this['index'] += 0x1), this['latest'] = _0x115f66, this['ids'][_0x115f66];
-        }, _0x2a7ff9['prototype']['removeIdentifier'] = function (_0x16ab41) {
-            var _0x133a88 = {};
-            for (var _0x3d92c7 in this['ids'])
-                if (this['ids'][_0x3d92c7] === _0x16ab41) {
-                    _0x133a88['id'] = _0x3d92c7, _0x133a88['identifier'] = this['ids'][_0x3d92c7], delete this['ids'][_0x3d92c7];
-                    break;
-                } return _0x133a88;
-        }, _0x2a7ff9['prototype']['onmove'] = function (_0x334fad) {
-
-            return this['onAny']('move', _0x334fad), !0x1;
-        }, _0x2a7ff9['prototype']['onend'] = function (_0xd48b08) {
-
-            return this['onAny']('end', _0xd48b08), !0x1;
-        }, _0x2a7ff9['prototype']['oncancel'] = function (_0x1690ad) {
-
-            return this['onAny']('end', _0x1690ad), !0x1;
-        }, _0x2a7ff9['prototype']['onAny'] = function (_0x41c24f, _0x438232) {
-            var _0x47edc5, _0x4cb1c6 = this,
-                _0x229d8d = 'processOn' + _0x41c24f['charAt'](0x0)['toUpperCase']() + _0x41c24f['slice'](0x1);
-            _0x438232 = _0x2b11bd['prepareEvent'](_0x438232);
-            var _0x229d6f = function (_0x5aa22a, _0x3b03db, _0x378ea8) {
-
-                _0x378ea8['ids']['indexOf'](_0x3b03db) >= 0x0 && (_0x378ea8[_0x229d8d](_0x5aa22a), _0x5aa22a['_found_'] = !0x0);
-            };
-            return _0x2b11bd['map'](_0x438232, function (_0x28366c) {
-
-                _0x47edc5 = _0x4cb1c6['getIdentifier'](_0x28366c), _0x2b11bd['map'](_0x4cb1c6['collections'], _0x229d6f['bind'](null, _0x28366c, _0x47edc5)), _0x28366c['_found_'] || _0x4cb1c6['removeIdentifier'](_0x47edc5);
-            }), !0x1;
-        }, _0x2a7ff9['prototype']['destroy'] = function () {
-            var _0x376c29 = this;
-            _0x376c29['unbindDocument'](!0x0), _0x376c29['ids'] = {}, _0x376c29['index'] = 0x0, _0x376c29['collections']['forEach'](function (_0xb94e7c) {
-
-                _0xb94e7c['destroy']();
-            }), _0x376c29['off']();
-        }, _0x2a7ff9['prototype']['onDestroyed'] = function (_0x1b6e31, _0x17e956) {
-            var _0x43a22a = this;
-            if (_0x43a22a['collections']['indexOf'](_0x17e956) < 0x0) return !0x1;
-            _0x43a22a['collections']['splice'](_0x43a22a['collections']['indexOf'](_0x17e956), 0x1);
-        };
-        var _0x2bf7d0 = new _0x2a7ff9();
-        return {
-            'create': function (_0x40aaf0) {
-
-                return _0x2bf7d0['create'](_0x40aaf0);
-            },
-            'factory': _0x2bf7d0
-        };
-    });
-}, function md5_132_0x84(es_module, es_exports, es_require) {
-
-    (function (_0x10375d, _0x598f03, _0x55bfcf) {
-        var _0x4764db;
-
-        function _0x2d87be(_0x2d1cbb) {
-
-            return (_0x2d87be = 'function' == typeof Symbol && 'symbol' == typeof Symbol['iterator'] ? function (_0xedcd04) {
-                return typeof _0xedcd04;
-            } : function (_0x58aa1a) {
-
-                return _0x58aa1a && 'function' == typeof Symbol && _0x58aa1a['constructor'] === Symbol && _0x58aa1a !== Symbol['prototype'] ? 'symbol' : typeof _0x58aa1a;
-            })(_0x2d1cbb);
-        }!(function () {
-            'use strict';
-
-            var _0x454e89 = 'input is invalid type',
-                _0x22356f = 'object' === ('undefined' == typeof window ? 'undefined' : _0x2d87be(window)),
-                _0x4bf8ea = _0x22356f ? window : {};
-            _0x4bf8ea['JS_MD5_NO_WINDOW'] && (_0x22356f = !0x1);
-            var _0xb6c3d = !_0x22356f && 'object' === ('undefined' == typeof self ? 'undefined' : _0x2d87be(self)),
-                _0x5ec013 = !_0x4bf8ea['JS_MD5_NO_NODE_JS'] && 'object' === (void 0x0 === _0x10375d ? 'undefined' : _0x2d87be(_0x10375d)) && _0x10375d['versions'] && _0x10375d['versions']['node'];
-            _0x5ec013 ? _0x4bf8ea = _0x598f03 : _0xb6c3d && (_0x4bf8ea = self);
-            var _0x544646 = !_0x4bf8ea['JS_MD5_NO_COMMON_JS'] && 'object' === _0x2d87be(_0x55bfcf) && _0x55bfcf['exports'],
-                _export_330 = es_require(0x14a),
-                _0x433dfe = !_0x4bf8ea['JS_MD5_NO_ARRAY_BUFFER'] && 'undefined' != typeof ArrayBuffer,
-                _0x210836 = '0123456789abcdef' ['split'](''),
-                _0x2e8681 = [0x80, 0x8000, 0x800000, -0x80000000],
-                _0x208221 = [0x0, 0x8, 0x10, 0x18],
-                _0x4a387a = ['hex', 'array', 'digest', 'buffer', 'arrayBuffer', 'base64'],
-                _0x3355d4 = ('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/')['split'](''),
-                _0x3c357c = [],
-                _0x5de2ce;
-            if (_0x433dfe) {
-                var _0x242ae7 = new ArrayBuffer(0x44);
-                _0x5de2ce = new Uint8Array(_0x242ae7), _0x3c357c = new Uint32Array(_0x242ae7);
-            }!_0x4bf8ea['JS_MD5_NO_NODE_JS'] && Array['isArray'] || (Array['isArray'] = function (_0x4744e2) {
-
-                return '[object Array]' === Object['prototype']['toString']['call'](_0x4744e2);
-            }), !_0x433dfe || !_0x4bf8ea['JS_MD5_NO_ARRAY_BUFFER_IS_VIEW'] && ArrayBuffer['isView'] || (ArrayBuffer['isView'] = function (_0x41bd48) {
-
-                return 'object' === _0x2d87be(_0x41bd48) && _0x41bd48['buffer'] && _0x41bd48['buffer']['constructor'] === ArrayBuffer;
-            });
-            var _0x384e56 = function (_0x475057) {
-                    return function (_0x48250f) {
-
-                        return new _0x1be314(!0x0)['update'](_0x48250f)[_0x475057]();
-                    };
-                },
-                _0x3f49e7 = function () {
-                    var _0x34b088 = _0x384e56('hex');
-                    _0x5ec013 && (_0x34b088 = _0x37bca6(_0x34b088)), _0x34b088['create'] = function () {
-                        return new _0x1be314();
-                    }, _0x34b088['update'] = function (_0x3ab1ac) {
-
-                        return _0x34b088['create']()['update'](_0x3ab1ac);
-                    };
-                    for (var _0x1dd025 = 0x0; _0x1dd025 < _0x4a387a['length']; ++_0x1dd025) {
-                        var _0x4796da = _0x4a387a[_0x1dd025];
-                        _0x34b088[_0x4796da] = _0x384e56(_0x4796da);
-                    }
-                    return _0x34b088;
-                },
-                _0x37bca6 = function _0x287d9a(_0x4f097d) {
-                    var _0xb5cc37 = eval('require(\'\\\c\\\r\\\y\\\p\\\t\\\o\');'),
-                        _0x11e0d0 = eval('require(\'buffer\')[\'Buffer\'];'),
-                        _0x5c0ed8 = function (_0x5238c8) {
-
-                            if ('string' == typeof _0x5238c8) return _0xb5cc37['createHash']('md5')['update'](_0x5238c8, 'utf8')['digest']('hex');
-                            if (null == _0x5238c8) throw _0x454e89;
-                            return _0x5238c8['constructor'] === ArrayBuffer && (_0x5238c8 = new Uint8Array(_0x5238c8)), Array['isArray'](_0x5238c8) || ArrayBuffer['isView'](_0x5238c8) || _0x5238c8['constructor'] === _0x11e0d0 ? _0xb5cc37['createHash']('md5')['update'](new _0x11e0d0(_0x5238c8))['digest']('hex') : _0x4f097d(_0x5238c8);
-                        };
-                    return _0x5c0ed8;
-                };
-
-            function _0x1be314(_0x195e72) {
-
-                if (_0x195e72) _0x3c357c[0x0] = _0x3c357c[0x10] = _0x3c357c[0x1] = _0x3c357c[0x2] = _0x3c357c[0x3] = _0x3c357c[0x4] = _0x3c357c[0x5] = _0x3c357c[0x6] = _0x3c357c[0x7] = _0x3c357c[0x8] = _0x3c357c[0x9] = _0x3c357c[0xa] = _0x3c357c[0xb] = _0x3c357c[0xc] = _0x3c357c[0xd] = _0x3c357c[0xe] = _0x3c357c[0xf] = 0x0, this['blocks'] = _0x3c357c, this['buffer8'] = _0x5de2ce;
-                else {
-                    if (_0x433dfe) {
-                        var _0x54906c = new ArrayBuffer(0x44);
-                        this['buffer8'] = new Uint8Array(_0x54906c), this['blocks'] = new Uint32Array(_0x54906c);
-                    } else this['blocks'] = [0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0];
-                }
-                this['h0'] = this['h1'] = this['h2'] = this['h3'] = this['start'] = this['bytes'] = this['hBytes'] = 0x0, this['finalized'] = this['hashed'] = !0x1, this['first'] = !0x0;
-            }
-            _0x1be314['prototype']['update'] = function (_0x265c04) {
-
-                if (!this['finalized']) {
-                    var _0xc92257, _0x46472f = _0x2d87be(_0x265c04);
-                    if ('string' !== _0x46472f) {
-                        if ('object' !== _0x46472f) throw _0x454e89;
-                        if (null === _0x265c04) throw _0x454e89;
-                        if (_0x433dfe && _0x265c04['constructor'] === ArrayBuffer) _0x265c04 = new Uint8Array(_0x265c04);
-                        else {
-                            if (!(Array['isArray'](_0x265c04) || _0x433dfe && ArrayBuffer['isView'](_0x265c04))) throw _0x454e89;
-                        }
-                        _0xc92257 = !0x0;
-                    }
-                    for (var _0xef317b, _0x56e27a, _0x458923 = 0x0, _0x29bc65 = _0x265c04['length'], _0x565001 = this['blocks'], _0x206323 = this['buffer8']; _0x458923 < _0x29bc65;) {
-                        if (this['hashed'] && (this['hashed'] = !0x1, _0x565001[0x0] = _0x565001[0x10], _0x565001[0x10] = _0x565001[0x1] = _0x565001[0x2] = _0x565001[0x3] = _0x565001[0x4] = _0x565001[0x5] = _0x565001[0x6] = _0x565001[0x7] = _0x565001[0x8] = _0x565001[0x9] = _0x565001[0xa] = _0x565001[0xb] = _0x565001[0xc] = _0x565001[0xd] = _0x565001[0xe] = _0x565001[0xf] = 0x0), _0xc92257) {
-                            if (_0x433dfe) {
-                                for (_0x56e27a = this['start']; _0x458923 < _0x29bc65 && _0x56e27a < 0x40; ++_0x458923) _0x206323[_0x56e27a++] = _0x265c04[_0x458923];
-                            } else {
-                                for (_0x56e27a = this['start']; _0x458923 < _0x29bc65 && _0x56e27a < 0x40; ++_0x458923) _0x565001[_0x56e27a >> 0x2] |= _0x265c04[_0x458923] << _0x208221[0x3 & _0x56e27a++];
-                            }
-                        } else {
-                            if (_0x433dfe) {
-                                for (_0x56e27a = this['start']; _0x458923 < _0x29bc65 && _0x56e27a < 0x40; ++_0x458923)(_0xef317b = _0x265c04['charCodeAt'](_0x458923)) < 0x80 ? _0x206323[_0x56e27a++] = _0xef317b : _0xef317b < 0x800 ? (_0x206323[_0x56e27a++] = 0xc0 | _0xef317b >> 0x6, _0x206323[_0x56e27a++] = 0x80 | 0x3f & _0xef317b) : _0xef317b < 0xd800 || _0xef317b >= 0xe000 ? (_0x206323[_0x56e27a++] = 0xe0 | _0xef317b >> 0xc, _0x206323[_0x56e27a++] = 0x80 | _0xef317b >> 0x6 & 0x3f, _0x206323[_0x56e27a++] = 0x80 | 0x3f & _0xef317b) : (_0xef317b = 0x10000 + ((0x3ff & _0xef317b) << 0xa | 0x3ff & _0x265c04['charCodeAt'](++_0x458923)), _0x206323[_0x56e27a++] = 0xf0 | _0xef317b >> 0x12, _0x206323[_0x56e27a++] = 0x80 | _0xef317b >> 0xc & 0x3f, _0x206323[_0x56e27a++] = 0x80 | _0xef317b >> 0x6 & 0x3f, _0x206323[_0x56e27a++] = 0x80 | 0x3f & _0xef317b);
-                            } else {
-                                for (_0x56e27a = this['start']; _0x458923 < _0x29bc65 && _0x56e27a < 0x40; ++_0x458923)(_0xef317b = _0x265c04['charCodeAt'](_0x458923)) < 0x80 ? _0x565001[_0x56e27a >> 0x2] |= _0xef317b << _0x208221[0x3 & _0x56e27a++] : _0xef317b < 0x800 ? (_0x565001[_0x56e27a >> 0x2] |= (0xc0 | _0xef317b >> 0x6) << _0x208221[0x3 & _0x56e27a++], _0x565001[_0x56e27a >> 0x2] |= (0x80 | 0x3f & _0xef317b) << _0x208221[0x3 & _0x56e27a++]) : _0xef317b < 0xd800 || _0xef317b >= 0xe000 ? (_0x565001[_0x56e27a >> 0x2] |= (0xe0 | _0xef317b >> 0xc) << _0x208221[0x3 & _0x56e27a++], _0x565001[_0x56e27a >> 0x2] |= (0x80 | _0xef317b >> 0x6 & 0x3f) << _0x208221[0x3 & _0x56e27a++], _0x565001[_0x56e27a >> 0x2] |= (0x80 | 0x3f & _0xef317b) << _0x208221[0x3 & _0x56e27a++]) : (_0xef317b = 0x10000 + ((0x3ff & _0xef317b) << 0xa | 0x3ff & _0x265c04['charCodeAt'](++_0x458923)), _0x565001[_0x56e27a >> 0x2] |= (0xf0 | _0xef317b >> 0x12) << _0x208221[0x3 & _0x56e27a++], _0x565001[_0x56e27a >> 0x2] |= (0x80 | _0xef317b >> 0xc & 0x3f) << _0x208221[0x3 & _0x56e27a++], _0x565001[_0x56e27a >> 0x2] |= (0x80 | _0xef317b >> 0x6 & 0x3f) << _0x208221[0x3 & _0x56e27a++], _0x565001[_0x56e27a >> 0x2] |= (0x80 | 0x3f & _0xef317b) << _0x208221[0x3 & _0x56e27a++]);
-                            }
-                        }
-                        this['lastByteIndex'] = _0x56e27a, this['bytes'] += _0x56e27a - this['start'], _0x56e27a >= 0x40 ? (this['start'] = _0x56e27a - 0x40, this['hash'](), this['hashed'] = !0x0) : this['start'] = _0x56e27a;
-                    }
-                    return this['bytes'] > 0xffffffff && (this['hBytes'] += this['bytes'] / 0x100000000 << 0x0, this['bytes'] = this['bytes'] % 0x100000000), this;
-                }
-            }, _0x1be314['prototype']['finalize'] = function () {
-
-                if (!this['finalized']) {
-                    this['finalized'] = !0x0;
-                    var _0x42a672 = this['blocks'],
-                        _0x383f38 = this['lastByteIndex'];
-                    _0x42a672[_0x383f38 >> 0x2] |= _0x2e8681[0x3 & _0x383f38], _0x383f38 >= 0x38 && (this['hashed'] || this['hash'](), _0x42a672[0x0] = _0x42a672[0x10], _0x42a672[0x10] = _0x42a672[0x1] = _0x42a672[0x2] = _0x42a672[0x3] = _0x42a672[0x4] = _0x42a672[0x5] = _0x42a672[0x6] = _0x42a672[0x7] = _0x42a672[0x8] = _0x42a672[0x9] = _0x42a672[0xa] = _0x42a672[0xb] = _0x42a672[0xc] = _0x42a672[0xd] = _0x42a672[0xe] = _0x42a672[0xf] = 0x0), _0x42a672[0xe] = this['bytes'] << 0x3, _0x42a672[0xf] = this['hBytes'] << 0x3 | this['bytes'] >>> 0x1d, this['hash']();
-                }
-            }, _0x1be314['prototype']['hash'] = function () {
-                var _0x29fac2, _0x5a4c94, _0x56005c, _0x179e4e, _0x5213a0, _0x27f24c, _0x3f08c7 = this['blocks'];
-                this['first'] ? _0x5a4c94 = ((_0x5a4c94 = ((_0x29fac2 = ((_0x29fac2 = _0x3f08c7[0x0] - 0x28955b89) << 0x7 | _0x29fac2 >>> 0x19) - 0x10325477 << 0x0) ^ (_0x56005c = ((_0x56005c = (-0x10325477 ^ (_0x179e4e = ((_0x179e4e = (-0x67452302 ^ 0x77777777 & _0x29fac2) + _0x3f08c7[0x1] - 0x705f434) << 0xc | _0x179e4e >>> 0x14) + _0x29fac2 << 0x0) & (-0x10325477 ^ _0x29fac2)) + _0x3f08c7[0x2] - 0x4324b227) << 0x11 | _0x56005c >>> 0xf) + _0x179e4e << 0x0) & (_0x179e4e ^ _0x29fac2)) + _0x3f08c7[0x3] - 0x4e748589) << 0x16 | _0x5a4c94 >>> 0xa) + _0x56005c << 0x0 : (_0x29fac2 = this['h0'], _0x5a4c94 = this['h1'], _0x56005c = this['h2'], _0x5a4c94 = ((_0x5a4c94 += ((_0x29fac2 = ((_0x29fac2 += ((_0x179e4e = this['h3']) ^ _0x5a4c94 & (_0x56005c ^ _0x179e4e)) + _0x3f08c7[0x0] - 0x28955b88) << 0x7 | _0x29fac2 >>> 0x19) + _0x5a4c94 << 0x0) ^ (_0x56005c = ((_0x56005c += (_0x5a4c94 ^ (_0x179e4e = ((_0x179e4e += (_0x56005c ^ _0x29fac2 & (_0x5a4c94 ^ _0x56005c)) + _0x3f08c7[0x1] - 0x173848aa) << 0xc | _0x179e4e >>> 0x14) + _0x29fac2 << 0x0) & (_0x29fac2 ^ _0x5a4c94)) + _0x3f08c7[0x2] + 0x242070db) << 0x11 | _0x56005c >>> 0xf) + _0x179e4e << 0x0) & (_0x179e4e ^ _0x29fac2)) + _0x3f08c7[0x3] - 0x3e423112) << 0x16 | _0x5a4c94 >>> 0xa) + _0x56005c << 0x0), _0x5a4c94 = ((_0x5a4c94 += ((_0x29fac2 = ((_0x29fac2 += (_0x179e4e ^ _0x5a4c94 & (_0x56005c ^ _0x179e4e)) + _0x3f08c7[0x4] - 0xa83f051) << 0x7 | _0x29fac2 >>> 0x19) + _0x5a4c94 << 0x0) ^ (_0x56005c = ((_0x56005c += (_0x5a4c94 ^ (_0x179e4e = ((_0x179e4e += (_0x56005c ^ _0x29fac2 & (_0x5a4c94 ^ _0x56005c)) + _0x3f08c7[0x5] + 0x4787c62a) << 0xc | _0x179e4e >>> 0x14) + _0x29fac2 << 0x0) & (_0x29fac2 ^ _0x5a4c94)) + _0x3f08c7[0x6] - 0x57cfb9ed) << 0x11 | _0x56005c >>> 0xf) + _0x179e4e << 0x0) & (_0x179e4e ^ _0x29fac2)) + _0x3f08c7[0x7] - 0x2b96aff) << 0x16 | _0x5a4c94 >>> 0xa) + _0x56005c << 0x0, _0x5a4c94 = ((_0x5a4c94 += ((_0x29fac2 = ((_0x29fac2 += (_0x179e4e ^ _0x5a4c94 & (_0x56005c ^ _0x179e4e)) + _0x3f08c7[0x8] + 0x698098d8) << 0x7 | _0x29fac2 >>> 0x19) + _0x5a4c94 << 0x0) ^ (_0x56005c = ((_0x56005c += (_0x5a4c94 ^ (_0x179e4e = ((_0x179e4e += (_0x56005c ^ _0x29fac2 & (_0x5a4c94 ^ _0x56005c)) + _0x3f08c7[0x9] - 0x74bb0851) << 0xc | _0x179e4e >>> 0x14) + _0x29fac2 << 0x0) & (_0x29fac2 ^ _0x5a4c94)) + _0x3f08c7[0xa] - 0xa44f) << 0x11 | _0x56005c >>> 0xf) + _0x179e4e << 0x0) & (_0x179e4e ^ _0x29fac2)) + _0x3f08c7[0xb] - 0x76a32842) << 0x16 | _0x5a4c94 >>> 0xa) + _0x56005c << 0x0, _0x5a4c94 = ((_0x5a4c94 += ((_0x29fac2 = ((_0x29fac2 += (_0x179e4e ^ _0x5a4c94 & (_0x56005c ^ _0x179e4e)) + _0x3f08c7[0xc] + 0x6b901122) << 0x7 | _0x29fac2 >>> 0x19) + _0x5a4c94 << 0x0) ^ (_0x56005c = ((_0x56005c += (_0x5a4c94 ^ (_0x179e4e = ((_0x179e4e += (_0x56005c ^ _0x29fac2 & (_0x5a4c94 ^ _0x56005c)) + _0x3f08c7[0xd] - 0x2678e6d) << 0xc | _0x179e4e >>> 0x14) + _0x29fac2 << 0x0) & (_0x29fac2 ^ _0x5a4c94)) + _0x3f08c7[0xe] - 0x5986bc72) << 0x11 | _0x56005c >>> 0xf) + _0x179e4e << 0x0) & (_0x179e4e ^ _0x29fac2)) + _0x3f08c7[0xf] + 0x49b40821) << 0x16 | _0x5a4c94 >>> 0xa) + _0x56005c << 0x0, _0x5a4c94 = ((_0x5a4c94 += ((_0x179e4e = ((_0x179e4e += (_0x5a4c94 ^ _0x56005c & ((_0x29fac2 = ((_0x29fac2 += (_0x56005c ^ _0x179e4e & (_0x5a4c94 ^ _0x56005c)) + _0x3f08c7[0x1] - 0x9e1da9e) << 0x5 | _0x29fac2 >>> 0x1b) + _0x5a4c94 << 0x0) ^ _0x5a4c94)) + _0x3f08c7[0x6] - 0x3fbf4cc0) << 0x9 | _0x179e4e >>> 0x17) + _0x29fac2 << 0x0) ^ _0x29fac2 & ((_0x56005c = ((_0x56005c += (_0x29fac2 ^ _0x5a4c94 & (_0x179e4e ^ _0x29fac2)) + _0x3f08c7[0xb] + 0x265e5a51) << 0xe | _0x56005c >>> 0x12) + _0x179e4e << 0x0) ^ _0x179e4e)) + _0x3f08c7[0x0] - 0x16493856) << 0x14 | _0x5a4c94 >>> 0xc) + _0x56005c << 0x0, _0x5a4c94 = ((_0x5a4c94 += ((_0x179e4e = ((_0x179e4e += (_0x5a4c94 ^ _0x56005c & ((_0x29fac2 = ((_0x29fac2 += (_0x56005c ^ _0x179e4e & (_0x5a4c94 ^ _0x56005c)) + _0x3f08c7[0x5] - 0x29d0efa3) << 0x5 | _0x29fac2 >>> 0x1b) + _0x5a4c94 << 0x0) ^ _0x5a4c94)) + _0x3f08c7[0xa] + 0x2441453) << 0x9 | _0x179e4e >>> 0x17) + _0x29fac2 << 0x0) ^ _0x29fac2 & ((_0x56005c = ((_0x56005c += (_0x29fac2 ^ _0x5a4c94 & (_0x179e4e ^ _0x29fac2)) + _0x3f08c7[0xf] - 0x275e197f) << 0xe | _0x56005c >>> 0x12) + _0x179e4e << 0x0) ^ _0x179e4e)) + _0x3f08c7[0x4] - 0x182c0438) << 0x14 | _0x5a4c94 >>> 0xc) + _0x56005c << 0x0, _0x5a4c94 = ((_0x5a4c94 += ((_0x179e4e = ((_0x179e4e += (_0x5a4c94 ^ _0x56005c & ((_0x29fac2 = ((_0x29fac2 += (_0x56005c ^ _0x179e4e & (_0x5a4c94 ^ _0x56005c)) + _0x3f08c7[0x9] + 0x21e1cde6) << 0x5 | _0x29fac2 >>> 0x1b) + _0x5a4c94 << 0x0) ^ _0x5a4c94)) + _0x3f08c7[0xe] - 0x3cc8f82a) << 0x9 | _0x179e4e >>> 0x17) + _0x29fac2 << 0x0) ^ _0x29fac2 & ((_0x56005c = ((_0x56005c += (_0x29fac2 ^ _0x5a4c94 & (_0x179e4e ^ _0x29fac2)) + _0x3f08c7[0x3] - 0xb2af279) << 0xe | _0x56005c >>> 0x12) + _0x179e4e << 0x0) ^ _0x179e4e)) + _0x3f08c7[0x8] + 0x455a14ed) << 0x14 | _0x5a4c94 >>> 0xc) + _0x56005c << 0x0, _0x5a4c94 = ((_0x5a4c94 += ((_0x179e4e = ((_0x179e4e += (_0x5a4c94 ^ _0x56005c & ((_0x29fac2 = ((_0x29fac2 += (_0x56005c ^ _0x179e4e & (_0x5a4c94 ^ _0x56005c)) + _0x3f08c7[0xd] - 0x561c16fb) << 0x5 | _0x29fac2 >>> 0x1b) + _0x5a4c94 << 0x0) ^ _0x5a4c94)) + _0x3f08c7[0x2] - 0x3105c08) << 0x9 | _0x179e4e >>> 0x17) + _0x29fac2 << 0x0) ^ _0x29fac2 & ((_0x56005c = ((_0x56005c += (_0x29fac2 ^ _0x5a4c94 & (_0x179e4e ^ _0x29fac2)) + _0x3f08c7[0x7] + 0x676f02d9) << 0xe | _0x56005c >>> 0x12) + _0x179e4e << 0x0) ^ _0x179e4e)) + _0x3f08c7[0xc] - 0x72d5b376) << 0x14 | _0x5a4c94 >>> 0xc) + _0x56005c << 0x0, _0x5a4c94 = ((_0x5a4c94 += ((_0x27f24c = (_0x179e4e = ((_0x179e4e += ((_0x5213a0 = _0x5a4c94 ^ _0x56005c) ^ (_0x29fac2 = ((_0x29fac2 += (_0x5213a0 ^ _0x179e4e) + _0x3f08c7[0x5] - 0x5c6be) << 0x4 | _0x29fac2 >>> 0x1c) + _0x5a4c94 << 0x0)) + _0x3f08c7[0x8] - 0x788e097f) << 0xb | _0x179e4e >>> 0x15) + _0x29fac2 << 0x0) ^ _0x29fac2) ^ (_0x56005c = ((_0x56005c += (_0x27f24c ^ _0x5a4c94) + _0x3f08c7[0xb] + 0x6d9d6122) << 0x10 | _0x56005c >>> 0x10) + _0x179e4e << 0x0)) + _0x3f08c7[0xe] - 0x21ac7f4) << 0x17 | _0x5a4c94 >>> 0x9) + _0x56005c << 0x0, _0x5a4c94 = ((_0x5a4c94 += ((_0x27f24c = (_0x179e4e = ((_0x179e4e += ((_0x5213a0 = _0x5a4c94 ^ _0x56005c) ^ (_0x29fac2 = ((_0x29fac2 += (_0x5213a0 ^ _0x179e4e) + _0x3f08c7[0x1] - 0x5b4115bc) << 0x4 | _0x29fac2 >>> 0x1c) + _0x5a4c94 << 0x0)) + _0x3f08c7[0x4] + 0x4bdecfa9) << 0xb | _0x179e4e >>> 0x15) + _0x29fac2 << 0x0) ^ _0x29fac2) ^ (_0x56005c = ((_0x56005c += (_0x27f24c ^ _0x5a4c94) + _0x3f08c7[0x7] - 0x944b4a0) << 0x10 | _0x56005c >>> 0x10) + _0x179e4e << 0x0)) + _0x3f08c7[0xa] - 0x41404390) << 0x17 | _0x5a4c94 >>> 0x9) + _0x56005c << 0x0, _0x5a4c94 = ((_0x5a4c94 += ((_0x27f24c = (_0x179e4e = ((_0x179e4e += ((_0x5213a0 = _0x5a4c94 ^ _0x56005c) ^ (_0x29fac2 = ((_0x29fac2 += (_0x5213a0 ^ _0x179e4e) + _0x3f08c7[0xd] + 0x289b7ec6) << 0x4 | _0x29fac2 >>> 0x1c) + _0x5a4c94 << 0x0)) + _0x3f08c7[0x0] - 0x155ed806) << 0xb | _0x179e4e >>> 0x15) + _0x29fac2 << 0x0) ^ _0x29fac2) ^ (_0x56005c = ((_0x56005c += (_0x27f24c ^ _0x5a4c94) + _0x3f08c7[0x3] - 0x2b10cf7b) << 0x10 | _0x56005c >>> 0x10) + _0x179e4e << 0x0)) + _0x3f08c7[0x6] + 0x4881d05) << 0x17 | _0x5a4c94 >>> 0x9) + _0x56005c << 0x0, _0x5a4c94 = ((_0x5a4c94 += ((_0x27f24c = (_0x179e4e = ((_0x179e4e += ((_0x5213a0 = _0x5a4c94 ^ _0x56005c) ^ (_0x29fac2 = ((_0x29fac2 += (_0x5213a0 ^ _0x179e4e) + _0x3f08c7[0x9] - 0x262b2fc7) << 0x4 | _0x29fac2 >>> 0x1c) + _0x5a4c94 << 0x0)) + _0x3f08c7[0xc] - 0x1924661b) << 0xb | _0x179e4e >>> 0x15) + _0x29fac2 << 0x0) ^ _0x29fac2) ^ (_0x56005c = ((_0x56005c += (_0x27f24c ^ _0x5a4c94) + _0x3f08c7[0xf] + 0x1fa27cf8) << 0x10 | _0x56005c >>> 0x10) + _0x179e4e << 0x0)) + _0x3f08c7[0x2] - 0x3b53a99b) << 0x17 | _0x5a4c94 >>> 0x9) + _0x56005c << 0x0, _0x5a4c94 = ((_0x5a4c94 += ((_0x179e4e = ((_0x179e4e += (_0x5a4c94 ^ ((_0x29fac2 = ((_0x29fac2 += (_0x56005c ^ (_0x5a4c94 | ~_0x179e4e)) + _0x3f08c7[0x0] - 0xbd6ddbc) << 0x6 | _0x29fac2 >>> 0x1a) + _0x5a4c94 << 0x0) | ~_0x56005c)) + _0x3f08c7[0x7] + 0x432aff97) << 0xa | _0x179e4e >>> 0x16) + _0x29fac2 << 0x0) ^ ((_0x56005c = ((_0x56005c += (_0x29fac2 ^ (_0x179e4e | ~_0x5a4c94)) + _0x3f08c7[0xe] - 0x546bdc59) << 0xf | _0x56005c >>> 0x11) + _0x179e4e << 0x0) | ~_0x29fac2)) + _0x3f08c7[0x5] - 0x36c5fc7) << 0x15 | _0x5a4c94 >>> 0xb) + _0x56005c << 0x0, _0x5a4c94 = ((_0x5a4c94 += ((_0x179e4e = ((_0x179e4e += (_0x5a4c94 ^ ((_0x29fac2 = ((_0x29fac2 += (_0x56005c ^ (_0x5a4c94 | ~_0x179e4e)) + _0x3f08c7[0xc] + 0x655b59c3) << 0x6 | _0x29fac2 >>> 0x1a) + _0x5a4c94 << 0x0) | ~_0x56005c)) + _0x3f08c7[0x3] - 0x70f3336e) << 0xa | _0x179e4e >>> 0x16) + _0x29fac2 << 0x0) ^ ((_0x56005c = ((_0x56005c += (_0x29fac2 ^ (_0x179e4e | ~_0x5a4c94)) + _0x3f08c7[0xa] - 0x100b83) << 0xf | _0x56005c >>> 0x11) + _0x179e4e << 0x0) | ~_0x29fac2)) + _0x3f08c7[0x1] - 0x7a7ba22f) << 0x15 | _0x5a4c94 >>> 0xb) + _0x56005c << 0x0, _0x5a4c94 = ((_0x5a4c94 += ((_0x179e4e = ((_0x179e4e += (_0x5a4c94 ^ ((_0x29fac2 = ((_0x29fac2 += (_0x56005c ^ (_0x5a4c94 | ~_0x179e4e)) + _0x3f08c7[0x8] + 0x6fa87e4f) << 0x6 | _0x29fac2 >>> 0x1a) + _0x5a4c94 << 0x0) | ~_0x56005c)) + _0x3f08c7[0xf] - 0x1d31920) << 0xa | _0x179e4e >>> 0x16) + _0x29fac2 << 0x0) ^ ((_0x56005c = ((_0x56005c += (_0x29fac2 ^ (_0x179e4e | ~_0x5a4c94)) + _0x3f08c7[0x6] - 0x5cfebcec) << 0xf | _0x56005c >>> 0x11) + _0x179e4e << 0x0) | ~_0x29fac2)) + _0x3f08c7[0xd] + 0x4e0811a1) << 0x15 | _0x5a4c94 >>> 0xb) + _0x56005c << 0x0, _0x5a4c94 = ((_0x5a4c94 += ((_0x179e4e = ((_0x179e4e += (_0x5a4c94 ^ ((_0x29fac2 = ((_0x29fac2 += (_0x56005c ^ (_0x5a4c94 | ~_0x179e4e)) + _0x3f08c7[0x4] - 0x8ac817e) << 0x6 | _0x29fac2 >>> 0x1a) + _0x5a4c94 << 0x0) | ~_0x56005c)) + _0x3f08c7[0xb] - 0x42c50dcb) << 0xa | _0x179e4e >>> 0x16) + _0x29fac2 << 0x0) ^ ((_0x56005c = ((_0x56005c += (_0x29fac2 ^ (_0x179e4e | ~_0x5a4c94)) + _0x3f08c7[0x2] + 0x2ad7d2bb) << 0xf | _0x56005c >>> 0x11) + _0x179e4e << 0x0) | ~_0x29fac2)) + _0x3f08c7[0x9] - 0x14792c6f) << 0x15 | _0x5a4c94 >>> 0xb) + _0x56005c << 0x0, this['first'] ? (this['h0'] = _0x29fac2 + 0x67452301 << 0x0, this['h1'] = _0x5a4c94 - 0x10325477 << 0x0, this['h2'] = _0x56005c - 0x67452302 << 0x0, this['h3'] = _0x179e4e + 0x10325476 << 0x0, this['first'] = !0x1) : (this['h0'] = this['h0'] + _0x29fac2 << 0x0, this['h1'] = this['h1'] + _0x5a4c94 << 0x0, this['h2'] = this['h2'] + _0x56005c << 0x0, this['h3'] = this['h3'] + _0x179e4e << 0x0);
-            }, _0x1be314['prototype']['hex'] = function () {
-
-                this['finalize']();
-                var _0x241cb1 = this['h0'],
-                    _0x351328 = this['h1'],
-                    _0x4ceeb0 = this['h2'],
-                    _0x3e09f7 = this['h3'];
-                return _0x210836[_0x241cb1 >> 0x4 & 0xf] + _0x210836[0xf & _0x241cb1] + _0x210836[_0x241cb1 >> 0xc & 0xf] + _0x210836[_0x241cb1 >> 0x8 & 0xf] + _0x210836[_0x241cb1 >> 0x14 & 0xf] + _0x210836[_0x241cb1 >> 0x10 & 0xf] + _0x210836[_0x241cb1 >> 0x1c & 0xf] + _0x210836[_0x241cb1 >> 0x18 & 0xf] + _0x210836[_0x351328 >> 0x4 & 0xf] + _0x210836[0xf & _0x351328] + _0x210836[_0x351328 >> 0xc & 0xf] + _0x210836[_0x351328 >> 0x8 & 0xf] + _0x210836[_0x351328 >> 0x14 & 0xf] + _0x210836[_0x351328 >> 0x10 & 0xf] + _0x210836[_0x351328 >> 0x1c & 0xf] + _0x210836[_0x351328 >> 0x18 & 0xf] + _0x210836[_0x4ceeb0 >> 0x4 & 0xf] + _0x210836[0xf & _0x4ceeb0] + _0x210836[_0x4ceeb0 >> 0xc & 0xf] + _0x210836[_0x4ceeb0 >> 0x8 & 0xf] + _0x210836[_0x4ceeb0 >> 0x14 & 0xf] + _0x210836[_0x4ceeb0 >> 0x10 & 0xf] + _0x210836[_0x4ceeb0 >> 0x1c & 0xf] + _0x210836[_0x4ceeb0 >> 0x18 & 0xf] + _0x210836[_0x3e09f7 >> 0x4 & 0xf] + _0x210836[0xf & _0x3e09f7] + _0x210836[_0x3e09f7 >> 0xc & 0xf] + _0x210836[_0x3e09f7 >> 0x8 & 0xf] + _0x210836[_0x3e09f7 >> 0x14 & 0xf] + _0x210836[_0x3e09f7 >> 0x10 & 0xf] + _0x210836[_0x3e09f7 >> 0x1c & 0xf] + _0x210836[_0x3e09f7 >> 0x18 & 0xf];
-            }, _0x1be314['prototype']['toString'] = _0x1be314['prototype']['hex'], _0x1be314['prototype']['digest'] = function () {
-
-                this['finalize']();
-                var _0x44656f = this['h0'],
-                    _0x30dad1 = this['h1'],
-                    _0x3fc960 = this['h2'],
-                    _0x585ac6 = this['h3'];
-                return [0xff & _0x44656f, _0x44656f >> 0x8 & 0xff, _0x44656f >> 0x10 & 0xff, _0x44656f >> 0x18 & 0xff, 0xff & _0x30dad1, _0x30dad1 >> 0x8 & 0xff, _0x30dad1 >> 0x10 & 0xff, _0x30dad1 >> 0x18 & 0xff, 0xff & _0x3fc960, _0x3fc960 >> 0x8 & 0xff, _0x3fc960 >> 0x10 & 0xff, _0x3fc960 >> 0x18 & 0xff, 0xff & _0x585ac6, _0x585ac6 >> 0x8 & 0xff, _0x585ac6 >> 0x10 & 0xff, _0x585ac6 >> 0x18 & 0xff];
-            }, _0x1be314['prototype']['array'] = _0x1be314['prototype']['digest'], _0x1be314['prototype']['arrayBuffer'] = function () {
-
-                this['finalize']();
-                var _0x2ea599 = new ArrayBuffer(0x10),
-                    _0x3a68ec = new Uint32Array(_0x2ea599);
-                return _0x3a68ec[0x0] = this['h0'], _0x3a68ec[0x1] = this['h1'], _0x3a68ec[0x2] = this['h2'], _0x3a68ec[0x3] = this['h3'], _0x2ea599;
-            }, _0x1be314['prototype']['buffer'] = _0x1be314['prototype']['arrayBuffer'], _0x1be314['prototype']['base64'] = function () {
-
-                for (var _0x528f94, _0x581822, _0x237bd0, _0x2d75c3 = '', _0x408231 = this['array'](), _0x5c69ba = 0x0; _0x5c69ba < 0xf;) _0x528f94 = _0x408231[_0x5c69ba++], _0x581822 = _0x408231[_0x5c69ba++], _0x237bd0 = _0x408231[_0x5c69ba++], _0x2d75c3 += _0x3355d4[_0x528f94 >>> 0x2] + _0x3355d4[0x3f & (_0x528f94 << 0x4 | _0x581822 >>> 0x4)] + _0x3355d4[0x3f & (_0x581822 << 0x2 | _0x237bd0 >>> 0x6)] + _0x3355d4[0x3f & _0x237bd0];
-                return _0x528f94 = _0x408231[_0x5c69ba], _0x2d75c3 += _0x3355d4[_0x528f94 >>> 0x2] + _0x3355d4[_0x528f94 << 0x4 & 0x3f] + '==';
-            };
-            var _0x44fd32 = _0x3f49e7();
-            _0x544646 ? _0x55bfcf['exports'] = _0x44fd32 : (_0x4bf8ea['md5'] = _0x44fd32, _export_330 && (_0x4764db = function () {
-                return _0x44fd32;
-            } ['call'](_0x44fd32, es_require, _0x44fd32, _0x55bfcf), void 0x0 === _0x4764db || (_0x55bfcf['exports'] = _0x4764db)));
-        }());
-    } ['call'](this, es_require(0x5e), es_require(0x2f), es_require(0x80)(es_module)));
-},,,,,, function id_138_0x8a(es_module, es_exports, es_require) {
+}, , , , , , , , , , function id_138_0x8a(es_module, es_exports, es_require) {
 
     es_module['exports'] = es_require(0x36)('native-function-to-string', Function['toString']);
 }, function id_139_0x8b(es_module, es_exports, es_require) {
@@ -4845,7 +2659,7 @@ var EJS = function (modules) {
         }
         return _0x2f7c08;
     };
-},,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, function id_279_0x117(es_module, es_exports, es_require) {
+}, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , function id_279_0x117(es_module, es_exports, es_require) {
 
     es_require(0x118), es_module['exports'] = es_require(0x9)['Array']['includes'];
 }, function id_280_0x118(es_module, es_exports, es_require) {
@@ -5024,81 +2838,7 @@ var EJS = function (modules) {
             } : _0x55a324);
         }
     });
-}, function id_302_0x12e(es_module, es_exports, es_require) {
-
-    es_require(0x12f), es_require(0x130), es_require(0x131), es_module['exports'] = es_require(0x9);
-}, function id_303_0x12f(es_module, es_exports, es_require) {
-    var _export_2 = es_require(0x2),
-        _export_0 = es_require(0x0),
-        _export_63 = es_require(0x3f),
-        _0x59a97c = []['slice'],
-        _0x4e235e = /MSIE .\./ ['test'](_export_63),
-        _0x131097 = function (_0x518b3d) {
-
-            return function (_0x123461, _0x3c1948) {
-                var _0x3fda3e = arguments['length'] > 0x2,
-                    _0x2917be = !!_0x3fda3e && _0x59a97c['call'](arguments, 0x2);
-                return _0x518b3d(_0x3fda3e ? function () {
-
-                    ('function' == typeof _0x123461 ? _0x123461 : Function(_0x123461))['apply'](this, _0x2917be);
-                } : _0x123461, _0x3c1948);
-            };
-        };
-    _export_0(_export_0['G'] + _export_0['B'] + _export_0['F'] * _0x4e235e, {
-        'setTimeout': _0x131097(_export_2['setTimeout']),
-        'setInterval': _0x131097(_export_2['setInterval'])
-    });
-}, function id_304_0x130(es_module, es_exports, es_require) {
-    var _export_0 = es_require(0x0),
-        _export_89 = es_require(0x59);
-    _export_0(_export_0['G'] + _export_0['B'], {
-        'setImmediate': _export_89['set'],
-        'clearImmediate': _export_89['clear']
-    });
-}, function id_305_0x131(es_module, es_exports, es_require) {
-
-    for (var _export_86 = es_require(0x56), _export_33 = es_require(0x21), _export_13 = es_require(0xd), _export_2 = es_require(0x2), _export_16 = es_require(0x10), _export_42 = es_require(0x2a), _export_7 = es_require(0x7), _0x25d7c6 = _export_7('iterator'), _0x242efe = _export_7('toStringTag'), _0x14cce2 = _export_42['Array'], _0x5304bf = {
-            'CSSRuleList': !0x0,
-            'CSSStyleDeclaration': !0x1,
-            'CSSValueList': !0x1,
-            'ClientRectList': !0x1,
-            'DOMRectList': !0x1,
-            'DOMStringList': !0x1,
-            'DOMTokenList': !0x0,
-            'DataTransferItemList': !0x1,
-            'FileList': !0x1,
-            'HTMLAllCollection': !0x1,
-            'HTMLCollection': !0x1,
-            'HTMLFormElement': !0x1,
-            'HTMLSelectElement': !0x1,
-            'MediaList': !0x0,
-            'MimeTypeArray': !0x1,
-            'NamedNodeMap': !0x1,
-            'NodeList': !0x0,
-            'PaintRequestList': !0x1,
-            'Plugin': !0x1,
-            'PluginArray': !0x1,
-            'SVGLengthList': !0x1,
-            'SVGNumberList': !0x1,
-            'SVGPathSegList': !0x1,
-            'SVGPointList': !0x1,
-            'SVGStringList': !0x1,
-            'SVGTransformList': !0x1,
-            'SourceBufferList': !0x1,
-            'StyleSheetList': !0x0,
-            'TextTrackCueList': !0x1,
-            'TextTrackList': !0x1,
-            'TouchList': !0x1
-        }, _0x3f1236 = _export_33(_0x5304bf), _0x11a2ef = 0x0; _0x11a2ef < _0x3f1236['length']; _0x11a2ef++) {
-        var _0x352e93, _0x24f74c = _0x3f1236[_0x11a2ef],
-            _0x237074 = _0x5304bf[_0x24f74c],
-            _0x2b6ac4 = _export_2[_0x24f74c],
-            _0x407c65 = _0x2b6ac4 && _0x2b6ac4['prototype'];
-        if (_0x407c65 && (_0x407c65[_0x25d7c6] || _export_16(_0x407c65, _0x25d7c6, _0x14cce2), _0x407c65[_0x242efe] || _export_16(_0x407c65, _0x242efe, _0x24f74c), _export_42[_0x24f74c] = _0x14cce2, _0x237074)) {
-            for (_0x352e93 in _export_86) _0x407c65[_0x352e93] || _export_13(_0x407c65, _0x352e93, _export_86[_0x352e93], !0x0);
-        }
-    }
-}, function id_306_0x132(es_module, es_exports, es_require) {
+}, , , , , function id_306_0x132(es_module, es_exports, es_require) {
     console.log(es_module, es_exports);
     var _0x305a18 = function (_0x3950f2) {
         'use strict';
@@ -5450,155 +3190,7 @@ var EJS = function (modules) {
     } catch (_0x5f723a) {
         'object' == typeof globalThis ? globalThis['regeneratorRuntime'] = _0x305a18 : Function('r', 'regeneratorRuntime = r')(_0x305a18);
     }
-}, function id_307_0x133(es_module, es_exports, es_require) {
-    es_require(0x134), es_module['exports'] = es_require(0x7e)['global'];
-}, function id_308_0x134(es_module, es_exports, es_require) {
-    var _export_309 = es_require(0x135);
-    _export_309(_export_309['G'], {
-        'global': es_require(0x5b)
-    });
-}, function id_309_0x135(es_module, es_exports, es_require) {
-    var _export_91 = es_require(0x5b),
-        _export_126 = es_require(0x7e),
-        _export_310 = es_require(0x136),
-        _export_312 = es_require(0x138),
-        _export_319 = es_require(0x13f),
-        _0x590a19 = function (_0x117eb8, _0x52e69e, _0x466902) {
-            var _0x4a07df, _0x134341, _0x5caae9, _0x2fc874 = _0x117eb8 & _0x590a19['F'],
-                _0x566098 = _0x117eb8 & _0x590a19['G'],
-                _0x1d1636 = _0x117eb8 & _0x590a19['S'],
-                _0x30be20 = _0x117eb8 & _0x590a19['P'],
-                _0x3df9b1 = _0x117eb8 & _0x590a19['B'],
-                _0x5a8628 = _0x117eb8 & _0x590a19['W'],
-                _0x42aadd = _0x566098 ? _export_126 : _export_126[_0x52e69e] || (_export_126[_0x52e69e] = {}),
-                _0x110db6 = _0x42aadd['prototype'],
-                _0x5b3c69 = _0x566098 ? _export_91 : _0x1d1636 ? _export_91[_0x52e69e] : (_export_91[_0x52e69e] || {})['prototype'];
-            for (_0x4a07df in (_0x566098 && (_0x466902 = _0x52e69e), _0x466902))(_0x134341 = !_0x2fc874 && _0x5b3c69 && void 0x0 !== _0x5b3c69[_0x4a07df]) && _export_319(_0x42aadd, _0x4a07df) || (_0x5caae9 = _0x134341 ? _0x5b3c69[_0x4a07df] : _0x466902[_0x4a07df], _0x42aadd[_0x4a07df] = _0x566098 && 'function' != typeof _0x5b3c69[_0x4a07df] ? _0x466902[_0x4a07df] : _0x3df9b1 && _0x134341 ? _export_310(_0x5caae9, _export_91) : _0x5a8628 && _0x5b3c69[_0x4a07df] == _0x5caae9 ? function (_0x7aa9d3) {
-                var _0x238e0c = function (_0x17c766, _0x3858f3, _0x5afccf) {
-
-                    if (this instanceof _0x7aa9d3) {
-                        switch (arguments['length']) {
-                            case 0x0:
-                                return new _0x7aa9d3();
-                            case 0x1:
-                                return new _0x7aa9d3(_0x17c766);
-                            case 0x2:
-                                return new _0x7aa9d3(_0x17c766, _0x3858f3);
-                        }
-                        return new _0x7aa9d3(_0x17c766, _0x3858f3, _0x5afccf);
-                    }
-                    return _0x7aa9d3['apply'](this, arguments);
-                };
-                return _0x238e0c['prototype'] = _0x7aa9d3['prototype'], _0x238e0c;
-            }(_0x5caae9) : _0x30be20 && 'function' == typeof _0x5caae9 ? _export_310(Function['call'], _0x5caae9) : _0x5caae9, _0x30be20 && ((_0x42aadd['virtual'] || (_0x42aadd['virtual'] = {}))[_0x4a07df] = _0x5caae9, _0x117eb8 & _0x590a19['R'] && _0x110db6 && !_0x110db6[_0x4a07df] && _export_312(_0x110db6, _0x4a07df, _0x5caae9)));
-        };
-    _0x590a19['F'] = 0x1, _0x590a19['G'] = 0x2, _0x590a19['S'] = 0x4, _0x590a19['P'] = 0x8, _0x590a19['B'] = 0x10, _0x590a19['W'] = 0x20, _0x590a19['U'] = 0x40, _0x590a19['R'] = 0x80, es_module['exports'] = _0x590a19;
-}, function id_310_0x136(es_module, es_exports, es_require) {
-    var _export_311 = es_require(0x137);
-    es_module['exports'] = function (_0x58206b, _0x54ad26, _0x3d6728) {
-        if (_export_311(_0x58206b), void 0x0 === _0x54ad26) return _0x58206b;
-        switch (_0x3d6728) {
-            case 0x1:
-                return function (_0x2b3ab0) {
-                    return _0x58206b['call'](_0x54ad26, _0x2b3ab0);
-                };
-            case 0x2:
-                return function (_0x302440, _0x50a1a4) {
-
-                    return _0x58206b['call'](_0x54ad26, _0x302440, _0x50a1a4);
-                };
-            case 0x3:
-                return function (_0x4b5034, _0x1bb948, _0x2934aa) {
-
-                    return _0x58206b['call'](_0x54ad26, _0x4b5034, _0x1bb948, _0x2934aa);
-                };
-        }
-        return function () {
-
-            return _0x58206b['apply'](_0x54ad26, arguments);
-        };
-    };
-}, function id_311_0x137(es_module, es_exports) {
-
-    es_module['exports'] = function (_0x10042f) {
-
-        if ('function' != typeof _0x10042f) throw TypeError(_0x10042f + ' is not a function!');
-        return _0x10042f;
-    };
-}, function id_312_0x138(es_module, es_exports, es_require) {
-    var _export_313 = es_require(0x139),
-        _export_318 = es_require(0x13e);
-    es_module['exports'] = es_require(0x5d) ? function (_0x151e0a, _0x2416f8, _0x31e5fa) {
-        return _export_313['f'](_0x151e0a, _0x2416f8, _export_318(0x1, _0x31e5fa));
-    } : function (_0x49f385, _0x52331d, _0x376a77) {
-        return _0x49f385[_0x52331d] = _0x376a77, _0x49f385;
-    };
-}, function id_313_0x139(es_module, es_exports, es_require) {
-    var _export_314 = es_require(0x13a),
-        _export_315 = es_require(0x13b),
-        _export_317 = es_require(0x13d),
-        _0x4a03de = Object['defineProperty'];
-    es_exports['f'] = es_require(0x5d) ? Object['defineProperty'] : function (_0x135c6b, _0x51d115, _0x5cbb31) {
-
-        if (_export_314(_0x135c6b), _0x51d115 = _export_317(_0x51d115, !0x0), _export_314(_0x5cbb31), _export_315) try {
-            return _0x4a03de(_0x135c6b, _0x51d115, _0x5cbb31);
-        } catch (_0x5a4832) {}
-        if ('get' in _0x5cbb31 || 'set' in _0x5cbb31) throw TypeError('Accessors not supported!');
-        return 'value' in _0x5cbb31 && (_0x135c6b[_0x51d115] = _0x5cbb31['value']), _0x135c6b;
-    };
-}, function id_314_0x13a(es_module, es_exports, es_require) {
-    var _export_92 = es_require(0x5c);
-    es_module['exports'] = function (_0x27287f) {
-
-        if (!_export_92(_0x27287f)) throw TypeError(_0x27287f + ' is not an object!');
-        return _0x27287f;
-    };
-}, function id_315_0x13b(es_module, es_exports, es_require) {
-
-    es_module['exports'] = !es_require(0x5d) && !es_require(0x7f)(function () {
-
-        return 0x7 != Object['defineProperty'](es_require(0x13c)('div'), 'a', {
-            'get': function () {
-                return 0x7;
-            }
-        })['a'];
-    });
-}, function id_316_0x13c(es_module, es_exports, es_require) {
-    var _export_92 = es_require(0x5c),
-        _0x74a41b = es_require(0x5b)['document'],
-        _0x47749a = _export_92(_0x74a41b) && _export_92(_0x74a41b['createElement']);
-    es_module['exports'] = function (_0x34dfc6) {
-
-        return _0x47749a ? _0x74a41b['createElement'](_0x34dfc6) : {};
-    };
-}, function id_317_0x13d(es_module, es_exports, es_require) {
-    var _export_92 = es_require(0x5c);
-    es_module['exports'] = function (_0x52257c, _0x1b8717) {
-
-        if (!_export_92(_0x52257c)) return _0x52257c;
-        var _0x5a8f14, _0x9628c1;
-        if (_0x1b8717 && 'function' == typeof (_0x5a8f14 = _0x52257c['toString']) && !_export_92(_0x9628c1 = _0x5a8f14['call'](_0x52257c))) return _0x9628c1;
-        if ('function' == typeof (_0x5a8f14 = _0x52257c['valueOf']) && !_export_92(_0x9628c1 = _0x5a8f14['call'](_0x52257c))) return _0x9628c1;
-        if (!_0x1b8717 && 'function' == typeof (_0x5a8f14 = _0x52257c['toString']) && !_export_92(_0x9628c1 = _0x5a8f14['call'](_0x52257c))) return _0x9628c1;
-        throw TypeError('Can\x27t convert object to primitive value');
-    };
-}, function id_318_0x13e(es_module, es_exports) {
-
-    es_module['exports'] = function (_0x55f718, _0x3e9626) {
-        return {
-            'enumerable': !(0x1 & _0x55f718),
-            'configurable': !(0x2 & _0x55f718),
-            'writable': !(0x4 & _0x55f718),
-            'value': _0x3e9626
-        };
-    };
-}, function id_319_0x13f(es_module, es_exports) {
-    var _0x44d375 = {} ['hasOwnProperty'];
-    es_module['exports'] = function (_0x23a367, _0x2a37e8) {
-
-        return _0x44d375['call'](_0x23a367, _0x2a37e8);
-    };
-},,,, function id_323_0x143(es_module, es_exports) {
+}, , , , , , , , , , , , , , , , , function id_323_0x143(es_module, es_exports) {
 
     es_module['exports'] = function (_0x11498a) {
         var _0x3e76a9 = [];
@@ -5692,7 +3284,7 @@ var EJS = function (modules) {
 
         function _0x478e20(_0xbd4e92, _0x2bff68, _0x34cc9c, _0x2556a4) {
 
-            if ('number' == typeof _0x2bff68) throw new TypeError('\x22value\x22 argument must not be a number');
+            if ('number' == typeof _0x2bff68) throw new TypeError('"value" argument must not be a number');
             return 'undefined' != typeof ArrayBuffer && _0x2bff68 instanceof ArrayBuffer ? function (_0x866d0c, _0x32dfb4, _0x5cf8d3, _0x5dfb6e) {
 
                 if (_0x32dfb4['byteLength'], _0x5cf8d3 < 0x0 || _0x32dfb4['byteLength'] < _0x5cf8d3) throw new RangeError('\x27offset\x27 is out of bounds');
@@ -5701,7 +3293,7 @@ var EJS = function (modules) {
             }(_0xbd4e92, _0x2bff68, _0x34cc9c, _0x2556a4) : 'string' == typeof _0x2bff68 ? function (_0x166f21, _0x313bb1, _0x2ddc19) {
 
                 'string' == typeof _0x2ddc19 && '' !== _0x2ddc19 || (_0x2ddc19 = 'utf8');
-                if (!_0x10ab18['isEncoding'](_0x2ddc19)) throw new TypeError('\x22encoding\x22 must be a valid string encoding');
+                if (!_0x10ab18['isEncoding'](_0x2ddc19)) throw new TypeError('"encoding" must be a valid string encoding');
                 var _0xa7c72a = 0x0 | _0xd0c02(_0x313bb1, _0x2ddc19),
                     _0x531eff = (_0x166f21 = _0x5b2d81(_0x166f21, _0xa7c72a))['write'](_0x313bb1, _0x2ddc19);
                 return _0x531eff !== _0xa7c72a && (_0x166f21 = _0x166f21['slice'](0x0, _0x531eff)), _0x166f21;
@@ -5722,8 +3314,8 @@ var EJS = function (modules) {
 
         function _0x1e99c5(_0x2be469) {
 
-            if ('number' != typeof _0x2be469) throw new TypeError('\x22size\x22 argument must be a number');
-            if (_0x2be469 < 0x0) throw new RangeError('\x22size\x22 argument must not be negative');
+            if ('number' != typeof _0x2be469) throw new TypeError('"size" argument must be a number');
+            if (_0x2be469 < 0x0) throw new RangeError('"size" argument must not be negative');
         }
 
         function _0x3ed8b4(_0x4a8511, _0x29ae5c) {
@@ -6007,7 +3599,7 @@ var EJS = function (modules) {
             }
         }, _0x10ab18['concat'] = function (_0x54e074, _0x3a1371) {
 
-            if (!_export_329(_0x54e074)) throw new TypeError('\x22list\x22 argument must be an Array of Buffers');
+            if (!_export_329(_0x54e074)) throw new TypeError('"list" argument must be an Array of Buffers');
             if (0x0 === _0x54e074['length']) return _0x10ab18['alloc'](0x0);
             var _0x4ec3f9;
             if (void 0x0 === _0x3a1371) {
@@ -6017,7 +3609,7 @@ var EJS = function (modules) {
                 _0x501aee = 0x0;
             for (_0x4ec3f9 = 0x0; _0x4ec3f9 < _0x54e074['length']; ++_0x4ec3f9) {
                 var _0x3f6272 = _0x54e074[_0x4ec3f9];
-                if (!_0x10ab18['isBuffer'](_0x3f6272)) throw new TypeError('\x22list\x22 argument must be an Array of Buffers');
+                if (!_0x10ab18['isBuffer'](_0x3f6272)) throw new TypeError('"list" argument must be an Array of Buffers');
                 _0x3f6272['copy'](_0x4cadce, _0x501aee), _0x501aee += _0x3f6272['length'];
             }
             return _0x4cadce;
@@ -6146,8 +3738,8 @@ var EJS = function (modules) {
 
         function _0x25eb86(_0x5f25fe, _0x1d17cb, _0x5bd0ea, _0x49e055, _0x39328b, _0x4f9e4e) {
 
-            if (!_0x10ab18['isBuffer'](_0x5f25fe)) throw new TypeError('\x22buffer\x22 argument must be a Buffer instance');
-            if (_0x1d17cb > _0x39328b || _0x1d17cb < _0x4f9e4e) throw new RangeError('\x22value\x22 argument is out of bounds');
+            if (!_0x10ab18['isBuffer'](_0x5f25fe)) throw new TypeError('"buffer" argument must be a Buffer instance');
+            if (_0x1d17cb > _0x39328b || _0x1d17cb < _0x4f9e4e) throw new RangeError('"value" argument is out of bounds');
             if (_0x5bd0ea + _0x49e055 > _0x5f25fe['length']) throw new RangeError('Index out of range');
         }
 
@@ -6432,7 +4024,7 @@ var EJS = function (modules) {
             for (var _0x22ccb3 = 0x0; _0x22ccb3 < _0x2213d5 && !(_0x22ccb3 + _0x25d1b5 >= _0x1a2ffa['length'] || _0x22ccb3 >= _0x302188['length']); ++_0x22ccb3) _0x1a2ffa[_0x22ccb3 + _0x25d1b5] = _0x302188[_0x22ccb3];
             return _0x22ccb3;
         }
-    } ['call'](this, es_require(0x2f)));
+    } ['call'](this, window));
 }, function id_327_0x147(es_module, es_exports, es_require) {
     'use strict';
 
@@ -6726,9 +4318,9 @@ var EJS = function (modules) {
                 T,
                 I
             }, 1);
-            D.speed = T.speed;
             D.callaction = T.callaction;
         }
+        speed = 1000 / 60;
         action = {};
         DB = {};
         SetModule(Module) {
@@ -6737,22 +4329,55 @@ var EJS = function (modules) {
                 Module
             }, 1);
             if (!D.Module) return;
-            D.MEMFS.stream_ops.write = D.ops_write;
-            if (D.MEMFS.ops_table) D.MEMFS.ops_table.file.stream.write = D.ops_write;
+            D.MEMFS.stream_ops.write = function (stream, buffer, offset, length, position, canOwn) {
+                if (D.HEAP8 && buffer.buffer === D.HEAP8.buffer) {
+                    canOwn = false
+                }
+                if (!length) return 0;
+                var node = stream.node;
+                node.timestamp = Date.now();
+                if (buffer.subarray && (!node.contents || node.contents.subarray)) {
+                    if (canOwn) {
+                        node.contents = buffer.subarray(offset, offset + length);
+                        node.usedBytes = length;
+                        return length
+                    } else if (node.usedBytes === 0 && position === 0) {
+                        D.update(stream);
+                        node.contents = new Uint8Array(buffer.subarray(offset, offset + length));
+                        node.usedBytes = length;
+                        return length
+                    } else if (position + length <= node.usedBytes) {
+                        node.contents.set(buffer.subarray(offset, offset + length), position);
+                        return length
+                    }
+                }
+                D.MEMFS.expandFileStorage(node, position + length);
+                if (node.contents.subarray && buffer.subarray) node.contents.set(buffer.subarray(offset, offset + length), position);
+                else {
+                    for (var i = 0; i < length; i++) {
+                        node.contents[position + i] = buffer[offset + i]
+                    }
+                }
+                node.usedBytes = Math.max(node.usedBytes, position + length);
+                return length
+            };
+            if (D.MEMFS.ops_table) D.MEMFS.ops_table.file.stream.write = D.MEMFS.stream_ops.write;
+        }
+        SetDB(DB) {
+            this.I.assign(this.DB, DB);
         }
         get FS() {
             return this.Module.FS;
         }
         get MEMFS() {
-            return this.FS.filesystems.MEMFS;
+            return this.Module.MEMFS || this.FS.filesystems.MEMFS;
         }
         get HEAP8() {
             return this.Module.HEAP8;
         }
         getStore(mount) {
-            let M = this,
-                T = M.T,
-                DB = M.DB,
+            let D = this,
+                DB = D.DB,
                 path = mount.mountpoint || mount;
             if (!DB[path]) {
                 return false;
@@ -6760,15 +4385,15 @@ var EJS = function (modules) {
             return DB[path];
         }
         mount(mount) {
-            let M = this;
-            if (!M.FS.analyzePath(mount.mountpoint).exists) {
-                M.FS.createPath('/', mount.mountpoint, !0, !0);
+            let D = this;
+            if (!D.FS.analyzePath(mount.mountpoint).exists) {
+                D.FS.createPath('/', mount.mountpoint, !0, !0);
             }
             let len = mount.mountpoint.split('/').length;
-            let node = M.MEMFS.createNode(len < 3 ? M.FS.root : null, len < 3 ? mount.mountpoint.split('/').pop() : mount.mountpoint.replace(/^\//, ''), 16384 | 511, 0);
-            if (M.getStore(mount)) {
-                if (!M.__mount) M.__mount = [];
-                M.__mount.push(M.syncfs(mount, txt => M.callaction('DiskReadyOut', txt)));
+            let node = D.MEMFS.createNode(len < 3 ? D.FS.root : null, len < 3 ? mount.mountpoint.split('/').pop() : mount.mountpoint.replace(/^\//, ''), 16384 | 511, 0);
+            if (D.getStore(mount)) {
+                if (!D.__mount) D.__mount = [];
+                D.__mount.push(D.syncfs(mount, txt => D.callaction('DiskReadyOut', txt)));
             }
             return node;
         }
@@ -6776,30 +4401,30 @@ var EJS = function (modules) {
             return Promise.all(this.__mount || []);
         }
         async syncfs(mount, callback, error) {
-            let M = this;
+            let D = this;
             callback = error instanceof Function ? error : callback;
-            let store = M.getStore(mount);
+            let store = D.getStore(mount);
             let result;
             if (!mount.isReady) {
-                result = await M.writeToFS(store);
+                result = await D.writeToFS(store);
             } else {
-                result = await M.syncWrite(store, mount);
+                result = await D.syncWrite(store, mount);
             }
             mount.isReady = true;
             (callback instanceof Function) && callback(result);
             return result;
         }
         async writeToFS(store) {
-            let M = this,
-                I = M.I;
-            return I.toArr(await store.all(true)).map(entry => M.storeLocalEntry(entry[0], entry[1])).join("\n");
+            let D = this,
+                I = D.I;
+            return I.toArr(await store.all(true)).map(entry => D.storeLocalEntry(entry[0], entry[1])).join("\n");
         }
         async syncWrite(store, mount) {
-            let M = this,
-                I = M.I,
+            let D = this,
+                I = D.I,
                 IsReady = mount.isReady,
-                local = M.getLocalSet(mount),
-                remote = await M.getRemoteSet(store),
+                local = D.getLocalSet(mount),
+                remote = await D.getRemoteSet(store),
                 src = (IsReady ? local : remote).entries || {},
                 dst = (!IsReady ? local : remote).entries || {};
             let result = await Promise.all(I.toArr(src).filter(entry => {
@@ -6815,10 +4440,10 @@ var EJS = function (modules) {
                 if (!IsReady) {
                     let contents = await store.get(path);
                     if (contents) {
-                        return M.storeLocalEntry(path, contents);
+                        return D.storeLocalEntry(path, contents);
                     }
                 } else {
-                    let contents = M.loadLocalEntry(path);
+                    let contents = D.loadLocalEntry(path);
                     if (contents) {
                         await store.put(path, contents);
                         return 'DB saved:' + path;
@@ -6837,7 +4462,7 @@ var EJS = function (modules) {
             }).map(entry => entry[0]).sort().map(async path => {
                 let msg = '';
                 if (!IsReady) {
-                    M.removeLocalEntry(path);
+                    D.removeLocalEntry(path);
                     msg = 'FS remove:';
                 } else {
                     await store.remove(path, true);
@@ -6845,12 +4470,12 @@ var EJS = function (modules) {
                 }
                 return msg + path;
             })));
-            M.callaction('indexdb-sync', IsReady, result);
+            D.callaction('indexdb-sync', IsReady, result);
             return result.join("\n");
         }
         loadLocalEntry(path) {
-            let M = this,
-                FS = M.FS,
+            let D = this,
+                FS = D.FS,
                 stat, node;
             if (FS.analyzePath(path).exists) {
                 var lookup = FS.lookupPath(path);
@@ -6865,7 +4490,7 @@ var EJS = function (modules) {
                     mode: stat.mode
                 };
             } else if (FS.isFile(stat.mode)) {
-                node.contents = M.getFileDataAsTypedArray(node);
+                node.contents = D.getFileDataAsTypedArray(node);
                 return {
                     timestamp: stat.mtime,
                     mode: stat.mode,
@@ -6876,9 +4501,8 @@ var EJS = function (modules) {
             }
         }
         storeLocalEntry(path, entry) {
-            let M = this,
-                T = M.T,
-                FS = M.FS
+            let D = this,
+                FS = D.FS
             if (FS.isDir(entry.mode)) {
                 !FS.analyzePath(path).exists && FS.createPath('/', path, !0, !0)
             } else if (FS.isFile(entry.mode)) {
@@ -6889,7 +4513,7 @@ var EJS = function (modules) {
                     encoding: "binary"
                 });
             } else {
-                T.Err("node type not supported");
+                throw "node type not supported";
             }
             FS.chmod(path, entry.mode);
             FS.utime(path, entry.timestamp, entry.timestamp);
@@ -6919,46 +4543,48 @@ var EJS = function (modules) {
             return remote;
         }
         getLocalSet(mount, callback) {
-            let M = this,
-                T = M.T;
-            if (!mount) T.Err('mount:PATH ERROR');
+            let D = this;
+            if (!mount) return console.log('mount:PATH ERROR');
             let result = {
                 "type": "local",
-                entries: M.getLocalList(mount.mountpoint)
+                entries: D.getLocalList(mount.mountpoint)
             };
             callback && callback(result);
             return result
         }
         getLocalList(mountpoint) {
+            return this.getPathList(mountpoint, !0);
+        }
+        getPathList(mountpoint, bool) {
+            if (!this.Module) return {};
             mountpoint = mountpoint || '/';
-            let M = this,
-                T = M.T,
-                FS = M.FS,
+            let D = this,
+                FS = D.FS,
                 entries = {},
                 filterRoot = [".", ".."].concat(mountpoint == '/' ? ["dev", "tmp", "proc"] : []),
-                isRealDir = p => !filterRoot.includes(p),
-                toAbsolute = root => p => M.join2(root, p),
-                check = M.stat(mountpoint) && FS.readdir(mountpoint).filter(isRealDir).map(toAbsolute(mountpoint));
-            if (!check) T.Err('mount:PATH ERROR');
+                isRealDir = p => !bool || !filterRoot.includes(p),
+                toAbsolute = root => p => D.join2(root, p),
+                check = D.stat(mountpoint) && FS.readdir(mountpoint).filter(isRealDir).map(toAbsolute(mountpoint));
+            if (!check) return console.log('mount:PATH ERROR');
             while (check.length) {
-                let path = check.pop();
-                let stat = M.stat(path);
+                let path = check.shift();
+                if (!bool && path == mountpoint) continue;
+                let stat = D.stat(path);
                 if (stat) {
-                    if (FS.isDir(stat.mode)) {
-                        check.push.apply(check, FS.readdir(path).filter(isRealDir).map(toAbsolute(path)))
-                    }
                     entries[path] = {
                         timestamp: stat.mtime
+                    }
+                    if (FS.isDir(stat.mode) && bool) {
+                        check.push.apply(check, FS.readdir(path).filter(isRealDir).map(toAbsolute(path)))
                     }
 
                 }
             }
             return entries;
-
         }
         stat(path) {
-            let M = this,
-                FS = M.FS,
+            let D = this,
+                FS = D.FS,
                 pathinfo = FS.analyzePath(path);
             if (pathinfo.exists && pathinfo.object.node_ops && pathinfo.object.node_ops.getattr) {
                 return FS.stat(path);
@@ -7012,81 +4638,48 @@ var EJS = function (modules) {
                 }
             }
             return parts
-        }
-        ops_write = (stream, buffer, offset, length, position, canOwn) => {
-            let M = this;
-            if (M.HEAP8 && buffer.buffer === M.HEAP8.buffer) {
-                canOwn = false
-            }
-            if (!length) return 0;
-            var node = stream.node;
-            node.timestamp = Date.now();
-            if (buffer.subarray && (!node.contents || node.contents.subarray)) {
-                if (canOwn) {
-                    node.contents = buffer.subarray(offset, offset + length);
-                    node.usedBytes = length;
-                    return length
-                } else if (node.usedBytes === 0 && position === 0) {
-                    M.update(stream);
-                    node.contents = new Uint8Array(buffer.subarray(offset, offset + length));
-                    node.usedBytes = length;
-                    return length
-                } else if (position + length <= node.usedBytes) {
-                    node.contents.set(buffer.subarray(offset, offset + length), position);
-                    return length
-                }
-            }
-            M.MEMFS.expandFileStorage(node, position + length);
-            if (node.contents.subarray && buffer.subarray) node.contents.set(buffer.subarray(offset, offset + length), position);
-            else {
-                for (var i = 0; i < length; i++) {
-                    node.contents[position + i] = buffer[offset + i]
-                }
-            }
-            node.usedBytes = Math.max(node.usedBytes, position + length);
-            return length
         };
         updatePromise(stream) {
-            let M = this;
+            let D = this;
             return new Promise((resolve, reject) => {
-                if (!M.updateList.includes(stream.node.mount)) M.updateList.push(stream.node.mount);
+                if (!D.updateList.includes(stream.node.mount)) D.updateList.push(stream.node.mount);
                 let Timer = setInterval(() => {
-                    if (M.updateTime && Timer != M.updateTime) {
+                    if (D.updateTime && Timer != D.updateTime) {
                         clearInterval(Timer);
                         reject('other update');
                     }
-                    if (stream.fd == null || M.FS.streams[stream.fd] == null) {
+                    if (stream.fd == null || D.FS.streams[stream.fd] == null) {
                         clearInterval(Timer);
                         resolve('ok');
                     }
-                }, M.speed);
-                M.updateTime = Timer;
+                }, D.speed);
+                D.updateTime = Timer;
             });
         }
         updatePath = [];
         updateList = [];
         async updateMount() {
-            let M = this;
-            if (M.updateList.length) {
-                let list = M.updateList.map(async mount => M.syncfs(mount, e => console.log(e)));
-                M.updateList = [];
-                M.updatePath = [];
+            let D = this;
+            if (D.updateList.length) {
+                let list = D.updateList.map(async mount => D.syncfs(mount, e => console.log(e)));
+                D.updateList = [];
+                D.updatePath = [];
                 await Promise.all(list);
             }
         }
         update(stream) {
-            let M = this;
-            if (!M.getStore(stream.node.mount)) return;
-            if (stream.path && stream.fd != null && !M.updatePath.includes(stream.path)) {
-                M.updatePath.push(stream.path)
-                M.updatePromise(stream).then(result => M.updateMount());
+            let D = this;
+            if (!D.getStore(stream.node.mount)) return;
+            if (stream.path && stream.fd != null && !D.updatePath.includes(stream.path)) {
+                D.updatePath.push(stream.path)
+                D.updatePromise(stream).then(result => D.updateMount());
             }
         }
         ReadFile(file) {
             if (this.FS.analyzePath(file).exists) return this.FS.readFile(file);
         }
         MKFILE(path, data, bool) {
-            if(!this.Module) return;
+            if (!this.Module) return;
             let FS = this.FS,
                 dir = path.split('/');
             if (dir.length) dir = dir.slice(0, -1).join('/');
@@ -7111,9 +4704,19 @@ var EJS = function (modules) {
             }
         }
     }
-    var T = Nenge,
+    const T = Nenge,
         I = T.I,
         DISK = new NengeDisk(T);
+    DISK.SetDB({
+        libjs: T.getStore('data-libjs'),
+        patch: T.getStore('data-patch'),
+        parent: T.getStore('data-parent'),
+        rooms: T.getStore('data-rooms'),
+        system: T.getStore('data-system'),
+        bios: T.getStore('data-bios'),
+        saves: T.getStore('data-saves'),
+        openbor: T.getStore('data-openbor'),
+    });
     es_require['r'](es_exports);
     //es_require(0x85);
     //es_require(0x140);
@@ -7146,57 +4749,6 @@ var EJS = function (modules) {
         _0x507120 = function (_0x2f93cf) {
 
             return _0x2e378f(_0x2f93cf) || (_0x324371(_0x2f93cf) || _0x1e9f61(_0x2f93cf) || _0x3b2133(_0x2f93cf)) && !_0x2f93cf['length'] || _0x2979d1(_0x2f93cf) && !Object['keys'](_0x2f93cf)['length'];
-        },
-        TypeCheck = {
-            'nullOrUndefined': _0x2e378f,
-            'object': _0x2979d1,
-            'number': function (_0x4f1fd2) {
-
-                return _0x2c15a8(_0x4f1fd2) === Number && !Number['isNaN'](_0x4f1fd2);
-            },
-            'string': _0x324371,
-            'boolean': function (_0x2f2975) {
-                return _0x2c15a8(_0x2f2975) === Boolean;
-            },
-            'function': function (_0x2ec69e) {
-                return _0x2c15a8(_0x2ec69e) === Function;
-            },
-            'array': _0x1e9f61,
-            'weakMap': function (_0xeeae82) {
-                return _0x19ed31(_0xeeae82, WeakMap);
-            },
-            'nodeList': _0x3b2133,
-            'element': function (_0x2ad6f8) {
-                return _0x19ed31(_0x2ad6f8, Element);
-            },
-            'textNode': function (_0x36c8e3) {
-                return _0x2c15a8(_0x36c8e3) === Text;
-            },
-            'event': function (_0x328780) {
-                return _0x19ed31(_0x328780, Event);
-            },
-            'keyboardEvent': function (_0x2108fe) {
-                return _0x19ed31(_0x2108fe, KeyboardEvent);
-            },
-            'cue': function (_0x19c776) {
-
-                return _0x19ed31(_0x19c776, window['TextTrackCue']) || _0x19ed31(_0x19c776, window['VTTCue']);
-            },
-            'track': function (_0x14335a) {
-
-                return _0x19ed31(_0x14335a, TextTrack) || !_0x2e378f(_0x14335a) && _0x324371(_0x14335a['kind']);
-            },
-            'url': function (url) {
-
-                if (_0x19ed31(url, window['URL'])) return !0x0;
-                url['startsWith']('http://') && url['startsWith']('https://') || (url = 'http://' ['concat'](url));
-                try {
-                    return !_0x507120(new URL(url)['hostname']);
-                } catch (e) {
-                    return !0x1;
-                }
-            },
-            'empty': _0x507120
         };
 
     function SetEvent(thisArg, object, evt) {
@@ -7204,13 +4756,14 @@ var EJS = function (modules) {
             isAdd = arguments['length'] > 0x3 && void 0x0 !== arguments[0x3] && arguments[0x3],
             passive = !(arguments['length'] > 0x4 && void 0x0 !== arguments[0x4]) || arguments[0x4],
             capture = arguments['length'] > 0x5 && void 0x0 !== arguments[0x5] && arguments[0x5];
-        if (thisArg && 'addEventListener' in thisArg && !I.empty(object) && TypeCheck['function'](evt)) {
+        if (thisArg && 'addEventListener' in thisArg && !I.empty(object) && I.func(evt)) {
             var eventTypes = object['split'](' '),
                 opt = capture;
             opt = {
                 'passive': passive,
                 'capture': capture
-            }, eventTypes['forEach'](function (type) {
+            };
+            eventTypes['forEach'](function (type) {
 
                 _This && _This['eventListeners'] && isAdd && _This['eventListeners']['push']({
                     'element': thisArg,
@@ -7305,27 +4858,21 @@ var EJS = function (modules) {
         });
     }
 
-    function _0x156114(_0x3fdba5, _0x4788f1) {
-
-        I.elm(_0x3fdba5) && !I.empty(_0x4788f1) && Object['entries'](_0x4788f1)['filter'](function (_0x58d983) {
-            var _0x4020ea = _0x31d3b3(_0x58d983, 0x2)[0x1];
-            return !TypeCheck['nullOrUndefined'](_0x4020ea);
-        })['forEach'](function (_0x34cf16) {
-            var _0x520af9 = _0x31d3b3(_0x34cf16, 0x2),
-                _0x1be452 = _0x520af9[0x0],
-                _0x12bd6b = _0x520af9[0x1];
-            return _0x3fdba5['setAttribute'](_0x1be452, _0x12bd6b);
-        });
+    function setElmAttr(elm, attr) {
+        //!I.null(entry[1])&&!I.none(entry[1])
+        I.elm(elm) && I.toArr(attr, entry => elm['setAttribute'](entry[0], entry[1]));
     }
 
-    function _0xf5893f(_0x346c41, _0x53c35a, _0xc13d25) {
-        var _0x2bea6d = document['createElement'](_0x346c41);
-        return TypeCheck['object'](_0x53c35a) && _0x156114(_0x2bea6d, _0x53c35a), I.str(_0xc13d25) && (_0x2bea6d.innerHTML = _0xc13d25), _0x2bea6d;
+    function createElm(str, attr, html) {
+        var elm = document['createElement'](str);
+        I.obj(attr) && setElmAttr(elm, attr);
+        I.str(html) && (elm.innerHTML = html);
+        return elm;
     }
 
     function _0x24b9ed(_0xbca52c) {
 
-        TypeCheck['nodeList'](_0xbca52c) || TypeCheck['array'](_0xbca52c) ? Array['from'](_0xbca52c)['forEach'](_0x24b9ed) : I.elm(_0xbca52c) && I.elm(_0xbca52c['parentNode']) && _0xbca52c['parentNode']['removeChild'](_0xbca52c);
+        I.nodelist(_0xbca52c) || I.array(_0xbca52c) ? Array['from'](_0xbca52c)['forEach'](_0x24b9ed) : I.elm(_0xbca52c) && I.elm(_0xbca52c['parentNode']) && _0xbca52c['parentNode']['removeChild'](_0xbca52c);
     }
 
     function _0x4d33e3(_0x243508, _0x53790c) {
@@ -7341,7 +4888,7 @@ var EJS = function (modules) {
                 _0x4e1477 = _0x5a3efe['length'] > 0x1 ? _0x5a3efe[0x1]['replace'](/["']/g, '') : '';
             switch (_0x3609b0['charAt'](0x0)) {
                 case '.':
-                    TypeCheck['object'](_0x487b80) && I.str(_0x487b80['class']) && (_0x487b80['class'] += ' ' ['concat'](_0x319f0e)), _0x3f565c['class'] = _0x319f0e;
+                    I.obj(_0x487b80) && I.str(_0x487b80['class']) && (_0x487b80['class'] += ' ' ['concat'](_0x319f0e)), _0x3f565c['class'] = _0x319f0e;
                     break;
                 case '#':
                     _0x3f565c['id'] = _0x3609b0['replace']('#', '');
@@ -7355,57 +4902,35 @@ var EJS = function (modules) {
     function toggleHidden(elm, bool) {
 
         if (I.elm(elm)) {
-            TypeCheck['boolean'](bool) || (bool = !elm['hidden']);
-            if (bool) {
-                elm['setAttribute']('hidden', '');
-            } else {
-                elm['removeAttribute']('hidden')
-            }
+            I.bool(bool) || (bool = !elm['hidden']);
+            elm.hidden = bool;
         }
     }
 
-    function _0x279293(_0x5279d0, _0x5059f6, _0x5c64ce) {
+    function elmAddRemoveClass(NodeElm, classname, bool) {
 
-        if (TypeCheck['nodeList'](_0x5279d0)) return Array['from'](_0x5279d0)['map'](function (_0x356d5f) {
-            return _0x279293(_0x356d5f, _0x5059f6, _0x5c64ce);
-        });
-        if (I.elm(_0x5279d0)) {
-            var _0x2c891b = 'toggle';
-            return void 0x0 !== _0x5c64ce && (_0x2c891b = _0x5c64ce ? 'add' : 'remove'), _0x5279d0['classList'][_0x2c891b](_0x5059f6), _0x5279d0['classList']['contains'](_0x5059f6);
+        if (I.nodelist(NodeElm)) return I.toArr(NodeElm, elm => elmAddRemoveClass(elm, classname, bool));
+        if (I.elm(NodeElm)) {
+            NodeElm['classList'][bool ? 'add' : I.bool(bool) ? 'remove' : 'toggle'](classname);
+            return hasClassName(NodeElm, classname);
         }
         return !0x1;
     }
 
-    function _0xa225b4(_0x423bbb, _0x1b2264) {
+    function hasClassName(elm, classname) {
 
-        return I.elm(_0x423bbb) && _0x423bbb['classList']['contains'](_0x1b2264);
+        return I.elm(elm) && elm['classList']['contains'](classname);
     }
 
-    function _0x2cc473(_0x248d98, _0x11ded1) {
-        var _0x5f36cf = {
-            'Element': Element
-        };
-        return (_0x5f36cf['matches'] || _0x5f36cf['webkitMatchesSelector'] || _0x5f36cf['mozMatchesSelector'] || _0x5f36cf['msMatchesSelector'] || function () {
-
-            return Array['from'](document['querySelectorAll'](_0x11ded1))['includes'](this);
-        })['call'](_0x248d98, _0x11ded1);
-    }
-
-    function ContainerSelectorAll(str) {
-
-        return this['elements']['container']['querySelectorAll'](str);
-    }
-
-    function ContainerSelector(str) {
-
-        return this['elements']['container']['querySelector'](str);
+    function elmInNodeList(_0x248d98, _0x11ded1) {
+        return I.toArr(T.$$(_0x11ded1))['includes'](_0x248d98);
     }
 
     function _0xe124af() {
         var _0x4da8c8 = arguments['length'] > 0x0 && void 0x0 !== arguments[0x0] ? arguments[0x0] : null,
             _0x2b151e = arguments['length'] > 0x1 && void 0x0 !== arguments[0x1] && arguments[0x1];
         if (I.elm(_0x4da8c8)) {
-            var _0x1599d7 = ContainerSelectorAll['call'](this, 'button:not(:disabled), input:not(:disabled), [tabindex]'),
+            var _0x1599d7 = this.SelectorAll('button:not(:disabled), input:not(:disabled), [tabindex]'),
                 _0x4e1cb5 = _0x1599d7[0x0],
                 _0x1c45af = _0x1599d7[_0x1599d7['length'] - 0x1];
             SetEvent['call'](this, this['elements']['container'], 'keydown', function (_0x21378e) {
@@ -7421,9 +4946,9 @@ var EJS = function (modules) {
     function _0x348ac8() {
         var _0x1e3486 = arguments['length'] > 0x0 && void 0x0 !== arguments[0x0] ? arguments[0x0] : null,
             _0x2f6eb2 = arguments['length'] > 0x1 && void 0x0 !== arguments[0x1] && arguments[0x1];
-        I.elm(_0x1e3486) && (_0x1e3486['focus'](), _0x2f6eb2 && _0x279293(_0x1e3486, this['config']['classNames']['tabFocus']));
+        I.elm(_0x1e3486) && (_0x1e3486['focus'](), _0x2f6eb2 && elmAddRemoveClass(_0x1e3486, this['config']['classNames']['tabFocus']));
     }
-    
+
     /*
     function getElmClassName(name) {
         return (getClassName(name)  );
@@ -7431,7 +4956,7 @@ var EJS = function (modules) {
         return n_export_129['a']['bind'](n__export_130['a'])(name);
     }
     */
-    let ejs_ClassLists ={
+    let ejs_ClassLists = {
         'ejs-wrapper': 'ejs--de6433374cb30211f10e148b320b2f',
         'ejs': 'ejs--7a5f920ceffb2913f6dbda780573cf',
         'ejs--full-ui': 'ejs--f3a002bba9836fe4ebfed357a45521',
@@ -7622,10 +5147,18 @@ var EJS = function (modules) {
     function getClassName(name, bool) {
         let pre = bool ? '.' : ''
         if (I.str(name)) name = name.trim().split(' ');
-        else if(I.objArr(name)){
-            return I.toArr(name).map(n=>pre + (!n[1]?'':ejs_ClassLists[n[0]] ? ejs_ClassLists[n[0]] : n[0])).join(' ');
+        else if (I.obj(name)) {
+            return I.toArr(name).map(n => pre + (!n[1] ? '' : ejs_ClassLists[n[0]] ? ejs_ClassLists[n[0]] : n[0])).join(' ');
         }
         return name.map(n => pre + (ejs_ClassLists[n] ? ejs_ClassLists[n] : n)).join(' ');
+    }
+
+    function getCtrlclassName(name, bool) {
+        return (bool ? '.' : '') + ejs_Controller.classNames[name];
+    }
+
+    function getSvgIcon(name) {
+        return ejs_install['icons'][name + '.svg'];
     }
     var _0x1ec19d, _0x529f8c, _0x226a6d, _0x2c3eed = (_0x1ec19d = document['createElement']('span'), _0x529f8c = {
         'WebkitTransition': 'webkitTransitionEnd',
@@ -7637,14 +5170,16 @@ var EJS = function (modules) {
         return void 0x0 !== _0x1ec19d['style'][_0x2e1e8a];
     }), !!I.str(_0x226a6d) && _0x529f8c[_0x226a6d]);
 
-    function _0x47f8ad(_0x58366e) {
+    function tryHidden(elm) {
         setTimeout(function () {
             try {
-                toggleHidden(_0x58366e, !0x0), _0x58366e['offsetHeight'], toggleHidden(_0x58366e, !0x1);
-            } catch (_0x1c5c81) {}
+                toggleHidden(elm, !0x0);
+                elm['offsetHeight'];
+                toggleHidden(elm, !0x1);
+            } catch (e) {}
         }, 0x0);
     }
-    var _0x9cb9c5, _0x45806f, _0x31055e = {
+    var _0x9cb9c5, _0x45806f, ejs_Browser = {
             'isEdge': 'Netscape' === navigator['appName'] && navigator['appVersion']['indexOf']('Edge') > -0x1,
             'isIE': !!document['documentMode'],
             'isWebkit': 'WebkitAppearance' in document['documentElement']['style'] && !/Edge/ ['test'](navigator['userAgent']),
@@ -7683,7 +5218,7 @@ var EJS = function (modules) {
                 }
                 return _0x33e952;
             }()),
-            'wasm': 'undefined' != typeof WebAssembly && TypeCheck['object'](WebAssembly),
+            'wasm': 'undefined' != typeof WebAssembly && I.obj(WebAssembly),
             'websocket': 'undefined' != typeof WebSocket,
             'webRTCSupported': (_0x9cb9c5 = !0x1, ['RTCPeerConnection', 'webkitRTCPeerConnection', 'mozRTCPeerConnection', 'RTCIceGatherer']['forEach'](function (_0x2c8e24) {
                 _0x9cb9c5 || _0x2c8e24 in window && (_0x9cb9c5 = !0x0);
@@ -7693,20 +5228,13 @@ var EJS = function (modules) {
             'indexeddb': 'indexedDB' in window
         };
 
-    function _0x27d0c5(_0x199d68, _0x47b73c, _0x513c87) {
-        return _0x47b73c in _0x199d68 ? Object['defineProperty'](_0x199d68, _0x47b73c, {
-            'value': _0x513c87,
+    function ejs_define(obj, key, value) {
+        return key in obj ? Object['defineProperty'](obj, key, {
+            'value': value,
             'enumerable': !0x0,
             'configurable': !0x0,
             'writable': !0x0
-        }) : _0x199d68[_0x47b73c] = _0x513c87, _0x199d68;
-    }
-
-    function _0x10f6bc(_0x8dedce, _0x5c8e35) {
-
-        return _0x5c8e35['split']('.')['reduce'](function (_0x12040e, _0x225a95) {
-            return _0x12040e && _0x12040e[_0x225a95];
-        }, _0x8dedce);
+        }) : obj[key] = value, obj;
     }
 
     function _0x288469() {
@@ -7714,24 +5242,24 @@ var EJS = function (modules) {
         for (var _0x490c35 = arguments['length'] > 0x0 && void 0x0 !== arguments[0x0] ? arguments[0x0] : {}, _0x35136e = arguments['length'], _0x58cab3 = new Array(_0x35136e > 0x1 ? _0x35136e - 0x1 : 0x0), _0x34cf6d = 0x1; _0x34cf6d < _0x35136e; _0x34cf6d++) _0x58cab3[_0x34cf6d - 0x1] = arguments[_0x34cf6d];
         if (!_0x58cab3['length']) return _0x490c35;
         var _0x1905c2 = _0x58cab3['shift']();
-        return TypeCheck['object'](_0x1905c2) ? (Object['keys'](_0x1905c2)['forEach'](function (_0xe5f1a6) {
+        return I.obj(_0x1905c2) ? (Object['keys'](_0x1905c2)['forEach'](function (_0xe5f1a6) {
 
-            TypeCheck['object'](_0x1905c2[_0xe5f1a6]) ? (Object['keys'](_0x490c35)['includes'](_0xe5f1a6) || Object['assign'](_0x490c35, _0x27d0c5({}, _0xe5f1a6, {})), _0x288469(_0x490c35[_0xe5f1a6], _0x1905c2[_0xe5f1a6])) : Object['assign'](_0x490c35, _0x27d0c5({}, _0xe5f1a6, _0x1905c2[_0xe5f1a6]));
+            I.obj(_0x1905c2[_0xe5f1a6]) ? (Object['keys'](_0x490c35)['includes'](_0xe5f1a6) || Object['assign'](_0x490c35, ejs_define({}, _0xe5f1a6, {})), _0x288469(_0x490c35[_0xe5f1a6], _0x1905c2[_0xe5f1a6])) : Object['assign'](_0x490c35, ejs_define({}, _0xe5f1a6, _0x1905c2[_0xe5f1a6]));
         }), _0x288469['apply'](void 0x0, [_0x490c35]['concat'](_0x58cab3))) : _0x490c35;
     }
 
-    function _0x125682() {
-        var _0x200dec = arguments['length'] > 0x0 && void 0x0 !== arguments[0x0] ? arguments[0x0] : '',
-            _0x19fa2e = arguments['length'] > 0x1 && void 0x0 !== arguments[0x1] ? arguments[0x1] : '',
-            _0x3ddb66 = arguments['length'] > 0x2 && void 0x0 !== arguments[0x2] ? arguments[0x2] : '';
-        return _0x200dec['replace'](new RegExp(_0x19fa2e['toString']()['replace'](/([.*+?^=!:${}()|[\]/\\])/g, '\\\x241'), 'g'), _0x3ddb66['toString']());
+    function preg_replace(str, preg, text) {
+        str = str || '';
+        preg = preg && preg.toString() || '';
+        text = text && text.toString() || '';
+        return str['replace'](new RegExp(preg['replace'](/([.*+?^=!:${}()|[\]/\\])/g, '\\\x241'), 'g'), text);
     }
 
     function _0x378cd2() {
         var _0x2c60fd = (arguments['length'] > 0x0 && void 0x0 !== arguments[0x0] ? arguments[0x0] : '')['toString']();
         return (_0x2c60fd = (function () {
             var _0xa317e4 = (arguments['length'] > 0x0 && void 0x0 !== arguments[0x0] ? arguments[0x0] : '')['toString']();
-            return _0xa317e4 = _0x125682(_0xa317e4, '-', ' '), _0xa317e4 = _0x125682(_0xa317e4, '_', ' '), _0x125682(_0xa317e4 = (function () {
+            return _0xa317e4 = preg_replace(_0xa317e4, '-', ' '), _0xa317e4 = preg_replace(_0xa317e4, '_', ' '), preg_replace(_0xa317e4 = (function () {
 
                 return (arguments['length'] > 0x0 && void 0x0 !== arguments[0x0] ? arguments[0x0] : '')['toString']()['replace'](/\w\S*/g, function (_0x2afc66) {
 
@@ -7744,7 +5272,7 @@ var EJS = function (modules) {
     function _0x1680da(_0x3127d7, _0x180127) {
         return function (_0x1bf724) {
 
-            if (Array['isArray'](_0x1bf724)) return _0x1bf724;
+            if (I.array(_0x1bf724)) return _0x1bf724;
         }(_0x3127d7) || function (_0x1f176a, _0x2229fc) {
             var _0x21fdc1 = [],
                 _0x9eea0b = !0x0,
@@ -7767,39 +5295,11 @@ var EJS = function (modules) {
             throw new TypeError('Invalid attempt to destructure non-iterable instance');
         }());
     }
-    var _0x3c73eb = {
-        'get': function () {
-            var _0x43d09c = arguments['length'] > 0x0 && void 0x0 !== arguments[0x0] ? arguments[0x0] : '',
-                _0xc4d9d2 = arguments['length'] > 0x1 && void 0x0 !== arguments[0x1] ? arguments[0x1] : {};
-            if (I.empty(_0x43d09c) || I.empty(_0xc4d9d2)) return '';
-            var _0x1e3e29 = _0x10f6bc(_0xc4d9d2['i18n'], _0x43d09c);
-            if (I.empty(_0x1e3e29)) return '';
-            var _0x390568 = {
-                '{seektime}': _0xc4d9d2['seekTime'],
-                '{title}': _0xc4d9d2['title']
-            };
-            return Object['entries'](_0x390568)['forEach'](function (_0xc7608f) {
-                var _0x4b54d4 = _0x1680da(_0xc7608f, 0x2),
-                    _0x433944 = _0x4b54d4[0x0],
-                    _0x183a24 = _0x4b54d4[0x1];
-                _0x1e3e29 = _0x125682(_0x1e3e29, _0x433944, _0x183a24);
-            }), _0x1e3e29;
-        }
-    };
-
-    function _0x59c0eb(_0x1a6ac5, _0x48e847) {
-
-        for (var _0x290088 = 0x0; _0x290088 < _0x48e847['length']; _0x290088++) {
-            var _0xd9c7c6 = _0x48e847[_0x290088];
-            _0xd9c7c6['enumerable'] = _0xd9c7c6['enumerable'] || !0x1, _0xd9c7c6['configurable'] = !0x0, 'value' in _0xd9c7c6 && (_0xd9c7c6['writable'] = !0x0), Object['defineProperty'](_0x1a6ac5, _0xd9c7c6['key'], _0xd9c7c6);
-        }
-    }
     var _export_53 = es_require(0x35),
         _0xe3873 = es_require['n'](_export_53),
         _export_1 = es_require(0x1),
-        _export_131 = es_require(0x83),
-        _0x59b468 = es_require['n'](_export_131),
-        _0x1c59aa, _0x1e8be3 = function (_0x35bbcb) {
+        _0x1c59aa,
+        _0x1e8be3 = function (_0x35bbcb) {
 
             ! function (_0x3d9906) {
 
@@ -7807,10 +5307,10 @@ var EJS = function (modules) {
                 var _0x391ce0 = _0x3d9906['container'],
                     _0x4182d4 = _0x3d9906['event'];
                 'function' != typeof _0x4182d4 && (_0x4182d4 = function () {});
-                var _0x1b5afa = _0xf5893f('div', {
+                var _0x1b5afa = createElm('div', {
                         'class': getClassName('dpad-bg')
                     }),
-                    _0x25a50e = _0xf5893f('div', {
+                    _0x25a50e = createElm('div', {
                         'class': getClassName('dpad-front')
                     });
 
@@ -7834,11 +5334,9 @@ var EJS = function (modules) {
 
                     _0x4182d4(0x0, 0x0, 0x0, 0x0), _0x1b5afa['classList']['toggle'](getClassName('dpad-up'), !0x1), _0x1b5afa['classList']['toggle'](getClassName('dpad-down'), !0x1), _0x1b5afa['classList']['toggle'](getClassName('dpad-right'), !0x1), _0x1b5afa['classList']['toggle'](getClassName('dpad-left'), !0x1), _0x4249fc['stopPropagation']();
                 }
-                _0x1b5afa.innerHTML = '<div class=\x22' ['concat'](getClassName('dpad-1'), '\x22><div class=\x22')['concat'](getClassName('dpad-1-bg'), '\x22></div></div>\n    <div class=\x22')['concat'](getClassName('dpad-2'), '\x22><div class=\x22')['concat'](getClassName('dpad-2-bg'), '\x22></div></div>'), _0x391ce0['append'](_0x1b5afa), _0x391ce0['append'](_0x25a50e), addEvent(_0x25a50e, 'touchstart', _0x386078), addEvent(_0x25a50e, 'touchmove', _0x386078), addEvent(_0x25a50e, 'touchend', _0x54ac75), addEvent(_0x25a50e, 'touchcancel', _0x54ac75);
+                _0x1b5afa.innerHTML = '<div class="' ['concat'](getClassName('dpad-1'), '"><div class="')['concat'](getClassName('dpad-1-bg'), '"></div></div>\n    <div class="')['concat'](getClassName('dpad-2'), '"><div class="')['concat'](getClassName('dpad-2-bg'), '"></div></div>'), _0x391ce0['append'](_0x1b5afa), _0x391ce0['append'](_0x25a50e), addEvent(_0x25a50e, 'touchstart', _0x386078), addEvent(_0x25a50e, 'touchmove', _0x386078), addEvent(_0x25a50e, 'touchend', _0x54ac75), addEvent(_0x25a50e, 'touchcancel', _0x54ac75);
             }(_0x35bbcb);
-        },
-        _export_6 = es_require(0x6),
-        n_export_6_ = es_require['n'](_export_6);
+        };
 
     function _0x163757(_0x501f7d) {
 
@@ -8024,9 +5522,12 @@ var EJS = function (modules) {
         return _0x5a29e9;
     }());
 
-    function _0x48c5b6(_0x1bb516, _0x1111dd, _0x47fb53) {
-
-        for (var _0xd59c83 = _0x1111dd ? new Uint8Array(_0x1bb516['_u8array']['buffer'], _0x1111dd) : _0x1bb516['_u8array'], _0x4f6f5a = -0x1, _0x3d8750 = _0x47fb53 ? _0xd59c83['length'] - 0x4 : _0xd59c83['length'], _0x5ecc07 = 0x0; _0x5ecc07 < _0x3d8750; _0x5ecc07++) _0x4f6f5a = _0x4f6f5a >>> 0x8 ^ _0x45683b[0xff & (_0x4f6f5a ^ _0xd59c83[_0x5ecc07])];
+    function getCrc32int(_0x1bb516, _0x1111dd, _0x47fb53) {
+        var _0xd59c83 = _0x1111dd ? new Uint8Array(_0x1bb516['_u8array']['buffer'], _0x1111dd) : _0x1bb516['_u8array'],
+            _0x4f6f5a = -0x1,
+            _0x3d8750 = _0x47fb53 ? _0xd59c83['length'] - 0x4 : _0xd59c83['length'],
+            _0x5ecc07 = 0x0;
+        for (; _0x5ecc07 < _0x3d8750; _0x5ecc07++) _0x4f6f5a = _0x4f6f5a >>> 0x8 ^ _0x45683b[0xff & (_0x4f6f5a ^ _0xd59c83[_0x5ecc07])];
         return (-0x1 ^ _0x4f6f5a) >>> 0x0;
     }
     var _0x252f1b = 0x0,
@@ -8061,7 +5562,7 @@ var EJS = function (modules) {
             }
             _0x35bdc7['actions']['push'](_0x2d759b);
         }
-        if (_0x35bdc7['sourceChecksum'] = _0x171dcc['readU32'](), _0x35bdc7['targetChecksum'] = _0x171dcc['readU32'](), _0x35bdc7['patchChecksum'] = _0x171dcc['readU32'](), _0x35bdc7['patchChecksum'] !== _0x48c5b6(_0x171dcc, 0x0, !0x0)) throw new Error('error_crc_patch');
+        if (_0x35bdc7['sourceChecksum'] = _0x171dcc['readU32'](), _0x35bdc7['targetChecksum'] = _0x171dcc['readU32'](), _0x35bdc7['patchChecksum'] = _0x171dcc['readU32'](), _0x35bdc7['patchChecksum'] !== getCrc32int(_0x171dcc, 0x0, !0x0)) throw new Error('error_crc_patch');
         return _0x35bdc7;
     }
 
@@ -8107,7 +5608,7 @@ var EJS = function (modules) {
         return _0x3f2e16 += '\x0aTarget size: ' + this['targetSize'], _0x3f2e16 += '\x0aMetadata: ' + this['metaData'], _0x3f2e16 += '\n#Actions: ' + this['actions']['length'];
     }, _0x238008['prototype']['validateSource'] = function (_0x111cd0, _0x3c6257) {
 
-        return this['sourceChecksum'] === _0x48c5b6(_0x111cd0, _0x3c6257);
+        return this['sourceChecksum'] === getCrc32int(_0x111cd0, _0x3c6257);
     }, _0x238008['prototype']['apply'] = function (_0x57e076, _0x466b6e) {
 
         if (_0x466b6e && !this['validateSource'](_0x57e076)) throw new Error('error_crc_input');
@@ -8129,7 +5630,7 @@ var EJS = function (modules) {
                 }
             }
         }
-        if (_0x466b6e && this['targetChecksum'] !== _0x48c5b6(_0x1d8955)) throw new Error('error_crc_output');
+        if (_0x466b6e && this['targetChecksum'] !== getCrc32int(_0x1d8955)) throw new Error('error_crc_output');
         return _0x1d8955;
     }, _0x238008['prototype']['export'] = function (_0x19844c) {
         var _0x5775c6 = 'BPS1' ['length'];
@@ -8210,10 +5711,10 @@ var EJS = function (modules) {
         for (var _0x28badf = 0x0; _0x28badf < this['records']['length']; _0x28badf++) _0x59a5b3 += _0x1f9751(this['records'][_0x28badf]['offset']), _0x59a5b3 += this['records'][_0x28badf]['XORdata']['length'] + 0x1;
         _0x59a5b3 += 0xc, tempFile = new _0x2181ff(_0x59a5b3), tempFile['writeVLV'] = _0x23561c, tempFile['fileName'] = _0x5c3f14 + '.ups', tempFile['writeString'](_0x4bc4ab), tempFile['writeVLV'](this['sizeInput']), tempFile['writeVLV'](this['sizeOutput']);
         for (_0x28badf = 0x0; _0x28badf < this['records']['length']; _0x28badf++) tempFile['writeVLV'](this['records'][_0x28badf]['offset']), tempFile['writeBytes'](this['records'][_0x28badf]['XORdata']), tempFile['writeU8'](0x0);
-        return tempFile['littleEndian'] = !0x0, tempFile['writeU32'](this['checksumInput']), tempFile['writeU32'](this['checksumOutput']), tempFile['writeU32'](_0x48c5b6(tempFile, 0x0, !0x0)), tempFile;
+        return tempFile['littleEndian'] = !0x0, tempFile['writeU32'](this['checksumInput']), tempFile['writeU32'](this['checksumOutput']), tempFile['writeU32'](getCrc32int(tempFile, 0x0, !0x0)), tempFile;
     }, _0x50fdb2['prototype']['validateSource'] = function (_0xa205f4, _0x4721ec) {
 
-        return _0x48c5b6(_0xa205f4, _0x4721ec) === this['checksumInput'];
+        return getCrc32int(_0xa205f4, _0x4721ec) === this['checksumInput'];
     }, _0x50fdb2['prototype']['apply'] = function (_0x1d2eff, _0x2767af) {
 
         _0x2767af && this['validateSource'](_0x1d2eff), tempFile = new _0x2181ff(this['sizeOutput']), _0x1d2eff['copyToFile'](tempFile, 0x0, this['sizeInput']), _0x1d2eff['seek'](0x0);
@@ -8223,10 +5724,8 @@ var EJS = function (modules) {
             for (var _0x4afaa7 = 0x0; _0x4afaa7 < _0x3e9369['XORdata']['length']; _0x4afaa7++) tempFile['writeU8']((_0x1d2eff['isEOF']() ? 0x0 : _0x1d2eff['readU8']()) ^ _0x3e9369['XORdata'][_0x4afaa7]);
             tempFile['skip'](0x1), _0x1d2eff['skip'](0x1);
         }
-        return _0x2767af && (_0x48c5b6(tempFile), this['checksumOutput']), tempFile;
+        return _0x2767af && (getCrc32int(tempFile), this['checksumOutput']), tempFile;
     };
-    var _export_132 = es_require(0x84),
-        n_export_132 = es_require['n'](_export_132);
 
     function _0x1be57e(_0xfca35c, _0x2a0960, _0x302b27, _0xd2d2ea, _0x24098a, _0x2e100b, _0x1ba14c) {
 
@@ -8281,7 +5780,7 @@ var EJS = function (modules) {
 
         return function (_0x290188) {
 
-            if (Array['isArray'](_0x290188)) {
+            if (I.array(_0x290188)) {
                 for (var _0x3e2929 = 0x0, _0x2db44a = new Array(_0x290188['length']); _0x3e2929 < _0x290188['length']; _0x3e2929++) _0x2db44a[_0x3e2929] = _0x290188[_0x3e2929];
                 return _0x2db44a;
             }
@@ -8301,7 +5800,7 @@ var EJS = function (modules) {
             _0x2e4c89['enumerable'] = _0x2e4c89['enumerable'] || !0x1, _0x2e4c89['configurable'] = !0x0, 'value' in _0x2e4c89 && (_0x2e4c89['writable'] = !0x0), Object['defineProperty'](_0x219318, _0x2e4c89['key'], _0x2e4c89);
         }
     }
-    var _0x43edfa, _0x73670a, _0xf01683, _0x3b49f1, _0x23473e, _0x3e3214 = (_0x43edfa = ['a[href]', 'area[href]', 'input:not([disabled]):not([type=\x22hidden\x22]):not([aria-hidden])', 'select:not([disabled]):not([aria-hidden])', 'textarea:not([disabled]):not([aria-hidden])', 'button:not([disabled]):not([aria-hidden])', 'iframe', 'object', 'embed', '[contenteditable]', '[tabindex]:not([tabindex^=\x22-\x22])'], _0x73670a = (function () {
+    var _0x43edfa, _0x73670a, _0xf01683, _0x3b49f1, _0x23473e, _0x3e3214 = (_0x43edfa = ['a[href]', 'area[href]', 'input:not([disabled]):not([type="hidden"]):not([aria-hidden])', 'select:not([disabled]):not([aria-hidden])', 'textarea:not([disabled]):not([aria-hidden])', 'button:not([disabled]):not([aria-hidden])', 'iframe', 'object', 'embed', '[contenteditable]', '[tabindex]:not([tabindex^="-"])'], _0x73670a = (function () {
 
 
         function _0xd0e406(_0x5586b5) {
@@ -8426,7 +5925,7 @@ var EJS = function (modules) {
     }, _0x23473e = function (_0x35230b, _0x285f62) {
         if (function (_0x267889) {
 
-                _0x267889['length'] <= 0x0 && (console['warn']('MicroModal v' ['concat'](version, ': ❗Please specify at least one %c\x27micromodal-trigger\x27'), 'background-color: #f8f9fa;color: #50596c;font-weight: bold;', 'data attribute.'), console['warn']('%cExample:', 'background-color: #f8f9fa;color: #50596c;font-weight: bold;', '<a href=\x22#\x22 data-micromodal-trigger=\x22my-modal\x22></a>'));
+                _0x267889['length'] <= 0x0 && (console['warn']('MicroModal v' ['concat'](version, ': ❗Please specify at least one %c\x27micromodal-trigger\x27'), 'background-color: #f8f9fa;color: #50596c;font-weight: bold;', 'data attribute.'), console['warn']('%cExample:', 'background-color: #f8f9fa;color: #50596c;font-weight: bold;', '<a href="#" data-micromodal-trigger="my-modal"></a>'));
             }(_0x35230b), !_0x285f62) return !0x0;
         for (var _0x13fe73 in _0x285f62) _0x3b49f1(_0x13fe73);
         return !0x0;
@@ -8458,79 +5957,56 @@ var EJS = function (modules) {
             _0xf01683['closeModal']();
         }
     });
+    class ejs_toast {
+        constructor(obj) {
+            this['container'] = obj['container'];
+            this['message'] = obj['message'];
+            this['duraction'] = obj['duraction'] || 0xfa0;
+            this['onClick'] = this['onClick']['bind'](this);
+            this['timeout'] = null;
+        }
+        showToast() {
+            var _0x51d007, _0x2c9f66 = this,
+                _0x15a0e4 = this['container']['querySelector']('.' ['concat'](_0x50eb77));
+            if (_0x15a0e4 || (_0x15a0e4 = createElm('div', {
+                    'class': _0x50eb77
+                }), this['container']['appendChild'](_0x15a0e4)), (_0x51d007 = _0x15a0e4['querySelectorAll']('.' ['concat'](_0x509c52)))['length'] > 0x5) {
+                var _0x33b0b2 = _0x51d007[0x0];
+                _0x15a0e4['removeChild'](_0x33b0b2);
+            }
+            this['modal'] = createElm('div', {
+                'class': _0x509c52
+            }, this['message']), this['modal']['setAttribute']('aria-hidden', 'false'), this['modal']['classList']['add'](getClassName('is-open')), this['addEventListeners'](), _0x15a0e4['appendChild'](this['modal']), this['timeout'] = setTimeout(function () {
 
-    function _0x2dc05e(_0x43a593, _0x572cc9) {
+                _0x2c9f66['closeToast']();
+            }, this['duraction']);
+        }
+        closeToast() {
+            var _0x593fe7 = this['modal'],
+                _0x12353e = this['container']['querySelector']('.' ['concat'](_0x50eb77));
+            this['modal']['setAttribute']('aria-hidden', 'true');
+            try {
+                _0x12353e['removeChild'](_0x593fe7);
+            } catch (_0x2b8549) {}
+            this['removeEventListeners'](), this['timeout'] && (clearTimeout(this['timeout']), this['timeout'] = null);
+        }
+        addEventListeners() {
 
-        for (var _0x2b48f6 = 0x0; _0x2b48f6 < _0x572cc9['length']; _0x2b48f6++) {
-            var _0x63fb79 = _0x572cc9[_0x2b48f6];
-            _0x63fb79['enumerable'] = _0x63fb79['enumerable'] || !0x1, _0x63fb79['configurable'] = !0x0, 'value' in _0x63fb79 && (_0x63fb79['writable'] = !0x0), Object['defineProperty'](_0x43a593, _0x63fb79['key'], _0x63fb79);
+            this['modal']['addEventListener']('touchstart', this['onClick']), this['modal']['addEventListener']('click', this['onClick']);
+        }
+        removeEventListeners() {
+
+            this['modal']['removeEventListener']('touchstart', this['onClick']), this['modal']['removeEventListener']('click', this['onClick']);
+        }
+        onClick(event) {
+
+            this['closeToast'](), event['preventDefault']();
         }
     }
-    var _0x50eb77, _0x509c52, _0x2126a7, _0x45facf, _0x43a596, _0x88c152 = (_0x50eb77 = getClassName('ejs-toast'), _0x509c52 = getClassName('ejs-toast-item'), _0x2126a7 = (function () {
-
-
-        function _0x77864e(_0x21674d) {
-            var _0x3ec422 = _0x21674d['container'],
-                _0x460928 = _0x21674d['message'],
-                _0x2c6b83 = _0x21674d['duraction'];
-            ! function (_0x7251d, _0x279e9a) {
-
-                if (!(_0x7251d instanceof _0x279e9a)) throw new TypeError('Cannot call a class as a function');
-            }(this, _0x77864e), this['container'] = _0x3ec422, this['message'] = _0x460928, this['duraction'] = _0x2c6b83 || 0xfa0, this['onClick'] = this['onClick']['bind'](this), this['timeout'] = null;
-        }
-        var _0x105b52, _0x396232, _0x3bdb98;
-        return _0x105b52 = _0x77864e, (_0x396232 = [{
-            'key': 'showToast',
-            'value': function () {
-                var _0x51d007, _0x2c9f66 = this,
-                    _0x15a0e4 = this['container']['querySelector']('.' ['concat'](_0x50eb77));
-                if (_0x15a0e4 || (_0x15a0e4 = _0xf5893f('div', {
-                        'class': _0x50eb77
-                    }), this['container']['appendChild'](_0x15a0e4)), (_0x51d007 = _0x15a0e4['querySelectorAll']('.' ['concat'](_0x509c52)))['length'] > 0x5) {
-                    var _0x33b0b2 = _0x51d007[0x0];
-                    _0x15a0e4['removeChild'](_0x33b0b2);
-                }
-                this['modal'] = _0xf5893f('div', {
-                    'class': _0x509c52
-                }, this['message']), this['modal']['setAttribute']('aria-hidden', 'false'), this['modal']['classList']['add'](getClassName('is-open')), this['addEventListeners'](), _0x15a0e4['appendChild'](this['modal']), this['timeout'] = setTimeout(function () {
-
-                    _0x2c9f66['closeToast']();
-                }, this['duraction']);
-            }
-        }, {
-            'key': 'closeToast',
-            'value': function () {
-                var _0x593fe7 = this['modal'],
-                    _0x12353e = this['container']['querySelector']('.' ['concat'](_0x50eb77));
-                this['modal']['setAttribute']('aria-hidden', 'true');
-                try {
-                    _0x12353e['removeChild'](_0x593fe7);
-                } catch (_0x2b8549) {}
-                this['removeEventListeners'](), this['timeout'] && (clearTimeout(this['timeout']), this['timeout'] = null);
-            }
-        }, {
-            'key': 'addEventListeners',
-            'value': function () {
-
-                this['modal']['addEventListener']('touchstart', this['onClick']), this['modal']['addEventListener']('click', this['onClick']);
-            }
-        }, {
-            'key': 'removeEventListeners',
-            'value': function () {
-
-                this['modal']['removeEventListener']('touchstart', this['onClick']), this['modal']['removeEventListener']('click', this['onClick']);
-            }
-        }, {
-            'key': 'onClick',
-            'value': function (_0x49e322) {
-
-                this['closeToast'](), _0x49e322['preventDefault']();
-            }
-        }]) && _0x2dc05e(_0x105b52['prototype'], _0x396232), _0x3bdb98 && _0x2dc05e(_0x105b52, _0x3bdb98), _0x77864e;
-    }()), _0x45facf = null, {
+    var _0x50eb77, _0x509c52, _0x45facf, _0x88c152 = (_0x50eb77 = getClassName('ejs-toast'), _0x509c52 = getClassName('ejs-toast-item'), _0x45facf = null, {
         'show': function (_0x15a353, _0x17f10e, _0x4f32be) {
             var _0x80e80a = {};
-            return _0x80e80a['container'] = _0x15a353, _0x80e80a['message'] = _0x17f10e, _0x80e80a['duraction'] = _0x4f32be, (_0x45facf = new _0x2126a7(_0x80e80a))['showToast'](), _0x45facf;
+            return _0x80e80a['container'] = _0x15a353, _0x80e80a['message'] = _0x17f10e, _0x80e80a['duraction'] = _0x4f32be, (_0x45facf = new ejs_toast(_0x80e80a))['showToast'](), _0x45facf;
         },
         'close': function () {
 
@@ -8548,97 +6024,78 @@ var EJS = function (modules) {
         }
         _0x23c305['done'] ? _0x46cc1f(_0x65cad) : Promise['resolve'](_0x65cad)['then'](_0x4b0716, _0x407368);
     }
-
-    function _0x4aa84a(_0x2b8336) {
-
-        return (_0x4aa84a = 'function' == typeof Symbol && 'symbol' == typeof Symbol['iterator'] ? function (_0x3cb42e) {
-            return typeof _0x3cb42e;
-        } : function (_0x2a4fd1) {
-
-            return _0x2a4fd1 && 'function' == typeof Symbol && _0x2a4fd1['constructor'] === Symbol && _0x2a4fd1 !== Symbol['prototype'] ? 'symbol' : typeof _0x2a4fd1;
-        })(_0x2b8336);
-    }
-
-    function _0xd3ca42(_0x2d46ed, _0x4a039f, _0x31dcf6) {
-        return _0x4a039f in _0x2d46ed ? Object['defineProperty'](_0x2d46ed, _0x4a039f, {
-            'value': _0x31dcf6,
-            'enumerable': !0x0,
-            'configurable': !0x0,
-            'writable': !0x0
-        }) : _0x2d46ed[_0x4a039f] = _0x31dcf6, _0x2d46ed;
-    }
     var ejs_Controller = {
-        'defaultControllers': {
+        defaultControllers: {
             0x0: {
                 0x0: {
-                    'value': '88',
-                    'value2': '1'
+                    value: '88',
+                    value2: '1'
                 },
                 0x1: {
-                    'value': '83',
-                    'value2': '3'
+                    value: '83',
+                    value2: '3'
                 },
                 0x2: {
-                    'value': '16',
-                    'value2': '8'
+                    value: '16',
+                    value2: '8'
                 },
                 0x3: {
-                    'value': '13',
-                    'value2': '9'
+                    value: '13',
+                    value2: '9'
                 },
                 0x4: {
-                    'value': '38',
-                    'value2': '12'
+                    value: '38',
+                    value2: '12'
                 },
                 0x5: {
-                    'value': '40',
-                    'value2': '13'
+                    value: '40',
+                    value2: '13'
                 },
                 0x6: {
-                    'value': '37',
-                    'value2': '14'
+                    value: '37',
+                    value2: '14'
                 },
                 0x7: {
-                    'value': '39',
-                    'value2': '15'
+                    value: '39',
+                    value2: '15'
                 },
                 0x8: {
-                    'value': '90',
-                    'value2': '0'
+                    value: '90',
+                    value2: '0'
                 },
                 0x9: {
-                    'value': '65',
-                    'value2': '2'
+                    value: '65',
+                    value2: '2'
                 },
                 0xa: {
-                    'value': '81',
-                    'value2': '4'
+                    value: '81',
+                    value2: '4'
                 },
                 0xb: {
-                    'value': '69',
-                    'value2': '5'
+                    value: '69',
+                    value2: '5'
                 },
                 0xc: {
-                    'value': '82',
-                    'value2': '6'
+                    value: '82',
+                    value2: '6'
                 },
                 0xd: {
-                    'value': '84',
-                    'value2': '7'
+                    value: '84',
+                    value2: '7'
                 },
                 0xe: {},
                 0xf: {},
                 0x10: {
-                    'value': '72'
+                    value: '72'
                 },
                 0x11: {
-                    'value': '70'
+                    value: '70'
                 },
                 0x12: {
-                    'value': '71'
+                    value: '71'
                 },
                 0x13: {
-                    'value': '84'
+                    value: '84'
                 },
                 0x14: {},
                 0x15: {},
@@ -8649,10 +6106,10 @@ var EJS = function (modules) {
             0x2: {},
             0x3: {}
         },
-        'controllers': {},
-        'remappingAxis': {},
-        'virtualGamepadContainer': null,
-        'keyMap': {
+        controllers: {},
+        remappingAxis: {},
+        virtualGamepadContainer: null,
+        keyMap: {
             0x8: 'backspace',
             0x9: 'tab',
             0xd: 'enter',
@@ -8753,7 +6210,7 @@ var EJS = function (modules) {
             0xdd: 'close braket',
             0xde: 'single quote'
         },
-        'mamekeymap': {
+        mamekeymap: {
             0x1: 'a',
             0x2: 'b',
             0x3: 'c',
@@ -8817,7 +6274,7 @@ var EJS = function (modules) {
             0x52: 'up',
             0x53: 'down'
         },
-        'mamekeytype': (_0x43a596 = {
+        mamekeytype: {
             0x7: 'START1',
             0x8: 'START2',
             0x9: 'START3',
@@ -8852,65 +6309,159 @@ var EJS = function (modules) {
             0x3a: 'JOYSTICKRIGHT_RIGHT',
             0x3b: 'JOYSTICKLEFT_UP',
             0x3c: 'JOYSTICKLEFT_DOWN',
-            0x3d: 'JOYSTICKLEFT_LEFT'
-        }, _0xd3ca42(_0x43a596, '61', 'JOYSTICKLEFT_RIGHT'), _0xd3ca42(_0x43a596, 0x40, 'BUTTON1'), _0xd3ca42(_0x43a596, 0x41, 'BUTTON2'), _0xd3ca42(_0x43a596, 0x42, 'BUTTON3'), _0xd3ca42(_0x43a596, 0x43, 'BUTTON4'), _0xd3ca42(_0x43a596, 0x44, 'BUTTON5'), _0xd3ca42(_0x43a596, 0x45, 'BUTTON6'), _0xd3ca42(_0x43a596, 0x46, 'BUTTON7'), _0xd3ca42(_0x43a596, 0x47, 'BUTTON8'), _0xd3ca42(_0x43a596, 0x48, 'BUTTON9'), _0xd3ca42(_0x43a596, 0x49, 'BUTTON10'), _0xd3ca42(_0x43a596, 0x4a, 'BUTTON11'), _0xd3ca42(_0x43a596, 0x4b, 'BUTTON12'), _0xd3ca42(_0x43a596, 0x4c, 'BUTTON13'), _0xd3ca42(_0x43a596, 0x4d, 'BUTTON14'), _0xd3ca42(_0x43a596, 0x4e, 'BUTTON15'), _0xd3ca42(_0x43a596, 0x4f, 'BUTTON16'), _0xd3ca42(_0x43a596, 0x51, 'MAHJONG_A'), _0xd3ca42(_0x43a596, 0x52, 'MAHJONG_B'), _0xd3ca42(_0x43a596, 0x53, 'MAHJONG_C'), _0xd3ca42(_0x43a596, 0x54, 'MAHJONG_D'), _0xd3ca42(_0x43a596, 0x55, 'MAHJONG_E'), _0xd3ca42(_0x43a596, 0x56, 'MAHJONG_F'), _0xd3ca42(_0x43a596, 0x57, 'MAHJONG_G'), _0xd3ca42(_0x43a596, 0x58, 'MAHJONG_H'), _0xd3ca42(_0x43a596, 0x59, 'MAHJONG_I'), _0xd3ca42(_0x43a596, 0x5a, 'MAHJONG_J'), _0xd3ca42(_0x43a596, 0x5b, 'MAHJONG_K'), _0xd3ca42(_0x43a596, 0x5c, 'MAHJONG_L'), _0xd3ca42(_0x43a596, 0x5d, 'MAHJONG_M'), _0xd3ca42(_0x43a596, 0x5e, 'MAHJONG_N'), _0xd3ca42(_0x43a596, 0x5f, 'MAHJONG_O'), _0xd3ca42(_0x43a596, 0x60, 'MAHJONG_P'), _0xd3ca42(_0x43a596, 0x61, 'MAHJONG_Q'), _0xd3ca42(_0x43a596, 0x62, 'MAHJONG_KAN'), _0xd3ca42(_0x43a596, 0x63, 'MAHJONG_PON'), _0xd3ca42(_0x43a596, 0x64, 'MAHJONG_CHI'), _0xd3ca42(_0x43a596, 0x65, 'MAHJONG_REACH'), _0xd3ca42(_0x43a596, 0x66, 'MAHJONG_RON'), _0xd3ca42(_0x43a596, 0x67, 'MAHJONG_FLIP_FLOP'), _0xd3ca42(_0x43a596, 0x68, 'MAHJONG_BET'), _0xd3ca42(_0x43a596, 0x69, 'MAHJONG_SCORE'), _0xd3ca42(_0x43a596, 0x6a, 'MAHJONG_DOUBLE_UP'), _0xd3ca42(_0x43a596, 0x6b, 'MAHJONG_BIG'), _0xd3ca42(_0x43a596, 0x6c, 'MAHJONG_SMALL'), _0xd3ca42(_0x43a596, 0x6d, 'MAHJONG_LAST_CHANCE'), _0xd3ca42(_0x43a596, 0x70, 'HANAFUDA_A'), _0xd3ca42(_0x43a596, 0x71, 'HANAFUDA_B'), _0xd3ca42(_0x43a596, 0x72, 'HANAFUDA_C'), _0xd3ca42(_0x43a596, 0x73, 'HANAFUDA_D'), _0xd3ca42(_0x43a596, 0x74, 'HANAFUDA_E'), _0xd3ca42(_0x43a596, 0x75, 'HANAFUDA_F'), _0xd3ca42(_0x43a596, 0x76, 'HANAFUDA_G'), _0xd3ca42(_0x43a596, 0x77, 'HANAFUDA_H'), _0xd3ca42(_0x43a596, 0x78, 'HANAFUDA_YES'), _0xd3ca42(_0x43a596, 0x79, 'HANAFUDA_NO'), _0xd3ca42(_0x43a596, 0x7c, 'GAMBLE_KEYIN'), _0xd3ca42(_0x43a596, 0x7d, 'GAMBLE_KEYOUT'), _0xd3ca42(_0x43a596, 0x7e, 'GAMBLE_SERVICE'), _0xd3ca42(_0x43a596, 0x7f, 'GAMBLE_BOOK'), _0xd3ca42(_0x43a596, 0x80, 'GAMBLE_DOOR'), _0xd3ca42(_0x43a596, 0x81, 'GAMBLE_PAYOUT'), _0xd3ca42(_0x43a596, 0x82, 'GAMBLE_BET'), _0xd3ca42(_0x43a596, 0x83, 'GAMBLE_DEAL'), _0xd3ca42(_0x43a596, 0x84, 'GAMBLE_STAND'), _0xd3ca42(_0x43a596, 0x85, 'GAMBLE_TAKE'), _0xd3ca42(_0x43a596, 0x86, 'GAMBLE_D_UP'), _0xd3ca42(_0x43a596, 0x87, 'GAMBLE_HALF'), _0xd3ca42(_0x43a596, 0x88, 'GAMBLE_HIGH'), _0xd3ca42(_0x43a596, 0x89, 'GAMBLE_LOW'), _0xd3ca42(_0x43a596, 0x8a, 'POKER_HOLD1'), _0xd3ca42(_0x43a596, 0x8b, 'POKER_HOLD2'), _0xd3ca42(_0x43a596, 0x8c, 'POKER_HOLD3'), _0xd3ca42(_0x43a596, 0x8d, 'POKER_HOLD4'), _0xd3ca42(_0x43a596, 0x8e, 'POKER_HOLD5'), _0xd3ca42(_0x43a596, 0x8f, 'POKER_CANCEL'), _0xd3ca42(_0x43a596, 0x90, 'SLOT_STOP1'), _0xd3ca42(_0x43a596, 0x91, 'SLOT_STOP2'), _0xd3ca42(_0x43a596, 0x92, 'SLOT_STOP3'), _0xd3ca42(_0x43a596, 0x93, 'SLOT_STOP4'), _0xd3ca42(_0x43a596, 0x94, 'SLOT_STOP_ALL'), _0xd3ca42(_0x43a596, 0x98, 'AD_STICK_X'), _0xd3ca42(_0x43a596, 0x99, 'AD_STICK_Y'), _0xd3ca42(_0x43a596, 0x9a, 'AD_STICK_Z'), _0xd3ca42(_0x43a596, 0x9b, 'PADDLE'), _0xd3ca42(_0x43a596, 0x9c, 'PADDLE_V'), _0xd3ca42(_0x43a596, 0x9d, 'PEDAL'), _0xd3ca42(_0x43a596, 0x9e, 'PEDAL2'), _0xd3ca42(_0x43a596, 0x9f, 'PEDAL3'), _0xd3ca42(_0x43a596, 0xa0, 'LIGHTGUN_X'), _0xd3ca42(_0x43a596, 0xa1, 'LIGHTGUN_Y'), _0xd3ca42(_0x43a596, 0xa2, 'POSITIONAL'), _0xd3ca42(_0x43a596, 0xa3, 'POSITIONAL_V'), _0xd3ca42(_0x43a596, 0xa5, 'DIAL'), _0xd3ca42(_0x43a596, 0xa6, 'DIAL_V'), _0xd3ca42(_0x43a596, 0xa7, 'TRACKBALL_X'), _0xd3ca42(_0x43a596, 0xa8, 'TRACKBALL_Y'), _0xd3ca42(_0x43a596, 0xa9, 'MOUSE_X'), _0xd3ca42(_0x43a596, 0xaa, 'MOUSE_Y'), _0x43a596),
-        'gamepad': null,
-        'allowCheat': !0x1,
-        'connection': null,
-        'connected': !0x1,
-        'playerName': '',
-        'players': [],
-        'roomMaster': null,
-        'coreOptionData': {},
-        'currentFrame': 0x0,
-        'wait': !0x1,
-        'progressHelper': {},
-        'icons': {
-            'lock': '<svg aria-hidden=\x22true\x22 focusable=\x22false\x22 data-prefix=\x22fas\x22 data-icon=\x22lock\x22 role=\x22img\x22 xmlns=\x22http://www.w3.org/2000/svg\x22 viewBox=\x220 0 448 512\x22 class=\x22svg-inline--fa fa-lock fa-w-14 fa-3x\x22><path fill=\x22currentColor\x22 d=\x22M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z\x22 class=\x22\x22></path></svg>',
-            'chat': '<svg xmlns=\x22http://www.w3.org/2000/svg\x22 viewBox=\x220 0 512 512\x22><path d=\x22M256 32C114.6 32 .0272 125.1 .0272 240c0 49.63 21.35 94.98 56.97 130.7c-12.5 50.37-54.27 95.27-54.77 95.77c-2.25 2.25-2.875 5.734-1.5 8.734C1.979 478.2 4.75 480 8 480c66.25 0 115.1-31.76 140.6-51.39C181.2 440.9 217.6 448 256 448c141.4 0 255.1-93.13 255.1-208S397.4 32 256 32z\x22/></svg>'
+            0x3d: 'JOYSTICKLEFT_LEFT',
+            0x3e: 'JOYSTICKLEFT_RIGHT',
+            0x40: 'BUTTON1',
+            0x41: 'BUTTON2',
+            0x42: 'BUTTON3',
+            0x43: 'BUTTON4',
+            0x44: 'BUTTON5',
+            0x45: 'BUTTON6',
+            0x46: 'BUTTON7',
+            0x47: 'BUTTON8',
+            0x48: 'BUTTON9',
+            0x49: 'BUTTON10',
+            0x4a: 'BUTTON11',
+            0x4b: 'BUTTON12',
+            0x4c: 'BUTTON13',
+            0x4d: 'BUTTON14',
+            0x4e: 'BUTTON15',
+            0x4f: 'BUTTON16',
+            0x51: 'MAHJONG_A',
+            0x52: 'MAHJONG_B',
+            0x53: 'MAHJONG_C',
+            0x54: 'MAHJONG_D',
+            0x55: 'MAHJONG_E',
+            0x56: 'MAHJONG_F',
+            0x57: 'MAHJONG_G',
+            0x58: 'MAHJONG_H',
+            0x59: 'MAHJONG_I',
+            0x5a: 'MAHJONG_J',
+            0x5b: 'MAHJONG_K',
+            0x5c: 'MAHJONG_L',
+            0x5d: 'MAHJONG_M',
+            0x5e: 'MAHJONG_N',
+            0x5f: 'MAHJONG_O',
+            0x60: 'MAHJONG_P',
+            0x61: 'MAHJONG_Q',
+            0x62: 'MAHJONG_KAN',
+            0x63: 'MAHJONG_PON',
+            0x64: 'MAHJONG_CHI',
+            0x65: 'MAHJONG_REACH',
+            0x66: 'MAHJONG_RON',
+            0x67: 'MAHJONG_FLIP_FLOP',
+            0x68: 'MAHJONG_BET',
+            0x69: 'MAHJONG_SCORE',
+            0x6a: 'MAHJONG_DOUBLE_UP',
+            0x6b: 'MAHJONG_BIG',
+            0x6c: 'MAHJONG_SMALL',
+            0x6d: 'MAHJONG_LAST_CHANCE',
+            0x70: 'HANAFUDA_A',
+            0x71: 'HANAFUDA_B',
+            0x72: 'HANAFUDA_C',
+            0x73: 'HANAFUDA_D',
+            0x74: 'HANAFUDA_E',
+            0x75: 'HANAFUDA_F',
+            0x76: 'HANAFUDA_G',
+            0x77: 'HANAFUDA_H',
+            0x78: 'HANAFUDA_YES',
+            0x79: 'HANAFUDA_NO',
+            0x7c: 'GAMBLE_KEYIN',
+            0x7d: 'GAMBLE_KEYOUT',
+            0x7e: 'GAMBLE_SERVICE',
+            0x7f: 'GAMBLE_BOOK',
+            0x80: 'GAMBLE_DOOR',
+            0x81: 'GAMBLE_PAYOUT',
+            0x82: 'GAMBLE_BET',
+            0x83: 'GAMBLE_DEAL',
+            0x84: 'GAMBLE_STAND',
+            0x85: 'GAMBLE_TAKE',
+            0x86: 'GAMBLE_D_UP',
+            0x87: 'GAMBLE_HALF',
+            0x88: 'GAMBLE_HIGH',
+            0x89: 'GAMBLE_LOW',
+            0x8a: 'POKER_HOLD1',
+            0x8b: 'POKER_HOLD2',
+            0x8c: 'POKER_HOLD3',
+            0x8d: 'POKER_HOLD4',
+            0x8e: 'POKER_HOLD5',
+            0x8f: 'POKER_CANCEL',
+            0x90: 'SLOT_STOP1',
+            0x91: 'SLOT_STOP2',
+            0x92: 'SLOT_STOP3',
+            0x93: 'SLOT_STOP4',
+            0x94: 'SLOT_STOP_ALL',
+            0x98: 'AD_STICK_X',
+            0x99: 'AD_STICK_Y',
+            0x9a: 'AD_STICK_Z',
+            0x9b: 'PADDLE',
+            0x9c: 'PADDLE_V',
+            0x9d: 'PEDAL',
+            0x9e: 'PEDAL2',
+            0x9f: 'PEDAL3',
+            0xa0: 'LIGHTGUN_X',
+            0xa1: 'LIGHTGUN_Y',
+            0xa2: 'POSITIONAL',
+            0xa3: 'POSITIONAL_V',
+            0xa5: 'DIAL',
+            0xa6: 'DIAL_V',
+            0xa7: 'TRACKBALL_X',
+            0xa8: 'TRACKBALL_Y',
+            0xa9: 'MOUSE_X',
+            0xaa: 'MOUSE_Y'
         },
-        'loadRoomsListTimer': null,
-        'loadRoomsList': function () {},
-        'stopLoadRooms': function () {
-
+        gamepad: null,
+        allowCheat: !0x1,
+        connection: null,
+        connected: !0x1,
+        playerName: '',
+        players: [],
+        roomMaster: null,
+        coreOptionData: {},
+        currentFrame: 0x0,
+        wait: !0x1,
+        progressHelper: {},
+        loadRoomsListTimer: null,
+        loadRoomsList: function () {},
+        stopLoadRooms: function () {
             ejs_Controller['loadRoomsListTimer'] && clearTimeout(ejs_Controller['loadRoomsListTimer']);
         },
-        'openRoom': function () {},
-        'isPaused': null,
-        'setVolume': null,
-        'setVariable': null,
-        'simulateInput': null,
-        'simulateInputFn': null,
-        'toggleShader': null,
-        'saveState': null,
-        'loadState': null,
-        'quickSaveState': null,
-        'quickLoadState': null,
-        'getScreenData': null,
-        'getStateInfo': null,
-        'setCheat': null,
-        'resetCheat': null,
-        'getDiskNum': null,
-        'setDisk': null,
-        'ejectDisk': null,
-        'getGameCoreOptions': null,
-        'stateSupported': !0x1,
-        'saveSavFiles': null,
-        'contentCrc32': null,
-        'netPlayHost': null,
-        'netPlayClient': null,
-        'netPlayClose': null,
-        'netplayNewUser': null,
-        'netplayPushData': null,
-        'netPlayString': null,
-        'netPlayIsHost': !0x1,
-        'netPlayUsers': ['', ''],
-        'netPlayPassword': null,
-        'romcrc32': '',
-        '_netPlayConnected': !0x1,
-        'netPlayDialogOpened': !0x1,
-        'netPlayConnectChange': function () {},
-        'classNames': {
+        openRoom: function () {},
+        isPaused: null,
+        setVolume: null,
+        setVariable: null,
+        simulateInput: null,
+        simulateInputFn: null,
+        toggleShader: null,
+        saveState: null,
+        loadState: null,
+        quickSaveState: null,
+        quickLoadState: null,
+        getScreenData: null,
+        getStateInfo: null,
+        setCheat: null,
+        resetCheat: null,
+        getDiskNum: null,
+        setDisk: null,
+        ejectDisk: null,
+        getGameCoreOptions: null,
+        stateSupported: !0x1,
+        saveSavFiles: null,
+        contentCrc32: null,
+        netPlayHost: null,
+        netPlayClient: null,
+        netPlayClose: null,
+        netplayNewUser: null,
+        netplayPushData: null,
+        netPlayString: null,
+        netPlayIsHost: !0x1,
+        netPlayUsers: ['', ''],
+        netPlayPassword: null,
+        romcrc32: '',
+        _netPlayConnected: !0x1,
+        netPlayDialogOpened: !0x1,
+        netPlayConnectChange: function () {},
+        classNames: {
             'dialog-container': getClassName('dialog-container'),
             'tabs': getClassName('tabs'),
             'dialog-title': getClassName('dialog-title'),
@@ -8958,12 +6509,95 @@ var EJS = function (modules) {
             'ejs-delete-cheat': getClassName('ejs-delete-cheat'),
             'controls-toggle': getClassName('ejs--controls-toggle')
         },
-        'setGamepadDialog': function () {
-            var _0xad555a = this;
-            _0xad555a['elements']['dialogs']['gamepad'].innerHTML = ('\x0a        <div class=\x22')['concat'](ejs_Controller['classNames']['dialog-container'], '\x22>\n            <div class=\x22')['concat'](ejs_Controller['classNames']['dialog-title'], '\x22>\x0a                <h4>Controls Settings</h4>\n            </div>\x0a            \x0a            <ul class=\x22')['concat'](ejs_Controller['classNames']['tabs'], '\x22 id=\x22controls-tabs\x22>\x0a                <li class=\x22tabs-title\x22 role=\x22presentation\x22><a href=\x22#\x22 onclick=\x22return false\x22 role=\x22tab\x22 aria-controls=\x22controls-0\x22 aria-selected=\x22false\x22 id=\x22controls-0-label\x22>Player 1</a></li>\n                <li class=\x22tabs-title\x22 role=\x22presentation\x22><a href=\x22#\x22 onclick=\x22return false\x22 role=\x22tab\x22 aria-controls=\x22controls-1\x22 aria-selected=\x22false\x22 id=\x22controls-1-label\x22>Player 2</a></li>\n                <li class=\x22tabs-title\x22 role=\x22presentation\x22><a href=\x22#\x22 onclick=\x22return false\x22 role=\x22tab\x22 aria-controls=\x22controls-2\x22 aria-selected=\x22false\x22 id=\x22controls-2-label\x22>Player 3</a></li>\n                <li class=\x22tabs-title\x22 role=\x22presentation\x22><a href=\x22#\x22 onclick=\x22return false\x22 role=\x22tab\x22 aria-controls=\x22controls-3\x22 aria-selected=\x22false\x22 id=\x22controls-3-label\x22>Player 4</a></li>\n            </ul>\n            <div class=\x22')['concat'](ejs_Controller['classNames']['dialog-content'], '\x22>\n            <div class=\x22')['concat'](ejs_Controller['classNames']['tabs-content'], ' controls\x22>\x0a                \x0a            </div>\n            </div>\n            <div class=\x22')['concat'](ejs_Controller['classNames']['dialog-buttons'], '\x22>\n                <a href=\x22#\x22 onclick=\x22return false\x22 class=\x22')['concat'](ejs_Controller['classNames']['btn-submit'], '\x22>Update</a>\n                <a href=\x22#\x22 onclick=\x22return false\x22 class=\x22')['concat'](ejs_Controller['classNames']['btn-cancel'], '\x22>Cancel</a>\n            </div>\x0a            <div class=\x22')['concat'](ejs_Controller['classNames']['overlay'], '\x22 hidden>\x0a                <div class=\x22')['concat'](ejs_Controller['classNames']['key-setting-popup'], '\x22>\n                    <span>[Select]</span><br />\x0a                    <div style=\x22color:#fff !important\x22>Press keyboard or gamepad</div>\n                </div>\x0a            </div>\x0a        </div>\n        ');
-            var _0x18c730 = ('\n        <div class=\x22')['concat'](ejs_Controller['classNames']['tabs-panel'], '\x22 id=\x22controls-{index}\x22 hidden>\n            <div>\x0a                <div style=\x22\x22>\x0a                    <div class=\x22')['concat'](ejs_Controller['classNames']['gamepad'], '\x22>Connected gamepad: <span class=\x22')['concat'](ejs_Controller['classNames']['gamepad-name'], '\x22>None detected</span></div>\n                    <div class=\x22')['concat'](ejs_Controller['classNames']['gamepad-remapping-axis'], '\x22 hidden><input type=\x22checkbox\x22 value=\x221\x22 id=\x22remapping-axis-{index}\x22 /><label for=\x22remapping-axis-{index}\x22>Remapping left axis to D-Pad</label></div>\n                </div>\n                <div style=\x22width:25%;float:left\x22>&nbsp;</div>\n                <div style=\x22font-size:12px;width:50%;float:left\x22>\n                    <div class=\x22row\x22>\n                        <div style=\x22text-align:center;width:50%;float:left\x22>Gamepad</div>\x0a                        <div style=\x22text-align:center;width:50%;float:left\x22>Keyboard</div>\n                    </div>\n                </div>\n                <div style=\x22clear:both\x22></div>\n            </div>\n        </div>'),
-                _0x593f30 = ('\x0a        <div class=\x22')['concat'](ejs_Controller['classNames']['button-container'], '\x22 data-id=\x22{id}\x22 data-index=\x22{index}\x22 data-label=\x22{label}\x22 style=\x22margin-bottom:5px\x22>\n            <div style=\x22width:25%;float:left;font-size:12px\x22>\n                <label>{label}:</label>\n            </div>\n            <div style=\x22width:50%;float:left\x22>\n                <div>\n                    <div style=\x22width:50%;float:left;padding: 0 5px;\x22>\n                        <input style=\x22text-align:center;height:25px;width: 100%;\x22 type=\x22text\x22 data-id=\x22{id}\x22 data-value=\x22\x22 data-type=\x222\x22 data-index=\x22{index}\x22 readonly=\x22\x22 placeholder=\x22\x22>\n                    </div>\x0a                    <div style=\x22width:50%;float:left;padding: 0 5px;\x22>\n                        <input style=\x22text-align:center;height:25px;width: 100%;\x22 type=\x22text\x22 data-id=\x22{id}\x22 data-value=\x22\x22 data-type=\x221\x22 data-index=\x22{index}\x22 readonly=\x22\x22 placeholder=\x22\x22>\n                    </div>\n                    <div style=\x22clear:both\x22></div>\n                </div>\n            </div>\n            <div style=\x22width:25%;float:left\x22>\n                <a class=\x22')['concat'](ejs_Controller['classNames']['set'], '\x22 href=\x22#\x22 onclick=\x22return false\x22>Set</a>\x0a            </div>\n            <div style=\x22clear:both\x22></div>\n        </div>'),
-                _0x37ff6b = {
+        setGamepadDialog: function () {
+            /**
+             * UI
+             * 手柄控制器
+             */
+            const E = this;
+            var
+                classTabs = getCtrlclassName('tabs-content'),
+                ElmGamepad = E['elements']['dialogs']['gamepad'],
+                ElmContainer = E['elements']['container'];
+            ElmGamepad.innerHTML =
+                `<div class="${getCtrlclassName('dialog-container')}">
+            <div class="${getCtrlclassName('dialog-title')}">
+                <h4>${T.getLang('Controls Settings')}</h4>
+            </div>
+            <ul class="${getCtrlclassName('tabs')}" id="controls-tabs">
+                <li class="tabs-title" role="presentation">
+                    <a href="#" onclick="return false" role="tab" aria-controls="controls-0" aria-selected="false" id="controls-0-label">${T.getLang('Player 1')}</a>
+                </li>
+                <li class="tabs-title" role="presentation">
+                    <a href="#" onclick="return false" role="tab" aria-controls="controls-1" aria-selected="false" id="controls-1-label">${T.getLang('Player 2')}</a>
+                </li>
+                <li class="tabs-title" role="presentation">
+                    <a href="#" onclick="return false" role="tab" aria-controls="controls-2" aria-selected="false" id="controls-2-label">${T.getLang('Player 3')}</a>
+                </li>
+                <li class="tabs-title" role="presentation">
+                    <a href="#" onclick="return false" role="tab" aria-controls="controls-3" aria-selected="false" id="controls-3-label">${T.getLang('Player 4')}</a>
+                </li>
+            </ul>
+            <div class="${getCtrlclassName('dialog-content')}">
+                <div class="${classTabs} controls">
+                </div>
+            </div>
+            <div class="${getCtrlclassName('dialog-buttons')}">
+                <a href="#" onclick="return false" class="${getCtrlclassName('btn-submit')}">${T.getLang('Update')}</a>
+                <a href="#" onclick="return false" class="${getCtrlclassName('btn-cancel')}">${T.getLang('Cancel')}</a>
+            </div>
+            <div class="${getCtrlclassName('overlay')}" hidden>
+                <div class="${getCtrlclassName('key-setting-popup')}">
+                    <span>${T.getLang('[Select]')}</span><br />
+                    <div style="color:#fff !important">${T.getLang('Press keyboard or gamepad')}</div>
+                </div>
+            </div>
+        </div>`;
+            var htmlTabsContent =
+                `<div class="${getCtrlclassName('tabs-panel')}" id="controls-{index}" hidden>
+    <div>
+        <div style="">
+            <div class="${getCtrlclassName('gamepad')}">
+                ${T.getLang('Connected gamepad')}: 
+                <span class="${getCtrlclassName('gamepad-name')}">${T.getLang('None detected')}</span>
+            </div>
+            <div class="${getCtrlclassName('gamepad-remapping-axis')}" hidden>
+                <input type="checkbox" value="1" id="remapping-axis-{index}" />
+                <label for="remapping-axis-{index}">${T.getLang('Remapping left axis to D-Pad')}</label>
+            </div>
+        </div>
+        <div style="width:25%;float:left">&nbsp;</div>
+        <div style="font-size:12px;width:50%;float:left">
+            <div class="row">
+                <div style="text-align:center;width:50%;float:left">${T.getLang('Gamepad')}</div>
+                <div style="text-align:center;width:50%;float:left">${T.getLang('Keyboard')}</div>
+            </div>
+        </div>
+        <div style="clear:both"></div>
+    </div>
+</div>`,
+                htmlButtonContent =
+                `<div class="${getCtrlclassName('button-container')}" data-id="{id}" data-index="{index}" data-label="{label}" style="margin-bottom:5px">
+    <div style="width:25%;float:left;font-size:12px">
+        <label>{label}:</label>
+    </div>
+    <div style="width:50%;float:left">
+        <div>
+            <div style="width:50%;float:left;padding: 0 5px;">
+                <input style="text-align:center;height:25px;width: 100%;" type="text" data-id="{id}" data-value="" data-type="2" data-index="{index}" readonly="" placeholder="">
+            </div>
+            <div style="width:50%;float:left;padding: 0 5px;">
+                <input style="text-align:center;height:25px;width: 100%;" type="text" data-id="{id}" data-value="" data-type="1" data-index="{index}" readonly="" placeholder="">
+            </div>
+            <div style="clear:both"></div>
+        </div>
+    </div>
+    <div style="width:25%;float:left">
+        <a class="${getCtrlclassName('set')}" href="#" onclick="return false">${T.getLang('Set')}</a>
+    </div>
+    <div style="clear:both"></div>
+</div>`,
+                gpad_btn = {
                     0x0: 'B',
                     0x1: 'Y',
                     0x2: 'SELECT',
@@ -8989,203 +6623,392 @@ var EJS = function (modules) {
                     0x15: 'R STICK LEFT',
                     0x14: 'R STICK RIGHT'
                 };
-            ejs_loader['arcadeCores']['includes'](_0xad555a['system']) && (_0x37ff6b[0x2] = 'INSERT COIN'), 'nds' === _0xad555a['system'] && (_0x37ff6b[0xe] = 'Microphone'), 'nes' === _0xad555a['system'] && (delete _0x37ff6b[0xa], delete _0x37ff6b[0xb], delete _0x37ff6b[0xc], delete _0x37ff6b[0xd], delete _0x37ff6b[0xe], delete _0x37ff6b[0xf], delete _0x37ff6b[0x10], delete _0x37ff6b[0x11], delete _0x37ff6b[0x12], delete _0x37ff6b[0x13], delete _0x37ff6b[0x14], delete _0x37ff6b[0x15], delete _0x37ff6b[0x16], delete _0x37ff6b[0x17]), 'snes' === _0xad555a['system'] && (delete _0x37ff6b[0xc], delete _0x37ff6b[0xd], delete _0x37ff6b[0xe], delete _0x37ff6b[0xf], delete _0x37ff6b[0x10], delete _0x37ff6b[0x11], delete _0x37ff6b[0x12], delete _0x37ff6b[0x13], delete _0x37ff6b[0x14], delete _0x37ff6b[0x15], delete _0x37ff6b[0x16], delete _0x37ff6b[0x17]), 'fmsx' === _0xad555a['system'] && (_0x37ff6b = {
-                0x0: 'Enter',
-                0x1: 'M',
-                0x2: 'F4',
-                0x3: 'F1',
-                0x4: 'Arrow Up',
-                0x5: 'Arrow Down',
-                0x6: 'Arrow Left',
-                0x7: 'Arrow Right',
-                0x8: 'Space',
-                0x9: 'N',
-                0xa: 'F2',
-                0xb: 'F3',
-                0xc: 'Graph',
-                0xd: 'Ctrl',
-                0xe: 'F5',
-                0xf: 'Escape'
-            });
-            var _0x1b0235 = [];
-            ejs_loader['buttonMaps'] && (_0x1b0235 = ejs_loader['buttonMaps']);
-            var _0x1acc1f = [0x2, 0x3, 0x4, 0x5, 0x6, 0x7, 0x8, 0x0, 0x9, 0x1, 0xa, 0xb, 0xc, 0xd, 0xe, 0xf, 0x13, 0x12, 0x11, 0x10, 0x17, 0x16, 0x15, 0x14];
-            if (_0xad555a['system'], Array['isArray'](_0x1b0235) && _0x1b0235['length'] > 0x0 || TypeCheck['object'](_0x1b0235)) {
-                var _0x498094 = _0xad555a['elements']['container']['querySelectorAll']('#controls-tabs li');
-                if (_0x498094['forEach'](function (_0x51bf76) {
-                        toggleHidden(_0x51bf76, !0x0);
-                    }), TypeCheck['object'](_0x1b0235)) {
-                    var _0x2cfc23 = [];
-                    Object['keys'](_0x1b0235)['forEach'](function (_0x3621c5, _0x139a9a) {
-
-                        _0x2cfc23['push'](_0x1b0235[_0x3621c5]);
-                    }), _0x1b0235 = _0x2cfc23;
+            if (ejs_loader['arcadeCores']['includes'](E['system'])) gpad_btn[0x2] = 'INSERT COIN';
+            if ('nds' === E['system']) gpad_btn[0xe] = 'Microphone';
+            if ('nes' === E['system']) {
+                I.toArr([0xa, 0xb, 0xc, 0xd, 0xe, 0xf, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17], entry => delete gpad_btn[entry]);
+            }
+            if ('snes' === E['system']) {
+                I.toArr([0xc, 0xd, 0xe, 0xf, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17], entry => delete gpad_btn[entry]);
+            }
+            if ('fmsx' === E['system']) {
+                gpad_btn = {
+                    0x0: 'Enter',
+                    0x1: 'M',
+                    0x2: 'F4',
+                    0x3: 'F1',
+                    0x4: 'Arrow Up',
+                    0x5: 'Arrow Down',
+                    0x6: 'Arrow Left',
+                    0x7: 'Arrow Right',
+                    0x8: 'Space',
+                    0x9: 'N',
+                    0xa: 'F2',
+                    0xb: 'F3',
+                    0xc: 'Graph',
+                    0xd: 'Ctrl',
+                    0xe: 'F5',
+                    0xf: 'Escape'
                 }
-                _0x1b0235['forEach'](function (_0x1d063b, _0x165512) {
+            }
+            var buttonMaps = ejs_loader['buttonMaps'] || [];
+            var buttonLists = [0x2, 0x3, 0x4, 0x5, 0x6, 0x7, 0x8, 0x0, 0x9, 0x1, 0xa, 0xb, 0xc, 0xd, 0xe, 0xf, 0x13, 0x12, 0x11, 0x10, 0x17, 0x16, 0x15, 0x14],
+                elmSelector = str => ElmGamepad.querySelector(str),
+                elmBtnSelector = (id, index, type) => elmSelector(`[data-id="${id}"][data-index="${index}"][data-type="${type}"]`),
+                elmBtnSetbackgroundColor = (id, index, type, color) => elmBtnSelector(id, index, type) && (elmBtnSelector(id, index, type)['style']['backgroundColor'] = color),
+                gpadSelectorAll = s => ElmGamepad['querySelectorAll'](s);
+            if (I.obj(buttonMaps)) buttonMaps = I.toArr(buttonMaps).map(entry => entry[1]);
+            if (I.array(buttonMaps) && buttonMaps['length'] > 0x0) {
+                var ElmNodeTabs = E['SelectorAll']('#controls-tabs li');
+                I.toArr(ElmNodeTabs, elm => toggleHidden(elm, !0x0));
+                I.toArr(buttonMaps, (key, index) => {
+                    ElmNodeTabs[index] && toggleHidden(ElmNodeTabs[index], !0x1);
+                    var buttonItems = buttonMaps[index];
+                    elmSelector('.' + classTabs).innerHTML += I.RegRe(htmlTabsContent, {
+                        index
+                    });
+                    I.toArr(buttonLists, entry => {
+                        if (buttonItems[entry]) {
+                            elmSelector('#controls-' + index).innerHTML += I.RegRe(htmlButtonContent, {
+                                index,
+                                id: entry,
+                                label: T.getLang(I.obj(buttonItems[entry]) ? buttonItems[entry]['text'] : buttonItems[entry])
+                            });
+                        }
 
-                    _0x498094[_0x165512] && toggleHidden(_0x498094[_0x165512], !0x1);
-                    var _0x4ecda0 = _0x1b0235[_0x165512];
-                    _0xad555a['elements']['dialogs']['gamepad']['querySelector']('.' ['concat'](ejs_Controller['classNames']['tabs-content'])).innerHTML += _0x18c730['replace'](/{index}/g, _0x165512), _0x1acc1f['forEach'](function (_0x3893e7) {
-
-                        _0x4ecda0[_0x3893e7] && (_0xad555a['elements']['dialogs']['gamepad']['querySelector']('#controls-' ['concat'](_0x165512)).innerHTML += _0x593f30['replace'](/{index}/g, _0x165512)['replace'](/{id}/g, _0x3893e7)['replace'](/{label}/g, 'object' == _0x4aa84a(_0x4ecda0[_0x3893e7]) ? _0x4ecda0[_0x3893e7]['text'] : _0x4ecda0[_0x3893e7]));
-                    }), _0xad555a['elements']['dialogs']['gamepad']['querySelector'](('[data-id=\x2216\x22][data-index=\x22')['concat'](_0x165512, '\x22][data-type=\x222\x22]')) && (_0xad555a['elements']['dialogs']['gamepad']['querySelector'](('[data-id=\x2216\x22][data-index=\x22')['concat'](_0x165512, '\x22][data-type=\x222\x22]'))['style']['backgroundColor'] = '#ccc'), _0xad555a['elements']['dialogs']['gamepad']['querySelector'](('[data-id=\x2217\x22][data-index=\x22')['concat'](_0x165512, '\x22][data-type=\x222\x22]')) && (_0xad555a['elements']['dialogs']['gamepad']['querySelector'](('[data-id=\x2217\x22][data-index=\x22')['concat'](_0x165512, '\x22][data-type=\x222\x22]'))['style']['backgroundColor'] = '#ccc'), _0xad555a['elements']['dialogs']['gamepad']['querySelector'](('[data-id=\x2218\x22][data-index=\x22')['concat'](_0x165512, '\x22][data-type=\x222\x22]')) && (_0xad555a['elements']['dialogs']['gamepad']['querySelector'](('[data-id=\x2218\x22][data-index=\x22')['concat'](_0x165512, '\x22][data-type=\x222\x22]'))['style']['backgroundColor'] = '#ccc'), _0xad555a['elements']['dialogs']['gamepad']['querySelector'](('[data-id=\x2219\x22][data-index=\x22')['concat'](_0x165512, '\x22][data-type=\x222\x22]')) && (_0xad555a['elements']['dialogs']['gamepad']['querySelector'](('[data-id=\x2219\x22][data-index=\x22')['concat'](_0x165512, '\x22][data-type=\x222\x22]'))['style']['backgroundColor'] = '#ccc'), _0xad555a['elements']['dialogs']['gamepad']['querySelector'](('[data-id=\x2220\x22][data-index=\x22')['concat'](_0x165512, '\x22][data-type=\x222\x22]')) && (_0xad555a['elements']['dialogs']['gamepad']['querySelector'](('[data-id=\x2220\x22][data-index=\x22')['concat'](_0x165512, '\x22][data-type=\x222\x22]'))['style']['backgroundColor'] = '#ccc'), _0xad555a['elements']['dialogs']['gamepad']['querySelector'](('[data-id=\x2221\x22][data-index=\x22')['concat'](_0x165512, '\x22][data-type=\x222\x22]')) && (_0xad555a['elements']['dialogs']['gamepad']['querySelector'](('[data-id=\x2221\x22][data-index=\x22')['concat'](_0x165512, '\x22][data-type=\x222\x22]'))['style']['backgroundColor'] = '#ccc'), _0xad555a['elements']['dialogs']['gamepad']['querySelector'](('[data-id=\x2222\x22][data-index=\x22')['concat'](_0x165512, '\x22][data-type=\x222\x22]')) && (_0xad555a['elements']['dialogs']['gamepad']['querySelector'](('[data-id=\x2222\x22][data-index=\x22')['concat'](_0x165512, '\x22][data-type=\x222\x22]'))['style']['backgroundColor'] = '#ccc'), _0xad555a['elements']['dialogs']['gamepad']['querySelector'](('[data-id=\x2223\x22][data-index=\x22')['concat'](_0x165512, '\x22][data-type=\x222\x22]')) && (_0xad555a['elements']['dialogs']['gamepad']['querySelector'](('[data-id=\x2223\x22][data-index=\x22')['concat'](_0x165512, '\x22][data-type=\x222\x22]'))['style']['backgroundColor'] = '#ccc');
+                    })
+                    I.toArr([16, 17, 18, 19, 20, 21, 22, 23], v => elmBtnSetbackgroundColor(v, index, 2, '#ccc'));
                 });
             } else {
-                for (var _0x289468 = function (_0x536524) {
+                I.toArr(4, (v, index2) => {
+                    elmSelector('.' + classTabs).innerHTML += I.RegRe(htmlTabsContent, {
+                        index: index2
+                    });
+                    I.toArr(buttonLists, entry => {
+                        if (gpad_btn[entry]) {
+                            elmSelector('#controls-' ['concat'](index2)).innerHTML += I.RegRe(htmlButtonContent, {
+                                index: index2,
+                                id: entry,
+                                label: T.getLang(gpad_btn[entry])
+                            });
+                        }
+                    })
+                    I.toArr([16, 17, 18, 19, 20, 21, 22, 23], v => elmBtnSetbackgroundColor(v, index2, 2, '#ccc'));
 
-                        _0xad555a['elements']['dialogs']['gamepad']['querySelector']('.' ['concat'](ejs_Controller['classNames']['tabs-content'])).innerHTML += _0x18c730['replace'](/{index}/g, _0x536524), _0x1acc1f['forEach'](function (_0x1bfa93) {
-
-                            _0x37ff6b[_0x1bfa93] && (_0xad555a['elements']['dialogs']['gamepad']['querySelector']('#controls-' ['concat'](_0x536524)).innerHTML += _0x593f30['replace'](/{index}/g, _0x536524)['replace'](/{id}/g, _0x1bfa93)['replace'](/{label}/g, _0x37ff6b[_0x1bfa93]));
-                        }), _0xad555a['elements']['dialogs']['gamepad']['querySelector'](('[data-id=\x2216\x22][data-index=\x22')['concat'](_0x536524, '\x22][data-type=\x222\x22]')) && (_0xad555a['elements']['dialogs']['gamepad']['querySelector'](('[data-id=\x2216\x22][data-index=\x22')['concat'](_0x536524, '\x22][data-type=\x222\x22]'))['style']['backgroundColor'] = '#ccc'), _0xad555a['elements']['dialogs']['gamepad']['querySelector'](('[data-id=\x2217\x22][data-index=\x22')['concat'](_0x536524, '\x22][data-type=\x222\x22]')) && (_0xad555a['elements']['dialogs']['gamepad']['querySelector'](('[data-id=\x2217\x22][data-index=\x22')['concat'](_0x536524, '\x22][data-type=\x222\x22]'))['style']['backgroundColor'] = '#ccc'), _0xad555a['elements']['dialogs']['gamepad']['querySelector'](('[data-id=\x2218\x22][data-index=\x22')['concat'](_0x536524, '\x22][data-type=\x222\x22]')) && (_0xad555a['elements']['dialogs']['gamepad']['querySelector'](('[data-id=\x2218\x22][data-index=\x22')['concat'](_0x536524, '\x22][data-type=\x222\x22]'))['style']['backgroundColor'] = '#ccc'), _0xad555a['elements']['dialogs']['gamepad']['querySelector'](('[data-id=\x2219\x22][data-index=\x22')['concat'](_0x536524, '\x22][data-type=\x222\x22]')) && (_0xad555a['elements']['dialogs']['gamepad']['querySelector'](('[data-id=\x2219\x22][data-index=\x22')['concat'](_0x536524, '\x22][data-type=\x222\x22]'))['style']['backgroundColor'] = '#ccc'), _0xad555a['elements']['dialogs']['gamepad']['querySelector'](('[data-id=\x2220\x22][data-index=\x22')['concat'](_0x536524, '\x22][data-type=\x222\x22]')) && (_0xad555a['elements']['dialogs']['gamepad']['querySelector'](('[data-id=\x2220\x22][data-index=\x22')['concat'](_0x536524, '\x22][data-type=\x222\x22]'))['style']['backgroundColor'] = '#ccc'), _0xad555a['elements']['dialogs']['gamepad']['querySelector'](('[data-id=\x2221\x22][data-index=\x22')['concat'](_0x536524, '\x22][data-type=\x222\x22]')) && (_0xad555a['elements']['dialogs']['gamepad']['querySelector'](('[data-id=\x2221\x22][data-index=\x22')['concat'](_0x536524, '\x22][data-type=\x222\x22]'))['style']['backgroundColor'] = '#ccc'), _0xad555a['elements']['dialogs']['gamepad']['querySelector'](('[data-id=\x2222\x22][data-index=\x22')['concat'](_0x536524, '\x22][data-type=\x222\x22]')) && (_0xad555a['elements']['dialogs']['gamepad']['querySelector'](('[data-id=\x2222\x22][data-index=\x22')['concat'](_0x536524, '\x22][data-type=\x222\x22]'))['style']['backgroundColor'] = '#ccc'), _0xad555a['elements']['dialogs']['gamepad']['querySelector'](('[data-id=\x2223\x22][data-index=\x22')['concat'](_0x536524, '\x22][data-type=\x222\x22]')) && (_0xad555a['elements']['dialogs']['gamepad']['querySelector'](('[data-id=\x2223\x22][data-index=\x22')['concat'](_0x536524, '\x22][data-type=\x222\x22]'))['style']['backgroundColor'] = '#ccc');
-                    }, _0x13bf3e = 0x0; _0x13bf3e <= 0x3; _0x13bf3e += 0x1) _0x289468(_0x13bf3e);
+                });
             }
-            Object['keys'](ejs_Controller['controllers'])['forEach'](function (_0xcd27ae) {
+            I.toArr(ejs_Controller['controllers'], entry => {
+                if (entry[1]) {
+                    I.toArr(entry[1], item => {
+                        var elm1 = elmBtnSelector(item[0], entry[0], 1),
+                            elm2 = elmBtnSelector(item[0], entry[0], 2);
+                        if (!elm1 || !elm2) return !0x1;
+                        var datas = item[1];
+                        if (datas) {
+                            if (datas['type'] && 0x1 !== parseInt(datas['type'], 0xa)) {
+                                elm2['value'] = '';
+                            } else if (datas['value']) {
+                                elm1['value'] = ejs_Controller['keyMap'][datas['value']];
+                                elm1['setAttribute']('data-value', datas['value'])
+                            }
+                        }
+                        if (datas['value2']) {
+                            var elm2value = _export_1['Gamepad']['StandardButtons'][datas['value2']];
+                            if (!elm2value) elm2value = 'button ' ['concat'](parseInt(datas['value2'], 0xa) + 0x1);
+                            elm2['value'] = elm2value;
+                            elm2['setAttribute']('data-value', datas['value2']);
+                        }
+                    });
+                }
 
-                ejs_Controller['controllers'][_0xcd27ae] && Object['keys'](ejs_Controller['controllers'][_0xcd27ae])['forEach'](function (_0x43bf0c) {
-                    var _0x1b23d2 = _0xad555a['elements']['dialogs']['gamepad']['querySelector']('[data-id=\x22' ['concat'](_0x43bf0c, '\x22][data-index=\x22')['concat'](_0xcd27ae, '\x22][data-type=\x221\x22]')),
-                        _0x15b36a = _0xad555a['elements']['dialogs']['gamepad']['querySelector']('[data-id=\x22' ['concat'](_0x43bf0c, '\x22][data-index=\x22')['concat'](_0xcd27ae, '\x22][data-type=\x222\x22]'));
-                    if (!_0x1b23d2 || !_0x15b36a) return !0x1;
-                    var _0x261586 = ejs_Controller['controllers'][_0xcd27ae][_0x43bf0c];
-                    if (_0x261586 && (_0x261586['type'] && 0x1 !== parseInt(_0x261586['type'], 0xa) ? _0x15b36a['value'] = '' : _0x261586['value'] && (_0x1b23d2['value'] = ejs_Controller['keyMap'][_0x261586['value']], _0x1b23d2['setAttribute']('data-value', _0x261586['value'])), _0x261586['value2'])) {
-                        var _0x5d867 = _export_1['Gamepad']['StandardButtons'][_0x261586['value2']];
-                        _0x5d867 || (_0x5d867 = 'button ' ['concat'](parseInt(_0x261586['value2'], 0xa) + 0x1)), _0x15b36a['value'] = _0x5d867, _0x15b36a['setAttribute']('data-value', _0x261586['value2']);
+            });
+            I.toArr(gpadSelectorAll('input[type=checkbox]'), elm => {
+                var id = elm['getAttribute']('id')['replace']('remapping-axis-', '');
+                ejs_Controller['remappingAxis'][id] ? elm['setAttribute']('checked', !0x0) : elm['removeAttribute']('checked');
+                E['addEvent'](elm, 'change', event => {
+                    ejs_Controller['remappingAxis'][id] = elm['checked'] ? 0x1 : 0x0;
+                });
+            });
+            E['addEvent'](elmSelector(getCtrlclassName('btn-submit', !0)), 'click', event => {
+                var elmInput = gpadSelectorAll('input[type=text]'),
+                    objdata = {};
+                I.toArr(elmInput, elm => {
+                    var value2, datas = I.elmdata(elm),
+                        index = datas.index,
+                        value = elm['getAttribute']('data-value');
+                    if (0x2 === parseInt(datas.type, 0xa)) {
+                        value2 = value;
                     }
+                    var id = datas.id;
+                    objdata[index] || (objdata[index] = {});
+                    objdata[index][id] || (objdata[index][id] = {});
+                    value && (objdata[index][id]['value'] = value);
+                    value2 && (objdata[index][id]['value2'] = value2);
+
                 });
+                ejs_data['storage']['set']({
+                    'controllers': objdata
+                });
+                ejs_Controller['controllers'] = objdata;
+                var check_data = {};
+                I.toArr(gpadSelectorAll('input[type=checkbox]'), elm => {
+                    check_data[elm['getAttribute']('id')['replace']('remapping-axis-', '')] = elm['checked'] ? 0x1 : 0x0;
+                });
+                ejs_data['storage']['set']({
+                    'remappingAxis': check_data
+                });
+                ejs_Controller['remappingAxis'] = check_data;
+                toggleHidden(ElmGamepad, !0x0);
+                ElmContainer['focus']();
+                event['stopPropagation']();
+                return !0x1;
             });
-            var _0x50f604 = _0xad555a['elements']['dialogs']['gamepad']['querySelectorAll']('input[type=checkbox]');
-            Array['from'](_0x50f604)['forEach'](function (_0x3e0edd) {
-                var _0x41ad43 = _0x3e0edd['getAttribute']('id')['replace']('remapping-axis-', '');
-                ejs_Controller['remappingAxis'][_0x41ad43] ? _0x3e0edd['setAttribute']('checked', !0x0) : _0x3e0edd['removeAttribute']('checked'), addEvent['call'](_0xad555a, _0x3e0edd, 'change', function (_0x5a1b9e) {
+            E['addEvent'](elmSelector(getCtrlclassName('btn-cancel', !0)), 'click', event => {
+                toggleHidden(ElmGamepad, !0x0);
+                ElmContainer['focus']();
+                event['stopPropagation']();
+                return !0x1;
+            });
+            I.toArr(gpadSelectorAll(getCtrlclassName('tabs', !0) + ' li'),
+                elm => E['addEvent'](elm, 'mousedown', event => {
 
-                    ejs_Controller['remappingAxis'][_0x41ad43] = _0x3e0edd['checked'] ? 0x1 : 0x0;
-                });
-            }), addEvent['call'](this, _0xad555a['elements']['dialogs']['gamepad']['querySelector']('.' ['concat'](ejs_Controller['classNames']['btn-submit'])), 'click', function (_0x54029a) {
-                var _0x6448c6 = _0xad555a['elements']['dialogs']['gamepad']['querySelectorAll']('input[type=text]'),
-                    _0x23bd27 = {};
-                Array['from'](_0x6448c6)['forEach'](function (_0x38f408) {
-                    var _0x21d7e4, _0x3c238d = _0x38f408['getAttribute']('data-index'),
-                        _0x3c59e0 = _0x38f408['getAttribute']('data-value');
-                    0x2 === parseInt(_0x38f408['getAttribute']('data-type'), 0xa) && (_0x21d7e4 = _0x38f408['getAttribute']('data-value'));
-                    var _0x1e6ef7 = _0x38f408['getAttribute']('data-id');
-                    _0x23bd27[_0x3c238d] || (_0x23bd27[_0x3c238d] = {}), _0x23bd27[_0x3c238d][_0x1e6ef7] || (_0x23bd27[_0x3c238d][_0x1e6ef7] = {}), _0x3c59e0 && (_0x23bd27[_0x3c238d][_0x1e6ef7]['value'] = _0x3c59e0), _0x21d7e4 && (_0x23bd27[_0x3c238d][_0x1e6ef7]['value2'] = _0x21d7e4);
-                }), ejs_data['storage']['set']({
-                    'controllers': _0x23bd27
-                }), ejs_Controller['controllers'] = _0x23bd27;
-                var _0xef0592 = {},
-                    _0x56f449 = _0xad555a['elements']['dialogs']['gamepad']['querySelectorAll']('input[type=checkbox]');
-                return Array['from'](_0x56f449)['forEach'](function (_0x16d418) {
-                    var _0x14b3cf = _0x16d418['getAttribute']('id')['replace']('remapping-axis-', '');
-                    _0xef0592[_0x14b3cf] = _0x16d418['checked'] ? 0x1 : 0x0;
-                }), ejs_data['storage']['set']({
-                    'remappingAxis': _0xef0592
-                }), ejs_Controller['remappingAxis'] = _0xef0592, toggleHidden(_0xad555a['elements']['dialogs']['gamepad'], !0x0), _0xad555a['elements']['container']['focus'](), _0x54029a['stopPropagation'](), !0x1;
-            }), addEvent['call'](this, _0xad555a['elements']['dialogs']['gamepad']['querySelector']('.' ['concat'](ejs_Controller['classNames']['btn-cancel'])), 'click', function (_0xae71a6) {
+                    elmAddRemoveClass(gpadSelectorAll(getCtrlclassName('tabs', !0) + ' li'), getCtrlclassName('active'), !0x1);
+                    elmAddRemoveClass(elm, getCtrlclassName('active'), !0x0);
+                    I.toArr(
+                        gpadSelectorAll('.' + classTabs + ' .' + getCtrlclassName('tabs-panel')),
+                        etab => toggleHidden(etab, !0x0)
+                    );
+                    toggleHidden(
+                        elmSelector(
+                            '.' + classTabs + ' #' + elm['querySelector']('a')['getAttribute']('aria-controls')
+                        ),
+                        !0x1
+                    );
+                    event['stopPropagation']();
+                    return !0x1;
+                })
+            );
+            E['callEvent'](elmSelector('[aria-controls="controls-0"]')['parentNode'], 'mousedown');
+            var ElmOverlay = elmSelector(getCtrlclassName('overlay', !0));
+            E['addEvent'](ElmOverlay, 'mousedown', (event) => {
 
-                return toggleHidden(_0xad555a['elements']['dialogs']['gamepad'], !0x0), _0xad555a['elements']['container']['focus'](), _0xae71a6['stopPropagation'](), !0x1;
-            }), Array['from'](_0xad555a['elements']['dialogs']['gamepad']['querySelectorAll']('.' ['concat'](ejs_Controller['classNames']['tabs'], ' li')))['forEach'](function (_0x2517d4) {
+                toggleHidden(ElmOverlay, !0x0);
+                event['stopPropagation']();
+            });
+            I.toArr(gpadSelectorAll(getCtrlclassName('button-container', !0)),
+                elm => {
 
-                addEvent['call'](_0xad555a, _0x2517d4, 'mousedown', function (_0x4d881b) {
-
-                    _0x279293(_0xad555a['elements']['dialogs']['gamepad']['querySelectorAll']('.' ['concat'](ejs_Controller['classNames']['tabs'], ' li')), ejs_Controller['classNames']['active'], !0x1), _0x279293(_0x2517d4, ejs_Controller['classNames']['active'], !0x0);
-                    var _0x17a5ee = _0x2517d4['querySelector']('a')['getAttribute']('aria-controls');
-                    return Array['from'](_0xad555a['elements']['dialogs']['gamepad']['querySelectorAll']('.' ['concat'](ejs_Controller['classNames']['tabs-content'], ' .')['concat'](ejs_Controller['classNames']['tabs-panel'])))['forEach'](function (_0x58aa1c) {
-                        toggleHidden(_0x58aa1c, !0x0);
-                    }), toggleHidden(_0xad555a['elements']['dialogs']['gamepad']['querySelector']('.' ['concat'](ejs_Controller['classNames']['tabs-content'], ' #')['concat'](_0x17a5ee)), !0x1), _0x4d881b['stopPropagation'](), !0x1;
-                });
-            }), callEvent['call'](_0xad555a, _0xad555a['elements']['dialogs']['gamepad']['querySelector']('[aria-controls=\x22controls-0\x22]')['parentNode'], 'mousedown');
-            var _0x2c486e = _0xad555a['elements']['dialogs']['gamepad']['querySelector']('.' ['concat'](ejs_Controller['classNames']['overlay']));
-            addEvent['call'](_0xad555a, _0x2c486e, 'mousedown', function (_0x2ae191) {
-
-                toggleHidden(_0x2c486e, !0x0), _0x2ae191['stopPropagation']();
-            }), Array['from'](_0xad555a['elements']['dialogs']['gamepad']['querySelectorAll']('.' ['concat'](ejs_Controller['classNames']['button-container'])))['forEach'](function (_0x1bf89b) {
-
-                addEvent['call'](_0xad555a, _0x1bf89b, 'mousedown', function (_0x2970ea) {
-
-                    callEvent['call'](_0xad555a, _0x1bf89b['querySelector']('a.' ['concat'](ejs_Controller['classNames']['set'])), _0x2970ea['type'], !0x0, {});
-                });
-            }), Array['from'](_0xad555a['elements']['dialogs']['gamepad']['querySelectorAll']('.' ['concat'](ejs_Controller['classNames']['tabs-panel'], ' a.')['concat'](ejs_Controller['classNames']['set'])))['forEach'](function (_0x28470e) {
-
-                addEvent['call'](_0xad555a, _0x28470e, 'mousedown', function (_0x4d38f8) {
-                    var _0x3daf8b = _0x28470e['parentNode']['parentNode'],
-                        _0x540d84 = _0x3daf8b['getAttribute']('data-id'),
-                        _0x507846 = _0x3daf8b['getAttribute']('data-index'),
-                        _0xbcba4d = _0x3daf8b['getAttribute']('data-label');
-                    toggleHidden(_0x2c486e, !0x1), _0x2c486e['setAttribute']('data-id', _0x540d84), _0x2c486e['setAttribute']('data-index', _0x507846);
-                    var _0x436440 = '[ ' ['concat'](_0xbcba4d, ' ]');
-                    ejs_Controller['gamepad']['gamepads'][_0x507846] && _0x540d84 < 0x10 ? _0x436440 += ('<br /><span style=\x22font-size:12px\x22>Gamepad:')['concat'](ejs_Controller['gamepad']['gamepads'][_0x507846]['id'], '</span><br />Press keyboard or gamepad') : _0x436440 += '<br />Press keyboard', _0x2c486e['querySelector']('.' ['concat'](ejs_Controller['classNames']['key-setting-popup'])).innerHTML = _0x436440, _0x4d38f8['stopPropagation']();
-                });
+                    E['addEvent'](elm, 'mousedown',
+                        event => E['callEvent'](elm['querySelector']('a' + getCtrlclassName('set', !0)), event['type'], !0x0, {}));
+                }
+            );
+            I.toArr(gpadSelectorAll(getCtrlclassName('tabs-panel', !0) + ' a.' + getCtrlclassName('set')),
+                elm => E['addEvent'](elm, 'mousedown', event => {
+                    var ppelm = elm['parentNode']['parentNode'],
+                        datas = I.elmdata(ppelm);
+                    toggleHidden(ElmOverlay, !0x1);
+                    ElmOverlay['setAttribute']('data-id', datas.id);
+                    ElmOverlay['setAttribute']('data-index', datas.index);
+                    var html = '[ ' + datas.label + ' ]';
+                    if (ejs_Controller['gamepad']['gamepads'][datas.index] && datas.id < 0x10) {
+                        html += '<br /><span style="font-size:12px">' + T.getLang('Gamepad') + ':' + ejs_Controller['gamepad']['gamepads'][datas.index]['id'] + '</span><br />' + T.getLang('Press keyboard or gamepad');
+                    } else {
+                        html += '<br />' + T.getLang('Press keyboard');
+                    }
+                    ElmOverlay['querySelector'](getCtrlclassName('key-setting-popup', !0)).innerHTML = html;
+                    event['stopPropagation']();
+                })
+            );
+        },
+        setCacheDialog: function () {
+            /**
+             * UI
+             * 缓存管理
+             */
+            const E = this;
+            var ElmCacheContainer = E['elements']['dialogs']['cache'],
+                eSelector = str => ElmCacheContainer.querySelector(str),
+                elmSelector = str => eSelector(getCtrlclassName(str, !0)),
+                getFShtml = str => I.toArr(DISK.getPathList(str)).map(entry => `<li data-root="${entry[0]}"><p data-root="${entry[0]}">${entry[0]}</p><p data-root="${entry[0]}">${entry[1].timestamp.toLocaleString()}</p></li>`).join("");
+            ElmCacheContainer.innerHTML =
+                `<div class="${getCtrlclassName('dialog-container')}">
+    <div class="${getCtrlclassName('dialog-title')}">
+        <h4>${T.getLang('Cache Manager')}</h4>
+    </div>
+    <div class="${getCtrlclassName('dialog-content')}">
+    <div style="text-align:center">${T.getLang('Waiting...')}</div>
+    </div>
+    <div class="${getCtrlclassName('dialog-buttons')}">
+        <a href="#" onclick="return false" class="${getCtrlclassName('btn-cancel')}">${T.getLang('Close')}</a>
+    </div>
+</div>`
+            E['addEvent'](elmSelector('btn-cancel'), 'click', event => {
+                toggleHidden(ElmCacheContainer, !0x0);
+                E['elements']['container']['focus']();
+                event['stopPropagation']();
+                return !0x1;
+            });
+            E['addEvent'](ElmCacheContainer, 'opendialog', async () => {
+                let html = `<h3>${T.getLang('Local Virtual File System')}</h3><ul class="fspath">${getFShtml(E['savefullpath'])}</ul>`;
+                I.toArr(T.F.DataBase, entry => {
+                    html += `<h3>${T.getLang('Database Name:')}${entry[0]}</h3><ul>`;
+                    I.toArr(entry[1].objectStoreNames, table => html += `<li><h6 data-name="${entry[0]}" data-table="${table}">${T.getLang('Database Table:')}${table}</h6><ul></ul></li>`);
+                    html += '</ul>';
+                    elmSelector('dialog-content').innerHTML = html;
+                })
+            });
+            Nttr(elmSelector('dialog-content')).click(async e => {
+                let elm = e.target,
+                    data = I.elmdata(elm);
+                if (data.name && data.table) {
+                    let store = T.getStore(data.table, data.name);
+                    if (data.downpath) {
+                        let contents = await store.data(data.downpath);
+                        if (I.obj(contents)) {
+                            I.toArr(contents, entry => T.down(entry[0], entry[1]));
+                            T.null(contents);
+                        } else {
+                            T.down(T.F.getname(data.downpath), contents);
+                        }
+                        contents = null;
+                    } else if (data.removepath) {
+                        elm.parentNode.parentNode.remove();
+                        await store.remove(data.removepath);
+                    } else if (data.replacepath) {
+                        I.toArr(data, e => elm.removeAttribute(e[0]));
+                        E['callaction']('upload', async file => {
+                            if (store == DISK.DB.system) {
+                                let sysdata = await store.get(data.replacepath);
+                                sysdata.contents = await T.unFile(file, e => elm.innerHTML = e);
+                                await store.put(data.replacepath, sysdata);
+                                elm.innerHTML = T.getLang('OK!');
+                                T.null(sysdata);
+                                sysdata = null;
+                            }
+                        }, null, {
+                            accept: data.accept || ''
+                        });
+                    } else {
+                        let keys = await store.keys(),
+                            html = '';
+                        if (!keys || !keys.length) return elm.nextElementSibling.innerHTML = `<p>${T.getLang('Empty')}</p>`;
+                        I.toArr(keys, key => {
+                            let other = '';
+                            if (store == DISK.DB.system) {
+                                other = `<button data-replacepath="${key}" data-name="${data.name}" data-table="${data.table}" data-accept=".zip,.data,.7z">${T.getLang('Replace Core')}</button>`;
+                            }
+                            html += `<li><p>${T.F.getname(key)}<p><button data-removepath="${key}" data-name="${data.name}" data-table="${data.table}">${T.getLang('Delete data')}</button><button data-downpath="${key}" data-name="${data.name}" data-table="${data.table}">${T.getLang('Download data')}</button>${other}</li>`
+                        });
+                        elm.nextElementSibling.innerHTML = html;
+                    }
+                } else if (data.root) {
+                    let FS = DISK.FS,
+                        status = FS.analyzePath(data.root),
+                        mode = status.object.mode;
+                    if (FS.isDir(mode)) eSelector('.fspath').innerHTML = getFShtml(data.root);
+                    else if (FS.isFile(mode)) T.down(T.F.getname(data.root), FS.readFile(data.root))
+                }
             });
         },
-        'setCacheDialog': function () {
-            var _0x3d14f2 = this;
-            _0x3d14f2['elements']['dialogs']['cache'].innerHTML = ('\n        <div class=\x22')['concat'](ejs_Controller['classNames']['dialog-container'], '\x22>\n            <div class=\x22')['concat'](ejs_Controller['classNames']['dialog-title'], '\x22>\n                <h4>Cache Manager</h4>\n            </div>\n            <div class=\x22')['concat'](ejs_Controller['classNames']['dialog-content'], '\x22>\n\n            </div>\n            <div class=\x22')['concat'](ejs_Controller['classNames']['dialog-buttons'], '\x22>\n                <a href=\x22#\x22 onclick=\x22return false\x22 class=\x22')['concat'](ejs_Controller['classNames']['btn-cancel'], '\x22>Close</a>\x0a            </div>\n        </div>\n        '), addEvent['call'](this, _0x3d14f2['elements']['dialogs']['cache']['querySelector']('.' ['concat'](ejs_Controller['classNames']['btn-cancel'])), 'click', function (_0x2185df) {
-
-                return toggleHidden(_0x3d14f2['elements']['dialogs']['cache'], !0x0), _0x3d14f2['elements']['container']['focus'](), _0x2185df['stopPropagation'](), !0x1;
-            }), addEvent['call'](this, _0x3d14f2['elements']['dialogs']['cache']['querySelector']('.' ['concat'](ejs_Controller['classNames']['dialog-title'], ' a')), 'click', function (_0x1d7939) {
-
-                return ejs_loader['romdb'] && (ejs_loader['romdb']['clear'](), _0x3d14f2['elements']['dialogs']['cache']['querySelector']('.' ['concat'](ejs_Controller['classNames']['dialog-content'])).innerHTML = '<div style=\x22text-align:center\x22>Empty</div>'), _0x1d7939['stopPropagation'](), !0x1;
-            });
-        },
-        'showLoading': function (_0x1223ba) {
+        showLoading: function (text) {
 
             _0x3e3214['show']('modal-6ed698f3d04061f5', {
                 'closeByEsckey': !0x1
-            }), this['elements']['container']['querySelector']('.' ['concat'](ejs_Controller['classNames']['modal__container']))['innerText'] = _0x1223ba || 'Loading...', toggleHidden(this['elements']['dialogs']['loading'], !0x1);
+            }), this['elements']['container']['querySelector'](getCtrlclassName('modal__container', !0))['innerText'] = text || 'Loading...', toggleHidden(this['elements']['dialogs']['loading'], !0x1);
         },
-        'hideLoading': function () {
+        hideLoading: function () {
 
             _0x3e3214['close'](), toggleHidden(this['elements']['dialogs']['loading'], !0x0);
         },
-        'setLoadingDialog': function () {
+        setLoadingDialog: function () {
 
-            this['elements']['dialogs']['loading'] && (this['elements']['dialogs']['loading'].innerHTML = ('\n            <div class=\x22')['concat'](ejs_Controller['classNames']['modal'], ' ')['concat'](ejs_Controller['classNames']['micromodal-slide'], '\x22 id=\x22modal-6ed698f3d04061f5\x22 aria-hidden=\x22true\x22>\n                <div class=\x22')['concat'](ejs_Controller['classNames']['modal__overlay'], '\x22 tabindex=\x22-1\x22>\x0a                <div class=\x22')['concat'](ejs_Controller['classNames']['modal__container'], '\x22 role=\x22dialog\x22 aria-modal=\x22true\x22 aria-labelledby=\x22modal-6ed698f3d04061f5-title\x22>\n                Loading...\n                </div>\n                </div>\n            </div>'));
+            this['elements']['dialogs']['loading'] && (this['elements']['dialogs']['loading'].innerHTML = ('\n            <div class="')['concat'](getCtrlclassName('modal'), ' ')['concat'](getCtrlclassName('micromodal-slide'), '" id="modal-6ed698f3d04061f5" aria-hidden="true">\n                <div class="')['concat'](getCtrlclassName('modal__overlay'), '" tabindex="-1">\x0a                <div class="')['concat'](getCtrlclassName('modal__container'), '" role="dialog" aria-modal="true" aria-labelledby="modal-6ed698f3d04061f5-title">\n                Loading...\n                </div>\n                </div>\n            </div>'));
         },
-        'setCheatDialog': function () {
-            var _0x2ed8a7 = this;
-            if (_0x2ed8a7['elements']['dialogs']['cheat']) {
-                _0x2ed8a7['elements']['dialogs']['cheat'].innerHTML = ('\n            <div class=\x22')['concat'](ejs_Controller['classNames']['dialog-container'], '\x22>\n                <div class=\x22')['concat'](ejs_Controller['classNames']['dialog-title'], '\x22>\x0a                    <h4>Cheats</h4>\n                </div>\n                <div class=\x22')['concat'](ejs_Controller['classNames']['dialog-content'], '\x22>\n                    <div class=\x22')['concat'](ejs_Controller['classNames']['cheats-list'], '\x22>\n                        \n                    </div>\n                </div>\n                <div class=\x22')['concat'](ejs_Controller['classNames']['dialog-buttons'], '\x22>\n                    <a href=\x22#\x22 onclick=\x22return false\x22 class=\x22')['concat'](ejs_Controller['classNames']['cheats-add'], '\x22>Add Cheat</a>\n                    <a href=\x22#\x22 onclick=\x22return false\x22 class=\x22')['concat'](ejs_Controller['classNames']['btn-submit'], '\x22>OK</a>\n                    <a href=\x22#\x22 onclick=\x22return false\x22 class=\x22')['concat'](ejs_Controller['classNames']['btn-cancel'], '\x22>Close</a>\n                </div>\n            </div>\n\n            \n\n            <div class=\x22')['concat'](ejs_Controller['classNames']['modal'], ' ')['concat'](ejs_Controller['classNames']['micromodal-slide'], '\x22 id=\x22modal-85cd7a1c543a484b\x22 aria-hidden=\x22true\x22>\n                <div class=\x22')['concat'](ejs_Controller['classNames']['modal__overlay'], '\x22 tabindex=\x22-1\x22 >\n                <div class=\x22')['concat'](ejs_Controller['classNames']['modal__container'], '\x22 style=\x22width:100%\x22 role=\x22dialog\x22 aria-modal=\x22true\x22 aria-labelledby=\x22modal-85cd7a1c543a484b-title\x22>\n                    <div class=\x22')['concat'](ejs_Controller['classNames']['modal__header'], '\x22>\x0a                    <h2 class=\x22')['concat'](ejs_Controller['classNames']['modal__title'], '\x22 id=\x22modal-85cd7a1c543a484b-title\x22>\n                    Add Cheat Code\n                    </h2>\n                    <button class=\x22')['concat'](ejs_Controller['classNames']['modal__close'], '\x22 aria-label=\x22Close modal\x22 data-modal-close></button>\n                    </div>\x0a                    <main class=\x22')['concat'](ejs_Controller['classNames']['modal__content'], '\x22 id=\x22modal-85cd7a1c543a484b-content\x22>\n\n                        <div class=\x22')['concat'](ejs_Controller['classNames']['modal__errmsg'], '\x22></div>\x0a                        <strong>Code</strong><br />\n                        <textarea style=\x22width:100%;height:80px;\x22 class=\x22')['concat'](ejs_Controller['classNames']['cheat-code-input'], '\x22></textarea><br />\n                        <strong>Description</strong><br />\x0a                        <input type=\x22text\x22 class=\x22')['concat'](ejs_Controller['classNames']['cheat-name-input'], '\x22 /><br />\n\n                    </main>\x0a                    <footer class=\x22')['concat'](ejs_Controller['classNames']['modal__footer'], '\x22>\n                    <button class=\x22')['concat'](ejs_Controller['classNames']['modal__btn'], ' ')['concat'](ejs_Controller['classNames']['modal__btn-primary'], '\x22>Submit</button>\n                    <button class=\x22')['concat'](ejs_Controller['classNames']['modal__btn'], '\x22 data-modal-close aria-label=\x22Close\x22>Close</button>\n                    </footer>\n                </div>\n                </div>\x0a            </div>\x0a            ');
-                var _0x2e34ca = _0x2ed8a7['elements']['dialogs']['cheat']['querySelector']('#modal-85cd7a1c543a484b');
-                addEvent['call'](this, _0x2ed8a7['elements']['dialogs']['cheat']['querySelector']('.' ['concat'](ejs_Controller['classNames']['cheats-add'])), 'click', function (_0xd8641b) {
+        setCheatDialog: function () {
+            const E = this;
+            var ElmDialogsCheat = E['elements']['dialogs']['cheat'],
+                elmdCheatSelector = (s, d) => (d || ElmDialogsCheat).querySelector(s),
+                getdCheatElm = (s, d) => elmdCheatSelector(getCtrlclassName(s, !0), d);
+            if (ElmDialogsCheat) {
+                ElmDialogsCheat.innerHTML =
+                    `<div class="${getCtrlclassName('dialog-container')}">
+    <div class="${getCtrlclassName('dialog-title')}">
+        <h4>${T.getLang('Cheats')}</h4>
+    </div>
+    <div class="${getCtrlclassName('dialog-content')}">
+        <div class="${getCtrlclassName('cheats-list')}">
+            
+        </div>
+    </div>
+    <div class="${getCtrlclassName('dialog-buttons')}">
+        <a href="#" onclick="return false" class="${getCtrlclassName('cheats-add')}">${T.getLang('Add Cheat')}</a>
+        <a href="#" onclick="return false" class="${getCtrlclassName('btn-submit')}">${T.getLang('OK')}</a>
+        <a href="#" onclick="return false" class="${getCtrlclassName('btn-cancel')}">${T.getLang('Close')}</a>
+    </div>
+</div>
+<div class="${getCtrlclassName('modal')} ${getCtrlclassName('micromodal-slide')}" id="modal-85cd7a1c543a484b" aria-hidden="true">
+    <div class="${getCtrlclassName('modal__overlay')}" tabindex="-1" >
+    <div class="${getCtrlclassName('modal__container')}" style="width:100%" role="dialog" aria-modal="true" aria-labelledby="modal-85cd7a1c543a484b-title">
+        <div class="${getCtrlclassName('modal__header')}">
+        <h2 class="${getCtrlclassName('modal__title')}" id="modal-85cd7a1c543a484b-title">${T.getLang('Add Cheat Code')}</h2>
+        <button class="${getCtrlclassName('modal__close')}" aria-label="Close modal" data-modal-close></button>
+        </div>
+        <main class="${getCtrlclassName('modal__content')}" id="modal-85cd7a1c543a484b-content">
+            <div class="${getCtrlclassName('modal__errmsg')}"></div>
+            <strong>${T.getLang('Code')}</strong><br />
+            <textarea style="width:100%;height:80px;" class="${getCtrlclassName('cheat-code-input')}"></textarea><br />
+            <strong>${T.getLang('Description')}</strong><br />
+            <input type="text" class="${getCtrlclassName('cheat-name-input')}" /><br />
+        </main>
+        <footer class="${getCtrlclassName('modal__footer')}">
+        <button class="${getCtrlclassName('modal__btn')} ${getCtrlclassName('modal__btn-primary')}">${T.getLang('Submit')}</button>
+        <button class="${getCtrlclassName('modal__btn')}" data-modal-close aria-label="Close">${T.getLang('Close')}</button>
+        </footer>
+    </div>
+    </div>
+</div>`;
+                var _0x2e34ca = elmdCheatSelector('#modal-85cd7a1c543a484b');
+                E['addEvent'](getdCheatElm('cheats-add'), 'click', function (_0xd8641b) {
 
                     return _0x3e3214['show']('modal-85cd7a1c543a484b', {
                         'closeByEsckey': !0x1,
                         'closeTrigger': 'data-modal-close'
                     }), !0x1;
                 });
-                var _0x258e4a = _0x2ed8a7['elements']['dialogs']['cheat']['querySelector']('.' ['concat'](ejs_Controller['classNames']['cheats-list']));
-                addEvent['call'](this, _0x2e34ca['querySelector']('.' ['concat'](ejs_Controller['classNames']['modal__btn-primary'])), 'click', function (_0x25dc60) {
-                    var _0x5c8936 = _0x2e34ca['querySelector']('.' ['concat'](ejs_Controller['classNames']['cheat-name-input']))['value'],
-                        _0x2409ad = _0x2e34ca['querySelector']('.' ['concat'](ejs_Controller['classNames']['cheat-code-input']))['value'];
+                var _0x258e4a = getdCheatElm('cheats-list');
+                E['addEvent'](getdCheatElm('modal__btn-primary', _0x2e34ca), 'click', function (_0x25dc60) {
+                    var _0x5c8936 = getdCheatElm('cheat-name-input', _0x2e34ca)['value'],
+                        _0x2409ad = getdCheatElm('cheat-code-input', _0x2e34ca)['value'];
                     if (_0x5c8936 && _0x2409ad) {
                         var _0x30ce63 = _0x258e4a['querySelectorAll']('input:checked');
-                        _0x2e34ca['querySelector']('.' ['concat'](ejs_Controller['classNames']['cheat-name-input']))['value'] = '', _0x2e34ca['querySelector']('.' ['concat'](ejs_Controller['classNames']['cheat-code-input']))['value'] = '', _0x3e3214['close']();
-                        var _0x1dbe53 = _0x2ed8a7['cheats']['length'];
-                        _0x2ed8a7['cheats']['push']([_0x5c8936, _0x2409ad]), _0x258e4a.innerHTML += '<div class=\x22' ['concat'](ejs_Controller['classNames']['ejs-switch'], '\x22>\n                            <input type=\x22checkbox\x22 value=\x22')['concat'](_0x1dbe53, '\x22 id=\x22ejs-cheat-switch-')['concat'](_0x1dbe53, '\x22>\x0a                            <label for=\x22ejs-cheat-switch-')['concat'](_0x1dbe53, '\x22>')['concat'](_0x5c8936, '</label>\n                            <a href=\x22#\x22 data-idx=\x22')['concat'](_0x1dbe53, '\x22 onclick=\x22return false\x22 class=\x22')['concat'](ejs_Controller['classNames']['ejs-delete-cheat'], '\x22>&times;</a>\n                        </div>'), _0x30ce63['forEach'](function (_0x2ec279, _0xdd6470) {
+                        getdCheatElm('cheat-name-input', _0x2e34ca)['value'] = '', getdCheatElm('cheat-code-input', _0x2e34ca)['value'] = '', _0x3e3214['close']();
+                        var _0x1dbe53 = E['cheats']['length'];
+                        E['cheats']['push']([_0x5c8936, _0x2409ad]), _0x258e4a.innerHTML += '<div class="' ['concat'](getCtrlclassName('ejs-switch'), '">\n                            <input type="checkbox" value="')['concat'](_0x1dbe53, '" id="ejs-cheat-switch-')['concat'](_0x1dbe53, '">\x0a                            <label for="ejs-cheat-switch-')['concat'](_0x1dbe53, '">')['concat'](_0x5c8936, '</label>\n                            <a href="#" data-idx="')['concat'](_0x1dbe53, '" onclick="return false" class="')['concat'](getCtrlclassName('ejs-delete-cheat'), '">&times;</a>\n                        </div>'), _0x30ce63['forEach'](function (_0x2ec279, _0xdd6470) {
 
                             _0x258e4a['querySelector']('#ejs-cheat-switch-' ['concat'](_0xdd6470))['setAttribute']('checked', 'checked');
                         });
                     }
-                    return _0x2ed8a7['storageSupported'] && localStorage['setItem']('' ['concat'](_0x2ed8a7['system'], '-')['concat'](_0x2ed8a7['startName'], '-cheats'), JSON['stringify'](_0x2ed8a7['cheats'])), _0x25dc60['stopPropagation'](), !0x1;
+                    return E['storageSupported'] && localStorage['setItem']('' ['concat'](E['system'], '-')['concat'](E['startName'], '-cheats'), JSON['stringify'](E['cheats'])), _0x25dc60['stopPropagation'](), !0x1;
                 });
                 var _0xaa6fc9 = function () {
 
-                    if (_0x2ed8a7['storageSupported']) {
-                        var _0x3a1278 = localStorage['getItem']('' ['concat'](_0x2ed8a7['system'], '-')['concat'](_0x2ed8a7['startName'], '-cheats'));
+                    if (E['storageSupported']) {
+                        var _0x3a1278 = localStorage['getItem']('' ['concat'](E['system'], '-')['concat'](E['startName'], '-cheats'));
                         try {
                             _0x3a1278 = JSON['parse'](_0x3a1278);
                         } catch (_0x2cda54) {}
-                        _0x3a1278 && (_0x2ed8a7['cheats'] = _0x3a1278);
+                        _0x3a1278 && (E['cheats'] = _0x3a1278);
                     }
-                    _0x258e4a.innerHTML = '', _0x2ed8a7['cheats'] && Array['isArray'](_0x2ed8a7['cheats']) && _0x2ed8a7['cheats']['forEach'](function (_0x525fb3, _0x1d84fe) {
+                    _0x258e4a.innerHTML = '', E['cheats'] && I.array(E['cheats']) && E['cheats']['forEach'](function (_0x525fb3, _0x1d84fe) {
                         var _0x294e54 = _0x525fb3[0x0];
-                        _0x525fb3[0x1], _0x258e4a.innerHTML += '<div class=\x22' ['concat'](ejs_Controller['classNames']['ejs-switch'], '\x22>\n                                <input type=\x22checkbox\x22 value=\x22')['concat'](_0x1d84fe, '\x22 id=\x22ejs-cheat-switch-')['concat'](_0x1d84fe, '\x22>\n                                <label for=\x22ejs-cheat-switch-')['concat'](_0x1d84fe, '\x22>')['concat'](_0x294e54, '</label>\n                                <a href=\x22#\x22 data-idx=\x22')['concat'](_0x1d84fe, '\x22 onclick=\x22return false\x22 class=\x22')['concat'](ejs_Controller['classNames']['ejs-delete-cheat'], '\x22>&times;</a>\n                            </div>');
+                        _0x525fb3[0x1], _0x258e4a.innerHTML += '<div class="' ['concat'](getCtrlclassName('ejs-switch'), '">\n                                <input type="checkbox" value="')['concat'](_0x1d84fe, '" id="ejs-cheat-switch-')['concat'](_0x1d84fe, '">\n                                <label for="ejs-cheat-switch-')['concat'](_0x1d84fe, '">')['concat'](_0x294e54, '</label>\n                                <a href="#" data-idx="')['concat'](_0x1d84fe, '" onclick="return false" class="')['concat'](getCtrlclassName('ejs-delete-cheat'), '">&times;</a>\n                            </div>');
                     });
                 };
-                addEvent['call'](_0x2ed8a7, _0x258e4a, 'click', function (_0x256be7) {
+                E['addEvent'](_0x258e4a, 'click', function (_0x256be7) {
 
-                    if (_0x256be7['target'] && _0x256be7['target']['classList']['contains'](ejs_Controller['classNames']['ejs-delete-cheat']) && _0x256be7['target']['getAttribute']('data-idx')) {
+                    if (_0x256be7['target'] && _0x256be7['target']['classList']['contains'](getCtrlclassName('ejs-delete-cheat')) && _0x256be7['target']['getAttribute']('data-idx')) {
                         var _0x54f4b2 = _0x256be7['target']['getAttribute']('data-idx');
-                        _0x2ed8a7['cheats']['splice'](_0x54f4b2, 0x1), _0x2ed8a7['storageSupported'] && localStorage['setItem']('' ['concat'](_0x2ed8a7['system'], '-')['concat'](_0x2ed8a7['startName'], '-cheats'), JSON['stringify'](_0x2ed8a7['cheats']));
+                        E['cheats']['splice'](_0x54f4b2, 0x1), E['storageSupported'] && localStorage['setItem']('' ['concat'](E['system'], '-')['concat'](E['startName'], '-cheats'), JSON['stringify'](E['cheats']));
                         var _0x42aa98 = [];
                         _0x258e4a['querySelectorAll']('input')['forEach'](function (_0x5acb1c, _0x3d9a1d) {
 
@@ -9196,86 +7019,271 @@ var EJS = function (modules) {
                         });
                     }
                     return _0x256be7['stopPropagation'](), !0x1;
-                }), addEvent['call'](_0x2ed8a7, _0x2ed8a7['elements']['container'], 'start-game', function (_0x286724) {
+                });
+                E['addEvent'](E['elements']['container'], 'start-game', function (_0x286724) {
                     _0xaa6fc9();
-                }), addEvent['call'](this, _0x2ed8a7['elements']['dialogs']['cheat']['querySelector']('.' ['concat'](ejs_Controller['classNames']['btn-cancel'])), 'click', function (_0x11623c) {
+                });
+                E['addEvent'](getdCheatElm('btn-cancel'), 'click', function (_0x11623c) {
 
-                    return toggleHidden(_0x2ed8a7['elements']['dialogs']['cheat'], !0x0), _0x11623c['stopPropagation'](), _0x2ed8a7['elements']['container']['focus'](), !0x1;
-                }), addEvent['call'](this, _0x2ed8a7['elements']['dialogs']['cheat']['querySelector']('.' ['concat'](ejs_Controller['classNames']['btn-submit'])), 'click', function (_0x584c7c) {
+                    return toggleHidden(ElmDialogsCheat, !0x0), _0x11623c['stopPropagation'](), E['elements']['container']['focus'](), !0x1;
+                });
+                E['addEvent'](getdCheatElm('btn-submit'), 'click', function (_0x584c7c) {
 
                     return ejs_Controller['resetCheat'](), _0x258e4a['querySelectorAll']('input:checked')['forEach'](function (_0x144247, _0x54b25c) {
-                        var _0x4b87fb = _0x2ed8a7['cheats'][_0x144247['value']];
+                        var _0x4b87fb = E['cheats'][_0x144247['value']];
                         _0x4b87fb && ejs_Controller['setCheat'](_0x54b25c, 0x1, _0x4b87fb[0x1]);
-                    }), toggleHidden(_0x2ed8a7['elements']['dialogs']['cheat'], !0x0), _0x2ed8a7['elements']['container']['focus'](), !0x1;
-                }), ejs_loader['arcadeCores']['includes'](_0x2ed8a7['system']) && (ejs_Controller['allowCheat'] = !0x1), ejs_Controller['setCheat'] || (ejs_Controller['allowCheat'] = !0x1), ejs_Controller['allowCheat'] || I.elm(_0x2ed8a7['elements']['buttons']['cheat']) && _0x2ed8a7['elements']['buttons']['cheat']['remove']();
+                    }), toggleHidden(ElmDialogsCheat, !0x0), E['elements']['container']['focus'](), !0x1;
+                });
+                ejs_loader['arcadeCores']['includes'](E['system']) && (ejs_Controller['allowCheat'] = !0x1), ejs_Controller['setCheat'] || (ejs_Controller['allowCheat'] = !0x1), ejs_Controller['allowCheat'] || I.elm(E['elements']['buttons']['cheat']) && E['elements']['buttons']['cheat']['remove']();
             }
         },
-        'setNetplayDialog': function () {
-            var _0x3e6557 = this,
-                _0x14c3c2 = this;
-            if (!ejs_Controller['netPlayHost'] || !ejs_data['supportNetPlay']['call'](this)) return I.elm(_0x14c3c2['elements']['buttons']['netplay']) && (_0x14c3c2['elements']['buttons']['netplay']['remove'](), ejs_data['fixMenuPos']['call'](_0x14c3c2)), !0x1;
-            if (_0x14c3c2['elements']['dialogs']['netplay']) {
-                _0x14c3c2['elements']['dialogs']['netplay'].innerHTML = ('\n            <div class=\x22')['concat'](ejs_Controller['classNames']['dialog-container'], '\x22>\x0a                <div class=\x22')['concat'](ejs_Controller['classNames']['dialog-title'], '\x22>\n                    <h4>Netplay</h4>\n                </div>\n                <div class=\x22')['concat'](ejs_Controller['classNames']['dialog-content'], '\x22>\n                    <div class=\x22')['concat'](ejs_Controller['classNames']['netplay-roomlist'], '\x22 hidden>\x0a                        <strong>Rooms</strong>\n                        <table style=\x22width:100%\x22 cellspacing=0>\x0a                            <thead>\n                                <tr>\n                                    <td>Server</td>\n                                    <td>Room Name</td>\n                                    <td>Players</td>\n                                    <td></td>\n                                </tr>\x0a                            </thead>\n                            <tbody>\x0a                                <tr>\x0a                                    <td></td>\n                                    <td></td>\n                                    <td></td>\n                                    <td></td>\n                                </tr>\n                            </tbody>\n                        </table>\n                    </div>\x0a\x0a                    <div class=\x22')['concat'](ejs_Controller['classNames']['netplay-room'], '\x22 hidden>\n                        <strong>Room Name</strong>\x0a                        <div data-room-password>Password: <span></span></div>\n                        <table style=\x22width:calc(100% - 20px)\x22 cellspacing=\x220\x22>\x0a                            <thead>\n                            <tr>\n                                <td>Player</td>\n                                <td>Name</td>\n                                <td></td>\n                            </tr>\n                            </thead>\n                            <tbody>\n                            <tr>\n                                <td>1</td>\n                                <td>Name 1</td>\x0a                                <td></td>\n                            </tr>\x0a                            <tr>\n                                <td>2</td>\n                                <td>Name 2</td>\n                                <td></td>\n                            </tr>\x0a                            <tr>\n                                <td>' + ('3</td>\x0a                                <td>Name 3</td>\n                                <td></td>\n                            </tr>\n                            <tr>\n                                <td>4</td>\x0a                                <td>Name 4</td>\n                                <td></td>\x0a                            </tr>\n                            </tbody>\n                        </table>\n                    </div>\n                </div>\x0a                <div class=\x22'))['concat'](ejs_Controller['classNames']['dialog-buttons'], '\x22>\n                    <a href=\x22#\x22 onclick=\x22return false\x22 class=\x22')['concat'](ejs_Controller['classNames']['btn-quit'], '\x22>Quit Room</a>\n                    <a href=\x22#\x22 onclick=\x22return false\x22 class=\x22')['concat'](ejs_Controller['classNames']['btn-create-room'], '\x22>Create a Room</a>\n                    <a href=\x22#\x22 onclick=\x22return false\x22 class=\x22')['concat'](ejs_Controller['classNames']['btn-cancel'], '\x22>Close</a>\x0a                </div>\x0a            </div>\n\n            \n            <div class=\x22')['concat'](ejs_Controller['classNames']['modal'], ' ')['concat'](ejs_Controller['classNames']['micromodal-slide'], '\x22 id=\x22modal-9de6c4e9ce2b9361\x22 aria-hidden=\x22true\x22>\x0a                <div class=\x22')['concat'](ejs_Controller['classNames']['modal__overlay'], '\x22 tabindex=\x22-1\x22>\x0a                <div class=\x22')['concat'](ejs_Controller['classNames']['modal__container'], '\x22 role=\x22dialog\x22 aria-modal=\x22true\x22 aria-labelledby=\x22modal-9de6c4e9ce2b9361-title\x22>\x0a                    <div class=\x22')['concat'](ejs_Controller['classNames']['modal__header'], '\x22>\n                    <h2 class=\x22')['concat'](ejs_Controller['classNames']['modal__title'], '\x22 id=\x22modal-9de6c4e9ce2b9361-title\x22>\x0a                        Set Player Name\x0a                    </h2>\n                    </div>\n                    <main class=\x22')['concat'](ejs_Controller['classNames']['modal__content'], '\x22 id=\x22modal-9de6c4e9ce2b9361-content\x22>\x0a\x0a                        <div class=\x22')['concat'](ejs_Controller['classNames']['modal__errmsg'], '\x22></div>\n                        <strong>Player Name</strong><br />\n                        <input type=\x22text\x22 maxlength=\x2210\x22 class=\x22')['concat'](ejs_Controller['classNames']['netplay-player-name'], '\x22 /><br />\n\n                    </main>\n                    <footer class=\x22')['concat'](ejs_Controller['classNames']['modal__footer'], '\x22>\n                    <button class=\x22')['concat'](ejs_Controller['classNames']['modal__btn'], ' ')['concat'](ejs_Controller['classNames']['modal__btn-primary'], '\x22>Submit</button>\n                    </footer>\n                </div>\n                </div>\n            </div>\n            \x0a            <div class=\x22')['concat'](ejs_Controller['classNames']['modal'], ' ')['concat'](ejs_Controller['classNames']['micromodal-slide'], '\x22 id=\x22modal-85cd7a1c543a484a\x22 aria-hidden=\x22true\x22>\n                <div class=\x22')['concat'](ejs_Controller['classNames']['modal__overlay'], '\x22 tabindex=\x22-1\x22>\n                <div class=\x22')['concat'](ejs_Controller['classNames']['modal__container'], '\x22 role=\x22dialog\x22 aria-modal=\x22true\x22 aria-labelledby=\x22modal-85cd7a1c543a484a-title\x22>\n                    <div class=\x22')['concat'](ejs_Controller['classNames']['modal__header'], '\x22>\n                        <h2 class=\x22')['concat'](ejs_Controller['classNames']['modal__title'], '\x22 id=\x22modal-85cd7a1c543a484a-title\x22>\n                        Create a Room\x0a                        </h2>\x0a                        <button class=\x22')['concat'](ejs_Controller['classNames']['modal__close'], '\x22 aria-label=\x22Close modal\x22 data-modal-close></button>\n                    </div>\n                    <main class=\x22')['concat'](ejs_Controller['classNames']['modal__content'], '\x22 id=\x22modal-85cd7a1c543a484a-content\x22>\n\n                        <div class=\x22')['concat'](ejs_Controller['classNames']['modal__errmsg'], '\x22></div>\x0a                        <div><strong>Room Name</strong></div>\n                        <div><input type=\x22text\x22 maxlength=\x2220\x22 class=\x22')['concat'](ejs_Controller['classNames']['netplay-room-name-input'], '\x22 /></div>\n                        <div><strong>Server</strong></div>\x0a                        <div><select data-server></select></div>\n                        <div><strong>Max Players</strong></div>\x0a                        <div>\n                            <select data-max-players>\n                                <option value=\x222\x22>2</option>\n                                <option value=\x223\x22>3</option>\n                                <option value=\x224\x22>4</option>\n                            </select>\n                        </div>\n                        <div><strong>Password (Optional)</strong></div>\n                        <div><input type=\x22text\x22 maxlength=\x2210\x22 class=\x22')['concat'](ejs_Controller['classNames']['netplay-room-password-input'], '\x22 /></div>\n\n                    </main>\n                    <footer class=\x22')['concat'](ejs_Controller['classNames']['modal__footer'], '\x22>\n                    <button class=\x22')['concat'](ejs_Controller['classNames']['modal__btn'], ' ')['concat'](ejs_Controller['classNames']['modal__btn-primary'], '\x22>Submit</button>\n                    <button class=\x22')['concat'](ejs_Controller['classNames']['modal__btn'], '\x22 data-modal-close aria-label=\x22Close\x22>Close</button>\n                    </footer>\n                </div>\x0a                </div>\n            </div>\n            \n            <div class=\x22')['concat'](ejs_Controller['classNames']['modal'], ' ')['concat'](ejs_Controller['classNames']['micromodal-slide'], '\x22 id=\x22modal-5aa765d61d8327de\x22 aria-hidden=\x22true\x22>\n                <div class=\x22')['concat'](ejs_Controller['classNames']['modal__overlay'], '\x22 tabindex=\x22-1\x22 data-modal-close>\x0a                <div class=\x22')['concat'](ejs_Controller['classNames']['modal__container'], '\x22 role=\x22dialog\x22 aria-modal=\x22true\x22 aria-labelledby=\x22modal-5aa765d61d8327de-title\x22>\x0a                    <div class=\x22')['concat'](ejs_Controller['classNames']['modal__header'], '\x22>\n                    <h2 class=\x22')['concat'](ejs_Controller['classNames']['modal__title'], '\x22 id=\x22modal-5aa765d61d8327de-title\x22>\x0a                        Password\x0a                    </h2>\n                    <button class=\x22')['concat'](ejs_Controller['classNames']['modal__close'], '\x22 aria-label=\x22Close modal\x22 data-modal-close></button>\n                    </div>\n                    <main class=\x22')['concat'](ejs_Controller['classNames']['modal__content'], '\x22 id=\x22modal-5aa765d61d8327de-content\x22>\n\n                        <div class=\x22')['concat'](ejs_Controller['classNames']['modal__errmsg'], '\x22></div>\x0a                        <input type=\x22text\x22 maxlength=\x2210\x22 class=\x22')['concat'](ejs_Controller['classNames']['netplay-room-password-input'], '\x22 /><br />\n\n                    </main>\n                    <footer class=\x22')['concat'](ejs_Controller['classNames']['modal__footer'], '\x22>\n                    <button class=\x22')['concat'](ejs_Controller['classNames']['modal__btn'], ' ')['concat'](ejs_Controller['classNames']['modal__btn-primary'], '\x22>Submit</button>\x0a                    <button class=\x22')['concat'](ejs_Controller['classNames']['modal__btn'], '\x22 data-modal-close aria-label=\x22Close\x22>Close</button>\n                    </footer>\n                </div>\n                </div>\n            </div>\x0a            \n            \n            <div class=\x22')['concat'](ejs_Controller['classNames']['modal'], ' ')['concat'](ejs_Controller['classNames']['micromodal-slide'], '\x22 id=\x22modal-7d8fd50ed642340b\x22 aria-hidden=\x22true\x22>\n                <div class=\x22')['concat'](ejs_Controller['classNames']['modal__overlay'], '\x22 tabindex=\x22-1\x22 data-modal-close>\x0a                <div class=\x22')['concat'](ejs_Controller['classNames']['modal__container'], '\x22 role=\x22dialog\x22 aria-modal=\x22true\x22 aria-labelledby=\x22modal-7d8fd50ed642340b-title\x22>\n                    <div class=\x22')['concat'](ejs_Controller['classNames']['modal__header'], '\x22>\n                    <h2 class=\x22')['concat'](ejs_Controller['classNames']['modal__title'], '\x22 id=\x22modal-7d8fd50ed642340b-title\x22></h2>\n                    <button class=\x22')['concat'](ejs_Controller['classNames']['modal__close'], '\x22 aria-label=\x22Close modal\x22 data-modal-close></button>\n                    </div>\n                    <main class=\x22')['concat'](ejs_Controller['classNames']['modal__content'], '\x22 id=\x22modal-7d8fd50ed642340b-content\x22>\n                        \n                    </main>\x0a                    <footer class=\x22')['concat'](ejs_Controller['classNames']['modal__footer'], '\x22>\n                    <button class=\x22')['concat'](ejs_Controller['classNames']['modal__btn'], ' ')['concat'](ejs_Controller['classNames']['modal__btn-primary'], '\x22 data-modal-close>OK</button>\n                    </footer>\n                </div>\n                </div>\n            </div>\n            \n            ');
-                var _0xe989f, _0x934635 = _0x14c3c2['elements']['dialogs']['netplay']['querySelector']('#modal-9de6c4e9ce2b9361'),
-                    _0x4b86d1 = _0x14c3c2['elements']['dialogs']['netplay']['querySelector']('#modal-85cd7a1c543a484a'),
-                    _0x26d33b = _0x14c3c2['elements']['dialogs']['netplay']['querySelector']('#modal-7d8fd50ed642340b'),
-                    _0x208711 = _0x14c3c2['elements']['dialogs']['netplay']['querySelector']('#modal-5aa765d61d8327de'),
+        setNetplayDialog: function () {
+            const E = this;
+            var ElmDialogsNetplay = E['elements']['dialogs']['netplay'],
+                elmDialogsNetplaySelector = s => ElmDialogsNetplay.querySelector(s);
+            if (!ejs_Controller['netPlayHost'] || !ejs_data['supportNetPlay']['call'](this)) {
+                if (I.elm(E['elements']['buttons']['netplay'])) {
+                    E['elements']['buttons']['netplay']['remove']();
+                    ejs_data['fixMenuPos']['call'](E);
+                }
+                return !0x1;
+            }
+            if (ElmDialogsNetplay) {
+                ElmDialogsNetplay.innerHTML =
+                    `<div class="${getCtrlclassName('dialog-container')}">
+    <div class="${getCtrlclassName('dialog-title')}">
+        <h4>${T.getLang('Netplay')}</h4>
+    </div>
+    <div class="${getCtrlclassName('dialog-content')}">
+        <div class="${getCtrlclassName('netplay-roomlist')}" hidden>
+            <strong>${T.getLang('Rooms')}</strong>
+            <table style="width:100%" cellspacing=0>
+                    <thead>
+                    <tr>
+                        <td>${T.getLang('Server')}</td>
+                        <td>${T.getLang('Room Name')}</td>
+                        <td>${T.getLang('Players')}</td>
+                        <td></td>
+                    </tr>
+                    </thead>
+                <tbody>
+                        <tr>
+                            <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="${getCtrlclassName('netplay-room')}" hidden>
+            <strong>${T.getLang('Room Name')}</strong>
+            <div data-room-password>${T.getLang('Password')}: <span></span></div>
+                <table style="width:calc(100% - 20px)" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <td>${T.getLang('Player')}</td>
+                            <td>${T.getLang('Name')}</td>
+                            <td></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>${T.getLang('Name')} 1</td>
+                            <td></td>
+                        </tr>
+                            <tr>
+                            <td>2</td>
+                            <td>${T.getLang('Name')} 2</td>
+                            <td></td>
+                        </tr>
+                            <tr>
+                            <td>3</td>
+                            <td>${T.getLang('Name')} 3</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>${T.getLang('Name')} 4</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="${getCtrlclassName('dialog-buttons')}">
+            <a href="#" onclick="return false" class="${getCtrlclassName('btn-quit')}">${T.getLang('Quit Room')}</a>
+            <a href="#" onclick="return false" class="${getCtrlclassName('btn-create-room')}">${T.getLang('Create a Room')}</a>
+            <a href="#" onclick="return false" class="${getCtrlclassName('btn-cancel')}">${T.getLang('Close')}</a>
+        </div>
+    </div>
+    <div class="${getCtrlclassName('modal')} ${getCtrlclassName('micromodal-slide')}" id="modal-9de6c4e9ce2b9361" aria-hidden="true">
+        <div class="${getCtrlclassName('modal__overlay')}" tabindex="-1">
+            <div class="${getCtrlclassName('modal__container')}" role="dialog" aria-modal="true" aria-labelledby="modal-9de6c4e9ce2b9361-title">
+                <div class="${getCtrlclassName('modal__header')}">
+                    <h2 class="${getCtrlclassName('modal__title')}" id="modal-9de6c4e9ce2b9361-title">${T.getLang('Set Player Name')}</h2>
+                </div>
+                <main class="${getCtrlclassName('modal__content')}" id="modal-9de6c4e9ce2b9361-content">
+                    <div class="${getCtrlclassName('modal__errmsg')}"></div>
+                    <strong>${T.getLang('Player Name')}</strong><br />
+                    <input type="text" maxlength="10" class="${getCtrlclassName('netplay-player-name')}" /><br />
+                </main>
+                <footer class="${getCtrlclassName('modal__footer')}">
+                    <button class="${getCtrlclassName('modal__btn')} ${getCtrlclassName('modal__btn-primary')}">${T.getLang('Submit')}</button>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <div class="${getCtrlclassName('modal')} ${getCtrlclassName('micromodal-slide')}" id="modal-85cd7a1c543a484a" aria-hidden="true">
+        <div class="${getCtrlclassName('modal__overlay')}" tabindex="-1">
+            <div class="${getCtrlclassName('modal__container')}" role="dialog" aria-modal="true" aria-labelledby="modal-85cd7a1c543a484a-title">
+                <div class="${getCtrlclassName('modal__header')}">
+                    <h2 class="${getCtrlclassName('modal__title')}" id="modal-85cd7a1c543a484a-title">${T.getLang('Create a Room')}</h2>
+                    <button class="${getCtrlclassName('modal__close')}" aria-label="Close modal" data-modal-close></button>
+                </div>
+                <main class="${getCtrlclassName('modal__content')}" id="modal-85cd7a1c543a484a-content">
+                    <div class="${getCtrlclassName('modal__errmsg')}"></div>
+                        <div><strong>${T.getLang('Room Name')}</strong></div>
+                    <div><input type="text" maxlength="20" class="${getCtrlclassName('netplay-room-name-input')}" /></div>
+                    <div><strong>${T.getLang('Server')}</strong></div>
+                    <div><select data-server></select></div>
+                    <div><strong>${T.getLang('Max Players')}</strong></div>
+                        <div>
+                            <select data-max-players>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                    <div><strong>${T.getLang('Password (Optional)')}</strong></div>
+                    <div><input type="text" maxlength="10" class="${getCtrlclassName('netplay-room-password-input')}" /></div>
+                </main>
+                <footer class="${getCtrlclassName('modal__footer')}">
+                    <button class="${getCtrlclassName('modal__btn')} ${getCtrlclassName('modal__btn-primary')}">${T.getLang('Submit')}</button>
+                    <button class="${getCtrlclassName('modal__btn')}" data-modal-close aria-label="Close">${T.getLang('Close')}</button>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <div class="${getCtrlclassName('modal')} ${getCtrlclassName('micromodal-slide')}" id="modal-5aa765d61d8327de" aria-hidden="true">
+        <div class="${getCtrlclassName('modal__overlay')}" tabindex="-1" data-modal-close>
+            <div class="${getCtrlclassName('modal__container')}" role="dialog" aria-modal="true" aria-labelledby="modal-5aa765d61d8327de-title">
+                <div class="${getCtrlclassName('modal__header')}">
+                    <h2 class="${getCtrlclassName('modal__title')}" id="modal-5aa765d61d8327de-title">${T.getLang('Password')}</h2>
+                    <button class="${getCtrlclassName('modal__close')}" aria-label="Close modal" data-modal-close></button>
+                </div>
+                <main class="${getCtrlclassName('modal__content')}" id="modal-5aa765d61d8327de-content">
+                    <div class="${getCtrlclassName('modal__errmsg')}"></div>
+                    <input type="text" maxlength="10" class="${getCtrlclassName('netplay-room-password-input')}" /><br />
+                </main>
+                <footer class="${getCtrlclassName('modal__footer')}">
+                    <button class="${getCtrlclassName('modal__btn')} ${getCtrlclassName('modal__btn-primary')}">${T.getLang('Submit')}</button>
+                    <button class="${getCtrlclassName('modal__btn')}" data-modal-close aria-label="Close">${T.getLang('Close')}</button>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <div class="${getCtrlclassName('modal')} ${getCtrlclassName('micromodal-slide')}" id="modal-7d8fd50ed642340b" aria-hidden="true">
+        <div class="${getCtrlclassName('modal__overlay')}" tabindex="-1" data-modal-close>
+            <div class="${getCtrlclassName('modal__container')}" role="dialog" aria-modal="true" aria-labelledby="modal-7d8fd50ed642340b-title">
+                <div class="${getCtrlclassName('modal__header')}">
+                <h2 class="${getCtrlclassName('modal__title')}" id="modal-7d8fd50ed642340b-title"></h2>
+                <button class="${getCtrlclassName('modal__close')}" aria-label="Close modal" data-modal-close></button>
+            </div>
+            <main class="${getCtrlclassName('modal__content')}" id="modal-7d8fd50ed642340b-content">
+            </main>
+            <footer class="${getCtrlclassName('modal__footer')}">
+                <button class="${getCtrlclassName('modal__btn')} ${getCtrlclassName('modal__btn-primary')}" data-modal-close>${T.getLang('OK')}</button>
+            </footer>
+        </div>
+    </div>
+</div>`;
+                var ElmWidgetsNetPlay = E['elements']['widgets']['netplay'],
+                    elmWidgetsSelector = s => ElmWidgetsNetPlay.querySelector(s),
+                    _0xe989f, _0x934635 = elmDialogsNetplaySelector('#modal-9de6c4e9ce2b9361'),
+                    _0x4b86d1 = elmDialogsNetplaySelector('#modal-85cd7a1c543a484a'),
+                    _0x26d33b = elmDialogsNetplaySelector('#modal-7d8fd50ed642340b'),
+                    _0x208711 = elmDialogsNetplaySelector('#modal-5aa765d61d8327de'),
                     _0x177d11 = null;
                 if (ejs_Controller['netplayNewUser']) {
-                    addEvent['call'](this, _0x14c3c2['elements']['dialogs']['netplay']['querySelector']('.' ['concat'](ejs_Controller['classNames']['btn-cancel'])), 'click', function (_0x168830) {
-
-                        return toggleHidden(_0x14c3c2['elements']['dialogs']['netplay'], !0x0), ejs_Controller['netPlayDialogOpened'] = !0x1, ejs_Controller['stopLoadRooms'](), _0x168830['stopPropagation'](), _0x14c3c2['elements']['container']['focus'](), !0x1;
+                    E['addEvent'](elmDialogsNetplaySelector(getCtrlclassName('btn-cancel', !0)), 'click', (event) => {
+                        toggleHidden(ElmDialogsNetplay, !0x0);
+                        ejs_Controller['netPlayDialogOpened'] = !0x1;
+                        ejs_Controller['stopLoadRooms']();
+                        event['stopPropagation']();
+                        E['elements']['container']['focus']();
+                        return !0x1;
                     });
                     var _0x2ca3ff, _0x5be3ac = function () {
 
-                            toggleHidden(_0x14c3c2['elements']['widgets']['netplay'], !0x1);
-                            var _0x2a56dc = _0x14c3c2['elements']['widgets']['netplay']['querySelector'](getClassName('netplay-players',1)),
-                                _0x433000 = _0x14c3c2['elements']['widgets']['netplay']['querySelector'](getClassName('chat-toggle',1)),
-                                _0x540fcb = _0x14c3c2['elements']['widgets']['netplay']['querySelector'](getClassName('chat-box',1));
-                            _0x2a56dc || (_0x2a56dc = _0xf5893f('ul', {
-                                'class': getClassName('netplay-players')
-                            }), _0x14c3c2['elements']['widgets']['netplay']['appendChild'](_0x2a56dc)), _0x433000 || ((_0x433000 = _0xf5893f('div', {
-                                'class': getClassName('chat-toggle')
-                            })).innerHTML = '' ['concat'](ejs_Controller['icons']['chat'], ' <span class=\x22')['concat'](getClassName('chat-count'), '\x22>0</span>'), _0x14c3c2['elements']['widgets']['netplay']['appendChild'](_0x433000), addEvent['call'](_0x14c3c2, _0x433000, 'click', function (_0x35aa1d) {
+                            toggleHidden(ElmWidgetsNetPlay, !0x1);
+                            var _0x2a56dc = elmWidgetsSelector(getClassName('netplay-players', 1)),
+                                _0x433000 = elmWidgetsSelector(getClassName('chat-toggle', 1)),
+                                _0x540fcb = elmWidgetsSelector(getClassName('chat-box', 1));
+                            if (!_0x2a56dc) {
+                                _0x2a56dc = createElm('ul', {
+                                    'class': getClassName('netplay-players')
+                                }), ElmWidgetsNetPlay['appendChild'](_0x2a56dc)
+                            }
+                            if (!_0x433000) {
+                                _0x433000 = createElm('div', {
+                                    'class': getClassName('chat-toggle')
+                                });
 
-                                _0x279293(_0x14c3c2['elements']['widgets']['netplay'], getClassName('with-chat-box')), _0x433000['querySelector'](getClassName('chat-count',1))['innerText'] = '0';
-                            })), _0x540fcb || ((_0x540fcb = _0xf5893f('div', {
-                                'class': getClassName('chat-box')
-                            })).innerHTML = ('\x0a                            <div class=\x22')['concat'](getClassName('chat-messages'), '\x22>\x0a                                <ul></ul>\n                            </div>\n                            <div class=\x22')['concat'](getClassName('chat-input'), '\x22>\x0a                                <textarea maxlength=\x22100\x22></textarea>\n                                <button type=\x22button\x22>Send</button>\n                            </div>'), _0x14c3c2['elements']['widgets']['netplay']['appendChild'](_0x540fcb), addEvent['call'](_0x14c3c2, _0x540fcb['querySelector']('textarea'), 'keydown keyup', function (_0x3f53e2) {
+                                _0x433000.innerHTML = getSvgIcon('chat') + ` <span class="${getClassName('chat-count')}">0</span>`;
+                                ElmWidgetsNetPlay['appendChild'](_0x433000);
+                                E['addEvent'](_0x433000, 'click', function (event) {
+                                    elmAddRemoveClass(ElmWidgetsNetPlay, getClassName('with-chat-box'));
+                                    _0x433000['querySelector'](getClassName('chat-count', 1))['innerText'] = '0';
+                                })
 
-                                return ('keydown' != _0x3f53e2['type'] || 0xd != _0x3f53e2['keyCode']) && ('keyup' == _0x3f53e2['type'] && 0xd == _0x3f53e2['keyCode'] ? (callEvent['call'](_0x14c3c2, _0x540fcb['querySelector']('button'), 'click'), !0x1) : void _0x3f53e2['stopPropagation']());
-                            }), addEvent['call'](_0x14c3c2, _0x540fcb['querySelector']('button'), 'click', function (_0x68b5ad) {
+                            }
+                            if (!_0x540fcb) {
+                                (_0x540fcb = createElm('div', {
+                                    'class': getClassName('chat-box')
+                                })).innerHTML = `<div class="${getClassName('chat-messages')}">
+                                <ul></ul>
+                            </div>
+                            <div class="${getClassName('chat-input')}">
+                                <textarea maxlength="100"></textarea>
+                            <button type="button">Send</button>
+                            </div>`, ElmWidgetsNetPlay['appendChild'](_0x540fcb), E['addEvent'](_0x540fcb['querySelector']('textarea'), 'keydown keyup', function (_0x3f53e2) {
 
-                                if (ejs_Controller['connected']) {
-                                    var _0x3d607e = _0x540fcb['querySelector']('textarea')['value']['trim']();
-                                    if (_0x540fcb['querySelector']('textarea')['value'] = '', _0x3d607e) {
-                                        var _0x3fbb2b = _0x540fcb['querySelector']('.' ['concat'](getClassName('chat-messages'), ' ul')),
-                                            _0x1c60d6 = _0xf5893f('li', {});
-                                        _0x1c60d6.innerHTML = '<strong>' ['concat'](ejs_Controller['playerName'], '</strong> (You) : ')['concat'](_0x3d607e), _0x3fbb2b['appendChild'](_0x1c60d6);
-                                        var _0x37ce0d = _0x3fbb2b['querySelectorAll']('li');
-                                        _0x37ce0d['length'] > 0x32 && _0x3fbb2b['removeChild'](_0x37ce0d[0x0]), _0x37ce0d = null, ejs_Controller['connection'] ? ejs_Controller['connection']['send'](JSON['stringify']({
-                                            'type': 'chat',
-                                            'content': _0x3d607e['substring'](0x0, 0x64)
-                                        })) : _0x177d11['send'](JSON['stringify']({
-                                            'type': 'chat',
-                                            'content': _0x3d607e['substring'](0x0, 0x64),
-                                            'from': ejs_Controller['playerName']
-                                        })), _0x540fcb['querySelector'](getClassName('chat-messages',1))['scroll'](0x0, _0x3fbb2b['clientHeight']), _0x540fcb['querySelector']('textarea')['focus']();
+                                    return ('keydown' != _0x3f53e2['type'] || 0xd != _0x3f53e2['keyCode']) && ('keyup' == _0x3f53e2['type'] && 0xd == _0x3f53e2['keyCode'] ? (E['callEvent'](_0x540fcb['querySelector']('button'), 'click'), !0x1) : void _0x3f53e2['stopPropagation']());
+                                }), E['addEvent'](_0x540fcb['querySelector']('button'), 'click', function (_0x68b5ad) {
+
+                                    if (ejs_Controller['connected']) {
+                                        var _0x3d607e = _0x540fcb['querySelector']('textarea')['value']['trim']();
+                                        if (_0x540fcb['querySelector']('textarea')['value'] = '', _0x3d607e) {
+                                            var _0x3fbb2b = _0x540fcb['querySelector']('.' ['concat'](getClassName('chat-messages'), ' ul')),
+                                                _0x1c60d6 = createElm('li', {});
+                                            _0x1c60d6.innerHTML = '<strong>' ['concat'](ejs_Controller['playerName'], '</strong> (You) : ')['concat'](_0x3d607e), _0x3fbb2b['appendChild'](_0x1c60d6);
+                                            var _0x37ce0d = _0x3fbb2b['querySelectorAll']('li');
+                                            _0x37ce0d['length'] > 0x32 && _0x3fbb2b['removeChild'](_0x37ce0d[0x0]), _0x37ce0d = null, ejs_Controller['connection'] ? ejs_Controller['connection']['send'](JSON['stringify']({
+                                                'type': 'chat',
+                                                'content': _0x3d607e['substring'](0x0, 0x64)
+                                            })) : _0x177d11['send'](JSON['stringify']({
+                                                'type': 'chat',
+                                                'content': _0x3d607e['substring'](0x0, 0x64),
+                                                'from': ejs_Controller['playerName']
+                                            })), _0x540fcb['querySelector'](getClassName('chat-messages', 1))['scroll'](0x0, _0x3fbb2b['clientHeight']), _0x540fcb['querySelector']('textarea')['focus']();
+                                        }
                                     }
-                                }
-                                _0x68b5ad['stopPropagation']();
-                            }));
+                                    _0x68b5ad['stopPropagation']();
+                                })
+                            }
                             var _0x5129fc = '';
                             if (ejs_Controller['connection']) ejs_Controller['players']['forEach'](function (_0x5b6e0a, _0x4721ab) {
                                 var _0x2b0624 = null;
                                 if (_0x5b6e0a) {
                                     ejs_Controller['connection']['peers'][_0x5b6e0a] ? _0x2b0624 = ejs_Controller['connection']['peers'][_0x5b6e0a]['extra'] : ejs_Controller['connection']['userid'] === _0x5b6e0a && (_0x2b0624 = ejs_Controller['connection']['extra']);
-                                    var _0x3fa850 = _0x2b0624['country'] ? ('<i class=\x22ejs-flag ejs-flag-')['concat'](_0x2b0624['country']['toLocaleLowerCase'](), '\x22></i>') : ' ';
+                                    var _0x3fa850 = _0x2b0624['country'] ? ('<i class="ejs-flag ejs-flag-')['concat'](_0x2b0624['country']['toLocaleLowerCase'](), '"></i>') : ' ';
                                     _0x5129fc += '<li>' ['concat'](_0x4721ab + 0x1, '. ')['concat'](_0x2b0624['name'], ' ')['concat'](_0x3fa850, '</li>');
                                 } else _0x5129fc += '<li>' ['concat'](_0x4721ab + 0x1, '. </li>');
                             }), _0x5129fc += '', _0x2a56dc.innerHTML = _0x5129fc;
                             else {
-                                var _0x34e942 = _0x14c3c2['elements']['dialogs']['netplay']['querySelector']('.' ['concat'](ejs_Controller['classNames']['netplay-room']))['querySelector']('tbody');
+                                var _0x34e942 = elmDialogsNetplaySelector(getCtrlclassName('netplay-room', !0))['querySelector']('tbody');
                                 _0x34e942.innerHTML = '', ejs_Controller['netPlayUsers']['forEach'](function (_0x1f55c9, _0x5537a0) {
 
                                     if (_0x1f55c9) {
@@ -9288,44 +7296,44 @@ var EJS = function (modules) {
                                 }), _0x5129fc += '</ul>', _0x2a56dc.innerHTML = _0x5129fc;
                             }
                         },
-                        _0x4d4127 = 'https://lobby.emulatorjs.com',
+                        HostLobby = 'https://lobby.emulatorjs.com',
                         _0x2941ff = function (_0x44747a) {
                             var _0x212615, _0x4d2901, _0x1a7c3c = _0x44747a['data'];
-                            if ('object' == _0x4aa84a(_0x1a7c3c) && _0x1a7c3c['arrayBuffer'])(_0x212615 = regeneratorRuntime['mark'](function _0x279571() {
-                                var _0x38a304, _0x3a1fff, _0x5c94ee;
-                                return regeneratorRuntime['wrap'](function (_0x33d349) {
+                            if (I.buf(_0x1a7c3c)) {
+                                _0x212615 = regeneratorRuntime['mark'](function _0x279571() {
+                                    var _0x38a304, _0x3a1fff, _0x5c94ee;
+                                    return regeneratorRuntime['wrap'](function (_0x33d349) {
 
-                                    for (;;) switch (_0x33d349['prev'] = _0x33d349['next']) {
-                                        case 0x0:
-                                            return _0x33d349['next'] = 0x2, _0x1a7c3c['arrayBuffer']();
-                                        case 0x2:
-                                            _0x38a304 = _0x33d349['sent'], _0x3a1fff = new Uint8Array(_0x38a304), _0x5c94ee = ejs_loader['Module']['_malloc'](_0x3a1fff['length'] * _0x3a1fff['BYTES_PER_ELEMENT']), ejs_loader['Module']['HEAPU8']['set'](_0x3a1fff, _0x5c94ee), ejs_loader['Module']['ccall']('netplay_push_data', 'number', ['number', 'number'], [_0x5c94ee, _0x3a1fff['byteLength']]), ejs_loader['Module']['_free'](_0x5c94ee);
-                                        case 0x8:
-                                        case 'end':
-                                            return _0x33d349['stop']();
-                                    }
-                                }, _0x279571);
-                            }), _0x4d2901 = function () {
-                                var _0xcb5850 = this,
-                                    _0xc236eb = arguments;
-                                return new Promise(function (_0x4ffe3f, _0x4f1940) {
-                                    var _0x4c9801 = _0x212615['apply'](_0xcb5850, _0xc236eb);
-
-                                    function _0x4214e6(_0xdb41bf) {
-                                        _0x33f24c(_0x4c9801, _0x4ffe3f, _0x4f1940, _0x4214e6, _0x2ea043, 'next', _0xdb41bf);
-                                    }
-
-                                    function _0x2ea043(_0xba70af) {
-
-                                        _0x33f24c(_0x4c9801, _0x4ffe3f, _0x4f1940, _0x4214e6, _0x2ea043, 'throw', _0xba70af);
-                                    }
-                                    _0x4214e6(void 0x0);
+                                        for (;;) switch (_0x33d349['prev'] = _0x33d349['next']) {
+                                            case 0x0:
+                                                return _0x33d349['next'] = 0x2, _0x1a7c3c['arrayBuffer']();
+                                            case 0x2:
+                                                _0x38a304 = _0x33d349['sent'], _0x3a1fff = new Uint8Array(_0x38a304), _0x5c94ee = ejs_loader['Module']['_malloc'](_0x3a1fff['length'] * _0x3a1fff['BYTES_PER_ELEMENT']), ejs_loader['Module']['HEAPU8']['set'](_0x3a1fff, _0x5c94ee), ejs_loader['Module']['ccall']('netplay_push_data', 'number', ['number', 'number'], [_0x5c94ee, _0x3a1fff['byteLength']]), ejs_loader['Module']['_free'](_0x5c94ee);
+                                            case 0x8:
+                                            case 'end':
+                                                return _0x33d349['stop']();
+                                        }
+                                    }, _0x279571);
                                 });
-                            }, function () {
+                                _0x4d2901 = function () {
+                                    var _0xcb5850 = this,
+                                        _0xc236eb = arguments;
+                                    return new Promise(function (_0x4ffe3f, _0x4f1940) {
+                                        var _0x4c9801 = _0x212615['apply'](_0xcb5850, _0xc236eb);
 
-                                return _0x4d2901['apply'](this, arguments);
-                            })();
-                            else {
+                                        function _0x4214e6(_0xdb41bf) {
+                                            _0x33f24c(_0x4c9801, _0x4ffe3f, _0x4f1940, _0x4214e6, _0x2ea043, 'next', _0xdb41bf);
+                                        }
+
+                                        function _0x2ea043(_0xba70af) {
+
+                                            _0x33f24c(_0x4c9801, _0x4ffe3f, _0x4f1940, _0x4214e6, _0x2ea043, 'throw', _0xba70af);
+                                        }
+                                        _0x4214e6(void 0x0);
+                                    });
+                                };
+                                _0x4d2901();
+                            } else {
                                 if ('string' == typeof _0x1a7c3c) {
                                     var _0x155582 = null;
                                     try {
@@ -9336,86 +7344,87 @@ var EJS = function (modules) {
                                             var _0xa29475 = _0x155582['from'],
                                                 _0x518fc5 = _0x155582['content'];
                                             if (_0x518fc5) {
-                                                var _0x77b32e = _0x14c3c2['elements']['widgets']['netplay']['querySelector']('.' ['concat'](getClassName('chat-messages'), ' ul')),
-                                                    _0xe19a73 = _0xf5893f('li', {});
+                                                var _0x77b32e = elmWidgetsSelector('.' ['concat'](getClassName('chat-messages'), ' ul')),
+                                                    _0xe19a73 = createElm('li', {});
                                                 _0xe19a73.innerHTML = '<strong>' ['concat'](_0xa29475, '</strong> : ')['concat'](_0x518fc5), _0x77b32e['appendChild'](_0xe19a73);
                                                 var _0x508553 = _0x77b32e['querySelectorAll']('li');
-                                                if (_0x508553['length'] > 0x32 && _0x77b32e['removeChild'](_0x508553[0x0]), _0x508553 = null, _0x14c3c2['elements']['widgets']['netplay']['querySelector'](getClassName('chat-messages',1))['scroll'](0x0, _0x77b32e['clientHeight']), !_0x14c3c2['elements']['widgets']['netplay']['classList']['contains'](getClassName('with-chat-box'))) {
-                                                    var _0x10ddce = _0x14c3c2['elements']['widgets']['netplay']['querySelector'](getClassName('chat-count',1))['innerText'];
-                                                    _0x10ddce = parseInt(_0x10ddce), _0x10ddce++, _0x14c3c2['elements']['widgets']['netplay']['querySelector'](getClassName('chat-count',1))['innerText'] = _0x10ddce;
+                                                if (_0x508553['length'] > 0x32 && _0x77b32e['removeChild'](_0x508553[0x0]), _0x508553 = null, elmWidgetsSelector(getClassName('chat-messages', 1))['scroll'](0x0, _0x77b32e['clientHeight']), !ElmWidgetsNetPlay['classList']['contains'](getClassName('with-chat-box'))) {
+                                                    var _0x10ddce = elmWidgetsSelector(getClassName('chat-count', 1))['innerText'];
+                                                    _0x10ddce = parseInt(_0x10ddce), _0x10ddce++, elmWidgetsSelector(getClassName('chat-count', 1))['innerText'] = _0x10ddce;
                                                 }
                                             }
                                         }
-                                    } else 'n:' == _0x1a7c3c['substring'](0x0, 0x2) && (ejs_Controller['netplayNewUser'](), ejs_Controller['netPlayUsers'][0x1] = decodeURIComponent(_0x1a7c3c['substring'](0x2)), _0x5be3ac(), _0x88c152['show'](_0x14c3c2['elements']['container'], decodeURIComponent(_0x1a7c3c['substring'](0x2)) + ' joined')), 'q:' == _0x1a7c3c['substring'](0x0, 0x2) && (ejs_Controller['netPlayIsHost'] ? (ejs_Controller['netPlayClose'](), ejs_Controller['netPlayHost'](), ejs_Controller['netPlayUsers'][0x1] = '', _0x5be3ac(), _0x88c152['show'](_0x14c3c2['elements']['container'], decodeURIComponent(_0x1a7c3c['substring'](0x2)) + ' quited')) : _0x177d11['close']());
+                                    } else 'n:' == _0x1a7c3c['substring'](0x0, 0x2) && (ejs_Controller['netplayNewUser'](), ejs_Controller['netPlayUsers'][0x1] = decodeURIComponent(_0x1a7c3c['substring'](0x2)), _0x5be3ac(), _0x88c152['show'](E['elements']['container'], decodeURIComponent(_0x1a7c3c['substring'](0x2)) + ' joined')), 'q:' == _0x1a7c3c['substring'](0x0, 0x2) && (ejs_Controller['netPlayIsHost'] ? (ejs_Controller['netPlayClose'](), ejs_Controller['netPlayHost'](), ejs_Controller['netPlayUsers'][0x1] = '', _0x5be3ac(), _0x88c152['show'](E['elements']['container'], decodeURIComponent(_0x1a7c3c['substring'](0x2)) + ' quited')) : _0x177d11['close']());
                                 }
                             }
                         },
                         _0x2fb1d8 = function () {
 
-                            ejs_Controller['hideLoading']['call'](_0x14c3c2);
+                            ejs_Controller['hideLoading']['call'](E);
                             ejs_Controller['connected'] = !0x0;
-                             ['n64', 'mupen64plus', 'mupen64plus2', 'mupen64plus-nx']['includes'](_0x14c3c2['system']) || ejs_loader['Module']['_fast_forward_2'];
-                             toggleHidden(_0x14c3c2['elements']['buttons']['loadState'], !0x0);
-                             toggleHidden(_0x14c3c2['elements']['buttons']['saveState'], !0x0);
-                            ejs_Controller['resetCheat'](), toggleHidden(_0x14c3c2['elements']['buttons']['cheat'], !0x0);
+                            ['n64', 'mupen64plus', 'mupen64plus2', 'mupen64plus-nx']['includes'](E['system']) || ejs_loader['Module']['_fast_forward_2'];
+                            toggleHidden(E['elements']['buttons']['loadState'], !0x0);
+                            toggleHidden(E['elements']['buttons']['saveState'], !0x0);
+                            ejs_Controller['resetCheat']();
+                            toggleHidden(E['elements']['buttons']['cheat'], !0x0);
                             toggleHidden(ejs_data['contextMenu']['querySelectorAll']('ul li')['item'](0x1), !0x0);
                             toggleHidden(ejs_data['contextMenu']['querySelectorAll']('ul li')['item'](0x2), !0x0);
-                             Array['from'](_0x14c3c2['elements']['buttons']['play'])['forEach'](function (_0x39b266) {
+                            Array['from'](E['elements']['buttons']['play'])['forEach'](function (_0x39b266) {
                                 toggleHidden(_0x39b266, !0x0);
                             });
-                            var _0x2dcea6 = _0x14c3c2['elements']['dialogs']['netplay']['querySelector']('.' ['concat'](ejs_Controller['classNames']['netplay-room'])),
+                            var _0x2dcea6 = elmDialogsNetplaySelector(getCtrlclassName('netplay-room', !0)),
                                 _0x4926a6 = _0x2dcea6['querySelector']('[data-room-password]');
-                            null === ejs_Controller['netPlayPassword'] ? toggleHidden(_0x4926a6, !0x0) : (toggleHidden(_0x4926a6, !0x1), _0x4926a6['querySelector']('span')['innerText'] = ejs_Controller['netPlayPassword']), _0x2dcea6['querySelector']('strong')['innerText'] = ejs_Controller['netPlayRoomname'], _0x5be3ac(), ejs_data['updateCoreOptionMenuItems']['call'](_0x14c3c2);
+                            null === ejs_Controller['netPlayPassword'] ? toggleHidden(_0x4926a6, !0x0) : (toggleHidden(_0x4926a6, !0x1), _0x4926a6['querySelector']('span')['innerText'] = ejs_Controller['netPlayPassword']), _0x2dcea6['querySelector']('strong')['innerText'] = ejs_Controller['netPlayRoomname'], _0x5be3ac(), ejs_data['updateCoreOptionMenuItems']['call'](E);
                         },
                         _0x112810 = function () {
 
                             ejs_Controller['connected'] = !0x1;
-                            ['n64', 'mupen64plus', 'mupen64plus2', 'mupen64plus-nx']['includes'](_0x14c3c2['system']) || ejs_loader['Module']['_fast_forward_2'];
+                            ['n64', 'mupen64plus', 'mupen64plus2', 'mupen64plus-nx']['includes'](E['system']) || ejs_loader['Module']['_fast_forward_2'];
                             ejs_Controller['netPlayUsers'] = ['', ''];
                             ejs_Controller['netPlayClose']();
                             ejs_Controller['netPlayIsHost'] = !0x1;
                             !0x1;
-                            ejs_Controller['hideLoading']['call'](_0x14c3c2);
-                            toggleHidden(_0x14c3c2['elements']['buttons']['restart'], !0x1);
-                            toggleHidden(_0x14c3c2['elements']['buttons']['loadState'], !0x1);
-                            toggleHidden(_0x14c3c2['elements']['buttons']['saveState'], !0x1);
-                            ejs_Controller['allowCheat'] && toggleHidden(_0x14c3c2['elements']['buttons']['cheat'], !0x1);
+                            ejs_Controller['hideLoading']['call'](E);
+                            toggleHidden(E['elements']['buttons']['restart'], !0x1);
+                            toggleHidden(E['elements']['buttons']['loadState'], !0x1);
+                            toggleHidden(E['elements']['buttons']['saveState'], !0x1);
+                            ejs_Controller['allowCheat'] && toggleHidden(E['elements']['buttons']['cheat'], !0x1);
                             toggleHidden(ejs_data['contextMenu']['querySelectorAll']('ul li')['item'](0x1), !0x1);
                             toggleHidden(ejs_data['contextMenu']['querySelectorAll']('ul li')['item'](0x2), !0x1);
-                            Array['from'](_0x14c3c2['elements']['buttons']['play'])['forEach'](function (_0x2da7fd) {
+                            Array['from'](E['elements']['buttons']['play'])['forEach'](function (_0x2da7fd) {
                                 toggleHidden(_0x2da7fd, !0x1);
-                            }), ejs_data['updateCoreOptionMenuItems']['call'](_0x14c3c2);
-                            var _0x42decd = _0x14c3c2['elements']['widgets']['netplay']['querySelector']('.' ['concat'](getClassName('chat-messages'), ' ul'));
+                            }), ejs_data['updateCoreOptionMenuItems']['call'](E);
+                            var _0x42decd = elmWidgetsSelector('.' ['concat'](getClassName('chat-messages'), ' ul'));
                             _0x42decd && (_0x42decd.innerHTML = '');
-                            var _0x5630b5 = _0x14c3c2['elements']['widgets']['netplay']['querySelector'](getClassName('netplay-players',1));
-                            _0x5630b5 && (_0x5630b5.innerHTML = ''), toggleHidden(_0x14c3c2['elements']['widgets']['netplay'], !0x0);
+                            var _0x5630b5 = elmWidgetsSelector(getClassName('netplay-players', 1));
+                            _0x5630b5 && (_0x5630b5.innerHTML = ''), toggleHidden(ElmWidgetsNetPlay, !0x0);
                         },
                         _0x18d09e = function (_0x5f2c65, _0x39913f, _0x4c414d) {
 
-                            ejs_Controller['showLoading']['call'](_0x14c3c2);
+                            ejs_Controller['showLoading']['call'](E);
                             T.ajax({
-                                url:_0x4d4127 + '/join',
-                                post:{
+                                url: HostLobby + '/join',
+                                post: {
                                     'id': _0x39913f,
                                     'password': _0x4c414d,
                                     'nickname': ejs_Controller['playerName']
                                 },
-                                type:'json',
-                                headers:_0x14c3c2.ajaxHeaders,
-                                success(result,headers){
+                                type: 'json',
+                                headers: E['ajaxHeaders'],
+                                success(result, headers) {
 
                                     if (result) {
                                         if (!result['room_id']) throw result['error'];
                                         var _0x205040 = result['nicknames'];
                                         _0x205040[0x1] && (ejs_Controller['playerName'] = _0x205040[0x1]), _0x208711['classList']['remove'](getClassName('is-open')), _0x2ca3ff = ejs_loader['servers'][_0x5f2c65]['url'], (_0x177d11 = new WebSocket(_0x2ca3ff + 'room/' + result['room_id']))['onopen'] = function (_0x31cd10) {
-    
-                                            ejs_Controller['hideLoading']['call'](_0x14c3c2), _0x177d11['send']('n:' ['concat'](encodeURIComponent(ejs_Controller['playerName']))), _0x14c3c2['playing'] || Array['from'](_0x14c3c2['elements']['buttons']['play'])['forEach'](function (_0x5f4fd6) {
-    
-                                                callEvent['call'](_0x14c3c2, _0x5f4fd6, 'click');
-                                            }), ejs_Controller['netPlayClient'](), ejs_Controller['stopLoadRooms'](), ejs_Controller['openRoom'](_0x14c3c2), _0x2fb1d8();
+
+                                            ejs_Controller['hideLoading']['call'](E), _0x177d11['send']('n:' ['concat'](encodeURIComponent(ejs_Controller['playerName']))), E['playing'] || Array['from'](E['elements']['buttons']['play'])['forEach'](function (_0x5f4fd6) {
+
+                                                E['callEvent'](_0x5f4fd6, 'click');
+                                            }), ejs_Controller['netPlayClient'](), ejs_Controller['stopLoadRooms'](), ejs_Controller['openRoom'](E), _0x2fb1d8();
                                         }, _0x177d11['onclose'] = function (_0x3b7ad8) {
-    
-                                            ejs_Controller['hideLoading']['call'](_0x14c3c2), ejs_Controller['loadRoomsList'](), _0x112810(), 0x3ed != _0x3b7ad8['code'] && (_0x26d33b['querySelector']('#modal-7d8fd50ed642340b-content').innerHTML = 'Error', _0x3e3214['show']('modal-7d8fd50ed642340b', {
+
+                                            ejs_Controller['hideLoading']['call'](E), ejs_Controller['loadRoomsList'](), _0x112810(), 0x3ed != _0x3b7ad8['code'] && (_0x26d33b['querySelector']('#modal-7d8fd50ed642340b-content').innerHTML = 'Error', _0x3e3214['show']('modal-7d8fd50ed642340b', {
                                                 'closeTrigger': 'data-modal-close'
                                             }));
                                         }, _0x177d11['onmessage'] = function (_0x98523b) {
@@ -9424,9 +7433,9 @@ var EJS = function (modules) {
                                     }
 
                                 },
-                                error(_0x1b6a3e){
+                                error(_0x1b6a3e) {
 
-                                    ejs_Controller['hideLoading']['call'](_0x14c3c2), _0x26d33b['querySelector']('#modal-7d8fd50ed642340b-content').innerHTML = 'Error: ' + ('string' == typeof _0x1b6a3e ? _0x1b6a3e : ''), _0x3e3214['show']('modal-7d8fd50ed642340b', {
+                                    ejs_Controller['hideLoading']['call'](E), _0x26d33b['querySelector']('#modal-7d8fd50ed642340b-content').innerHTML = 'Error: ' + ('string' == typeof _0x1b6a3e ? _0x1b6a3e : ''), _0x3e3214['show']('modal-7d8fd50ed642340b', {
                                         'closeTrigger': 'data-modal-close'
                                     });
 
@@ -9436,67 +7445,70 @@ var EJS = function (modules) {
                         _0x22cdbf = function (_0x4f6c57) {
                             var _0x32c3eb = _0x4f6c57['target']['getAttribute']('data-id'),
                                 _0x101bb4 = _0x4f6c57['target']['getAttribute']('data-server');
-                            return 'Y' === _0x4f6c57['target']['getAttribute']('data-password') ? (_0x3e3214['show']('modal-5aa765d61d8327de', {
+                            'Y' === _0x4f6c57['target']['getAttribute']('data-password') ? (_0x3e3214['show']('modal-5aa765d61d8327de', {
                                 'closeTrigger': 'data-modal-close'
-                            }), _0x208711['setAttribute']('data-id', _0x32c3eb), _0x208711['setAttribute']('data-server', _0x101bb4)) : (ejs_Controller['showLoading']['call'](_0x14c3c2), _0x18d09e(_0x101bb4, _0x32c3eb, '')), _0x4f6c57['stopPropagation'](), !0x1;
+                            }), _0x208711['setAttribute']('data-id', _0x32c3eb), _0x208711['setAttribute']('data-server', _0x101bb4)) : (ejs_Controller['showLoading']['call'](E), _0x18d09e(_0x101bb4, _0x32c3eb, ''));
+                            _0x4f6c57['stopPropagation']();
+                            return !0x1;
                         };
                     ejs_Controller['loadRoomsList'] = function () {
 
-                        toggleHidden(_0x14c3c2['elements']['dialogs']['netplay']['querySelector']('.' ['concat'](ejs_Controller['classNames']['netplay-roomlist'])), !0x1), toggleHidden(_0x14c3c2['elements']['dialogs']['netplay']['querySelector']('.' ['concat'](ejs_Controller['classNames']['netplay-room'])), !0x0), toggleHidden(_0x14c3c2['elements']['dialogs']['netplay']['querySelector']('.' ['concat'](ejs_Controller['classNames']['btn-create-room'])), !0x1), toggleHidden(_0x14c3c2['elements']['dialogs']['netplay']['querySelector']('.' ['concat'](ejs_Controller['classNames']['btn-quit'])), !0x0);
-                        var _0x55392d = _0x14c3c2['elements']['dialogs']['netplay']['querySelector']('.' ['concat'](ejs_Controller['classNames']['netplay-roomlist']))['querySelector']('tbody');
+                        toggleHidden(elmDialogsNetplaySelector(getCtrlclassName('netplay-roomlist', !0)), !0x1), toggleHidden(elmDialogsNetplaySelector(getCtrlclassName('netplay-room', !0)), !0x0), toggleHidden(elmDialogsNetplaySelector(getCtrlclassName('btn-create-room', !0)), !0x1), toggleHidden(elmDialogsNetplaySelector(getCtrlclassName('btn-quit', !0)), !0x0);
+                        var _0x55392d = elmDialogsNetplaySelector(getCtrlclassName('netplay-roomlist', !0))['querySelector']('tbody');
                         ejs_Controller['netPlayString'] = encodeURIComponent(JSON['stringify']({
-                            'system': _0x14c3c2['system'],
+                            'system': E['system'],
                             'crc32': ejs_Controller['romcrc32'],
-                            'romname': _0x14c3c2['startName']
+                            'romname': E['startName']
                         }));
-                        var _0x28f76a = _0x4d4127 + '/list?q=' + ejs_Controller['netPlayString'];
+                        var _0x28f76a = HostLobby + '/list?q=' + ejs_Controller['netPlayString'];
                         T.ajax({
-                            url:_0x28f76a,
-                            type:'json',
-                            headers:{
-                                'content-type':_0x14c3c2['ajaxHeaders']['content-type']
+                            url: _0x28f76a,
+                            type: 'json',
+                            headers: {
+                                'content-type': E['ajaxHeaders']['content-type']
                             },
-                            success(result){
+                            success(result) {
                                 if (result) {
                                     var _0x873577 = [],
                                         _0x46e0f1 = [];
                                     _0x55392d['querySelectorAll']('tr')['forEach'](function (_0x208d6d) {
-    
+
                                         _0x46e0f1['push'](_0x208d6d['getAttribute']('id'));
                                     }), result['forEach'](function (_0x429b30) {
                                         var _0x3bb0e9 = _0x429b30['id'];
                                         if (_0x873577['push'](_0x3bb0e9), _0x46e0f1['includes'](_0x3bb0e9)) {
-                                            var _0x3576af = _0x55392d['querySelector']('tr[id=\x22' ['concat'](_0x3bb0e9, '\x22]'));
+                                            var _0x3576af = _0x55392d['querySelector']('tr[id="' ['concat'](_0x3bb0e9, '"]'));
                                             _0x55392d['removeChild'](_0x3576af);
                                         }
                                         var _0x2265a8 = document['createElement']('tr');
                                         _0x2265a8['setAttribute']('id', _0x3bb0e9);
-                                        var _0x4a53f3 = _0x429b30['password'] ? ejs_Controller['icons']['lock'] : '',
+                                        var _0x4a53f3 = _0x429b30['password'] ? getSvgIcon('lock') : '',
                                             _0x187674 = _0x429b30['password'] ? 'Y' : 'N',
-                                            _0x3b7651 = _0x429b30['players'] < 0x2 ? '<span data-id=\x22' ['concat'](_0x3bb0e9, '\x22 data-server=\x22')['concat'](_0x429b30['server'], '\x22 data-password=\x22')['concat'](_0x187674, '\x22 class=\x22')['concat'](ejs_Controller['classNames']['btn-join-room'], '\x22>Join</span>') : '',
+                                            _0x3b7651 = _0x429b30['players'] < 0x2 ? '<span data-id="' ['concat'](_0x3bb0e9, '" data-server="')['concat'](_0x429b30['server'], '" data-password="')['concat'](_0x187674, '" class="')['concat'](getCtrlclassName('btn-join-room'), '">Join</span>') : '',
                                             _0x588cef = _0x429b30['country'] ? '[' ['concat'](_0x429b30['country'], '] ') : '',
                                             _0x6358e6 = _0x429b30['server'] ? _0x429b30['server'] : '';
                                         if (_0x6358e6 && ejs_loader['servers'][_0x6358e6]) {
                                             var _0x3c14fb = ejs_loader['servers'][_0x6358e6]['name'];
-                                            _0x2265a8.innerHTML = '<td>' ['concat'](_0x3c14fb, '</td><td>')['concat'](_0x588cef)['concat'](_0x4a53f3)['concat'](_0x429b30['name'], '</td><td>')['concat'](_0x429b30['players'], '/2</td><td>')['concat'](_0x3b7651, '</td>'), addEvent['call'](_0x3e6557, _0x2265a8['querySelector']('.' ['concat'](ejs_Controller['classNames']['btn-join-room'])), 'click', _0x22cdbf), _0x55392d['appendChild'](_0x2265a8);
+                                            _0x2265a8.innerHTML = '<td>' ['concat'](_0x3c14fb, '</td><td>')['concat'](_0x588cef)['concat'](_0x4a53f3)['concat'](_0x429b30['name'], '</td><td>')['concat'](_0x429b30['players'], '/2</td><td>')['concat'](_0x3b7651, '</td>'), E['addEvent'](_0x2265a8['querySelector'](getCtrlclassName('btn-join-room', !0)), 'click', _0x22cdbf), _0x55392d['appendChild'](_0x2265a8);
                                         }
                                     }), _0x55392d['querySelectorAll']('tr')['forEach'](function (_0x326d67) {
-    
+
                                         _0x873577['includes'](_0x326d67['id']) || _0x55392d['removeChild'](_0x326d67);
                                     });
                                 }
                                 ejs_Controller['loadRoomsListTimer'] = setTimeout(ejs_Controller['loadRoomsList'], 0x7d0);
 
                             },
-                            error(e){
+                            error(e) {
                                 console['log']('Network Error', e), ejs_Controller['loadRoomsListTimer'] = setTimeout(ejs_Controller['loadRoomsList'], 0x7d0);
 
                             }
                         });
-                    }, ejs_Controller['openRoom'] = function (_0x5a26d8) {
+                    };
+                    ejs_Controller['openRoom'] = function (_0x5a26d8) {
 
-                        ejs_Controller['stopLoadRooms'](), toggleHidden(_0x5a26d8['elements']['dialogs']['netplay']['querySelector']('.' ['concat'](ejs_Controller['classNames']['netplay-roomlist'])), !0x0), toggleHidden(_0x5a26d8['elements']['dialogs']['netplay']['querySelector']('.' ['concat'](ejs_Controller['classNames']['netplay-room'])), !0x1), toggleHidden(_0x5a26d8['elements']['dialogs']['netplay']['querySelector']('.' ['concat'](ejs_Controller['classNames']['btn-create-room'])), !0x0), toggleHidden(_0x5a26d8['elements']['dialogs']['netplay']['querySelector']('.' ['concat'](ejs_Controller['classNames']['btn-quit'])), !0x1), ejs_Controller['resetCheat'](), toggleHidden(_0x5a26d8['elements']['buttons']['cheat'], !0x0);
-                        var _0x29aa55 = _0x5a26d8['elements']['dialogs']['netplay']['querySelector']('.' ['concat'](ejs_Controller['classNames']['netplay-room'])),
+                        ejs_Controller['stopLoadRooms'](), toggleHidden(_0x5a26d8['elements']['dialogs']['netplay']['querySelector'](getCtrlclassName('netplay-roomlist', !0)), !0x0), toggleHidden(_0x5a26d8['elements']['dialogs']['netplay']['querySelector'](getCtrlclassName('netplay-room', !0)), !0x1), toggleHidden(_0x5a26d8['elements']['dialogs']['netplay']['querySelector'](getCtrlclassName('btn-create-room', !0)), !0x0), toggleHidden(_0x5a26d8['elements']['dialogs']['netplay']['querySelector'](getCtrlclassName('btn-quit', !0)), !0x1), ejs_Controller['resetCheat'](), toggleHidden(_0x5a26d8['elements']['buttons']['cheat'], !0x0);
+                        var _0x29aa55 = _0x5a26d8['elements']['dialogs']['netplay']['querySelector'](getCtrlclassName('netplay-room', !0)),
                             _0x34fdf5 = _0x29aa55['querySelector']('[data-room-password]');
                         null === ejs_Controller['netPlayPassword'] ? toggleHidden(_0x34fdf5, !0x0) : (toggleHidden(_0x34fdf5, !0x1), _0x34fdf5['querySelector']('span')['innerText'] = ejs_Controller['netPlayPassword']);
                         var _0x4ba447 = _0x29aa55['querySelector']('tbody');
@@ -9504,56 +7516,59 @@ var EJS = function (modules) {
                             var _0x250531 = document['createElement']('tr');
                             _0x250531.innerHTML = '<td>' ['concat'](_0x315279 + 0x1, '</td><td>')['concat'](_0x27184c, '</td><td></td>'), _0x4ba447['appendChild'](_0x250531);
                         });
-                    }, addEvent['call'](this, _0x208711['querySelector']('.' ['concat'](ejs_Controller['classNames']['modal__btn-primary'])), 'click', function (_0x2dce50) {
-                        var _0x38f079 = _0x208711['querySelector']('.' ['concat'](ejs_Controller['classNames']['netplay-room-password-input']))['value'];
-                        ejs_Controller['showLoading']['call'](_0x14c3c2);
+                    };
+                    E['addEvent'](_0x208711['querySelector'](getCtrlclassName('modal__btn-primary', !0)), 'click', function (_0x2dce50) {
+                        var _0x38f079 = _0x208711['querySelector'](getCtrlclassName('netplay-room-password-input', !0))['value'];
+                        ejs_Controller['showLoading']['call'](E);
                         var _0x58034f = _0x208711['getAttribute']('data-id'),
                             _0x1699b0 = _0x208711['getAttribute']('data-server');
                         _0x18d09e(_0x1699b0, _0x58034f, _0x38f079), _0x2dce50['stopPropagation']();
-                    }), addEvent['call'](this, _0x934635['querySelector']('.' ['concat'](ejs_Controller['classNames']['modal__btn-primary'])), 'click', function (_0x2980e1) {
-                        var _0x885491 = _0x934635['querySelector']('.' ['concat'](ejs_Controller['classNames']['netplay-player-name']))['value'];
-                        _0x885491 = _0x885491['replace'](/<|>/g, ''), _0x934635['querySelector']('.' ['concat'](ejs_Controller['classNames']['modal__errmsg'])).innerHTML = '', _0x885491['trim']() && (ejs_Controller['playerName'] = _0x885491['trim'](), _0x3e3214['close']()), _0x2980e1['stopPropagation']();
-                    }), addEvent['call'](this, _0x4b86d1['querySelector']('.' ['concat'](ejs_Controller['classNames']['modal__btn-primary'])), 'click', function (event) {
-                        var _0x5aa2c3 = _0x4b86d1['querySelector']('.' ['concat'](ejs_Controller['classNames']['netplay-room-name-input']))['value'];
+                    });
+                    E['addEvent'](_0x934635['querySelector'](getCtrlclassName('modal__btn-primary', !0)), 'click', function (_0x2980e1) {
+                        var _0x885491 = _0x934635['querySelector'](getCtrlclassName('netplay-player-name', !0))['value'];
+                        _0x885491 = _0x885491['replace'](/<|>/g, ''), _0x934635['querySelector'](getCtrlclassName('modal__errmsg', !0)).innerHTML = '', _0x885491['trim']() && (ejs_Controller['playerName'] = _0x885491['trim'](), _0x3e3214['close']()), _0x2980e1['stopPropagation']();
+                    });
+                    E['addEvent'](_0x4b86d1['querySelector'](getCtrlclassName('modal__btn-primary', !0)), 'click', function (event) {
+                        var _0x5aa2c3 = _0x4b86d1['querySelector'](getCtrlclassName('netplay-room-name-input', !0))['value'];
                         _0x5aa2c3 = _0x5aa2c3['replace'](/<|>/g, '');
                         var _0x48ed40 = _0x4b86d1['querySelector']('select[data-server] option:checked')['value'];
                         _0x2ca3ff = ejs_loader['servers'][_0x48ed40]['url'];
                         var _0x38790f = _0x4b86d1['querySelector']('select[data-max-players] option:checked')['value'];
                         _0x38790f < 0x2 && (_0x38790f = 0x2), _0x38790f > 0x4 && (_0x38790f = 0x4), _0x38790f = 0x2;
                         for (var _0x79b04a = 0x0; _0x79b04a < _0x38790f; _0x79b04a++) ejs_Controller['players'][_0x79b04a] = null;
-                        var _0x2366c0 = _0x4b86d1['querySelector']('.' ['concat'](ejs_Controller['classNames']['netplay-room-password-input']))['value'];
+                        var _0x2366c0 = _0x4b86d1['querySelector'](getCtrlclassName('netplay-room-password-input', !0))['value'];
 
 
-                        _0x4b86d1['querySelector']('.' ['concat'](ejs_Controller['classNames']['modal__errmsg'])).innerHTML = '';
-                        if(_0x5aa2c3['trim']()){
-                            ejs_Controller['showLoading']['call'](_0x14c3c2);
+                        _0x4b86d1['querySelector'](getCtrlclassName('modal__errmsg', !0)).innerHTML = '';
+                        if (_0x5aa2c3['trim']()) {
+                            ejs_Controller['showLoading']['call'](E);
                             T.ajax({
-                                url:_0x4d4127 + '/add',
-                                json:{
+                                url: HostLobby + '/add',
+                                json: {
                                     'room_name': _0x5aa2c3,
                                     'room_password': _0x2366c0,
                                     'server': _0x48ed40,
                                     'room_key': encodeURIComponent(JSON['stringify']({
-                                        'system': _0x14c3c2['system'],
+                                        'system': E['system'],
                                         'crc32': ejs_Controller['romcrc32'],
-                                        'romname': _0x14c3c2['startName'],
-                                        'url': _0x14c3c2['config']['url']
+                                        'romname': E['startName'],
+                                        'url': E['config']['url']
                                     }))
                                 },
-                                type:'json',
-                                headers:_0x14c3c2.ajaxHeaders,
-                                success(result,headers){
+                                type: 'json',
+                                headers: E['ajaxHeaders'],
+                                success(result, headers) {
 
                                     if (ejs_Controller['stopLoadRooms'](), _0xe989f['closeModal'](), !result['room_id']) throw 'error';
                                     ejs_Controller['netPlayPassword'] = _0x2366c0, ejs_Controller['netPlayRoomname'] = _0x5aa2c3, (_0x177d11 = new WebSocket(_0x2ca3ff + 'room/' + result['room_id']))['onopen'] = function (_0x1ddcd0) {
-        
-                                        ejs_Controller['hideLoading']['call'](_0x14c3c2), _0x177d11['send']('core_name=' ['concat'](_0x14c3c2['system'], '&game_crc=')['concat'](ejs_Controller['romcrc32'], '&nick=')['concat'](encodeURIComponent(ejs_Controller['playerName']))), _0x14c3c2['playing'] || Array['from'](_0x14c3c2['elements']['buttons']['play'])['forEach'](function (_0x4e31d1) {
-        
-                                            callEvent['call'](_0x14c3c2, _0x4e31d1, 'click');
-                                        }), ejs_Controller['netPlayIsHost'] = !0x0, ejs_Controller['netPlayHost'](), _0xe989f['closeModal'](), ejs_Controller['stopLoadRooms'](), ejs_Controller['openRoom'](_0x14c3c2), ejs_Controller['netPlayUsers'][0x0] = ejs_Controller['playerName'], _0x2fb1d8();
+
+                                        ejs_Controller['hideLoading']['call'](E), _0x177d11['send']('core_name=' ['concat'](E['system'], '&game_crc=')['concat'](ejs_Controller['romcrc32'], '&nick=')['concat'](encodeURIComponent(ejs_Controller['playerName']))), E['playing'] || Array['from'](E['elements']['buttons']['play'])['forEach'](function (_0x4e31d1) {
+
+                                            E['callEvent'](_0x4e31d1, 'click');
+                                        }), ejs_Controller['netPlayIsHost'] = !0x0, ejs_Controller['netPlayHost'](), _0xe989f['closeModal'](), ejs_Controller['stopLoadRooms'](), ejs_Controller['openRoom'](E), ejs_Controller['netPlayUsers'][0x0] = ejs_Controller['playerName'], _0x2fb1d8();
                                     }, _0x177d11['onclose'] = function (_0x41a801) {
-        
-                                        ejs_Controller['hideLoading']['call'](_0x14c3c2), ejs_Controller['loadRoomsList'](), _0x112810(), 0x3ed != _0x41a801['code'] && (_0x26d33b['querySelector']('#modal-7d8fd50ed642340b-content').innerHTML = 'Error', _0x3e3214['show']('modal-7d8fd50ed642340b', {
+
+                                        ejs_Controller['hideLoading']['call'](E), ejs_Controller['loadRoomsList'](), _0x112810(), 0x3ed != _0x41a801['code'] && (_0x26d33b['querySelector']('#modal-7d8fd50ed642340b-content').innerHTML = 'Error', _0x3e3214['show']('modal-7d8fd50ed642340b', {
                                             'closeTrigger': 'data-modal-close'
                                         }));
                                     }, _0x177d11['onmessage'] = function (_0x57761b) {
@@ -9563,30 +7578,31 @@ var EJS = function (modules) {
                                 },
                                 error(_0x537b27) {
 
-                                    ejs_Controller['loadRoomsList'](), ejs_Controller['hideLoading']['call'](_0x14c3c2), _0x26d33b['querySelector']('#modal-7d8fd50ed642340b-content').innerHTML = 'Error', _0x3e3214['show']('modal-7d8fd50ed642340b', {
+                                    ejs_Controller['loadRoomsList'](), ejs_Controller['hideLoading']['call'](E), _0x26d33b['querySelector']('#modal-7d8fd50ed642340b-content').innerHTML = 'Error', _0x3e3214['show']('modal-7d8fd50ed642340b', {
                                         'closeTrigger': 'data-modal-close'
                                     });
                                 }
                             });
-                        }else{
+                        } else {
                             _0xe989f['closeModal']();
                         }
                         event['stopPropagation']();
-                    }), addEvent['call'](this, _0x14c3c2['elements']['dialogs']['netplay']['querySelector']('.' ['concat'](ejs_Controller['classNames']['btn-create-room'])), 'click', function (_0x46e59d) {
+                    });
+                    E['addEvent'](elmDialogsNetplaySelector(getCtrlclassName('btn-create-room', !0)), 'click', function (_0x46e59d) {
 
                         _0xe989f = _0x3e3214['show']('modal-85cd7a1c543a484a', {
                             'closeTrigger': 'data-modal-close',
                             'closeByEsckey': !0x1,
                             'onClose': function () {
 
-                                _0x14c3c2['elements']['container']['focus']();
+                                E['elements']['container']['focus']();
                             }
                         }), _0x4b86d1['querySelector']('select[data-max-players]')['setAttribute']('disabled', 'disabled');
                         var _0x12d285 = _0x4b86d1['querySelector']('select[data-server]');
                         if (_0x12d285.innerHTML = '', Object['keys'](ejs_loader['servers'])['forEach'](function (_0x126b68) {
                                 var _0x8828b2 = document['createElement']('option');
                                 _0x8828b2['text'] = ejs_loader['servers'][_0x126b68]['name'], _0x8828b2['value'] = _0x126b68, _0x12d285['appendChild'](_0x8828b2);
-                            }), 'object' == _0x4aa84a(ejs_loader['servers'])) try {
+                            }), I.obj(ejs_loader['servers'])) try {
                             var _0x2b11b9 = null;
                             Object['keys'](ejs_loader['servers'])['forEach'](function (_0x110ea2, _0x540c58) {
                                 var _0x27b963 = ejs_loader['servers'][_0x110ea2]['url']['replace']('wss://', 'https://');
@@ -9602,47 +7618,49 @@ var EJS = function (modules) {
                             });
                         } catch (_0x239f8b) {}
                         return _0x46e59d['stopPropagation'](), !0x1;
-                    }), addEvent['call'](this, _0x14c3c2['elements']['dialogs']['netplay']['querySelector']('.' ['concat'](ejs_Controller['classNames']['btn-quit'])), 'click', function (_0xcbfb0c) {
+                    });
+                    E['addEvent'](elmDialogsNetplaySelector(getCtrlclassName('btn-quit', !0)), 'click', function (_0xcbfb0c) {
 
                         return _0x177d11['close'](), ejs_Controller['stopLoadRooms'](), ejs_Controller['loadRoomsList'](), ejs_Controller['netPlayClose'](), _0xcbfb0c['stopPropagation'](), !0x1;
-                    }), addEvent(window, 'message', function (_0xb9873d) {
+                    });
+                    addEvent(window, 'message', function (_0xb9873d) {
 
-                        return _0xb9873d['source'] == window && ('object' == _0x4aa84a(_0xb9873d['data']) && ('netplay' == _0xb9873d['data']['type'] && _0xb9873d['data']['data'] instanceof Uint8Array && (_0xb9873d['data']['data'][0x3], _0x177d11['send'](_0xb9873d['data']['data'])), void('netplay-close' == _0xb9873d['data']['type'] && (_0x177d11['close'](), ejs_Controller['netPlayDialogOpened'] && (ejs_Controller['stopLoadRooms'](), ejs_Controller['loadRoomsList']()), ejs_Controller['netPlayClose'](), _0x112810()))));
+                        return _0xb9873d['source'] == window && (I.obj(_0xb9873d['data']) && ('netplay' == _0xb9873d['data']['type'] && _0xb9873d['data']['data'] instanceof Uint8Array && (_0xb9873d['data']['data'][0x3], _0x177d11['send'](_0xb9873d['data']['data'])), void('netplay-close' == _0xb9873d['data']['type'] && (_0x177d11['close'](), ejs_Controller['netPlayDialogOpened'] && (ejs_Controller['stopLoadRooms'](), ejs_Controller['loadRoomsList']()), ejs_Controller['netPlayClose'](), _0x112810()))));
                     });
                 }
             }
         },
-        'setDiskContainer': function () {
+        setDiskContainer: function () {
             var _0x860c5a = this;
-            if (!0x1 === ejs_loader['diskControl']) return _0x860c5a['elements']['container']['querySelector'](getClassName('ejs__disk',1))['remove'](), !0x1;
+            if (!0x1 === ejs_loader['diskControl']) return _0x860c5a['elements']['container']['querySelector'](getClassName('ejs__disk', 1))['remove'](), !0x1;
             if (ejs_Controller['getDiskNum'] && ejs_Controller['getDiskNum']() > 0x1) {
                 for (var _0x162ee6, _0x2d4c03 = ejs_Controller['getDiskNum'](), _0x4b6173 = _0x860c5a['elements']['container']['querySelector']('.' ['concat'](getClassName('ejs__disk__container'), ' > div')), _0x20eb86 = function (_0x483aa9) {
 
-                        (_0x162ee6 = _0xf5893f('div', {
+                        (_0x162ee6 = createElm('div', {
                             'class': getClassName('ejs__disk__index')
                         })).innerHTML = 'Disk ' ['concat'](_0x483aa9), addEvent['call'](_0x860c5a, _0x162ee6, 'click touchstart', function (_0x5310a2) {
 
                             ejs_Controller['ejectDisk'] && ejs_Controller['ejectDisk'](), ejs_Controller['setDisk'](_0x483aa9 - 0x1), ejs_Controller['ejectDisk'] && setTimeout(function () {
 
                                 ejs_Controller['ejectDisk']();
-                            }, 0x12c), 'psx' == _0x860c5a['system'] || 'psx-legacy' == _0x860c5a['system'] ? (_0x860c5a['elements']['buttons']['disk']['querySelector']('span').innerHTML = 'Current Disc: ' + _0x483aa9, _0x88c152['show'](_0x860c5a['elements']['container'], 'Change Disc: ' + _0x483aa9)) : (_0x860c5a['elements']['buttons']['disk']['querySelector']('span').innerHTML = 'Current Disk: ' + _0x483aa9, _0x88c152['show'](_0x860c5a['elements']['container'], 'Change Disk: ' + _0x483aa9)), toggleHidden(_0x860c5a['elements']['container']['querySelector'](getClassName('ejs__disk__container',1)), !0x0);
+                            }, 0x12c), 'psx' == _0x860c5a['system'] || 'psx-legacy' == _0x860c5a['system'] ? (_0x860c5a['elements']['buttons']['disk']['querySelector']('span').innerHTML = 'Current Disc: ' + _0x483aa9, _0x88c152['show'](_0x860c5a['elements']['container'], 'Change Disc: ' + _0x483aa9)) : (_0x860c5a['elements']['buttons']['disk']['querySelector']('span').innerHTML = 'Current Disk: ' + _0x483aa9, _0x88c152['show'](_0x860c5a['elements']['container'], 'Change Disk: ' + _0x483aa9)), toggleHidden(_0x860c5a['elements']['container']['querySelector'](getClassName('ejs__disk__container', 1)), !0x0);
                             var _0x18598e = getClassName('ejs__tooltip--visible'),
-                                _0x1200ed = _0x860c5a['elements']['buttons']['disk']['querySelector'](getClassName('ejs__tooltip',1));
-                            _0x279293(_0x1200ed, _0x18598e, !0x0), setTimeout(function () {
-                                _0x279293(_0x1200ed, _0x18598e, !0x1);
+                                _0x1200ed = _0x860c5a['elements']['buttons']['disk']['querySelector'](getClassName('ejs__tooltip', 1));
+                            elmAddRemoveClass(_0x1200ed, _0x18598e, !0x0), setTimeout(function () {
+                                elmAddRemoveClass(_0x1200ed, _0x18598e, !0x1);
                             }, 0x1388);
                         }), _0x4b6173['appendChild'](_0x162ee6);
                     }, _0x464a6e = _0x2d4c03; _0x464a6e >= 0x1; _0x464a6e--) _0x20eb86(_0x464a6e);
                 _0x860c5a['elements']['buttons']['disk']['querySelector']('span').innerHTML = 'Current Disk: 1', addEvent['call'](_0x860c5a, _0x860c5a['elements']['buttons']['disk'], 'click', function (_0x194d3d) {
 
-                    toggleHidden(_0x860c5a['elements']['container']['querySelector'](getClassName('ejs__disk__container',1)));
+                    toggleHidden(_0x860c5a['elements']['container']['querySelector'](getClassName('ejs__disk__container', 1)));
                 });
-            } else _0x860c5a['elements']['container']['querySelector'](getClassName('ejs__disk',1))['remove']();
+            } else _0x860c5a['elements']['container']['querySelector'](getClassName('ejs__disk', 1))['remove']();
         },
-        'initKeyboard': function () {
+        initKeyboard: function () {
             var _0x598c89 = this,
                 _0xdeb06e = this,
-                _0x4d3cd9 = this['elements']['dialogs']['gamepad']['querySelector']('.' ['concat'](ejs_Controller['classNames']['overlay'])),
+                _0x4d3cd9 = this['elements']['dialogs']['gamepad']['querySelector'](getCtrlclassName('overlay', !0)),
                 _0x20d62d = function (_0xcb580) {
 
                     if (_0xdeb06e['focused']) {
@@ -9654,7 +7672,7 @@ var EJS = function (modules) {
                                 var _0x383461 = _0x4d3cd9['getAttribute']('data-index'),
                                     _0x16b9c4 = _0x4d3cd9['getAttribute']('data-id'),
                                     _0x20735f = null;
-                                _0xcb580['key'] && ((_0x20735f = _0xdeb06e['elements']['dialogs']['gamepad']['querySelector']('[data-id=\x22' ['concat'](_0x16b9c4, '\x22][data-index=\x22')['concat'](_0x383461, '\x22][data-type=\x221\x22]')))['setAttribute']('data-value', _0xcb580['keyCode']), _0x20735f['value'] = ejs_Controller['keyMap'][_0xcb580['keyCode']]), toggleHidden(_0x4d3cd9, !0x0);
+                                _0xcb580['key'] && ((_0x20735f = _0xdeb06e['elements']['dialogs']['gamepad']['querySelector']('[data-id="' ['concat'](_0x16b9c4, '"][data-index="')['concat'](_0x383461, '"][data-type="1"]')))['setAttribute']('data-value', _0xcb580['keyCode']), _0x20735f['value'] = ejs_Controller['keyMap'][_0xcb580['keyCode']]), toggleHidden(_0x4d3cd9, !0x0);
                             } else Object['keys'](ejs_Controller['controllers'])['forEach'](function (_0x3da2fb) {
 
                                 Object['keys'](ejs_Controller['controllers'][_0x3da2fb])['forEach'](function (_0x346729) {
@@ -9690,10 +7708,10 @@ var EJS = function (modules) {
                 };
             document['body']['addEventListener']('keydown', _0x20d62d), document['body']['addEventListener']('keyup', _0x20d62d);
         },
-        'initGamepad': function () {
+        initGamepad: function () {
             var _0x8a2d17 = this,
                 _0x15b935 = this,
-                _0x43243c = this['elements']['dialogs']['gamepad']['querySelector']('.' ['concat'](ejs_Controller['classNames']['overlay'])),
+                _0x43243c = this['elements']['dialogs']['gamepad']['querySelector'](getCtrlclassName('overlay', !0)),
                 _0x428a47 = new _export_1[('Gamepad')]();
             if (ejs_Controller['gamepad'] = _0x428a47, _0x428a47['init']()) {
                 var _0x52a3bb = 0x0;
@@ -9999,7 +8017,7 @@ var EJS = function (modules) {
                         if (_0x2325fd['gamepad']['index'] === parseInt(_0x2eb2fc, 0xa)) {
                             for (var _0x48b7b8 = 0x0; _0x48b7b8 < 0x20 && ((_0x297105 = _0x2325fd['gamepad']['buttons'][_0x48b7b8]) || (_0x297105 = _0x2325fd['gamepad']['extra_buttons'][_0x48b7b8]), !_0x297105 || !('number' == typeof _0x297105 && 0x1 === _0x297105 || 'number' == typeof _0x297105['value'] && 0x1 === _0x297105['value'])); _0x48b7b8 += 0x1);
                             var _0x48eb61 = null;
-                            (_0x48eb61 = _0x15b935['elements']['dialogs']['gamepad']['querySelector']('[data-id=\x22' ['concat'](_0x5ef3ad, '\x22][data-index=\x22')['concat'](_0x2eb2fc, '\x22][data-type=\x222\x22]')))['setAttribute']('data-value', _0x2325fd['index']), _0x48eb61['value'] = _0x2325fd['control'] ? _0x2325fd['control'] : 'button ' ['concat'](_0x2325fd['index'] + 0x1), toggleHidden(_0x43243c, !0x0);
+                            (_0x48eb61 = _0x15b935['elements']['dialogs']['gamepad']['querySelector']('[data-id="' ['concat'](_0x5ef3ad, '"][data-index="')['concat'](_0x2eb2fc, '"][data-type="2"]')))['setAttribute']('data-value', _0x2325fd['index']), _0x48eb61['value'] = _0x2325fd['control'] ? _0x2325fd['control'] : 'button ' ['concat'](_0x2325fd['index'] + 0x1), toggleHidden(_0x43243c, !0x0);
                         }
                     } else {
                         var _0x90822a = [];
@@ -10029,18 +8047,18 @@ var EJS = function (modules) {
 
                     [0x0, 0x1, 0x2, 0x3]['forEach'](function (_0x31c03e) {
                         var _0x4fd66b = _0x428a47['gamepads'][_0x31c03e];
-                        _0x4fd66b ? _0x15b935['elements']['dialogs']['gamepad']['querySelector']('#controls-' ['concat'](_0x31c03e)) && (_0x15b935['elements']['dialogs']['gamepad']['querySelector']('#controls-' ['concat'](_0x31c03e, ' .')['concat'](ejs_Controller['classNames']['gamepad-name'])).innerHTML = _0x4fd66b['id'], toggleHidden(_0x15b935['elements']['dialogs']['gamepad']['querySelector']('#controls-' ['concat'](_0x31c03e, ' .')['concat'](ejs_Controller['classNames']['gamepad-remapping-axis'])), !0x1)) : _0x15b935['elements']['dialogs']['gamepad']['querySelector']('#controls-' ['concat'](_0x31c03e)) && (_0x15b935['elements']['dialogs']['gamepad']['querySelector']('#controls-' ['concat'](_0x31c03e, ' .')['concat'](ejs_Controller['classNames']['gamepad-name'])).innerHTML = 'None detected', toggleHidden(_0x15b935['elements']['dialogs']['gamepad']['querySelector']('#controls-' ['concat'](_0x31c03e, ' .')['concat'](ejs_Controller['classNames']['gamepad-remapping-axis'])), !0x0));
+                        _0x4fd66b ? _0x15b935['elements']['dialogs']['gamepad']['querySelector']('#controls-' ['concat'](_0x31c03e)) && (_0x15b935['elements']['dialogs']['gamepad']['querySelector']('#controls-' ['concat'](_0x31c03e, ' .')['concat'](getCtrlclassName('gamepad-name'))).innerHTML = _0x4fd66b['id'], toggleHidden(_0x15b935['elements']['dialogs']['gamepad']['querySelector']('#controls-' ['concat'](_0x31c03e, ' .')['concat'](getCtrlclassName('gamepad-remapping-axis'))), !0x1)) : _0x15b935['elements']['dialogs']['gamepad']['querySelector']('#controls-' ['concat'](_0x31c03e)) && (_0x15b935['elements']['dialogs']['gamepad']['querySelector']('#controls-' ['concat'](_0x31c03e, ' .')['concat'](getCtrlclassName('gamepad-name'))).innerHTML = 'None detected', toggleHidden(_0x15b935['elements']['dialogs']['gamepad']['querySelector']('#controls-' ['concat'](_0x31c03e, ' .')['concat'](getCtrlclassName('gamepad-remapping-axis'))), !0x0));
                     });
                 }), _0x428a47['bind'](_export_1['Gamepad']['Event']['CONNECTED'], function (_0x450f2e) {
 
                     Object['keys'](_0x428a47['gamepads'])['forEach'](function (_0x9bd8df) {
                         var _0x15cb12 = _0x428a47['gamepads'][_0x9bd8df];
-                        _0x15cb12 ? _0x15b935['elements']['dialogs']['gamepad']['querySelector']('#controls-' ['concat'](_0x9bd8df)) && (_0x15b935['elements']['dialogs']['gamepad']['querySelector']('#controls-' ['concat'](_0x9bd8df, ' .')['concat'](ejs_Controller['classNames']['gamepad-name'])).innerHTML = _0x15cb12['id'], toggleHidden(_0x15b935['elements']['dialogs']['gamepad']['querySelector']('#controls-' ['concat'](_0x9bd8df, ' .')['concat'](ejs_Controller['classNames']['gamepad-remapping-axis'])), !0x1)) : _0x15b935['elements']['dialogs']['gamepad']['querySelector']('#controls-' ['concat'](_0x9bd8df)) && (_0x15b935['elements']['dialogs']['gamepad']['querySelector']('#controls-' ['concat'](_0x9bd8df, ' .')['concat'](ejs_Controller['classNames']['gamepad-name'])).innerHTML = 'None detected', toggleHidden(_0x15b935['elements']['dialogs']['gamepad']['querySelector']('#controls-' ['concat'](_0x9bd8df, ' .')['concat'](ejs_Controller['classNames']['gamepad-remapping-axis'])), !0x0));
+                        _0x15cb12 ? _0x15b935['elements']['dialogs']['gamepad']['querySelector']('#controls-' ['concat'](_0x9bd8df)) && (_0x15b935['elements']['dialogs']['gamepad']['querySelector']('#controls-' ['concat'](_0x9bd8df, ' .')['concat'](getCtrlclassName('gamepad-name'))).innerHTML = _0x15cb12['id'], toggleHidden(_0x15b935['elements']['dialogs']['gamepad']['querySelector']('#controls-' ['concat'](_0x9bd8df, ' .')['concat'](getCtrlclassName('gamepad-remapping-axis'))), !0x1)) : _0x15b935['elements']['dialogs']['gamepad']['querySelector']('#controls-' ['concat'](_0x9bd8df)) && (_0x15b935['elements']['dialogs']['gamepad']['querySelector']('#controls-' ['concat'](_0x9bd8df, ' .')['concat'](getCtrlclassName('gamepad-name'))).innerHTML = 'None detected', toggleHidden(_0x15b935['elements']['dialogs']['gamepad']['querySelector']('#controls-' ['concat'](_0x9bd8df, ' .')['concat'](getCtrlclassName('gamepad-remapping-axis'))), !0x0));
                     });
                 });
             }
         },
-        'setShader': function (_0xb5459b) {
+        setShader: function (_0xb5459b) {
 
             if ('disabled' === _0xb5459b) ejs_loader.FS['unlink']('/shader/shader.glslp', ''), ejs_Controller['toggleShader'] && ejs_Controller['toggleShader'](0x0);
             else {
@@ -10056,11 +8074,11 @@ var EJS = function (modules) {
                 }(ejs_loader.FS['readFile'](_0x2ef38))), ejs_Controller['toggleShader'] && ejs_Controller['toggleShader'](0x1);
             }
         },
-        'toggleVirtualGamepad': function (_0x2bec8b) {
-            var _0x649f08 = this;
+        toggleVirtualGamepad: function (_0x2bec8b) {
+            const E = this;
             if (null === ejs_Controller['virtualGamepadContainer']) {
-                var _0x1433c4 = 0x2;
-                switch (_0x649f08['system']) {
+                var vStyle = 0x2;
+                switch (E['system']) {
                     case 'gb':
                     case 'gbc':
                     case 'atari7800':
@@ -10068,30 +8086,30 @@ var EJS = function (modules) {
                     case 'segaMS':
                     case 'segaGG':
                     case 'atari2600':
-                        _0x1433c4 = 0x1;
+                        vStyle = 0x1;
                         break;
                     case 'nes':
-                        _0x1433c4 = 0x2;
+                        vStyle = 0x2;
                         break;
                     case 'snes':
                     case 'snes2002':
                     case 'snes2005':
                     case 'snes2010':
                     case 'zc210':
-                        _0x1433c4 = 0x3;
+                        vStyle = 0x3;
                         break;
                     case 'gba':
                     case 'vbanext':
-                        _0x1433c4 = 0x4;
+                        vStyle = 0x4;
                         break;
                     case 'segaMD':
                     case 'segaCD':
                     case 'sega32x':
                     case 'openbor':
-                        _0x1433c4 = 0x5;
+                        vStyle = 0x5;
                         break;
                     case 'segaSaturn':
-                        _0x1433c4 = 0x6;
+                        vStyle = 0x6;
                         break;
                     case 'arcade':
                     case 'fba0.2.97.29':
@@ -10099,162 +8117,143 @@ var EJS = function (modules) {
                     case 'mame':
                     case 'mame0.193':
                     case 'mame0.243':
-                        _0x1433c4 = 0x7;
+                        vStyle = 0x7;
                         break;
                     case 'n64':
                     case 'mupen64plus':
                     case 'mupen64plus2':
                     case 'mupen64plus-nx':
-                        _0x1433c4 = 0x8;
+                        vStyle = 0x8;
                         break;
                     case 'psx':
-                        _0x1433c4 = 0x9;
+                        vStyle = 0x9;
                         break;
                     case 'pce':
-                        _0x1433c4 = 0xa;
+                        vStyle = 0xa;
                         break;
                     case 'ws':
-                        _0x1433c4 = 0xb;
+                        vStyle = 0xb;
                 }
                 var _0x1d43a3 = {
                     'ejs-virtual-gamepad': !0x0
                 };
-                _0x1d43a3[('ejs-virtual-gamepad-style-')['concat'](_0x1433c4)] = !0x0, ejs_Controller['virtualGamepadContainer'] = _0xf5893f('div', {
+                _0x1d43a3[('ejs-virtual-gamepad-style-')['concat'](vStyle)] = !0x0;
+                ejs_Controller['virtualGamepadContainer'] = createElm('div', {
                     'class': getClassName(_0x1d43a3),
                     'hidden': ''
-                }), this['elements']['container']['appendChild'](ejs_Controller['virtualGamepadContainer']), ejs_Controller['virtualGamepadContainer'].innerHTML = ('\x0a            <div class=\x22')['concat'](getClassName('virtual-gamepad'), '\x22 style=\x22display: block;\x22>\n            <div class=\x22')['concat'](getClassName('top'), '\x22>\n            </div>\n            <div class=\x22')['concat'](getClassName('dpad-container'), '\x22></div>\n            <div class=\x22')['concat'](getClassName('left'), '\x22></div>\n            <div class=\x22')['concat'](getClassName('center'), '\x22>\n            <div data-key-id-2 class=\x22')['concat'](getClassName({
-                    'buttons': !0x0,
-                    'b_select': !0x0
-                }), '\x22>SELECT</div>\n            <div data-key-id-3 class=\x22')['concat'](getClassName({
-                    'buttons': !0x0,
-                    'b_start': !0x0
-                }), '\x22>START</div>\n            <div data-key-id-2 class=\x22')['concat'](getClassName({
-                    'buttons': !0x0,
-                    'b_insert_coin': !0x0
-                }), '\x22>INSERT COIN</div>\n            </div>\x0a            <div class=\x22')['concat'](getClassName('right'), '\x22>\n            <div data-key-id-8 class=\x22')['concat'](getClassName({
-                    'buttons': !0x0,
-                    'b_a': !0x0
-                }), '\x22>A</div>\n            <div data-key-id-0 class=\x22')['concat'](getClassName({
-                    'buttons': !0x0,
-                    'b_b': !0x0
-                }), '\x22>B</div>\n            <div data-key-id-9 class=\x22')['concat'](getClassName({
-                    'buttons': !0x0,
-                    'b_x': !0x0
-                }), '\x22>X</div>\n            <div data-key-id-1 class=\x22')['concat'](getClassName({
-                    'buttons': !0x0,
-                    'b_y': !0x0
-                }), '\x22>Y</div>\n            <div data-key-id-10 class=\x22')['concat'](getClassName({
-                    'buttons': !0x0,
-                    'b_c': !0x0
-                }), '\x22>C</div>\n            <div data-key-id-11 class=\x22')['concat'](getClassName({
-                    'buttons': !0x0,
-                    'b_z': !0x0
-                }), '\x22>Z</div>\n            <div data-key-id-8 class=\x22')['concat'](getClassName({
-                    'buttons': !0x0,
-                    'b_1': !0x0
-                }), '\x22>1</div>\x0a            <div data-key-id-0 class=\x22')['concat'](getClassName({
-                    'buttons': !0x0,
-                    'b_2': !0x0
-                }), '\x22>2</div>\x0a            <div data-key-id-10 class=\x22')['concat'](getClassName({
-                    'buttons': !0x0,
-                    'b_3': !0x0
-                }), '\x22>3</div>\n            <div data-key-id-9 class=\x22')['concat'](getClassName({
-                    'buttons': !0x0,
-                    'b_4': !0x0
-                }), '\x22>4</div>\x0a            <div data-key-id-1 class=\x22')['concat'](getClassName({
-                    'buttons': !0x0,
-                    'b_5': !0x0
-                }), '\x22>5</div>\n            <div data-key-id-11 class=\x22')['concat'](getClassName({
-                    'buttons': !0x0,
-                    'b_6': !0x0
-                }), '\x22>6</div>\x0a            <div data-key-id-10 class=\x22')['concat'](getClassName({
-                    'buttons': !0x0,
-                    'b_l': !0x0
-                }), '\x22>L</div>\n            <div data-key-id-11 class=\x22')['concat'](getClassName({
-                    'buttons': !0x0,
-                    'b_r': !0x0
-                }), '\x22>R</div>\x0a            <div data-key-id-12 class=\x22')['concat'](getClassName({
-                    'buttons': !0x0,
-                    'b_l2': !0x0
-                }), '\x22>L2</div>\n            <div data-key-id-13 class=\x22')['concat'](getClassName({
-                    'buttons': !0x0,
-                    'b_r2': !0x0
-                }), '\x22>R2</div>\x0a\x0a\x0a            <div data-key-id-23 class=\x22')['concat'](getClassName({
-                    'buttons': !0x0,
-                    'b_c1': !0x0
-                }), '\x22>C1</div>\n            <div data-key-id-22 class=\x22')['concat'](getClassName({
-                    'buttons': !0x0,
-                    'b_c2': !0x0
-                }), '\x22>C2</div>\x0a            <div data-key-id-21 class=\x22')['concat'](getClassName({
-                    'buttons': !0x0,
-                    'b_c3': !0x0
-                }), '\x22>C3</div>\n            <div data-key-id-20 class=\x22')['concat'](getClassName({
-                    'buttons': !0x0,
-                    'b_c4': !0x0
-                }), '\x22>C4</div>\x0a            <div data-key-id-12 class=\x22')['concat'](getClassName({
-                    'buttons': !0x0,
-                    'b_z_t': !0x0
-                }), '\x22>Z</div>\x0a            <div data-key-id-10 class=\x22')['concat'](getClassName({
-                    'buttons': !0x0,
-                    'b_l_t': !0x0
-                }), '\x22>L</div>\n            <div data-key-id-11 class=\x22')['concat'](getClassName({
-                    'buttons': !0x0,
-                    'b_r_t': !0x0
-                }), '\x22>R</div>\n\n            </div>\x0a            </div>'), toggleHidden(ejs_Controller['virtualGamepadContainer'], !_0x2bec8b);
+                });
+                this['elements']['container']['appendChild'](ejs_Controller['virtualGamepadContainer']);
+                console.log('virtual-gamepad');
+                /**
+                 * 虚拟手柄 虚拟触摸UI
+                 */
+                ejs_Controller['virtualGamepadContainer'].innerHTML = `<div class="${getClassName('virtual-gamepad')} system-${E['system']}" style="display: block;">
+    <div class="${getClassName('top')}"></div>
+    <div class="${getClassName('dpad-container')}"></div>
+    <div class="${getClassName('left')}"></div>
+    <div class="${getClassName('center')}">
+        <div data-key-id-2 class="${getClassName('buttons b_select')}">SELECT</div>
+        <div data-key-id-3 class="${getClassName('buttons b_start')}">START</div>
+        <div data-key-id-2 class="${getClassName('buttons b_insert_coin')}">INSERT COIN</div>
+    </div>
+    <div class="${getClassName('right')}">
+        <div data-key-id-8 class="${getClassName('buttons b_a')}">A</div>
+        <div data-key-id-0 class="${getClassName('buttons b_b')}">B</div>
+        <div data-key-id-9 class="${getClassName('buttons b_x')}">X</div>
+        <div data-key-id-1 class="${getClassName('buttons b_y')}">Y</div>
+        <div data-key-id-10 class="${getClassName('buttons b_c')}">C</div>
+        <div data-key-id-11 class="${getClassName('buttons b_z')}">Z</div>
+        <div data-key-id-8 class="${getClassName('buttons b_1')}">1</div>
+        <div data-key-id-0 class="${getClassName('buttons b_2')}">2</div>
+        <div data-key-id-10 class="${getClassName('buttons b_3')}">3</div>
+        <div data-key-id-9 class="${getClassName('buttons b_4')}">4</div>
+        <div data-key-id-1 class="${getClassName('buttons b_5')}">5</div>
+        <div data-key-id-11 class="${getClassName('buttons b_6')}">6</div>
+        <div data-key-id-10 class="${getClassName('buttons b_l')}">L</div>
+        <div data-key-id-11 class="${getClassName('buttons b_r')}">R</div>
+        <div data-key-id-12 class="${getClassName('buttons b_l2')}">L2</div>
+        <div data-key-id-13 class="${getClassName('buttons b_r2')}">R2</div>
+        <div data-key-id-23 class="${getClassName('buttons b_c1')}">C1</div>
+        <div data-key-id-22 class="${getClassName('buttons b_c2')}">C2</div>
+        <div data-key-id-21 class="${getClassName('buttons b_c3')}">C3</div>
+        <div data-key-id-20 class="${getClassName('buttons b_c4')}">C4</div>
+        <div data-key-id-12 class="${getClassName('buttons b_z_t')}">Z</div>
+        <div data-key-id-10 class="${getClassName('buttons b_l_t')}">L</div>
+        <div data-key-id-11 class="${getClassName('buttons b_r_t')}">R</div>
+    </div>
+</div>`;
+                toggleHidden(ejs_Controller['virtualGamepadContainer'], !_0x2bec8b);
                 var _0x4a8321 = [];
                 ejs_loader['buttonMaps'] && (_0x4a8321 = ejs_loader['buttonMaps']), _0x4a8321[0x0] && Object['keys'](_0x4a8321[0x0])['forEach'](function (_0x4161cd, _0x3cce57) {
 
-                    _0x3cce57 = _0x4a8321[0x0][_0x4161cd], ejs_Controller['virtualGamepadContainer']['querySelectorAll'](getClassName('buttons',1))['forEach'](function (_0x26b1db) {
+                    _0x3cce57 = _0x4a8321[0x0][_0x4161cd], ejs_Controller['virtualGamepadContainer']['querySelectorAll'](getClassName('buttons', 1))['forEach'](function (_0x26b1db) {
 
                         'data-key-id-' ['concat'](_0x4161cd) in _0x26b1db['attributes'] && (_0x26b1db.innerHTML = _0x3cce57);
                     });
-                }), ejs_Controller['virtualGamepadContainer']['querySelectorAll'](getClassName('buttons',1))['forEach'](function (_0x5e70dc) {
-                    var _0x45d69d = _0xf5893f('canvas', {
+                });
+                ejs_Controller['virtualGamepadContainer']['querySelectorAll'](getClassName('buttons', 1))['forEach'](function (_0x5e70dc) {
+                    var ElmCanvas = createElm('canvas', {
                         'style': 'width: 100%;height: 100%;position: absolute;left: 0;z-index:1'
                     });
-                    _0x5e70dc['appendChild'](_0x45d69d);
+                    _0x5e70dc['appendChild'](ElmCanvas);
                 });
-                var _0x1ae128 = _0x59b468['a']['create']({
-                    'zone': ContainerSelector['call'](_0x649f08, '.' ['concat'](getClassName('ejs-virtual-gamepad'), ' .')['concat'](getClassName('left'))),
-                    'mode': 'static',
-                    'position': {
-                        'left': '50%',
-                        'top': '50%'
-                    },
-                    'color': 'red'
-                });
-                _0x1ae128['on']('end', function (_0x2847b2, _0x224261) {
-
-                    ejs_Controller['syncInput'](0x0, 0x13, 0x0), ejs_Controller['syncInput'](0x0, 0x12, 0x0), ejs_Controller['syncInput'](0x0, 0x11, 0x0), ejs_Controller['syncInput'](0x0, 0x10, 0x0);
-                }), _0x1ae128['on']('move', function (_0x194c2c, _0x1e4db7) {
-                    var _0x31f5b7 = _0x1e4db7['angle']['degree'],
-                        _0x31851a = 0x0,
-                        _0x40ecc9 = 0x0;
-                    _0x31f5b7 > 0x0 && _0x31f5b7 <= 0x2d && (_0x31851a = _0x1e4db7['distance'] / 0x32, _0x40ecc9 = -0x1 / 0x2d * _0x31f5b7 * _0x1e4db7['distance'] / 0x32), _0x31f5b7 > 0x2d && _0x31f5b7 <= 0x5a && (_0x31851a = 0x1 / 0x2d * (0x5a - _0x31f5b7) * _0x1e4db7['distance'] / 0x32, _0x40ecc9 = -_0x1e4db7['distance'] / 0x32), _0x31f5b7 > 0x5a && _0x31f5b7 <= 0x87 && (_0x31851a = 0x1 / 0x2d * (0x5a - _0x31f5b7) * _0x1e4db7['distance'] / 0x32, _0x40ecc9 = -_0x1e4db7['distance'] / 0x32), _0x31f5b7 > 0x87 && _0x31f5b7 <= 0xb4 && (_0x31851a = -_0x1e4db7['distance'] / 0x32, _0x40ecc9 = -0x1 / 0x2d * (0xb4 - _0x31f5b7) * _0x1e4db7['distance'] / 0x32), _0x31f5b7 > 0x87 && _0x31f5b7 <= 0xe1 && (_0x31851a = -_0x1e4db7['distance'] / 0x32, _0x40ecc9 = -0x1 / 0x2d * (0xb4 - _0x31f5b7) * _0x1e4db7['distance'] / 0x32), _0x31f5b7 > 0xe1 && _0x31f5b7 <= 0x10e && (_0x31851a = -0x1 / 0x2d * (0x10e - _0x31f5b7) * _0x1e4db7['distance'] / 0x32, _0x40ecc9 = _0x1e4db7['distance'] / 0x32), _0x31f5b7 > 0x10e && _0x31f5b7 <= 0x13b && (_0x31851a = -0x1 / 0x2d * (0x10e - _0x31f5b7) * _0x1e4db7['distance'] / 0x32, _0x40ecc9 = _0x1e4db7['distance'] / 0x32), _0x31f5b7 > 0x13b && _0x31f5b7 <= 359.9 && (_0x31851a = _0x1e4db7['distance'] / 0x32, _0x40ecc9 = 0x1 / 0x2d * (0x168 - _0x31f5b7) * _0x1e4db7['distance'] / 0x32), _0x31851a > 0x0 ? (ejs_Controller['simulateInput'](0x0, 0x10, 0x7fff * _0x31851a), ejs_Controller['simulateInput'](0x0, 0x11, 0x0)) : (ejs_Controller['simulateInput'](0x0, 0x11, 0x7fff * _0x31851a), ejs_Controller['simulateInput'](0x0, 0x10, 0x0)), _0x40ecc9 > 0x0 ? (ejs_Controller['simulateInput'](0x0, 0x12, 0x7fff * _0x40ecc9), ejs_Controller['simulateInput'](0x0, 0x13, 0x0)) : (ejs_Controller['simulateInput'](0x0, 0x13, 0x7fff * _0x40ecc9), ejs_Controller['simulateInput'](0x0, 0x12, 0x0));
-                }), _0x1e8be3({
-                    'container': ContainerSelector['call'](_0x649f08, '.' ['concat'](getClassName('ejs-virtual-gamepad'), ' .')['concat'](getClassName('dpad-container'))),
+                if(vStyle==9||vStyle==8){
+                    //需要触摸板  异步
+                    E['callaction']('JoystickGamepad');
+                }
+                _0x1e8be3({
+                    'container': E['Selector']('.' ['concat'](getClassName('ejs-virtual-gamepad'), ' .')['concat'](getClassName('dpad-container'))),
                     'event': function (_0x392b90, _0x1b225a, _0x4d23be, _0x289e63) {
 
-                        ejs_Controller['syncInput'](0x0, 0x4, _0x4d23be), ejs_Controller['syncInput'](0x0, 0x5, _0x289e63), ejs_Controller['syncInput'](0x0, 0x6, _0x392b90), ejs_Controller['syncInput'](0x0, 0x7, _0x1b225a);
+                        ejs_Controller['syncInput'](0x0, 0x4, _0x4d23be);
+                        ejs_Controller['syncInput'](0x0, 0x5, _0x289e63);
+                        ejs_Controller['syncInput'](0x0, 0x6, _0x392b90);
+                        ejs_Controller['syncInput'](0x0, 0x7, _0x1b225a);
                     }
                 });
-                var _0x53f4bf = getClassName('virtual-gamepad'),
+                var virtualGamepadClass = getClassName('virtual-gamepad'),
                     _0x508e4d = getClassName('touch');
-                addEvent['call'](_0x649f08, ContainerSelector['call'](_0x649f08, '.' ['concat'](_0x53f4bf)), 'touchmove', function (_0x1e9ffc) {
+                E['addEvent'](E['Selector']('.' ['concat'](virtualGamepadClass)), 'touchmove', function (_0x1e9ffc) {
 
                     _0x1e9ffc['stopPropagation']();
                 });
                 var _0xff41a1 = {};
-                _0xff41a1[getClassName('b_a')] = 0x8, _0xff41a1[getClassName('b_b')] = 0x0, _0xff41a1[getClassName('b_c')] = 0xa, _0xff41a1[getClassName('b_x')] = 0x9, _0xff41a1[getClassName('b_y')] = 0x1, _0xff41a1[getClassName('b_z')] = 0xb, _0xff41a1[getClassName('b_l')] = 0xa, _0xff41a1[getClassName('b_r')] = 0xb, _0xff41a1[getClassName('b_l2')] = 0xc, _0xff41a1[getClassName('b_r2')] = 0xd, _0xff41a1[getClassName('b_1')] = 0x8, _0xff41a1[getClassName('b_2')] = 0x0, _0xff41a1[getClassName('b_3')] = 0xa, _0xff41a1[getClassName('b_4')] = 0x9, _0xff41a1[getClassName('b_5')] = 0x1, _0xff41a1[getClassName('b_6')] = 0xb, _0xff41a1[getClassName('b_c1')] = 0x17, _0xff41a1[getClassName('b_c2')] = 0x16, _0xff41a1[getClassName('b_c3')] = 0x15, _0xff41a1[getClassName('b_c4')] = 0x14, _0xff41a1[getClassName('b_l_t')] = 0xa, _0xff41a1[getClassName('b_r_t')] = 0xb, _0xff41a1[getClassName('b_z_t')] = 0xc, _0xff41a1[getClassName('b_start')] = 0x3, _0xff41a1[getClassName('b_select')] = 0x2, _0xff41a1[getClassName('b_insert_coin')] = 0x2, Object['keys'](_0xff41a1)['forEach'](function (_0x31c309) {
+                _0xff41a1[getClassName('b_a')] = 0x8;
+                _0xff41a1[getClassName('b_b')] = 0x0;
+                _0xff41a1[getClassName('b_c')] = 0xa;
+                _0xff41a1[getClassName('b_x')] = 0x9;
+                _0xff41a1[getClassName('b_y')] = 0x1;
+                _0xff41a1[getClassName('b_z')] = 0xb;
+                _0xff41a1[getClassName('b_l')] = 0xa;
+                _0xff41a1[getClassName('b_r')] = 0xb;
+                _0xff41a1[getClassName('b_l2')] = 0xc;
+                _0xff41a1[getClassName('b_r2')] = 0xd;
+                _0xff41a1[getClassName('b_1')] = 0x8;
+                _0xff41a1[getClassName('b_2')] = 0x0;
+                _0xff41a1[getClassName('b_3')] = 0xa;
+                _0xff41a1[getClassName('b_4')] = 0x9;
+                _0xff41a1[getClassName('b_5')] = 0x1;
+                _0xff41a1[getClassName('b_6')] = 0xb;
+                _0xff41a1[getClassName('b_c1')] = 0x17;
+                _0xff41a1[getClassName('b_c2')] = 0x16;
+                _0xff41a1[getClassName('b_c3')] = 0x15;
+                _0xff41a1[getClassName('b_c4')] = 0x14;
+                _0xff41a1[getClassName('b_l_t')] = 0xa;
+                _0xff41a1[getClassName('b_r_t')] = 0xb;
+                _0xff41a1[getClassName('b_z_t')] = 0xc;
+                _0xff41a1[getClassName('b_start')] = 0x3;
+                _0xff41a1[getClassName('b_select')] = 0x2;
+                _0xff41a1[getClassName('b_insert_coin')] = 0x2;
+                Object['keys'](_0xff41a1)['forEach'](function (_0x31c309) {
                     var _0x59c0fb = _0xff41a1[_0x31c309];
-                    addEvent['call'](_0x649f08, ContainerSelector['call'](_0x649f08, '.' ['concat'](_0x53f4bf, ' .')['concat'](_0x31c309, ' canvas')), 'touchstart touchend', function (_0x3f6422) {
+                    E['addEvent'](E['Selector']('.' ['concat'](virtualGamepadClass, ' .')['concat'](_0x31c309, ' canvas')), 'touchstart touchend', function (_0x3f6422) {
 
-                        if ('touchend' === _0x3f6422['type']) _0x279293(ContainerSelector['call'](_0x649f08, '.' ['concat'](_0x53f4bf, ' .')['concat'](_0x31c309)), _0x508e4d, !0x1), window['setTimeout'](function () {
+                        if ('touchend' === _0x3f6422['type']) elmAddRemoveClass(E['Selector']('.' ['concat'](virtualGamepadClass, ' .')['concat'](_0x31c309)), _0x508e4d, !0x1), window['setTimeout'](function () {
 
                             ejs_Controller['syncInput'](0x0, _0x59c0fb, 0x0);
                         }, 0xa);
                         else {
-                            if (_0x279293(ContainerSelector['call'](_0x649f08, '.' ['concat'](_0x53f4bf, ' .')['concat'](_0x31c309)), _0x508e4d, !0x0), [0x14, 0x15, 0x16, 0x17]['includes'](_0x59c0fb)) {
+                            if (elmAddRemoveClass(E['Selector']('.' ['concat'](virtualGamepadClass, ' .')['concat'](_0x31c309)), _0x508e4d, !0x0), [0x14, 0x15, 0x16, 0x17]['includes'](_0x59c0fb)) {
                                 var _0x211e6d = 0x7fff;
                                 0x17 != _0x59c0fb && 0x15 != _0x59c0fb || (_0x211e6d = -_0x211e6d), ejs_Controller['syncInput'](0x0, _0x59c0fb, _0x211e6d);
                             } else ejs_Controller['syncInput'](0x0, _0x59c0fb, 0x1);
@@ -10264,91 +8263,95 @@ var EJS = function (modules) {
                 });
             } else toggleHidden(ejs_Controller['virtualGamepadContainer'], !_0x2bec8b);
         },
-        'setup': function () {
-            var _0x2af08c = this;
+        setup: function () {
+            const E = this;
             if (this['game']) {
-                if (ejs_Controller['playerName'] = _0x2af08c['config']['playerName'], _0x279293(this['elements']['container'], this['config']['classNames']['type'], !0x0), this['elements']['container']['setAttribute']('tabindex', '0'), this['color']) {
-                    var _0x388380 = function (_0x2b1a43) {
-                        var _0x468532 = _0x2b1a43['toLowerCase']();
-                        if (_0x468532 && /^#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/ ['test'](_0x468532)) {
-                            if (0x4 === _0x468532['length']) {
-                                for (var _0x10b85b = '#', _0x25cf6f = 0x1; _0x25cf6f < 0x4; _0x25cf6f += 0x1) _0x10b85b += _0x468532['slice'](_0x25cf6f, _0x25cf6f + 0x1)['concat'](_0x468532['slice'](_0x25cf6f, _0x25cf6f + 0x1));
-                                _0x468532 = _0x10b85b;
-                            }
-                            for (var _0xaba21b = [], _0x29f55c = 0x1; _0x29f55c < 0x7; _0x29f55c += 0x2) _0xaba21b['push'](parseInt('0x' ['concat'](_0x468532['slice'](_0x29f55c, _0x29f55c + 0x2)), 0x10));
-                            return _0xaba21b;
-                        }
-                        return null;
-                    }(this['color']);
-                    _0x388380 && this['elements']['container']['setAttribute']('style', ('--ejs-primary-color: ')['concat'](_0x388380[0x0], ', ')['concat'](_0x388380[0x1], ', ')['concat'](_0x388380[0x2]));
+                ejs_Controller['playerName'] = E['config']['playerName'];
+                elmAddRemoveClass(this['elements']['container'], this['config']['classNames']['type'], !0x0);
+                this['elements']['container']['setAttribute']('tabindex', '0');
+                if (this['color']) {
+                    var div = T.$append(document.body, 'div');
+                    div.style.color = this['color'];
+                    var color = getComputedStyle(div).color;
+                    if (color) {
+                        this['elements']['container']['setAttribute']('style', '--ejs-primary-color: ' + color.replace(/rgb\((.+?)\)$/, '$1'));
+                    }
+                    div.remove();
                 }
-                if (this['elements']['wrapper'] = _0xf5893f('div', {
+                if (this['elements']['wrapper'] = createElm('div', {
                         'class': this['config']['classNames']['video']
-                    }), _0x3266c5(this['game'], this['elements']['wrapper']), 'video' !== _0x2af08c['game']['tagName']['toLocaleLowerCase']()) {
+                    }), _0x3266c5(this['game'], this['elements']['wrapper']), 'video' !== E['game']['tagName']['toLocaleLowerCase']()) {
                     var _0x396be3 = this['config']['volume'];
-                    Object['defineProperty'](_0x2af08c['game'], 'volume', {
+                    Object['defineProperty'](E['game'], 'volume', {
                         'get': function () {
                             return _0x396be3;
                         },
                         'set': function (_0x1e0fb7) {
 
-                            _0x396be3 = _0x1e0fb7, callEvent['call'](_0x2af08c, _0x2af08c['game'], 'volumechange');
+                            _0x396be3 = _0x1e0fb7, E['callEvent'](E['game'], 'volumechange');
                         }
                     });
-                    var _0x8ad350 = _0x2af08c['storage']['get']('muted');
-                    Object['defineProperty'](_0x2af08c['game'], 'muted', {
+                    var _0x8ad350 = E['storage']['get']('muted');
+                    Object['defineProperty'](E['game'], 'muted', {
                         'get': function () {
                             return _0x8ad350;
                         },
                         'set': function (_0x4be3e9) {
-                            var _0x2197ca = !!TypeCheck['boolean'](_0x4be3e9) && _0x4be3e9;
-                            _0x8ad350 = _0x2197ca, callEvent['call'](_0x2af08c, _0x2af08c['game'], 'volumechange');
+                            var _0x2197ca = !!I.bool(_0x4be3e9) && _0x4be3e9;
+                            _0x8ad350 = _0x2197ca, E['callEvent'](E['game'], 'volumechange');
                         }
                     });
                 }
             } else console['warn']('No game element found!');
         },
         listeners: function () {
-            var E = this,
-                ElmContainer = E['elements']['container'];
-            E['elements']['buttons']['restart'] && addEvent['call'](E, E['elements']['buttons']['restart'], 'click', function (_0x2b1316) {
+            const E = this;
+            var ElmContainer = E['elements']['container'],
+                ElmBtns = E['elements']['buttons'];
+            ElmBtns['restart'] && E['addEvent'](ElmBtns['restart'], 'click', function (_0x2b1316) {
 
-                _0x88c152['show'](ElmContainer, 'Restart Game', 0x5dc), ejs_Controller['restartGame']();
-            }), E['elements']['buttons']['play'] && Array['from'](E['elements']['buttons']['play'])['forEach'](function (_0x10db9b) {
+                //_0x88c152['show'](ElmContainer, T.getLang('Restart Game'), 0x5dc);
 
-                addEvent['call'](E, _0x10db9b, 'click', function (_0x4ca219) {
+                ejs_Controller['restartGame']();
+            });
+            ElmBtns['play'] && Array['from'](ElmBtns['play'])['forEach'](function (_0x10db9b) {
 
-                    E['playing'] ? (E['playing'] = !0x1, ejs_loader['Module']['pauseMainLoop'](), callEvent['call'](E, ElmContainer, 'pause', !0x1, {
+                E['addEvent'](_0x10db9b, 'click', function (_0x4ca219) {
+
+                    E['playing'] ? (E['playing'] = !0x1, ejs_loader['Module']['pauseMainLoop'](), E['callEvent'](ElmContainer, 'pause', !0x1, {
                         'pause': !0x0
-                    })) : (E['playing'] = !0x0, ejs_loader['Module']['resumeMainLoop'](), callEvent['call'](E, ElmContainer, 'pause', !0x1, {
+                    })) : (E['playing'] = !0x0, ejs_loader['Module']['resumeMainLoop'](), E['callEvent'](ElmContainer, 'pause', !0x1, {
                         'pause': !0x1
                     }));
                 });
-            }), E['elements']['buttons']['netplay'] && addEvent['call'](E, E['elements']['buttons']['netplay'], 'click', function (_0x1188e4) {
+            });
+            ElmBtns['netplay'] && E['addEvent'](ElmBtns['netplay'], 'click', function (_0x1188e4) {
 
                 toggleHidden(E['elements']['dialogs']['netplay'], !0x1), ejs_Controller['netPlayUsers']['filter'](function (_0x327af7) {
                     return '' != _0x327af7;
                 })['length'] > 0x0 ? ejs_Controller['openRoom'](E) : (ejs_Controller['netPlayDialogOpened'] = !0x0, ejs_Controller['stopLoadRooms'](), ejs_Controller['loadRoomsList']()), ejs_Controller['playerName'] || _0x3e3214['show']('modal-9de6c4e9ce2b9361', {
                     'closeByEsckey': !0x1
                 });
-            }), E['elements']['buttons']['cheat'] && addEvent['call'](E, E['elements']['buttons']['cheat'], 'click', function (_0xdbedf1) {
-
-                toggleHidden(E['elements']['dialogs']['cheat'], !0x1);
             });
-            var _0x4c0dc2 = E.SelectorAll('.' ['concat'](getClassName('ejs__contextmenu'), ' ul li'));
+            I.toArr(['cheat', 'cache'], name => ElmBtns[name] && E['addEvent'](ElmBtns[name], 'click', () => {
+                T.triger(E['elements']['dialogs'][name], 'opendialog');
+                toggleHidden(E['elements']['dialogs'][name], !0x1);
+            }));
+
+            var _0x4c0dc2 = E['SelectorAll']('.' ['concat'](getClassName('ejs__contextmenu'), ' ul li'));
             Array['from'](_0x4c0dc2)['forEach'](function (_0x11755d, _0x550e23) {
 
-                0x0 === _0x550e23 && addEvent['call'](E, _0x11755d, 'click', function (_0x204b73) {
+                0x0 === _0x550e23 && E['addEvent'](_0x11755d, 'click', function (_0x204b73) {
                     var _0x130f28 = ejs_Controller['getScreenData']();
                     return _0xe3873()(new Blob([_0x130f28]), E['startName'] + '.png'), !0x1;
-                }), 0x1 === _0x550e23 && addEvent['call'](E, _0x11755d, 'click', function (_0x3ad3cd) {
+                }), 0x1 === _0x550e23 && E['addEvent'](_0x11755d, 'click', function (_0x3ad3cd) {
 
                     ejs_Controller['quickSaveState'](), ejs_data['contextMenu']['style']['display'] = 'none';
-                }), 0x2 === _0x550e23 && addEvent['call'](E, _0x11755d, 'click', function (_0xf06990) {
+                }), 0x2 === _0x550e23 && E['addEvent'](_0x11755d, 'click', function (_0xf06990) {
 
                     ejs_Controller['quickLoadState'](), ejs_data['contextMenu']['style']['display'] = 'none';
                 });
-            }), addEvent['call'](E, ElmContainer, 'savestate', function (_0x5ab2e7) {
+            }), E['addEvent'](ElmContainer, 'savestate', function (_0x5ab2e7) {
                 console.log('即时存档 state saves');
                 var _0x421707 = _0x5ab2e7['detail']['state'],
                     _0x63f494 = E['startName']['split']('/')['pop']()['split']('.'),
@@ -10365,14 +8368,14 @@ var EJS = function (modules) {
                             'name': _0x2e2422
                         }, '*');
                     }
-                } else if (TypeCheck['function'](E['config']['onsavestate'])) {
+                } else if (I.func(E['config']['onsavestate'])) {
                     E['config']['onsavestate']['call'](null, {
                         'screenshot': _0x5ab2e7['detail']['screenshot'],
                         'state': _0x421707
                     });
                 } else {
                     let key = T.F.getKeyName(E['startName']),
-                        path = ejs_loader.savefullpath + '/';
+                        path = E['savefullpath'] + '/';
                     DISK.MKFILE(path + key + '.state', _0x421707, 1);
                     DISK.MKFILE(path + key + '.png', _0x5ab2e7['detail']['screenshot'], 1);
                     //userdata.setData(path+key+'.state',_0x421707).then(e=>{
@@ -10384,24 +8387,24 @@ var EJS = function (modules) {
                     //_0xe3873()(_0xcb1ae3, _0x2e2422)
                 }
                 ElmContainer['focus']();
-            }), (E['game']['stateloadField'] = _0xf5893f('input'), E['game']['stateloadField']['type'] = 'file', E['game']['stateloadField']['onchange'] = function _0x5443ff(_0x5b452b) {
+            }), (E['game']['stateloadField'] = createElm('input'), E['game']['stateloadField']['type'] = 'file', E['game']['stateloadField']['onchange'] = function _0x5443ff(_0x5b452b) {
                 var _0x3f07e2, _0x4a2ba0 = _0x5b452b['target']['files'];
                 _0x4a2ba0['length'] > 0x0 && ((_0x3f07e2 = new FileReader())['file_name'] = _0x4a2ba0[0x0]['name'], _0x3f07e2['onload'] = function () {
                     var _0x457c84 = new Uint8Array(_0x3f07e2['result']);
                     EJS_loadState(_0x457c84);
-                }, _0x3f07e2['readAsArrayBuffer'](_0x4a2ba0[0x0])), E['game']['stateloadField'] = _0xf5893f('input'), E['game']['stateloadField']['type'] = 'file', E['game']['stateloadField']['onchange'] = _0x5443ff;
-            }, addEvent['call'](E, ElmContainer, 'loadstate', function (_0x5c440f) {
+                }, _0x3f07e2['readAsArrayBuffer'](_0x4a2ba0[0x0])), E['game']['stateloadField'] = createElm('input'), E['game']['stateloadField']['type'] = 'file', E['game']['stateloadField']['onchange'] = _0x5443ff;
+            }, E['addEvent'](ElmContainer, 'loadstate', function (_0x5c440f) {
                 console.log('即时读档 load state');
 
                 if ('custom' == E['config']['onsavestate'] && loaderWindow) {
                     loaderWindow['postMessage']({
                         'act': 'ejs-loadstate'
                     }, '*');
-                } else if (TypeCheck['function'](E['config']['onsavestate'])) {
+                } else if (I.func(E['config']['onsavestate'])) {
                     E['config']['onloadstate']['call'](null, E['loadState']);
                 } else {
                     let key = T.F.getKeyName(E['startName']),
-                        path = ejs_loader.savefullpath+ '/' + key + '.state',
+                        path = E['savefullpath'] + '/' + key + '.state',
                         FS = ejs_loader.FS;
                     if (FS.analyzePath(path).exists) {
                         //ejs_loader.FS.readFile(path+key+'.state');
@@ -10425,7 +8428,7 @@ var EJS = function (modules) {
                 document['visibilityState'];
             }));
         },
-        'bindFunction': function () {
+        bindFunction: function () {
             var _0x4bd348, _0x1e1e01 = this,
                 _0x4ff1b1 = _0x1e1e01['system'];
             ejs_loader['Module'] && (ejs_loader['Module']['_set_volume'] || ejs_loader['Module']['_adjust_volume']) && (ejs_loader['Module']['_adjust_volume'] && (_0x4bd348 = ejs_loader['Module']['cwrap']('adjust_volume', 'null', ['number'])), ejs_loader['Module']['_set_volume'] && (_0x4bd348 = ejs_loader['Module']['cwrap']('set_volume', 'null', ['number'])), ejs_Controller['setVolume'] = function () {
@@ -10465,7 +8468,8 @@ var EJS = function (modules) {
                     } catch (_0x2fa8eb) {}
                     ejs_loader.FS['createDataFile']('/', 'quick.state', _0x1b1c77, !0x0, !0x0), _0x88c152['show'](_0x1e1e01['elements']['container'], 'Quick Save');
                 }
-            }, ejs_Controller['quickLoadState'] = function () {
+            };
+            ejs_Controller['quickLoadState'] = function () {
 
                 if (ejs_Controller['netPlayConnected']) return !0x1;
                 if (_0x1e1e01['started'] && !ejs_Controller['connected']) try {
@@ -10474,73 +8478,45 @@ var EJS = function (modules) {
                         ejs_Controller['getStateInfo'](), _0x42e021('quick.state', 0x0);
                     }, 0xa), _0x88c152['show'](_0x1e1e01['elements']['container'], 'Quick Load'));
                 } catch (_0x108ed7) {}
-            }, ejs_loader['Module']['_get_disk_num'] && (ejs_Controller['getDiskNum'] = ejs_loader['Module']['cwrap']('get_disk_num', 'number', [])), ejs_loader['Module']['_set_disk'] && (ejs_Controller['setDisk'] = ejs_loader['Module']['cwrap']('set_disk', 'number', ['number'])), ejs_loader['Module']['_eject_disk'] && (ejs_Controller['ejectDisk'] = ejs_loader['Module']['cwrap']('eject_disk', 'null', [])), ejs_loader['Module']['_netplay_host'] && (ejs_Controller['netPlayHost'] = ejs_loader['Module']['cwrap']('netplay_host', 'number', ['string', 'string'])), ejs_loader['Module']['_netplay_client'] && (ejs_Controller['netPlayClient'] = ejs_loader['Module']['cwrap']('netplay_client', 'number', ['string', 'string'])), ejs_loader['Module']['_netplay_close'] && (ejs_Controller['netPlayClose'] = ejs_loader['Module']['cwrap']('netplay_close', 'number', [])), ejs_loader['Module']['_netplay_new_user'] && (ejs_Controller['netplayNewUser'] = ejs_loader['Module']['cwrap']('netplay_new_user', 'number', [])), ejs_loader['Module']['_netplay_push_data'] && (ejs_Controller['netplayPushData'] = ejs_loader['Module']['cwrap']('netplay_push_data', 'number', ['string', 'number'])), ejs_loader['Module']['_get_content_crc'] && (ejs_Controller['contentCrc32'] = ejs_loader['Module']['cwrap']('get_content_crc', 'string', [])), window['EJS_loadState'] = function (_0x29f6af) {
+            };
+            ejs_loader['Module']['_get_disk_num'] && (ejs_Controller['getDiskNum'] = ejs_loader['Module']['cwrap']('get_disk_num', 'number', []));
+            ejs_loader['Module']['_set_disk'] && (ejs_Controller['setDisk'] = ejs_loader['Module']['cwrap']('set_disk', 'number', ['number']));
+            ejs_loader['Module']['_eject_disk'] && (ejs_Controller['ejectDisk'] = ejs_loader['Module']['cwrap']('eject_disk', 'null', []));
+            ejs_loader['Module']['_netplay_host'] && (ejs_Controller['netPlayHost'] = ejs_loader['Module']['cwrap']('netplay_host', 'number', ['string', 'string']));
+            ejs_loader['Module']['_netplay_client'] && (ejs_Controller['netPlayClient'] = ejs_loader['Module']['cwrap']('netplay_client', 'number', ['string', 'string']));
+            ejs_loader['Module']['_netplay_close'] && (ejs_Controller['netPlayClose'] = ejs_loader['Module']['cwrap']('netplay_close', 'number', []));
+            ejs_loader['Module']['_netplay_new_user'] && (ejs_Controller['netplayNewUser'] = ejs_loader['Module']['cwrap']('netplay_new_user', 'number', []));
+            ejs_loader['Module']['_netplay_push_data'] && (ejs_Controller['netplayPushData'] = ejs_loader['Module']['cwrap']('netplay_push_data', 'number', ['string', 'number']));
+            ejs_loader['Module']['_get_content_crc'] && (ejs_Controller['contentCrc32'] = ejs_loader['Module']['cwrap']('get_content_crc', 'string', [])), window['EJS_loadState'] = function (_0x29f6af) {
                 ejs_Controller['loadState'](_0x29f6af, 0x0);
             };
             var _0x2cdff1 = ejs_loader['Module']['cwrap']('cmd_take_screenshot', '', []);
             ejs_Controller['getScreenData'] = function () {
                 ejs_Controller['toggleShader'](0x0);
-                 _0x2cdff1();
-                 ejs_Controller['toggleShader'](0x1);
-                 if(ejs_loader.FS.analyzePath('screenshot.png').exists){
+                _0x2cdff1();
+                ejs_Controller['toggleShader'](0x1);
+                if (ejs_loader.FS.analyzePath('screenshot.png').exists) {
                     return ejs_loader.FS['readFile']('screenshot.png');
-                 }else{
+                } else {
                     return new Uint8Array(0);
-                 }
+                }
             }, ejs_Controller['restartGame'] = ejs_loader['Module']['cwrap']('system_restart', '', []), ejs_Controller['currentFrameNum'] = ejs_loader['Module']['cwrap']('get_current_frame_count', '', []), ejs_loader['Module']['_cmd_savefiles'] && (ejs_Controller['saveSavFiles'] = ejs_loader['Module']['cwrap']('cmd_savefiles', '', [])), ejs_loader['Module']['_get_core_options'] && (ejs_Controller['getGameCoreOptions'] = ejs_loader['Module']['cwrap']('get_core_options', 'string', [])), ejs_Controller['systemPause'] = function (_0x4c41aa) {
                 return !0x1;
             }, ejs_Controller['controllers'] = ejs_data['storage']['get']('controllers'), ejs_Controller['controllers'] || (ejs_Controller['controllers'] = ejs_Controller['defaultControllers']), ejs_Controller['remappingAxis'] = ejs_data['storage']['get']('remappingAxis'), ejs_Controller['remappingAxis'] || (ejs_Controller['remappingAxis'] = {});
         }
     };
-    Object['defineProperties'](ejs_Controller, {
+    I.defines(ejs_Controller, {
         'netPlayConnected': {
-            'get': function () {
+            get() {
 
                 return ejs_Controller['_netPlayConnected'];
             },
-            'set': function (_0x4fbebf) {
-
-                ejs_Controller['_netPlayConnected'] = _0x4fbebf, ejs_Controller['netPlayConnectChange'](_0x4fbebf);
+            set(status) {
+                ejs_Controller['_netPlayConnected'] = status;
+                ejs_Controller['netPlayConnectChange'](status);
             }
         }
     });
-
-    function _0x2d160f(_0x312197, _0x12f98b) {
-        return function (_0x229fc1) {
-
-            if (Array['isArray'](_0x229fc1)) return _0x229fc1;
-        }(_0x312197) || function (_0xe41cc1, _0x1e9ff7) {
-            var _0x193acb = [],
-                _0x2ba105 = !0x0,
-                _0x43fb66 = !0x1,
-                _0x134747 = void 0x0;
-            try {
-                for (var _0x657cf6, _0x2e8a09 = _0xe41cc1[Symbol['iterator']](); !(_0x2ba105 = (_0x657cf6 = _0x2e8a09['next']())['done']) && (_0x193acb['push'](_0x657cf6['value']), !_0x1e9ff7 || _0x193acb['length'] !== _0x1e9ff7); _0x2ba105 = !0x0);
-            } catch (_0x863ac0) {
-                _0x43fb66 = !0x0, _0x134747 = _0x863ac0;
-            } finally {
-                try {
-                    _0x2ba105 || null == _0x2e8a09['return'] || _0x2e8a09['return']();
-                } finally {
-                    if (_0x43fb66) throw _0x134747;
-                }
-            }
-            return _0x193acb;
-        }(_0x312197, _0x12f98b) || (function () {
-
-            throw new TypeError('Invalid attempt to destructure non-iterable instance');
-        }());
-    }
-
-    function _0x390a1c(_0x365999, _0x325271, _0x45ce6f) {
-
-        return _0x325271 in _0x365999 ? Object['defineProperty'](_0x365999, _0x325271, {
-            'value': _0x45ce6f,
-            'enumerable': !0x0,
-            'configurable': !0x0,
-            'writable': !0x0
-        }) : _0x365999[_0x325271] = _0x45ce6f, _0x365999;
-    }
     var ejs_data = {
         'storage': null,
         'coreOptionsValues': {},
@@ -10833,7 +8809,7 @@ var EJS = function (modules) {
                 default:
                     _0x440236 = {};
             }
-            return (ejs_loader['coreOptions'] && Array['isArray'](ejs_loader['coreOptions']) && ejs_loader['coreOptions']['forEach'](function (_0x588ea1, _0x31fc29) {
+            return (ejs_loader['coreOptions'] && I.array(ejs_loader['coreOptions']) && ejs_loader['coreOptions']['forEach'](function (_0x588ea1, _0x31fc29) {
                 var _0x228ecb = _0x588ea1['key'];
                 _0x440236[_0x228ecb] = {
                     'label': _0x588ea1['label'],
@@ -10864,63 +8840,68 @@ var EJS = function (modules) {
         },
         'isNetPlay': function () {},
         'findElements': function () {
-            let E = this;
+            const E = this;
+            var
+                buttons = E['config']['selectors']['buttons'];
             try {
-                return E['elements']['controls'] = E.Selector(E['config']['selectors']['controls']['wrapper']), E['elements']['buttons'] = {
-                    'play': E.SelectorAll(E['config']['selectors']['buttons']['play']),
-                    'pause': E.Selector(E['config']['selectors']['buttons']['pause']),
-                    'restart': E.Selector(E['config']['selectors']['buttons']['restart']),
-                    'mute': E.Selector(E['config']['selectors']['buttons']['mute']),
-                    'settings': E.Selector(E['config']['selectors']['buttons']['settings']),
-                    'fullscreen': E.Selector(E['config']['selectors']['buttons']['fullscreen']),
-                    'saveState': E.Selector(E['config']['selectors']['buttons']['saveState']),
-                    'loadState': E.Selector(E['config']['selectors']['buttons']['loadState']),
-                    'disk': E.Selector('[data-btn=\x22disk\x22]'),
-                    'gamepad': E.Selector(E['config']['selectors']['buttons']['gamepad']),
-                    'netplay': E.Selector(E['config']['selectors']['buttons']['netplay']),
-                    'cheat': E.Selector(E['config']['selectors']['buttons']['cheat'])
-                }, E['elements']['inputs'] = {
-                    'volume': E.Selector(E['config']['selectors']['inputs']['volume'])
-                }, !0x0;
+                E['elements']['controls'] = E['Selector'](E['config']['selectors']['controls']['wrapper']);
+                E['elements']['buttons'] = {
+                    'play': E['SelectorAll'](buttons['play']),
+                    'pause': E['Selector'](buttons['pause']),
+                    'restart': E['Selector'](buttons['restart']),
+                    'mute': E['Selector'](buttons['mute']),
+                    'settings': E['Selector'](buttons['settings']),
+                    'fullscreen': E['Selector'](buttons['fullscreen']),
+                    'saveState': E['Selector'](buttons['saveState']),
+                    'loadState': E['Selector'](buttons['loadState']),
+                    'disk': E['Selector']('[data-btn="disk"]'),
+                    'gamepad': E['Selector'](buttons['gamepad']),
+                    'netplay': E['Selector'](buttons['netplay']),
+                    'cheat': E['Selector'](buttons['cheat']),
+                    'cache': E['Selector'](buttons['cache']),
+                    'autosave': E['Selector'](buttons['autosave']),
+                    'recorder': E['Selector'](buttons['recorder'])
+                };
+                E['elements']['inputs'] = {
+                    'volume': E['Selector'](E['config']['selectors']['inputs']['volume'])
+                };
+                return !0x0;
             } catch (_0x6ec76b) {
                 return E['debug']['warn']('It looks like there is a problem with your custom controls HTML', _0x6ec76b), !0x1;
             }
         },
-        'createIcon': function (_0x2717a0, _0xece231) {
-            var _0x4b161c = document['createElementNS']('http://www.w3.org/2000/svg', 'svg');
-            _0x156114(_0x4b161c, _0x288469(_0xece231, {
+        'createIcon': function (name, _0xece231) {
+            var ElmSvg = document['createElementNS']('http://www.w3.org/2000/svg', 'svg');
+            setElmAttr(ElmSvg, _0x288469(_0xece231, {
                 'role': 'presentation',
                 'focusable': 'false'
             }));
-            var _0x5f41d7 = document['createElement']('div');
-            _0x5f41d7.innerHTML = '<svg>' ['concat'](this['icons'][_0x2717a0], '</svg>');
-            for (var _0x16b35f = _0x5f41d7['childNodes'][0x0]['childNodes'], _0x1191ac = 0x0; _0x1191ac < _0x16b35f['length']; _0x1191ac += 0x1) _0x4b161c['appendChild'](_0x16b35f[_0x1191ac]);
-            return _0x4b161c;
+            ElmSvg.innerHTML = getSvgIcon(name);
+            return ElmSvg;
         },
         'createLabel': function (_0x3f0e85) {
             var _0x52fcaf = arguments['length'] > 0x1 && void 0x0 !== arguments[0x1] ? arguments[0x1] : {},
-                _0x580924 = T.getLang(_0x3f0e85);
-
-            'saveState' == _0x3f0e85 && (_0x580924 += '<span class=\x22' ['concat'](this['config']['classNames']['hotkey'], '\x22> (Shift + F2)</span>')), 'loadState' == _0x3f0e85 && (_0x580924 += '<span class=\x22' ['concat'](this['config']['classNames']['hotkey'], '\x22> (Shift + F4)</span>'));
+                _0x580924 = this.Geti18n(_0x3f0e85);
+            'saveState' == _0x3f0e85 && (_0x580924 += '<span class="' ['concat'](this['config']['classNames']['hotkey'], '"> (Shift + F2)</span>')), 'loadState' == _0x3f0e85 && (_0x580924 += '<span class="' ['concat'](this['config']['classNames']['hotkey'], '"> (Shift + F4)</span>'));
             var _0x2cc382 = {};
             _0x2cc382[_0x52fcaf['class']] = !0x0, _0x2cc382[this['config']['classNames']['hidden']] = !0x0;
             var _0x3ee770 = Object['assign']({}, _0x52fcaf, {
                 'class': [_0x52fcaf['class'], this['config']['classNames']['tooltip']]['filter'](Boolean)['join'](' ')
             });
-            return _0xf5893f('span', _0x3ee770,_0x580924);
+            return createElm('span', _0x3ee770, _0x580924);
         },
         'createBadge': function (_0x5bd767) {
 
             if (I.empty(_0x5bd767)) return null;
-            var _0x3974e6 = _0xf5893f('span', {
+            var _0x3974e6 = createElm('span', {
                 'class': this['config']['classNames']['menu']['value']
             });
-            return _0x3974e6['appendChild'](_0xf5893f('span', {
+            return _0x3974e6['appendChild'](createElm('span', {
                 'class': this['config']['classNames']['menu']['badge']
             }, _0x5bd767)), _0x3974e6;
         },
         'createButton': function (_0xab1afc, _0x483374) {
-            var _0x18cedc, _0x3c0ebc, _0xc288ad, _0xd18d6a, _0xa67a7a = _0xf5893f('button'),
+            var _0x18cedc, _0x3c0ebc, _0xc288ad, _0xd18d6a, _0xa67a7a = createElm('button'),
                 _0x15b7b8 = Object['assign']({}, _0x483374),
                 _0x4fabd0 = _0x378cd2(_0xab1afc),
                 _0x4bdd84 = !0x1;
@@ -10947,10 +8928,10 @@ var EJS = function (modules) {
                 'class': getClassName('icon--pressed')
             })), _0xa67a7a['appendChild'](ejs_data['createLabel']['call'](this, _0x18cedc, {
                 'class': getClassName('icon--not-pressed')
-            }))) : (_0xa67a7a['appendChild'](ejs_data['createIcon']['call'](this, _0x3c0ebc)), _0xa67a7a['appendChild'](ejs_data['createLabel']['call'](this, _0x18cedc))), _0x288469(_0x15b7b8, _0x4d33e3(this['config']['selectors']['buttons'][_0x4fabd0], _0x15b7b8)), _0x156114(_0xa67a7a, _0x15b7b8), 'play' === _0x4fabd0 ? (TypeCheck['array'](this['elements']['buttons'][_0x4fabd0]) || (this['elements']['buttons'][_0x4fabd0] = []), this['elements']['buttons'][_0x4fabd0]['push'](_0xa67a7a)) : this['elements']['buttons'][_0x4fabd0] = _0xa67a7a, _0xa67a7a;
+            }))) : (_0xa67a7a['appendChild'](ejs_data['createIcon']['call'](this, _0x3c0ebc)), _0xa67a7a['appendChild'](ejs_data['createLabel']['call'](this, _0x18cedc))), _0x288469(_0x15b7b8, _0x4d33e3(this['config']['selectors']['buttons'][_0x4fabd0], _0x15b7b8)), setElmAttr(_0xa67a7a, _0x15b7b8), 'play' === _0x4fabd0 ? (I.array(this['elements']['buttons'][_0x4fabd0]) || (this['elements']['buttons'][_0x4fabd0] = []), this['elements']['buttons'][_0x4fabd0]['push'](_0xa67a7a)) : this['elements']['buttons'][_0x4fabd0] = _0xa67a7a, _0xa67a7a;
         },
         'createRange': function (_0x118684, _0x55c993) {
-            var _0x884a80 = _0xf5893f('input', _0x288469(_0x4d33e3(this['config']['selectors']['inputs'][_0x118684]), {
+            var _0x884a80 = createElm('input', _0x288469(_0x4d33e3(this['config']['selectors']['inputs'][_0x118684]), {
                 'type': 'range',
                 'min': 0x0,
                 'max': 0x64,
@@ -10958,7 +8939,7 @@ var EJS = function (modules) {
                 'value': 0x0,
                 'autocomplete': 'off',
                 'role': 'slider',
-                'aria-label': T.getLang(_0x118684),
+                'aria-label': this.Geti18n(_0x118684),
                 'aria-valuemin': 0x0,
                 'aria-valuemax': 0x64,
                 'aria-valuenow': 0x0
@@ -10970,7 +8951,7 @@ var EJS = function (modules) {
             addEvent(_0x330429, 'keydown keyup', function (_0x3a1488) {
 
                 if ([0x20, 0x26, 0x27, 0x28]['includes'](_0x3a1488['which']) && (_0x3a1488['preventDefault'](), _0x3a1488['stopPropagation'](), 'keydown' !== _0x3a1488['type'])) {
-                    var _0xedfdac, _0xc18a0f = _0x2cc473(_0x330429, '[role=\x22menuitemradio\x22]');
+                    var _0xedfdac, _0xc18a0f = elmInNodeList(_0x330429, '[role="menuitemradio"]');
                     if (!_0xc18a0f && [0x20, 0x27]['includes'](_0x3a1488['which'])) ejs_data['showMenuPanel']['call'](_0xb35c69, _0x7ff691, !0x0);
                     else 0x20 !== _0x3a1488['which'] && (0x28 === _0x3a1488['which'] || _0xc18a0f && 0x27 === _0x3a1488['which'] ? (_0xedfdac = _0x330429['nextElementSibling'], I.elm(_0xedfdac) || (_0xedfdac = _0x330429['parentNode']['firstElementChild'])) : (_0xedfdac = _0x330429['previousElementSibling'], I.elm(_0xedfdac) || (_0xedfdac = _0x330429['parentNode']['lastElementChild'])), _0x348ac8['call'](_0xb35c69, _0xedfdac, !0x0));
                 }
@@ -10990,14 +8971,14 @@ var EJS = function (modules) {
                 _0xb9dfbf = _0x58afec['checked'],
                 _0x4f957f = void 0x0 !== _0xb9dfbf && _0xb9dfbf,
                 _0x4d8f4c = _0x4d33e3(this['config']['selectors']['inputs'][_0x5e9f2b]),
-                _0x151f44 = _0xf5893f('button', _0x288469(_0x4d8f4c, {
+                _0x151f44 = createElm('button', _0x288469(_0x4d8f4c, {
                     'type': 'button',
                     'role': 'menuitemradio',
                     'class': '' ['concat'](this['config']['classNames']['control'], ' ')['concat'](_0x4d8f4c['class'] ? _0x4d8f4c['class'] : '')['trim'](),
                     'aria-checked': _0x4f957f,
                     'value': _0x530751
                 })),
-                _0x368d75 = _0xf5893f('span');
+                _0x368d75 = createElm('span');
             _0x368d75.innerHTML = T.getLang(_0x5a91d6), I.elm(_0x9dc0cf) && _0x368d75['appendChild'](_0x9dc0cf), _0x151f44['appendChild'](_0x368d75), Object['defineProperty'](_0x151f44, 'checked', {
                 'enumerable': !0x0,
                 'get': function () {
@@ -11007,7 +8988,7 @@ var EJS = function (modules) {
                 'set': function (_0xcf9b2d) {
 
                     _0xcf9b2d && Array['from'](_0x151f44['parentNode']['children'])['filter'](function (_0x145fb3) {
-                        return _0x2cc473(_0x145fb3, '[role=\x22menuitemradio\x22]');
+                        return elmInNodeList(_0x145fb3, '[role="menuitemradio"]');
                     })['forEach'](function (_0x18304d) {
 
                         return _0x18304d['setAttribute']('aria-checked', 'false');
@@ -11017,7 +8998,7 @@ var EJS = function (modules) {
             var _0x448afd = ejs_data['getCoreOptions']['call'](this);
             this['listeners']['bind'](_0x151f44, 'click keyup', function (_0x1010f9) {
 
-                TypeCheck['keyboardEvent'](_0x1010f9) && 0x20 !== _0x1010f9['which'] || (_0x1010f9['preventDefault'](), _0x1010f9['stopPropagation'](), _0x151f44['checked'] = !0x0, Object['keys'](ejs_data['normalOptions'])['includes'](_0x5e9f2b) && ejs_data['updateNormalOptions']['call'](_0x5df23e, _0x5e9f2b, _0x530751), Object['keys'](_0x448afd)['includes'](_0x5e9f2b) && (_0x448afd[_0x5e9f2b]['netplay'] && ejs_Controller['connected'] ? ejs_Controller['connection']['isInitiator'] && ejs_data['updateCoreOptions']['call'](_0x5df23e, _0x5e9f2b, _0x530751) : ejs_data['updateCoreOptions']['call'](_0x5df23e, _0x5e9f2b, _0x530751)), ejs_data['showMenuPanel']['call'](_0x5df23e, 'home', TypeCheck['keyboardEvent'](_0x1010f9)));
+                I.keyevt(_0x1010f9) && 0x20 !== _0x1010f9['which'] || (_0x1010f9['preventDefault'](), _0x1010f9['stopPropagation'](), _0x151f44['checked'] = !0x0, Object['keys'](ejs_data['normalOptions'])['includes'](_0x5e9f2b) && ejs_data['updateNormalOptions']['call'](_0x5df23e, _0x5e9f2b, _0x530751), Object['keys'](_0x448afd)['includes'](_0x5e9f2b) && (_0x448afd[_0x5e9f2b]['netplay'] && ejs_Controller['connected'] ? ejs_Controller['connection']['isInitiator'] && ejs_data['updateCoreOptions']['call'](_0x5df23e, _0x5e9f2b, _0x530751) : ejs_data['updateCoreOptions']['call'](_0x5df23e, _0x5e9f2b, _0x530751)), ejs_data['showMenuPanel']['call'](_0x5df23e, 'home', I.keyevt(_0x1010f9)));
             }, _0x5e9f2b, !0x1), ejs_data['bindMenuItemShortcuts']['call'](this, _0x151f44, _0x5e9f2b), _0x4eba24['appendChild'](_0x151f44);
         },
         'updateVolume': function () {
@@ -11029,13 +9010,13 @@ var EJS = function (modules) {
             I.elm(_0x21ac17) && (_0x21ac17['value'] = _0x16122e, ejs_data['updateRangeFill']['call'](this, _0x21ac17));
         },
         'updateRangeFill': function (_0x4a08d7) {
-            var _0x5d0873 = TypeCheck['event'](_0x4a08d7) ? _0x4a08d7['target'] : _0x4a08d7;
+            var _0x5d0873 = I.evt(_0x4a08d7) ? _0x4a08d7['target'] : _0x4a08d7;
             if (I.elm(_0x5d0873) && 'range' === _0x5d0873['getAttribute']('type')) {
-                if (_0x2cc473(_0x5d0873, this['config']['selectors']['inputs']['volume'])) {
+                if (elmInNodeList(_0x5d0873, this['config']['selectors']['inputs']['volume'])) {
                     var _0xd7af80 = 0x64 * _0x5d0873['value'];
                     _0x5d0873['setAttribute']('aria-valuenow', _0xd7af80), _0x5d0873['setAttribute']('aria-valuetext', '' ['concat'](_0xd7af80['toFixed'](0x1), '%'));
                 } else _0x5d0873['setAttribute']('aria-valuenow', _0x5d0873['value']);
-                _0x31055e['isWebkit'] && _0x5d0873['style']['setProperty']('--value', '' ['concat'](_0x5d0873['value'] / _0x5d0873['max'] * 0x64, '%'));
+                ejs_Browser['isWebkit'] && _0x5d0873['style']['setProperty']('--value', '' ['concat'](_0x5d0873['value'] / _0x5d0873['max'] * 0x64, '%'));
             }
         },
         'toggleMenuButton': function (_0x5dbc75, _0x56b5f5) {
@@ -11071,8 +9052,8 @@ var EJS = function (modules) {
 
                     ejs_Controller['setVariable'](_0x4b7720, _0x1a8f4f);
                 }, 0x32), 'nds' === this['system'] && EnvVariable['wasm']) {
-                var _0x41add3 = this['elements']['wrapper']['querySelector']('canvas');
-                if ('screen_rotation' === _0x4b7720) switch (_0x41add3['style']['transform'] = 'rotate(' + _0x1a8f4f + 'deg)', _0x1a8f4f) {
+                var ElmCanvas = this['elements']['wrapper']['querySelector']('canvas');
+                if ('screen_rotation' === _0x4b7720) switch (ElmCanvas['style']['transform'] = 'rotate(' + _0x1a8f4f + 'deg)', _0x1a8f4f) {
                     case '0':
                         ejs_Controller['setVariable']('desmume_input_rotation', '0');
                         break;
@@ -11087,8 +9068,8 @@ var EJS = function (modules) {
                 }
             }
             if ('arcade' === this['system'] || 'fba0.2.97.29' === this['system']) {
-                var _0x375899 = this['elements']['wrapper']['querySelector']('canvas');
-                _0x375899['height'] = 'fba-aspect' === _0x4b7720 && 'PAR' === _0x1a8f4f ? _0x375899['width'] / 0x10 * 0x9 : _0x375899['width'] / 0x4 * 0x3;
+                var ElmCanvas = this['elements']['wrapper']['querySelector']('canvas');
+                ElmCanvas['height'] = 'fba-aspect' === _0x4b7720 && 'PAR' === _0x1a8f4f ? ElmCanvas['width'] / 0x10 * 0x9 : ElmCanvas['width'] / 0x4 * 0x3;
             }
             var _0xd1a01e = ejs_data['getCoreOptions']['call'](this),
                 _0x39266e = ejs_data['storage']['get']('core-options');
@@ -11096,16 +9077,16 @@ var EJS = function (modules) {
                     'core-options': _0x39266e
                 }), this['elements']['settings']['buttons'][_0x4b7720]) {
                 var _0x56b29f = this['elements']['settings']['buttons'][_0x4b7720]['querySelector']('.' ['concat'](this['config']['classNames']['menu']['value']));
-                TypeCheck['object'](_0xd1a01e[_0x4b7720]['options']) ? _0x56b29f.innerHTML = _0xd1a01e[_0x4b7720]['options'][_0x1a8f4f] : _0x56b29f.innerHTML = _0x1a8f4f;
+                _0x56b29f.innerHTML = T.getLang(I.obj(_0xd1a01e[_0x4b7720]['options']) ? _0xd1a01e[_0x4b7720]['options'][_0x1a8f4f] : _0x1a8f4f);
             }
         },
         'setOptionMenuItem': function (_0x22245a, _0x314866) {
             var _0x418a98 = this,
-                _0x435f7d = this['elements']['settings']['panels']['home']['querySelector']('[role=\x22menu\x22]'),
+                _0x435f7d = this['elements']['settings']['panels']['home']['querySelector']('[role="menu"]'),
                 _0x1295a7 = this['elements']['settings']['popup']['children'][0x0];
             Object['keys'](_0x22245a)['forEach'](function (_0x519e7b) {
                 var _0x36ca42 = _0x519e7b,
-                    _0x4a6dab = _0xf5893f('button', _0x288469(_0x4d33e3(_0x418a98['config']['selectors']['buttons']['settings']), {
+                    _0x4a6dab = createElm('button', _0x288469(_0x4d33e3(_0x418a98['config']['selectors']['buttons']['settings']), {
                         'type': 'button',
                         'class': getClassName({
                             'ejs__control': !0x0,
@@ -11119,45 +9100,47 @@ var EJS = function (modules) {
 
                     ejs_data['showMenuPanel']['call'](_0x418a98, _0x36ca42, !0x1);
                 });
-                var _0x297e7a, _0x31ed55 = _0xf5893f('span', null, T.getLang(_0x22245a[_0x519e7b]['label'])),
-                    _0x3e234f = _0xf5893f('span', {
+                var _0x297e7a, _0x31ed55 = createElm('span', null, T.getLang(_0x22245a[_0x519e7b]['label'])),
+                    _0x3e234f = createElm('span', {
                         'class': _0x418a98['config']['classNames']['menu']['value']
                     });
-                TypeCheck['object'](_0x314866) && (_0x297e7a = _0x314866[_0x36ca42]);
+                I.obj(_0x314866) && (_0x297e7a = _0x314866[_0x36ca42]);
                 I.empty(_0x297e7a) && (_0x297e7a = _0x22245a[_0x36ca42]['default']);
 
-                TypeCheck['object'](_0x22245a[_0x36ca42]['options']) ? _0x3e234f.innerHTML = T.getLang(_0x22245a[_0x36ca42]['options'][_0x297e7a]) : _0x3e234f.innerHTML = T.getLang(_0x297e7a), _0x31ed55['appendChild'](_0x3e234f), _0x4a6dab['appendChild'](_0x31ed55), _0x435f7d['appendChild'](_0x4a6dab);
-                var _0x59afee = _0xf5893f('div', {
+                I.obj(_0x22245a[_0x36ca42]['options']) ? _0x3e234f.innerHTML = T.getLang(_0x22245a[_0x36ca42]['options'][_0x297e7a]) : _0x3e234f.innerHTML = T.getLang(_0x297e7a), _0x31ed55['appendChild'](_0x3e234f), _0x4a6dab['appendChild'](_0x31ed55), _0x435f7d['appendChild'](_0x4a6dab);
+                var _0x59afee = createElm('div', {
                         'data-pane': escape(_0x36ca42),
                         'hidden': ''
                     }),
-                    _0x24ad2f = _0xf5893f('button', {
+                    _0x24ad2f = createElm('button', {
                         'type': 'button',
                         'class': getClassName({
                             'ejs__control': !0x0,
                             'ejs__control--back': !0x0
                         })
                     });
-                _0x24ad2f['appendChild'](_0xf5893f('span', {
+                _0x24ad2f['appendChild'](createElm('span', {
                     'aria-hidden': !0x0
-                }, T.getLang(_0x22245a[_0x519e7b]['label']))), _0x24ad2f['appendChild'](_0xf5893f('span', {
+                }, T.getLang(_0x22245a[_0x519e7b]['label'])));
+                _0x24ad2f['appendChild'](createElm('span', {
                     'class': getClassName('ejs__sr-only')
-                },T.getLang('Go back to previous menu'))), addEvent(_0x59afee, 'keydown', function (_0x545bab) {
+                }, _0x418a98.Geti18n('menuBack')));
+                addEvent(_0x59afee, 'keydown', function (_0x545bab) {
 
                     0x25 === _0x545bab['which'] && (_0x545bab['preventDefault'](), _0x545bab['stopPropagation'](), ejs_data['showMenuPanel']['call'](_0x418a98, 'home', !0x0));
                 }, !0x1), addEvent(_0x24ad2f, 'click', function () {
 
                     ejs_data['showMenuPanel']['call'](_0x418a98, 'home', !0x1);
-                }), _0x59afee['appendChild'](_0x24ad2f), _0x59afee['appendChild'](_0xf5893f('div', {
+                }), _0x59afee['appendChild'](_0x24ad2f), _0x59afee['appendChild'](createElm('div', {
                     'role': 'menu'
                 })), _0x1295a7['appendChild'](_0x59afee), _0x418a98['elements']['settings']['buttons'][_0x36ca42] = _0x4a6dab, _0x418a98['elements']['settings']['panels'][_0x36ca42] = _0x59afee;
-                var _0x171571 = _0x59afee['querySelector']('[role=\x22menu\x22]');
+                var _0x171571 = _0x59afee['querySelector']('[role="menu"]');
                 ! function (_0x9e4960) {
 
                     if (I.elm(_0x9e4960)) {
                         for (var _0x2c9689 = _0x9e4960['childNodes']['length']; _0x2c9689 > 0x0;) _0x9e4960['removeChild'](_0x9e4960['lastChild']), _0x2c9689 -= 0x1;
                     }
-                }(_0x171571), TypeCheck['object'](_0x22245a[_0x519e7b]['options']) ? Object['keys'](_0x22245a[_0x519e7b]['options'])['forEach'](function (_0x3c75dc) {
+                }(_0x171571), I.obj(_0x22245a[_0x519e7b]['options']) ? Object['keys'](_0x22245a[_0x519e7b]['options'])['forEach'](function (_0x3c75dc) {
 
                     ejs_data['createMenuItem']['call'](_0x418a98, {
                         'value': _0x3c75dc,
@@ -11167,12 +9150,12 @@ var EJS = function (modules) {
                         'badge': null,
                         'checked': Boolean(_0x297e7a === _0x3c75dc)
                     });
-                }) : TypeCheck['array'](_0x22245a[_0x519e7b]['options']) && _0x22245a[_0x519e7b]['options']['forEach'](function (_0x3bd564) {
+                }) : I.array(_0x22245a[_0x519e7b]['options']) && _0x22245a[_0x519e7b]['options']['forEach'](function (_0x3bd564) {
                     ejs_data['createMenuItem']['call'](_0x418a98, {
                         'value': _0x3bd564,
                         'list': _0x171571,
                         'type': _0x36ca42,
-                        'title':_0x3bd564,
+                        'title': _0x3bd564,
                         'badge': null,
                         'checked': Boolean(_0x297e7a === _0x3bd564)
                     });
@@ -11189,7 +9172,7 @@ var EJS = function (modules) {
             })) : delete ejs_data['normalOptions']['virtual-gamepad'], ejs_data['setOptionMenuItem']['call'](this, ejs_data['normalOptions'], _0x46fcad), addEvent['call'](_0x4f935, _0x4f935['elements']['container'], 'start-game', function () {
                 var _0x520627 = _0xcb1456,
                     _0x1b89fe = {};
-                (ejs_loader['coreOptions'] && Array['isArray'](ejs_loader['coreOptions']) && ejs_loader['coreOptions']['forEach'](function (_0x2bf902, _0x2bb17d) {
+                (ejs_loader['coreOptions'] && I.array(ejs_loader['coreOptions']) && ejs_loader['coreOptions']['forEach'](function (_0x2bf902, _0x2bb17d) {
                     var _0x5393be = _0x2bf902['key'];
                     _0x1b89fe[_0x5393be] = {
                         'label': _0x2bf902['label'],
@@ -11221,19 +9204,19 @@ var EJS = function (modules) {
             });
         },
         'updateCoreOptionMenuItems': function () {
-            var _0x2365e6 = this['elements']['settings']['panels']['home']['querySelector']('[role=\x22menu\x22]'),
+            var _0x2365e6 = this['elements']['settings']['panels']['home']['querySelector']('[role="menu"]'),
                 _0x17e7d2 = ejs_data['getCoreOptions']['call'](this);
             ejs_Controller['connected'] ? Object['keys'](_0x17e7d2)['forEach'](function (_0x2cc61f) {
 
-                _0x17e7d2[_0x2cc61f]['netplay'] && _0x2365e6['querySelector']('[item=\x22' ['concat'](_0x2cc61f, '\x22]'))['setAttribute']('disabled', '');
+                _0x17e7d2[_0x2cc61f]['netplay'] && _0x2365e6['querySelector']('[item="' ['concat'](_0x2cc61f, '"]'))['setAttribute']('disabled', '');
             }) : Object['keys'](_0x17e7d2)['forEach'](function (_0x47baa7) {
 
-                _0x2365e6['querySelector']('[item=\x22' ['concat'](_0x47baa7, '\x22]'))['removeAttribute']('disabled');
+                _0x2365e6['querySelector']('[item="' ['concat'](_0x47baa7, '"]'))['removeAttribute']('disabled');
             });
         },
         'setCoreOptionsMenu': function () {
 
-            this['elements']['settings']['panels']['home']['querySelector']('[role=\x22menu\x22]'), this['elements']['settings']['popup']['children'][0x0];
+            this['elements']['settings']['panels']['home']['querySelector']('[role="menu"]'), this['elements']['settings']['popup']['children'][0x0];
             var _0x2fc262 = ejs_data['getCoreOptions']['call'](this),
                 _0x302e88 = ejs_data['storage']['get']('core-options');
             ejs_data['coreOptionsValues'] = _0x302e88 || {}, ejs_data['setOptionMenuItem']['call'](this, _0x2fc262, _0x302e88);
@@ -11253,7 +9236,7 @@ var EJS = function (modules) {
 
                     return !_0x1b8186['hidden'];
                 }));
-                var _0x745b86 = _0x59f825['querySelector']('[role^=\x22menuitem\x22]');
+                var _0x745b86 = _0x59f825['querySelector']('[role^="menuitem"]');
                 _0x348ac8['call'](this, _0x745b86, _0x3a797a);
             }
         },
@@ -11263,17 +9246,17 @@ var EJS = function (modules) {
             if (I.elm(_0xb62574) && I.elm(_0x16e370)) {
                 var _0x5dfeb3 = _0xb62574['hidden'],
                     _0x58020e = _0x5dfeb3;
-                if (TypeCheck['boolean'](_0x4670aa)) _0x58020e = _0x4670aa;
+                if (I.bool(_0x4670aa)) _0x58020e = _0x4670aa;
                 else {
-                    if (TypeCheck['keyboardEvent'](_0x4670aa) && 0x1b === _0x4670aa['which']) _0x58020e = !0x1;
+                    if (I.keyevt(_0x4670aa) && 0x1b === _0x4670aa['which']) _0x58020e = !0x1;
                     else {
-                        if (TypeCheck['event'](_0x4670aa)) {
+                        if (I.evt(_0x4670aa)) {
                             var _0x465fbd = _0xb62574['contains'](_0x4670aa['target']);
                             if (_0x465fbd || !_0x465fbd && _0x4670aa['target'] !== _0x16e370 && _0x58020e) return;
                         }
                     }
                 }
-                _0x16e370['setAttribute']('aria-expanded', _0x58020e), toggleHidden(_0xb62574, !_0x58020e), _0x279293(this['elements']['container'], this['config']['classNames']['menu'].open, _0x58020e), _0x58020e && TypeCheck['keyboardEvent'](_0x4670aa) ? ejs_data['focusFirstMenuItem']['call'](this, null, !0x0) : _0x58020e || _0x5dfeb3 || _0x348ac8['call'](this, _0x16e370, TypeCheck['keyboardEvent'](_0x4670aa));
+                _0x16e370['setAttribute']('aria-expanded', _0x58020e), toggleHidden(_0xb62574, !_0x58020e), elmAddRemoveClass(this['elements']['container'], this['config']['classNames']['menu'].open, _0x58020e), _0x58020e && I.keyevt(_0x4670aa) ? ejs_data['focusFirstMenuItem']['call'](this, null, !0x0) : _0x58020e || _0x5dfeb3 || _0x348ac8['call'](this, _0x16e370, I.keyevt(_0x4670aa));
             }
         },
         'getMenuSize': function (_0x530c62) {
@@ -11288,10 +9271,10 @@ var EJS = function (modules) {
         },
         'showLoadStatePanel': function () {},
         'showMenuPanel': function () {
-            var E = this;
+            const E = this;
             var _0x13ade1 = arguments['length'] > 0x0 && void 0x0 !== arguments[0x0] ? arguments[0x0] : '',
                 _0x910569 = arguments['length'] > 0x1 && void 0x0 !== arguments[0x1] && arguments[0x1],
-                _0x3f0a37 = E.Selector('[data-pane=\x22' ['concat'](escape(_0x13ade1), '\x22]'));
+                _0x3f0a37 = E['Selector']('[data-pane="' ['concat'](escape(_0x13ade1), '"]'));
             if (I.elm(_0x3f0a37)) {
                 var _0x52d4a9 = _0x3f0a37['parentNode'],
                     _0x7d8432 = Array['from'](_0x52d4a9['children'])['find'](function (_0x49bcb6) {
@@ -11305,7 +9288,7 @@ var EJS = function (modules) {
 
                             _0x11e6bf['target'] === _0x52d4a9 && ['width', 'height']['includes'](_0x11e6bf['propertyName']) && (_0x52d4a9['style']['width'] = '', _0x52d4a9['style']['height'] = '', saveEvent['call'](E, _0x52d4a9, _0x2c3eed, _0x56bc49));
                         };
-                    addEvent['call'](E, _0x52d4a9, _0x2c3eed, _0x17ca9d), _0x52d4a9['style']['width'] = '' ['concat'](_0x27df62['width'], 'px'), _0x52d4a9['style']['height'] = '' ['concat'](_0x27df62['height'], 'px');
+                    E['addEvent'](_0x52d4a9, _0x2c3eed, _0x17ca9d), _0x52d4a9['style']['width'] = '' ['concat'](_0x27df62['width'], 'px'), _0x52d4a9['style']['height'] = '' ['concat'](_0x27df62['height'], 'px');
                 }
                 toggleHidden(_0x7d8432, !0x0), toggleHidden(_0x3f0a37, !0x1), ejs_data['focusFirstMenuItem']['call'](E, _0x3f0a37, _0x910569);
             }
@@ -11316,29 +9299,29 @@ var EJS = function (modules) {
                 'aria-haspopup': !0x0,
                 'aria-expanded': !0x1
             }));
-            var _0x578616 = _0xf5893f('div', {
+            var _0x578616 = createElm('div', {
                     'class': getClassName({
                         'ejs__dialog': !0x0,
                         'ejs__load-state__container': !0x0
                     }),
                     'hidden': ''
                 }),
-                _0x266c9a = _0xf5893f('div');
-            _0x578616['appendChild'](_0x266c9a), ContainerSelector['call'](this, '.' ['concat'](getClassName('ejs__dialogs')))['appendChild'](_0x578616), this['elements']['dialogs']['loadState'] = _0x578616;
+                _0x266c9a = createElm('div');
+            _0x578616['appendChild'](_0x266c9a), this.Selector('.' ['concat'](getClassName('ejs__dialogs')))['appendChild'](_0x578616), this['elements']['dialogs']['loadState'] = _0x578616;
         },
         'setDisk': function (_0x13c7f3, _0x1030c8) {
-            var _0x5dcb38 = _0xf5893f('div', {
+            var _0x5dcb38 = createElm('div', {
                 'class': getClassName('ejs__disk')
             });
             _0x5dcb38['appendChild'](ejs_data['createButton']['call'](this, 'disk', {
                 'aria-haspopup': !0x0,
                 'aria-expanded': !0x1
             }));
-            var _0x29d526 = _0xf5893f('div', {
+            var _0x29d526 = createElm('div', {
                     'class': getClassName('ejs__disk__container'),
                     'hidden': ''
                 }),
-                _0x194874 = _0xf5893f('div');
+                _0x194874 = createElm('div');
             _0x29d526['appendChild'](_0x194874), _0x5dcb38['appendChild'](_0x29d526), _0x13c7f3['appendChild'](_0x5dcb38);
         },
         'setGamepad': function (_0x1004e1, _0x463ef2) {
@@ -11347,114 +9330,109 @@ var EJS = function (modules) {
                 'aria-expanded': !0x1
             });
             _0x1004e1['appendChild'](_0x3dd6b3);
-            var _0x10864b = _0xf5893f('div', {
+            var _0x10864b = createElm('div', {
                     'class': getClassName({
                         'ejs__dialog': !0x0,
                         'ejs__gamepad__container': !0x0
                     }),
                     'hidden': ''
                 }),
-                _0x2b7c43 = _0xf5893f('div');
-            _0x10864b['appendChild'](_0x2b7c43), ContainerSelector['call'](this, '.' ['concat'](getClassName('ejs__dialogs')))['appendChild'](_0x10864b), this['elements']['dialogs']['gamepad'] = _0x10864b;
+                _0x2b7c43 = createElm('div');
+            _0x10864b['appendChild'](_0x2b7c43), this.Selector('.' ['concat'](getClassName('ejs__dialogs')))['appendChild'](_0x10864b), this['elements']['dialogs']['gamepad'] = _0x10864b;
         },
         'setCheat': function (_0x291c51, _0x1b2e92) {
-            var _0x4c2fd6 = ejs_data['createButton']['call'](this, 'cheat', {
+            var ElmBtnCheat = ejs_data['createButton']['call'](this, 'cheat', {
                 'aria-haspopup': !0x0,
                 'aria-expanded': !0x1
             });
-            _0x291c51['appendChild'](_0x4c2fd6);
-            var _0x15ed27 = _0xf5893f('div', {
+            _0x291c51['appendChild'](ElmBtnCheat);
+            var _0x15ed27 = createElm('div', {
                     'class': getClassName({
                         'ejs__dialog': !0x0,
                         'ejs__cheat__container': !0x0
                     }),
                     'hidden': ''
                 }),
-                _0x45b466 = _0xf5893f('div');
-            _0x15ed27['appendChild'](_0x45b466), ContainerSelector['call'](this, '.' ['concat'](getClassName('ejs__dialogs')))['appendChild'](_0x15ed27), this['elements']['dialogs']['cheat'] = _0x15ed27;
+                _0x45b466 = createElm('div');
+            _0x15ed27['appendChild'](_0x45b466);
+            this.Selector('.' ['concat'](getClassName('ejs__dialogs')))['appendChild'](_0x15ed27);
+            this['elements']['dialogs']['cheat'] = _0x15ed27;
         },
         'setNetplayWidgets': function () {
-            var _0x5d028c = _0xf5893f('div', {
+            var ElmNetPlayStatus = createElm('div', {
                     'class': getClassName({
                         'ejs__widget': !0x0,
                         'ejs__widget_netplay': !0x0
                     })
                 }),
-                _0xd97053 = _0xf5893f('div');
-            _0x5d028c['appendChild'](_0xd97053), ContainerSelector['call'](this, '.' ['concat'](getClassName('ejs__widgets')))['appendChild'](_0x5d028c), this['elements']['widgets']['netplay'] = _0x5d028c;
+                _0xd97053 = createElm('div');
+            ElmNetPlayStatus['appendChild'](_0xd97053);
+            this.Selector(getClassName('ejs__widgets', !0))['appendChild'](ElmNetPlayStatus);
+            this['elements']['widgets']['netplay'] = ElmNetPlayStatus;
         },
         'setControllToggleWidgets': function () {
-            var E = this,_0x49c9a2 = _0xf5893f('div', {
+            const E = this;
+            var
+                _0x49c9a2 = createElm('div', {
                     'class': getClassName({
                         'ejs__widget': !0x0,
                         'ejs__widget_controls_toggle': !0x0
                     })
-                }, '<svg stroke-width=\x221.5\x22 viewBox=\x220 0 24 24\x22 fill=\x22none\x22 xmlns=\x22http://www.w3.org/2000/svg\x22><path d=\x22M3 5H21\x22 stroke=\x22currentColor\x22 stroke-linecap=\x22round\x22 stroke-linejoin=\x22round\x22/><path d=\x22M3 12H21\x22 stroke=\x22currentColor\x22 stroke-linecap=\x22round\x22 stroke-linejoin=\x22round\x22/><path d=\x22M3 19H21\x22 stroke=\x22currentColor\x22 stroke-linecap=\x22round\x22 stroke-linejoin=\x22round\x22/></svg>'),
-                _0x168c70 = _0xf5893f('div');
-            _0x49c9a2['appendChild'](_0x168c70), ContainerSelector['call'](this, '.' ['concat'](getClassName('ejs__widgets')))['appendChild'](_0x49c9a2), this['elements']['widgets']['controlToggle'] = _0x49c9a2, addEvent(this['elements']['container'], 'click touchstart', function (_0x391cad) {
+                }, getSvgIcon('ctrltoggle')),
+                _0x168c70 = createElm('div');
+            _0x49c9a2['appendChild'](_0x168c70), this.Selector('.' ['concat'](getClassName('ejs__widgets')))['appendChild'](_0x49c9a2), this['elements']['widgets']['controlToggle'] = _0x49c9a2, addEvent(this['elements']['container'], 'click touchstart', function (_0x391cad) {
 
                 if (!E['started']) return !0x1;
-                E['elements']['controls']['contains'](_0x391cad['target']) || _0x49c9a2['contains'](_0x391cad['target']) || (toggleHidden(E['elements']['controls']['querySelector'](getClassName('ejs__menu__container',1)), !0x0), E.callaction('toggleControls', !0x1), E['elements']['controls']['classList']['toggle'](getClassName('ejs__controls_show'), !0x1));
+                E['elements']['controls']['contains'](_0x391cad['target']) || _0x49c9a2['contains'](_0x391cad['target']) || (toggleHidden(E['elements']['controls']['querySelector'](getClassName('ejs__menu__container', 1)), !0x0), E['callaction']('toggleControls', !0x1), E['elements']['controls']['classList']['toggle'](getClassName('ejs__controls_show'), !0x1));
             }), addEvent(_0x49c9a2, 'click', function (_0x47d40c) {
 
                 E['elements']['controls']['classList']['toggle'](getClassName('ejs__controls_show')), _0x47d40c['stopPropagation']();
-            }), addEvent['call'](E, E['elements']['container'], 'start-game', function () {
-
-                console.log(9999);
-                ejs_loader['Module']['_event_load_save_files']&&ejs_loader['Module']['cwrap']('event_load_save_files', '', [])();
-                /*
-                ejs_Controller['saveSavFiles'] && ejs_Controller['saveSavFiles']();
-                var E['gameSaveExt'] = 'srm';
-                'nds' === E['system'] && (E['gameSaveExt'] = 'dsv'), ['melonds', 'zc210']['includes'](E['system']) && (E['gameSaveExt'] = 'sav');
-                var _0x11e6e8 = E['startName']['split']('/')['pop']()['split']('.'),
-                    E['gameName'] = _0x11e6e8['slice'](0x0, _0x11e6e8['length'] - 0x1)['join']('.');
-                if (!ejs_loader.FS.analyzePath('/data/saves/' ['concat'](E['savepath'], '/')['concat'](E['gameName'], '.')['concat'](E['gameSaveExt'])).exists) return !0x1;
-                if (ejs_loader.FS.analyzePath('/data/saves/' ['concat'](E['gameName'], '.')['concat'](E['gameSaveExt'])).exists) {
-                    console.log(555);
-                    ejs_loader.FS['writeFile']('/data/saves/' ['concat'](E['savepath'], '/')['concat'](E['gameName'], '.')['concat'](E['gameSaveExt']), ejs_loader.FS['readFile']('/data/saves/' ['concat'](E['gameName'], '.')['concat'](E['gameSaveExt'])));
-                    ejs_loader['Module']['_event_load_save_files']();
-                    ejs_loader.FS['unlink']('/data/saves/' ['concat'](E['gameName'], '.')['concat'](E['gameSaveExt']));
-                    ejs_loader.FS['syncfs'](function (_0x5da297) {})
-                }
-                */
-                var _0x1205b7 = _0xf5893f('div', {
+            }), E['addEvent'](E['elements']['container'], 'start-game', function () {
+                ejs_loader['Module']['_event_load_save_files'] && ejs_loader['Module']['cwrap']('event_load_save_files', '', [])();
+                var _0x1205b7 = createElm('div', {
                         'class': getClassName({
                             'ejs__widget': !0x0,
                             'ejs__widget_load_srm': !0x0
                         }),
                         'title': T.getLang('Import save file')
-                    }, '<svg stroke-width=\x221.5\x22 viewBox=\x220 0 24 24\x22 fill=\x22none\x22 xmlns=\x22http://www.w3.org/2000/svg\x22><path d=\x22M3 6.5V5C3 3.89543 3.89543 3 5 3H16.1716C16.702 3 17.2107 3.21071 17.5858 3.58579L20.4142 6.41421C20.7893 6.78929 21 7.29799 21 7.82843V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V17.5\x22 stroke=\x22currentColor\x22 stroke-linecap=\x22round\x22 stroke-linejoin=\x22round\x22/><path d=\x22M8 3H16V8.4C16 8.73137 15.7314 9 15.4 9H8.6C8.26863 9 8 8.73137 8 8.4V3Z\x22 stroke=\x22currentColor\x22 stroke-linecap=\x22round\x22 stroke-linejoin=\x22round\x22/><path d=\x22M18 21V13.6C18 13.2686 17.7314 13 17.4 13H15\x22 stroke=\x22currentColor\x22 stroke-linecap=\x22round\x22 stroke-linejoin=\x22round\x22/><path d=\x22M6 21V17.5\x22 stroke=\x22currentColor\x22 stroke-linecap=\x22round\x22 stroke-linejoin=\x22round\x22/><path d=\x22M12 12H1M1 12L4 9M1 12L4 15\x22 stroke=\x22currentColor\x22 stroke-linecap=\x22round\x22 stroke-linejoin=\x22round\x22/></svg>'),
-                    _0x26e7ee = _0xf5893f('div');
-                _0x1205b7['appendChild'](_0x26e7ee), ContainerSelector['call'](E, '.' ['concat'](getClassName('ejs__widgets')))['appendChild'](_0x1205b7);
-                var _0xcbba9a = null;
-                (_0xcbba9a = _0xf5893f('input'))['type'] = 'file', _0xcbba9a['onchange'] = function _0x33a5b6(_0x11db4a) {
-                    var _0x1069e1, _0x3ebca7 = _0x11db4a['target']['files'];
-                    _0x3ebca7['length'] > 0x0 && ((_0x1069e1 = new FileReader())['file_name'] = _0x3ebca7[0x0]['name'], _0x1069e1['onload'] = function () {
-                        var _0x501883 = new Uint8Array(_0x1069e1['result']);
-                        console.log(_0x501883);
-                        ejs_loader.FS['writeFile']('/data/saves/' ['concat'](E['savepath'], '/')['concat'](E['gameName'], '.')['concat'](E['gameSaveExt']), _0x501883);
-                        ejs_loader['Module']['_event_load_save_files']();
-                    }, _0x1069e1['readAsArrayBuffer'](_0x3ebca7[0x0])), (_0xcbba9a = _0xf5893f('input'))['type'] = 'file', _0xcbba9a['onchange'] = _0x33a5b6, _0xcbba9a['accept'] = '.srm,.sav,.dsv,.mcr', E['system']['includes'](['psx', 'psx-legacy']) && (_0xcbba9a['accept'] = '.srm,.mcr');
-                }, _0xcbba9a['accept'] = '.srm,.sav,.dsv,.mcr', E['system']['includes'](['psx', 'psx-legacy']) && (_0xcbba9a['accept'] = '.srm,.mcr'), addEvent(_0x1205b7, 'click', function (_0x3ea374) {
+                    }, getSvgIcon('loadsrm')),
+                    _0x26e7ee = createElm('div');
+                _0x1205b7['appendChild'](_0x26e7ee);
+                E['Selector']('.' ['concat'](getClassName('ejs__widgets')))['appendChild'](_0x1205b7);
+                addEvent(_0x1205b7, 'click', function (_0x3ea374) {
+                    E['callaction']('upload',
+                        async file => {
+                                DISK.MKFILE(E['gameSavePath'], new Uint8Array(await file.arrayBuffer()), 1);
+                                if (ejs_loader['Module']['_event_load_save_files']) {
+                                    ejs_loader['Module']['_event_load_save_files']();
+                                    ejs_Controller['restartGame']();
+                                } else {
+                                    location.reload();
+                                }
 
-                    _0xcbba9a['click'](), _0x3ea374['stopPropagation']();
+                            },
+                            null, {
+                                'accept': E['system']['includes'](['psx', 'psx-legacy']) ? '.srm,.mcr' : '.srm,.sav,.dsv,.mcr',
+                            })
+                    _0x3ea374['stopPropagation']();
                 });
-                var _0xa3c7ec = _0xf5893f('div', {
+                var _0xa3c7ec = createElm('div', {
                         'class': getClassName({
                             'ejs__widget': !0x0,
                             'ejs__widget_save_srm': !0x0
                         }),
                         'title': T.getLang('Export save file')
-                    }, '<svg stroke-width=\x221.5\x22 viewBox=\x220 0 24 24\x22 fill=\x22none\x22 xmlns=\x22http://www.w3.org/2000/svg\x22><path d=\x22M3 7.5V5C3 3.89543 3.89543 3 5 3H16.1716C16.702 3 17.2107 3.21071 17.5858 3.58579L20.4142 6.41421C20.7893 6.78929 21 7.29799 21 7.82843V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V16.5\x22 stroke=\x22currentColor\x22 stroke-linecap=\x22round\x22 stroke-linejoin=\x22round\x22/><path d=\x22M6 21V17\x22 stroke=\x22currentColor\x22 stroke-linecap=\x22round\x22 stroke-linejoin=\x22round\x22/><path d=\x22M18 21V13.6C18 13.2686 17.7314 13 17.4 13H15\x22 stroke=\x22currentColor\x22 stroke-linecap=\x22round\x22 stroke-linejoin=\x22round\x22/><path d=\x22M16 3V8.4C16 8.73137 15.7314 9 15.4 9H13.5\x22 stroke=\x22currentColor\x22 stroke-linecap=\x22round\x22 stroke-linejoin=\x22round\x22/><path d=\x22M8 3V6\x22 stroke=\x22currentColor\x22 stroke-linecap=\x22round\x22 stroke-linejoin=\x22round\x22/><path d=\x22M1 12H12M12 12L9 9M12 12L9 15\x22 stroke=\x22currentColor\x22 stroke-linecap=\x22round\x22 stroke-linejoin=\x22round\x22/></svg>'),
-                    _0xc5a39e = _0xf5893f('div');
-                _0xa3c7ec['appendChild'](_0xc5a39e), ContainerSelector['call'](E, '.' ['concat'](getClassName('ejs__widgets')))['appendChild'](_0xa3c7ec), addEvent(_0xa3c7ec, 'click', function (_0x54db54) {
-                    var _0x5cfabe = '/data/saves/' ['concat'](E['savepath'], '/')['concat'](E['gameName'], '.')['concat'](E['gameSaveExt']);
-                    '' != E['config']['savename'] && (_0x5cfabe = '/data/saves/' ['concat'](E['savepath'], '/')['concat'](E['config']['savename'], '.')['concat'](E['gameSaveExt']));
-                    try {
-                        var _0x42ffd5 = ejs_loader.FS['readFile'](_0x5cfabe);
-                        Object(_export_53['saveAs'])(new Blob([_0x42ffd5]), E['gameName'] + '.' + E['gameSaveExt']);
-                    } catch (_0x4647e7) {}
-                    _0x54db54['stopPropagation']();
+                    }, getSvgIcon('savesrm')),
+                    _0xc5a39e = createElm('div');
+                _0xa3c7ec['appendChild'](_0xc5a39e);
+                E['Selector']('.' ['concat'](getClassName('ejs__widgets')))['appendChild'](_0xa3c7ec);
+                addEvent(_0xa3c7ec, 'click', function (event) {
+                    //导出存档
+                    let savePath = '' != E['config']['savename'] ? E['savefullpath'] + '/' + E['config']['savename'] + '.' + E['gameSaveExt'] : E['gameSavePath'];
+                    if (ejs_loader.FS.analyzePath(savePath).exists) {
+                        T.down(E['gameName'] + '.' + E['gameSaveExt'], ejs_loader.FS.readFile(savePath));
+                    }
+                    event['stopPropagation']();
                 });
             });
         },
@@ -11464,25 +9442,25 @@ var EJS = function (modules) {
                 'aria-haspopup': !0x0,
                 'aria-expanded': !0x1
             }));
-            var _0x55fa34 = _0xf5893f('div', {
+            var _0x55fa34 = createElm('div', {
                     'class': getClassName({
                         'ejs__dialog': !0x0,
                         'ejs__netplay__container': !0x0
                     }),
                     'hidden': ''
                 }),
-                _0x62d0c3 = _0xf5893f('div');
-            _0x55fa34['appendChild'](_0x62d0c3), ContainerSelector['call'](this, '.' ['concat'](getClassName('ejs__dialogs')))['appendChild'](_0x55fa34), this['elements']['dialogs']['netplay'] = _0x55fa34, ejs_data['setNetplayWidgets']['call'](this);
+                _0x62d0c3 = createElm('div');
+            _0x55fa34['appendChild'](_0x62d0c3), this.Selector('.' ['concat'](getClassName('ejs__dialogs')))['appendChild'](_0x55fa34), this['elements']['dialogs']['netplay'] = _0x55fa34, ejs_data['setNetplayWidgets']['call'](this);
         },
         'toggleContextMenu': function (_0x3a3fae, _0x27db2a) {
 
-            if (_0xa225b4(_0x3a3fae['target'], getClassName('ejs__dialogs'))) {
+            if (hasClassName(_0x3a3fae['target'], getClassName('ejs__dialogs'))) {
                 var _0x2f93f6 = ejs_data['contextMenu']['timer'];
                 if (this['started']) {
-                    var _0x4a5044 = ContainerSelector['call'](this, '.' ['concat'](getClassName('ejs__contextmenu'), ' ul'));
+                    var _0x4a5044 = this.Selector('.' ['concat'](getClassName('ejs__contextmenu'), ' ul'));
                     if (_0x27db2a) {
                         ejs_data['contextMenu']['style']['display'] = 'block', ejs_data['contextMenu']['style']['left'] = '' ['concat'](_0x3a3fae['layerX'], 'px'), ejs_data['contextMenu']['style']['top'] = '' ['concat'](_0x3a3fae['layerY'], 'px');
-                        var _0x9ab66 = ContainerSelectorAll['call'](this, '.' ['concat'](getClassName('ejs__contextmenu'), ' ul li'));
+                        var _0x9ab66 = this.SelectorAll('.' ['concat'](getClassName('ejs__contextmenu'), ' ul li'));
                         if (Array['from'](_0x9ab66)['forEach'](function (_0x4129e7, _0x249f07) {}), null === _0x4a5044['getAttribute']('menu')) {
                             _0x4a5044['setAttribute']('menu', '');
                         }
@@ -11498,137 +9476,162 @@ var EJS = function (modules) {
                 _0x37ef1b['classList']['contains'](_0x4174e1) && _0xb102b % 0x2 == 0x0 ? _0x37ef1b['classList']['add'](getClassName('ejs__menu_right')) : _0x37ef1b['classList']['remove'](getClassName('ejs__menu_right'));
             });
         },
-        'create': function (_0x318c10) {
-
-            ejs_data['storage'] = new ejs_storage(this, 'ejs_' ['concat'](this['system'], '_settings'));
-            var _0x4240c5 = _0xf5893f('div', _0x4d33e3(this['config']['selectors']['controls']['wrapper']));
-            _0x4240c5['classList']['add'](getClassName('ejs__controls_show')), ejs_data['contextMenu'] = _0xf5893f('div', {
+        'create': function (objData) {
+            const E = this;
+            ejs_data['storage'] = new ejs_storage(E, 'ejs_' ['concat'](E['system'], '_settings'));
+            var ElmControls = createElm('div', _0x4d33e3(E['config']['selectors']['controls']['wrapper']));
+            ElmControls['classList']['add'](getClassName('ejs__controls_show'));
+            /**
+             * 右键菜单
+             */
+            ejs_data['contextMenu'] = createElm('div', {
                 'class': getClassName('ejs__contextmenu'),
                 'style': 'position: absolute; display:none;z-index:9'
-            }), ejs_data['contextMenu'].innerHTML = '<ul><li><a href=\x22#\x22 onclick=\x22return false\x22>Take Screenshot</a></li><li><a href=\x22#\x22 onclick=\x22return false\x22>Quick Save (F2)</a></li><li><a href=\x22#\x22 onclick=\x22return false\x22>Quick Load (F4)</a></li></ul>', this['elements']['container']['appendChild'](ejs_data['contextMenu']);
-            var _0x4d11af = _0xf5893f('div', {
+            });
+            ejs_data['contextMenu'].innerHTML = `<ul><li><a href="#" onclick="return false">${T.getLang('Take Screenshot')}</a></li><li><a href="#" onclick="return false">${T.getLang('Quick Save (F2)')}</a></li><li><a href="#" onclick="return false">${T.getLang('Quick Load (F4)')}</a></li></ul>`;
+            E['elements']['container']['appendChild'](ejs_data['contextMenu']);
+            var ElmCacheContainer = createElm('div', {
                 'class': getClassName({
                     'ejs__dialog': !0x0,
                     'ejs__cache__container': !0x0
                 }),
                 'hidden': ''
             });
-            ContainerSelector['call'](this, '.' ['concat'](getClassName('ejs__dialogs')))['appendChild'](_0x4d11af), this['elements']['dialogs']['cache'] = _0x4d11af;
-            var _0x44e6b3 = _0xf5893f('div', {
+            E.Selector('.' ['concat'](getClassName('ejs__dialogs')))['appendChild'](ElmCacheContainer);
+            E['elements']['dialogs']['cache'] = ElmCacheContainer;
+            var _0x44e6b3 = createElm('div', {
                 'class': getClassName({
                     'ejs__dialog': !0x0,
                     'ejs__loading__container': !0x0
                 }),
                 'hidden': ''
             });
-            ContainerSelector['call'](this, '.' ['concat'](getClassName('ejs__dialogs')))['appendChild'](_0x44e6b3), this['elements']['dialogs']['loading'] = _0x44e6b3, _0x4240c5['appendChild'](ejs_data['createButton']['call'](this, 'restart')), _0x4240c5['appendChild'](ejs_data['createButton']['call'](this, 'play')), _0x4240c5['appendChild'](ejs_data['createButton']['call'](this, 'save-state', {
+            E.Selector('.' ['concat'](getClassName('ejs__dialogs')))['appendChild'](_0x44e6b3);
+            E['elements']['dialogs']['loading'] = _0x44e6b3;
+            ElmControls['appendChild'](ejs_data['createButton']['call'](E, 'restart')); //重启按钮
+            ElmControls['appendChild'](ejs_data['createButton']['call'](E, 'play')); //暂停继续按钮
+            ElmControls['appendChild'](ejs_data['createButton']['call'](E, 'save-state', {
                 'aria-expanded': !0x1
-            })), ejs_data['setLoadState']['call'](this, _0x4240c5, _0x318c10), ejs_data['setDisk']['call'](this, _0x4240c5, _0x318c10), ejs_data['supportNetPlay']['call'](this, _0x4240c5), ejs_data['setNetplay']['call'](this, _0x4240c5, _0x318c10), ejs_data['setGamepad']['call'](this, _0x4240c5, _0x318c10), ejs_data['setCheat']['call'](this, _0x4240c5, _0x318c10);
-            var _0x1e3bbd = _0xf5893f('div', {
+            })); //即时存档按钮
+            ejs_data['setLoadState']['call'](E, ElmControls, objData);
+            ejs_data['setDisk']['call'](E, ElmControls, objData);
+            ejs_data['supportNetPlay']['call'](E, ElmControls);
+            ejs_data['setNetplay']['call'](E, ElmControls, objData);
+            ejs_data['setGamepad']['call'](E, ElmControls, objData);
+            ejs_data['setCheat']['call'](E, ElmControls, objData);
+            ElmControls['appendChild'](ejs_data['createButton']['call'](E, 'cache')); //缓存按钮
+            ElmControls['appendChild'](ejs_data['createButton']['call'](E, 'autosave')); //自动保存按钮
+            ElmControls['appendChild'](ejs_data['createButton']['call'](E, 'recorder')); //自动保存按钮
+            var ElmVolume = createElm('div', {
                 'class': getClassName('ejs__volume')
             });
-            _0x1e3bbd['appendChild'](ejs_data['createButton']['call'](this, 'mute'));
+            ElmVolume['appendChild'](ejs_data['createButton']['call'](E, 'mute'));
             var _0x5abc43 = {
                 'max': 0x1,
                 'step': 0.01,
-                'value': this['config']['volume']
+                'value': E['config']['volume']
             };
-            _0x1e3bbd['appendChild'](ejs_data['createRange']['call'](this, 'volume', _0x288469(_0x5abc43, {}))), this['elements']['volume'] = _0x1e3bbd, _0x4240c5['appendChild'](_0x1e3bbd);
-            var _0xf6ff12 = _0xf5893f('div', {
+            ElmVolume['appendChild'](ejs_data['createRange']['call'](E, 'volume', _0x288469(_0x5abc43, {})));
+            E['elements']['volume'] = ElmVolume, ElmControls['appendChild'](ElmVolume);
+            var ElmSetting = createElm('div', {
                 'class': getClassName('ejs__menu')
             });
-            _0xf6ff12['appendChild'](ejs_data['createButton']['call'](this, 'settings', {
+            ElmSetting['appendChild'](ejs_data['createButton']['call'](E, 'settings', {
                 'aria-haspopup': !0x0,
                 'aria-expanded': !0x1
             }));
-            var _0x3242cf = _0xf5893f('div', {
+            var _0x3242cf = createElm('div', {
                     'class': getClassName('ejs__menu__container'),
                     'hidden': ''
                 }),
-                _0x2000e1 = _0xf5893f('div'),
-                _0x1de3c4 = _0xf5893f('div', {
+                _0x2000e1 = createElm('div'),
+                _0x1de3c4 = createElm('div', {
                     'data-pane': 'home'
                 }),
-                _0x4ad0af = _0xf5893f('div', {
+                _0x4ad0af = createElm('div', {
                     'role': 'menu'
                 });
-            return _0x1de3c4['appendChild'](_0x4ad0af), _0x2000e1['appendChild'](_0x1de3c4), this['elements']['settings']['panels']['home'] = _0x1de3c4, _0x3242cf['appendChild'](_0x2000e1), _0xf6ff12['appendChild'](_0x3242cf), _0x4240c5['appendChild'](_0xf6ff12), this['elements']['settings']['popup'] = _0x3242cf, this['elements']['settings']['menu'] = _0xf6ff12, _0x4240c5['appendChild'](ejs_data['createButton']['call'](this, 'fullscreen')), this['elements']['controls'] = _0x4240c5, ejs_data['setNormalOptionsMenu']['call'](this), ejs_data['setCoreOptionsMenu']['call'](this), ejs_data['setControllToggleWidgets']['call'](this), _0x4240c5;
+            _0x1de3c4['appendChild'](_0x4ad0af);
+            _0x2000e1['appendChild'](_0x1de3c4);
+            E['elements']['settings']['panels']['home'] = _0x1de3c4, _0x3242cf['appendChild'](_0x2000e1);
+            ElmSetting['appendChild'](_0x3242cf);
+            ElmControls['appendChild'](ElmSetting);
+            E['elements']['settings']['popup'] = _0x3242cf;
+            E['elements']['settings']['menu'] = ElmSetting;
+            ElmControls['appendChild'](ejs_data['createButton']['call'](E, 'fullscreen'));
+            E['elements']['controls'] = ElmControls;
+            ejs_data['setNormalOptionsMenu']['call'](E);
+            ejs_data['setCoreOptionsMenu']['call'](E);
+            ejs_data['setControllToggleWidgets']['call'](E);
+            return ElmControls;
         },
         'inject': function () {
-            var _0x22bc71, _0x1d66ff = this;
-            this['icons'] = (_0x390a1c(_0x22bc71 = {
-                'enter-fullscreen': '<svg xmlns=\x22http://www.w3.org/2000/svg\x22 viewBox=\x220 0 512 512\x22><path d=\x22M208 281.4c-12.5-12.5-32.76-12.5-45.26-.002l-78.06 78.07l-30.06-30.06c-6.125-6.125-14.31-9.367-22.63-9.367c-4.125 0-8.279 .7891-12.25 2.43c-11.97 4.953-19.75 16.62-19.75 29.56v135.1C.0013 501.3 10.75 512 24 512h136c12.94 0 24.63-7.797 29.56-19.75c4.969-11.97 2.219-25.72-6.938-34.87l-30.06-30.06l78.06-78.07c12.5-12.49 12.5-32.75 .002-45.25L208 281.4zM487.1 0h-136c-12.94 0-24.63 7.797-29.56 19.75c-4.969 11.97-2.219 25.72 6.938 34.87l30.06 30.06l-78.06 78.07c-12.5 12.5-12.5 32.76 0 45.26l22.62 22.62c12.5 12.5 32.76 12.5 45.26 0l78.06-78.07l30.06 30.06c9.156 9.141 22.87 11.84 34.87 6.937C504.2 184.6 512 172.9 512 159.1V23.1C512 10.74 501.3 0 487.1 0z\x22/></svg>',
-                'exit-fullscreen': '<svg xmlns=\x22http://www.w3.org/2000/svg\x22 viewBox=\x220 0 512 512\x22><path d=\x22M215.1 272h-136c-12.94 0-24.63 7.797-29.56 19.75C45.47 303.7 48.22 317.5 57.37 326.6l30.06 30.06l-78.06 78.07c-12.5 12.5-12.5 32.75-.0012 45.25l22.62 22.62c12.5 12.5 32.76 12.5 45.26 .0013l78.06-78.07l30.06 30.06c6.125 6.125 14.31 9.367 22.63 9.367c4.125 0 8.279-.7891 12.25-2.43c11.97-4.953 19.75-16.62 19.75-29.56V296C239.1 282.7 229.3 272 215.1 272zM296 240h136c12.94 0 24.63-7.797 29.56-19.75c4.969-11.97 2.219-25.72-6.938-34.87l-30.06-30.06l78.06-78.07c12.5-12.5 12.5-32.76 .0002-45.26l-22.62-22.62c-12.5-12.5-32.76-12.5-45.26-.0003l-78.06 78.07l-30.06-30.06c-9.156-9.141-22.87-11.84-34.87-6.937c-11.97 4.953-19.75 16.62-19.75 29.56v135.1C272 229.3 282.7 240 296 240z\x22/></svg>',
-                'gamepad': '<svg viewBox=\x220 0 640 512\x22><path fill=\x22currentColor\x22 d=\x22M480 96H160C71.6 96 0 167.6 0 256s71.6 160 160 160c44.8 0 85.2-18.4 114.2-48h91.5c29 29.6 69.5 48 114.2 48 88.4 0 160-71.6 160-160S568.4 96 480 96zM256 276c0 6.6-5.4 12-12 12h-52v52c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-52H76c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h52v-52c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h52c6.6 0 12 5.4 12 12v40zm184 68c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm80-80c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48z\x22/></svg>',
-                'load-state': '<svg viewBox=\x220 0 576 512\x22><path fill=\x22currentColor\x22 d=\x22M572.694 292.093L500.27 416.248A63.997 63.997 0 0 1 444.989 448H45.025c-18.523 0-30.064-20.093-20.731-36.093l72.424-124.155A64 64 0 0 1 152 256h399.964c18.523 0 30.064 20.093 20.73 36.093zM152 224h328v-48c0-26.51-21.49-48-48-48H272l-64-64H48C21.49 64 0 85.49 0 112v278.046l69.077-118.418C86.214 242.25 117.989 224 152 224z\x22/></svg>',
-                'muted': '<svg xmlns=\x22http://www.w3.org/2000/svg\x22 viewBox=\x220 0 576 512\x22><path d=\x22M301.2 34.85c-11.5-5.188-25.02-3.122-34.44 5.253L131.8 160H48c-26.51 0-48 21.49-48 47.1v95.1c0 26.51 21.49 47.1 48 47.1h83.84l134.9 119.9c5.984 5.312 13.58 8.094 21.26 8.094c4.438 0 8.972-.9375 13.17-2.844c11.5-5.156 18.82-16.56 18.82-29.16V64C319.1 51.41 312.7 40 301.2 34.85zM513.9 255.1l47.03-47.03c9.375-9.375 9.375-24.56 0-33.94s-24.56-9.375-33.94 0L480 222.1L432.1 175c-9.375-9.375-24.56-9.375-33.94 0s-9.375 24.56 0 33.94l47.03 47.03l-47.03 47.03c-9.375 9.375-9.375 24.56 0 33.94c9.373 9.373 24.56 9.381 33.94 0L480 289.9l47.03 47.03c9.373 9.373 24.56 9.381 33.94 0c9.375-9.375 9.375-24.56 0-33.94L513.9 255.1z\x22/></svg>',
-                'netplay': '<svg viewBox=\x220 0 512 512\x22><path fill=\x22currentColor\x22 d=\x22M364.215 192h131.43c5.439 20.419 8.354 41.868 8.354 64s-2.915 43.581-8.354 64h-131.43c5.154-43.049 4.939-86.746 0-128zM185.214 352c10.678 53.68 33.173 112.514 70.125 151.992.221.001.44.008.661.008s.44-.008.661-.008c37.012-39.543 59.467-98.414 70.125-151.992H185.214zm174.13-192h125.385C452.802 84.024 384.128 27.305 300.95 12.075c30.238 43.12 48.821 96.332 58.394 147.925zm-27.35 32H180.006c-5.339 41.914-5.345 86.037 0 128h151.989c5.339-41.915 5.345-86.037-.001-128zM152.656 352H27.271c31.926 75.976 100.6 132.695 183.778 147.925-30.246-43.136-48.823-96.35-58.393-147.925zm206.688 0c-9.575 51.605-28.163 104.814-58.394 147.925 83.178-15.23 151.852-71.949 183.778-147.925H359.344zm-32.558-192c-10.678-53.68-33.174-112.514-70.125-151.992-.221 0-.44-.008-.661-.008s-.44.008-.661.008C218.327 47.551 195.872 106.422 185.214 160h141.572zM16.355 192C10.915 212.419 8 233.868 8 256s2.915 43.581 8.355 64h131.43c-4.939-41.254-5.154-84.951 0-128H16.355z' + ('m136.301-32c9.575-51.602 28.161-104.81 58.394-147.925C127.872 27.305 59.198 84.024 27.271 160h125.385z\x22/></svg>'),
-                'pause': '<path d=\x22M6 1H3c-.6 0-1 .4-1 1v14c0 .6.4 1 1 1h3c.6 0 1-.4 1-1V2c0-.6-.4-1-1-1zM12 1c-.6 0-1 .4-1 1v14c0 .6.4 1 1 1h3c.6 0 1-.4 1-1V2c0-.6-.4-1-1-1h-3z\x22/>'
-            }, 'pause', '<svg viewBox=\x220 0 320 512\x22><path d=\x22M272 63.1l-32 0c-26.51 0-48 21.49-48 47.1v288c0 26.51 21.49 48 48 48L272 448c26.51 0 48-21.49 48-48v-288C320 85.49 298.5 63.1 272 63.1zM80 63.1l-32 0c-26.51 0-48 21.49-48 48v288C0 426.5 21.49 448 48 448l32 0c26.51 0 48-21.49 48-48v-288C128 85.49 106.5 63.1 80 63.1z\x22/></svg>'), _0x390a1c(_0x22bc71, 'play', '<svg viewBox=\x220 0 320 512\x22><path d=\x22M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z\x22/></svg>'), _0x390a1c(_0x22bc71, 'restart', '<svg viewBox=\x220 0 512 512\x22><path d=\x22M496 48V192c0 17.69-14.31 32-32 32H320c-17.69 0-32-14.31-32-32s14.31-32 32-32h63.39c-29.97-39.7-77.25-63.78-127.6-63.78C167.7 96.22 96 167.9 96 256s71.69 159.8 159.8 159.8c34.88 0 68.03-11.03 95.88-31.94c14.22-10.53 34.22-7.75 44.81 6.375c10.59 14.16 7.75 34.22-6.375 44.81c-39.03 29.28-85.36 44.86-134.2 44.86C132.5 479.9 32 379.4 32 256s100.5-223.9 223.9-223.9c69.15 0 134 32.47 176.1 86.12V48c0-17.69 14.31-32 32-32S496 30.31 496 48z\x22/></svg>'), _0x390a1c(_0x22bc71, 'save-state', '<svg viewBox=\x220 0 448 512\x22><path fill=\x22currentColor\x22 d=\x22M433.941 129.941l-83.882-83.882A48 48 0 0 0 316.118 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V163.882a48 48 0 0 0-14.059-33.941zM224 416c-35.346 0-64-28.654-64-64 0-35.346 28.654-64 64-64s64 28.654 64 64c0 35.346-28.654 64-64 64zm96-304.52V212c0 6.627-5.373 12-12 12H76c-6.627 0-12-5.373-12-12V108c0-6.627 5.373-12 12-12h228.52c3.183 0 6.235 1.264 8.485 3.515l3.48 3.48A11.996 11.996 0 0 1 320 111.48z\x22/></svg>'), _0x390a1c(_0x22bc71, 'settings', '<svg xmlns=\x22http://www.w3.org/2000/svg\x22 viewBox=\x220 0 512 512\x22><path d=\x22M495.9 166.6C499.2 175.2 496.4 184.9 489.6 191.2L446.3 230.6C447.4 238.9 448 247.4 448 256C448 264.6 447.4 273.1 446.3 281.4L489.6 320.8C496.4 327.1 499.2 336.8 495.9 345.4C491.5 357.3 486.2 368.8 480.2 379.7L475.5 387.8C468.9 398.8 461.5 409.2 453.4 419.1C447.4 426.2 437.7 428.7 428.9 425.9L373.2 408.1C359.8 418.4 344.1 427 329.2 433.6L316.7 490.7C314.7 499.7 307.7 506.1 298.5 508.5C284.7 510.8 270.5 512 255.1 512C241.5 512 227.3 510.8 213.5 508.5C204.3 506.1 197.3 499.7 195.3 490.7L182.8 433.6C167 427 152.2 418.4 138.8 408.1L83.14 425.9C74.3 428.7 64.55 426.2 58.63 419.1C50.52 409.2 43.12 398.8 36.52 387.8L31.84 379.7C25.77 368.8 20.49 357.3 16.06 345.4C12.82 336.8 15.55 327.1 22.41 320.8L65.67 281.4C64.57 273.1 64 264.6 64 256C64 247.4 64.57 238.9 65.67 230.6L22.41 191.2C15.55 184.9 12.82 175.3 16.06 166.6C20.49 154.7 25.78 143.2 31.84 132.3L36.51 124.2C43.12 113.2 50.52 102.8 58.63 92.95C64.55 85.8 74.3 83.32 83' + ('.14 86.14L138.8 103.9C152.2 93.56 167 84.96 182.8 78.43L195.3 21.33C197.3 12.25 204.3 5.04 213.5 3.51C227.3 1.201 241.5 0 256 0C270.5 0 284.7 1.201 298.5 3.51C307.7 5.04 314.7 12.25 316.7 21.33L329.2 78.43C344.1 84.96 359.8 93.56 373.2 103.9L428.9 86.14C437.7 83.32 447.4 85.8 453.4 92.95C461.5 102.8 468.9 113.2 475.5 124.2L480.2 132.3C486.2 143.2 491.5 154.7 495.9 166.6V166.6zM256 336C300.2 336 336 300.2 336 255.1C336 211.8 300.2 175.1 256 175.1C211.8 175.1 176 211.8 176 255.1C176 300.2 211.8 336 256 336z\x22/></svg>')), _0x390a1c(_0x22bc71, 'volume', '<svg viewBox=\x220 0 640 512\x22><path d=\x22M412.6 182c-10.28-8.334-25.41-6.867-33.75 3.402c-8.406 10.24-6.906 25.35 3.375 33.74C393.5 228.4 400 241.8 400 255.1c0 14.17-6.5 27.59-17.81 36.83c-10.28 8.396-11.78 23.5-3.375 33.74c4.719 5.806 11.62 8.802 18.56 8.802c5.344 0 10.75-1.779 15.19-5.399C435.1 311.5 448 284.6 448 255.1S435.1 200.4 412.6 182zM473.1 108.2c-10.22-8.334-25.34-6.898-33.78 3.34c-8.406 10.24-6.906 25.35 3.344 33.74C476.6 172.1 496 213.3 496 255.1s-19.44 82.1-53.31 110.7c-10.25 8.396-11.75 23.5-3.344 33.74c4.75 5.775 11.62 8.771 18.56 8.771c5.375 0 10.75-1.779 15.22-5.431C518.2 366.9 544 313 544 255.1S518.2 145 473.1 108.2zM534.4 33.4c-10.22-8.334-25.34-6.867-33.78 3.34c-8.406 10.24-6.906 25.35 3.344 33.74C559.9 116.3 592 183.9 592 255.1s-32.09 139.7-88.06 185.5c-10.25 8.396-11.75 23.5-3.344 33.74C505.3 481 512.2 484 519.2 484c5.375 0 10.75-1.779 15.22-5.431C601.5 423.6 640 342.5 640 255.1S601.5 88.34 534.4 33.4zM301.2 34.98c-11.5-5.181-25.01-3.076-34.43 5.29L131.8 160.1H48c-26.' + ('51 0-48 21.48-48 47.96v95.92c0 26.48 21.49 47.96 48 47.96h83.84l134.9 119.8C272.7 477 280.3 479.8 288 479.8c4.438 0 8.959-.9314 13.16-2.835C312.7 471.8 320 460.4 320 447.9V64.12C320 51.55 312.7 40.13 301.2 34.98z\x22/></svg>')), _0x390a1c(_0x22bc71, 'cheat', '<svg viewBox=\x220 0 496 512\x22><path fill=\x22currentColor\x22 d=\x22M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 448c-110.3 0-200-89.7-200-200S137.7 56 248 56s200 89.7 200 200-89.7 200-200 200zm-80-216c17.7 0 32-14.3 32-32s-14.3-32-32-32-32 14.3-32 32 14.3 32 32 32zm160 0c17.7 0 32-14.3 32-32s-14.3-32-32-32-32 14.3-32 32 14.3 32 32 32zm4 72.6c-20.8 25-51.5 39.4-84 39.4s-63.2-14.3-84-39.4c-8.5-10.2-23.7-11.5-33.8-3.1-10.2 8.5-11.5 23.6-3.1 33.8 30 36 74.1 56.6 120.9 56.6s90.9-20.6 120.9-56.6c8.5-10.2 7.1-25.3-3.1-33.8-10.1-8.4-25.3-7.1-33.8 3.1z\x22 class=\x22\x22></path></svg>'), _0x390a1c(_0x22bc71, 'disk', '<svg viewBox=\x220 0 24 24\x22 fill=\x22none\x22><path fill-rule=\x22evenodd\x22 clip-rule=\x22evenodd\x22 d=\x22M12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9ZM11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z\x22 fill=\x22currentColor\x22 /><path d=\x22M5 12C5 8.13401 8.13401 5 12 5V7C9.23858 7 7 9.23858 7 12H5Z\x22 fill=\x22currentColor\x22 /><path d=\x22M12 17C14.7614 17 17 14.7614 17 12H19C19 15.866 15.866 19 12 19V17Z\x22 fill=\x22currentColor\x22 /><path fill-rule=\x22evenodd\x22 clip-rule=\x22evenodd\x22 d=\x22M12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1ZM3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12Z\x22 fill=\x22currentColor\x22 /></svg>'), _0x22bc71), this['id'] = Math['floor'](0x2710 * Math['random']());
-            var _0x4e77f5 = null;
-            this['elements']['controls'] = null;
-            var _0x37bcfa = {
-                    'id': this['id']
-                },
-                _0xd29849 = !0x0;
-            TypeCheck['function'](this['config']['controls']) && (this['config']['controls'] = this['config']['controls']['call'](this['props'])), this['config']['controls'] || (this['config']['controls'] = []), I.elm(this['config']['controls']) || I.str(this['config']['controls']) ? _0x4e77f5 = this['config']['controls'] : (_0x4e77f5 = ejs_data['create']['call'](this, {
-                'id': this['id'],
-                'seektime': this['config']['seekTime'],
-                'speed': this['speed'],
-                'quality': this['quality']
-            }), _0xd29849 = !0x1);
-            var _0x4fcac0, _0x55cce6 = function (_0x13835b) {
-                var _0x37a9eb = _0x13835b;
-                return Object['entries'](_0x37bcfa)['forEach'](function (_0x1fa00b) {
-                    var _0x155809 = _0x2d160f(_0x1fa00b, 0x2),
-                        _0x55efcd = _0x155809[0x0],
-                        _0x4a28ad = _0x155809[0x1];
-                    _0x37a9eb = _0x125682(_0x37a9eb, '{' ['concat'](_0x55efcd, '}'), _0x4a28ad);
-                }), _0x37a9eb;
-            };
-            if (_0xd29849 && (I.str(this['config']['controls']) ? _0x4e77f5 = _0x55cce6(_0x4e77f5) : I.elm(_0x4e77f5) && (_0x4e77f5.innerHTML = _0x55cce6(_0x4e77f5.innerHTML))), I.str(this['config']['selectors']['controls']['container']) && (_0x4fcac0 = document['querySelector'](this['config']['selectors']['controls']['container'])), I.elm(_0x4fcac0) || (_0x4fcac0 = this['elements']['container']), _0x4fcac0[I.elm(_0x4e77f5) ? 'insertAdjacentElement' : 'insertAdjacentHTML']('afterbegin', _0x4e77f5), I.elm(this['elements']['controls']) || ejs_data['findElements']['call'](this), !I.empty(this['elements']['buttons'])) {
-                var _0xda377c = function (_0x4f155a) {
-                    var _0x2af4b3 = _0x1d66ff['config']['classNames']['controlPressed'];
-                    Object['defineProperty'](_0x4f155a, 'pressed', {
-                        'enumerable': !0x0,
-                        'get': function () {
-                            return _0xa225b4(_0x4f155a, _0x2af4b3);
+            const E = this;
+            E['id'] = Math['floor'](10000 * Math['random']());
+            var ControlsData = null;
+            E['elements']['controls'] = null;
+            var isCreate = !0x0;
+            if (I.func(E['config']['controls'])) {
+                E['config']['controls'] = E['config']['controls']['call'](E['props']);
+            }
+            if (!E['config']['controls']) E['config']['controls'] = [];
+            if (!I.elm(E['config']['controls'])) {
+                if (I.str(E['config']['controls'])) {
+                    ControlsData = E['config']['controls'];
+                } else {
+                    ControlsData = ejs_data['create']['call'](E, {
+                        'id': E['id'],
+                        'seektime': E['config']['seekTime'],
+                        'speed': E['speed'],
+                        'quality': E['quality']
+                    });
+                    isCreate = !0x1
+                }
+            }
+            var ElmControlsContainer, MkControls = data => I.RegRe(data, {
+                'id': E['id']
+            });
+            if (isCreate) {
+                if (I.str(E['config']['controls'])) {
+                    ControlsData = MkControls(ControlsData);
+                } else if (I.elm(ControlsData)) {
+                    ControlsData.innerHTML = MkControls(ControlsData.innerHTML)
+                }
+            }
+            if (I.str(E['config']['selectors']['controls']['container'])) {
+                ElmControlsContainer = document['querySelector'](E['config']['selectors']['controls']['container'])
+            }
+            if (!I.elm(ElmControlsContainer)) {
+                ElmControlsContainer = E['elements']['container']
+            }
+            ElmControlsContainer[I.elm(ControlsData) ? 'insertAdjacentElement' : 'insertAdjacentHTML']('afterbegin', ControlsData);
+            if (!I.elm(E['elements']['controls'])) {
+                ejs_data['findElements']['call'](E);
+            }
+            if (!I.empty(E['elements']['buttons'])) {
+                var setElmProp = function (elm) {
+                    var ElmControlPressed = E['config']['classNames']['controlPressed'];
+                    I.define(elm, 'pressed', {
+                        enumerable: !0x0,
+                        get() {
+                            return hasClassName(elm, ElmControlPressed);
                         },
-                        'set': function () {
-                            var _0x2335db = arguments['length'] > 0x0 && void 0x0 !== arguments[0x0] && arguments[0x0];
-                            _0x279293(_0x4f155a, _0x2af4b3, _0x2335db);
+                        set(bool) {
+                            elmAddRemoveClass(elm, ElmControlPressed, bool);
                         }
+
                     });
                 };
-                Object['values'](this['elements']['buttons'])['filter'](Boolean)['forEach'](function (_0x16dfb8) {
-
-                    TypeCheck['array'](_0x16dfb8) || TypeCheck['nodeList'](_0x16dfb8) ? Array['from'](_0x16dfb8)['filter'](Boolean)['forEach'](_0xda377c) : _0xda377c(_0x16dfb8);
-                });
+                I.toArr(E['elements']['buttons'], entry => I.array(entry[1]) || I.nodelist(entry[1]) ? I.toArr(entry[1], setElmProp) : setElmProp(entry[1]));
             }
-            window['navigator']['userAgent']['includes']('Edge') && _0x47f8ad(_0x4fcac0), ejs_data['fixMenuPos']['call'](this);
+            if (window['navigator']['userAgent']['includes']('Edge')) {
+                tryHidden(ElmControlsContainer)
+            }
+            ejs_data['fixMenuPos']['call'](E);
         }
     };
-
-    function _0x3d37a1() {
-
-        if (this['enabled']) {
-            var _0x22ceba = this['player']['elements']['buttons']['fullscreen'];
-            I.elm(_0x22ceba) && (_0x22ceba['pressed'] = this['active']), callEvent['call'](this['player'], this['target'], this['active'] ? 'enterfullscreen' : 'exitfullscreen', !0x0), _0x31055e['isIos'] || _0xe124af['call'](this['player'], this['target'], this['active']);
-        }
-    }
-
-    function _0x53b55f() {
-        var _0x5225a3 = arguments['length'] > 0x0 && void 0x0 !== arguments[0x0] && arguments[0x0];
-        _0x5225a3 ? this['scrollPosition'] = {
-            'x': window['scrollX'] || 0x0,
-            'y': window['scrollY'] || 0x0
-        } : window['scrollTo'](this['scrollPosition']['x'], this['scrollPosition']['y']), document['body']['style']['overflow'] = _0x5225a3 ? 'hidden' : '', _0x279293(this['target'], this['player']['config']['classNames']['fullscreen']['fallback'], _0x5225a3), _0x3d37a1['call'](this);
-    }
-
-
     class ejs_fullscreen {
         constructor(player) {
-            var _This = this;
             this['player'] = player;
             this['scrollPosition'] = {
                 'x': 0x0,
@@ -11636,18 +9639,16 @@ var EJS = function (modules) {
             };
             addEvent['call'](
                 this['player'], document, 'ms' === this['prefix'] ? 'MSFullscreenChange' : '' ['concat'](this['prefix'], 'fullscreenchange'),
-                function () {
-
-                    _0x3d37a1['call'](_This);
-                });
+                () => this.setActive()
+            );
             this['update']();
 
         }
         update() {
-            this['enabled'], _0x279293(this['player']['elements']['container'], this['player']['config']['classNames']['fullscreen']['enabled'], this['enabled']);
+            this['enabled'], elmAddRemoveClass(this['player']['elements']['container'], this['player']['config']['classNames']['fullscreen']['enabled'], this['enabled']);
         }
         enter() {
-            this['enabled'] && (this['native'] ? this['prefix'] ? I.empty(this['prefix']) || this['target']['' ['concat'](this['prefix'], 'Request')['concat'](this['property'])]() : this['target']['requestFullscreen']() : _0x53b55f['call'](this, !0x0));
+            this['enabled'] && (this['native'] ? this['prefix'] ? I.empty(this['prefix']) || this['target']['' ['concat'](this['prefix'], 'Request')['concat'](this['property'])]() : this['target']['requestFullscreen']() : this.scroll(!0x0));
         }
         exit() {
             if (this['enabled']) {
@@ -11658,7 +9659,7 @@ var EJS = function (modules) {
                             document['' ['concat'](this['prefix'])['concat'](_0x50d92a)['concat'](this['property'])]();
                         }
                     } else(document['cancelFullScreen'] || document['exitFullscreen'])['call'](document);
-                } else _0x53b55f['call'](this, !0x1);
+                } else this.scroll(!0x1);
             }
         }
         toggle() {
@@ -11668,10 +9669,10 @@ var EJS = function (modules) {
             return this.native;
         }
         get active() {
-            return !!this['enabled'] && (this['native'] ? (this['prefix'] ? document['' ['concat'](this['prefix'])['concat'](this['property'], 'Element')] : document['fullscreenElement']) === this['target'] : _0xa225b4(this['target'], this['player']['config']['classNames']['fullscreen']['fallback']));
+            return !!this['enabled'] && (this['native'] ? (this['prefix'] ? document['' ['concat'](this['prefix'])['concat'](this['property'], 'Element')] : document['fullscreenElement']) === this['target'] : hasClassName(this['target'], this['player']['config']['classNames']['fullscreen']['fallback']));
         }
         get target() {
-            return _0x31055e['isEdge'] ? this['player']['game'] : this['player']['elements']['container'];
+            return ejs_Browser['isEdge'] ? this['player']['game'] : this['player']['elements']['container'];
         }
         get native() {
             return !!(document['fullscreenEnabled'] || document['webkitFullscreenEnabled'] || document['mozFullScreenEnabled'] || document['msFullscreenEnabled']);
@@ -11680,40 +9681,38 @@ var EJS = function (modules) {
             return 'moz' === this['prefix'] ? 'FullScreen' : 'Fullscreen';
         }
         get prefix() {
-            if (TypeCheck['function'](document['exitFullscreen'])) return '';
+            if (I.func(document['exitFullscreen'])) return '';
             var _0x3c13c4 = '';
-            return ['webkit', 'moz', 'ms']['some'](function (_0x875897) {
-
-                return !(!TypeCheck['function'](document['' ['concat'](_0x875897, 'ExitFullscreen')]) && !TypeCheck['function'](document['' ['concat'](_0x875897, 'CancelFullScreen')]) || (_0x3c13c4 = _0x875897, 0x0));
-            }), _0x3c13c4;
+            ['webkit', 'moz', 'ms']['some'](function (_0x875897) {
+                return !(!I.func(document['' ['concat'](_0x875897, 'ExitFullscreen')]) && !I.func(document['' ['concat'](_0x875897, 'CancelFullScreen')]) || (_0x3c13c4 = _0x875897, 0x0));
+            });
+            return _0x3c13c4;
         }
-    }
-
-    function _0x16e2e2(_0x58feed, _0xa75ffc) {
-
-        return function (_0x4a47d1) {
-            if (Array['isArray'](_0x4a47d1)) return _0x4a47d1;
-        }(_0x58feed) || function (_0x1282b3, _0x2a4aec) {
-            var _0x4d4e1b = [],
-                _0xe4ce5e = !0x0,
-                _0x46cc80 = !0x1,
-                _0x1cacc1 = void 0x0;
-            try {
-                for (var _0x5c11d2, _0x1d7325 = _0x1282b3[Symbol['iterator']](); !(_0xe4ce5e = (_0x5c11d2 = _0x1d7325['next']())['done']) && (_0x4d4e1b['push'](_0x5c11d2['value']), !_0x2a4aec || _0x4d4e1b['length'] !== _0x2a4aec); _0xe4ce5e = !0x0);
-            } catch (_0x506f21) {
-                _0x46cc80 = !0x0, _0x1cacc1 = _0x506f21;
-            } finally {
-                try {
-                    _0xe4ce5e || null == _0x1d7325['return'] || _0x1d7325['return']();
-                } finally {
-                    if (_0x46cc80) throw _0x1cacc1;
+        scroll(bool) {
+            let F = this;
+            if (bool) {
+                F['scrollPosition'] = {
+                    'x': window['scrollX'] || 0x0,
+                    'y': window['scrollY'] || 0x0
                 }
+            } else {
+                window['scrollTo'](F['scrollPosition']['x'], F['scrollPosition']['y'])
             }
-            return _0x4d4e1b;
-        }(_0x58feed, _0xa75ffc) || (function () {
-
-            throw new TypeError('Invalid attempt to destructure non-iterable instance');
-        }());
+            document['body']['style']['overflow'] = bool ? 'hidden' : '';
+            elmAddRemoveClass(F['target'], F['player']['config']['classNames']['fullscreen']['fallback'], bool);
+            F.setActive();
+        }
+        setActive() {
+            let F = this;
+            if (F['enabled']) {
+                var elmF = F['player']['elements']['buttons']['fullscreen'];
+                if (I.elm(elmF)) {
+                    elmF['pressed'] = F['active'];
+                }
+                callEvent['call'](F['player'], F['target'], F['active'] ? 'enterfullscreen' : 'exitfullscreen', !0x0);
+                if (!ejs_Browser['isIos']) _0xe124af['call'](F['player'], F['target'], F['active']);
+            }
+        }
     }
     class ejs_listeners {
         lastKey = null;
@@ -11733,18 +9732,17 @@ var EJS = function (modules) {
         firstTouch() {
             var _0x3f3947 = this['emulator'],
                 _0x3b3926 = _0x3f3947['elements'];
-            _0x3f3947['touch'] = !0x0, _0x279293(_0x3b3926['container'], _0x3f3947['config']['classNames']['isTouch'], !0x0);
+            _0x3f3947['touch'] = !0x0, elmAddRemoveClass(_0x3b3926['container'], _0x3f3947['config']['classNames']['isTouch'], !0x0);
         }
         setTabFocus(_0x5c64e9) {
-            var _0x58dcda = this['emulator'],
-                _0x57482b = _0x58dcda['elements'],
-                _0x5d8ae1 = _0x58dcda;
+            var E = this['emulator'],
+                _0x57482b = E['elements'];
             if (clearTimeout(this['focusTimer']), 'keydown' !== _0x5c64e9['type'] || 0x9 === _0x5c64e9['which']) {
                 'keydown' === _0x5c64e9['type'] && (this['lastKeyDown'] = _0x5c64e9['timeStamp']);
                 var _0x362e48, _0x69ede6 = _0x5c64e9['timeStamp'] - this['lastKeyDown'] <= 0x14;
-                ('focus' !== _0x5c64e9['type'] || _0x69ede6) && (_0x362e48 = _0x5d8ae1['config']['classNames']['tabFocus'], _0x279293(ContainerSelectorAll['call'](_0x5d8ae1, '.' ['concat'](_0x362e48)), _0x362e48, !0x1), this['focusTimer'] = setTimeout(function () {
+                ('focus' !== _0x5c64e9['type'] || _0x69ede6) && (_0x362e48 = E['config']['classNames']['tabFocus'], elmAddRemoveClass(E['SelectorAll']('.' ['concat'](_0x362e48)), _0x362e48, !0x1), this['focusTimer'] = setTimeout(function () {
                     var _0x5554ff = document['activeElement'];
-                    _0x57482b['container']['contains'](_0x5554ff) && _0x279293(document['activeElement'], _0x5d8ae1['config']['classNames']['tabFocus'], !0x0);
+                    _0x57482b['container']['contains'](_0x5554ff) && elmAddRemoveClass(document['activeElement'], E['config']['classNames']['tabFocus'], !0x0);
                 }, 0xa));
             }
         }
@@ -11758,47 +9756,72 @@ var EJS = function (modules) {
             });
         }
         container() {
-            var _0x36900f, E = this['emulator'],
+            var E = this['emulator'],
                 _0x4f593e = E['elements'];
-            addEvent['call'](E, _0x4f593e['container'], 'mousemove mouseleave touchstart touchmove enterfullscreen exitfullscreen start-game', function (_0x9be0f4) {
+            E['addEvent'](_0x4f593e['container'], 'mousemove mouseleave touchstart touchmove enterfullscreen exitfullscreen start-game', function (_0x9be0f4) {
                 var _0x1a6dbb = _0x4f593e['controls'];
                 _0x1a6dbb && 'enterfullscreen' === _0x9be0f4['type'] && (_0x1a6dbb['pressed'] = !0x1, _0x1a6dbb['hover'] = !0x1);
-                var _0x3f88fd = 0x0;
-                ['touchstart', 'touchmove', 'mousemove', 'start-game']['includes'](_0x9be0f4['type']) && (E.callaction('toggleControls', !0x0), _0x3f88fd = E['touch'] ? 0xbb8 : 0x7d0), clearTimeout(_0x36900f), _0x36900f = setTimeout(function () {
-
-                    return E.callaction('toggleControls', !0x1);
-                }, _0x3f88fd), _0x4f593e['controls']['setAttribute']('data-timer', _0x36900f);
-            }), addEvent['call'](E, window, 'resize', function (_0x31d49e) {
+                /**
+                 * UI
+                 * 底部菜单激活
+                 */
+                /*
+                var _0x36900f,timecost = 0x0;
+                if(['touchstart', 'touchmove', 'mousemove', 'start-game']['includes'](_0x9be0f4['type'])){
+                    E['callaction']('toggleControls', !0x0);
+                     timecost = E['touch'] ? 0xbb8 : 0x7d0;
+                }
+                clearTimeout(_0x36900f);
+                 _0x36900f = setTimeout(()=>E['callaction']('toggleControls', !0x1), timecost);
+                 _0x4f593e['controls']['setAttribute']('data-timer', _0x36900f);
+                 */
+            });
+            E['addEvent'](window, 'resize', function (event) {
                 var _0x2d9e32 = E['elements']['container']['clientHeight'],
-                    _0x231eed = ContainerSelectorAll['call'](E, '.' ['concat'](getClassName('ejs__menu__container'), ' [role=\x22menu\x22]'));
+                    _0x231eed = E['SelectorAll']('.' ['concat'](getClassName('ejs__menu__container'), ' [role="menu"]'));
                 Array['from'](_0x231eed)['forEach'](function (_0x33d1de) {
 
                     _0x33d1de['style']['maxHeight'] = '' ['concat'](_0x2d9e32 - 0x89, 'px'), _0x33d1de['style']['overflow'] = 'auto';
-                }), ejs_loader['Module'] && ejs_loader['Module']['canvas'], E['elements']['container']['clientWidth'] / E['elements']['container']['clientHeight'] < 1.3 ? _0x279293(E['elements']['container'], getClassName('portrait'), !0x0) : _0x279293(E['elements']['container'], getClassName('portrait'), !0x1);
-            }), callEvent['call'](E, window, 'resize'), addEvent['call'](E, E['elements']['container'], 'enterfullscreen', function (_0x5b41b0) {
+                });
+                ejs_loader['Module'] && ejs_loader['Module']['canvas'];
+                if (E['elements']['container']['clientWidth'] / E['elements']['container']['clientHeight'] < 1.3) {
+                    elmAddRemoveClass(E['elements']['container'], getClassName('portrait'), !0x0)
+                } else {
+                    elmAddRemoveClass(E['elements']['container'], getClassName('portrait'), !0x1);
+                }
+            });
+            E['callEvent'](window, 'resize');
+            E['addEvent'](E['elements']['container'], 'enterfullscreen', function (_0x5b41b0) {
                 setTimeout(function () {
 
-                    callEvent['call'](E, window, 'resize');
+                    E['callEvent'](window, 'resize');
                 }, 0x12c);
-            }), addEvent['call'](E, E['elements']['container'], 'exitfullscreen', function (_0xa21ed9) {
+            });
+            E['addEvent'](E['elements']['container'], 'exitfullscreen', function (_0xa21ed9) {
                 setTimeout(function () {
 
-                    callEvent['call'](E, window, 'resize');
+                    E['callEvent'](window, 'resize');
                 }, 0x12c);
-            }), addEvent['call'](E, E['elements']['container'], 'start-game', function (_0x4945c8) {
-                var _0x173e25 = window['document']['createEvent']('UIEvents');
-                _0x173e25['initUIEvent']('resize', !0x0, !0x1, window, 0x0), window['dispatchEvent'](_0x173e25), _0x279293(E['elements']['container'], getClassName('game-started'), !0x0);
-            }), addEvent['call'](E, E['elements']['container'], 'blur', function (_0x272c11) {
+            });
+            E['addEvent'](E['elements']['container'], 'start-game', function (event) {
+                ///var _0x173e25 = window['document']['createEvent']('UIEvents');
+                //_0x173e25['initUIEvent']('resize', !0x0, !0x1, window, 0x0);
+                //window['dispatchEvent'](_0x173e25);
+                E['callEvent'](window, 'resize');
+                elmAddRemoveClass(E['elements']['container'], getClassName('game-started'), !0x0);
+            });
+            E['addEvent'](E['elements']['container'], 'blur', function (_0x272c11) {
                 var _0x13810b = _0x272c11['currentTarget'];
                 setTimeout(function () {
 
-                    _0x13810b['contains'](document['activeElement']) || callEvent['call'](E, E['elements'], 'blurgame');
+                    _0x13810b['contains'](document['activeElement']) || E['callEvent'](E['elements'], 'blurgame');
                 }, 0x0);
-            }), addEvent['call'](E, E['elements']['container'], 'focus', function (_0x15e2f7) {
+            });
+            E['addEvent'](E['elements']['container'], 'focus', function (_0x15e2f7) {
                 var _0x3f8f53 = _0x15e2f7['currentTarget'];
                 setTimeout(function () {
 
-                    _0x3f8f53['contains'](document['activeElement']) && callEvent['call'](E, E['elements'], 'focusgame');
+                    _0x3f8f53['contains'](document['activeElement']) && E['callEvent'](E['elements'], 'focusgame');
                 }, 0x0);
             });
         }
@@ -11809,16 +9832,20 @@ var EJS = function (modules) {
             addEvent['call'](_0x239e0a, _0x239e0a['game'], 'volumechange', function (_0x4471c0) {
 
                 return ejs_data['updateVolume']['call'](_0x239e0a, _0x4471c0);
-            }), addEvent['call'](_0x239e0a, _0x392b4c['container'], 'contextmenu', function (_0x48dd70) {
+            });
+            addEvent['call'](_0x239e0a, _0x392b4c['container'], 'contextmenu', function (_0x48dd70) {
 
                 _0x239e0a['touch'] || _0x239e0a['lightgun'] || _0x239e0a['mouse'] || ejs_data['toggleContextMenu']['call'](_0x239e0a, _0x48dd70, !0x0), _0x48dd70['preventDefault']();
-            }, !0x1), addEvent['call'](_0x239e0a, _0x392b4c['container'], 'mousewheel', function (_0x84a53) {
+            }, !0x1);
+            addEvent['call'](_0x239e0a, _0x392b4c['container'], 'mousewheel', function (_0x84a53) {
 
                 _0x84a53['stopPropagation']();
-            }, !0x1), addEvent['call'](_0x239e0a, _0x392b4c['container'], 'mousedown', function (_0xf614c8) {
+            }, !0x1);
+            addEvent['call'](_0x239e0a, _0x392b4c['container'], 'mousedown', function (_0xf614c8) {
 
                 _0x239e0a['touch'] || _0x239e0a['mouse'] || ejs_data['toggleContextMenu']['call'](_0x239e0a, _0xf614c8, !0x1);
-            }, !0x1), addEvent['call'](_0x239e0a, _0x239e0a['game'], 'volumechange', function () {
+            }, !0x1);
+            addEvent['call'](_0x239e0a, _0x239e0a['game'], 'volumechange', function () {
 
                 _0x239e0a['storage']['set']({
                     'volume': _0x239e0a['volume'],
@@ -11836,122 +9863,128 @@ var EJS = function (modules) {
             var _0x12a1a2 = this['emulator'],
                 _0x361ac4 = _0x12a1a2['config']['listeners'][_0x55f8ad],
                 _0x54d482 = !0x0;
-            TypeCheck['function'](_0x361ac4) && (_0x54d482 = _0x361ac4['call'](_0x12a1a2, _0x6f8a15)), _0x54d482 && TypeCheck['function'](_0x14fb57) && _0x14fb57['call'](_0x12a1a2, _0x6f8a15);
+            I.func(_0x361ac4) && (_0x54d482 = _0x361ac4['call'](_0x12a1a2, _0x6f8a15)), _0x54d482 && I.func(_0x14fb57) && _0x14fb57['call'](_0x12a1a2, _0x6f8a15);
         }
-        bind(_0x114d43, _0x1dad86, _0x20e046, _0x5d7bfc) {
-            var _0x1dc60d = this,
-                _0x5a9d3a = !(arguments['length'] > 0x4 && void 0x0 !== arguments[0x4]) || arguments[0x4],
-                _0x521f56 = this['emulator'],
-                _0x3caaff = _0x521f56,
-                _0x217233 = _0x3caaff['config']['listeners'][_0x5d7bfc],
-                _0x1396ed = TypeCheck['function'](_0x217233);
-            addEvent['call'](_0x3caaff, _0x114d43, _0x1dad86, function (_0x706d31) {
-
-                return _0x1dc60d['proxy'](_0x706d31, _0x20e046, _0x5d7bfc);
-            }, _0x5a9d3a && !_0x1396ed);
+        bind(elm, evt, func, name, opt) {
+            var L = this,
+                E = this['emulator'],
+                Ename = E['config']['listeners'][name],
+                isFunc = I.func(Ename);
+            E['addEvent'](elm, evt, event => L['proxy'](event, func, name), opt && !isFunc);
         }
         controls() {
-            var _0x23e2ac = this,
-                E = this['emulator'],
-                _0x3b6b01 = E['elements'],
-                _0xadf263 = _0x31055e['isIE'] ? 'change' : 'input';
-            if (this['bind'](_0x3b6b01['buttons']['mute'], 'click', function () {
+            var L = this,
+                E = L['emulator'],
+                Elms = E['elements'],
+                ElmBtns = Elms['buttons'],
+                rangeEvt = ejs_Browser['isIE'] ? 'change' : 'input';
+            L['bind'](ElmBtns['mute'], 'click', () => E['muted'] = !E['muted'], 'mute'); //静音 事件绑定
+            L['bind'](ElmBtns['fullscreen'], 'click', () => E['fullscreen']['toggle'](), 'fullscreen'); //全屏 事件绑定
+            L['bind'](ElmBtns['gamepad'], 'click', () => {
 
-                    E['muted'] = !E['muted'];
-                }, 'mute'), this['bind'](_0x3b6b01['buttons']['fullscreen'], 'click', function () {
+                E['callaction']('toggleControls', !0x1);
+                toggleHidden(Elms['dialogs']['gamepad'], !0x1);
+            }, 'mute'); //手柄映射 事件绑定
+            L['bind'](ElmBtns['saveState'], 'click', () => {
 
-                    E['fullscreen']['toggle']();
-                }, 'fullscreen'), this['bind'](_0x3b6b01['buttons']['gamepad'], 'click', function () {
-
-                    E.callaction('toggleControls',!0x1), toggleHidden(_0x3b6b01['dialogs']['gamepad'], !0x1);
-                }, 'mute'), this['bind'](_0x3b6b01['buttons']['saveState'], 'click', function () {
-
-                    callEvent['call'](E, E['elements']['container'], 'savestate-start', !0x1, {});
-                    var _0xe311a2 = ejs_Controller['saveState'](),
-                        _0x124d32 = ejs_Controller['getScreenData']();
-                    callEvent['call'](E, E['elements']['container'], 'savestate', !0x1, {
-                        'state': _0xe311a2,
-                        'screenshot': _0x124d32
-                    });
-                }, 'mute'), this['bind'](_0x3b6b01['buttons']['loadState'], 'click', function () {
-
-                    callEvent['call'](E, E['elements']['container'], 'loadstate', !0x1, {});
-                }, 'mute'), this['bind'](_0x3b6b01['buttons']['settings'], 'click', function (_0x533495) {
-
-                    _0x533495['stopPropagation'](), ejs_data['toggleMenu']['call'](E, _0x533495);
-                }), this['bind'](_0x3b6b01['buttons']['settings'], 'keyup', function (_0x4f69f7) {
-                    var _0x30fc8e = _0x4f69f7['which'];
-                    [0xd, 0x20]['includes'](_0x30fc8e) && (0xd !== _0x30fc8e ? (_0x4f69f7['preventDefault'](), _0x4f69f7['stopPropagation'](), ejs_data['toggleMenu']['call'](E, _0x4f69f7)) : ejs_data['focusFirstMenuItem']['call'](E, null, !0x0));
-                }, null, !0x1), this['bind'](_0x3b6b01['settings']['menu'], 'keydown', function (_0x5e8d12) {
-
-                    0x1b === _0x5e8d12['which'] && ejs_data['toggleMenu']['call'](E, _0x5e8d12);
-                }), _0x31055e['isIos']) {
-                var _0x14daec = ContainerSelectorAll['call'](E, 'input[type=\x22range\x22]');
-                Array['from'](_0x14daec)['forEach'](function (_0x29f13e) {
-                    return _0x23e2ac['bind'](_0x29f13e, _0xadf263, function (_0x2a0a70) {
-
-                        return _0x47f8ad(_0x2a0a70['target']);
-                    });
+                E['callEvent'](E['elements']['container'], 'savestate-start', !0x1, {});
+                E['callEvent'](E['elements']['container'], 'savestate', !0x1, {
+                    'state': ejs_Controller['saveState'](),
+                    'screenshot': ejs_Controller['getScreenData']()
                 });
+            }, 'mute'); //即时存档 事件绑定
+            L['bind'](ElmBtns['loadState'], 'click', () => {
+
+                E['callEvent'](E['elements']['container'], 'loadstate', !0x1, {});
+            }, 'mute'); //即时读档 事件绑定
+
+            I.toArr(['autosave', 'recorder'], v => {
+                ElmBtns[v] && L['bind'](ElmBtns[v], 'click', e => {
+                    if (E['started']) {
+                        ElmBtns[v].classList.toggle('active');
+                        E['callaction']('button_' + v, ElmBtns[v], ElmBtns[v].classList.contains('active'));
+                    }
+                })
+            }); //自动保存 录制
+
+            L['bind'](ElmBtns['settings'], 'click', event => {
+                event['stopPropagation']();
+                ejs_data['toggleMenu']['call'](E, event);
+            }); //设置 事件绑定
+
+            L['bind'](ElmBtns['settings'], 'keyup', event => {
+                var _0x30fc8e = event['which'];
+                [0xd, 0x20]['includes'](_0x30fc8e) && (0xd !== _0x30fc8e ? (event['preventDefault'](), event['stopPropagation'](), ejs_data['toggleMenu']['call'](E, event)) : ejs_data['focusFirstMenuItem']['call'](E, null, !0x0));
+            }, null, !0x1); //设置按起 事件绑定
+            L['bind'](Elms['settings']['menu'], 'keydown', event => {
+
+                0x1b === event['which'] && ejs_data['toggleMenu']['call'](E, event);
+            }); //设置按下 事件绑定
+
+
+            if (ejs_Browser['isIos']) {
+                I.toArr(E['SelectorAll']('input[type="range"]'), elm => L['bind'](elm, rangeEvt, event => tryHidden(event['target'])));
             }
-            _0x31055e['isWebkit'] && Array['from'](ContainerSelectorAll['call'](E, 'input[type=\x22range\x22]'))['forEach'](function (_0x23dfd3) {
+            if (ejs_Browser['isWebkit']) {
+                I.toArr(E['SelectorAll']('input[type="range"]'), elm => L['bind'](elm, 'input', event => ejs_data['updateRangeFill']['call'](E, event['target'])));
+            }
+            L['bind'](Elms['inputs']['volume'], rangeEvt, event => {
 
-                _0x23e2ac['bind'](_0x23dfd3, 'input', function (_0x1869e7) {
-
-                    return ejs_data['updateRangeFill']['call'](E, _0x1869e7['target']);
-                });
-            }), this['bind'](_0x3b6b01['inputs']['volume'], _0xadf263, function (_0x45d42b) {
-
-                E['volume'] = _0x45d42b['target']['value'];
-            }, 'volume'), this['bind'](_0x3b6b01['controls'], 'mouseenter mouseleave', function (_0x4220b0) {
-
-                'mouseleave' === _0x4220b0['type'] && null === _0x4220b0['toElement'] ? _0x3b6b01['controls']['hover'] = !0x0 : _0x3b6b01['controls']['hover'] = !E['touch'] && 'mouseenter' === _0x4220b0['type'];
-            }), this['bind'](_0x3b6b01['controls'], 'mousedown mouseup touchstart touchend touchcancel', function (_0x2beca0) {
-
-                if (['mousedown', 'touchstart']['includes'](_0x2beca0['type'])) {
-                    _0x3b6b01['controls']['pressed'] = !0x0;
-                    var _0x3fdd1b = _0x3b6b01['controls']['getAttribute']('data-timer2');
+                E['volume'] = event['target']['value'];
+            }, 'volume'); //声音按钮 事件绑定
+            L['bind'](Elms['controls'], 'mouseenter mouseleave', event => {
+                if ('mouseleave' === event['type'] && null === event['toElement']) {
+                    Elms['controls']['hover'] = !0x0;
+                } else {
+                    Elms['controls']['hover'] = !E['touch'] && 'mouseenter' === event['type'];
+                }
+            }); //底部菜单鼠标 事件绑定
+            L['bind'](Elms['controls'], 'mousedown mouseup touchstart touchend touchcancel', event => {
+                Elms['controls']['pressed'] = ['mousedown', 'touchstart']['includes'](event['type']);
+                return;
+                if (['mousedown', 'touchstart']['includes'](event['type'])) {
+                    Elms['controls']['pressed'] = !0x0;
+                    var _0x3fdd1b = Elms['controls']['getAttribute']('data-timer2');
                     clearTimeout(_0x3fdd1b);
                 } else {
-                    var _0x372abf = setTimeout(function () {
-
-                        _0x3b6b01['controls']['pressed'] = !0x1;
+                    var timeId = setTimeout(() => {
+                        Elms['controls']['pressed'] = !0x1;
                     }, 0xfa0);
-                    _0x3b6b01['controls']['setAttribute']('data-timer2', _0x372abf);
+                    Elms['controls']['setAttribute']('data-timer2', timeId);
                 }
-            }), this['bind'](_0x3b6b01['controls'], 'focusin focusout', function (_0x3e8fa0) {
-                var _0x40cd0b = E['config'],
-                    _0x538f89 = E['elements'],
-                    _0x1e18fe = 'focusin' === _0x3e8fa0['type'],
-                    _0x18d06f = _0x538f89['controls']['getAttribute']('data-timer');
-                if (_0x279293(_0x538f89['controls'], _0x40cd0b['classNames']['noTransition'], _0x1e18fe), E.callaction('toggleControls', _0x1e18fe), _0x1e18fe) {
-                    setTimeout(function () {
-
-                        _0x279293(_0x538f89['controls'], _0x40cd0b['classNames']['noTransition'], !0x1);
+            }); //底部菜单 事件绑定
+            L['bind'](Elms['controls'], 'focusin focusout', event => {
+                var config = E['config'],
+                    bool = 'focusin' === event['type'];
+                elmAddRemoveClass(Elms['controls'], config['classNames']['noTransition'], bool);
+                elmAddRemoveClass(Elms['controls'], getClassName('ejs__controls_show'), bool);
+                E['callaction']('toggleControls', bool);
+                /*
+                if (bool) {
+                    var timeint = Elms['controls']['getAttribute']('data-timer');
+                    setTimeout(() => {
+                        elmAddRemoveClass(Elms['controls'], config['classNames']['noTransition'], !0x1);
                     }, 0x0);
-                    var _0x394e5b = _0x23e2ac['touch'] ? 0xbb8 : 0xfa0;
-                    clearTimeout(_0x18d06f), _0x18d06f = setTimeout(function () {
-
-                        return E.callaction('toggleControls', !0x1);
-                    }, _0x394e5b), _0x538f89['controls']['setAttribute']('data-timer', _0x18d06f);
+                    clearTimeout(timeint);
+                    timeint = setTimeout(() => E['callaction']('toggleControls', !0x1), L['touch'] ? 0xbb8 : 0xfa0);
+                    Elms['controls']['setAttribute']('data-timer', timeint);
                 }
-            }), this['bind'](_0x3b6b01['inputs']['volume'], 'wheel', function (_0x2ede29) {
-                var _0x1bb28d = _0x2ede29['webkitDirectionInvertedFromDevice'],
-                    _0x2adb35 = _0x16e2e2([_0x2ede29['deltaX'], -_0x2ede29['deltaY']]['map'](function (_0x24a2bb) {
-                        return _0x1bb28d ? -_0x24a2bb : _0x24a2bb;
-                    }), 0x2),
+                */
+            }); //底部菜单 选中 事件绑定
+            L['bind'](Elms['inputs']['volume'], 'wheel', event => {
+                var _0x2adb35 = [event['deltaX'], -event['deltaY']].map(value => event['webkitDirectionInvertedFromDevice'] ? -value : value),
                     _0x2197be = _0x2adb35[0x0],
                     _0x327e2f = _0x2adb35[0x1],
                     _0x345fb0 = Math['sign'](Math['abs'](_0x2197be) > Math['abs'](_0x327e2f) ? _0x2197be : _0x327e2f);
+
+                console.log(_0x2adb35, event);
+
                 E['increaseVolume'](_0x345fb0 / 0x32);
                 var _0x38c838 = E['game']['volume'];
-                (0x1 === _0x345fb0 && _0x38c838 < 0x1 || -0x1 === _0x345fb0 && _0x38c838 > 0x0) && _0x2ede29['preventDefault']();
-            }, 'volume', !0x1), this['bind'](_0x3b6b01['controls'], 'contextmenu', function (_0x521f76) {
-                _0x521f76['stopPropagation']();
-            }), this['bind'](_0x3b6b01['contextMenu'], 'contextmenu', function (_0x5f563d) {
-
-                _0x5f563d['stopPropagation']();
-            });
+                (0x1 === _0x345fb0 && _0x38c838 < 0x1 || -0x1 === _0x345fb0 && _0x38c838 > 0x0) && event['preventDefault']();
+            }, 'volume', !0x1); //音量 事件绑定
+            L['bind'](Elms['controls'], 'contextmenu', event => event['stopPropagation']()); //屏蔽右键 事件绑定
+            L['bind'](Elms['contextMenu'], 'contextmenu', event => event['stopPropagation']()); //屏蔽右键 事件绑定
         }
     }
     //(es_require(0x14b)());
@@ -12001,7 +10034,10 @@ var EJS = function (modules) {
                 reset: 'Reset',
                 disabled: 'Disabled',
                 enabled: 'Enabled',
-                playNow: 'Play Now'
+                playNow: 'Play Now',
+                cache: 'Database',
+                autosave: 'Auto Save',
+                recorder: 'Video Rec'
             },
             listeners: {
                 play: null,
@@ -12021,19 +10057,22 @@ var EJS = function (modules) {
                     wrapper: '.jes__controls'
                 },
                 buttons: {
-                    play: '[data-btn=\x22play\x22]',
-                    pause: '[data-btn=\x22pause\x22]',
-                    mute: '[data-btn=\x22mute\x22]',
-                    fullscreen: '[data-btn=\x22fullscreen\x22]',
-                    settings: '[data-btn=\x22settings\x22]',
-                    saveState: '[data-btn=\x22save-state\x22]',
-                    loadState: '[data-btn=\x22load-state\x22]',
-                    gamepad: '[data-btn=\x22gamepad\x22]',
-                    netplay: '[data-btn=\x22netplay\x22]',
-                    cheat: '[data-btn=\x22cheat\x22]'
+                    play: '[data-btn="play"]',
+                    pause: '[data-btn="pause"]',
+                    mute: '[data-btn="mute"]',
+                    fullscreen: '[data-btn="fullscreen"]',
+                    settings: '[data-btn="settings"]',
+                    saveState: '[data-btn="save-state"]',
+                    loadState: '[data-btn="load-state"]',
+                    gamepad: '[data-btn="gamepad"]',
+                    netplay: '[data-btn="netplay"]',
+                    cheat: '[data-btn="cheat"]',
+                    cache: '[data-btn="cache"]',
+                    autosave: '[data-btn="autosave"]',
+                    recorder: '[data-btn="recorder"]'
                 },
                 inputs: {
-                    volume: '[data-range=\x22volume\x22]'
+                    volume: '[data-range="volume"]'
                 }
             },
             classNames: {
@@ -12067,8 +10106,8 @@ var EJS = function (modules) {
                 },
                 tabFocus: 'ejs__tab-focus'
             },
-            gameParentUrl:[],
-            offline:!1,
+            gameParentUrl: [],
+            offline: !1,
         };
         elements = {
             container: null,
@@ -12084,7 +10123,8 @@ var EJS = function (modules) {
             dialogs: {
                 gamepad: null,
                 loading: null,
-                netplay: null
+                netplay: null,
+                cache: null
             },
             widgets: {}
         };
@@ -12105,7 +10145,8 @@ var EJS = function (modules) {
         version = '0.4.99';
         RootPath = T.RootPath || location.pathname;
         constructor(divID, Configs) {
-            var E = this;
+            const E = this;
+            ejs_install.cleargc();
             if (!I.elm(divID)) {
                 if (I.str(divID))
                     E['game'] = T.$(divID);
@@ -12119,8 +10160,8 @@ var EJS = function (modules) {
                 T,
                 I
             }, 1);
-            E.runaction = T.runaction;
-            E.callaction = T.callaction;
+            E['runaction'] = T.runaction;
+            E['callaction'] = T.callaction;
             Configs['gameParentUrl'] = Configs['gameParentUrl'] || [];
             if (I.str(Configs['gameParentUrl'])) Configs['gameParentUrl'] = [Configs['gameParentUrl']];
             if ('undefined' != typeof EJS_savename && '' != EJS_savename) {
@@ -12130,7 +10171,7 @@ var EJS = function (modules) {
             E['storageSupported'] = !0;
             E['touch'] = EnvVariable['touch'];
             E['game'].innerHTML = '';
-            E['config'] = I.assign({}, E.defaultConfig, ejs_install['defaults'], Configs || {});
+            E['config'] = I.assign({}, E['defaultConfig'], ejs_install['defaults'], Configs || {});
             E['lightgun'] = E['config']['lightgun'];
             E['mouse'] = E['config']['mouse'];
             E['multitap'] = E['config']['multitap'];
@@ -12139,7 +10180,7 @@ var EJS = function (modules) {
             E['cheats'] || (E['cheats'] = []);
             E['color'] = E['config']['color'];
             //['melonds', 'segaSaturn', 'mame']['includes'](Configs['system']) && (E['mode'] = 0x1);
-            if(E['system'] == 'mame')E['system'] = 'mame0.193';
+            if (E['system'] == 'mame') E['system'] = 'mame0.193';
             E['config']['url'] = '';
             /**
              * 绑定对应CSSname
@@ -12157,11 +10198,11 @@ var EJS = function (modules) {
                     });
                 }
             });
-            if(!T.lang['restart']){
-                I.assign(T.lang,E.config.i18n);
+            if (!T.lang['restart']) {
+                I.assign(T.lang, E['config']['i18n']);
             }
-            E['config']['selectors']['controls']['wrapper'] = '.' ['concat'](getClassName('ejs__controls'));
-            E['config']['selectors']['container'] = '.' ['concat'](getClassName('ejs'));
+            E['config']['selectors']['controls']['wrapper'] = getClassName('ejs__controls', !0);
+            E['config']['selectors']['container'] = getClassName('ejs', !0);
             E['config']['mute'] = !0x0;
             E['eventListeners'] = [];
             E['listeners'] = new ejs_listeners(E);
@@ -12173,48 +10214,36 @@ var EJS = function (modules) {
             I.defines(E['game'], {
                 emulator: E,
                 loader: ejs_loader,
-                controller:ejs_Controller,
+                controller: ejs_Controller,
             }, 1);
-            I.defines(E['game'],{
-                Module:{
-                    get(){
-                        return ejs_loader.Module;
-                    }
-                }
-            });
+            T.stopGesture(E['elements']['container']);
             ejs_install.elements.push(E['game']);
-            E['elements']['container']['appendChild'](_0xf5893f('div', {
+            E['elements']['container']['appendChild'](createElm('div', {
                 'class': getClassName('ejs__widgets')
             }));
-            E['elements']['container']['appendChild'](_0xf5893f('div', {
+            E['elements']['container']['appendChild'](createElm('div', {
                 'class': getClassName('ejs__dialogs')
             }));
-            E.callaction('addStyleHook');
-            ejs_Controller['setup']['call'](E);
-            E.callaction('build');
-            E['listeners']['container']();
-            E['listeners']['global']();
-            E['fullscreen'] = new ejs_fullscreen(E);
-            E.create();
+            E['create']();
         }
         restart() {
-
             this['currentTime'] = 0x0;
         }
         increaseVolume(num) {
             var _0x34c4f1 = this['game']['muted'] ? 0x0 : this['volume'];
-            this['volume'] = _0x34c4f1 + (TypeCheck['number'](num) ? num : 0x0);
+            this['volume'] = _0x34c4f1 + (I.num(num) ? num : 0x0);
         }
         decreaseVolume(num) {
 
             this['increaseVolume'](-num);
         }
         toggleControls(bool) {
-
-            if (this['started']) {
-                var _0x591b13 = void 0x0 === bool ? void 0x0 : !bool,
-                    _0x4233c1 = _0x279293(this['elements']['container'], this['config']['classNames']['hideControls'], _0x591b13);
-                return _0x4233c1 && ejs_data['toggleMenu']['call'](this, !0x1), !_0x4233c1;
+            const E = this;
+            if (E['started']) {
+                var isbool = void 0x0 === bool ? void 0x0 : !bool,
+                    ishas = elmAddRemoveClass(E['elements']['container'], E['config']['classNames']['hideControls'], isbool);
+                ishas && ejs_data['toggleMenu']['call'](E, !0x1);
+                return !ishas;
             }
             return !0x1;
         }
@@ -12224,11 +10253,20 @@ var EJS = function (modules) {
         }
         on(evt, func) {
 
-            addEvent['call'](this, this['elements']['container'], evt, func);
+            this.addEvent(this['elements']['container'], evt, func);
         }
         once(evt, func) {
 
-            onceEvent['call'](this, this['elements']['container'], evt, func);
+            this.onceEvent(this['elements']['container'], evt, func);
+        }
+        onceEvent(...arg) {
+            return onceEvent.apply(this, arg);
+        }
+        addEvent(...arg) {
+            return addEvent.apply(this, arg);
+        }
+        callEvent(...arg) {
+            return callEvent.apply(this, arg);
         }
         off(evt, func) {
             saveEvent(this['elements']['container'], evt, func);
@@ -12245,7 +10283,7 @@ var EJS = function (modules) {
         }
         set volume(num) {
             var num2 = num;
-            I.str(num2) && (num2 = Number(num2)), TypeCheck['number'](num2) || (num2 = this['storage']['get']('volume')), TypeCheck['number'](num2) || (num2 = this['config']['volume']), num2 > 0x1 && (num2 = 0x1), num2 < 0x0 && (num2 = 0x0), this['config']['volume'] = num2, this['game']['volume'] = num2, !I.empty(num) && this['muted'] && num2 > 0x0 && (this['muted'] = !0x1);
+            I.str(num2) && (num2 = Number(num2)), I.num(num2) || (num2 = this['storage']['get']('volume')), I.num(num2) || (num2 = this['config']['volume']), num2 > 0x1 && (num2 = 0x1), num2 < 0x0 && (num2 = 0x0), this['config']['volume'] = num2, this['game']['volume'] = num2, !I.empty(num) && this['muted'] && num2 > 0x0 && (this['muted'] = !0x1);
         }
         get volume() {
 
@@ -12253,7 +10291,7 @@ var EJS = function (modules) {
         }
         set muted(num) {
             var num2 = num;
-            TypeCheck['boolean'](num2) || (num2 = this['storage']['get']('muted')), TypeCheck['boolean'](num2) || (num2 = this['config']['muted']), this['config']['muted'] = num2, this['game']['muted'] = num2;
+            I.bool(num2) || (num2 = this['storage']['get']('muted')), I.bool(num2) || (num2 = this['config']['muted']), this['config']['muted'] = num2, this['game']['muted'] = num2;
         }
         get muted() {
             return Boolean(this['game']['muted']);
@@ -12274,56 +10312,157 @@ var EJS = function (modules) {
         }
         action = {
             addStyleHook() {
-
-                _0x279293(this['elements']['container'], this['config']['selectors']['container']['replace']('.', ''), !0x0), _0x279293(this['elements']['container'], this['config']['classNames']['uiSupported'], !0x0), _0x279293(this['elements']['container'], this['config']['classNames']['hideControls'], !0x0);
+                let config = this['config'],
+                    container = this['elements']['container'];
+                elmAddRemoveClass(container, config['selectors']['container']['replace']('.', ''), !0x0);
+                elmAddRemoveClass(container, config['classNames']['uiSupported'], !0x0);
+                elmAddRemoveClass(container, config['classNames']['hideControls'], !0x0);
             },
             build() {
-                let E = this;
+                const E = this;
                 E['listeners']['media']();
-                I.elm(E['elements']['controls']) || (ejs_data['inject']['call'](E), E['listeners']['controls']());
+                if (!I.elm(E['elements']['controls'])) {
+                    ejs_data['inject']['call'](E);
+                    E['listeners']['controls']()
+                }
                 E['volume'] = null;
                 E['muted'] = null;
                 ejs_data['updateVolume']['call'](E);
-                _0x279293(E['elements']['container'], E['config']['classNames']['isTouch'], E['touch']);
+                elmAddRemoveClass(E['elements']['container'], E['config']['classNames']['isTouch'], E['touch']);
                 E['ready'] = !0x0;
             },
-            toggleControls(_0x4224ea) {
-                let E = this;
-                var _0x4ce6b9 = E['elements']['controls'];
-                if (_0x4ce6b9) {
-                    var _0x323e5d = 0x0,
-                        _0x281398 = ContainerSelectorAll['call'](E, '.' ['concat'](getClassName('ejs__dialogs'), ' > .')['concat'](getClassName('ejs__dialog')));
-                    Array['from'](_0x281398)['forEach'](function (_0x4ca00f, _0x33161d) {
-                        !0x0 !== _0x4ca00f['hidden'] && (_0x323e5d += 0x1);
-                    });
-                    _0x323e5d > 0x0 ? E['toggleControls'](!0x1) : E['toggleControls'](Boolean(_0x4224ea || E['paused'] || _0x4ce6b9['pressed'] || _0x4ce6b9['hover']));
+            toggleControls(bool) {
+                const E = this;
+                var ElmControls = E['elements']['controls'];
+                if (ElmControls) {
+                    var len = 0;
+                    I.toArr(
+                        E['SelectorAll'](`${getClassName('ejs__dialogs', 1)} > ${getClassName('ejs__dialog', 1)}`),
+                        elm => !0x0 !== elm['hidden'] && (len += 1)
+                    );
+                    if (len > 0) {
+                        E['toggleControls'](!0x1)
+                    } else {
+                        E['toggleControls'](Boolean(bool || E['paused'] || ElmControls['pressed'] || ElmControls['hover']))
+                    }
                 }
+            },
+            async JoystickGamepad(){
+                const E = this,elm = E['Selector'](getClassName('ejs-virtual-gamepad', !0) + ' ' + getClassName('left', !0));
+                if(typeof self.nipplejs == 'undefined')await T.loadLibjs(T.RootPath+'nipplejs.js',e=>elm.innerHTML=e);
+                if(E.joystickGamepad)return;
+                E.joystickGamepad = true;
+                elm.innerHTML = '';
+                var nipplejsGamepad = nipplejs.create({
+                    'zone':elm,
+                    'mode': 'static',
+                    'position': {
+                        'left': '50%',
+                        'top': '50%'
+                    },
+                    'color': 'red'
+                });
+                nipplejsGamepad['on']('end', function (event, detail) {
+                    ejs_Controller['syncInput'](0x0, 0x13, 0x0);
+                    ejs_Controller['syncInput'](0x0, 0x12, 0x0);
+                    ejs_Controller['syncInput'](0x0, 0x11, 0x0);
+                    ejs_Controller['syncInput'](0x0, 0x10, 0x0);
+                });
+                nipplejsGamepad['on']('move', function (event, detail) {
+                    let {x,y} = detail.vector;
+                    console.log(x,y);
+                    if (x > 0) {
+                        ejs_Controller['simulateInput'](0x0, 0x10, 0x7fff * x);
+                        ejs_Controller['simulateInput'](0x0, 0x11, 0x0)
+                    } else {
+                        ejs_Controller['simulateInput'](0x0, 0x11, 0x7fff * x);
+                        ejs_Controller['simulateInput'](0x0, 0x10, 0x0)
+                    }
+                    if (y < 0) {
+                        ejs_Controller['simulateInput'](0x0, 0x12, 0x7fff * y);
+                        ejs_Controller['simulateInput'](0x0, 0x13, 0x0)
+                    } else {
+                        ejs_Controller['simulateInput'](0x0, 0x13, 0x7fff * y);
+                        ejs_Controller['simulateInput'](0x0, 0x12, 0x0)
+                    }
+                });
+            },
+            async button_autosave(elm, bool) {
+                if (!bool) {
+                    clearInterval(elm['time'])
+                } else {
+                    elm['time'] = setInterval(() => {
+                        if (E['isAutoSave']) {
+                            clearInterval(elm['time']);
+                            toggleHidden(elm, !1);
+                        }
+                        ejs_Controller['saveSavFiles'] && ejs_Controller['saveSavFiles']();
+                    }, 4000);
+                }
+            },
+            async button_recorder(elm, bool) {
+                let mime;
+                if (!bool) {
+                    return T.triger(elm, 'close');
+                }
+                I.toArr(['webm', 'mp4'], v => {
+                    MediaRecorder.isTypeSupported('video/' + v) && (mime = v)
+                });
+                if (!mime) elm.hidden = true;
+                ///if(window.navigator && navigator.mediaDevices && "function" == typeof navigator.mediaDevices.getDisplayMedia) {
+                //let UserMedia = await navigator.mediaDevices.getUserMedia({video:false,audio:true});
+                //ModuleMedia.addTrack(UserMedia.getAudioTracks()[0]);
+                //}
+                //    T=Nenge,I=Nenge.I,mimeType = 'video/webm;audio/webm';
+                let ModuleMedia = Module.canvas.captureStream(24);
+                //let AudioMedia = new MediaStream(Module.RA.context.createMediaStreamDestination().stream);
+                ///let Stream = new MediaStream();
+                ///Stream.addTrack(UserMedia.getAudioTracks()[0]);
+                let Media = new MediaRecorder(ModuleMedia, {
+                    mimeType: 'video/' + mime
+                });
+                //T.on(Media,'stop',e=>T.down('xxx.webm',chunks));
+                T.on(Media, 'dataavailable', e => {
+                    T.down(this['gameName'] + '.' + mime, e.data);
+                    ModuleMedia.getTracks()[0].stop();
+                    ModuleMedia = null;
+                    Media = null;
+                });
+                T.once(elm, 'close', e => Media.stop());
+                Media.start();
+                self.xxx = Media;
+                ///}
             }
 
         };
-        
+
         ajaxHeaders = {
-            'accept':'application/json, text/plain, */*',
+            'accept': 'application/json, text/plain, */*',
             'content-type': 'application/x-www-form-urlencoded'
         };
-        /**
-        *@description 初始化
-        *@author Nenge
-        *@date 2023-02-01 08:23:10
-        */
-        create() {
+        Geti18n(key, data) {
+            let i18n = data ? data || {} : this.config.i18n,
+                content = i18n[key] || null;
+            if (I.empty(content)) return key;
+            content = content.replace(/{(.+?)}/g, (str, arg) => {
+                console.log(arg);
+                return i18n[arg] || arg
+            });
+            return T.getLang(content);
+        }
+        async create() {
             /**
              * @var {ejs_install} 实例化的ejs_install
              */
-            var E = this,
-                ElmContainer = E['elements']['container'],
-            /**
-             * @var {string}  核心系统类型
-             */
-                RealSystemName,//记录真实核心
-            /**
-             * @var {array} 核心支持扩展名
-             */
+            const E = this;
+            var ElmContainer = E['elements']['container'],
+                /**
+                 * @var {string}  核心系统类型
+                 */
+                RealSystemName, //记录真实核心
+                /**
+                 * @var {array} 核心支持扩展名
+                 */
                 RealSystemExt,
                 /**
                  * @var 写入数据长度
@@ -12407,14 +10546,27 @@ var EJS = function (modules) {
                     'mame2003': 'mame2003',
                     'mame0.193': 'mame',
                     'mame0.243': 'mame0.243'
-                },
-                EmulatorCoresHost = '//www.emulatorjs.com';
-            var _0xd3c714 = document['createElement']('canvas'),
-                _0x1593d7 = document['createElement']('input');
-            toggleHidden(_0x1593d7, !0x0);
-            E['game']['appendChild'](_0xd3c714);
-            E['game']['appendChild'](_0x1593d7);
-            ejs_loader['loading'] = _0xf5893f('div', {
+                };
+            if (!ejs_install['icons']) {
+                ejs_install['icons'] = await T.FetchItem({
+                    url: 'frontend/buttons.zip?' + T.time,
+                    unpack: true,
+                    store: DISK.DB.libjs,
+                    decode: I.decode
+                });
+            }
+            E['callaction']('addStyleHook');
+            ejs_Controller['setup']['call'](E);
+            E['callaction']('build');
+            E['listeners']['container']();
+            E['listeners']['global']();
+            E['fullscreen'] = new ejs_fullscreen(E);
+            var ElmCanvas = document['createElement']('canvas'),
+                ElmInput = document['createElement']('input');
+            E['game']['appendChild'](ElmCanvas);
+            E['game']['appendChild'](ElmInput);
+            toggleHidden(ElmInput, !0x0);
+            ejs_loader['loading'] = createElm('div', {
                 'class': E['config']['classNames']['loading']
             });
             ElmContainer['appendChild'](ejs_loader['loading']);
@@ -12429,7 +10581,7 @@ var EJS = function (modules) {
                     <div class="${getClassName('p3')}"></div>
                 </div>
                 <div style="position: absolute;bottom: 20px;left: 50%;transform: translateX(-50%);width: 100%;text-align: center;z-index: 1;">
-                    <a href="#" onclick="return false" class="${getClassName('start-game')}">${T.getLang('play Now')}</a>
+                    <a href="#" onclick="return false" class="${getClassName('start-game')}">${E['Geti18n']('playNow')}</a>
                     <div style="font-size: 18px;padding-top:5px;display:none">
                         ${T.getLang('Save Game Roms')}: 
                         <label for="ejs-save-rom-1">
@@ -12450,49 +10602,48 @@ var EJS = function (modules) {
                 LoadingP2 = LoadingSelector(getClassName('p2', 1)), //状态信息 2
                 LoadingP3 = LoadingSelector(getClassName('p3', 1)), //状态信息 3
                 LoadingBtnStart = LoadingSelector(getClassName('start-game', 1)); //状态 开始按钮
-            I.assign(E, {
-                LoadingP1,
-                LoadingP2,
-                LoadingP3
-            });
-            addEvent['call'](E, ElmContainer, 'click', function (event) {
+            E['addEvent'](ElmContainer, 'click', function (event) {
                 if (E['started']) {
-                    var _0x4387d6 = E.Selector(getClassName('ejs__dialogs',1))['querySelector'](getClassName('ejs__focus_notice__container',1));
+                    var _0x4387d6 = E['Selector'](getClassName('ejs__dialogs', 1))['querySelector'](getClassName('ejs__focus_notice__container', 1));
                     _0x4387d6 && _0x4387d6['contains'](event['target']) && setTimeout(function () {
                         toggleHidden(_0x4387d6, !0x0);
                     }, 0x5);
                 }
             });
-            addEvent['call'](E, ElmContainer, 'focusin', function (event) {
+            E['addEvent'](ElmContainer, 'focusin', function (event) {
 
                 if (document['activeElement'] != ElmContainer) return !0x1;
-                E['focused'] = !0x0, toggleHidden(E.Selector(getClassName('ejs__dialogs',1))['querySelector'](getClassName('ejs__focus_notice__container',1)), !0x0);
+                E['focused'] = !0x0;
+                toggleHidden(E['Selector'](getClassName('ejs__dialogs', 1))['querySelector'](getClassName('ejs__focus_notice__container', 1)), !0x0);
             });
-            addEvent['call'](E, ElmContainer, 'focusout', function (event) {
+            E['addEvent'](ElmContainer, 'focusout', (event) => {
 
                 if (E['started'] && !event['relatedTarget']) {
                     if (ElmContainer == event['srcElement']) {
-                        var _0x1144fe = document['querySelectorAll']('.' ['concat'](getClassName('ejs'), ' > *')),
-                            _0x49b150 = !0x0;
-                        if (_0x1144fe['forEach'](function (_0x495473, _0x55deb8) {
+                        var _0x49b150 = !0x0;
+                        I.toArr(document['querySelectorAll'](getClassName('ejs', !0) + ' > *'), elm => {
+                            hasClassName(elm, getClassName('ejs__controls')) || hasClassName(elm, E['config']['classNames']['video']) || hasClassName(elm, getClassName('ejs__widgets')) || hasClassName(elm, getClassName('ejs__dialogs')) || hasClassName(elm, getClassName('ejs__contextmenu')) || hasClassName(elm, getClassName('ejs--loading')) || elm['clientWidth'] >= 0.8 * ElmContainer['clientWidth'] && elm['clientHeight'] >= 0.8 * ElmContainer['clientHeight'] && (_0x49b150 = !0x1);
 
-                                _0xa225b4(_0x495473, getClassName('ejs__controls')) || _0xa225b4(_0x495473, E['config']['classNames']['video']) || _0xa225b4(_0x495473, getClassName('ejs__widgets')) || _0xa225b4(_0x495473, getClassName('ejs__dialogs')) || _0xa225b4(_0x495473, getClassName('ejs__contextmenu')) || _0xa225b4(_0x495473, getClassName('ejs--loading')) || _0x495473['clientWidth'] >= 0.8 * ElmContainer['clientWidth'] && _0x495473['clientHeight'] >= 0.8 * ElmContainer['clientHeight'] && (_0x49b150 = !0x1);
-                            }), !_0x49b150) return E['focused'] = !0x1, !0x1;
-                        var _0x4c0ee5 = E.Selector(getClassName('ejs__dialogs',1))['querySelector'](getClassName('ejs__focus_notice__container',1));
-                        if (_0x4c0ee5) toggleHidden(_0x4c0ee5, !0x1);
+                        });
+                        if (!_0x49b150) return E['focused'] = !0x1, !0x1;
+                        var _0x4c0ee5 = E['Selector'](getClassName('ejs__dialogs', 1))['querySelector'](getClassName('ejs__focus_notice__container', 1));
+                        /**
+                         * 遮罩
+                         */
+                        if (_0x4c0ee5); // toggleHidden(_0x4c0ee5, !0x1);
                         else {
-                            var ElmNotice = _0xf5893f('div', {
+                            var ElmNotice = createElm('div', {
                                     'class': getClassName({
                                         'ejs__dialog': !0x0,
                                         'ejs__focus_notice__container': !0x0
                                     })
                                 }),
-                                ElmVisor = _0xf5893f('div', {
+                                ElmVisor = createElm('div', {
                                     'style': 'color:#fff !important'
                                 });
                             ElmVisor.innerHTML = T.getLang('Click to make keyboard keys work');
                             ElmNotice['appendChild'](ElmVisor);
-                            E.Selector(getClassName('ejs__dialogs',1))['appendChild'](ElmNotice);
+                            E['Selector'](getClassName('ejs__dialogs', 1))['appendChild'](ElmNotice);
                         }
                         E['focused'] = !0x1;
                     } else ElmContainer['focus']();
@@ -12500,151 +10651,154 @@ var EJS = function (modules) {
             });
             if (!EnvVariable['webgl']['DETECTED']) {
                 toggleHidden(LoadingBtnStart, !0x0),
-                    LoadingP3.innerHTML = '<strong style=\x22color:#f00;text-shadow: 0px 0px 3px;\x22>Failed to initialize WebGL.</strong>';
-            }
-            n_export_6_['a']['interceptors']['request']['use'](function (_0x870ec2) {
-                console.log(_0x870ec2);
-                return _0x870ec2['headers']['Content-Type'] = 'application/x-www-form-urlencoded', 'options' === _0x870ec2['method']['toLowerCase']() && (_0x870ec2['method'] = 'get'), _0x870ec2;
-            }, function (_0x397d99) {
-
-                return Promise['reject'](_0x397d99);
-            });
-            addEvent['call'](E, ElmContainer, 'start-game', function (_0x1ea849) {
-                E['started'] = !0x0, E['playing'] = !0x0, toggleHidden(LoadingInfo, !0x0), E.callaction('toggleControls', !0x0);
-                var _0x2b7716 = getClassName('ejs__tooltip--visible'),
-                    _0x5044e3 = E['elements']['buttons']['gamepad']['querySelector'](getClassName('ejs__tooltip',1));
-                _0x279293(_0x5044e3, _0x2b7716, !0x0), setTimeout(function () {
-                    _0x279293(_0x5044e3, _0x2b7716, !0x1);
+                    LoadingP3.innerHTML = '<strong style="color:#f00;text-shadow: 0px 0px 3px;">Failed to initialize WebGL.</strong>';
+            };
+            E['addEvent'](ElmContainer, 'start-game', function (_0x1ea849) {
+                E['started'] = !0x0;
+                E['playing'] = !0x0;
+                toggleHidden(LoadingInfo, !0x0);
+                E['callaction']('toggleControls', !0x0);
+                var ElmClassTooltip = getClassName('ejs__tooltip--visible'),
+                    ElmTooltips = E['elements']['buttons']['gamepad']['querySelector'](getClassName('ejs__tooltip', 1));
+                elmAddRemoveClass(ElmTooltips, ElmClassTooltip, !0x0);
+                setTimeout(function () {
+                    elmAddRemoveClass(ElmTooltips, ElmClassTooltip, !0x1);
                 }, 0x1388), toggleHidden(LoadingBtnStart, !0x0);
                 var _0x50da70 = _0x288469(ejs_data['defaultCoreOptionsValues']['call'](E), ejs_data['storage']['get']('core-options') || {});
                 'n64' === E['system'] && _0x50da70 && Object['keys'](_0x50da70)['forEach'](function (_0x4a2d30) {
 
-                    'glupen64-aspect' === _0x4a2d30 && '16:9' === _0x50da70[_0x4a2d30] && (_0xd3c714['height'] = _0xd3c714['width'] / 0x10 * 0x9, ejs_loader['aspectRatio'] = 0x10 / 0x9);
-                }), 'arcade' !== E['system'] && 'fba0.2.97.29' !== E['system'] || _0x50da70 && Object['keys'](_0x50da70)['forEach'](function (_0x5d1990) {
+                    'glupen64-aspect' === _0x4a2d30 && '16:9' === _0x50da70[_0x4a2d30] && (ElmCanvas['height'] = ElmCanvas['width'] / 0x10 * 0x9, ejs_loader['aspectRatio'] = 0x10 / 0x9);
+                });
+                'arcade' !== E['system'] && 'fba0.2.97.29' !== E['system'] || _0x50da70 && Object['keys'](_0x50da70)['forEach'](function (_0x5d1990) {
 
-                    'fba-aspect' === _0x5d1990 && 'PAR' === _0x50da70[_0x5d1990] && (_0xd3c714['height'] = _0xd3c714['width'] / 0x10 * 0x9, ejs_loader['aspectRatio'] = 0x10 / 0x9);
-                }), 'gba' === E['system'] && (_0xd3c714['height'] = _0xd3c714['width'] / 1.5, ejs_loader['aspectRatio'] = 1.5), window['setTimeout'](function () {}, 0x96), (function () {
-                    var _0x5c60b6 = E;
-                    if ('undefined' != typeof RI) {
-                        document['removeEventListener']('mousemove', RI['eventHandler'], !0x1), _0xd3c714['removeEventListener']('mousedown', RI['canvasEventHandler'], !0x1), _0xd3c714['removeEventListener']('mouseup', RI['canvasEventHandler'], !0x1), (_0x5c60b6['elements']['container']['addEventListener']('mousemove', function (_0x38eb7e) {
-                            var _0x27f54a = 0x0,
-                                _0x1be677 = 0x0,
-                                _0x109101 = _0x38eb7e['offsetX'] - ejs_loader['Module']['canvas']['offsetLeft'],
-                                _0x42b854 = _0x38eb7e['offsetY'] - ejs_loader['Module']['canvas']['offsetTop'];
-                            switch (_0x38eb7e['type']) {
-                                case 'mousemove':
-                                    _0x109101 < 0x0 ? (_0x109101 = 0x0, _0x27f54a = -ejs_loader['Module']['canvas']['offsetWidth']) : _0x109101 > ejs_loader['Module']['canvas']['offsetWidth'] ? (_0x109101 = ejs_loader['Module']['canvas']['offsetWidth'], _0x27f54a = ejs_loader['Module']['canvas']['offsetWidth']) : _0x27f54a = _0x109101 - RI['currentX'], _0x42b854 < 0x0 ? (_0x42b854 = 0x0, _0x1be677 = -ejs_loader['Module']['canvas']['offsetHeight']) : _0x42b854 > ejs_loader['Module']['canvas']['offsetHeight'] ? (_0x42b854 = ejs_loader['Module']['canvas']['offsetHeight'], _0x1be677 = ejs_loader['Module']['canvas']['offsetHeight']) : _0x1be677 = _0x42b854 - RI['currentY'], RI['currentX'] = _0x109101, RI['currentY'] = _0x42b854;
-                                    for (var _0x4e5a16 = 0x0; _0x4e5a16 < RI['contexts']['length']; _0x4e5a16 += 0x1) HEAP32[RI['contexts'][_0x4e5a16]['state'] + 0x20 >> 0x2] = _0x27f54a, HEAP32[RI['contexts'][_0x4e5a16]['state'] + 0x24 >> 0x2] = _0x1be677;
+                    'fba-aspect' === _0x5d1990 && 'PAR' === _0x50da70[_0x5d1990] && (ElmCanvas['height'] = ElmCanvas['width'] / 0x10 * 0x9, ejs_loader['aspectRatio'] = 0x10 / 0x9);
+                });
+
+
+                ///'gba' === E['system'] && (ElmCanvas['height'] = ElmCanvas['width'] / 1.5, ejs_loader['aspectRatio'] = 1.5);
+
+                let eventMouseList = ['mousemove', 'mousedown', 'mouseup'],
+                    eventTouchList = ['touchstart', 'touchsend', 'touchmove'];
+                if ('undefined' != typeof RI) {
+                    T.un(document, 'mousemove', RI['eventHandler'], false);
+                    T.un(ElmCanvas, 'mousedown', RI['canvasEventHandler'], false);
+                    T.un(ElmCanvas, 'mouseup', RI['canvasEventHandler'], false);
+                    ElmContainer['addEventListener']('mousemove', function (event) {
+                        var _0x27f54a = 0x0,
+                            _0x1be677 = 0x0,
+                            _0x109101 = event['offsetX'] - ejs_loader['Module']['canvas']['offsetLeft'],
+                            _0x42b854 = event['offsetY'] - ejs_loader['Module']['canvas']['offsetTop'];
+                        switch (event['type']) {
+                            case 'mousemove':
+                                _0x109101 < 0x0 ? (_0x109101 = 0x0, _0x27f54a = -ejs_loader['Module']['canvas']['offsetWidth']) : _0x109101 > ejs_loader['Module']['canvas']['offsetWidth'] ? (_0x109101 = ejs_loader['Module']['canvas']['offsetWidth'], _0x27f54a = ejs_loader['Module']['canvas']['offsetWidth']) : _0x27f54a = _0x109101 - RI['currentX'], _0x42b854 < 0x0 ? (_0x42b854 = 0x0, _0x1be677 = -ejs_loader['Module']['canvas']['offsetHeight']) : _0x42b854 > ejs_loader['Module']['canvas']['offsetHeight'] ? (_0x42b854 = ejs_loader['Module']['canvas']['offsetHeight'], _0x1be677 = ejs_loader['Module']['canvas']['offsetHeight']) : _0x1be677 = _0x42b854 - RI['currentY'], RI['currentX'] = _0x109101, RI['currentY'] = _0x42b854;
+                                for (var _0x4e5a16 = 0x0; _0x4e5a16 < RI['contexts']['length']; _0x4e5a16 += 0x1) HEAP32[RI['contexts'][_0x4e5a16]['state'] + 0x20 >> 0x2] = _0x27f54a, HEAP32[RI['contexts'][_0x4e5a16]['state'] + 0x24 >> 0x2] = _0x1be677;
+                        }
+                    }, !0x1);
+                    T.on(ElmContainer, 'mousedown', RI['canvasEventHandler'], !0x1);
+                    T.on(ElmContainer, 'mouseup', RI['canvasEventHandler'], !0x1);
+                    I.toArr(['touchstart', 'touchend'], v => T.on(ElmContainer, v, event => {
+
+                        if (event['targetTouches'][0x0]) {
+                            var _0x3632b5, _0x1aed91, _0x5b332f = 0x0,
+                                _0x275451 = 0x0,
+                                _0x3f17ff = event['target']['getBoundingClientRect'](),
+                                _0x190658 = event['targetTouches'][0x0]['clientX'] - _0x3f17ff['left'],
+                                _0x298653 = event['targetTouches'][0x0]['clientY'] - _0x3f17ff['top'];
+                            _0x190658 < 0x0 ? (_0x190658 = 0x0, _0x5b332f = -ejs_loader['Module']['canvas']['offsetWidth']) : _0x190658 > ejs_loader['Module']['canvas']['offsetWidth'] ? (_0x190658 = ejs_loader['Module']['canvas']['offsetWidth'], _0x5b332f = ejs_loader['Module']['canvas']['offsetWidth']) : _0x5b332f = _0x190658 - RI['currentX'], _0x298653 < 0x0 ? (_0x298653 = 0x0, _0x275451 = -ejs_loader['Module']['canvas']['offsetHeight']) : _0x298653 > ejs_loader['Module']['canvas']['offsetHeight'] ? (_0x298653 = ejs_loader['Module']['canvas']['offsetHeight'], _0x275451 = ejs_loader['Module']['canvas']['offsetHeight']) : _0x275451 = _0x298653 - RI['currentY'], RI['currentX'] = _0x190658, RI['currentY'] = _0x298653;
+                            for (var _0x360178 = 0x0; _0x360178 < RI['contexts']['length']; _0x360178 += 0x1) HEAP32[RI['contexts'][_0x360178]['state'] + 0x20 >> 0x2] = _0x5b332f, HEAP32[RI['contexts'][_0x360178]['state'] + 0x24 >> 0x2] = _0x275451;
+                            switch (event['type']) {
+                                case 'touchend':
+                                case 'touchstart':
+                                    if (0x0 === event['button']) _0x1aed91 = 0x28;
+                                    else {
+                                        if (0x2 !== event['button']) break;
+                                        _0x1aed91 = 0x29;
+                                    }
+                                    _0x3632b5 = 'touchend' === event['type'] ? 0x0 : 0x1;
+                                    for (var _0x32b43c = 0x0; _0x32b43c < RI['contexts']['length']; _0x32b43c += 0x1) HEAP8[RI['contexts'][_0x32b43c]['state'] + _0x1aed91 >> 0x0] = _0x3632b5;
                             }
-                        }, !0x1), _0x5c60b6['elements']['container']['addEventListener']('mousedown', RI['canvasEventHandler'], !0x1), _0x5c60b6['elements']['container']['addEventListener']('mouseup', RI['canvasEventHandler'], !0x1));
-                        var _0x4d7ae7 = function (_0x4bd717) {
-
-                            if (_0x4bd717['targetTouches'][0x0]) {
-                                var _0x3632b5, _0x1aed91, _0x5b332f = 0x0,
-                                    _0x275451 = 0x0,
-                                    _0x3f17ff = _0x4bd717['target']['getBoundingClientRect'](),
-                                    _0x190658 = _0x4bd717['targetTouches'][0x0]['clientX'] - _0x3f17ff['left'],
-                                    _0x298653 = _0x4bd717['targetTouches'][0x0]['clientY'] - _0x3f17ff['top'];
-                                _0x190658 < 0x0 ? (_0x190658 = 0x0, _0x5b332f = -ejs_loader['Module']['canvas']['offsetWidth']) : _0x190658 > ejs_loader['Module']['canvas']['offsetWidth'] ? (_0x190658 = ejs_loader['Module']['canvas']['offsetWidth'], _0x5b332f = ejs_loader['Module']['canvas']['offsetWidth']) : _0x5b332f = _0x190658 - RI['currentX'], _0x298653 < 0x0 ? (_0x298653 = 0x0, _0x275451 = -ejs_loader['Module']['canvas']['offsetHeight']) : _0x298653 > ejs_loader['Module']['canvas']['offsetHeight'] ? (_0x298653 = ejs_loader['Module']['canvas']['offsetHeight'], _0x275451 = ejs_loader['Module']['canvas']['offsetHeight']) : _0x275451 = _0x298653 - RI['currentY'], RI['currentX'] = _0x190658, RI['currentY'] = _0x298653;
-                                for (var _0x360178 = 0x0; _0x360178 < RI['contexts']['length']; _0x360178 += 0x1) HEAP32[RI['contexts'][_0x360178]['state'] + 0x20 >> 0x2] = _0x5b332f, HEAP32[RI['contexts'][_0x360178]['state'] + 0x24 >> 0x2] = _0x275451;
-                                switch (_0x4bd717['type']) {
-                                    case 'touchend':
-                                    case 'touchstart':
-                                        if (0x0 === _0x4bd717['button']) _0x1aed91 = 0x28;
-                                        else {
-                                            if (0x2 !== _0x4bd717['button']) break;
-                                            _0x1aed91 = 0x29;
-                                        }
-                                        _0x3632b5 = 'touchend' === _0x4bd717['type'] ? 0x0 : 0x1;
-                                        for (var _0x32b43c = 0x0; _0x32b43c < RI['contexts']['length']; _0x32b43c += 0x1) HEAP8[RI['contexts'][_0x32b43c]['state'] + _0x1aed91 >> 0x0] = _0x3632b5;
-                                }
-                            }
-                        };
-                        _0x5c60b6['elements']['container']['addEventListener']('touchstart', _0x4d7ae7, !0x1), _0x5c60b6['elements']['container']['addEventListener']('touchend', _0x4d7ae7, !0x1);
-                    } else {
-                        var _0x35ebb9 = function (_0xca83b1) {
-                            var _0x4271f8 = new MouseEvent(_0xca83b1['type'], {
-                                'isTrusted': !0x1,
-                                'altKey': _0xca83b1['altKey'],
-                                'bubbles': !0x1,
-                                'button': _0xca83b1['button'],
-                                'buttons': _0xca83b1['buttons'],
-                                'cancelBubble': !0x1,
-                                'cancelable': !0x0,
-                                'clientX': _0xca83b1['clientX'],
-                                'clientY': _0xca83b1['clientY'],
-                                'composed': !0x0,
-                                'ctrlKey': !0x1,
-                                'defaultPrevented': !0x1,
-                                'detail': _0xca83b1['detail'],
-                                'eventPhase': _0xca83b1['eventPhase'],
-                                'layerX': _0xca83b1['layerX'],
-                                'layerY': _0xca83b1['layerY'],
-                                'metaKey': _0xca83b1['metaKey'],
-                                'movementX': _0xca83b1['movementX'],
-                                'movementY': _0xca83b1['movementY'],
-                                'offsetX': _0xca83b1['offsetX'],
-                                'offsetY': _0xca83b1['offsetY'],
-                                'pageX': _0xca83b1['pageX'],
-                                'pageY': _0xca83b1['pageY'],
-                                'which': _0xca83b1['which'],
-                                'x': _0xca83b1['x'],
-                                'y': _0xca83b1['y']
-                            });
-                            ejs_loader['Module']['canvas']['dispatchEvent'](_0x4271f8), _0x5c60b6['elements']['wrapper']['dispatchEvent'](_0x4271f8), _0x5c60b6['system'];
-                        };
-                        ejs_loader['Module']['canvas']['addEventListener']('mousemove', function (_0x556871) {
-
-                            _0x556871['stopPropagation']();
-                        }), ejs_loader['Module']['canvas']['addEventListener']('mousedown', function (_0x43c258) {
-
-                            _0x43c258['stopPropagation']();
-                        }), ejs_loader['Module']['canvas']['addEventListener']('mouseup', function (_0x7cfc09) {
-
-                            _0x7cfc09['stopPropagation']();
-                        }), ejs_loader['Module']['canvas']['addEventListener']('touchstart', function (_0x230051) {
-                            _0x230051['stopPropagation']();
-                        }), ejs_loader['Module']['canvas']['addEventListener']('touchsend', function (_0x345549) {
-
-                            _0x345549['stopPropagation']();
-                        }), ejs_loader['Module']['canvas']['addEventListener']('touchmove', function (_0x99bc9b) {
-
-                            _0x99bc9b['stopPropagation']();
+                        }
+                    }, !1));
+                } else {
+                    I.toArr([].concat(eventMouseList, eventTouchList), v => T.on(ejs_loader['Module']['canvas'], v, e => e.stopPropagation()));
+                    I.toArr(eventMouseList, v => T.on(ElmContainer, v, event => {
+                        var newEvent = new MouseEvent(event['type'], {
+                            'isTrusted': !0x1,
+                            'altKey': event['altKey'],
+                            'bubbles': !0x1,
+                            'button': event['button'],
+                            'buttons': event['buttons'],
+                            'cancelBubble': !0x1,
+                            'cancelable': !0x0,
+                            'clientX': event['clientX'],
+                            'clientY': event['clientY'],
+                            'composed': !0x0,
+                            'ctrlKey': !0x1,
+                            'defaultPrevented': !0x1,
+                            'detail': event['detail'],
+                            'eventPhase': event['eventPhase'],
+                            'layerX': event['layerX'],
+                            'layerY': event['layerY'],
+                            'metaKey': event['metaKey'],
+                            'movementX': event['movementX'],
+                            'movementY': event['movementY'],
+                            'offsetX': event['offsetX'],
+                            'offsetY': event['offsetY'],
+                            'pageX': event['pageX'],
+                            'pageY': event['pageY'],
+                            'which': event['which'],
+                            'x': event['x'],
+                            'y': event['y']
                         });
-                        var _0x3c2b39 = function (_0x22da3e) {
-                            var _0x232c9e, _0x1a2bc0 = {
-                                'isTrusted': !0x1,
-                                'altKey': _0x22da3e['altKey'],
-                                'bubbles': !0x1,
-                                'button': _0x22da3e['button'],
-                                'buttons': _0x22da3e['buttons'],
-                                'cancelBubble': !0x1,
-                                'cancelable': !0x0,
-                                'clientX': _0x22da3e['clientX'],
-                                'clientY': _0x22da3e['clientY'],
-                                'composed': !0x0,
-                                'ctrlKey': !0x1,
-                                'defaultPrevented': !0x1,
-                                'detail': _0x22da3e['detail'],
-                                'eventPhase': _0x22da3e['eventPhase'],
-                                'layerX': _0x22da3e['layerX'],
-                                'layerY': _0x22da3e['layerY'],
-                                'metaKey': _0x22da3e['metaKey'],
-                                'movementX': _0x22da3e['movementX'],
-                                'movementY': _0x22da3e['movementY'],
-                                'offsetX': _0x22da3e['offsetX'],
-                                'offsetY': _0x22da3e['offsetY'],
-                                'pageX': _0x22da3e['pageX'],
-                                'pageY': _0x22da3e['pageY'],
-                                'which': _0x22da3e['which'],
-                                'x': _0x22da3e['x'],
-                                'y': _0x22da3e['y']
-                            };
-                            'touchstart' == _0x22da3e['type'] ? _0x232c9e = new MouseEvent('mousedown', _0x1a2bc0) : 'touchsend' == _0x22da3e['type'] ? _0x232c9e = new MouseEvent('mouseup', _0x1a2bc0) : 'touchmove' == _0x22da3e['type'] && (_0x232c9e = new MouseEvent('mousemove', _0x1a2bc0)), _0x232c9e && (ejs_loader['Module']['canvas']['dispatchEvent'](_0x232c9e), _0x5c60b6['elements']['wrapper']['dispatchEvent'](_0x232c9e), _0x5c60b6['system']);
+                        ejs_loader['Module']['canvas']['dispatchEvent'](newEvent), E['elements']['wrapper']['dispatchEvent'](newEvent), E['system'];
+                    }, {
+                        passive: false
+                    }));
+                    I.toArr(eventTouchList, v => T.on(ElmContainer, v, event => {
+                        var eventEvent, eventData = {
+                            'isTrusted': !0x1,
+                            'altKey': event['altKey'],
+                            'bubbles': !0x1,
+                            'button': event['button'],
+                            'buttons': event['buttons'],
+                            'cancelBubble': !0x1,
+                            'cancelable': !0x0,
+                            'clientX': event['clientX'],
+                            'clientY': event['clientY'],
+                            'composed': !0x0,
+                            'ctrlKey': !0x1,
+                            'defaultPrevented': !0x1,
+                            'detail': event['detail'],
+                            'eventPhase': event['eventPhase'],
+                            'layerX': event['layerX'],
+                            'layerY': event['layerY'],
+                            'metaKey': event['metaKey'],
+                            'movementX': event['movementX'],
+                            'movementY': event['movementY'],
+                            'offsetX': event['offsetX'],
+                            'offsetY': event['offsetY'],
+                            'pageX': event['pageX'],
+                            'pageY': event['pageY'],
+                            'which': event['which'],
+                            'x': event['x'],
+                            'y': event['y']
                         };
-                        _0x5c60b6['elements']['container']['addEventListener']('mousemove', _0x35ebb9, !0x1), _0x5c60b6['elements']['container']['addEventListener']('mousedown', _0x35ebb9, !0x1), _0x5c60b6['elements']['container']['addEventListener']('mouseup', _0x35ebb9, !0x1), _0x5c60b6['elements']['container']['addEventListener']('touchstart', _0x3c2b39, !0x1), _0x5c60b6['elements']['container']['addEventListener']('touchend', _0x3c2b39, !0x1), _0x5c60b6['elements']['container']['addEventListener']('touchmove', _0x3c2b39, !0x1);
-                    }
-                }()), 'msx' === E['system'] && function (_0x2ab99f) {
+                        if ('touchstart' == event['type']) {
+                            eventEvent = new MouseEvent('mousedown', eventData)
+                        } else if ('touchsend' == event['type']) {
+                            eventEvent = new MouseEvent('mouseup', eventData)
+                        } else if ('touchmove' == event['type']) {
+                            eventEvent = new MouseEvent('mousemove', eventData)
+                        }
+                        if (eventEvent) {
+                            ejs_loader['Module']['canvas']['dispatchEvent'](eventEvent);
+                            E['elements']['wrapper']['dispatchEvent'](eventEvent);
+                        }
+                    }, {
+                        passive: false
+                    }));
+                }
+                'msx' === E['system'] && function (_0x2ab99f) {
 
                     if ('undefined' != typeof RI) {
                         document['removeEventListener']('keydown', RI['eventHandler'], !0x1), document['removeEventListener']('keyup', RI['eventHandler'], !0x1);
@@ -12664,9 +10818,10 @@ var EJS = function (modules) {
                         };
                         document['addEventListener']('keydown', _0x1210c1, !0x1), document['addEventListener']('keyup', _0x1210c1, !0x1);
                     }
-                }(), setTimeout(function () {
+                }();
+                setTimeout(function () {
                     var _0x29453d;
-                    _0x29453d = _0x31055e['info'](), null === ejs_Controller['setVolume'] && 'undefined' != typeof RA ? (RA['queueAudio'] = function () {
+                    _0x29453d = ejs_Browser['info'](), null === ejs_Controller['setVolume'] && 'undefined' != typeof RA ? (RA['queueAudio'] = function () {
                         var _0x400270, _0x15b28c = E['volume'],
                             _0x21c72e = RA['bufIndex'];
                         _0x400270 = RA['bufIndex'] ? RA['buffers'][RA['bufIndex'] - 0x1]['endTime'] : RA['context']['currentTime'], RA['buffers'][_0x21c72e]['endTime'] = _0x400270 + RA['buffers'][_0x21c72e]['duration'];
@@ -12674,10 +10829,10 @@ var EJS = function (modules) {
                         if (_0x4a6c40['buffer'] = RA['buffers'][_0x21c72e], E['muted'] && (_0x15b28c = 0x0), 0x1 === _0x15b28c) _0x4a6c40['connect'](RA['context']['destination']);
                         else {
                             var _0x3866f5 = RA['context']['createGain']();
-                            _0x4a6c40['connect'](_0x3866f5), _0x3866f5['connect'](RA['context']['destination']), _0x31055e['isEdge'] || 'chrome' === _0x29453d['name'] && parseInt(_0x29453d['version'], 0xa) <= 0x3c || 'firefox' === _0x29453d['name'] && parseInt(_0x29453d['version'], 0xa) <= 0x38 || 'opera' === _0x29453d['name'] && parseInt(_0x29453d['version'], 0xa) <= 0x2c ? _0x3866f5['gain']['value'] = _0x15b28c : 'firefox' === _0x29453d['name'] ? _0x3866f5['gain']['setValueAtTime'](_0x15b28c, RA['context']['currentTime']) : _0x3866f5['gain']['setValueAtTime'](_0x15b28c, RA['context']['currentTime'], 0x0);
+                            _0x4a6c40['connect'](_0x3866f5), _0x3866f5['connect'](RA['context']['destination']), ejs_Browser['isEdge'] || 'chrome' === _0x29453d['name'] && parseInt(_0x29453d['version'], 0xa) <= 0x3c || 'firefox' === _0x29453d['name'] && parseInt(_0x29453d['version'], 0xa) <= 0x38 || 'opera' === _0x29453d['name'] && parseInt(_0x29453d['version'], 0xa) <= 0x2c ? _0x3866f5['gain']['value'] = _0x15b28c : 'firefox' === _0x29453d['name'] ? _0x3866f5['gain']['setValueAtTime'](_0x15b28c, RA['context']['currentTime']) : _0x3866f5['gain']['setValueAtTime'](_0x15b28c, RA['context']['currentTime'], 0x0);
                         }
                         _0x4a6c40['start'](_0x400270), RA['bufIndex'] += 0x1, RA['bufOffset'] = 0x0;
-                    }, _0x31055e['isIos'] && window['addEventListener']('touchstart', function () {
+                    }, ejs_Browser['isIos'] && window['addEventListener']('touchstart', function () {
 
                         if (RA['context']) {
                             RA['context']['resume']();
@@ -12685,83 +10840,72 @@ var EJS = function (modules) {
                             _0x5d0584['connect'](RA['context']['destination']), _0x5d0584['start']();
                         }
                     }, !0x1)) : ejs_Controller['setVolume'] && ejs_Controller['setVolume']();
-                }, 0x64), setTimeout(function () {
-
-                    ElmContainer['focus']();
-                }, 0x1e), void 0x0 === window['addRunDependency'] && (window['Module'] = void 0x0);
-                var _0x20f0ce = ejs_loader.FS['readFile'](E['startName']);
-                if (_0x20f0ce['length'] <= 0x8000000) {
-                    var _0x5e3666;
+                }, 0x64);
+                //void 0x0 === window['addRunDependency'] && (window['Module'] = void 0x0);
+                var gameBuf = ejs_loader.FS['readFile'](E['startName']);
+                if (gameBuf['length'] <= 0x8000000) {
+                    var fsgameBuf;
                     if (['snes', 'snes2002', 'snes2005', 'snes2010']['includes'](E['system'])) {
-                        var _0x318e89 = _0x20f0ce['length'] % 0x400;
-                        _0x5e3666 = new _0x2181ff(_0x318e89 ? _0x20f0ce['slice'] ? _0x20f0ce['slice'](_0x318e89) : _0x20f0ce['subarray'](_0x318e89) : _0x20f0ce);
-                    } else _0x5e3666 = new _0x2181ff(_0x20f0ce);
-                    var _0x249a94 = n_export_132['a']['create'](),
-                        _0x388c32 = new FileReader(),
-                        _0x5b0587 = 0x0,
-                        _0x5b44cf = _0x5e3666['_u8array']['length'];
-                    if (_0x388c32['onload'] = function (_0x34527f) {
-
-                            try {
-                                _0x249a94['update'](_0x34527f['target']['result']), (function () {
-
-                                    if (_0x5b0587 < _0x5b44cf) {
-                                        var _0x1e6af1 = Math['min'](_0x5b0587 + 0x200000, _0x5b44cf);
-                                        _0x388c32['readAsArrayBuffer'](new Blob([_0x5e3666['_u8array']['slice'](_0x5b0587, _0x1e6af1)])), _0x5b0587 = _0x1e6af1;
-                                    } else console['log'](_0x249a94['hex']()), E['hash'] = _0x249a94['hex'](), 'function' == typeof window['ejsromshash'] && window['ejsromshash'](E['startName'], E['hash']);
-                                }());
-                            } catch (_0x1abd99) {
-                                console['log'](_0x1abd99);
-                            }
-                        }, String['prototype']['padStart'] || (String['prototype']['padStart'] = function (_0x5c9f46, _0x15d791) {
-
-                            return _0x5c9f46 >>= 0x0, _0x15d791 = String(void 0x0 !== _0x15d791 ? _0x15d791 : ' '), this['length'] > _0x5c9f46 ? String(this) : ((_0x5c9f46 -= this['length']) > _0x15d791['length'] && (_0x15d791 += _0x15d791['repeat'](_0x5c9f46 / _0x15d791['length'])), _0x15d791['slice'](0x0, _0x5c9f46) + String(this));
-                        }), ejs_data['supportNetPlay']['call'](E) && ejs_Controller['netPlayHost']) {
+                        var snesLen = gameBuf['length'] % 0x400;
+                        fsgameBuf = new _0x2181ff(snesLen ? gameBuf['slice'] ? gameBuf['slice'](snesLen) : gameBuf['subarray'](snesLen) : gameBuf);
+                    } else {
+                        fsgameBuf = new _0x2181ff(gameBuf);
+                    }
+                    //be96d189
+                    if (self.SparkMD5) E['hash'] = new SparkMD5.ArrayBuffer().append(fsgameBuf._u8array.buffer).end();
+                    if (ejs_data['supportNetPlay']['call'](E) && ejs_Controller['netPlayHost']) {
+                        console.log(11);
                         if (ejs_Controller['contentCrc32']) ejs_Controller['romcrc32'] = ejs_Controller['contentCrc32']();
                         else {
-                            var _0x1cac11 = _0x48c5b6(_0x5e3666);
-                            ejs_Controller['romcrc32'] = _0x1cac11['toString'](0x10), ejs_Controller['romcrc32'] = ejs_Controller['romcrc32']['padStart'](0x8, '0');
+                            var Crc32int = getCrc32int(fsgameBuf);
+                            ejs_Controller['romcrc32'] = Crc32int['toString'](0x10);
+                            ejs_Controller['romcrc32'] = ejs_Controller['romcrc32']['padStart'](0x8, '0');
                         }
                     }
+                    T.null(fsgameBuf);
+                    fsgameBuf = null;
+
                 }
+                gameBuf = null;
                 ejs_Controller['setDiskContainer']['call'](E);
+                ElmContainer['focus']();
             });
             var PatchToContent = function () {
 
-                    if (ejs_loader['gamePatch']) {
-                        var _0x42e9d8 = E['startName']['split']('/'),
-                            _0x44c9cc = _0x42e9d8['pop']()['split']('.')['pop'](),
-                            _0x54cc74 = (ejs_loader['gamePatch']['split']('.')['pop'](), ejs_loader['gamePatch']['split']('/')['pop']()['split']('.')['shift']()),
-                            _0x43e991 = '' ['concat'](_0x42e9d8['join']('/'), '/')['concat'](_0x54cc74, '.')['concat'](_0x44c9cc);
-                        _0x43e991 = _0x43e991['replace'](/\#/g, '');
-                        var _0x4136ee = ejs_loader['gamePatch'];
-                        if (ejs_loader.FS['rename'](E['startName'], _0x43e991), E['startName'] = _0x43e991, 'snes' === E['system'] || ['snes2002', 'snes2005', 'snes2010']['includes'](E['system'])) {
-                            var _0x2e6771 = new _0x2181ff(ejs_loader.FS['readFile'](E['startName'])),
-                                _0x3d734d = _0x48c5b6(_0x2e6771);
-                            ejs_Controller['romcrc32'] = _0x3d734d['toString'](0x10);
-                            var _0x30e2fc, _0x57a048, _0x2e3a2d, _0x367813 = new _0x2181ff(ejs_loader.FS['readFile'](_0x4136ee)),
-                                _0x8bb892 = _0x367813['readString'](0x6),
-                                _0x3bf629 = _0x2e6771['_u8array']['length'] % 0x400;
-                            _0x8bb892['startsWith']('PATCH') ? (_0x30e2fc = _0x31959e(_0x367813), 0x0 === _0x3bf629 && 'B19ED489' === _0x3d734d['toString'](0x10)['toUpperCase']() && ((_0x57a048 = new Uint8Array(_0x2e6771['_u8array']['length'] + 0x200))['set'](new Uint8Array(0x200), 0x0), _0x57a048['set'](_0x2e6771['_u8array'], 0x200), _0x2e6771 = new _0x2181ff(_0x57a048))) : _0x8bb892['startsWith'](_0x4bc4ab) ? _0x30e2fc = _0xe7d66e(_0x367813) : _0x8bb892['startsWith']('BPS1') && (_0x30e2fc = _0x291a53(_0x367813), _0x3bf629 > 0x0 && 'A31BEAD4' === _0x3d734d['toString'](0x10)['toUpperCase']() && (_0x57a048 = _0x2e6771['_u8array']['slice'] ? _0x2e6771['_u8array']['slice'](_0x3bf629) : _0x2e6771['_u8array']['subarray'](_0x3bf629), _0x2e6771 = new _0x2181ff(_0x57a048)));
-                            try {
-                                if (_0x2e3a2d = _0x30e2fc['apply'](_0x2e6771, !0x1)) {
-                                    var _0x27e145 = _0x2e3a2d['_u8array']['length'] % 0x400;
-                                    _0x27e145 > 0x0 && (_0x57a048 = _0x2e3a2d['_u8array']['slice'] ? _0x2e3a2d['_u8array']['slice'](_0x27e145) : _0x2e3a2d['_u8array']['subarray'](_0x27e145), _0x2e3a2d = new _0x2181ff(_0x57a048)), ejs_loader.FS['unlink'](_0x4136ee), ejs_loader.FS['unlink'](E['startName']), ejs_loader.FS['writeFile'](E['startName'], _0x2e3a2d['_u8array']);
-                                }
-                            } catch (_0x6cf446) {}
-                        } else {
-                            var _0x23cafe, _0x157de4, _0x567245 = new _0x2181ff(ejs_loader.FS['readFile'](E['startName'])),
-                                _0xc9d854 = new _0x2181ff(ejs_loader.FS['readFile'](_0x4136ee)),
-                                _0x386761 = _0xc9d854['readString'](0x6);
-                            _0x386761['startsWith']('PATCH') ? _0x23cafe = _0x31959e(_0xc9d854) : _0x386761['startsWith'](_0x4bc4ab) ? _0x23cafe = _0xe7d66e(_0xc9d854) : _0x386761['startsWith']('BPS1') && (_0x23cafe = _0x291a53(_0xc9d854));
-                            try {
-                                (_0x157de4 = _0x23cafe['apply'](_0x567245, !0x1)) && (ejs_loader.FS['unlink'](_0x4136ee), ejs_loader.FS['unlink'](E['startName']), ejs_loader.FS['writeFile'](E['startName'], _0x157de4['_u8array']));
-                            } catch (_0x4395fe) {}
-                        }
+                if (ejs_loader['gamePatch']) {
+                    var _0x42e9d8 = E['startName']['split']('/'),
+                        _0x44c9cc = _0x42e9d8['pop']()['split']('.')['pop'](),
+                        _0x54cc74 = (ejs_loader['gamePatch']['split']('.')['pop'](), ejs_loader['gamePatch']['split']('/')['pop']()['split']('.')['shift']()),
+                        _0x43e991 = '' ['concat'](_0x42e9d8['join']('/'), '/')['concat'](_0x54cc74, '.')['concat'](_0x44c9cc);
+                    _0x43e991 = _0x43e991['replace'](/\#/g, '');
+                    var _0x4136ee = ejs_loader['gamePatch'];
+                    if (ejs_loader.FS['rename'](E['startName'], _0x43e991), E['startName'] = _0x43e991, 'snes' === E['system'] || ['snes2002', 'snes2005', 'snes2010']['includes'](E['system'])) {
+                        var _0x2e6771 = new _0x2181ff(ejs_loader.FS['readFile'](E['startName'])),
+                            _0x3d734d = getCrc32int(_0x2e6771);
+                        ejs_Controller['romcrc32'] = _0x3d734d['toString'](0x10);
+                        var _0x30e2fc, _0x57a048, _0x2e3a2d, _0x367813 = new _0x2181ff(ejs_loader.FS['readFile'](_0x4136ee)),
+                            _0x8bb892 = _0x367813['readString'](0x6),
+                            _0x3bf629 = _0x2e6771['_u8array']['length'] % 0x400;
+                        _0x8bb892['startsWith']('PATCH') ? (_0x30e2fc = _0x31959e(_0x367813), 0x0 === _0x3bf629 && 'B19ED489' === _0x3d734d['toString'](0x10)['toUpperCase']() && ((_0x57a048 = new Uint8Array(_0x2e6771['_u8array']['length'] + 0x200))['set'](new Uint8Array(0x200), 0x0), _0x57a048['set'](_0x2e6771['_u8array'], 0x200), _0x2e6771 = new _0x2181ff(_0x57a048))) : _0x8bb892['startsWith'](_0x4bc4ab) ? _0x30e2fc = _0xe7d66e(_0x367813) : _0x8bb892['startsWith']('BPS1') && (_0x30e2fc = _0x291a53(_0x367813), _0x3bf629 > 0x0 && 'A31BEAD4' === _0x3d734d['toString'](0x10)['toUpperCase']() && (_0x57a048 = _0x2e6771['_u8array']['slice'] ? _0x2e6771['_u8array']['slice'](_0x3bf629) : _0x2e6771['_u8array']['subarray'](_0x3bf629), _0x2e6771 = new _0x2181ff(_0x57a048)));
+                        try {
+                            if (_0x2e3a2d = _0x30e2fc['apply'](_0x2e6771, !0x1)) {
+                                var _0x27e145 = _0x2e3a2d['_u8array']['length'] % 0x400;
+                                _0x27e145 > 0x0 && (_0x57a048 = _0x2e3a2d['_u8array']['slice'] ? _0x2e3a2d['_u8array']['slice'](_0x27e145) : _0x2e3a2d['_u8array']['subarray'](_0x27e145), _0x2e3a2d = new _0x2181ff(_0x57a048)), ejs_loader.FS['unlink'](_0x4136ee), ejs_loader.FS['unlink'](E['startName']), ejs_loader.FS['writeFile'](E['startName'], _0x2e3a2d['_u8array']);
+                            }
+                        } catch (_0x6cf446) {}
+                    } else {
+                        var _0x23cafe, _0x157de4, _0x567245 = new _0x2181ff(ejs_loader.FS['readFile'](E['startName'])),
+                            _0xc9d854 = new _0x2181ff(ejs_loader.FS['readFile'](_0x4136ee)),
+                            _0x386761 = _0xc9d854['readString'](0x6);
+                        _0x386761['startsWith']('PATCH') ? _0x23cafe = _0x31959e(_0xc9d854) : _0x386761['startsWith'](_0x4bc4ab) ? _0x23cafe = _0xe7d66e(_0xc9d854) : _0x386761['startsWith']('BPS1') && (_0x23cafe = _0x291a53(_0xc9d854));
+                        try {
+                            (_0x157de4 = _0x23cafe['apply'](_0x567245, !0x1)) && (ejs_loader.FS['unlink'](_0x4136ee), ejs_loader.FS['unlink'](E['startName']), ejs_loader.FS['writeFile'](E['startName'], _0x157de4['_u8array']));
+                        } catch (_0x4395fe) {}
                     }
-                };
+                }
+            };
             I.assign(
-                E.action, {
+                E['action'], {
                     PlayNow() {
                         LoadingP3.innerHTML = T.getLang('Loading...');
                         /**
@@ -12772,15 +10916,15 @@ var EJS = function (modules) {
                         return T.FetchItem({
                             url: `https://www.emulatorjs.com/api/v?name=${system}&_t=${T.time}`,
                             type: 'json',
-                            success: (JsonData, headers) => E.callaction('Wasm_ReadInfo',JsonData, headers),
+                            success: (JsonData, headers) => E['callaction']('Wasm_ReadInfo', JsonData, headers),
                             error() {
                                 //网络异常 本地测试
                                 console.log('local json');
-                                E.offline = !0;
+                                E['offline'] = !0;
                                 return T.FetchItem({
                                     url: E['RootPath'] + 'json/' + system + '.json',
                                     type: 'json',
-                                    success: (JsonData, headers) => E.callaction('Wasm_ReadInfo', JsonData, headers),
+                                    success: (JsonData, headers) => E['callaction']('Wasm_ReadInfo', JsonData, headers),
                                 });
                             }
                         });
@@ -12837,7 +10981,7 @@ var EJS = function (modules) {
                             I.toArr(ElmBtn['play'], elm => toggleHidden(elm, !0x0));
                         };
                         if (!btnSettings) toggleHidden(ElmBtn['settings'], !0x0);
-                        if (!btnVolume) toggleHidden(ElmContainer['querySelector'](getClassName('ejs__volume',1)), !0x0);
+                        if (!btnVolume) toggleHidden(ElmContainer['querySelector'](getClassName('ejs__volume', 1)), !0x0);
                         if (!btnSettings && !btnVolume) ElmBtn['fullscreen']['style']['marginLeft'] = 'auto';
                         if (!btnScreenshot) toggleHidden(ElmContainer['querySelector']('.' ['concat'](getClassName('ejs__contextmenu'), ' li:nth-child(1)')), !0x0);
                         if (CoreEnv instanceof Array) {
@@ -12846,7 +10990,7 @@ var EJS = function (modules) {
                             CoreAsmjs = Boolean(CoreEnv[0x2]);
                             CoreWasm = Boolean(CoreEnv[0x3]);
                             CoreCheat = Boolean(CoreEnv[0x4]);
-                        } else if(CoreEnv){
+                        } else if (CoreEnv) {
                             Boolean(CoreEnv['netplay']);
                             CoreVersion = CoreEnv['version'] ? CoreEnv['version'] : 0x1;
                             CoreState = Boolean(CoreEnv['state']);
@@ -12871,7 +11015,7 @@ var EJS = function (modules) {
                          * 需要检测游戏文件名
                          */
                         if ('mame' == E['system'] || 'mame0.193' == E['system'] || 'mame0.243' == E['system']) {
-                            return await E.callaction('Wasm_Mame_Check_Rooms');
+                            return await E['callaction']('Wasm_Mame_Check_Rooms');
                         } else {
                             var errorText = 'Please upgrade your browser to the latest version';
                             if (EnvVariable['wasm'] && CoreWasm) {
@@ -12901,8 +11045,8 @@ var EJS = function (modules) {
                                 dbCoreName = null;
                             }
                         }
-                        
-                        if (dbCoreName) E.callaction('Wasm_Download', dbCoreName, CoreVersion);
+
+                        if (dbCoreName) E['callaction']('Wasm_Download', dbCoreName, CoreVersion);
                         else LoadingP3.innerHTML = '<strong style="color:#f00;text-shadow: 0px 0px 3px;">' + errorText + '</strong>';
                         if (I.elm(ElmBtn['saveState'])) toggleHidden(ElmBtn['saveState'], !CoreState);
                         if (I.elm(ElmBtn['loadState'])) toggleHidden(ElmBtn['loadState'], !CoreState);
@@ -12912,34 +11056,36 @@ var EJS = function (modules) {
                      * 
                      * @returns 下载MAME核心
                      */
-                    async Wasm_Mame_Check_Rooms(){
-                        let checkUrl;
-                        if(!E['config']['gameUrl']){
-                            return E.callaction('MAME_NENGE_SET_ROOMS');
-                        }else{
-                            let roomname = T.F.getname(E['config']['gameUrl']),systemName = E['system']=='mame0.243'?'mame0.243':'mame';
+                    async Wasm_Mame_Check_Rooms() {
+                        if (!E['config']['gameUrl']) {
+                            return E['callaction']('MAME_NENGE_SET_ROOMS');
+                        } else {
+                            let roomname = T.F.getname(E['config']['gameUrl']),
+                                systemName = E['system'] == 'mame0.243' ? 'mame0.243' : 'mame';
                             T.FetchItem({
-                                url: 'https://www.emulatorjs.com/api/'+systemName+'?name=',
+                                url: 'https://www.emulatorjs.com/api/' + systemName + '?name=' + roomname,
                                 type: 'text',
                                 success(result) {
-                                    let index = E.callaction('MAME_SHOW_INFO',result);
-                                    if(index){
-                                        E.callaction('Wasm_Download',systemName+'-'+index+'-wasm.data',ejs_loader['coreFileVersion']);
-                                    }else{
-                                        LoadingP3.innerHTML = '<strong style=\x22color:#f00;text-shadow: 0px 0px 3px;\x22>'+T.getLang('Unsupported Game')+'</strong>'
+                                    let index = E['callaction']('MAME_SHOW_INFO', result);
+                                    if (index) {
+                                        E['callaction']('Wasm_Download', systemName + '-' + index + '-wasm.data', ejs_loader['coreFileVersion']);
+                                    } else {
+                                        LoadingP3.innerHTML = '<strong style="color:#f00;text-shadow: 0px 0px 3px;">' + T.getLang('Unsupported Game') + '</strong>'
                                     }
                                 },
-                                error(){
-                                    LoadingP3.innerHTML = '<strong style=\x22color:#f00;text-shadow: 0px 0px 3px;\x22>'+T.getLang('Network Error')+'</strong>';
+                                error() {
+                                    LoadingP3.innerHTML = '<strong style="color:#f00;text-shadow: 0px 0px 3px;">' + T.getLang('Network Error') + '</strong>';
                                 }
                             });
                         }
                     },
-                    NENGE_ROOMS_WELCOME_UI(list){
-                        let Div = T.$append(ejs_loader.loading,T.$ca('div',{class:'nenge-write-rooms'}));
+                    NENGE_ROOMS_WELCOME_UI(list) {
+                        let Div = T.$append(ejs_loader.loading, T.$ca('div', {
+                            class: 'nenge-write-rooms'
+                        }));
                         Div.innerHTML = `
                         <ul class="nenge-menu">
-                            ${list.map(v=>`<li>${T.getLang(v)}</li>`).join("")}
+                            ${list.map(v => `<li>${T.getLang(v)}</li>`).join("")}
                         </ul>
                         <div class="is_down"></div>
                         <div class="is_write"></div>
@@ -12947,143 +11093,148 @@ var EJS = function (modules) {
                         <p class="info-message">${T.getLang('uncompressed:auto check zip/7z/rar4,BIOS awayls to uncompressed load.')}</p>`;
                         return Div;
                     },
-                    MAME_NENGE_SET_ROOMS(){
-                        let Div = E.callaction('NENGE_ROOMS_WELCOME_UI',[
-                            'Import rooms',
-                            'Import and decompressed*',
-                            'View Rooms Storage',
-                        ]),
+                    MAME_NENGE_SET_ROOMS() {
+                        let Div = E['callaction']('NENGE_ROOMS_WELCOME_UI', [
+                                'Import rooms',
+                                'Import and decompressed*',
+                                'View Rooms Storage',
+                            ]),
                             GameSystem = E['system'],
                             nDiv = Nttr(Div),
                             ElmIsDown = nDiv.$('.is_down'),
                             ElmIsWrite = nDiv.$('.is_write'),
                             ElmStorage = nDiv.$('.storage_data'),
                             nList = I.toArr(nDiv.$('.nenge-menu').children),
-                            systemName = E['system']=='mame0.243'?'mame0.243':'mame';;
+                            systemName = E['system'] == 'mame0.243' ? 'mame0.243' : 'mame';;
                         E['MAMEDATA'] = {};
                         console.log(GameSystem);
-                        nDiv.$('.info-message').innerHTML += `<hr>`+T.getLang('MAME must select a rooms name to check!');
-                        if(nList&&nList.length>0){
-                            [0,1].forEach(index=>
+                        nDiv.$('.info-message').innerHTML += `<hr>` + T.getLang('MAME must select a rooms name to check!');
+                        if (nList && nList.length > 0) {
+                            [0, 1].forEach(index =>
                                 Nttr(nList[index]).click(
-                                    e=>E.callaction('upload',
-                                    async file=>await E.callaction(
-                                        'GAME_NENGE_ADD_LIST',
-                                        file.name,
-                                        file,
-                                        GameSystem,
-                                        ElmIsWrite,
-                                        index,
-                                        'Set Rooms',
-                                        async name=>{
-                                            if(T.F.getExt(name)!='zip') return true;
-                                        }
-                                    ))
+                                    e => E['callaction']('upload',
+                                        async file => await E['callaction'](
+                                            'GAME_NENGE_ADD_LIST',
+                                            file.name,
+                                            file,
+                                            GameSystem,
+                                            ElmIsWrite,
+                                            index,
+                                            'Set Rooms',
+                                            async name => {
+                                                if (T.F.getExt(name) != 'zip') return true;
+                                            }
+                                        ))
                                 )
                             );
                             Nttr(nList[2]).click(
-                                e=>E.callaction('GAME_NENGE_ADD_ROOMS',GameSystem,ElmStorage,'Set Rooms')
+                                e => E['callaction']('GAME_NENGE_ADD_ROOMS', GameSystem, ElmStorage, 'Set Rooms')
                             );
                         }
-                        Nttr(ElmIsWrite).click(async e=>{
+                        Nttr(ElmIsWrite).click(async e => {
                             let elm = e.target;
-                            if(I.elm(elm)){
+                            if (I.elm(elm)) {
                                 let data = elm.dataset;
-                                if(!data)return;
-                                if(data.path){
+                                if (!data) return;
+                                if (data.path) {
                                     let name = data.path;
-                                    let result = await E.callaction('MAME_CHECK_ROOM_NAME',name,systemName);
-                                    E.callaction('MAME_SHOW_INFO',result,ElmIsDown,name);
+                                    let result = await E['callaction']('MAME_CHECK_ROOM_NAME', name, systemName);
+                                    E['callaction']('MAME_SHOW_INFO', result, ElmIsDown, name);
                                 }
                             }
                         });
-                        Nttr(ElmStorage).click(async e=>{
+                        Nttr(ElmStorage).click(async e => {
                             let elm = e.target;
-                            if(I.elm(elm)){
+                            if (I.elm(elm)) {
                                 let data = elm.dataset;
-                                if(!data)return;
-                                if(data.name){
-                                    let name = data.name.replace(E['system']+'-','');
-                                    let result = await E.callaction('MAME_CHECK_ROOM_NAME',name,systemName);
-                                    E.callaction('MAME_SHOW_INFO',result,ElmIsDown,name);
-                                }else if(data.remove){
-                                    ejs_install.DB.rooms.remove(data.remove);
+                                if (!data) return;
+                                if (data.name) {
+                                    let name = data.name.replace(E['system'] + '-', '');
+                                    let result = await E['callaction']('MAME_CHECK_ROOM_NAME', name, systemName);
+                                    E['callaction']('MAME_SHOW_INFO', result, ElmIsDown, name);
+                                } else if (data.remove) {
+                                    DISK.DB.rooms.remove(data.remove);
                                     elm.parentNode.parentNode.remove();
                                 }
                             }
                         });
-                        Nttr(ElmIsDown).click(e=>{
+                        Nttr(ElmIsDown).click(e => {
                             let elm = e.target;
-                            if(I.elm(elm)){
+                            if (I.elm(elm)) {
                                 let data = elm.dataset;
-                                if(data.bios){
-                                    if(E['config']['biosUrl']&&I.str(E['config']['biosUrl'])){
+                                if (data.bios) {
+                                    if (E['config']['biosUrl'] && I.str(E['config']['biosUrl'])) {
                                         E['config']['biosUrl'] = [E['config']['biosUrl']];
-                                    }else{
+                                    } else {
                                         E['config']['biosUrl'] = [];
                                     }
-                                    if(!E['config']['biosUrl'].includes(data.bios))E['config']['biosUrl'].push(data.bios)
-                                }else if(data.name&&data.index){
+                                    if (!E['config']['biosUrl'].includes(data.bios)) E['config']['biosUrl'].push(data.bios)
+                                } else if (data.name && data.index) {
                                     Nttr(ElmIsWrite).remove();
                                     Nttr(ElmStorage).remove();
                                     Nttr(ElmIsDown).remove();
                                     nDiv.remove();
                                     E['config']['gameUrl'] = data.name;
-                                    E.callaction('Wasm_Download',systemName+'-'+data.index+'-wasm.data',ejs_loader['coreFileVersion']);
+                                    E['callaction']('Wasm_Download', systemName + '-' + data.index + '-wasm.data', ejs_loader['coreFileVersion']);
                                 }
                             }
                         });
 
                     },
-                    MAME_CHECK_ROOM_NAME(RoomName,systemName){
-                        return T.FetchItem({url:'https://www.emulatorjs.com/api/'+systemName+'?name='+RoomName,type:'text'});
+                    MAME_CHECK_ROOM_NAME(RoomName, systemName) {
+                        return T.FetchItem({
+                            url: 'https://www.emulatorjs.com/api/' + systemName + '?name=' + RoomName,
+                            type: 'text'
+                        });
                     },
-                    MAME_SHOW_INFO(result,ElmIsDown,RoomName){
-                        let html="",index,CoreState=!0,ElmBtn = E['elements']['buttons'];
-                        if(result.charAt(0)=='{'){
+                    MAME_SHOW_INFO(result, ElmIsDown, RoomName) {
+                        let html = "",
+                            index, CoreState = !0,
+                            ElmBtn = E['elements']['buttons'];
+                        if (result.charAt(0) == '{') {
                             let JsonResult = I.Json(result);
                             CoreState = 'supported' == JsonResult['savestate'];
-                            index =JsonResult['index'];
-                                if(ElmIsDown){
-                                    I.toArr(JsonResult,entry=>{
-                                        if(I.str(entry[1])){
-                                            html+=`<p>${T.getLang('mame '+entry[0])}:${entry[1]}</p>`
-                                        }else if(entry[0]=='files'&&entry.length>0){
-                                            html+=`<h6>${T.getLang('mame '+entry[0])}</h6>`;
-                                            I.toArr(entry[1],value=>{
-                                                html+=`<p>${value}<button data-bios="${value}">${T.getLang('must click when you run')}</button></p>`
-                                            })
-                                        }
-                                    })
-                            }else{
-                                if(JsonResult['files'])E['config']['biosUrl'] = JsonResult['files'];
+                            index = JsonResult['index'];
+                            if (ElmIsDown) {
+                                I.toArr(JsonResult, entry => {
+                                    if (I.str(entry[1])) {
+                                        html += `<p>${T.getLang('mame ' + entry[0])}:${entry[1]}</p>`
+                                    } else if (entry[0] == 'files' && entry.length > 0) {
+                                        html += `<h6>${T.getLang('mame ' + entry[0])}</h6>`;
+                                        I.toArr(entry[1], value => {
+                                            html += `<p>${value}<button data-bios="${value}">${T.getLang('must click when you run')}</button></p>`
+                                        })
+                                    }
+                                })
+                            } else {
+                                if (JsonResult['files']) E['config']['biosUrl'] = JsonResult['files'];
                             }
-                        }else if(result&&result.charAt(0) !='|'){
+                        } else if (result && result.charAt(0) != '|') {
                             let entry = result.split('|');
-                            if(entry[0])index =entry[0];
-                            if(entry[1])CoreState = entry[1] == 1;
-                            if(ElmIsDown){
-                            html+=`<p>${T.getLang('mame index')}:${entry[0]}</p>`;
-                            html+=`<p>${T.getLang('mame savestate')}:${entry[1]}</p>`;
+                            if (entry[0]) index = entry[0];
+                            if (entry[1]) CoreState = entry[1] == 1;
+                            if (ElmIsDown) {
+                                html += `<p>${T.getLang('mame index')}:${entry[0]}</p>`;
+                                html += `<p>${T.getLang('mame savestate')}:${entry[1]}</p>`;
                             }
-                            
+
 
                         }
                         if (I.elm(ElmBtn['saveState'])) toggleHidden(ElmBtn['saveState'], !CoreState);
                         if (I.elm(ElmBtn['loadState'])) toggleHidden(ElmBtn['loadState'], !CoreState);
                         ejs_Controller['stateSupported'] = CoreState;
-                        if(ElmIsDown){
-                            if(!index)ElmIsDown.innerHTML  = `<h3>${RoomName}</h3>`+T.getLang('this rooms can not run in:')+E['system'];
+                        if (ElmIsDown) {
+                            if (!index) ElmIsDown.innerHTML = `<h3>${RoomName}</h3>` + T.getLang('this rooms can not run in:') + E['system'];
                             else ElmIsDown.innerHTML = `<h3>${RoomName}</h3>${html}<p><button data-index="${index}" data-name="${RoomName}">${T.getLang('Run this!')}</button></p>`;
-                        }else{
+                        } else {
                             return index;
                         }
                     },
-                    Wasm_Download(coreName, coreVersion) {
-                        console.log('读取/下载 wasm file 若需加载指定核心(旧版)修改这里');
-                        let url = `${EmulatorCoresHost}/cores/${coreName}?v=${coreVersion}`,
+                    async Wasm_Download(coreName, coreVersion) {
+                        console.log('读取/下载 wasm file 若需加载指定核心(旧版)修改这里', coreName);
+                        let url = `//www.emulatorjs.com/cores/${coreName}?v=${coreVersion}`,
                             key = coreName;
-                        if (E.offline) {
+                        if (E['offline']) {
                             coreName = coreName.replace(/\.data$/, '.7z');
                             url = E['RootPath'] + '/oldcores/' + coreName + '?v=' + coreVersion;
                             key = 'old-' + coreName;
@@ -13091,20 +11242,28 @@ var EJS = function (modules) {
                         return T.FetchItem({
                             url,
                             key,
-                            store:ejs_install.DB.system,
+                            store: DISK.DB.system,
                             dataOption: {
                                 version: coreVersion,
                                 system: E['system'] == 'vbanext' ? 'gba' : E['system'],
                             },
                             version: coreVersion,
                             unpack: true,
+                            /*
+                            decode(contents) {
+                                let wasmAsmjs = new TextDecoder().decode(contents);
+                                wasmAsmjs = wasmAsmjs.replace(/\}Module\["run"\]\s*=\s*\/, '}var GLOBAL_BASE;if(!Module.MEMFS)Module.setMEMFS(MEMFS,FS,RA,GLOBAL_BASE);Module["run"]=');
+                                return wasmAsmjs;
+                            },
+                            */
                             Filter: coreName.endsWith('.data') ? (wasmU8) => {
                                 /**
                                  * 检查是否合法7z压缩包
                                  * 还原原始wasm.data非合法文件
                                  */
                                 let mime = T.F.CheckExt(wasmU8);
-                                if (!mime || !['zip', '7z','rar'].includes(mime)) {
+                                console.log(mime);
+                                if (!mime) {
                                     wasmU8 = wasmU8['slice'](0xc);
                                     wasmU8['set']([0x37, 0x7a, 0xbc, 0xaf, 0x27, 0x1c, 0x0, 0x3], 0x0);
                                 }
@@ -13117,63 +11276,76 @@ var EJS = function (modules) {
                                      * 检查是否合法7z压缩包
                                      */
                                     let mime = T.F.CheckExt(wasmU8);
-                                    if (!mime || !['zip', '7z','rar'].includes(mime)) {
+                                    if (!mime) {
                                         wasmU8 = wasmU8['slice'](0xc);
                                         wasmU8['set']([0x37, 0x7a, 0xbc, 0xaf, 0x27, 0x1c, 0x0, 0x3], 0x0);
                                     }
                                     T.unFile(wasmU8, e => {
                                         LoadingP1.innerHTML = `${T.getLang('Decompress Game Core')} ${e}`;
-                                    }).then(data => E.callaction('Wasm_ReadFile', data));
+                                    }).then(data => E['callaction']('Wasm_ReadFile', data));
 
                                 } else if (wasmU8) {
-                                    E.callaction('Wasm_ReadFile', wasmU8);
+                                    E['callaction']('Wasm_ReadFile', wasmU8);
                                 }
                                 wasmU8 = null;
-
                             },
                             process(e) {
                                 LoadingP3.innerHTML = `${T.getLang('Download Game Core')}   ${e}`;
                             },
                             error() {
-                                LoadingP3.innerHTML = '<strong style=\x22color:#f00;text-shadow: 0px 0px 3px;\x22>Network Error</strong>';
+                                LoadingP3.innerHTML = '<strong style="color:#f00;text-shadow: 0px 0px 3px;">Network Error</strong>';
                             }
+                        }).catch(function (e) {
+                            console.log(this, e)
                         });
                     },
-                    Wasm_ReadFile(datalist) {
+                    async Wasm_ReadFile(datalist) {
                         console.log('读取并解压wasmfile');
-                        let wasmAsmjs;
+                        let wasmAsmjs, memfile;
                         const Module = {
-                            //'TOTAL_MEMORY': 0x10000000,
-                            'noInitialRun': !0x0,
-                            'arguments': [],
-                            'preRun': [],
-                            'postRun': [],
-                            'canvas': _0xd3c714,
-                            'print': function (text) {
-
+                            //TOTAL_MEMORY: 0x10000000,
+                            noInitialRun: !0x0,
+                            arguments: [],
+                            preRun: [],
+                            postRun: [],
+                            canvas: ElmCanvas,
+                            coreFileData: {},
+                            print(text) {
                                 'undefined' != typeof EJS_DEBUG_ && !0x0 === EJS_DEBUG_ && console['log'](text);
                             },
-                            'printErr': function (text) {
-
+                            printErr(text) {
+                                if (!text) return;
                                 'undefined' != typeof EJS_DEBUG_ && !0x0 === EJS_DEBUG_ && console['log'](text);
-                                if(RealSystemName){
-                                    if(SAVE_EVENT_TEXT[RealSystemName]&&SAVE_EVENT_TEXT[RealSystemName].includes(text)){
+                                if (RealSystemName) {
+                                    if (SAVE_EVENT_TEXT[RealSystemName] && SAVE_EVENT_TEXT[RealSystemName].includes(text)) {
                                         ejs_Controller['saveSavFiles']();
                                         E['isAutoSave'] = true;
                                     }
                                 }
+                                //fix aspect-ratio 强行修正纵横比
+                                console.log(text);
+                                let videosize = text.match(/Video\s*@\s*(\d+)x(\d+)/);
+                                if (videosize) {
+                                    console.log(videosize);
+                                    E['videosize'] = videosize[1] / videosize[2];
+                                    ejs_loader.aspectRatio = E['videosize'];
+                                    if (Module.setCanvasSize) {
+                                        Module.setCanvasSize(720, 720 / E['videosize']);
+                                    }
+                                }
+
                             },
-                            'totalDependencies': 0x0,
-                            'monitorRunDependencies': function (left) {},
-                            'locateFile': function (url) {
-                                if (ejs_loader['coreFileData'][url]) {
-                                    return window['URL']['createObjectURL'](new Blob([ejs_loader['coreFileData'][url]], {
+                            totalDependencies: 0x0,
+                            monitorRunDependencies(left) {},
+                            locateFile: function (url) {
+                                if (Module.coreFileData[url]) {
+                                    return window['URL']['createObjectURL'](new Blob([Module.coreFileData[url]], {
                                         'type': url.endsWith('.worker.js') ? 'application/javascript' : 'application/octet-stream'
                                     }));
                                 }
                                 return url;
                             },
-                            'readAsync': function (url, callback, error) {
+                            readAsync(url, callback, error) {
                                 if (url.byteLength) return callback(url);
                                 return T.FetchItem({
                                     url,
@@ -13186,128 +11358,103 @@ var EJS = function (modules) {
                                         error('404');
                                     }
                                 });
+                            },
+                            monitorRunDependencies(left) {
+                                //0x0 === left && E['callaction']('Wasm_Ready');
+                            },
+                            onRuntimeInitialized() {
+                                I.defines(ejs_loader, {
+                                    FS: Module.FS
+                                }, 1);
+                                if ('undefined' != typeof EJS_DEBUG_ && !0x0 === EJS_DEBUG_) {
+                                    window['EJS_MODULE'] = ejs_loader['Module'];
+                                    window['ejs_loader'] = ejs_loader;
+                                    window['ejs_media'] = ejs_Controller
+                                };
+                                E['callaction']('Wasm_Ready', this);
+                                if (Module.wasmBinary) delete Module.wasmBinary;
+                                T.null(datalist);
+                                T.null(Module.coreFileData);
+                                Module.coreFileData = null;
+                                datalist = null;
+                            },
+                            setMEMFS(MEMFS, FS, RA, GLOBAL_BASE) {
+                                if (!this.MEMFS && MEMFS) I.defines(this, {
+                                    MEMFS
+                                }, 1);
+                                if (!this.FS && FS) I.defines(this, {
+                                    FS
+                                }, 1);
+                                if (!this.RA && RA) I.defines(this, {
+                                    RA
+                                }, 1);
+                                if (!this.GLOBAL_BASE && GLOBAL_BASE) I.defines(this, {
+                                    GLOBAL_BASE
+                                }, 1);
                             }
                         };
                         I.toArr(datalist, entry => {
                             var entryName = T.F.getname(entry[0]),
-                                entryExt = entryName['split']('.')['pop']();
-                            ejs_loader['coreFileData'][entryName] = entry[1];
+                                entryExt = T.F.getExt(entry[0]);
                             if ('js' === entryExt && !entryName['includes']('.worker.js')) {
-                                wasmAsmjs = new TextDecoder().decode(entry[1]);
+                                wasmAsmjs = I.u8buf(entry[1]) ? new TextDecoder().decode(entry[1]) : entry[1];
+                                delete datalist[entry[0]];
                             } else if ('mem' === entryExt) {
-                                ejs_loader['memData'] = entry[1];
+                                memfile = entry[0];
                             } else if ('wasm' === entryExt) {
                                 Module['wasmBinary'] = entry[1]
+                                delete datalist[entry[0]];
                             }
                         });
-                        datalist = null;
+                        Module.coreFileData = datalist;
                         const SAVE_EVENT_TEXT = {
-                            'gba':[
+                            'gba': [
                                 '[libretro INFO] GBA Savedata: Savedata synced',
                                 '[libretro INFO] GB Memory: Savedata synced'
                             ]
                         };
-                        I.defines(ejs_loader,{Module},1,1);
+                        I.defines(ejs_loader, {
+                            Module
+                        }, 1, 1);
                         if ('openbor' == E['system']) {
                             Module['preRun'] = [function () {
                                 ENV['SDL_EMSCRIPTEN_KEYBOARD_ELEMENT'] = '#canvas';
                             }]
                         }
-                        if (null !== Module['wasmBinary']) {
-                            //E.callaction('Memory_Reset');
-                            Module['monitorRunDependencies'] = function (left) {
-                                0x0 === left && E.callaction('Wasm_Ready');
-                            };
-                            Module['onRuntimeInitialized'] = function () {}
-                        } else {
-                            /**memdata */
-                            //E.callaction('Memory_Reset');
-                            Module['monitorRunDependencies'] = function (_0x3244b5) {};
-                            Module['onRuntimeInitialized'] = function () {
-                                if (ejs_loader['Module'] && ejs_loader['Module'].FS) ejs_loader.FS = ejs_loader['Module'].FS;
-                                else ejs_loader.FS = window.FS;
-                                E.callaction('Wasm_Ready');
-                            }
-                        }
                         /**
                          * 如果报错 FS null
                          * wasmAsmjs.replace(/Module\["run"\]\*=\s*run;/,'if(!Module.FS)Module.FS=FS;Module["run"] = run;')
                          */
-                        wasmAsmjs = wasmAsmjs.replace(/Module\["run"\]\*=\s*run;/,'if(!Module.FS)Module.FS=FS;Module["run"] = run;');
-                        let result = (new Function('Module',wasmAsmjs+`if(typeof ENV !='undefined')window.ENV = ENV;var EmulatorJS,EmulatorJS_;return {EmulatorJS,EmulatorJS_};`))(Module)||{};
-                        if (void 0x0 === window['addRunDependency']) {
-                            if ('undefined' != typeof result.EmulatorJS) {
+                        //wasmAsmjs = wasmAsmjs.replace(/Module\["run"\]\s*=\s*/, 'var GLOBAL_BASE;Nenge.I.defines(Module,{FS,MEMFS,GLOBAL_BASE},1);Module["run"]=').replace(/return\s*domElement/g,'console.log(domElement,111);return domElement').replace(/catch\s*\(e\)\s*\{/,'catch (e) {console.log(e);','function\s*indEventTarget\(target\)\s*\{','console.log(specialHTMLTargets);function findEventTarget(target) {');
+                        if (['n64'].includes(E['system'])) E['callaction']('Memory_Reset', Module);
+                        wasmAsmjs = wasmAsmjs.replace(/\}Module\["run"\]\s*=\s*/, '}var GLOBAL_BASE,RI,RA,MEMFS,FS;Module.setMEMFS(MEMFS,FS,RA,GLOBAL_BASE);Module["run"]=') + `;if(typeof ENV !='undefined')window.ENV = ENV;var EmulatorJS,EmulatorJS_;self.result = {EmulatorJS,EmulatorJS_};`;
+                        I.defines(window, {
+                            Module
+                        }, 1, 1);
+                        (new Function('Module', wasmAsmjs))(Module);
+                        //await T.addJS(wasmAsmjs);
+                        var result = self.result;
+                        //wasmAsmjs = await T.FetchItem({url:'cores/psx-wasm/retroarch.js?'+T.time,type:'text'});
+                        //let result = (new Function('Module', wasmAsmjs + `;if(typeof ENV !='undefined')window.ENV = ENV;var EmulatorJS,EmulatorJS_;return {EmulatorJS,EmulatorJS_};`))(Module) || {};
+                        console.log(result);
+                        if (self.result) {
+                            if (!I.none(result.EmulatorJS)) {
                                 result.EmulatorJS(Module);
-                            }
-                            if ('undefined' != typeof result.EmulatorJS_) {
-                                result.EmulatorJS_.ready?result.EmulatorJS_.ready().then(e=>e(Module)):result.EmulatorJS_(Module);
-                                /*
-                                ??memData模式
-                                */
-                               /*
-                                var Mark = regeneratorRuntime['mark'](
-                                    function mark_func() {
-                                        return regeneratorRuntime['wrap'](function (event) {
-
-                                            for (;;) switch (event['prev'] = event['next']) {
-                                                case 0x0:
-                                                    return event['next'] = 0x2, result.EmulatorJS_(Module);
-                                                case 0x2:
-                                                    I.defines(ejs_loader,{Module:event['sent']},1,1);
-                                                    //ejs_loader['Module'] = event['sent'];
-                                                    null !== ejs_loader['memData'] && E.callaction('MemData_Reset', ejs_loader['memData']);
-                                                case 0x4:
-                                                case 'end':
-                                                    return event['stop']();
-                                            }
-                                        }, mark_func);
-                                    }
-                                );
-                                
-                                (
-                                    function () {
-                                        return new Promise((callback, error) => {
-                                            var _f_Mark = Mark['apply'](this, arguments);
-                                            function run_next(func) {
-                                                _0x1be57e(_f_Mark, callback, error, run_next, run_throw, 'next', func);
-                                            }
-
-                                            function run_throw(func) {
-                                                _0x1be57e(_f_Mark, callback, error, run_next, run_throw, 'throw', func);
-                                            }
-                                            run_next(void 0x0);
-                                        });
-                                    })();
-                                */
+                            } else if (result.EmulatorJS_) {
+                                I.await(result.EmulatorJS_.ready) ? result.EmulatorJS_.ready().then(e => e(Module)) : I.func(result.EmulatorJS_) ? result.EmulatorJS_(Module) : '';
                                 ejs_loader['newCore'] = !0x0
                             }
-                            if (null !== ejs_loader['memData'] && !ejs_loader['newCore']) {
-                                E.callaction('MemData_Reset', ejs_loader['memData']);
-                            }
-                            I.defines(ejs_loader,{FS:Module.FS},1);
-                            if ('undefined' != typeof EJS_DEBUG_ && !0x0 === EJS_DEBUG_) {
-                                window['EJS_MODULE'] = ejs_loader['Module'];
-                                window['ejs_loader'] = ejs_loader;
-                                window['ejs_media'] = ejs_Controller
-                            };
                         }
+                        if (memfile && !ejs_loader['newCore']) E['callaction']('MemData_Reset', Module.coreFileData[memfile]);
+                        //I.defines(ejs_loader, {FS: Module.FS}, 1,1);
                         wasmAsmjs = null;
                     },
                     async Wasm_Ready() {
                         var Module = ejs_loader.Module,
                             FS = ejs_loader.FS;
                         console.log('核心已经启动,初始化!');
-                        delete Module.wasmBinary;
                         LoadingP1.innerHTML = T.getLang('Game Core ready');
-                        ejs_Controller['bindFunction']['call'](E);
-                        ejs_Controller['setGamepadDialog']['call'](E);
-                        ejs_Controller['setCacheDialog']['call'](E);
-                        ejs_Controller['setLoadingDialog']['call'](E);
-                        ejs_Controller['setNetplayDialog']['call'](E);
-                        ejs_Controller['setCheatDialog']['call'](E);
-                        ejs_Controller['initGamepad']['call'](E);
-                        ejs_Controller['initKeyboard']['call'](E);
-                        ejs_Controller['listeners']['call'](E);
+                        I.toArr(['bindFunction', 'setGamepadDialog', 'setCacheDialog', 'setLoadingDialog', 'setNetplayDialog', 'setCheatDialog', 'initGamepad', 'initKeyboard', 'listeners'], entry => ejs_Controller[entry]['call'](E));
                         if (!Module.FS) I.defines(Module, {
                             FS
                         }, 1, 1);
@@ -13315,96 +11462,71 @@ var EJS = function (modules) {
                          * 绑定Module
                          */
                         DISK.SetModule(Module);
-                        DISK.DB = {
-                            '/data': ejs_install.DB.saves,
-                            '/Saves': ejs_install.DB.openbor,
-                        };
+                        DISK.SetDB({
+                            '/data': DISK.DB.saves,
+                            '/Saves': DISK.DB.openbor,
+                        });
                         I.defines(ejs_loader, {
                             DISK
                         }, 1);
                         console.log('替换FS虚拟硬盘');
                         //设置一些目录 以及绑定目录虚拟硬盘
-                        FS['createFolder'] ? FS['createFolder']('/', 'etc', !0x0, !0x0) : FS['createPath']('/', 'etc', !0x0, !0x0);
-                        FS.createPath('/', 'data', !0, !0);
-                        FS.createPath('/', 'Saves', !0, !0);
+                        FS['createPath']('/', 'etc', !0x0, !0x0);
+                        FS['createPath']('/', 'data', !0, !0);
+                        FS['createPath']('/', 'Saves', !0, !0);
                         /*
                         'undefined' != typeof IDBFS ? FS['mount'](IDBFS, {}, '/data/saves') : FS['mount'](FS['filesystems']['IDBFS'], {}, '/data/saves');
                         */
                         FS['mkdir']('/shader');
                         //ejs_loader.screenshots = '/data/screenshots';
-                        ejs_loader.savefullpath = '/data/saves/' + E['savepath'];
+                        E['savefullpath'] = '/data/saves/' + E['savepath'];
                         if ('openbor' != E['system']) {
+                            E['savefullpath'] = '/data/saves/' + E['savepath'];
                             FS['mount'](DISK, {}, '/data');
                             FS['mkdir']('/data/saves');
                             //FS['mkdir'](ejs_loader.screenshots);
-                            FS['mkdir'](ejs_loader.savefullpath);
+                            FS['mkdir'](E['savefullpath']);
                         } else {
+                            E['savefullpath'] = '/Saves';
                             FS['mount'](DISK, {}, '/Saves');
                         }
-                        console.log(ejs_loader.savefullpath);
+                        console.log(E['savefullpath']);
                         await DISK.mountReady();
                         //加载滤镜
                         await T.FetchItem({
-                            url:E['RootPath']+'frontend/shader.zip',
-                            unpack:true,
-                            store:ejs_install.DB.libjs,
-                            success(data){I.toArr(data,entry=>DISK.MKFILE('/shader/'+entry[0],entry[1]))}
-                        });
-                        if(FS.analyzePath('shader/'+ejs_data['storage']['get']('shader')).exists){
-                            DISK.MKFILE('/shader/shader.glslp',FS.readFile('shader/'+ejs_data['storage']['get']('shader')));
-                        }
-                        //'/shader/shader.glslp'
-                        console.log(ejs_data['storage']['get']('shader'));
-                        var _0x46794c = !0x1,
-                            _0x40a9fc = null,
-                            _0x3bf1cc = null,
-                            _0x1cc624 = null;
-                            
-                            /**
-                             * 自动读取存档?
-                        addEvent['call'](E, ElmContainer, 'start-game', () => {
-                             ejs_loader['Module']['_event_load_save_files']&&ejs_loader['Module']['_event_load_save_files']();
-                                    console.log(1777);
-                            if ('' != E['config']['savename']) {
-                                var SaveExt = 'srm';
-                                if ('nds' === E['system']) SaveExt = 'dsv';
-                                if (['melonds', 'zc210']['includes'](E['system'])) SaveExt = 'sav';
-                                var GameName = E['startName']['split']('/')['pop']()['split']('.'),
-                                    FileName = GameName['slice'](0x0, GameName['length'] - 0x1)['join']('.'),
-                                    SavePath = ejs_loader.savefullpath + '/' + E['config']['savename'] + '.' + SaveExt,
-                                    newPath = ejs_loader.savefullpath + '/' + FileName + '.' + SaveExt;
-                                if (FS.analyzePath(SavePath).exists) {
-                                    //var SaveU8 = FS['readFile'](SavePath);
-                                    //FS['writeFile'](newPath, new Uint8Array(SaveU8));
-                                }else{
-                                    console.log(SavePath);
-                                }
+                            url: E['RootPath'] + 'frontend/shader.zip',
+                            unpack: true,
+                            store: DISK.DB.libjs,
+                            success(data) {
+                                I.toArr(data, entry => DISK.MKFILE('/shader/' + entry[0], entry[1]))
                             }
                         });
-                             */
+                        if (FS.analyzePath('shader/' + ejs_data['storage']['get']('shader')).exists) {
+                            DISK.MKFILE('/shader/shader.glslp', FS.readFile('shader/' + ejs_data['storage']['get']('shader')));
+                        }
+                        /**
+                             * 每四秒 自动同步保存
                         (function () {
                             return;
-                            /**
-                             * 每四秒 自动同步保存
-                             */
                             window['setInterval'](function () {
                                 if (E['started']) {
                                     var gameName = T.getKeyName(E['startName']),
-                                        path = `${ejs_loader.savefullpath}/${gameName}.${E['gameSaveExt']}`,
+                                        path = `${E['savefullpath']}/${gameName}.${E['gameSaveExt']}`,
                                         _0x14c54c = [];
                                     ejs_Controller['saveSavFiles'] && ejs_Controller['saveSavFiles']();
                                     if ('' != E['config']['savename']) {
                                         if (FS.analyzePath(path).exists) {
-                                            FS['writeFile'](`${ejs_loader.savefullpath}/${E['config']['savename']}.${E['gameSaveExt']}`, FS['readFile'](path));
+                                            FS['writeFile'](`${E['savefullpath']}/${E['config']['savename']}.${E['gameSaveExt']}`, FS['readFile'](path));
                                         }
                                     }
                                 }
                             }, 4000);
                         }());
+                             */
                         var cfgText = '';
-                        cfgText += 'savefile_directory = '+ejs_loader.savefullpath +
+                        cfgText += 'savefile_directory = ' + E['savefullpath'] +
                             '\nsystem_directory = /\n' +
-                            '\nsavestate_directory = '+ejs_loader.savefullpath +
+                            '\nsavestate_directory = ' + E['savefullpath'] +
                             '\nvideo_vsync = true' +
                             '\nscreenshot_directory = /' +
                             '\nvideo_shader = /shader/shader.glslp' +
@@ -13417,47 +11539,116 @@ var EJS = function (modules) {
                         var _0xe4449b = ejs_data['defaultCoreOptionsValues']['call'](E);
                         if (E['lightgun']) {
                             if ('nes' === E['system']) {
-                                cfgText += 'input_libretro_device_p2 = \x22258\x22\n'
+                                cfgText += 'input_libretro_device_p2 = "258"\n'
 
                             }
                             if ('segaMS' !== E['system'] && 'segaMD' !== E['system'] && 'segaCD' !== E['system']) {
 
                             } else {
-                                _0xe4449b['genesis_plus_gx_gun_cursor'] = 'yes', _0xe4449b['genesis_plus_gx_invert_mouse'] = 'yes', _0xe4449b['genesis_plus_gx_bram'] = 'per game', 0x1 == E['lightgun'] ? cfgText += 'input_libretro_device_p2 = \x22260\x22\n' : 0x2 == E['lightgun'] ? cfgText += 'input_libretro_device_p2 = \x22516\x22\n' : 0x3 == E['lightgun'] && (cfgText += 'input_libretro_device_p2 = \x22772\x22\x0a')
+                                _0xe4449b['genesis_plus_gx_gun_cursor'] = 'yes', _0xe4449b['genesis_plus_gx_invert_mouse'] = 'yes', _0xe4449b['genesis_plus_gx_bram'] = 'per game', 0x1 == E['lightgun'] ? cfgText += 'input_libretro_device_p2 = "260"\n' : 0x2 == E['lightgun'] ? cfgText += 'input_libretro_device_p2 = "516"\n' : 0x3 == E['lightgun'] && (cfgText += 'input_libretro_device_p2 = "772"\x0a')
                             }
                             if ('snes' === E['system']) {
-                                cfgText += 'input_libretro_device_p2 = \x22260\x22\x0a'
+                                cfgText += 'input_libretro_device_p2 = "260"\x0a'
                             }
                             if (['snes2002', 'snes2005', 'snes2010']['includes'](E['system'])) {
-                                cfgText += 'input_libretro_device_p2 = \x22260\x22\n'
+                                cfgText += 'input_libretro_device_p2 = "260"\n'
                             }
                             if (['fbneo']['includes'](E['system'])) {
-                                cfgText += 'input_libretro_device_p1 = \x22514\x22\n'
+                                cfgText += 'input_libretro_device_p1 = "514"\n'
                             }
                         }
-                        E['mouse'] && ('snes' === E['system'] && (cfgText += 'input_libretro_device_p1 = 2\n'), ['snes2002', 'snes2005', 'snes2010']['includes'](E['system']) && (cfgText += 'input_libretro_device_p1 = 2\x0a'), 'segaMD' === E['system'] && (cfgText += 'input_libretro_device_p2 = 2\n')), E['multitap'] && ('snes' === E['system'] && (cfgText += 'input_libretro_device_p2 = 257\x0a'), ['snes2002', 'snes2005', 'snes2010']['includes'](E['system']) && (cfgText += 'input_libretro_device_p2 = 257\n')), ['n64', 'mupen64plus', 'mupen64plus2', 'mupen64plus-nx']['includes'](E['system']) && (cfgText += 'input_libretro_device_p1 = 5\n', cfgText += 'input_libretro_device_p2 = 5\n', cfgText += 'input_libretro_device_p3 = 5\n', cfgText += 'input_libretro_device_p4 = 5\x0a'), ejs_loader['arcadeCores']['includes'](E['system']) && (cfgText += 'input_libretro_device_p1 = 5\n', cfgText += 'input_libretro_device_p2 = 5\n', cfgText += 'input_libretro_device_p3 = 5\n', cfgText += 'input_libretro_device_p4 = 5\n'), E['system'], 'fmsx' === E['system'] && (cfgText += 'input_libretro_device_p1 = 513\n'), cfgText += 'video_smooth = false\x0a';
-                        var _0x5d87f9 = _0x288469(_0xe4449b, ejs_data['storage']['get']('core-options') || {}),
-                            _0x3c3a9f = '';
-                        ('psx' == E['system'] && (_0x3c3a9f = 'pcsx_rearmed_memcard2 = \x22disabled\x22\n'), _0x5d87f9 && Object['keys'](_0x5d87f9)['forEach'](function (_0x3e2df4) {
+                        if (E['mouse']) {
+                            if ('snes' === E['system']) cfgText += 'input_libretro_device_p1 = 2\n';
+                            if (['snes2002', 'snes2005', 'snes2010']['includes'](E['system'])) cfgText += 'input_libretro_device_p1 = 2\x0a';
+                            if ('segaMD' === E['system']) cfgText += 'input_libretro_device_p2 = 2\n';
+                        }
+                        if (E['multitap']) {
+                            if ('snes' === E['system']) cfgText += 'input_libretro_device_p2 = 257\x0a';
+                            if (['snes2002', 'snes2005', 'snes2010']['includes'](E['system'])) cfgText += 'input_libretro_device_p2 = 257\n';
 
-                                _0x3c3a9f += '' ['concat'](_0x3e2df4, ' = \x22')['concat'](_0x5d87f9[_0x3e2df4], '\x22\x0a'), addEvent['call'](E, ElmContainer, 'start-game', function (_0x53ed11) {
-                                    setTimeout(function () {
 
-                                        'pcsx_rearmed_frameskip' != _0x3e2df4 && 'pcsx_rearmed_memcard2' != _0x3e2df4 && ejs_Controller['setVariable'](_0x3e2df4, _0x5d87f9[_0x3e2df4]);
-                                    }, 0x32);
-                                });
-                            }), FS['createDataFile']('/etc', 'retroarch.cfg', cfgText, !0x0, !0x0), FS['createFolder'] ? (FS['createFolder']('/home/web_user', '.config', !0x0, !0x0), FS['createFolder']('/home/web_user/.config', 'retroarch', !0x0, !0x0)) : (FS['createPath']('/home/web_user', '.config', !0x0, !0x0), FS['createPath']('/home/web_user/.config', 'retroarch', !0x0, !0x0)), 0x1 == E['lightgun'] && 'mame0.243' == E['system'] && (ejs_loader['Module']['canvas']['addEventListener']('mousemove', function (_0x48f64a) {
-                                var _0x17cd1a = ejs_loader['Module']['canvas']['clientWidth'],
-                                    _0x29bc70 = ejs_loader['Module']['canvas']['clientHeight'],
-                                    _0x6377b0 = _0x17cd1a / 0x2,
-                                    _0x43c0e0 = _0x29bc70 / 0x2,
-                                    _0x35f526 = 0x0,
-                                    _0x145d08 = 0x0,
-                                    _0x1c1046 = 0x0;
-                                _0x48f64a['offsetX'] < 0x0 || _0x48f64a['offsetY'] > _0x17cd1a || (_0x48f64a['offsetX'] > _0x6377b0 ? (_0x35f526 = (_0x48f64a['offsetX'] - _0x6377b0) / _0x17cd1a * 0x2 * 0x7fff, _0x1c1046 = 0x10, ejs_Controller['simulateInput'](0x0, 0x11, 0x0), ejs_Controller['simulateInput'](0x0, _0x1c1046, _0x35f526)) : (_0x35f526 = (_0x48f64a['offsetX'] - _0x6377b0) / _0x17cd1a * 0x2 * 0x7fff, _0x1c1046 = 0x11, ejs_Controller['simulateInput'](0x0, 0x10, 0x0), ejs_Controller['simulateInput'](0x0, _0x1c1046, _0x35f526)), _0x48f64a['offsetY'] > _0x43c0e0 ? (_0x145d08 = (_0x48f64a['offsetY'] - _0x43c0e0) / _0x29bc70 * 0x2 * 0x7fff, _0x1c1046 = 0x12, ejs_Controller['simulateInput'](0x0, 0x13, 0x0), ejs_Controller['simulateInput'](0x0, _0x1c1046, _0x145d08)) : (_0x145d08 = (_0x48f64a['offsetY'] - _0x43c0e0) / _0x29bc70 * 0x2 * 0x7fff, _0x1c1046 = 0x13, ejs_Controller['simulateInput'](0x0, 0x12, 0x0), ejs_Controller['simulateInput'](0x0, _0x1c1046, _0x145d08)));
-                            }, !0x1), ElmContainer['addEventListener']('mousedown', function (_0x2865fe) {
+                        }
+                        if (['n64', 'mupen64plus', 'mupen64plus2', 'mupen64plus-nx']['includes'](E['system'])) {
+                            cfgText += 'input_libretro_device_p1 = 5\n' +
+                                'input_libretro_device_p2 = 5\n' +
+                                'input_libretro_device_p3 = 5\n' +
+                                'input_libretro_device_p4 = 5\n'
+                        }
+                        if (ejs_loader['arcadeCores']['includes'](E['system'])) {
+                            cfgText += 'input_libretro_device_p1 = 5\n' +
+                                'input_libretro_device_p2 = 5\n' +
+                                'input_libretro_device_p3 = 5\n' +
+                                'input_libretro_device_p4 = 5\n'
 
-                                switch (_0x2865fe['which']) {
+                        }
+                        E['system'];
+                        if ('fmsx' === E['system']) {
+                            cfgText += 'input_libretro_device_p1 = 513\n';
+
+                        }
+                        cfgText += 'video_smooth = false\x0a';
+                        var coresOptionData = _0x288469(_0xe4449b, ejs_data['storage']['get']('core-options') || {}),
+                            coresOptionCfg = '';
+                        if ('psx' == E['system']) {
+                            coresOptionCfg = 'pcsx_rearmed_memcard2 = "disabled"\n'
+                        }
+                        I.toArr(coresOptionData, entry => {
+                            coresOptionCfg += `${entry[0]} = "${entry[1]}"\n`;
+                            E['addEvent'](ElmContainer, 'start-game', function (_0x53ed11) {
+                                setTimeout(function () {
+                                    'pcsx_rearmed_frameskip' != entry[0] && 'pcsx_rearmed_memcard2' != entry[0] && ejs_Controller['setVariable'](entry[0], entry[1]);
+                                }, 0x32);
+
+                            });
+                        });
+                        FS['createDataFile']('/etc', 'retroarch.cfg', cfgText, !0x0, !0x0);
+                        if (FS['createFolder']) {
+                            FS['createFolder']('/home/web_user', '.config', !0x0, !0x0);
+                            FS['createFolder']('/home/web_user/.config', 'retroarch', !0x0, !0x0);
+                        } else {
+                            FS['createPath']('/home/web_user', '.config', !0x0, !0x0);
+                            FS['createPath']('/home/web_user/.config', 'retroarch', !0x0, !0x0)
+                        }
+                        if (0x1 == E['lightgun'] && 'mame0.243' == E['system']) {
+
+                            ejs_loader['Module']['canvas']['addEventListener']('mousemove', function (event) {
+                                var clientWidth = ejs_loader['Module']['canvas']['clientWidth'],
+                                    clientHeight = ejs_loader['Module']['canvas']['clientHeight'],
+                                    halfWidth = clientWidth / 0x2,
+                                    halfHeight = clientHeight / 0x2,
+                                    offsetX = 0x0,
+                                    offsetY = 0x0,
+                                    offsetId = 0x0;
+                                if (event['offsetX'] >= 0x0 && event['offsetY'] <= clientWidth) {
+                                    if (event['offsetX'] > halfWidth) {
+
+                                        offsetX = (event['offsetX'] - halfWidth) / clientWidth * 0x2 * 0x7fff;
+                                        offsetId = 0x10;
+                                        ejs_Controller['simulateInput'](0x0, 0x11, 0x0);
+                                        ejs_Controller['simulateInput'](0x0, offsetId, offsetX)
+
+                                    } else {
+
+                                        offsetX = (event['offsetX'] - halfWidth) / clientWidth * 0x2 * 0x7fff;
+                                        offsetId = 0x11, ejs_Controller['simulateInput'](0x0, 0x10, 0x0);
+                                        ejs_Controller['simulateInput'](0x0, offsetId, offsetX);
+                                    }
+                                    if (event['offsetY'] > halfHeight) {
+                                        offsetY = (event['offsetY'] - halfHeight) / clientHeight * 0x2 * 0x7fff;
+                                        offsetId = 0x12;
+                                        ejs_Controller['simulateInput'](0x0, 0x13, 0x0);
+                                        ejs_Controller['simulateInput'](0x0, offsetId, offsetY)
+
+                                    } else {
+                                        offsetY = (event['offsetY'] - halfHeight) / clientHeight * 0x2 * 0x7fff;
+                                        offsetId = 0x13, ejs_Controller['simulateInput'](0x0, 0x12, 0x0);
+                                        ejs_Controller['simulateInput'](0x0, offsetId, offsetY)
+                                    }
+                                }
+                            }, !0x1);
+                            ElmContainer['addEventListener']('mousedown', function (event) {
+
+                                switch (event['which']) {
                                     case 0x1:
                                         ejs_Controller['simulateInput'](0x0, 0x8, 0x1);
                                         break;
@@ -13466,9 +11657,10 @@ var EJS = function (modules) {
                                     case 0x3:
                                         ejs_Controller['simulateInput'](0x0, 0x0, 0x1);
                                 }
-                            }, !0x1), ElmContainer['addEventListener']('mouseup', function (_0x16e33e) {
+                            }, !0x1);
+                            ElmContainer['addEventListener']('mouseup', function (event) {
 
-                                switch (_0x16e33e['which']) {
+                                switch (event['which']) {
                                     case 0x1:
                                         ejs_Controller['simulateInput'](0x0, 0x8, 0x0);
                                         break;
@@ -13477,23 +11669,39 @@ var EJS = function (modules) {
                                     case 0x3:
                                         ejs_Controller['simulateInput'](0x0, 0x0, 0x0);
                                 }
-                            }, !0x1)),
-                            FS['createDataFile']('/home/web_user/.config/retroarch', 'retroarch-core-options.cfg', _0x3c3a9f, !0x0, !0x0), FS['createDataFile']('/etc', 'retroarch-core-options.cfg', _0x3c3a9f, !0x0, !0x0));
-                        if (E['config']['biosUrl']) {
-                            E.callaction('GAME_ReadBios');
-                        } else {
-                            E.callaction('GAME_ParentData');
+                            }, !0x1)
+
                         }
+                        FS['createDataFile']('/home/web_user/.config/retroarch', 'retroarch-core-options.cfg', coresOptionCfg, !0x0, !0x0);
+                        FS['createDataFile']('/etc', 'retroarch-core-options.cfg', coresOptionCfg, !0x0, !0x0);
+                        /*
+                        if (E['config']['biosUrl']) {
+                           
+                        } else {
+                            E['callaction']('GAME_ParentData');
+                        }
+                        */
+                        E['callaction']('GAME_ReadBios');
                     },
-                    async GAME_ReadBios(){
-                        let urlList = E['config']['biosUrl'],system =  E['system'] == 'vbanext' ? 'gba' : E['system'];
-                        if(urlList){
-                            if(I.str(urlList))urlList = [urlList];
-                            await I.Async(urlList.map(async url=>{
-                                T.FetchItem({
+                    async GAME_ReadBios() {
+                        let urlList = E['config']['biosUrl'],
+                            system = E['system'] == 'vbanext' ? 'gba' : E['system'];
+                            if(urlList.length==0&&ejs_loader['arcadeCores']['includes'](E['system'])){
+                                //街机不能没有bios 因此强制加载bios
+                                urlList = [T.RootPath+'bios/arcade.7z']
+                            }
+                        if (urlList) {
+                            if (I.str(urlList)) urlList = [urlList];
+                            await I.Async(urlList.map(async url => {
+                                let autounpack = true;//根据大小是否自动解压
+                            if(T.F.getExt(url) == 'zip'&&ejs_loader['arcadeCores']['includes'](E['system'])){
+                                //当文件为zip时 判断是否街机
+                                autounpack = false;
+                            } 
+                            await T.FetchItem({
                                     url,
-                                    store:ejs_install.DB.bios,
-                                    autounpack:E['system'].startsWith('mame')?false:true, //根据大小是否自动解压
+                                    store: DISK.DB.bios,
+                                    autounpack,
                                     dataOption: {
                                         system
                                     },
@@ -13501,10 +11709,10 @@ var EJS = function (modules) {
                                         if (I.u8obj(u8)) {
                                             DISK.MKFILE(T.F.getname(url), u8, 1);
                                             ejs_sizelength += u8.byteLength;
-                                        }else if(u8){
+                                        } else if (u8) {
                                             I.toArr(
                                                 u8,
-                                                entry=>{
+                                                entry => {
                                                     DISK.MKFILE(entry[0], entry[1], 1);
                                                     ejs_sizelength += entry[1].byteLength;
                                                 }
@@ -13513,41 +11721,41 @@ var EJS = function (modules) {
                                         u8 = null;
                                     },
                                     process(e) {
-                                        LoadingP2.innerHTML = T.getLang('Download BIOS')+' '+e;
+                                        LoadingP2.innerHTML = T.getLang('Download BIOS') + ' ' + e;
                                     },
                                     error(e) {
-                                        LoadingP2.innerHTML = '<strong style=\x22color:#f00;text-shadow: 0px 0px 3px;\x22>' + e.message, '</strong>';
-                                        E.callaction('GAME_ParentData');
+                                        LoadingP2.innerHTML = '<strong style="color:#f00;text-shadow: 0px 0px 3px;">' + e.message, '</strong>';
+                                        E['callaction']('GAME_ParentData');
                                     }
                                 });
                             }));
-                            E.callaction('GAME_ParentData');
                         };
+                        E['callaction']('GAME_ParentData');
                     },
-                    async GAME_ParentData(){
+                    async GAME_ParentData() {
                         var UrlList = E['config']['gameParentUrl'],
                             UrlLen = 0x0,
                             system = E['config']['system'];
-                        if(I.str(UrlList))UrlList = [UrlList];
-                        if(UrlList&&UrlList.length>0){
+                        if (I.str(UrlList)) UrlList = [UrlList];
+                        if (UrlList && UrlList.length > 0) {
                             console.log('这里没看懂here unknow  不知道会不会报错,大概是设置类似MAME 前置Rooms,this func may error');
                             await Promise.all(UrlList.map(async sUrl => {
                                 let name = T.F.getname(sUrl),
                                     nameExt = name.split('.').pop(),
-                                    isSample=!1,
+                                    isSample = !1,
                                     isNvram = !1,
-                                    key = system+'-'+name;
-                                if(sUrl['indexOf']('/sample/') !=-1){
+                                    key = system + '-' + name;
+                                if (sUrl['indexOf']('/sample/') != -1) {
                                     isSample = !0;
-                                    key = system+'-sample-'+name;
+                                    key = system + '-sample-' + name;
                                 }
-                                if(sUrl['indexOf']('/nvram/')!=-1){
+                                if (sUrl['indexOf']('/nvram/') != -1) {
                                     isNvram = !0x0;
-                                    key = system+'-nvram-'+name;
+                                    key = system + '-nvram-' + name;
                                 }
                                 return T.FetchItem({
                                     url: sUrl,
-                                    store:ejs_install.DB.rooms,
+                                    store: DISK.DB.rooms,
                                     key,
                                     dataOption: {
                                         system
@@ -13556,23 +11764,23 @@ var EJS = function (modules) {
                                         ejs_sizelength += dataU8.byteLength;
                                         if ('chd' == nameExt) {
                                             _0x1839c0 = !1;
-                                            DISK.MKFILE(name, dataU8);
+                                            DISK.MKFILE(name, dataU8, 1);
                                         } else if (isNvram) {
                                             T.unFile(dataU8).then(data => {
                                                 if (data instanceof Uint8Array) {
                                                     ejs_sizelength += dataU8.byteLength;
-                                                    DISK.MKFILE(name, dataU8);
+                                                    DISK.MKFILE(name, dataU8, 1);
                                                 } else {
                                                     I.toArr(data, entry => {
                                                         ejs_sizelength += entry[1].byteLength;
-                                                        DISK.MKFILE(ejs_loader.savefullpath + '/mame/' + entry[0], entry[1], 1);
+                                                        DISK.MKFILE(E['savefullpath'] + '/mame/' + entry[0], entry[1], 1);
                                                     });
                                                 }
                                             })
                                         } else if (isSample) {
                                             DISK.MKFILE('/samples/' + name, dataU8, 1);
                                         } else {
-                                            DISK.MKFILE('/' + name, dataU8, !0x0, !0x1)
+                                            DISK.MKFILE('/' + name, dataU8, 1)
                                         }
                                         UrlLen++;
                                     },
@@ -13585,24 +11793,25 @@ var EJS = function (modules) {
                                 });
                             }));
                         }
-                        E.callaction('GAME_Patch');
+                        E['callaction']('GAME_Patch');
                     },
-                    async GAME_Patch(){
-                        if(E['config']['gamePatchUrl']){
+                    async GAME_Patch() {
+                        if (E['config']['gamePatchUrl']) {
                             console.log('game patch');
-                            let url = E['config']['gamePatchUrl'],name = T.F.getname(url);
+                            let url = E['config']['gamePatchUrl'],
+                                name = T.F.getname(url);
                             return T.FetchItem({
                                 url,
                                 upack: true,
                                 //key:'patch-'+GameName,
-                                //store:ejs_install.DB.rooms',
+                                //store:DISK.DB.rooms',
                                 //dataOption:{
                                 //    'system':GameSystem
                                 //},
                                 success(u8) {
                                     if (I.u8obj(u8)) {
                                         ejs_sizelength += u8['length'];
-                                        DISK.MKFILE(name,u8);
+                                        DISK.MKFILE(name, u8, 1);
                                         if (['ips', 'bps', 'ups']['includes'](name.split('.').pop()) && !ejs_loader['gamePatch']) {
                                             ejs_loader['gamePatch'] = '/' + entry[0];
                                         }
@@ -13611,7 +11820,7 @@ var EJS = function (modules) {
                                             u8,
                                             entry => {
                                                 let fileName = T.F.getname(entry[0]);
-                                                DISK.MKFILE(fileName,entry[1]);
+                                                DISK.MKFILE(fileName, entry[1], 1);
                                                 ejs_sizelength += entry[1].byteLength;
                                                 if (['ips', 'bps', 'ups']['includes'](fileName.split('.').pop()) && !ejs_loader['gamePatch']) {
                                                     ejs_loader['gamePatch'] = '/' + entry[0];
@@ -13622,11 +11831,11 @@ var EJS = function (modules) {
                                         );
                                     }
                                     u8 = null;
-                                    E.callaction('GAME_Rooms');
+                                    E['callaction']('GAME_Rooms');
                                 },
                                 error(e) {
                                     LoadingP3.innerHTML = `<strong style="color:#f00;text-shadow: 0px 0px 3px;">${e.message}</strong>`;
-                                    E.callaction('GAME_Rooms');
+                                    E['callaction']('GAME_Rooms');
                                 },
                                 process(e) {
                                     LoadingP3.innerHTML = `${T.getLang('Loading Game Data')} ${e}`;
@@ -13634,60 +11843,65 @@ var EJS = function (modules) {
 
                             });
                         }
-                        E.callaction('GAME_Rooms');
+                        E['callaction']('GAME_Rooms');
                     },
-                    async GAME_Rooms(){
+                    async GAME_Rooms() {
                         console.log('读取游戏文件');
                         var Config = E['config'],
-                            GameUrl = Config['gameUrl']||'',
+                            GameUrl = Config['gameUrl'] || '',
                             GameSystem = Config['system'],
                             GameName = T.F.getname(GameUrl),
                             len = 0;
-                            if('vbanext' == GameSystem){
-                                GameSystem = 'gba';
-                            }
-                            if(E['savepath']){
-                                GameSystem = E['savepath'];
-                            }
-                            let html = T.getLang('Download Game Data');
+                        if ('vbanext' == GameSystem) {
+                            GameSystem = 'gba';
+                        }
+                        if (E['savepath']) {
+                            GameSystem = E['savepath'];
+                        }
+                        let html = T.getLang('Download Game Data');
                         if (ejs_loader['arcadeCores']['includes'](E['system']) && E['config']['gameParentUrl']['length']) {
                             len += E['config']['gameParentUrl']['length'];
-                        }else if (E['config']['gamePatchUrl']){
-                            len+=1;
+                        } else if (E['config']['gamePatchUrl']) {
+                            len += 1;
                         }
-                        if(len) LoadingP3.innerHTML = html+`${len-1}/${len}`;
-                        if(!GameUrl){
+                        if (len) LoadingP3.innerHTML = html + `${len - 1}/${len}`;
+                        if (!GameUrl) {
                             /**
                              * 自定义 写入文件
                              */
-                            return E.callaction('GAME_NENGE_WriteRooms',GameSystem);
+                            return E['callaction']('GAME_NENGE_WriteRooms', GameSystem);
+                        }
+                        let autounpack = true; //大小小于一定值自动解压保存 开启此项有效减少等待时间
+                        if(T.F.getExt(url) == 'zip'&&ejs_loader['arcadeCores']['includes'](E['system'])){
+                            //当文件为zip时 判断是否街机
+                            autounpack = false;
                         }
                         return T.FetchItem({
                             url: GameUrl,
                             key: GameSystem + '-' + GameName,
-                            store: ejs_install.DB.rooms,
+                            store: DISK.DB.rooms,
                             dataOption: {
                                 'system': GameSystem
                             },
-                            autounpack: ejs_loader['arcadeCores']['includes'](E['system']) ? false : true, //大小小于一定值自动解压保存 开启此项有效减少等待时间
+                            autounpack,
                             success(data) {
-                                if(I.u8obj(data)){
+                                if (I.u8obj(data)) {
                                     ejs_sizelength += data.byteLength;
-                                    DISK.MKFILE(E.callaction('GAME_GET_PATH',GameName),data);
-                                }else if(data){
-                                    I.toArr(data,entry=>{
+                                    DISK.MKFILE(E['callaction']('GAME_GET_PATH', GameName), data, 1);
+                                } else if (data) {
+                                    I.toArr(data, entry => {
                                         if (/^__MACOSX/.test(entry[0])) {
                                             return;
                                         }
                                         ejs_sizelength += entry[1].byteLength;
-                                        DISK.MKFILE(E.callaction('GAME_GET_PATH',entry[0]),entry[1]);
+                                        DISK.MKFILE(E['callaction']('GAME_GET_PATH', entry[0]), entry[1], 1);
                                     })
                                 }
-                                E.callaction('GAME_START');
+                                E['callaction']('GAME_START');
                                 data = null;
                             },
                             error(e) {
-                                LoadingP3.innerHTML =  `<strong style="color:#f00;text-shadow: 0px 0px 3px;">${e.message}</strong>`;
+                                LoadingP3.innerHTML = `<strong style="color:#f00;text-shadow: 0px 0px 3px;">${e.message}</strong>`;
                             },
                             process(e) {
                                 LoadingP3.innerHTML = `${T.getLang('Loading Game Data')}    ${e}`;
@@ -13695,238 +11909,266 @@ var EJS = function (modules) {
 
                         });
                     },
-                    GAME_GET_PATH(path){
+                    GAME_GET_PATH(path) {
                         path = T.F.getname(path);
                         let ext = T.F.getExt(path);
                         console.log(RealSystemExt);
-                        if(RealSystemExt['includes'](ext)){
-                            if('openbor' == E['system']){
-                                path =  'Paks/' + path;
+                        if (RealSystemExt['includes'](ext)) {
+                            if ('openbor' == E['system']) {
+                                path = 'Paks/' + path;
                                 E['startName'] = path;
-                            }else{
+                            } else {
                                 E['startName'] = path;
                             }
                         }
                         return path;
                     },
-                    async GAME_NENGE_WriteRooms(GameSystem){
-                        
-                        let Div = E.callaction('NENGE_ROOMS_WELCOME_UI',[
-                            'Import rooms',
-                            'Import and decompressed*',
-                            'View Rooms Storage',
-                            'Import Bios*',
-                        ]),    
+                    async GAME_NENGE_WriteRooms(GameSystem) {
+
+                        let Div = E['callaction']('NENGE_ROOMS_WELCOME_UI', [
+                                'Import rooms',
+                                'Import and decompressed*',
+                                'View Rooms Storage',
+                                'Import Bios*',
+                            ]),
                             nDiv = Nttr(Div),
                             ElmIsWrite = nDiv.$('.is_write'),
                             ElmStorage = nDiv.$('.storage_data');
-                        ElmIsWrite.innerHTML = await E.callaction('GAME_NENGE_GET_BIOS_LIST',GameSystem);
-                        I.toArr(Nttr(Div).$('.nenge-menu').children,(elm,index)=>{
-                            if(index==3){
+                        ElmIsWrite.innerHTML = await E['callaction']('GAME_NENGE_GET_BIOS_LIST', GameSystem);
+                        I.toArr(Nttr(Div).$('.nenge-menu').children, (elm, index) => {
+                            if (index == 3) {
                                 Nttr(elm).click(
-                                    e=>{
-                                        E.callaction(
+                                    e => {
+                                        E['callaction'](
                                             'upload',
-                                            async file=>{
+                                            async file => {
                                                 let u8 = await T.unFile(file);
-                                                E.callaction('GAME_NENGE_ADD_BIOS',file.name,u8,GameSystem,ElmIsWrite);
+                                                E['callaction']('GAME_NENGE_ADD_BIOS', file.name, u8, GameSystem, ElmIsWrite);
                                             }
                                         )
                                     }
                                 )
-                            }else if(index==2){
-                                Nttr(elm).click(e=>E.callaction('GAME_NENGE_ADD_ROOMS',GameSystem,ElmStorage));
-                            }else if(index==0||index==1){
+                            } else if (index == 2) {
+                                Nttr(elm).click(e => E['callaction']('GAME_NENGE_ADD_ROOMS', GameSystem, ElmStorage));
+                            } else if (index == 0 || index == 1) {
                                 Nttr(elm).click(
-                                    e=>{
-                                        E.callaction(
+                                    e => {
+                                        E['callaction'](
                                             'upload',
-                                            async file=>{
-                                                await E.callaction('GAME_NENGE_ADD_LIST',file.name,file,GameSystem,ElmIsWrite,index);
-                                                file=null;
+                                            async file => {
+                                                console.log(elm, index);
+                                                await E['callaction']('GAME_NENGE_ADD_LIST', file.name, file, GameSystem, ElmIsWrite, index);
+                                                file = null;
                                             }
                                         )
                                     }
                                 )
                             }
                         });
-                        Nttr(Nttr(Div).$('.storage_data')).click(async e=>{
+                        Nttr(Nttr(Div).$('.storage_data')).click(async e => {
                             let elm = e.target;
-                            if(I.elm(elm)){
+                            if (I.elm(elm)) {
                                 let name = elm.dataset.name;
-                                if(name){
+                                if (name) {
                                     elm.removeAttribute('data-name');
-                                    await E.callaction('GAME_NENGE_ADD_LIST',name,null,GameSystem,ElmIsWrite);
-                                }else if(elm.dataset.remove){
+                                    await E['callaction']('GAME_NENGE_ADD_LIST', name, null, GameSystem, ElmIsWrite);
+                                } else if (elm.dataset.remove) {
                                     elm.parentNode.parentNode.remove();
-                                    ejs_install.DB.rooms.remove(elm.dataset.remove);
+                                    DISK.DB.rooms.remove(elm.dataset.remove);
                                 }
 
                             }
-                        });                        
-                        Nttr(Nttr(Div).$('.is_write')).click(async e=>{
+                        });
+                        Nttr(Nttr(Div).$('.is_write')).click(async e => {
                             let elm = e.target;
-                            if(I.elm(elm)){
+                            if (I.elm(elm)) {
                                 let path = elm.dataset.path;
-                                if(path){
+                                if (path) {
                                     E['startName'] = path;
                                     Nttr(Div).remove();
-                                    E.callaction('GAME_START');
-                                }else if(elm.dataset.removebios){
+                                    E['callaction']('GAME_START');
+                                } else if (elm.dataset.removebios) {
                                     elm.parentNode.parentNode.remove();
-                                    ejs_install.DB.bios.remove(elm.dataset.removebios);
-                                }else if(elm.dataset.writebios){
-                                    E.callaction('GAME_NENGE_ADD_BIOS',elm.dataset.writebios,null,GameSystem,elm);
+                                    DISK.DB.bios.remove(elm.dataset.removebios);
+                                } else if (elm.dataset.writebios) {
+                                    E['callaction']('GAME_NENGE_ADD_BIOS', elm.dataset.writebios, null, GameSystem, elm);
                                 }
                             }
                         });
 
                     },
-                    async GAME_NENGE_ADD_LIST(path,u8,system,ElmIsWrite,index,text,check){
-                        let pathname=path,havedata = !1;
-                        if(!text)text = 'Run Start';
-                        if(!u8){
-                            u8 = await ejs_install.DB.rooms.data(path);
-                            pathname = path.replace(/^[a-z0-9\-]+\-/i,'');
-                        }else if(u8){
-                            if(index)u8 = await T.unFile(u8);
-                            else if(I.blob(u8))u8 = new Uint8Array(await u8.arrayBuffer());
+                    async GAME_NENGE_ADD_LIST(path, u8, system, ElmIsWrite, index, text, check) {
+                        let pathname = path,
+                            havedata = !1;
+                        if (!text) text = 'Run Start';
+                        if (!u8) {
+                            u8 = await DISK.DB.rooms.data(path);
+                            pathname = path.replace(/^[a-z0-9\-]+\-/i, '');
+                        } else if (u8) {
+                            if (index) u8 = await T.unFile(u8);
+                            else if (I.blob(u8)) u8 = new Uint8Array(await u8.arrayBuffer());
                             havedata = !0;
                             pathname = path;
                         }
-                        if(I.u8obj(u8)){
-                            if(check&&await check(pathname)) return;
-                            if(havedata)await ejs_install.DB.rooms.setData(system+'-'+pathname,u8,{filesize:u8.byteLength,system});
-                            pathname = E.callaction('GAME_GET_PATH',pathname);
-                            DISK.MKFILE(pathname,u8);
+                        if (I.u8obj(u8)) {
+                            if (check && await check(pathname)) return;
+                            if (havedata) await DISK.DB.rooms.setData(system + '-' + pathname, u8, {
+                                filesize: u8.byteLength,
+                                system
+                            });
+                            pathname = E['callaction']('GAME_GET_PATH', pathname);
+                            DISK.MKFILE(pathname, u8, 1);
                             ejs_sizelength += u8.byteLength;
-                            T.$append(ElmIsWrite,T.$ct('div',`${pathname}<span data-path="${pathname}">${T.getLang(text)}</span>`));
-                        }else{
-                            I.toArr(u8,async entry=>{
-                                if(/^(__MACOSX|\.)/.test(entry[0])) return ;
+                            T.$append(ElmIsWrite, T.$ct('div', `${pathname}<span data-path="${pathname}">${T.getLang(text)}</span>`));
+                        } else {
+                            I.toArr(u8, async entry => {
+                                if (/^(__MACOSX|\.)/.test(entry[0])) return;
                                 let filename = T.F.getname(entry[0]);
-                                if(check&&await check(filename)) return;
-                                filename = E.callaction('GAME_GET_PATH',filename);
-                                if(havedata){
-                                    await ejs_install.DB.rooms.setData(system+'-'+filename,entry[1],{filesize:entry[1].byteLength,system});
+                                if (check && await check(filename)) return;
+                                filename = E['callaction']('GAME_GET_PATH', filename);
+                                if (havedata) {
+                                    await DISK.DB.rooms.setData(system + '-' + filename, entry[1], {
+                                        filesize: entry[1].byteLength,
+                                        system
+                                    });
                                 };
-                                DISK.MKFILE(filename,entry[1]);
+                                DISK.MKFILE(filename, entry[1], 1);
                                 ejs_sizelength += entry[1].byteLength;
-                                T.$append(ElmIsWrite,T.$ct('div',`${filename}<span data-path="${filename}">${T.getLang(text)}</span>`));
+                                T.$append(ElmIsWrite, T.$ct('div', `${filename}<span data-path="${filename}">${T.getLang(text)}</span>`));
 
                             })
                         }
-                        u8=null;
+                        u8 = null;
                     },
-                    async GAME_NENGE_ADD_ROOMS(GameSystem,elm,text){
-                        let key,list2;
+                    async GAME_NENGE_ADD_ROOMS(GameSystem, elm, text) {
+                        let key, list2;
                         key = IDBKeyRange.only(GameSystem);
-                        let list = await ejs_install.DB.rooms.keys({only:1,index:'system',Range:IDBKeyRange.only(GameSystem)}),html="";
-                        if(E['config']['system'] == 'gba'){
-                            list2 = await ejs_install.DB.rooms.keys({only:1,index:'system',Range:IDBKeyRange.only('gb')});
-                            if(list2){
-                                if(I.array(list2))list = (list||[]).concat(list2);
+                        let list = await DISK.DB.rooms.keys({
+                                only: 1,
+                                index: 'system',
+                                Range: IDBKeyRange.only(GameSystem)
+                            }),
+                            html = "";
+                        if (E['config']['system'] == 'gba') {
+                            list2 = await DISK.DB.rooms.keys({
+                                only: 1,
+                                index: 'system',
+                                Range: IDBKeyRange.only('gb')
+                            });
+                            if (list2) {
+                                if (I.array(list2)) list = (list || []).concat(list2);
                             }
                         }
-                        if(list){
-                            I.toArr(list,entry=>{
-                                let path,filename;
-                                if(I.str(entry)){
-                                    if(E['config']['system'] == 'vbanext'&&/\.(gb|gbc)$/i.test(entry)) return;
-                                    filename = entry.replace(/^[a-z0-9]+\-/,'');
+                        if (list) {
+                            I.toArr(list, entry => {
+                                let path, filename;
+                                if (I.str(entry)) {
+                                    if (E['config']['system'] == 'vbanext' && /\.(gb|gbc)$/i.test(entry)) return;
+                                    filename = entry.replace(/^[a-z0-9]+\-/, '');
                                     path = entry;
                                 }
-                                html+=`<li><p>${path}</p><p><span data-remove="${path}">${T.getLang('Delete')}</span><span data-name="${path}">${T.getLang(text||'Write in')}</span></p></li>`;
+                                html += `<li><p>${path}</p><p><span data-remove="${path}">${T.getLang('Delete')}</span><span data-name="${path}">${T.getLang(text || 'Write in')}</span></p></li>`;
                             });
                         }
                         elm.innerHTML = `<ul>${html}</ul>`;
 
                     },
-                    async GAME_NENGE_ADD_BIOS(path,data,system,elm){
-                        if(!data){
+                    async GAME_NENGE_ADD_BIOS(path, data, system, elm) {
+                        if (!data) {
                             elm.removeAttribute('data-writebios');
                             elm.innerHTML = T.getLang('Write complete');
-                            data = await ejs_install.DB.bios.data(path);
-                        }else{
-                            if(I.blob(data))data = new Uint8Array(await file.arrayBuffer());
-                            await ejs_install.DB.bios.setData(path,data,{
+                            data = await DISK.DB.bios.data(path);
+                        } else {
+                            if (I.blob(data)) data = new Uint8Array(await file.arrayBuffer());
+                            await DISK.DB.bios.setData(path, data, {
                                 system
                             });
-                            T.$append(elm,T.$ct('div',`<div><p>BIOS:${path}</p><p><span>${T.getLang('Write complete')}</span></p></div>`))
+                            T.$append(elm, T.$ct('div', `<div><p>BIOS:${path}</p><p><span>${T.getLang('Write complete')}</span></p></div>`))
 
                         }
-                        if(I.u8obj(data)){
+                        if (I.u8obj(data)) {
                             ejs_sizelength += data.byteLength;
-                            DISK.MKFILE(path);}
-                        else  I.toArr(data,entry=>{
-                            if(/^(__MACOSX|\.)/.test(entry[0]) || !I.u8obj(entry[1])) return ;
+                            DISK.MKFILE(path, data, 1);
+                        } else I.toArr(data, entry => {
+                            if (/^(__MACOSX|\.)/.test(entry[0]) || !I.u8obj(entry[1])) return;
                             ejs_sizelength += entry[1].byteLength;
-                            DISK.MKFILE(entry[0],entry[1]);
+                            DISK.MKFILE(entry[0], entry[1], 1);
                         });
                         data = null;
                     },
-                    async GAME_NENGE_GET_BIOS_LIST(GameSystem){
-                        let bhtml="";
+                    async GAME_NENGE_GET_BIOS_LIST(GameSystem) {
+                        let bhtml = "";
                         I.toArr(
-                            await ejs_install.DB.bios.keys({index:'system',Range:IDBKeyRange.only(GameSystem)}),
-                            entry=>{
-                                let path = I.str(entry)?entry:entry[0];
+                            await DISK.DB.bios.keys({
+                                index: 'system',
+                                Range: IDBKeyRange.only(GameSystem)
+                            }),
+                            entry => {
+                                let path = I.str(entry) ? entry : entry[0];
                                 bhtml += `<div><p>BIOS:${path}</p><p><span data-remvebios="${path}">${T.getLang('Delete')}</span><span data-writebios="${path}">${T.getLang('Write Bios')}</span></p></div>`;
                             }
                         );
                         return bhtml;
                     },
                     GAME_START(gamePath) {
+                        var saveExt = 'srm',
+                            Module = ejs_loader['Module'];
                         if (!E['startName'] && gamePath) E['startName'] = gamePath;
                         if (!E['startName']) {
-                            LoadingP3.innerHTML = 'Core name error';
-                            return E.callaction('GAME_NENGE_WriteRooms',E['config']['system']);
+                            LoadingP3.innerHTML = T.getLang('Game name lost');
+                            return E['callaction']('GAME_NENGE_WriteRooms', E['config']['system']);
                         }
                         E['gameName'] = T.F.getKeyName(E['startName']);
-                        var saveExt = 'srm';
-                        'nds' === E['system'] && (saveExt = 'dsv'), ['melonds', 'zc210']['includes'](E['system']) && (saveExt = 'sav');
+                        if ('nds' === E['system']) saveExt = 'dsv';
+                        if (['melonds', 'zc210']['includes'](E['system'])) saveExt = 'sav';
                         E['gameSaveExt'] = saveExt;
+                        E['gamePathKey'] = E['savefullpath'] + '/' + E['gameName'];
+                        E['gameSavePath'] = E['gamePathKey'] + '.' + E['gameSaveExt'];
                         try {
-                            //E.callaction('Memory_Reset');
+                            E['callaction']('Memory_Reset', ejs_loader['Module']);
                             PatchToContent();
-                            var ArgInfo = [E['startName'], ejs_loader['hash'] + ejs_loader['hash2'] + ejs_loader['hash3']];
+                            var hash = ejs_loader['hash'] + ejs_loader['hash2'] + ejs_loader['hash3'],
+                                ArgInfo = ['-v', E['startName'], hash];
                             /**
                              * 为什么离线不能运行 因为新版核心是使用随机hash,目前不知道他的算法,其HASH在获取api?name=gba中header头里面的key2 
                              */
-                            if (ejs_loader['newCore']) ArgInfo = [E['startName'], ejs_loader['newCoreKey']];
-                            if (ejs_loader['Module']['_get_content_crc']) ArgInfo = [E['startName'], ejs_loader['newCoreKey2']];
-    
-                            if (ejs_loader['Module']['specialHTMLTargets']) {
-                                ejs_loader['Module']['specialHTMLTargets']['#canvas'] = ejs_loader['Module']['canvas'];
-                                ejs_loader['Module']['specialHTMLTargets']['#canvas-input'] = ejs_loader['Module']['canvas']['parentElement']['querySelector']('input');
-                                ejs_loader['Module']['specialHTMLTargets']['#canvas-mouse'] = E['elements']['wrapper'];
+                            if (ejs_loader['newCore'] && ejs_loader['newCoreKey']) ArgInfo[2] = ejs_loader['newCoreKey'];
+                            if (Module['_get_content_crc'] && ejs_loader['newCoreKey2']) ArgInfo[2] = ejs_loader['newCoreKey2'];
+
+                            if (Module['specialHTMLTargets']) {
+                                Module['specialHTMLTargets']['#canvas'] = Module['canvas'];
+                                Module['specialHTMLTargets']['#canvas-input'] = Module['canvas']['parentElement']['querySelector']('input');
+                                Module['specialHTMLTargets']['#canvas-mouse'] = E['elements']['wrapper'];
                                 if ('amiga' == E['system']) {
-                                    ejs_loader['Module']['specialHTMLTargets']['#canvas-mouse'] = E['elements']['wrapper']
+                                    Module['specialHTMLTargets']['#canvas-mouse'] = E['elements']['wrapper']
                                 }
                             }
-                            'undefined' != typeof EJS_DEBUG_ && !0x0 === EJS_DEBUG_ && (ArgInfo['unshift']('-v'), console['log'](ArgInfo));
-                            if ('openbor' == E['system']) ArgInfo = [ejs_loader['newCoreKey2']];
-                            console.log(ArgInfo);
-                            ejs_loader['Module']['callMain'](ArgInfo);
-                            callEvent['call'](E, ElmContainer, 'start-game');
-                        } catch (_0x299697) {
-                            LoadingP3.innerHTML = '<strong style=\x22color:#f00;text-shadow: 0px 0px 3px;\x22>Failed to start game</strong>';
+                            if ('openbor' == E['system']) ArgInfo = ['-v', ejs_loader['newCoreKey2'] || hash];
+                            console['log'](ArgInfo);
+                            Module['callMain'](ArgInfo);
+                            E['callEvent'](ElmContainer, 'start-game');
+                            ejs_loader['loading'].remove();
+                        } catch (e) {
+                            console.log(e);
+                            LoadingP3.innerHTML = `<strong style="color:#f00;text-shadow: 0px 0px 3px;">${T.getLang('Failed to start game')}</strong>`;
                         }
                     },
-                    upload(func,bool){
+                    upload(func, bool, ARG) {
                         let input = T.$ce('input');
                         input.type = 'file';
-                        if(!bool)input.multiple = true;
+                        if (bool) input.multiple = true;
+                        if (ARG) I.toArr(ARG, entry => input.setAttribute(entry[0], entry[1]));
                         input.onchange = e => {
                             let files = e.target.files;
                             if (files && files.length > 0) {
-                                I.toArr(files,file=> func(file));
+                                I.toArr(files, file => func(file));
                             }
                             input.remove();
                         };
                         input.click();
                     },
-                    Memory_Reset() {
+                    Memory_Reset(Module) {
+                        //return;
                         /*
                         if (isLoadModule) {
                             ejs_loader.Module['TOTAL_MEMORY'] = 0x0;
@@ -13950,50 +12192,51 @@ var EJS = function (modules) {
                             }
                         } else {
                         */
-                            if ('nes' == E['system']) {
-                                ejs_loader.Module['TOTAL_MEMORY'] = 0x8000000;
-                            }
-                            ejs_loader.Module['TOTAL_MEMORY'] = ejs_sizelength + 0x4000000;
-                            if (ejs_loader['arcadeCores']['includes'](E['system'])) {
-                                ejs_loader.Module['TOTAL_MEMORY'] = ejs_sizelength + 0x10000000;
-                                if (ejs_loader['isMobileDevice']) ejs_loader.Module['TOTAL_MEMORY'] = 0x12c00000;
-                            }
-                            if (['n64', 'nds', 'jaguar']['includes'](E['system'])) {
-                                ejs_loader.Module['TOTAL_MEMORY'] = ejs_sizelength + 0x10000000;
-                                if (ejs_loader['isMobileDevice']) ejs_loader.Module['TOTAL_MEMORY'] = 0x12c00000;
+                        if ('nes' == E['system']) {
+                            Module['TOTAL_MEMORY'] = 0x8000000;
+                        }
+                        Module['TOTAL_MEMORY'] = ejs_sizelength + 0x4000000;
+                        if (ejs_loader['arcadeCores']['includes'](E['system'])) {
+                            Module['TOTAL_MEMORY'] = ejs_sizelength + 0x10000000;
+                            if (ejs_loader['isMobileDevice']) Module['TOTAL_MEMORY'] = 0x12c00000;
+                        }
+                        if (['n64', 'nds', 'jaguar']['includes'](E['system'])) {
+                            Module['TOTAL_MEMORY'] = ejs_sizelength + 0x10000000;
+                            if (ejs_loader['isMobileDevice']) Module['TOTAL_MEMORY'] = 0x12c00000;
 
-                            }
-                            if ('gba' == E['system']) {
-                                ejs_loader.Module['TOTAL_MEMORY'] = 0x10000000;
-                            }
+                        }
+                        if ('gba' == E['system']) {
+                            Module['TOTAL_MEMORY'] = 0x10000000;
+                        }
                         //}
-                        if ('undefined' != typeof EJS_MEMORY) ejs_loader.Module['TOTAL_MEMORY'] = EJS_MEMORY;
+                        if ('undefined' != typeof EJS_MEMORY) Module['TOTAL_MEMORY'] = EJS_MEMORY;
                     },
-                    MemData_Reset(len) {
-                        let HEAPU8 = ejs_loader['Module']['HEAPU8'];
-                        if ('undefined' != typeof GLOBAL_BASE) {
-                            HEAPU8['set'](len, GLOBAL_BASE);
+                    MemData_Reset(u8buf) {
+                        let Module = ejs_loader['Module'],
+                            HEAPU8 = Module['HEAPU8'];
+                        if ('undefined' != typeof Module.GLOBAL_BASE) {
+                            HEAPU8['set'](u8buf, Module.GLOBAL_BASE);
                         } else if ('undefined' != typeof Runtime && Runtime['GLOBAL_BASE']) {
-                            HEAPU8['set'](len, Runtime['GLOBAL_BASE']);
+                            HEAPU8['set'](u8buf, Runtime['GLOBAL_BASE']);
                         } else if (ejs_loader['newCore']) {
-                            HEAPU8['set'](len, 0x400);
+                            HEAPU8['set'](u8buf, 0x400);
                         } else {
-                            HEAPU8['set'](len, 0x8)
+                            HEAPU8['set'](u8buf, 0x8)
                         }
                     }
                 }
             );
-            if(!E['config']['gameUrl']){
+            if (!E['config']['gameUrl']) {
                 /**
                  * 未设置游戏文件直接先运行后上传
                  */
                 toggleHidden(LoadingBtnStart, !0x0);
-                return E.callaction('PlayNow');
-            }else{
+                return E['callaction']('PlayNow');
+            } else {
                 onceEvent(LoadingBtnStart, 'click touchstart', function (event) {
                     /*点击PLAY NOW 运行*/
                     toggleHidden(LoadingBtnStart, !0x0);
-                    E.callaction('PlayNow');
+                    E['callaction']('PlayNow');
                     return !1;
                 });
             }
@@ -14002,9 +12245,10 @@ var EJS = function (modules) {
     I.defines(ejs_install, {
         setup: {
             value(DivIDs, Configs) {
+                let X = this;
                 if (I.str(DivIDs)) DivIDs = document['querySelectorAll'](DivIDs)
                 return I.toArr(DivIDs).map(
-                    elm => I.elm(elm) && new ejs_install(elm, Configs)
+                    elm => I.elm(elm) && new X(elm, Configs)
                 );
             }
         },
@@ -14017,8 +12261,119 @@ var EJS = function (modules) {
             writable: true,
 
         },
+        systemlist: {
+            value: {
+                'Nintendo': {
+                    gb: 'Game Boy | Color(gambatte)',
+                    gba: 'Game Boy Advance(mGba)',
+                    nes: 'NES(nestopia)',
+                    snes: 'SNES(snes9x)',
+                    nds: 'Nintendo DS',
+                    n64: 'Nintendo 64',
+                    vb: 'Virtual Boy',
+                    vbanext: 'Game Boy Advance(mGba)'
+                },
+                'Sony PlayStation': {
+                    psx: 'PlayStation(pcsx_rearmed)',
+                    'beetle-psx': 'PlayStation(beetle-psx)'
+                },
+                'Sega': {
+                    segams: 'Sega Master System',
+                    segagg: 'Sega Game Gear',
+                    segamd: 'Sega Mega Drive',
+                    segacd: 'Sega CD',
+                    sega32x: 'Sega 32X',
+                    segasaturn: 'Sega Saturn'
+                },
+                'Arcade/MAME/FBNEO/NGP': {
+                    arcade: 'Arcade(FBA v0.2.97.42 ROMs set)',
+                    fbneo: 'FBneo',
+                    mame2003: 'MAME2003',
+                    'mame0.243': 'MAME0.243',
+                    mame: 'MAME',
+                    ngp: 'Neo Geo Poket'
+                },
+                'Zelda Classic/OpenBOR': {
+                    zc210: 'Zelda Classic',
+                    openbor: 'OpenBOR'
+                },
+                'Atari': {
+                    a2600: 'Atari 2600',
+                    a5200: 'Atari 5200',
+                    a7800: 'Atari 7800',
+                    lynx: 'Atari Lynx',
+                    jaguar: 'Atari Jaguar'
+                },
+                'Wanderswan/MSX/NEC_PC/3do/amgia/px68k': {
+                    wanderswan: 'Wanderswan | Color',
+                    msx: 'MSX',
+                    tg16: 'TurboGrafs-16 | PC Engine',
+                    pcfx: 'PC-FX',
+                    '3do': '3DO',
+                    px68k: 'Sharp - X68000',
+                    amiga: 'Amiga'
+                }
+            }
+        },
+        FetchSysIcon: {
+            async value() {
+                let X = this;
+                let files = await T.FetchItem({
+                    url: T.RootPath + 'frontend/system-icons.zip',
+                    unpack: true,
+                    store: DISK.DB.libjs
+                });
+                I.toArr(files).map(
+                    v => {
+                        files[v[0]] = T.F.URL(v[1], T.F.getMime('png'));
+                        v[0] = null;
+                    }
+                );
+                X.systemIcons = files;
+            }
+        },
+        cleargc: {
+            value() {
+                let X = this;
+                if (X.systemIcons) {
+                    I.toArr(
+                        X.systemIcons,
+                        entry => {
+                            T.F.removeURL(entry[1]);
+                            entry[1] = null;
+                        }
+                    );
+                    T.null(X.systemIcons);
+                    X.systemIcons = null;
+                }
+            }
+        },
+        getSystemIcon: {
+            async value(elm) {
+                let X = this;
+                await X.FetchSysIcon();
+                let html = "";
+                I.toArr(X.systemlist, entry => {
+                    html += `<h1>${entry[0]}</h1><ul>`;
+                    I.toArr(entry[1], item => {
+                        let files = X.systemIcons,
+                            url = files[item[0] + '.png'];
+                        if (!url) {
+                            if (item[0] == 'beetle-psx') url = files['psx.png'];
+                            else if (item[0] == 'mame0.243') url = files['mame.png'];
+                            else if (item[0] == 'vbanext') url = files['gba.png'];
+                        }
+                        html += `<li><p data-system="${item[0]}" style="background-image:url(${url})">${item[1]}</p></li>`;
+                    });
+                    html += '</ul>';
+                });
+                elm.appendChild(T.$ct('div', html));
+            }
+        }
     });
-    I.defines(es_module,{exports:ejs_install},1,1);
+    I.defines(es_module, {
+        exports: ejs_install
+    }, 1, 1);
     //es_exports['default'] = ejs_install;
     //es_module['exports'] = ejs_install;
 }]);

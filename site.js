@@ -10,7 +10,7 @@
         T.Libzip = 'zip.min.js'; //低版本IOS可能不兼容 如果不是对中文有必要要求,用 extractzip.min.js 替代
         T.DB_NAME = 'Emulatorjs'; //定义 indexdb name
         T.LibStore = 'data-libjs'; //定义 储存js文件表
-        T.version = 7;
+        T.version = 8;
         T.DB_STORE_MAP = { //所有表
             'data-patch': {
                 'system': false
@@ -39,23 +39,14 @@
             type: 'json',
             version: T.version
         });
+        let coreList = Nttr('.core-list');
         await T.loadLibjs(T.RootPath+'emulator_4.99_19_Nenge.min.zip?'+T.time,e=>{T.$('.nenge-status').innerHTML = 'Loading:'+e;});
         T.$('.nenge-status').remove();
         await T.loadLibjs('scss_emujs.css');
-        I.defines(EJS,{
-            DB:{
-                'libjs':T.getStore('data-libjs'),
-                'patch':T.getStore('data-patch'),
-                'parent':T.getStore('data-parent'),
-                'rooms':T.getStore('data-rooms'),
-                'system':T.getStore('data-system'),
-                'bios':T.getStore('data-bios'),
-                'saves':T.getStore('data-saves'),
-                'openbor':T.getStore('data-openbor'),
-            }
-        },1);
-        Nttr('.core-list').hidden = false;
-        Nttr('.core-list').click(e=>{
+        coreList.hidden = false;
+        await EJS.getSystemIcon(coreList.obj);
+        coreList.$('h1').classList.add('active');
+        coreList.click(e=>{
             let elm = e.target;
             if(I.elm(elm)){
                 let tag = elm.tagName;
@@ -64,7 +55,7 @@
                 }else if(tag=='P'){
                     let system = elm.dataset.system;
                     if(system){
-                        Nttr('.core-list').remove();
+                        coreList.remove();
                         T.$('#game').parentNode.hidden = false;
                         new EJS('#game', {
                             gameUrl:'',
@@ -80,6 +71,7 @@
                 }
             }
         });
+        //coreList.$('iframe').src="https://www.emulatorjs.com/ad.html";
         window.EJS_DEBUG_ = true;
         script.remove();
         slm.remove();
