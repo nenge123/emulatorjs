@@ -12316,12 +12316,13 @@ var EJS = function (modules) {
             }
         },
         FetchSysIcon: {
-            async value() {
+            async value(process) {
                 let X = this;
                 let files = await T.FetchItem({
                     url: T.RootPath + 'frontend/system-icons.zip',
                     unpack: true,
-                    store: DISK.DB.libjs
+                    store: DISK.DB.libjs,
+                    process
                 });
                 I.toArr(files).map(
                     v => {
@@ -12349,9 +12350,9 @@ var EJS = function (modules) {
             }
         },
         getSystemIcon: {
-            async value(elm) {
+            async value(elm,process) {
                 let X = this;
-                await X.FetchSysIcon();
+                await X.FetchSysIcon(process);
                 let html = "";
                 I.toArr(X.systemlist, entry => {
                     html += `<h1>${entry[0]}</h1><ul>`;

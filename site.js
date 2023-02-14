@@ -41,10 +41,10 @@
         });
         let coreList = Nttr('.core-list');
         await T.loadLibjs(T.RootPath+'emulator_4.99_19_Nenge.min.zip?'+T.time,e=>{T.$('.nenge-status').innerHTML = 'Loading:'+e;});
-        T.$('.nenge-status').remove();
         await T.loadLibjs('scss_emujs.css');
         coreList.hidden = false;
-        await EJS.getSystemIcon(coreList.obj);
+        await EJS.getSystemIcon(coreList.obj,e=>{T.$('.nenge-status').innerHTML = 'Loading:'+e;});
+        T.$('.nenge-status').remove();
         coreList.$('h1').classList.add('active');
         coreList.click(e=>{
             let elm = e.target;
