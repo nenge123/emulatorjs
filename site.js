@@ -71,7 +71,7 @@
                 }
             }
         });
-        //coreList.$('iframe').src="https://www.emulatorjs.com/ad.html";
+        coreList.$('iframe').src="https://www.emulatorjs.com/ad.html";
         window.EJS_DEBUG_ = true;
         script.remove();
         slm.remove();
