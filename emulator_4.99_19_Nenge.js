@@ -4706,7 +4706,9 @@ var EJS = function (modules) {
     }
     const T = Nenge,
         I = T.I,
-        DISK = new NengeDisk(T);
+        DISK = new NengeDisk(T),
+        eventMouseList = ['mousemove', 'mousedown', 'mouseup'],
+        eventTouchList = ['touchstart', 'touchsend', 'touchmove'];
     DISK.SetDB({
         libjs: T.getStore('data-libjs'),
         patch: T.getStore('data-patch'),
@@ -6025,6 +6027,9 @@ var EJS = function (modules) {
         _0x23c305['done'] ? _0x46cc1f(_0x65cad) : Promise['resolve'](_0x65cad)['then'](_0x4b0716, _0x407368);
     }
     var ejs_Controller = {
+        CF: T.callaction,
+        RF: T.runaction,
+        action: {},
         defaultControllers: {
             0x0: {
                 0x0: {
@@ -6430,9 +6435,6 @@ var EJS = function (modules) {
         isPaused: null,
         setVolume: null,
         setVariable: null,
-        simulateInput: null,
-        simulateInputFn: null,
-        toggleShader: null,
         saveState: null,
         loadState: null,
         quickSaveState: null,
@@ -6584,10 +6586,10 @@ var EJS = function (modules) {
     <div style="width:50%;float:left">
         <div>
             <div style="width:50%;float:left;padding: 0 5px;">
-                <input style="text-align:center;height:25px;width: 100%;" type="text" data-id="{id}" data-value="" data-type="2" data-index="{index}" readonly="" placeholder="">
+                <input type="text" data-id="{id}" data-value="" data-type="2" data-index="{index}" readonly="" placeholder="" disabled>
             </div>
             <div style="width:50%;float:left;padding: 0 5px;">
-                <input style="text-align:center;height:25px;width: 100%;" type="text" data-id="{id}" data-value="" data-type="1" data-index="{index}" readonly="" placeholder="">
+                <input type="text" data-id="{id}" data-value="" data-type="1" data-index="{index}" readonly="" placeholder="" disabled>
             </div>
             <div style="clear:both"></div>
         </div>
@@ -6803,21 +6805,23 @@ var EJS = function (modules) {
                 }
             );
             I.toArr(gpadSelectorAll(getCtrlclassName('tabs-panel', !0) + ' a.' + getCtrlclassName('set')),
-                elm => E['addEvent'](elm, 'mousedown', event => {
-                    var ppelm = elm['parentNode']['parentNode'],
-                        datas = I.elmdata(ppelm);
-                    toggleHidden(ElmOverlay, !0x1);
-                    ElmOverlay['setAttribute']('data-id', datas.id);
-                    ElmOverlay['setAttribute']('data-index', datas.index);
-                    var html = '[ ' + datas.label + ' ]';
-                    if (ejs_Controller['gamepad']['gamepads'][datas.index] && datas.id < 0x10) {
-                        html += '<br /><span style="font-size:12px">' + T.getLang('Gamepad') + ':' + ejs_Controller['gamepad']['gamepads'][datas.index]['id'] + '</span><br />' + T.getLang('Press keyboard or gamepad');
-                    } else {
-                        html += '<br />' + T.getLang('Press keyboard');
-                    }
-                    ElmOverlay['querySelector'](getCtrlclassName('key-setting-popup', !0)).innerHTML = html;
-                    event['stopPropagation']();
-                })
+                elm => {
+                    E['addEvent'](elm, 'mousedown', event => {
+                        var ppelm = elm['parentNode']['parentNode'],
+                            datas = I.elmdata(ppelm);
+                        toggleHidden(ElmOverlay, !0x1);
+                        ElmOverlay['setAttribute']('data-id', datas.id);
+                        ElmOverlay['setAttribute']('data-index', datas.index);
+                        var html = '[ ' + datas.label + ' ]';
+                        if (ejs_Controller['gamepad']['gamepads'][datas.index] && datas.id < 0x10) {
+                            html += '<br /><span style="font-size:12px">' + T.getLang('Gamepad') + ':' + ejs_Controller['gamepad']['gamepads'][datas.index]['id'] + '</span><br />' + T.getLang('Press keyboard or gamepad');
+                        } else {
+                            html += '<br />' + T.getLang('Press keyboard');
+                        }
+                        ElmOverlay['querySelector'](getCtrlclassName('key-setting-popup', !0)).innerHTML = html;
+                        event['stopPropagation']();
+                    });
+                }
             );
         },
         setCacheDialog: function () {
@@ -7029,12 +7033,12 @@ var EJS = function (modules) {
                 });
                 E['addEvent'](getdCheatElm('btn-submit'), 'click', function (_0x584c7c) {
 
-                    return ejs_Controller['resetCheat'](), _0x258e4a['querySelectorAll']('input:checked')['forEach'](function (_0x144247, _0x54b25c) {
+                    return ejs_Controller['CF']('resetCheat'), _0x258e4a['querySelectorAll']('input:checked')['forEach'](function (_0x144247, _0x54b25c) {
                         var _0x4b87fb = E['cheats'][_0x144247['value']];
-                        _0x4b87fb && ejs_Controller['setCheat'](_0x54b25c, 0x1, _0x4b87fb[0x1]);
+                        _0x4b87fb && ejs_Controller['CF']('setCheat', _0x54b25c, 0x1, _0x4b87fb[0x1]);
                     }), toggleHidden(ElmDialogsCheat, !0x0), E['elements']['container']['focus'](), !0x1;
                 });
-                ejs_loader['arcadeCores']['includes'](E['system']) && (ejs_Controller['allowCheat'] = !0x1), ejs_Controller['setCheat'] || (ejs_Controller['allowCheat'] = !0x1), ejs_Controller['allowCheat'] || I.elm(E['elements']['buttons']['cheat']) && E['elements']['buttons']['cheat']['remove']();
+                ejs_loader['arcadeCores']['includes'](E['system']) && (ejs_Controller['allowCheat'] = !0x1), ejs_Controller['CF']('CM', 'set_cheat') || (ejs_Controller['allowCheat'] = !0x1), ejs_Controller['allowCheat'] || I.elm(E['elements']['buttons']['cheat']) && E['elements']['buttons']['cheat']['remove']();
             }
         },
         setNetplayDialog: function () {
@@ -7365,7 +7369,7 @@ var EJS = function (modules) {
                             ['n64', 'mupen64plus', 'mupen64plus2', 'mupen64plus-nx']['includes'](E['system']) || ejs_loader['Module']['_fast_forward_2'];
                             toggleHidden(E['elements']['buttons']['loadState'], !0x0);
                             toggleHidden(E['elements']['buttons']['saveState'], !0x0);
-                            ejs_Controller['resetCheat']();
+                            ejs_Controller['CF']('resetCheat');
                             toggleHidden(E['elements']['buttons']['cheat'], !0x0);
                             toggleHidden(ejs_data['contextMenu']['querySelectorAll']('ul li')['item'](0x1), !0x0);
                             toggleHidden(ejs_data['contextMenu']['querySelectorAll']('ul li')['item'](0x2), !0x0);
@@ -7507,7 +7511,7 @@ var EJS = function (modules) {
                     };
                     ejs_Controller['openRoom'] = function (_0x5a26d8) {
 
-                        ejs_Controller['stopLoadRooms'](), toggleHidden(_0x5a26d8['elements']['dialogs']['netplay']['querySelector'](getCtrlclassName('netplay-roomlist', !0)), !0x0), toggleHidden(_0x5a26d8['elements']['dialogs']['netplay']['querySelector'](getCtrlclassName('netplay-room', !0)), !0x1), toggleHidden(_0x5a26d8['elements']['dialogs']['netplay']['querySelector'](getCtrlclassName('btn-create-room', !0)), !0x0), toggleHidden(_0x5a26d8['elements']['dialogs']['netplay']['querySelector'](getCtrlclassName('btn-quit', !0)), !0x1), ejs_Controller['resetCheat'](), toggleHidden(_0x5a26d8['elements']['buttons']['cheat'], !0x0);
+                        ejs_Controller['stopLoadRooms'](), toggleHidden(_0x5a26d8['elements']['dialogs']['netplay']['querySelector'](getCtrlclassName('netplay-roomlist', !0)), !0x0), toggleHidden(_0x5a26d8['elements']['dialogs']['netplay']['querySelector'](getCtrlclassName('netplay-room', !0)), !0x1), toggleHidden(_0x5a26d8['elements']['dialogs']['netplay']['querySelector'](getCtrlclassName('btn-create-room', !0)), !0x0), toggleHidden(_0x5a26d8['elements']['dialogs']['netplay']['querySelector'](getCtrlclassName('btn-quit', !0)), !0x1), ejs_Controller['CF']('resetCheat'), toggleHidden(_0x5a26d8['elements']['buttons']['cheat'], !0x0);
                         var _0x29aa55 = _0x5a26d8['elements']['dialogs']['netplay']['querySelector'](getCtrlclassName('netplay-room', !0)),
                             _0x34fdf5 = _0x29aa55['querySelector']('[data-room-password]');
                         null === ejs_Controller['netPlayPassword'] ? toggleHidden(_0x34fdf5, !0x0) : (toggleHidden(_0x34fdf5, !0x1), _0x34fdf5['querySelector']('span')['innerText'] = ejs_Controller['netPlayPassword']);
@@ -7681,9 +7685,9 @@ var EJS = function (modules) {
                                         if (_0x20a6c2) {
                                             if (_0x346729 >= 0x10 && _0x346729 <= 0x17) {
                                                 var _0x3b8146 = 0x7fff;
-                                                0x13 != _0x346729 && 0x11 != _0x346729 && 0x17 != _0x346729 && 0x15 != _0x346729 || (_0x3b8146 = -_0x3b8146), ejs_Controller['simulateInput'](_0x3da2fb, _0x346729, _0x3b8146);
-                                            } else ejs_Controller['simulateInput'](_0x3da2fb, _0x346729, 0x1);
-                                        } else ejs_Controller['simulateInput'](_0x3da2fb, _0x346729, 0x0);
+                                                0x13 != _0x346729 && 0x11 != _0x346729 && 0x17 != _0x346729 && 0x15 != _0x346729 || (_0x3b8146 = -_0x3b8146), ejs_Controller['CF']('simulateInput', _0x3da2fb, _0x346729, _0x3b8146);
+                                            } else ejs_Controller['CF']('simulateInput', _0x3da2fb, _0x346729, 0x1);
+                                        } else ejs_Controller['CF']('simulateInput', _0x3da2fb, _0x346729, 0x0);
                                     }
                                 });
                             });
@@ -8025,7 +8029,7 @@ var EJS = function (modules) {
 
                             Object['keys'](ejs_Controller['controllers'][_0x250252])['forEach'](function (_0x1a0581) {
 
-                                parseInt(ejs_Controller['controllers'][_0x250252][_0x1a0581]['value2'], 0xa) === parseInt(_0x2325fd['index'], 0xa) && parseInt(_0x250252, 0xa) === parseInt(_0x2325fd['gamepad']['index'], 0xa) && (!_0x90822a[_0x250252] || _0x90822a[_0x250252] && _0x90822a[_0x250252][_0x1a0581]) && ejs_Controller['simulateInput'](_0x250252, _0x1a0581, 0x1);
+                                parseInt(ejs_Controller['controllers'][_0x250252][_0x1a0581]['value2'], 0xa) === parseInt(_0x2325fd['index'], 0xa) && parseInt(_0x250252, 0xa) === parseInt(_0x2325fd['gamepad']['index'], 0xa) && (!_0x90822a[_0x250252] || _0x90822a[_0x250252] && _0x90822a[_0x250252][_0x1a0581]) && ejs_Controller['CF']('simulateInput', _0x250252, _0x1a0581, 0x1);
                             });
                         });
                     }
@@ -8035,14 +8039,14 @@ var EJS = function (modules) {
 
                         Object['keys'](ejs_Controller['controllers'][_0x250708])['forEach'](function (_0x5c638e) {
 
-                            parseInt(ejs_Controller['controllers'][_0x250708][_0x5c638e]['value2'], 0xa) === parseInt(_0x2e80d7['index'], 0xa) && parseInt(_0x250708, 0xa) === parseInt(_0x2e80d7['gamepad']['index'], 0xa) && (!_0x48970c[_0x250708] || _0x48970c[_0x250708] && _0x48970c[_0x250708][_0x5c638e]) && ejs_Controller['simulateInput'](_0x250708, _0x5c638e, 0x0);
+                            parseInt(ejs_Controller['controllers'][_0x250708][_0x5c638e]['value2'], 0xa) === parseInt(_0x2e80d7['index'], 0xa) && parseInt(_0x250708, 0xa) === parseInt(_0x2e80d7['gamepad']['index'], 0xa) && (!_0x48970c[_0x250708] || _0x48970c[_0x250708] && _0x48970c[_0x250708][_0x5c638e]) && ejs_Controller['CF']('simulateInput', _0x250708, _0x5c638e, 0x0);
                         });
                     });
                 }), _0x428a47['bind'](_export_1['Gamepad']['Event']['AXIS_CHANGED'], function (_0x3a3f6b) {
                     var _0x2c4bf5 = _0x3a3f6b['gamepad']['index'],
                         _0x125870 = [];
                     if (ejs_loader['buttonMaps'] && (_0x125870 = ejs_loader['buttonMaps']), 0x0 == _0x125870['length'] || !_0x125870[_0x2c4bf5]) return !0x1;
-                    'LEFT_STICK_X' === _0x3a3f6b['axis'] && (_0x3a3f6b['value'] > 0x0 ? (_0x125870[_0x2c4bf5][0x10] && ejs_Controller['simulateInput'](_0x2c4bf5, 0x10, 0x7fff * _0x3a3f6b['value']), _0x125870[_0x2c4bf5][0x11] && ejs_Controller['simulateInput'](_0x2c4bf5, 0x11, 0x0)) : (_0x125870[_0x2c4bf5][0x11] && ejs_Controller['simulateInput'](_0x2c4bf5, 0x11, 0x7fff * _0x3a3f6b['value']), _0x125870[_0x2c4bf5][0x10] && ejs_Controller['simulateInput'](_0x2c4bf5, 0x10, 0x0))), 'LEFT_STICK_Y' === _0x3a3f6b['axis'] && (_0x3a3f6b['value'] > 0x0 ? (_0x125870[_0x2c4bf5][0x12] && ejs_Controller['simulateInput'](_0x2c4bf5, 0x12, 0x7fff * _0x3a3f6b['value']), _0x125870[_0x2c4bf5][0x13] && ejs_Controller['simulateInput'](_0x2c4bf5, 0x13, 0x0)) : (_0x125870[_0x2c4bf5][0x13] && ejs_Controller['simulateInput'](_0x2c4bf5, 0x13, 0x7fff * _0x3a3f6b['value']), _0x125870[_0x2c4bf5][0x12] && ejs_Controller['simulateInput'](_0x2c4bf5, 0x12, 0x0))), 'RIGHT_STICK_X' === _0x3a3f6b['axis'] && (_0x3a3f6b['value'] > 0x0 ? (_0x125870[_0x2c4bf5][0x14] && ejs_Controller['simulateInput'](_0x2c4bf5, 0x14, 0x7fff * _0x3a3f6b['value']), _0x125870[_0x2c4bf5][0x15] && ejs_Controller['simulateInput'](_0x2c4bf5, 0x15, 0x0)) : (_0x125870[_0x2c4bf5][0x15] && ejs_Controller['simulateInput'](_0x2c4bf5, 0x15, 0x7fff * _0x3a3f6b['value']), _0x125870[_0x2c4bf5][0x14] && ejs_Controller['simulateInput'](_0x2c4bf5, 0x14, 0x0))), 'RIGHT_STICK_Y' === _0x3a3f6b['axis'] && (_0x3a3f6b['value'] > 0x0 ? (_0x125870[_0x2c4bf5][0x16] && ejs_Controller['simulateInput'](_0x2c4bf5, 0x16, 0x7fff * _0x3a3f6b['value']), _0x125870[_0x2c4bf5][0x17] && ejs_Controller['simulateInput'](_0x2c4bf5, 0x17, 0x0)) : (_0x125870[_0x2c4bf5][0x17] && ejs_Controller['simulateInput'](_0x2c4bf5, 0x17, 0x7fff * _0x3a3f6b['value']), _0x125870[_0x2c4bf5][0x16] && ejs_Controller['simulateInput'](_0x2c4bf5, 0x16, 0x0)));
+                    'LEFT_STICK_X' === _0x3a3f6b['axis'] && (_0x3a3f6b['value'] > 0x0 ? (_0x125870[_0x2c4bf5][0x10] && ejs_Controller['CF']('simulateInput', _0x2c4bf5, 0x10, 0x7fff * _0x3a3f6b['value']), _0x125870[_0x2c4bf5][0x11] && ejs_Controller['CF']('simulateInput', _0x2c4bf5, 0x11, 0x0)) : (_0x125870[_0x2c4bf5][0x11] && ejs_Controller['CF']('simulateInput', _0x2c4bf5, 0x11, 0x7fff * _0x3a3f6b['value']), _0x125870[_0x2c4bf5][0x10] && ejs_Controller['CF']('simulateInput', _0x2c4bf5, 0x10, 0x0))), 'LEFT_STICK_Y' === _0x3a3f6b['axis'] && (_0x3a3f6b['value'] > 0x0 ? (_0x125870[_0x2c4bf5][0x12] && ejs_Controller['CF']('simulateInput', _0x2c4bf5, 0x12, 0x7fff * _0x3a3f6b['value']), _0x125870[_0x2c4bf5][0x13] && ejs_Controller['CF']('simulateInput', _0x2c4bf5, 0x13, 0x0)) : (_0x125870[_0x2c4bf5][0x13] && ejs_Controller['CF']('simulateInput', _0x2c4bf5, 0x13, 0x7fff * _0x3a3f6b['value']), _0x125870[_0x2c4bf5][0x12] && ejs_Controller['CF']('simulateInput', _0x2c4bf5, 0x12, 0x0))), 'RIGHT_STICK_X' === _0x3a3f6b['axis'] && (_0x3a3f6b['value'] > 0x0 ? (_0x125870[_0x2c4bf5][0x14] && ejs_Controller['CF']('simulateInput', _0x2c4bf5, 0x14, 0x7fff * _0x3a3f6b['value']), _0x125870[_0x2c4bf5][0x15] && ejs_Controller['CF']('simulateInput', _0x2c4bf5, 0x15, 0x0)) : (_0x125870[_0x2c4bf5][0x15] && ejs_Controller['CF']('simulateInput', _0x2c4bf5, 0x15, 0x7fff * _0x3a3f6b['value']), _0x125870[_0x2c4bf5][0x14] && ejs_Controller['CF']('simulateInput', _0x2c4bf5, 0x14, 0x0))), 'RIGHT_STICK_Y' === _0x3a3f6b['axis'] && (_0x3a3f6b['value'] > 0x0 ? (_0x125870[_0x2c4bf5][0x16] && ejs_Controller['CF']('simulateInput', _0x2c4bf5, 0x16, 0x7fff * _0x3a3f6b['value']), _0x125870[_0x2c4bf5][0x17] && ejs_Controller['CF']('simulateInput', _0x2c4bf5, 0x17, 0x0)) : (_0x125870[_0x2c4bf5][0x17] && ejs_Controller['CF']('simulateInput', _0x2c4bf5, 0x17, 0x7fff * _0x3a3f6b['value']), _0x125870[_0x2c4bf5][0x16] && ejs_Controller['CF']('simulateInput', _0x2c4bf5, 0x16, 0x0)));
                 }), _0x428a47['bind'](_export_1['Gamepad']['Event']['DISCONNECTED'], function (_0x2e78bb) {
 
                     [0x0, 0x1, 0x2, 0x3]['forEach'](function (_0x31c03e) {
@@ -8059,19 +8063,15 @@ var EJS = function (modules) {
             }
         },
         setShader: function (_0xb5459b) {
-
-            if ('disabled' === _0xb5459b) ejs_loader.FS['unlink']('/shader/shader.glslp', ''), ejs_Controller['toggleShader'] && ejs_Controller['toggleShader'](0x0);
-            else {
-                ejs_Controller['toggleShader'] && ejs_Controller['toggleShader'](0x0);
+            let FS = DISK.FS;
+            if ('disabled' === _0xb5459b) {
+                //FS['unlink']('/shader/shader.glslp', '');
+                ejs_Controller['CF']('shaderEnable', 0x0);
+            } else {
+                ejs_Controller['CF']('shaderEnable', 0x0);
                 var _0x2ef38 = '/shader/' ['concat'](_0xb5459b);
-                ejs_loader.FS['writeFile']('/shader/shader.glslp', function (_0x341765) {
-
-                    for (var _0x2e7e1d = [], _0x383d49 = 0x0; _0x383d49 < _0x341765['length']; _0x383d49 += 0x1) {
-                        var _0x29a1ac = _0x341765[_0x383d49];
-                        _0x29a1ac > 0xff && (_0x29a1ac &= 0xff), _0x2e7e1d['push'](String['fromCharCode'](_0x29a1ac));
-                    }
-                    return _0x2e7e1d['join']('');
-                }(ejs_loader.FS['readFile'](_0x2ef38))), ejs_Controller['toggleShader'] && ejs_Controller['toggleShader'](0x1);
+                DISK.MKFILE('/shader/shader.glslp', ejs_loader.FS['readFile'](_0x2ef38), 1);
+                ejs_Controller['CF']('shaderEnable', 0x1);
             }
         },
         toggleVirtualGamepad: function (_0x2bec8b) {
@@ -8197,7 +8197,7 @@ var EJS = function (modules) {
                     });
                     _0x5e70dc['appendChild'](ElmCanvas);
                 });
-                if(vStyle==9||vStyle==8){
+                if (vStyle == 9 || vStyle == 8) {
                     //需要触摸板  异步
                     E['callaction']('JoystickGamepad');
                 }
@@ -8205,10 +8205,10 @@ var EJS = function (modules) {
                     'container': E['Selector']('.' ['concat'](getClassName('ejs-virtual-gamepad'), ' .')['concat'](getClassName('dpad-container'))),
                     'event': function (_0x392b90, _0x1b225a, _0x4d23be, _0x289e63) {
 
-                        ejs_Controller['syncInput'](0x0, 0x4, _0x4d23be);
-                        ejs_Controller['syncInput'](0x0, 0x5, _0x289e63);
-                        ejs_Controller['syncInput'](0x0, 0x6, _0x392b90);
-                        ejs_Controller['syncInput'](0x0, 0x7, _0x1b225a);
+                        ejs_Controller['CF']('simulateInput', 0x0, 0x4, _0x4d23be);
+                        ejs_Controller['CF']('simulateInput', 0x0, 0x5, _0x289e63);
+                        ejs_Controller['CF']('simulateInput', 0x0, 0x6, _0x392b90);
+                        ejs_Controller['CF']('simulateInput', 0x0, 0x7, _0x1b225a);
                     }
                 });
                 var virtualGamepadClass = getClassName('virtual-gamepad'),
@@ -8250,13 +8250,13 @@ var EJS = function (modules) {
 
                         if ('touchend' === _0x3f6422['type']) elmAddRemoveClass(E['Selector']('.' ['concat'](virtualGamepadClass, ' .')['concat'](_0x31c309)), _0x508e4d, !0x1), window['setTimeout'](function () {
 
-                            ejs_Controller['syncInput'](0x0, _0x59c0fb, 0x0);
+                            ejs_Controller['CF']('simulateInput', 0x0, _0x59c0fb, 0x0);
                         }, 0xa);
                         else {
                             if (elmAddRemoveClass(E['Selector']('.' ['concat'](virtualGamepadClass, ' .')['concat'](_0x31c309)), _0x508e4d, !0x0), [0x14, 0x15, 0x16, 0x17]['includes'](_0x59c0fb)) {
                                 var _0x211e6d = 0x7fff;
-                                0x17 != _0x59c0fb && 0x15 != _0x59c0fb || (_0x211e6d = -_0x211e6d), ejs_Controller['syncInput'](0x0, _0x59c0fb, _0x211e6d);
-                            } else ejs_Controller['syncInput'](0x0, _0x59c0fb, 0x1);
+                                0x17 != _0x59c0fb && 0x15 != _0x59c0fb || (_0x211e6d = -_0x211e6d), ejs_Controller['CF']('simulateInput', 0x0, _0x59c0fb, _0x211e6d);
+                            } else ejs_Controller['CF']('simulateInput', 0x0, _0x59c0fb, 0x1);
                         }
                         _0x3f6422['stopPropagation']();
                     });
@@ -8278,9 +8278,13 @@ var EJS = function (modules) {
                     }
                     div.remove();
                 }
-                if (this['elements']['wrapper'] = createElm('div', {
-                        'class': this['config']['classNames']['video']
-                    }), _0x3266c5(this['game'], this['elements']['wrapper']), 'video' !== E['game']['tagName']['toLocaleLowerCase']()) {
+                this['elements']['wrapper'] = createElm('div', {
+                    'class': this['config']['classNames']['video']
+                });
+                _0x3266c5(this['game'], this['elements']['wrapper']);
+
+                if (E['system'] != 'nds') eventTouchList.forEach(v => T.on(this['elements']['wrapper'], v, e => e.target == this['elements']['wrapper'] && T.stopEvent(e)));
+                if ('video' !== E['game']['tagName']['toLocaleLowerCase']()) {
                     var _0x396be3 = this['config']['volume'];
                     Object['defineProperty'](E['game'], 'volume', {
                         'get': function () {
@@ -8429,78 +8433,142 @@ var EJS = function (modules) {
             }));
         },
         bindFunction: function () {
-            var _0x4bd348, _0x1e1e01 = this,
-                _0x4ff1b1 = _0x1e1e01['system'];
-            ejs_loader['Module'] && (ejs_loader['Module']['_set_volume'] || ejs_loader['Module']['_adjust_volume']) && (ejs_loader['Module']['_adjust_volume'] && (_0x4bd348 = ejs_loader['Module']['cwrap']('adjust_volume', 'null', ['number'])), ejs_loader['Module']['_set_volume'] && (_0x4bd348 = ejs_loader['Module']['cwrap']('set_volume', 'null', ['number'])), ejs_Controller['setVolume'] = function () {
-                var _0x4773d1 = 0x0;
-                _0x1e1e01['volume'] < 0x1 && (_0x4773d1 = 0x0 === _0x1e1e01['volume'] ? -0x50 : 0x1e * _0x1e1e01['volume'] - 0x1e, _0x4bd348(_0x4773d1)), _0x1e1e01['muted'] && (_0x4773d1 = -0x50), _0x4bd348(_0x4773d1);
-            }), (ejs_Controller['setVariable'] = ejs_loader['Module']['cwrap']('set_variable', 'null', ['string', 'string']), ejs_Controller['simulateInputFn'] = ejs_loader['Module']['cwrap']('simulate_input', 'null', ['number', 'number', 'number'])), (ejs_Controller['simulateInput'] = function (_0x4da907, _0x5588e2, _0x4074f6) {
-                ejs_Controller['simulateInputFn'](_0x4da907, _0x5588e2, _0x4074f6);
-            }, ejs_Controller['syncInput'] = ejs_Controller['simulateInput']);
-            var _0x15d7bc = ejs_loader['Module']['cwrap']('shader_enable', 'null', ['number']);
-            ejs_Controller['toggleShader'] = function (_0x2ce85f) {
-                return _0x15d7bc(_0x2ce85f);
-            }, ejs_Controller['getStateInfo'] = ejs_loader['Module']['cwrap']('get_state_info', 'string', []), ejs_Controller['saveState'] = function () {
-                var _0x3e6a80, _0x4b8211 = ejs_Controller['getStateInfo']()['split']('|'),
-                    _0x530e53 = _0x4b8211[0x0] >> 0x0;
-                if (_0x530e53 > 0x0) {
-                    var _0x4d5a29 = _0x4b8211[0x1] >> 0x0;
-                    _0x3e6a80 = ejs_loader['Module']['HEAPU8']['slice'] ? ejs_loader['Module']['HEAPU8']['slice'](_0x4d5a29, _0x4d5a29 + _0x530e53) : ejs_loader['Module']['HEAPU8']['subarray'](_0x4d5a29, _0x4d5a29 + _0x530e53);
+            var _0x4bd348, E = this,
+                System = E['system'],
+                Module = ejs_loader['Module'];
+            let func = "CM(o){return !!Module['_'+o]},GM(o){return this.action[o]},",
+                getMfunc = o => `'${o[0]}':Module['_${o[0]}']&&Module["cwrap"](${o.map(e=>I.str(e)?`'${e}'`:I.array(e)?`[${e.map(k=>k?`'${k}'`:`''`).join(',')}]`:`${e}`).join(',')})||null,`,
+                getfunc = o => `(...arg){return this.CF('CM','${o}')?this.RF('${o}',arg):null},`;
+            I.toArr({
+                getDiskNum: ['get_disk_num', 'number', []],
+                setDisk: ['set_disk', 'number', ['number']],
+                ejectDisk: ['eject_disk', 'null', []],
+                netPlayHost: ['netplay_host', 'number', ['string', 'string']],
+                netPlayClient: ['netplay_client', 'number', ['string', 'string']],
+                netPlayClose: ['netplay_close', 'number', []],
+                netplayNewUser: ['netplay_new_user', 'number', []],
+                netplayPushData: ['netplay_push_data', 'number', ['string', 'number']],
+                contentCrc32: ['get_content_crc', 'string', []],
+                getScreenshot: ['cmd_take_screenshot', '', []],
+                adjustVolume: ['adjust_volume', 'null', ['number']],
+                setVolume: ['set_volume', 'null', ['number']],
+                setVariable: ['set_variable', 'null', ['string', 'string']],
+                simulateInput: ['simulate_input', 'null', ['number', 'number', 'number']],
+                shaderEnable: ['shader_enable', 'null', ['number']],
+                getStateInfo: ['get_state_info', 'string', []],
+                loadState: ['load_state', 'number', ['string', 'number']],
+                setCheat: ['set_cheat', 'number', ['number', 'number', 'string']],
+                resetCheat: ['reset_cheat', '', []],
+                restartGame: ['system_restart', '', []],
+                currentFrameNum: ['get_current_frame_count', '', []],
+                saveSavFiles: ['cmd_savefiles', '', []],
+                getGameCoreOptions: ['get_core_options', 'string', []],
+                fastForward: ['fast_forward', 'number', []],
+                fastForward2: ['fast_forward_2', 'number', []],
+            }, entry => {
+                func += getMfunc(entry[1]) + entry[0] + getfunc(entry[1][0])
+            });
+            func = `Object.assign(this.action,{${func}});`;
+            (new Function('Module', func)).call(ejs_Controller, Module);
+            let setVolume = I.toArr(['adjust_volume', 'set_volume']).filter(e => ejs_Controller['CF']('CM', e))[0];
+            if (setVolume) {
+                ejs_Controller['setVolume'] = () => {
+                    var volume = -0x50;
+                    if (!E['muted']) {
+                        if (setVolume == 'set_volume') {
+                            if (E['volume'] > 0.5) volume = (E['volume'] / 0.5 - 1) * 80;
+                            else if (E['volume'] > 0) volume = (E['volume'] / 0.5 - 1) * 10;
+                        } else if (E['volume'] > 0) {
+                            volume = 1 * E['volume'];
+                        }
+                    }
+                    ejs_Controller['action'][setVolume](volume);
                 }
-                return _0x3e6a80;
+            }
+            ejs_Controller['saveState'] = function () {
+                //返回即时存档
+                var u8buf, lenList = ejs_Controller['CF']('getStateInfo')['split']('|'),
+                    startlen = lenList[0x0] >> 0x0;
+                if (startlen > 0x0) {
+                    var startpos = lenList[0x1] >> 0x0;
+                    u8buf = Module['HEAPU8']['slice'] ? Module['HEAPU8']['slice'](startpos, startpos + startlen) : Module['HEAPU8']['subarray'](startpos, startpos + startlen);
+                }
+                return u8buf;
             };
-            var _0x42e021 = ejs_loader['Module']['cwrap']('load_state', 'number', ['string', 'number']);
-            ejs_Controller['loadState'] = function (_0x59081e, _0x3678d9) {
-
+            var loadState = (name, pos) => ejs_Controller['CF']('loadState', name, pos);
+            ejs_Controller['loadState'] = function (u8buf, pos) {
+                //加载即时存档
                 if (ejs_Controller['netPlayConnected']) return !0x1;
-                var _0x4df666;
-                _0x4df666 = _0x59081e, ejs_loader.FS.analyzePath('/game.state').exists && ejs_loader.FS['unlink']('game.state'), ejs_loader.FS['createDataFile']('/', 'game.state', _0x4df666, !0x0, !0x0), null === _0x3678d9 && (_0x3678d9 = 0x0), _0x42e021('game.state', _0x3678d9), 'arcade' === _0x4ff1b1 ? setTimeout(function () {
-
-                    ejs_Controller['getStateInfo'](), _0x42e021('game.state', _0x3678d9), ejs_loader.FS['unlink']('game.state');
-                }, 0xa) : ejs_loader.FS['unlink']('game.state'), _0x1e1e01['elements']['container']['focus']();
-            }, ejs_loader['Module']['_set_cheat'] && (ejs_Controller['setCheat'] = ejs_loader['Module']['cwrap']('set_cheat', 'number', ['number', 'number', 'string'])), ejs_loader['Module']['_reset_cheat'] ? ejs_Controller['resetCheat'] = ejs_loader['Module']['_reset_cheat'] : ejs_Controller['resetCheat'] = function () {}, ejs_Controller['quickSaveState'] = function () {
-
+                let FS = ejs_loader.FS;
+                pos = pos || 0;
+                FS.analyzePath('/game.state').exists && FS['unlink']('game.state');
+                FS['createDataFile']('/', 'game.state', u8buf, !0x0, !0x0);
+                loadState('game.state', pos);
+                if ('arcade' === System) {
+                    setTimeout(e => {
+                        ejs_Controller['CF']('getStateInfo');
+                        loadState('game.state', pos);
+                        FS['unlink']('game.state');
+                    }, 0xa)
+                } else {
+                    FS['unlink']('game.state');
+                }
+                E['elements']['container']['focus']();
+            };
+            ejs_Controller['quickSaveState'] = function () {
+                //快捷 保存 即时存档
                 if (ejs_Controller['netPlayConnected']) return !0x1;
-                if (_0x1e1e01['started'] && !ejs_Controller['connected']) {
-                    var _0x1b1c77 = ejs_Controller['saveState']();
-                    try {
-                        ejs_loader.FS['unlink']('quick.state');
-                    } catch (_0x2fa8eb) {}
-                    ejs_loader.FS['createDataFile']('/', 'quick.state', _0x1b1c77, !0x0, !0x0), _0x88c152['show'](_0x1e1e01['elements']['container'], 'Quick Save');
+                if (E['started'] && !ejs_Controller['connected']) {
+                    var u8buf = ejs_Controller['saveState']();
+                    if (u8buf) {
+                        DISK.MKFILE('/quick.state', u8buf, 1);
+                        _0x88c152['show'](E['elements']['container'], T.getLang('Quick Save'));
+                    }
                 }
             };
             ejs_Controller['quickLoadState'] = function () {
-
+                //快捷 读取 即时存档
                 if (ejs_Controller['netPlayConnected']) return !0x1;
-                if (_0x1e1e01['started'] && !ejs_Controller['connected']) try {
-                    _0x42e021('quick.state', 0x0), ('arcade' === _0x4ff1b1 && setTimeout(function () {
+                if (E['started'] && !ejs_Controller['connected']) {
+                    loadState('quick.state', 0x0);
+                    if ('arcade' === System) {
+                        setTimeout(e => {
 
-                        ejs_Controller['getStateInfo'](), _0x42e021('quick.state', 0x0);
-                    }, 0xa), _0x88c152['show'](_0x1e1e01['elements']['container'], 'Quick Load'));
-                } catch (_0x108ed7) {}
+                            ejs_Controller['CF']('getStateInfo');
+                            loadState('quick.state', 0x0);
+                        }, 0xa);
+                        _0x88c152['show'](E['elements']['container'], T.getLang('Quick Load'))
+                    }
+                }
             };
-            ejs_loader['Module']['_get_disk_num'] && (ejs_Controller['getDiskNum'] = ejs_loader['Module']['cwrap']('get_disk_num', 'number', []));
-            ejs_loader['Module']['_set_disk'] && (ejs_Controller['setDisk'] = ejs_loader['Module']['cwrap']('set_disk', 'number', ['number']));
-            ejs_loader['Module']['_eject_disk'] && (ejs_Controller['ejectDisk'] = ejs_loader['Module']['cwrap']('eject_disk', 'null', []));
-            ejs_loader['Module']['_netplay_host'] && (ejs_Controller['netPlayHost'] = ejs_loader['Module']['cwrap']('netplay_host', 'number', ['string', 'string']));
-            ejs_loader['Module']['_netplay_client'] && (ejs_Controller['netPlayClient'] = ejs_loader['Module']['cwrap']('netplay_client', 'number', ['string', 'string']));
-            ejs_loader['Module']['_netplay_close'] && (ejs_Controller['netPlayClose'] = ejs_loader['Module']['cwrap']('netplay_close', 'number', []));
-            ejs_loader['Module']['_netplay_new_user'] && (ejs_Controller['netplayNewUser'] = ejs_loader['Module']['cwrap']('netplay_new_user', 'number', []));
-            ejs_loader['Module']['_netplay_push_data'] && (ejs_Controller['netplayPushData'] = ejs_loader['Module']['cwrap']('netplay_push_data', 'number', ['string', 'number']));
-            ejs_loader['Module']['_get_content_crc'] && (ejs_Controller['contentCrc32'] = ejs_loader['Module']['cwrap']('get_content_crc', 'string', [])), window['EJS_loadState'] = function (_0x29f6af) {
+            Module['_get_disk_num'] && (ejs_Controller['getDiskNum'] = Module['cwrap']('get_disk_num', 'number', []));
+            Module['_set_disk'] && (ejs_Controller['setDisk'] = Module['cwrap']('set_disk', 'number', ['number']));
+            Module['_eject_disk'] && (ejs_Controller['ejectDisk'] = Module['cwrap']('eject_disk', 'null', []));
+            Module['_netplay_host'] && (ejs_Controller['netPlayHost'] = Module['cwrap']('netplay_host', 'number', ['string', 'string']));
+            Module['_netplay_client'] && (ejs_Controller['netPlayClient'] = Module['cwrap']('netplay_client', 'number', ['string', 'string']));
+            Module['_netplay_close'] && (ejs_Controller['netPlayClose'] = Module['cwrap']('netplay_close', 'number', []));
+            Module['_netplay_new_user'] && (ejs_Controller['netplayNewUser'] = Module['cwrap']('netplay_new_user', 'number', []));
+            Module['_netplay_push_data'] && (ejs_Controller['netplayPushData'] = Module['cwrap']('netplay_push_data', 'number', ['string', 'number']));
+            Module['_get_content_crc'] && (ejs_Controller['contentCrc32'] = Module['cwrap']('get_content_crc', 'string', []));
+            window['EJS_loadState'] = function (_0x29f6af) {
                 ejs_Controller['loadState'](_0x29f6af, 0x0);
             };
-            var _0x2cdff1 = ejs_loader['Module']['cwrap']('cmd_take_screenshot', '', []);
+            var _0x2cdff1 = Module['cwrap']('cmd_take_screenshot', '', []);
             ejs_Controller['getScreenData'] = function () {
-                ejs_Controller['toggleShader'](0x0);
+                ejs_Controller['CF']('shaderEnable', 0x0);
                 _0x2cdff1();
-                ejs_Controller['toggleShader'](0x1);
+                ejs_Controller['CF']('shaderEnable', 0x1);
                 if (ejs_loader.FS.analyzePath('screenshot.png').exists) {
                     return ejs_loader.FS['readFile']('screenshot.png');
                 } else {
                     return new Uint8Array(0);
                 }
-            }, ejs_Controller['restartGame'] = ejs_loader['Module']['cwrap']('system_restart', '', []), ejs_Controller['currentFrameNum'] = ejs_loader['Module']['cwrap']('get_current_frame_count', '', []), ejs_loader['Module']['_cmd_savefiles'] && (ejs_Controller['saveSavFiles'] = ejs_loader['Module']['cwrap']('cmd_savefiles', '', [])), ejs_loader['Module']['_get_core_options'] && (ejs_Controller['getGameCoreOptions'] = ejs_loader['Module']['cwrap']('get_core_options', 'string', [])), ejs_Controller['systemPause'] = function (_0x4c41aa) {
+            };
+            ejs_Controller['restartGame'] = Module['cwrap']('system_restart', '', []);
+            ejs_Controller['currentFrameNum'] = Module['cwrap']('get_current_frame_count', '', []);
+            Module['_cmd_savefiles'] && (ejs_Controller['saveSavFiles'] = Module['cwrap']('cmd_savefiles', '', []));
+            Module['_get_core_options'] && (ejs_Controller['getGameCoreOptions'] = Module['cwrap']('get_core_options', 'string', []));
+            ejs_Controller['systemPause'] = function (_0x4c41aa) {
                 return !0x1;
             }, ejs_Controller['controllers'] = ejs_data['storage']['get']('controllers'), ejs_Controller['controllers'] || (ejs_Controller['controllers'] = ejs_Controller['defaultControllers']), ejs_Controller['remappingAxis'] = ejs_data['storage']['get']('remappingAxis'), ejs_Controller['remappingAxis'] || (ejs_Controller['remappingAxis'] = {});
         }
@@ -8860,7 +8928,8 @@ var EJS = function (modules) {
                     'cheat': E['Selector'](buttons['cheat']),
                     'cache': E['Selector'](buttons['cache']),
                     'autosave': E['Selector'](buttons['autosave']),
-                    'recorder': E['Selector'](buttons['recorder'])
+                    'recorder': E['Selector'](buttons['recorder']),
+                    'fastforward': E['Selector'](buttons['fastforward'])
                 };
                 E['elements']['inputs'] = {
                     'volume': E['Selector'](E['config']['selectors']['inputs']['volume'])
@@ -8955,7 +9024,8 @@ var EJS = function (modules) {
                     if (!_0xc18a0f && [0x20, 0x27]['includes'](_0x3a1488['which'])) ejs_data['showMenuPanel']['call'](_0xb35c69, _0x7ff691, !0x0);
                     else 0x20 !== _0x3a1488['which'] && (0x28 === _0x3a1488['which'] || _0xc18a0f && 0x27 === _0x3a1488['which'] ? (_0xedfdac = _0x330429['nextElementSibling'], I.elm(_0xedfdac) || (_0xedfdac = _0x330429['parentNode']['firstElementChild'])) : (_0xedfdac = _0x330429['previousElementSibling'], I.elm(_0xedfdac) || (_0xedfdac = _0x330429['parentNode']['lastElementChild'])), _0x348ac8['call'](_0xb35c69, _0xedfdac, !0x0));
                 }
-            }, !0x1), addEvent(_0x330429, 'keyup', function (_0x198ac7) {
+            }, !0x1);
+            addEvent(_0x330429, 'keyup', function (_0x198ac7) {
 
                 0xd === _0x198ac7['which'] && ejs_data['focusFirstMenuItem']['call'](_0xb35c69, null, !0x0);
             });
@@ -9047,24 +9117,24 @@ var EJS = function (modules) {
             if ('nds' == this['system'] && !EnvVariable['wasm']) return !0x0;
             if (ejs_data['coreOptionsValues'][_0x4b7720] = _0x1a8f4f, 'psx' === this['system'] ? (setTimeout(function () {
 
-                    'pcsx_rearmed_frameskip' != _0x4b7720 && 'pcsx_rearmed_memcard2' != _0x4b7720 && ejs_Controller['setVariable'](_0x4b7720, _0x1a8f4f);
+                    'pcsx_rearmed_frameskip' != _0x4b7720 && 'pcsx_rearmed_memcard2' != _0x4b7720 && ejs_Controller['CF']('setVariable', _0x4b7720, _0x1a8f4f);
                 }, 0x64), setTimeout(function () {}, 0xc8)) : setTimeout(function () {
 
-                    ejs_Controller['setVariable'](_0x4b7720, _0x1a8f4f);
+                    ejs_Controller['CF']('setVariable', _0x4b7720, _0x1a8f4f);
                 }, 0x32), 'nds' === this['system'] && EnvVariable['wasm']) {
                 var ElmCanvas = this['elements']['wrapper']['querySelector']('canvas');
                 if ('screen_rotation' === _0x4b7720) switch (ElmCanvas['style']['transform'] = 'rotate(' + _0x1a8f4f + 'deg)', _0x1a8f4f) {
                     case '0':
-                        ejs_Controller['setVariable']('desmume_input_rotation', '0');
+                        ejs_Controller['CF']('setVariable', 'desmume_input_rotation', '0');
                         break;
                     case '90':
-                        ejs_Controller['setVariable']('desmume_input_rotation', '270');
+                        ejs_Controller['CF']('setVariable', 'desmume_input_rotation', '270');
                         break;
                     case '180':
-                        ejs_Controller['setVariable']('desmume_input_rotation', '180');
+                        ejs_Controller['CF']('setVariable', 'desmume_input_rotation', '180');
                         break;
                     case '270':
-                        ejs_Controller['setVariable']('desmume_input_rotation', '90');
+                        ejs_Controller['CF']('setVariable', 'desmume_input_rotation', '90');
                 }
             }
             if ('arcade' === this['system'] || 'fba0.2.97.29' === this['system']) {
@@ -9081,35 +9151,34 @@ var EJS = function (modules) {
             }
         },
         'setOptionMenuItem': function (_0x22245a, _0x314866) {
-            var _0x418a98 = this,
-                _0x435f7d = this['elements']['settings']['panels']['home']['querySelector']('[role="menu"]'),
+            var E = this,
+                ElmMenuHome = this['elements']['settings']['panels']['home']['querySelector']('[role="menu"]'),
                 _0x1295a7 = this['elements']['settings']['popup']['children'][0x0];
-            Object['keys'](_0x22245a)['forEach'](function (_0x519e7b) {
-                var _0x36ca42 = _0x519e7b,
-                    _0x4a6dab = createElm('button', _0x288469(_0x4d33e3(_0x418a98['config']['selectors']['buttons']['settings']), {
+            Object['keys'](_0x22245a)['forEach'](function (itemname) {
+                var itemElm = createElm('button', _0x288469(_0x4d33e3(E['config']['selectors']['buttons']['settings']), {
                         'type': 'button',
                         'class': getClassName({
                             'ejs__control': !0x0,
                             'ejs__control--forward': !0x0
                         }),
                         'role': 'menuitem',
-                        'item': _0x519e7b,
+                        'item': itemname,
                         'aria-haspopup': !0x0
                     }));
-                addEvent(_0x4a6dab, 'click', function () {
-
-                    ejs_data['showMenuPanel']['call'](_0x418a98, _0x36ca42, !0x1);
+                addEvent(itemElm, 'pointerup', function (e) {
+                    console.log(e);
+                    ejs_data['showMenuPanel']['call'](E, itemname, !0x1);
                 });
-                var _0x297e7a, _0x31ed55 = createElm('span', null, T.getLang(_0x22245a[_0x519e7b]['label'])),
+                var _0x297e7a, _0x31ed55 = createElm('span', null, T.getLang(_0x22245a[itemname]['label'])),
                     _0x3e234f = createElm('span', {
-                        'class': _0x418a98['config']['classNames']['menu']['value']
+                        'class': E['config']['classNames']['menu']['value']
                     });
-                I.obj(_0x314866) && (_0x297e7a = _0x314866[_0x36ca42]);
-                I.empty(_0x297e7a) && (_0x297e7a = _0x22245a[_0x36ca42]['default']);
+                I.obj(_0x314866) && (_0x297e7a = _0x314866[itemname]);
+                I.empty(_0x297e7a) && (_0x297e7a = _0x22245a[itemname]['default']);
 
-                I.obj(_0x22245a[_0x36ca42]['options']) ? _0x3e234f.innerHTML = T.getLang(_0x22245a[_0x36ca42]['options'][_0x297e7a]) : _0x3e234f.innerHTML = T.getLang(_0x297e7a), _0x31ed55['appendChild'](_0x3e234f), _0x4a6dab['appendChild'](_0x31ed55), _0x435f7d['appendChild'](_0x4a6dab);
+                I.obj(_0x22245a[itemname]['options']) ? _0x3e234f.innerHTML = T.getLang(_0x22245a[itemname]['options'][_0x297e7a]) : _0x3e234f.innerHTML = T.getLang(_0x297e7a), _0x31ed55['appendChild'](_0x3e234f), itemElm['appendChild'](_0x31ed55), ElmMenuHome['appendChild'](itemElm);
                 var _0x59afee = createElm('div', {
-                        'data-pane': escape(_0x36ca42),
+                        'data-pane': escape(itemname),
                         'hidden': ''
                     }),
                     _0x24ad2f = createElm('button', {
@@ -9121,40 +9190,45 @@ var EJS = function (modules) {
                     });
                 _0x24ad2f['appendChild'](createElm('span', {
                     'aria-hidden': !0x0
-                }, T.getLang(_0x22245a[_0x519e7b]['label'])));
+                }, T.getLang(_0x22245a[itemname]['label'])));
+
                 _0x24ad2f['appendChild'](createElm('span', {
                     'class': getClassName('ejs__sr-only')
-                }, _0x418a98.Geti18n('menuBack')));
+                }, E.Geti18n('menuBack')));
                 addEvent(_0x59afee, 'keydown', function (_0x545bab) {
+                    0x25 === _0x545bab['which'] && (_0x545bab['preventDefault'](), _0x545bab['stopPropagation'](), ejs_data['showMenuPanel']['call'](E, 'home', !0x0));
+                }, !0x1);
+                addEvent(_0x24ad2f, 'pointerup', function () {
 
-                    0x25 === _0x545bab['which'] && (_0x545bab['preventDefault'](), _0x545bab['stopPropagation'](), ejs_data['showMenuPanel']['call'](_0x418a98, 'home', !0x0));
-                }, !0x1), addEvent(_0x24ad2f, 'click', function () {
-
-                    ejs_data['showMenuPanel']['call'](_0x418a98, 'home', !0x1);
-                }), _0x59afee['appendChild'](_0x24ad2f), _0x59afee['appendChild'](createElm('div', {
+                    ejs_data['showMenuPanel']['call'](E, 'home', !0x1);
+                });
+                 _0x59afee['appendChild'](_0x24ad2f), _0x59afee['appendChild'](createElm('div', {
                     'role': 'menu'
-                })), _0x1295a7['appendChild'](_0x59afee), _0x418a98['elements']['settings']['buttons'][_0x36ca42] = _0x4a6dab, _0x418a98['elements']['settings']['panels'][_0x36ca42] = _0x59afee;
+                }));
+                _0x1295a7['appendChild'](_0x59afee);
+                E['elements']['settings']['buttons'][itemname] = itemElm, E['elements']['settings']['panels'][itemname] = _0x59afee;
                 var _0x171571 = _0x59afee['querySelector']('[role="menu"]');
                 ! function (_0x9e4960) {
 
                     if (I.elm(_0x9e4960)) {
                         for (var _0x2c9689 = _0x9e4960['childNodes']['length']; _0x2c9689 > 0x0;) _0x9e4960['removeChild'](_0x9e4960['lastChild']), _0x2c9689 -= 0x1;
                     }
-                }(_0x171571), I.obj(_0x22245a[_0x519e7b]['options']) ? Object['keys'](_0x22245a[_0x519e7b]['options'])['forEach'](function (_0x3c75dc) {
+                }(_0x171571);
+                I.obj(_0x22245a[itemname]['options']) ? Object['keys'](_0x22245a[itemname]['options'])['forEach'](function (_0x3c75dc) {
 
-                    ejs_data['createMenuItem']['call'](_0x418a98, {
+                    ejs_data['createMenuItem']['call'](E, {
                         'value': _0x3c75dc,
                         'list': _0x171571,
-                        'type': _0x36ca42,
-                        'title': _0x22245a[_0x519e7b]['options'][_0x3c75dc],
+                        'type': itemname,
+                        'title': _0x22245a[itemname]['options'][_0x3c75dc],
                         'badge': null,
                         'checked': Boolean(_0x297e7a === _0x3c75dc)
                     });
-                }) : I.array(_0x22245a[_0x519e7b]['options']) && _0x22245a[_0x519e7b]['options']['forEach'](function (_0x3bd564) {
-                    ejs_data['createMenuItem']['call'](_0x418a98, {
+                }) : I.array(_0x22245a[itemname]['options']) && _0x22245a[itemname]['options']['forEach'](function (_0x3bd564) {
+                    ejs_data['createMenuItem']['call'](E, {
                         'value': _0x3bd564,
                         'list': _0x171571,
-                        'type': _0x36ca42,
+                        'type': itemname,
                         'title': _0x3bd564,
                         'badge': null,
                         'checked': Boolean(_0x297e7a === _0x3bd564)
@@ -9228,35 +9302,38 @@ var EJS = function (modules) {
                 return !_0x162c26['hidden'];
             }), toggleHidden(this['elements']['settings']['menu'], !0x1);
         },
-        'focusFirstMenuItem': function (_0x3f7415) {
-            var _0x3a797a = arguments['length'] > 0x1 && void 0x0 !== arguments[0x1] && arguments[0x1];
+        'focusFirstMenuItem': function (elm) {
+            var bool = arguments['length'] > 0x1 && void 0x0 !== arguments[0x1] && arguments[0x1];
             if (!this['elements']['settings']['popup']['hidden']) {
-                var _0x59f825 = _0x3f7415;
-                I.elm(_0x59f825) || (_0x59f825 = Object['values'](this['elements']['settings']['panels'])['find'](function (_0x1b8186) {
+                I.elm(elm) || (elm = Object['values'](this['elements']['settings']['panels'])['find'](function (_0x1b8186) {
 
                     return !_0x1b8186['hidden'];
                 }));
-                var _0x745b86 = _0x59f825['querySelector']('[role^="menuitem"]');
-                _0x348ac8['call'](this, _0x745b86, _0x3a797a);
+                var subelm = elm['querySelector']('[role^="menuitem"]');
+                _0x348ac8['call'](this, subelm, bool);
             }
         },
-        'toggleMenu': function (_0x4670aa) {
-            var _0xb62574 = this['elements']['settings']['popup'],
-                _0x16e370 = this['elements']['buttons']['settings'];
-            if (I.elm(_0xb62574) && I.elm(_0x16e370)) {
-                var _0x5dfeb3 = _0xb62574['hidden'],
-                    _0x58020e = _0x5dfeb3;
-                if (I.bool(_0x4670aa)) _0x58020e = _0x4670aa;
+        'toggleMenu': function (ebool) {
+            var E = this,
+                ElmMenuPopup = this['elements']['settings']['popup'],
+                ElmBtnSetting = this['elements']['buttons']['settings'];
+            if (I.elm(ElmMenuPopup) && I.elm(ElmBtnSetting)) {
+                var isPopuphidden = ElmMenuPopup['hidden'],
+                    isPopuphidden2 = isPopuphidden;
+                if (I.bool(ebool)) isPopuphidden2 = ebool;
                 else {
-                    if (I.keyevt(_0x4670aa) && 0x1b === _0x4670aa['which']) _0x58020e = !0x1;
+                    if (I.keyevt(ebool) && 0x1b === ebool['which']) isPopuphidden2 = !0x1;
                     else {
-                        if (I.evt(_0x4670aa)) {
-                            var _0x465fbd = _0xb62574['contains'](_0x4670aa['target']);
-                            if (_0x465fbd || !_0x465fbd && _0x4670aa['target'] !== _0x16e370 && _0x58020e) return;
+                        if (I.evt(ebool)) {
+                            var elm = ElmMenuPopup['contains'](ebool['target']);
+                            if (elm || !elm && ebool['target'] !== ElmBtnSetting && isPopuphidden2) return;
                         }
                     }
                 }
-                _0x16e370['setAttribute']('aria-expanded', _0x58020e), toggleHidden(_0xb62574, !_0x58020e), elmAddRemoveClass(this['elements']['container'], this['config']['classNames']['menu'].open, _0x58020e), _0x58020e && I.keyevt(_0x4670aa) ? ejs_data['focusFirstMenuItem']['call'](this, null, !0x0) : _0x58020e || _0x5dfeb3 || _0x348ac8['call'](this, _0x16e370, I.keyevt(_0x4670aa));
+                ElmBtnSetting['setAttribute']('aria-expanded', isPopuphidden2);
+                toggleHidden(ElmMenuPopup, !isPopuphidden2);
+                elmAddRemoveClass(this['elements']['container'], this['config']['classNames']['menu']['open'], isPopuphidden2);
+                isPopuphidden2 && I.keyevt(ebool) ? ejs_data['focusFirstMenuItem']['call'](this, null, !0x0) : isPopuphidden2 || isPopuphidden || _0x348ac8['call'](this, ElmBtnSetting, I.keyevt(ebool));
             }
         },
         'getMenuSize': function (_0x530c62) {
@@ -9270,28 +9347,72 @@ var EJS = function (modules) {
             };
         },
         'showLoadStatePanel': function () {},
-        'showMenuPanel': function () {
+        'showMenuPanel': function (itemname,bool) {
+            //底部菜单 设置菜单
+            console.log('设置菜单');
             const E = this;
-            var _0x13ade1 = arguments['length'] > 0x0 && void 0x0 !== arguments[0x0] ? arguments[0x0] : '',
-                _0x910569 = arguments['length'] > 0x1 && void 0x0 !== arguments[0x1] && arguments[0x1],
-                _0x3f0a37 = E['Selector']('[data-pane="' ['concat'](escape(_0x13ade1), '"]'));
-            if (I.elm(_0x3f0a37)) {
-                var _0x52d4a9 = _0x3f0a37['parentNode'],
-                    _0x7d8432 = Array['from'](_0x52d4a9['children'])['find'](function (_0x49bcb6) {
-
-                        return !_0x49bcb6['hidden'];
+            var ElmPane = E['Selector']('[data-pane="' + (itemname||'home') + '"]');
+            if (itemname&&I.elm(ElmPane)) {
+                if('ontransitionend' in document){
+                    ElmPane.classList.add('active');
+                    var sizePane = ElmPane.getBoundingClientRect();
+                    var Elmtop = ElmPane['parentNode'];
+                    if(!Elmtop['style']['height'])Elmtop['style']['cssText'] =`width:200px;height:200px;`;
+                    //Elmtop['style']['cssText'] =`width:${sizePane['width']}px;height:${sizePane['height']}px;`;
+                    I.toArr(E['SelectorAll']('[data-pane]'),elm=>{
+                        if(!elm.hidden){
+                            Elmtop['style']['cssText'] =`width:${elm['scrollWidth']}px;height:${elm['scrollHeight']}px;`;
+                            elm.hidden = true;
+                        }
+                    });
+                    T.once(Elmtop,'transitionend',e=>{
+                        ElmPane.classList.remove('active');
+                    });
+                }
+                ElmPane.hidden = false;
+                Elmtop['style']['cssText'] =`width:${sizePane['width']}px;height:${sizePane['height']}px;`;
+                //toggleHidden(ElmPane, !0x1);
+            }
+            ejs_data['focusFirstMenuItem']['call'](E, ElmPane, !0);
+                //toggleHidden(ElmNotHidden, !0x0);
+                return ;
+                //ElmPane.style.cssText = 'display: block !important;visibility: hidden;translate(-100%,-100%);';
+                
+                //ElmPane['style']['cssText'] = '';
+                ElmPane.hidden = false;
+                if(Elmtop['style']['cssText']){
+                    T.once(Elmtop,'transitionend',e=>{
+                        Elmtop['style']['cssText'] =``;
+                        Elmtop.parentNode.hidden = false;
+                        Elmtop.parentNode.focus();
+                        console.log(Elmtop.parentNode.hidden);
+                    });
+                }
+                Elmtop['style']['cssText'] =`width:${sizePane['width']}px;height:${sizePane['height']}px;`;
+                toggleHidden(ElmNotHidden, !0x0);
+                toggleHidden(ElmPane, !0x1);
+                ejs_data['focusFirstMenuItem']['call'](E, ElmPane, bool);
+                return ;
+                
+                var Elmtop = ElmPane['parentNode'],
+                    ElmNotHidden = Array['from'](Elmtop['children'])['find'](function (elmitem) {
+                        return !elmitem['hidden'];
                     });
                 if (EnvVariable['transitions'] && !EnvVariable['reducedMotion']) {
-                    _0x52d4a9['style']['width'] = '' ['concat'](_0x7d8432['scrollWidth'], 'px'), _0x52d4a9['style']['height'] = '' ['concat'](_0x7d8432['scrollHeight'], 'px');
-                    var _0x27df62 = ejs_data['getMenuSize']['call'](E, _0x3f0a37),
-                        _0x17ca9d = function _0x56bc49(_0x11e6bf) {
+                    Elmtop['style']['width'] = '' ['concat'](ElmNotHidden['scrollWidth'], 'px');
+                    Elmtop['style']['height'] = '' ['concat'](ElmNotHidden['scrollHeight'], 'px');
+                    var sizePane = ejs_data['getMenuSize']['call'](E, ElmPane),
+                        _0x17ca9d = function _0x56bc49(e) {
 
-                            _0x11e6bf['target'] === _0x52d4a9 && ['width', 'height']['includes'](_0x11e6bf['propertyName']) && (_0x52d4a9['style']['width'] = '', _0x52d4a9['style']['height'] = '', saveEvent['call'](E, _0x52d4a9, _0x2c3eed, _0x56bc49));
+                            e['target'] === Elmtop && ['width', 'height']['includes'](e['propertyName']) && (Elmtop['style']['width'] = '', Elmtop['style']['height'] = '', saveEvent['call'](E, Elmtop, _0x2c3eed, _0x56bc49));
                         };
-                    E['addEvent'](_0x52d4a9, _0x2c3eed, _0x17ca9d), _0x52d4a9['style']['width'] = '' ['concat'](_0x27df62['width'], 'px'), _0x52d4a9['style']['height'] = '' ['concat'](_0x27df62['height'], 'px');
+                    E['addEvent'](Elmtop, _0x2c3eed, _0x17ca9d);
+                    Elmtop['style']['width'] = '' ['concat'](sizePane['width'], 'px');
+                    Elmtop['style']['height'] = '' ['concat'](sizePane['height'], 'px');
                 }
-                toggleHidden(_0x7d8432, !0x0), toggleHidden(_0x3f0a37, !0x1), ejs_data['focusFirstMenuItem']['call'](E, _0x3f0a37, _0x910569);
-            }
+                toggleHidden(ElmNotHidden, !0x0);
+                toggleHidden(ElmPane, !0x1);
+                ejs_data['focusFirstMenuItem']['call'](E, ElmPane, bool);
         },
         'setLoadState': function (_0x27ab32, _0x469e41) {
 
@@ -9307,7 +9428,8 @@ var EJS = function (modules) {
                     'hidden': ''
                 }),
                 _0x266c9a = createElm('div');
-            _0x578616['appendChild'](_0x266c9a), this.Selector('.' ['concat'](getClassName('ejs__dialogs')))['appendChild'](_0x578616), this['elements']['dialogs']['loadState'] = _0x578616;
+            _0x578616['appendChild'](_0x266c9a);
+            this.Selector('.' ['concat'](getClassName('ejs__dialogs')))['appendChild'](_0x578616), this['elements']['dialogs']['loadState'] = _0x578616;
         },
         'setDisk': function (_0x13c7f3, _0x1030c8) {
             var _0x5dcb38 = createElm('div', {
@@ -9380,14 +9502,21 @@ var EJS = function (modules) {
                     })
                 }, getSvgIcon('ctrltoggle')),
                 _0x168c70 = createElm('div');
-            _0x49c9a2['appendChild'](_0x168c70), this.Selector('.' ['concat'](getClassName('ejs__widgets')))['appendChild'](_0x49c9a2), this['elements']['widgets']['controlToggle'] = _0x49c9a2, addEvent(this['elements']['container'], 'click touchstart', function (_0x391cad) {
+            _0x49c9a2['appendChild'](_0x168c70), this.Selector('.' ['concat'](getClassName('ejs__widgets')))['appendChild'](_0x49c9a2), this['elements']['widgets']['controlToggle'] = _0x49c9a2;
+
+            /*
+            addEvent(this['elements']['container'], 'click touchstart', function (_0x391cad) {
 
                 if (!E['started']) return !0x1;
                 E['elements']['controls']['contains'](_0x391cad['target']) || _0x49c9a2['contains'](_0x391cad['target']) || (toggleHidden(E['elements']['controls']['querySelector'](getClassName('ejs__menu__container', 1)), !0x0), E['callaction']('toggleControls', !0x1), E['elements']['controls']['classList']['toggle'](getClassName('ejs__controls_show'), !0x1));
-            }), addEvent(_0x49c9a2, 'click', function (_0x47d40c) {
-
-                E['elements']['controls']['classList']['toggle'](getClassName('ejs__controls_show')), _0x47d40c['stopPropagation']();
-            }), E['addEvent'](E['elements']['container'], 'start-game', function () {
+            });
+            */
+            addEvent(_0x49c9a2, 'click', function (_0x47d40c) {
+                //手机模式 激活 底部菜单
+                E['elements']['controls']['classList']['toggle'](getClassName('ejs__controls_show'));
+                _0x47d40c['stopPropagation']();
+            });
+            E['addEvent'](E['elements']['container'], 'start-game', function () {
                 ejs_loader['Module']['_event_load_save_files'] && ejs_loader['Module']['cwrap']('event_load_save_files', '', [])();
                 var _0x1205b7 = createElm('div', {
                         'class': getClassName({
@@ -9522,6 +9651,7 @@ var EJS = function (modules) {
             ElmControls['appendChild'](ejs_data['createButton']['call'](E, 'cache')); //缓存按钮
             ElmControls['appendChild'](ejs_data['createButton']['call'](E, 'autosave')); //自动保存按钮
             ElmControls['appendChild'](ejs_data['createButton']['call'](E, 'recorder')); //自动保存按钮
+            ElmControls['appendChild'](ejs_data['createButton']['call'](E, 'fastforward')); //加速
             var ElmVolume = createElm('div', {
                 'class': getClassName('ejs__volume')
             });
@@ -9533,14 +9663,14 @@ var EJS = function (modules) {
             };
             ElmVolume['appendChild'](ejs_data['createRange']['call'](E, 'volume', _0x288469(_0x5abc43, {})));
             E['elements']['volume'] = ElmVolume, ElmControls['appendChild'](ElmVolume);
-            var ElmSetting = createElm('div', {
+            var ElmBtnSetting = createElm('div', {
                 'class': getClassName('ejs__menu')
             });
-            ElmSetting['appendChild'](ejs_data['createButton']['call'](E, 'settings', {
+            ElmBtnSetting['appendChild'](ejs_data['createButton']['call'](E, 'settings', {
                 'aria-haspopup': !0x0,
                 'aria-expanded': !0x1
             }));
-            var _0x3242cf = createElm('div', {
+            var ElmMenuPopup = createElm('div', {
                     'class': getClassName('ejs__menu__container'),
                     'hidden': ''
                 }),
@@ -9553,11 +9683,12 @@ var EJS = function (modules) {
                 });
             _0x1de3c4['appendChild'](_0x4ad0af);
             _0x2000e1['appendChild'](_0x1de3c4);
-            E['elements']['settings']['panels']['home'] = _0x1de3c4, _0x3242cf['appendChild'](_0x2000e1);
-            ElmSetting['appendChild'](_0x3242cf);
-            ElmControls['appendChild'](ElmSetting);
-            E['elements']['settings']['popup'] = _0x3242cf;
-            E['elements']['settings']['menu'] = ElmSetting;
+            E['elements']['settings']['panels']['home'] = _0x1de3c4;
+            ElmMenuPopup['appendChild'](_0x2000e1);
+            ElmBtnSetting['appendChild'](ElmMenuPopup);
+            ElmControls['appendChild'](ElmBtnSetting);
+            E['elements']['settings']['popup'] = ElmMenuPopup;
+            E['elements']['settings']['menu'] = ElmBtnSetting;
             ElmControls['appendChild'](ejs_data['createButton']['call'](E, 'fullscreen'));
             E['elements']['controls'] = ElmControls;
             ejs_data['setNormalOptionsMenu']['call'](E);
@@ -9757,31 +9888,31 @@ var EJS = function (modules) {
         }
         container() {
             var E = this['emulator'],
-                _0x4f593e = E['elements'];
-            E['addEvent'](_0x4f593e['container'], 'mousemove mouseleave touchstart touchmove enterfullscreen exitfullscreen start-game', function (_0x9be0f4) {
-                var _0x1a6dbb = _0x4f593e['controls'];
-                _0x1a6dbb && 'enterfullscreen' === _0x9be0f4['type'] && (_0x1a6dbb['pressed'] = !0x1, _0x1a6dbb['hover'] = !0x1);
+                Elms = E['elements'];
+            E['addEvent'](Elms['container'], 'mousemove mouseleave touchstart touchmove enterfullscreen exitfullscreen start-game', function (event) {
+                var ElmCtrl = Elms['controls'];
+                ElmCtrl && 'enterfullscreen' === event['type'] && (ElmCtrl['pressed'] = !0x1, ElmCtrl['hover'] = !0x1);
                 /**
                  * UI
                  * 底部菜单激活
                  */
                 /*
                 var _0x36900f,timecost = 0x0;
-                if(['touchstart', 'touchmove', 'mousemove', 'start-game']['includes'](_0x9be0f4['type'])){
+                if(['touchstart', 'touchmove', 'mousemove', 'start-game']['includes'](event['type'])){
                     E['callaction']('toggleControls', !0x0);
                      timecost = E['touch'] ? 0xbb8 : 0x7d0;
                 }
                 clearTimeout(_0x36900f);
                  _0x36900f = setTimeout(()=>E['callaction']('toggleControls', !0x1), timecost);
-                 _0x4f593e['controls']['setAttribute']('data-timer', _0x36900f);
+                 Elms['controls']['setAttribute']('data-timer', _0x36900f);
                  */
             });
             E['addEvent'](window, 'resize', function (event) {
-                var _0x2d9e32 = E['elements']['container']['clientHeight'],
-                    _0x231eed = E['SelectorAll']('.' ['concat'](getClassName('ejs__menu__container'), ' [role="menu"]'));
-                Array['from'](_0x231eed)['forEach'](function (_0x33d1de) {
+                var cHeight = E['elements']['container']['clientHeight'],
+                    ElmMenuPopup = E['SelectorAll'](getClassName('ejs__menu__container', !0) + ' [role="menu"]');
+                Array['from'](ElmMenuPopup)['forEach'](function (_0x33d1de) {
 
-                    _0x33d1de['style']['maxHeight'] = '' ['concat'](_0x2d9e32 - 0x89, 'px'), _0x33d1de['style']['overflow'] = 'auto';
+                    _0x33d1de['style']['maxHeight'] = '' ['concat'](cHeight - 0x89, 'px'), _0x33d1de['style']['overflow'] = 'auto';
                 });
                 ejs_loader['Module'] && ejs_loader['Module']['canvas'];
                 if (E['elements']['container']['clientWidth'] / E['elements']['container']['clientHeight'] < 1.3) {
@@ -9817,13 +9948,16 @@ var EJS = function (modules) {
                     _0x13810b['contains'](document['activeElement']) || E['callEvent'](E['elements'], 'blurgame');
                 }, 0x0);
             });
-            E['addEvent'](E['elements']['container'], 'focus', function (_0x15e2f7) {
-                var _0x3f8f53 = _0x15e2f7['currentTarget'];
-                setTimeout(function () {
+            if (!I.mobile) {
+                E['addEvent'](E['elements']['container'], 'focus', function (_0x15e2f7) {
+                    var _0x3f8f53 = _0x15e2f7['currentTarget'];
+                    setTimeout(function () {
 
-                    _0x3f8f53['contains'](document['activeElement']) && E['callEvent'](E['elements'], 'focusgame');
-                }, 0x0);
-            });
+                        _0x3f8f53['contains'](document['activeElement']) && E['callEvent'](E['elements'], 'focusgame');
+                    }, 0x0);
+                });
+
+            }
         }
         media() {
             var _0x57af96 = this['emulator'],
@@ -9898,7 +10032,7 @@ var EJS = function (modules) {
                 E['callEvent'](E['elements']['container'], 'loadstate', !0x1, {});
             }, 'mute'); //即时读档 事件绑定
 
-            I.toArr(['autosave', 'recorder'], v => {
+            I.toArr(['autosave', 'recorder', 'fastforward'], v => {
                 ElmBtns[v] && L['bind'](ElmBtns[v], 'click', e => {
                     if (E['started']) {
                         ElmBtns[v].classList.toggle('active');
@@ -9910,16 +10044,25 @@ var EJS = function (modules) {
             L['bind'](ElmBtns['settings'], 'click', event => {
                 event['stopPropagation']();
                 ejs_data['toggleMenu']['call'](E, event);
-            }); //设置 事件绑定
+            }); //设置 事件绑定 设置菜单
 
             L['bind'](ElmBtns['settings'], 'keyup', event => {
+                //快捷键打开设置
                 var _0x30fc8e = event['which'];
-                [0xd, 0x20]['includes'](_0x30fc8e) && (0xd !== _0x30fc8e ? (event['preventDefault'](), event['stopPropagation'](), ejs_data['toggleMenu']['call'](E, event)) : ejs_data['focusFirstMenuItem']['call'](E, null, !0x0));
-            }, null, !0x1); //设置按起 事件绑定
+                if ([0xd, 0x20]['includes'](_0x30fc8e)) {
+                    if (0xd !== _0x30fc8e) {
+                        event['preventDefault'](), event['stopPropagation'](), ejs_data['toggleMenu']['call'](E, event)
+                    } else {
+                        ejs_data['focusFirstMenuItem']['call'](E, null, !0x0)
+                    }
+                }
+            }, null, !0x1);
             L['bind'](Elms['settings']['menu'], 'keydown', event => {
 
+
+                //快捷键关闭设置
                 0x1b === event['which'] && ejs_data['toggleMenu']['call'](E, event);
-            }); //设置按下 事件绑定
+            });
 
 
             if (ejs_Browser['isIos']) {
@@ -9929,19 +10072,23 @@ var EJS = function (modules) {
                 I.toArr(E['SelectorAll']('input[type="range"]'), elm => L['bind'](elm, 'input', event => ejs_data['updateRangeFill']['call'](E, event['target'])));
             }
             L['bind'](Elms['inputs']['volume'], rangeEvt, event => {
-
+                //声音按钮 事件绑定
                 E['volume'] = event['target']['value'];
-            }, 'volume'); //声音按钮 事件绑定
+            }, 'volume');
             L['bind'](Elms['controls'], 'mouseenter mouseleave', event => {
+                //底部菜单鼠标 事件绑定
                 if ('mouseleave' === event['type'] && null === event['toElement']) {
                     Elms['controls']['hover'] = !0x0;
                 } else {
                     Elms['controls']['hover'] = !E['touch'] && 'mouseenter' === event['type'];
                 }
-            }); //底部菜单鼠标 事件绑定
+            });
+
             L['bind'](Elms['controls'], 'mousedown mouseup touchstart touchend touchcancel', event => {
+
+                //底部菜单 事件绑定
                 Elms['controls']['pressed'] = ['mousedown', 'touchstart']['includes'](event['type']);
-                return;
+                /*
                 if (['mousedown', 'touchstart']['includes'](event['type'])) {
                     Elms['controls']['pressed'] = !0x0;
                     var _0x3fdd1b = Elms['controls']['getAttribute']('data-timer2');
@@ -9952,13 +10099,15 @@ var EJS = function (modules) {
                     }, 0xfa0);
                     Elms['controls']['setAttribute']('data-timer2', timeId);
                 }
-            }); //底部菜单 事件绑定
+                */
+            });
             L['bind'](Elms['controls'], 'focusin focusout', event => {
+                //底部菜单 选中 添加锁定显示菜单
                 var config = E['config'],
                     bool = 'focusin' === event['type'];
-                elmAddRemoveClass(Elms['controls'], config['classNames']['noTransition'], bool);
-                elmAddRemoveClass(Elms['controls'], getClassName('ejs__controls_show'), bool);
-                E['callaction']('toggleControls', bool);
+                //elmAddRemoveClass(Elms['controls'], config['classNames']['noTransition'], bool);
+                //elmAddRemoveClass(Elms['controls'], getClassName('ejs__controls_show'), bool);
+                //E['callaction']('toggleControls', bool);
                 /*
                 if (bool) {
                     var timeint = Elms['controls']['getAttribute']('data-timer');
@@ -9970,7 +10119,7 @@ var EJS = function (modules) {
                     Elms['controls']['setAttribute']('data-timer', timeint);
                 }
                 */
-            }); //底部菜单 选中 事件绑定
+            });
             L['bind'](Elms['inputs']['volume'], 'wheel', event => {
                 var _0x2adb35 = [event['deltaX'], -event['deltaY']].map(value => event['webkitDirectionInvertedFromDevice'] ? -value : value),
                     _0x2197be = _0x2adb35[0x0],
@@ -10037,7 +10186,8 @@ var EJS = function (modules) {
                 playNow: 'Play Now',
                 cache: 'Database',
                 autosave: 'Auto Save',
-                recorder: 'Video Rec'
+                recorder: 'Video Rec',
+                fastforward: 'Fast Forward'
             },
             listeners: {
                 play: null,
@@ -10069,7 +10219,8 @@ var EJS = function (modules) {
                     cheat: '[data-btn="cheat"]',
                     cache: '[data-btn="cache"]',
                     autosave: '[data-btn="autosave"]',
-                    recorder: '[data-btn="recorder"]'
+                    recorder: '[data-btn="recorder"]',
+                    fastforward: '[data-btn="fastforward"]'
                 },
                 inputs: {
                     volume: '[data-range="volume"]'
@@ -10216,14 +10367,18 @@ var EJS = function (modules) {
                 loader: ejs_loader,
                 controller: ejs_Controller,
             }, 1);
-            T.stopGesture(E['elements']['container']);
             ejs_install.elements.push(E['game']);
             E['elements']['container']['appendChild'](createElm('div', {
                 'class': getClassName('ejs__widgets')
             }));
-            E['elements']['container']['appendChild'](createElm('div', {
+            let ElmDialogs = createElm('div', {
                 'class': getClassName('ejs__dialogs')
-            }));
+            })
+            E['elements']['container']['appendChild'](ElmDialogs);
+            T.stopGesture(document.body);
+            T.stopGesture(ElmDialogs);
+            eventTouchList.forEach(v => T.on(ElmDialogs, v, e => e.target == ElmDialogs && T.stopEvent(e)));
+            T.stopGesture(E['elements']['container']);
             E['create']();
         }
         restart() {
@@ -10347,14 +10502,15 @@ var EJS = function (modules) {
                     }
                 }
             },
-            async JoystickGamepad(){
-                const E = this,elm = E['Selector'](getClassName('ejs-virtual-gamepad', !0) + ' ' + getClassName('left', !0));
-                if(typeof self.nipplejs == 'undefined')await T.loadLibjs(T.RootPath+'nipplejs.js',e=>elm.innerHTML=e);
-                if(E.joystickGamepad)return;
+            async JoystickGamepad() {
+                const E = this,
+                    elm = E['Selector'](getClassName('ejs-virtual-gamepad', !0) + ' ' + getClassName('left', !0));
+                if (typeof self.nipplejs == 'undefined') await T.loadLibjs(T.RootPath + 'nipplejs.js', e => elm.innerHTML = e);
+                if (E.joystickGamepad) return;
                 E.joystickGamepad = true;
                 elm.innerHTML = '';
                 var nipplejsGamepad = nipplejs.create({
-                    'zone':elm,
+                    'zone': elm,
                     'mode': 'static',
                     'position': {
                         'left': '50%',
@@ -10363,41 +10519,45 @@ var EJS = function (modules) {
                     'color': 'red'
                 });
                 nipplejsGamepad['on']('end', function (event, detail) {
-                    ejs_Controller['syncInput'](0x0, 0x13, 0x0);
-                    ejs_Controller['syncInput'](0x0, 0x12, 0x0);
-                    ejs_Controller['syncInput'](0x0, 0x11, 0x0);
-                    ejs_Controller['syncInput'](0x0, 0x10, 0x0);
+                    ejs_Controller['CF']('simulateInput', 0x0, 0x13, 0x0);
+                    ejs_Controller['CF']('simulateInput', 0x0, 0x12, 0x0);
+                    ejs_Controller['CF']('simulateInput', 0x0, 0x11, 0x0);
+                    ejs_Controller['CF']('simulateInput', 0x0, 0x10, 0x0);
                 });
                 nipplejsGamepad['on']('move', function (event, detail) {
-                    let {x,y} = detail.vector;
-                    console.log(x,y);
+                    let {
+                        x,
+                        y
+                    } = detail.vector;
+                    console.log(x, y);
                     if (x > 0) {
-                        ejs_Controller['simulateInput'](0x0, 0x10, 0x7fff * x);
-                        ejs_Controller['simulateInput'](0x0, 0x11, 0x0)
+                        ejs_Controller['CF']('simulateInput', 0x0, 0x10, 0x7fff * x);
+                        ejs_Controller['CF']('simulateInput', 0x0, 0x11, 0x0)
                     } else {
-                        ejs_Controller['simulateInput'](0x0, 0x11, 0x7fff * x);
-                        ejs_Controller['simulateInput'](0x0, 0x10, 0x0)
+                        ejs_Controller['CF']('simulateInput', 0x0, 0x11, 0x7fff * x);
+                        ejs_Controller['CF']('simulateInput', 0x0, 0x10, 0x0)
                     }
                     if (y < 0) {
-                        ejs_Controller['simulateInput'](0x0, 0x12, 0x7fff * y);
-                        ejs_Controller['simulateInput'](0x0, 0x13, 0x0)
+                        ejs_Controller['CF']('simulateInput', 0x0, 0x12, 0x7fff * y);
+                        ejs_Controller['CF']('simulateInput', 0x0, 0x13, 0x0)
                     } else {
-                        ejs_Controller['simulateInput'](0x0, 0x13, 0x7fff * y);
-                        ejs_Controller['simulateInput'](0x0, 0x12, 0x0)
+                        ejs_Controller['CF']('simulateInput', 0x0, 0x13, 0x7fff * y);
+                        ejs_Controller['CF']('simulateInput', 0x0, 0x12, 0x0)
                     }
                 });
             },
             async button_autosave(elm, bool) {
-                if (!bool) {
-                    clearInterval(elm['time'])
-                } else {
+                const E = this;
+                clearInterval(elm['time']);
+                if (bool) {
                     elm['time'] = setInterval(() => {
                         if (E['isAutoSave']) {
                             clearInterval(elm['time']);
                             toggleHidden(elm, !1);
+                            return ;
                         }
                         ejs_Controller['saveSavFiles'] && ejs_Controller['saveSavFiles']();
-                    }, 4000);
+                    },15000);
                 }
             },
             async button_recorder(elm, bool) {
@@ -10414,7 +10574,7 @@ var EJS = function (modules) {
                 //ModuleMedia.addTrack(UserMedia.getAudioTracks()[0]);
                 //}
                 //    T=Nenge,I=Nenge.I,mimeType = 'video/webm;audio/webm';
-                let ModuleMedia = Module.canvas.captureStream(24);
+                let ModuleMedia = Module.canvas.captureStream(25);
                 //let AudioMedia = new MediaStream(Module.RA.context.createMediaStreamDestination().stream);
                 ///let Stream = new MediaStream();
                 ///Stream.addTrack(UserMedia.getAudioTracks()[0]);
@@ -10432,8 +10592,12 @@ var EJS = function (modules) {
                 Media.start();
                 self.xxx = Media;
                 ///}
+            },
+            async button_fastforward(elm, bool) {
+                //'fast_forward_2', 
+                let evt = I.toArr(['fast_forward']).filter(e => ejs_Controller['CF']('CM', e));
+                evt.forEach(v => ejs_Controller['RF'](v, bool?1:0));
             }
-
         };
 
         ajaxHeaders = {
@@ -10604,9 +10768,9 @@ var EJS = function (modules) {
                 LoadingBtnStart = LoadingSelector(getClassName('start-game', 1)); //状态 开始按钮
             E['addEvent'](ElmContainer, 'click', function (event) {
                 if (E['started']) {
-                    var _0x4387d6 = E['Selector'](getClassName('ejs__dialogs', 1))['querySelector'](getClassName('ejs__focus_notice__container', 1));
-                    _0x4387d6 && _0x4387d6['contains'](event['target']) && setTimeout(function () {
-                        toggleHidden(_0x4387d6, !0x0);
+                    var ElmDialogs = E['Selector'](getClassName('ejs__dialogs', 1))['querySelector'](getClassName('ejs__focus_notice__container', 1));
+                    ElmDialogs && ElmDialogs['contains'](event['target']) && setTimeout(function () {
+                        toggleHidden(ElmDialogs, !0x0);
                     }, 0x5);
                 }
             });
@@ -10676,9 +10840,6 @@ var EJS = function (modules) {
 
 
                 ///'gba' === E['system'] && (ElmCanvas['height'] = ElmCanvas['width'] / 1.5, ejs_loader['aspectRatio'] = 1.5);
-
-                let eventMouseList = ['mousemove', 'mousedown', 'mouseup'],
-                    eventTouchList = ['touchstart', 'touchsend', 'touchmove'];
                 if ('undefined' != typeof RI) {
                     T.un(document, 'mousemove', RI['eventHandler'], false);
                     T.un(ElmCanvas, 'mousedown', RI['canvasEventHandler'], false);
@@ -11318,8 +11479,8 @@ var EJS = function (modules) {
                                 'undefined' != typeof EJS_DEBUG_ && !0x0 === EJS_DEBUG_ && console['log'](text);
                                 if (RealSystemName) {
                                     if (SAVE_EVENT_TEXT[RealSystemName] && SAVE_EVENT_TEXT[RealSystemName].includes(text)) {
-                                        ejs_Controller['saveSavFiles']();
-                                        E['isAutoSave'] = true;
+                                        //ejs_Controller['saveSavFiles']();
+                                        //E['isAutoSave'] = true;
                                     }
                                 }
                                 //fix aspect-ratio 强行修正纵横比
@@ -11492,6 +11653,10 @@ var EJS = function (modules) {
                         }
                         console.log(E['savefullpath']);
                         await DISK.mountReady();
+                        DISK['action']['indexdb-sync'] = (a,b)=>{
+                            console.log(a,b);
+                            a&&_0x88c152['show'](E['elements']['container'],b.join('<hr>'));
+                        }
                         //加载滤镜
                         await T.FetchItem({
                             url: E['RootPath'] + 'frontend/shader.zip',
@@ -11523,8 +11688,7 @@ var EJS = function (modules) {
                             }, 4000);
                         }());
                              */
-                        var cfgText = '';
-                        cfgText += 'savefile_directory = ' + E['savefullpath'] +
+                        var cfgText = 'savefile_directory = ' + E['savefullpath'] +
                             '\nsystem_directory = /\n' +
                             '\nsavestate_directory = ' + E['savefullpath'] +
                             '\nvideo_vsync = true' +
@@ -11533,7 +11697,10 @@ var EJS = function (modules) {
                             '\nvideo_shader_enable = true' +
                             '\nvideo_font_enable = false' +
                             '\nvideo_scale = 1.0' +
-                            '\nvideo_gpu_screenshot = false\n';
+                            '\nvideo_gpu_screenshot = false'+
+                            '\ncamera_allow = "false"'+
+                            '\ncamera_driver = "null"'+
+                            '\ncamera_device = "null"\n';
 
 
                         var _0xe4449b = ejs_data['defaultCoreOptionsValues']['call'](E);
@@ -11596,7 +11763,7 @@ var EJS = function (modules) {
                             coresOptionCfg += `${entry[0]} = "${entry[1]}"\n`;
                             E['addEvent'](ElmContainer, 'start-game', function (_0x53ed11) {
                                 setTimeout(function () {
-                                    'pcsx_rearmed_frameskip' != entry[0] && 'pcsx_rearmed_memcard2' != entry[0] && ejs_Controller['setVariable'](entry[0], entry[1]);
+                                    'pcsx_rearmed_frameskip' != entry[0] && 'pcsx_rearmed_memcard2' != entry[0] && ejs_Controller['CF']('setVariable', entry[0], entry[1]);
                                 }, 0x32);
 
                             });
@@ -11624,25 +11791,25 @@ var EJS = function (modules) {
 
                                         offsetX = (event['offsetX'] - halfWidth) / clientWidth * 0x2 * 0x7fff;
                                         offsetId = 0x10;
-                                        ejs_Controller['simulateInput'](0x0, 0x11, 0x0);
-                                        ejs_Controller['simulateInput'](0x0, offsetId, offsetX)
+                                        ejs_Controller['CF']('simulateInput', 0x0, 0x11, 0x0);
+                                        ejs_Controller['CF']('simulateInput', 0x0, offsetId, offsetX)
 
                                     } else {
 
                                         offsetX = (event['offsetX'] - halfWidth) / clientWidth * 0x2 * 0x7fff;
-                                        offsetId = 0x11, ejs_Controller['simulateInput'](0x0, 0x10, 0x0);
-                                        ejs_Controller['simulateInput'](0x0, offsetId, offsetX);
+                                        offsetId = 0x11, ejs_Controller['CF']('simulateInput', 0x0, 0x10, 0x0);
+                                        ejs_Controller['CF']('simulateInput', 0x0, offsetId, offsetX);
                                     }
                                     if (event['offsetY'] > halfHeight) {
                                         offsetY = (event['offsetY'] - halfHeight) / clientHeight * 0x2 * 0x7fff;
                                         offsetId = 0x12;
-                                        ejs_Controller['simulateInput'](0x0, 0x13, 0x0);
-                                        ejs_Controller['simulateInput'](0x0, offsetId, offsetY)
+                                        ejs_Controller['CF']('simulateInput', 0x0, 0x13, 0x0);
+                                        ejs_Controller['CF']('simulateInput', 0x0, offsetId, offsetY)
 
                                     } else {
                                         offsetY = (event['offsetY'] - halfHeight) / clientHeight * 0x2 * 0x7fff;
-                                        offsetId = 0x13, ejs_Controller['simulateInput'](0x0, 0x12, 0x0);
-                                        ejs_Controller['simulateInput'](0x0, offsetId, offsetY)
+                                        offsetId = 0x13, ejs_Controller['CF']('simulateInput', 0x0, 0x12, 0x0);
+                                        ejs_Controller['CF']('simulateInput', 0x0, offsetId, offsetY)
                                     }
                                 }
                             }, !0x1);
@@ -11650,24 +11817,24 @@ var EJS = function (modules) {
 
                                 switch (event['which']) {
                                     case 0x1:
-                                        ejs_Controller['simulateInput'](0x0, 0x8, 0x1);
+                                        ejs_Controller['CF']('simulateInput', 0x0, 0x8, 0x1);
                                         break;
                                     case 0x2:
                                         break;
                                     case 0x3:
-                                        ejs_Controller['simulateInput'](0x0, 0x0, 0x1);
+                                        ejs_Controller['CF']('simulateInput', 0x0, 0x0, 0x1);
                                 }
                             }, !0x1);
                             ElmContainer['addEventListener']('mouseup', function (event) {
 
                                 switch (event['which']) {
                                     case 0x1:
-                                        ejs_Controller['simulateInput'](0x0, 0x8, 0x0);
+                                        ejs_Controller['CF']('simulateInput', 0x0, 0x8, 0x0);
                                         break;
                                     case 0x2:
                                         break;
                                     case 0x3:
-                                        ejs_Controller['simulateInput'](0x0, 0x0, 0x0);
+                                        ejs_Controller['CF']('simulateInput', 0x0, 0x0, 0x0);
                                 }
                             }, !0x1)
 
@@ -11686,19 +11853,19 @@ var EJS = function (modules) {
                     async GAME_ReadBios() {
                         let urlList = E['config']['biosUrl'],
                             system = E['system'] == 'vbanext' ? 'gba' : E['system'];
-                            if(urlList.length==0&&ejs_loader['arcadeCores']['includes'](E['system'])){
-                                //街机不能没有bios 因此强制加载bios
-                                urlList = [T.RootPath+'bios/arcade.7z']
-                            }
+                        if (urlList.length == 0 && ejs_loader['arcadeCores']['includes'](E['system'])) {
+                            //街机不能没有bios 因此强制加载bios
+                            urlList = [T.RootPath + 'bios/arcade.7z']
+                        }
                         if (urlList) {
                             if (I.str(urlList)) urlList = [urlList];
                             await I.Async(urlList.map(async url => {
-                                let autounpack = true;//根据大小是否自动解压
-                            if(T.F.getExt(url) == 'zip'&&ejs_loader['arcadeCores']['includes'](E['system'])){
-                                //当文件为zip时 判断是否街机
-                                autounpack = false;
-                            } 
-                            await T.FetchItem({
+                                let autounpack = true; //根据大小是否自动解压
+                                if (T.F.getExt(url) == 'zip' && ejs_loader['arcadeCores']['includes'](E['system'])) {
+                                    //当文件为zip时 判断是否街机
+                                    autounpack = false;
+                                }
+                                await T.FetchItem({
                                     url,
                                     store: DISK.DB.bios,
                                     autounpack,
@@ -11872,7 +12039,7 @@ var EJS = function (modules) {
                             return E['callaction']('GAME_NENGE_WriteRooms', GameSystem);
                         }
                         let autounpack = true; //大小小于一定值自动解压保存 开启此项有效减少等待时间
-                        if(T.F.getExt(url) == 'zip'&&ejs_loader['arcadeCores']['includes'](E['system'])){
+                        if (T.F.getExt(url) == 'zip' && ejs_loader['arcadeCores']['includes'](E['system'])) {
                             //当文件为zip时 判断是否街机
                             autounpack = false;
                         }
@@ -12271,7 +12438,7 @@ var EJS = function (modules) {
                     nds: 'Nintendo DS',
                     n64: 'Nintendo 64',
                     vb: 'Virtual Boy',
-                    vbanext: 'Game Boy Advance(mGba)'
+                    vbanext: 'Game Boy Advance(vbanext)'
                 },
                 'Sony PlayStation': {
                     psx: 'PlayStation(pcsx_rearmed)',
@@ -12350,7 +12517,7 @@ var EJS = function (modules) {
             }
         },
         getSystemIcon: {
-            async value(elm,process) {
+            async value(elm, process) {
                 let X = this;
                 await X.FetchSysIcon(process);
                 let html = "";
