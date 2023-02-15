@@ -19,6 +19,7 @@ const Nenge = new class NengeCores {
     constructor() {
         const T = this,
             I = T.I;
+        self.Nenge = T;
         T.language = I.language;
         T.i18nName = I.i18n;
         T.on(window, 'error', e => {
@@ -34,7 +35,9 @@ const Nenge = new class NengeCores {
     maxsize = 0x6400000;
     part = '-part-';
     lang = {};
-    action = {};
+    action = {
+        k:console.log
+    };
     StoreTable = {};
     JSpath = document.currentScript && document.currentScript.src.split('/').slice(0, -1).join('/') + '/';
     get date() {
@@ -442,9 +445,7 @@ const Nenge = new class NengeCores {
             if (request.upload && ARG.upload) {
                 evt.forEach(val => ARG.upload[val] && T.on(request.upload, val, e => ARG.upload[val](e, request)));
             }
-            let formData, url, type = ARG.type || "";
-            ARG.get = {}; //I.assign({inajax:T.time},ARG.get||{});
-            url = I.get(ARG.url, ARG.get);
+            let formData,type = ARG.type || "",url = I.get(ARG.url,{inajax:T.time},ARG.get||undefined);
             if (ARG.json) {
                 formData = JSON.stringify(ARG.json);
                 ARG.headers = I.assign({
@@ -461,26 +462,24 @@ const Nenge = new class NengeCores {
         });
     }
     runaction(action, data) {
-        let R = this;
-        if (!R.action) return;
-        if (Nenge.I.func(R.action[action])) {
-            if (typeof data == 'undefined' || data == null) return R.action[action].call(R);
-            if (typeof data != 'string' && data.length) return R.action[action].apply(R, data || []);
-            return R.action[action].call(R, data);
-        } else {
-            console.log('lost action:' + action, data);
+        const R = this, A = R.action,I = R.I||self.Nenge.I;
+        if (A&&A[action]){
+            if(I.func(A[action])){
+                return I.array(data)?A[action].apply(R,data):A[action].apply(R,I.toArr(arguments).slice(1));
+            }
+            return A[action];
         }
+        console.log('lost action:' + action, data);
     }
     callaction(action, ...args) {
-        const R = this, A = R.action;
-        if (!A || !action) return;
-        if (A[action]) return Reflect.apply(A[action], R, args);
+        const R = this, A = R.action,I = R.I||self.Nenge.I;
+        if (A&&A[action]) return I.func(A[action]) ? Reflect.apply(A[action], R, args):A[action];
         console.log('lost action:' + action);
     }
     bindaction(action) {
-        let R = this;
-        if (!R.action || !action || !R.action[action]) return;
-        return R.action[action].bind(R);
+        const R = this, A = R.action,I = R.I||self.Nenge.I;
+        if (A&&A[action])return I.func(A[action]) ? A[action].bind(R):A[action];
+        console.log('lost action:' + action);
     }
     addJS(buf, cb, iscss, id) {
         let T = this,
@@ -927,12 +926,13 @@ const Nenge = new class NengeCores {
          * @param {String|JSON} get 字符/json
          * @returns {String} 地址
          */
-        get(url, get) {
+        get(url, ...arg) {
             let I = this,
                 urlsearch = url.split('?'),
-                urls = urlsearch[1] && urlsearch[1].split('#')[0] || '';
-            let data = (urls && I.FormGet(urls) || '') + (get && ('&' + I.FormGet(get)) || '');
-            return urlsearch[0] + (data ? '?' + I.FormGet(data).toString().replace(/^(.+?)=$/, '$1').replace(/^(.+?)=&/, '$1&') : '');
+                urls = urlsearch[1] && urlsearch[1].split('#')[0] || '',
+                more = I.toArr(arg).map(e=>e?I.FormGet(e):'').join('&'),
+                data = I.FormGet(urls+'&'+more).toString().replace(/=&/g,'&');
+            return urlsearch[0] + (data ? '?' + data:'');
         }
         /**
          * entries数组转JSON
