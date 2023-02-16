@@ -1,3 +1,69 @@
+![Image](/images/zan.jpg?raw=true)
+
+How to use on your site
+==============
+>download `common.min.js`|`extract7z.zip`|`libunrar.min.zip`|`zip.min.js`,`extractzip.min.js`<hr>`emulator_4.99_19_Nenge.min.zip` `/i18n/*.json`|`/frontend/buttons.zip+shader.zip`|`/bios/arcade.7z`<hr> to your website same root
+- HTML
+```html
+<div style="position:fixed;left:0px;right:0px;top:0px;bottom:0px;" hidden><div id="game"></div></div>
+
+<app-emu data-system="gba" style="position:fixed;left:0px;right:0px;top:0px;bottom:0px;" hidden></app-emu>
+<script src="emu.js"></script>
+```
+- emu.js
+```javascript
+!function(){
+    var d=document,script = d.createElement('script'),slm=d.currentScript,JSpath = slm.src.split('/').slice(0,-1).join('/')+'/';
+    script.src = '/js/common.js?'+Math.random();d.body.appendChild(script);
+    d.addEventListener('NengeReady',async e=>{
+        T.DB_NAME = 'Emulatorjs'; //定义 indexdb name
+        T.LibStore = 'data-libjs'; //定义 储存js文件表
+        //T.Libzip = 'zip.min.js'; //解压zip的库,可选 extractzip.min.js(不支持中文名) 替代
+        T.version = 1;//定义js版本 便于更新数据
+        T.DB_STORE_MAP = { //所有表 all store table if you change this,must chang emulator_4.99_19_Nenge.js 'DISK.DB'
+            'data-patch': {'system': false},
+            'data-parent': {'system': false},
+            'data-rooms': {'system': false},
+            'data-system': {},
+            'data-bios': {'system': false},
+            'data-saves': {'timestamp': false},
+            'data-openbor': {'timestamp': false},
+            'data-libjs': {},
+        };
+        T.RootPath = JSpath; //site root
+        T.lang = await T.FetchItem({ //add i18n lang
+            url: T.RootPath + 'i18n/' + T.i18nName + '.json?' + T.time,
+            type: 'json',
+            version: T.version
+        });
+        await T.loadLibjs(T.RootPath+'emulator_4.99_19_Nenge.min.zip?'+T.time,e=>console.log('Loading:'+e));//download emulator_4.99_19_Nenge.min.zip and Decompress
+        await T.loadLibjs('scss_emujs.css');//must after emulator_4.99_19_Nenge.min.zip
+            /* base method more option see http://www.emulatorjs.com/
+           if(typeof EJS =="undefined" )await T.callaction('installEJS');
+           T.$('#game').hidden = false;
+            new EJS('#game',{
+                gameUrl:'',
+                system:'gba',
+                gameId: '', //set Unique ID on Netplay
+                biosUrl:'',
+                cheats:'', //set check code like  'aabbccdd xx\naabbccdd xx\n'
+                gameparenturl: [],
+                gamepatchurl: '', //add ips .. game patch
+            });*/
+            T.action['TAG-APP-EMU'] = async (elm,status)=>{
+                if(status=='connect'){
+                    if(elm.dataset.install) return;
+                    if(typeof EJS =="undefined" )await T.callaction('installEJS');//这样做避免全局污染 只有存在<app-emu>才进行插入js
+                    let config = I.toObj(elm.dataset),div = T.$append(elm,T.$ce('div'));
+                    elm.ok = true;elm.hidden = false;new EJS(div,config);
+                }
+            };
+            T.customElement('app-emu');
+    });
+};
+
+```
+
 基本上已经完成魔改
 ==============
 > 如果有文件请及时反馈,手机不要浏览器中玩,要添加至主屏幕.
@@ -13,62 +79,7 @@
 - [ ] 更多请issue或者PR
 
 
-![Image](/images/zan.jpg?raw=true)
-
-# how to use on your website/blog
-- loader
-    ```html
-
-    <div style="position:fixed;left:0px;right:0px;top:0px;bottom:0px;" hidden>
-        <div id="game"></div>
-    </div>
-
-    <app-emu data-system="gba" style="position:fixed;left:0px;right:0px;top:0px;bottom:0px;" hidden></app-emu>
-
-
-    <script type="text/javascript">
-        var d=document,script = d.createElement('script'),slm=d.currentScript,
-        JSpath = slm.src.split('/').slice(0,-1).join('/')+'/';//if you use path
-        script.src = 'https://emulatorjs.nenge.net/loader.js';
-        d.body.appendChild(script);
-        d.addEventListener('EJSREADY',async e=>{
-            let T = e.detail,I = T.I;
-            /**
-            * base method
-           if(typeof EJS =="undefined" )await T.callaction('installEJS');
-           T.$('#game').hidden = false;
-            new EJS('#game',{
-                gameUrl:'',
-                system:'gba',
-                gameId: '', //set Unique ID on Netplay
-                biosUrl:'',
-                cheats:'', //set check code like  'aabbccdd xx\naabbccdd xx\n'
-                gameparenturl: '',
-                gamepatchurl: '', //add ips .. game patch
-            });
-            */
-            /**
-             * best method
-            */
-            T.action['TAG-APP-EMU'] = async (elm,status)=>{
-                
-                if(status=='connect'){
-                    if(elm.dataset.install) return;
-                    if(typeof EJS =="undefined" )await T.callaction('installEJS');//这样做避免全局污染 只有存在<app-emu>才进行插入js
-                    let config = I.toObj(elm.dataset),div = T.$append(elm,T.$ce('div'));
-                    elm.ok = true;
-                    elm.hidden = false;
-                    new EJS(div,config);
-                }
-            };
-            T.customElement('app-emu');
-        });
-    </script>
-    ```
-- emulatorjs
-  - cores/js source  by (https://www.emulatorjs.com)
-
-# backup cores 请常备份核心以免兼容性问题
+# backup cores 请常备份核心以免其不再提供公开下载问题问题
 > the core some time will update.maybe save the cores to you local computer,backup!
 ```javascript
     //f12 console
