@@ -55,6 +55,8 @@
     text-shadow: none;
     transition: box-shadow 0.3s ease;
     user-select: none;
+    --aspect-hw:calc(160/240);
+    --aspect-wh:1.5;
 
     a {
         color: #ddd;
@@ -97,7 +99,16 @@
         }
     }
 
-    @media (max-width: 768px) {}
+    @media (max-width: 768px) {
+        width:100vw;
+        height: 100vh;
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+
+    }
 
     @media (min-width: 768px) {
         .ejs--1acedc5ed6816abe96dd27d910fd74 {
@@ -910,10 +921,16 @@ a.ejs--73f9b4e94a7a1fe74e11107d5ab2ef {
     }
 
     >div {
-        overflow-x: hidden;
+        overflow: hidden;
         overflow-y: auto;
         transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-        max-height: 60vh;
+        max-height: 80vh;
+        &::-webkit-scrollbar{
+            width: 16px;
+        }
+        div[role="menu"] {
+            overflow: visible !important;
+        }
         >div.active[hidden] {
             display: block !important;
             position: absolute;
@@ -1728,7 +1745,7 @@ dialogs 子容器
     text-align: left;
     width: 100%;
 }
-
+/*导出导入存档 按钮容器*/
 .ejs--952c974392296e7f643d51db380157 {
     /*height: 100%;
     overflow: hidden;
@@ -1828,6 +1845,12 @@ dialogs 子容器
             font-size: 20px;
             width: 80px;
             text-transform: uppercase;
+        }
+    }
+
+    @media screen and (orientation: portrait) and (max-width: 768px) {
+        .ejs--0d7e216cf12ae73705b5d5bb0452fc:not([class~="ejs--c0a5e71f6613caab66d6ae15a5a00f"]){
+            top: calc(100vw * var(--aspect-hw));
         }
     }
 }
@@ -2395,7 +2418,28 @@ dialogs 子容器
     @media (max-width: 768px) {
         bottom: 10px;
     }
+    @media screen and (orientation: portrait) and (max-width: 768px) {
+        &:not([class~="system-nds"]){
+            /*NDS可能不适用*/
+            bottom: calc(100vh - (100vw * var(--aspect-hw)) * 1.8 - 30px);
+        }
+        &.system-gb {
+            display: flex !important;
+            justify-content: space-around;
+            .ejs--914358605501b11476e86626b2ff16,
+            .ejs--7d2b19f77fd0ccabf94dc1ca39ae18 {
+                position: relative;
+                left: unset;
+                right: unset;
+            }
 
+            .ejs--49fa47c86a131e4ca8fb268bfdde89 {
+                bottom: -10px;
+            }
+        }
+
+    }
+    /*
     @media screen and (max-width: 600px) {
         &.system-gb {
             bottom: calc(100vh - (100vw * 144 / 160) * 1.8);
@@ -2414,6 +2458,7 @@ dialogs 子容器
             }
         }
     }
+    */
 }
 
 .ejs--c46c519e67f0f7ff83ba0b4d208683 {

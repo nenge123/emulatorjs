@@ -855,13 +855,14 @@ const Nenge = new class NengeCores {
                 'RegRe': RTo + 'a[0],e=>o=o.replace(' + NO(29) + '("\\{"+e[0]+"\\}","g"),e[1])),o',
                 'elmdata': RT + 'toObj(o.dataset)',
                 'Part': RTo + 'Math.ceil(o)).fill(a[0])',
+                'setStyle': RT + 'toArr(a[0],x=>(o.style||o).setProperty(x[0],x[1])),o',
             }).forEach(entry => func += SetValue(entry[0], entry[1]));
             O[1].entries({
                 4: ['var s = {};o.forEach((t, e) => {s[e] ? (this.array(s[e]) || (s[e] = [s[e]]), s[e].push(t)) : s[e] = t});return s', SetEntries(4)],
                 5: [SetOBJ(4), SetArr(4)],
                 6: [getEntries(6), arro + '.map(v=>[v.name,v.value])'],
                 7: [RN(1) + 'assign({}, o)', SetEntries(7)],
-                8: [getEntries(8), arro + '.map(v=>[v,o[v]])'],
+                8: [getEntries(8), arro + '.map(v=>[v,o.getPropertyValue(v)])'],
                 10: [Ro, arr('this.U8(o)')],
                 11: [Ro, arro],
                 21: [SetOBJ(4), SetArr(4)],
