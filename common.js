@@ -580,12 +580,13 @@ const Nenge = new class NengeCores {
     }
     on(elm, evt, fun, opt, cap) {
         let T = this;
-        T.I.toArr(evt.split(' '), v => T.$(elm).addEventListener(v, fun, opt === false ? { passive: false } : opt, cap));
+        T.F.getevent(evt).forEach(v => T.$(elm).addEventListener(v, fun, opt === false ? { passive: false } : opt, cap));
     }
     un(elm, evt, fun, opt, cap) {
-        this.$(elm).removeEventListener(evt, fun, opt === false ? {
+        let T = this;
+        T.F.getevent(evt).forEach(v =>T.$(elm).removeEventListener(v, fun, opt === false ? {
             passive: false
-        } : opt, cap);
+        } : opt, cap));
     }
     once(elm, evt, fun, cap) {
         return this.on(elm, evt, fun, { passive: false, once: true }, cap);
@@ -713,12 +714,11 @@ const Nenge = new class NengeCores {
         navigator.vibrate(duration||200);
     }
     */
-    triger(target, type, evtdata) {
-        let T = this, I = T.I;
+    triger(target, type, evtdata,opt) {
+        let T = this, I = T.I,options = I.assign({},opt, evtdata&&{ detail: evtdata });
         if (I.str(target)) target = T.$(target);
-        T.dispatch(target, new I.O[22](type, { detail: evtdata }));
+        T.dispatch(target, new I.O[22](type,options));
         return target;
-
     }
     dispatch(obj, evt) {
         obj.dispatchEvent(evt); return obj;
@@ -990,8 +990,9 @@ const Nenge = new class NengeCores {
         }
         empty(data) {
             if (!data) return true;
-            if (this.str(data)) return data.length == 0;
+            if (this.str(data)) return data.trim().length == 0;
             if (this.array(data)) return data.length == 0;
+            if (this.obj(data)) return this.toArr(data).length == 0;
             return false;
         }
     };
@@ -1326,6 +1327,9 @@ const Nenge = new class NengeCores {
             return window.URL.createObjectURL(I.blob(u8) ? u8 : new Blob([u8], {
                 'type': type
             }));
+        }
+        getevent(evt){
+            return evt.replace(/[\s\|,]+/g,',').split(',').filter(v=>!this.I.empty(v));
         }
         removeURL(url) {
             return window.URL.revokeObjectURL(url);

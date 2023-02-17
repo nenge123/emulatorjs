@@ -50,13 +50,15 @@
     font-weight: 500;
     line-height: 1.7;
     max-width: 100%;
-    min-width: 200px;
+    min-width: 375px;
     position: relative;
     text-shadow: none;
     transition: box-shadow 0.3s ease;
     user-select: none;
     --aspect-hw:calc(160/240);
     --aspect-wh:1.5;
+    --width:100%;
+    --height:100%;
 
     a {
         color: #ddd;
@@ -90,16 +92,38 @@
     [data-btn="fullscreen"] {
         display: none;
     }
-
+    /*全屏*/
+    &:fullscreen {
+        width:100vw;
+        height: 100vh;
+        position: fixed;
+        .ejs--057800d021995e1347ec07cb748672 {
+            height: 100%;
+            width: 100%;
+        }
+    
+        .ejs--8732295ca5c4902a060d34706a8146 {
+            .ejs--2b3dd6e2e26c0f0dc4ac5779dedd5e {
+                display: block;
+            }
+        }
+    
+        .ejs--8732295ca5c4902a060d34706a8146 {
+            .ejs--2b3dd6e2e26c0f0dc4ac5779dedd5e+svg {
+                display: none;
+            }
+        }
+    }
     /*已启动游戏*/
     &:not([class~="ejs--7da7949f602347007818e6d192eb23"]) {
-        .ejs--1acedc5ed6816abe96dd27d910fd74 {
+        /*对话框容器  快捷菜单容器*/
+        >div:not([class~="ejs--2521e1257996f264de36e77cc9c5ee"]){
             display: none !important;
             pointer-events: none;
         }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
         width:100vw;
         height: 100vh;
         position: fixed;
@@ -107,30 +131,146 @@
         top: 0px;
         right: 0px;
         bottom: 0px;
-
     }
 
     @media (min-width: 768px) {
-        .ejs--1acedc5ed6816abe96dd27d910fd74 {
-            transform: translateY(100%);
-            opacity: 0;
-            padding: 20px 5px 5px;
-            bottom: 0;
-            left: 0;
-            z-index: -1;
-        }
-
-        .ejs--a03cf4c79123fcf49b2b6eb2ee856c,
-        &:focus .ejs--1acedc5ed6816abe96dd27d910fd74,
-        .ejs--1acedc5ed6816abe96dd27d910fd74:focus,
-        .ejs--1acedc5ed6816abe96dd27d910fd74:hover {
-            opacity: 1;
-            z-index: 3;
-            transform: translateY(0%);
-        }
+        
     }
 }
 
+
+
+/*导出导入存档 按钮容器 快捷菜单容器*/
+.ejs--952c974392296e7f643d51db380157 {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    user-select: none;
+    touch-action: none;
+    .ejs--c0a5e71f6613caab66d6ae15a5a00f {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.8rem;
+        padding: 5px;
+        text-align: left;
+        text-shadow: 1px 1px 1px #000;
+        position: absolute;
+        z-index: 998;
+
+        &.ejs--04f0471d5de3dffea09ac3d539d0bc {
+            width: 100%;
+            height: calc(100% - 42px);
+        }
+
+        &.ejs--04f0471d5de3dffea09ac3d539d0bc .ejs--f817e633c82da74c3f82a1007e9aa8 {
+            display: block;
+        }
+
+        .ejs--0b77f56df0c6023120dd9ffaa37dcd {
+            display: block;
+        }
+
+        .ejs--4f88570c8af219fec07219dbd9dbbe {
+            display: inline-block;
+            width: 30px;
+            color: #fff;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .ejs--4f88570c8af219fec07219dbd9dbbe svg {
+            width: 30px;
+            fill: #fff;
+            opacity: 0.5;
+        }
+
+        .ejs--4f88570c8af219fec07219dbd9dbbe span.ejs--3ee5963a7747179cf98ce8ce095a5f {
+            position: absolute;
+            left: 0;
+            top: 4px;
+            text-align: center;
+            color: #fff;
+            width: 100%;
+            height: 100%;
+        }
+
+        .ejs--f817e633c82da74c3f82a1007e9aa8 {
+            display: none;
+            width: 100%;
+            height: calc(100% - 80px);
+            z-index: 1001;
+            max-width: 300px;
+        }
+
+        .ejs--f817e633c82da74c3f82a1007e9aa8 .ejs--258ae7dfee4b10b7568161e6a48636 {
+            height: calc(100% - 60px);
+            word-break: break-all;
+            overflow-y: auto;
+            font-size: 0.9rem;
+            color: #fff !important;
+            text-shadow: 2px 2px 3px #000;
+        }
+
+        .ejs--f817e633c82da74c3f82a1007e9aa8 .ejs--0e8443aac737c78260c3c5e0370276 {
+            height: 55px;
+            margin-top: 5px;
+            border: 1px solid #fff;
+            display: flex;
+        }
+
+        .ejs--f817e633c82da74c3f82a1007e9aa8 .ejs--0e8443aac737c78260c3c5e0370276 textarea {
+            padding: 1px;
+            font-size: 14px;
+            max-height: 55px;
+            height: 55px !important;
+            width: calc(100% - 80px) !important;
+            background: transparent;
+            color: #fff !important;
+        }
+
+        .ejs--f817e633c82da74c3f82a1007e9aa8 .ejs--0e8443aac737c78260c3c5e0370276 button {
+            font-size: 20px;
+            width: 80px;
+            text-transform: uppercase;
+        }
+    }
+    /*定义按钮 导出存档 导入存档 打开菜单*/
+    .ejs--0d7e216cf12ae73705b5d5bb0452fc:not([class~="ejs--c0a5e71f6613caab66d6ae15a5a00f"]){
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        color: #fff;
+        position: absolute;
+        opacity: 0.6;
+        z-index: 999;
+        cursor: pointer;
+        box-shadow: 0px 0px 1px 1px #ffffff8a;
+    }
+    .ejs--e7e06622e3c04957c2ebb05c5adec0{
+        right: 115px;
+    }
+    .ejs--a8753b9c4fe32d12bb6605d4a20ef2{
+        right: 60px;
+    }
+    .ejs--666d4296310579687cf3cf3d2cf951{
+        right: 10px;
+        svg {
+            fill: currentColor;
+        }
+    }
+    /*竖屏调整位置 */
+    @media screen and (orientation: portrait) and (max-width: 767px) {
+        .ejs--0d7e216cf12ae73705b5d5bb0452fc:not([class~="ejs--c0a5e71f6613caab66d6ae15a5a00f"]){
+            top:min( calc( var(--width) * var(--aspect-hw) ),  max(0px , calc( (var(--height) * 0.6 - var(--width)) * 50) ) );
+
+        }
+    }
+    /*横屏调整位置 */
+    @media screen and (orientation: landscape) and (min-width: 768px) {
+        .ejs--0d7e216cf12ae73705b5d5bb0452fc:not([class~="ejs--c0a5e71f6613caab66d6ae15a5a00f"]){
+            top: 5px;
+        }
+    }
+}
 /*底部菜单 容器*/
 .ejs--1acedc5ed6816abe96dd27d910fd74 {
 
@@ -213,23 +353,7 @@
     &:empty {
         display: none;
     }
-
-    align-items: center;
-    display: flex;
-    justify-content: flex-start;
-    text-align: center;
-    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
-    border-bottom-left-radius: inherit;
-    border-bottom-right-radius: inherit;
-    color: #fff;
-    position: absolute;
-    right: 0;
-    transition: all 0.4s ease-in-out;
-    touch-action: none;
-    user-select: none;
-
     button {
-
         &[data-btn="autosave"],
         &[data-btn="recorder"],
         &[data-btn="fastforward"] {
@@ -249,8 +373,19 @@
             }
         }
     }
-
-    @media (max-width: 768px) {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
+    color: #fff;
+    position: absolute;
+    transition: all 0.4s ease-in-out;
+    touch-action: none;
+    user-select: none;
+    @media (max-width: 767px) {
 
         >button,
         >div {
@@ -273,17 +408,6 @@
             transform: scale(0.8) !important;
             font-size: 12px;
         }
-
-        .ejs--8732295ca5c4902a060d34706a8146:focus {
-            position: relative;
-
-            >span {
-                position: absolute;
-                bottom: 100%;
-                top: unset;
-            }
-        }
-
         .ejs--74c6d4176d27e37a19d2e9e61de8f4::before {
             display: none;
         }
@@ -322,33 +446,46 @@
 
             }
         }
-
         /*非激活状态*/
-        width: 300px;
         max-height: 260px;
         padding: 10px;
-        left: calc(50% - 150px);
         flex-wrap: wrap;
         align-items: flex-start;
-        background: rgba(0, 0, 0, 0.9);
-
+        background: #0000007e;
+        left: 0px;
+        right: 0px;
+        padding:0px max(0px,calc(50% - 145px));
+        button{
+            outline: none !important;
+            box-shadow: unset !important;
+        }
         &:not([class~="ejs--a03cf4c79123fcf49b2b6eb2ee856c"]) {
-            transform: translate(0%, 100%);
+            transform: translate(0%, 200%);
             z-index: -1;
             bottom: 0;
             pointer-events: none;
         }
-
         &.ejs--a03cf4c79123fcf49b2b6eb2ee856c {
             transform: translate(0%, 0%);
             z-index: 1000;
-            bottom: 30px;
             pointer-events: unset;
+            bottom: 50px;
         }
     }
 
     @media (min-width: 768px) {
-
+        transform: translateY(100%);
+        opacity: 0;
+        padding: 20px 5px 5px;
+        bottom: 0;
+        left: 0;
+        right: 0px;
+        z-index: -1;
+        &.ejs--a03cf4c79123fcf49b2b6eb2ee856c{
+            opacity: 1;
+            z-index: 3;
+            transform: translateY(0%);
+        }
         >.ejs--8732295ca5c4902a060d34706a8146,
         .ejs--c7bfb2d1b75a40fdaaf90624bea9e7,
         .ejs--f1aa376719b564cae0e653157cde14,
@@ -360,37 +497,18 @@
 
 /*canvas容器*/
 .ejs--057800d021995e1347ec07cb748672 {
-    background: #333;
     border-radius: inherit;
     height: 100%;
     overflow: hidden;
     position: relative;
     text-align: center;
     z-index: 0;
-
-    >* {
-        height: 100% !important;
-    }
-
     canvas {
         max-width: 100% !important;
         max-height: 100% !important;
+        height:min(var(--height),calc(var(--width) * var(--aspect-hw)));
         user-select: none;
         touch-action: none;
-    }
-
-    @media screen and (orientation: portrait) and (max-width: 768px) {
-        canvas {
-            width: 100%;
-            height: auto;
-        }
-    }
-
-    @media screen and (orientation: landscape) and (min-width: 768px) {
-        canvas {
-            width: auto;
-            height: 100%;
-        }
     }
 }
 
@@ -911,15 +1029,6 @@ a.ejs--73f9b4e94a7a1fe74e11107d5ab2ef {
     z-index: 3;
     border: 1px dashed;
 
-    @media (max-width: 768px) {
-        left: unset;
-
-    }
-
-    @media (min-width: 768px) {
-        right: -3px;
-    }
-
     >div {
         overflow: hidden;
         overflow-y: auto;
@@ -935,9 +1044,17 @@ a.ejs--73f9b4e94a7a1fe74e11107d5ab2ef {
             display: block !important;
             position: absolute;
             visibility: hidden;
+            opacity: 0;
         }
     }
+    @media (max-width: 767px) {
+        left: unset;
 
+    }
+
+    @media (min-width: 768px) {
+        right: -3px;
+    }
     &::after {
         border: 4px solid transparent;
         border-top-color: rgba(16, 16, 16, 0.9);
@@ -953,7 +1070,7 @@ a.ejs--73f9b4e94a7a1fe74e11107d5ab2ef {
         padding: 7px;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
         [role="menu"] {
             line-height: 2;
         }
@@ -1019,7 +1136,7 @@ a.ejs--73f9b4e94a7a1fe74e11107d5ab2ef {
         width: calc(100% - 14px);
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
         .ejs--a7ad9de0cb0ca672b6703c50de7db9 {
             line-height: 2;
         }
@@ -1203,69 +1320,6 @@ a.ejs--73f9b4e94a7a1fe74e11107d5ab2ef {
 
 .ejs--7a5f920ceffb2913f6dbda780573cf .ejs--8732295ca5c4902a060d34706a8146:hover .ejs--74c6d4176d27e37a19d2e9e61de8f4 {
     z-index: 3;
-}
-
-.ejs--7da7949f602347007818e6d192eb23 {
-    opacity: 1;
-
-    .ejs--057800d021995e1347ec07cb748672 {
-        opacity: 1;
-        background-color: transparent;
-    }
-
-    @media (max-width: 768px) {
-        .ejs--666d4296310579687cf3cf3d2cf951 {
-            display: inline-block;
-            width: 30px;
-            height: 30px;
-            color: #fff;
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            opacity: 0.5;
-            z-index: 999;
-        }
-
-        .ejs--666d4296310579687cf3cf3d2cf951 svg {
-            fill: currentColor;
-        }
-    }
-
-    .ejs--a8753b9c4fe32d12bb6605d4a20ef2 {
-        display: inline-block;
-        width: 30px;
-        height: 30px;
-        color: #fff;
-        position: absolute;
-        top: 5px;
-        right: 5px;
-        opacity: 0.6;
-        z-index: 999;
-    }
-
-    @media (max-width: 768px) {
-        .ejs--a8753b9c4fe32d12bb6605d4a20ef2 {
-            right: 45px;
-        }
-    }
-
-    .ejs--e7e06622e3c04957c2ebb05c5adec0 {
-        display: inline-block;
-        width: 30px;
-        height: 30px;
-        color: #fff;
-        position: absolute;
-        top: 5px;
-        right: 45px;
-        opacity: 0.6;
-        z-index: 999;
-    }
-
-    @media (max-width: 768px) {
-        .ejs--e7e06622e3c04957c2ebb05c5adec0 {
-            right: 85px;
-        }
-    }
 }
 
 .ejs--f1aa376719b564cae0e653157cde14 {
@@ -1745,130 +1799,6 @@ dialogs 子容器
     text-align: left;
     width: 100%;
 }
-/*导出导入存档 按钮容器*/
-.ejs--952c974392296e7f643d51db380157 {
-    /*height: 100%;
-    overflow: hidden;
-    */
-    position: absolute;
-    top: 0;
-    width: 100%;
-    user-select: none;
-    touch-action: none;
-
-    * {
-        user-select: none;
-        touch-action: none;
-    }
-
-    .ejs--c0a5e71f6613caab66d6ae15a5a00f {
-        color: rgba(255, 255, 255, 0.8);
-        font-size: 0.8rem;
-        padding: 5px;
-        text-align: left;
-        text-shadow: 1px 1px 1px #000;
-        position: absolute;
-        z-index: 998;
-
-        &.ejs--04f0471d5de3dffea09ac3d539d0bc {
-            width: 100%;
-            height: calc(100% - 42px);
-        }
-
-        &.ejs--04f0471d5de3dffea09ac3d539d0bc .ejs--f817e633c82da74c3f82a1007e9aa8 {
-            display: block;
-        }
-
-        .ejs--0b77f56df0c6023120dd9ffaa37dcd {
-            display: block;
-        }
-
-        .ejs--4f88570c8af219fec07219dbd9dbbe {
-            display: inline-block;
-            width: 30px;
-            color: #fff;
-            position: relative;
-            cursor: pointer;
-        }
-
-        .ejs--4f88570c8af219fec07219dbd9dbbe svg {
-            width: 30px;
-            fill: #fff;
-            opacity: 0.5;
-        }
-
-        .ejs--4f88570c8af219fec07219dbd9dbbe span.ejs--3ee5963a7747179cf98ce8ce095a5f {
-            position: absolute;
-            left: 0;
-            top: 4px;
-            text-align: center;
-            color: #fff;
-            width: 100%;
-            height: 100%;
-        }
-
-        .ejs--f817e633c82da74c3f82a1007e9aa8 {
-            display: none;
-            width: 100%;
-            height: calc(100% - 80px);
-            z-index: 1001;
-            max-width: 300px;
-        }
-
-        .ejs--f817e633c82da74c3f82a1007e9aa8 .ejs--258ae7dfee4b10b7568161e6a48636 {
-            height: calc(100% - 60px);
-            word-break: break-all;
-            overflow-y: auto;
-            font-size: 0.9rem;
-            color: #fff !important;
-            text-shadow: 2px 2px 3px #000;
-        }
-
-        .ejs--f817e633c82da74c3f82a1007e9aa8 .ejs--0e8443aac737c78260c3c5e0370276 {
-            height: 55px;
-            margin-top: 5px;
-            border: 1px solid #fff;
-            display: flex;
-        }
-
-        .ejs--f817e633c82da74c3f82a1007e9aa8 .ejs--0e8443aac737c78260c3c5e0370276 textarea {
-            padding: 1px;
-            font-size: 14px;
-            max-height: 55px;
-            height: 55px !important;
-            width: calc(100% - 80px) !important;
-            background: transparent;
-            color: #fff !important;
-        }
-
-        .ejs--f817e633c82da74c3f82a1007e9aa8 .ejs--0e8443aac737c78260c3c5e0370276 button {
-            font-size: 20px;
-            width: 80px;
-            text-transform: uppercase;
-        }
-    }
-
-    @media screen and (orientation: portrait) and (max-width: 768px) {
-        .ejs--0d7e216cf12ae73705b5d5bb0452fc:not([class~="ejs--c0a5e71f6613caab66d6ae15a5a00f"]){
-            top: calc(100vw * var(--aspect-hw));
-        }
-    }
-}
-
-.ejs--0d7e216cf12ae73705b5d5bb0452fc {
-    float: none;
-}
-
-.ejs--666d4296310579687cf3cf3d2cf951 {
-    display: none;
-}
-
-.ejs--a8753b9c4fe32d12bb6605d4a20ef2,
-.ejs--e7e06622e3c04957c2ebb05c5adec0 {
-    display: none;
-    cursor: pointer;
-}
-
 .ejs--ca9ea317b9bd20abfc8c0463ac5bbe {
     background: transparent;
 }
@@ -2415,13 +2345,13 @@ dialogs 子容器
         bottom: 30px;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
         bottom: 10px;
     }
-    @media screen and (orientation: portrait) and (max-width: 768px) {
+    @media screen and (orientation: portrait) and (max-width: 767px) {
         &:not([class~="system-nds"]){
             /*NDS可能不适用*/
-            bottom: calc(100vh - (100vw * var(--aspect-hw)) * 1.8 - 30px);
+            bottom: max(calc(var(--height) - (var(--width) * var(--aspect-hw)) * 1.8 - 30px),30px);
         }
         &.system-gb {
             display: flex !important;
@@ -2797,38 +2727,6 @@ dialogs 子容器
     cursor: pointer;
     right: 0.025rem;
     top: 0;
-}
-
-.ejs--7a5f920ceffb2913f6dbda780573cf:fullscreen {
-    background: #000;
-    border-radius: 0 !important;
-    height: 100%;
-    margin: 0;
-    width: 100%;
-
-    canvas {
-        height: 100% !important;
-        max-width: 100%;
-        min-width: 0;
-        width: auto;
-    }
-
-    .ejs--057800d021995e1347ec07cb748672 {
-        height: 100%;
-        width: 100%;
-    }
-
-    .ejs--8732295ca5c4902a060d34706a8146 {
-        .ejs--2b3dd6e2e26c0f0dc4ac5779dedd5e {
-            display: block;
-        }
-    }
-
-    .ejs--8732295ca5c4902a060d34706a8146 {
-        .ejs--2b3dd6e2e26c0f0dc4ac5779dedd5e+svg {
-            display: none;
-        }
-    }
 }
 
 .ejs--7a5f920ceffb2913f6dbda780573cf:-webkit-full-screen {

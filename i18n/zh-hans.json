@@ -183,7 +183,7 @@
     "Turbo Enable": "启用连发",
     "Both": "一致",
     "None": "无",
-    "Region": "区域",
+    "Region": "域",
     "Auto": "自动",
     "NTSC": "美日式",
     "PAL": "帕尔制",
@@ -229,7 +229,7 @@
 
 
 
-    "gb model": "GB模式",
+    "gb model": "GB模拟*",
     "use bios": "使用BIOS*",
     "skip bios": "跳过BIOS*",
     "gb colors": "GB颜色",
@@ -314,5 +314,7 @@
     "Detect and Remove": "自动删除",
     "Don't Remove": "不要删除",
     "auto_threshold": "",
-    "fixed_interval": ""
+    "fixed_interval": "",
+    "nul":"未定义"
+
 }

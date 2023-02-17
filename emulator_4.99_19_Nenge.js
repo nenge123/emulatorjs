@@ -409,39 +409,10 @@ var EJS = (function (modules) {
         saves: T.getStore('data-saves'),
         openbor: T.getStore('data-openbor'),
     });
-    var _0x2c15a8 = function (_0x398ccd) {
 
-            return null != _0x398ccd ? _0x398ccd['constructor'] : null;
-        },
-        _0x19ed31 = function (_0x57cc8f, _0x57f89b) {
-            return Boolean(_0x57cc8f && _0x57f89b && _0x57cc8f instanceof _0x57f89b);
-        },
-        _0x2e378f = function (_0x50dc6e) {
-            return null == _0x50dc6e;
-        },
-        _0x2979d1 = function (_0x8af40) {
-            return _0x2c15a8(_0x8af40) === Object;
-        },
-        _0x324371 = function (_0x17d8cc) {
-            return _0x2c15a8(_0x17d8cc) === String;
-        },
-        _0x1e9f61 = function (_0x1621c2) {
-
-            return Array['isArray'](_0x1621c2);
-        },
-        _0x3b2133 = function (_0x149947) {
-            return _0x19ed31(_0x149947, NodeList);
-        },
-        _0x507120 = function (_0x2f93cf) {
-
-            return _0x2e378f(_0x2f93cf) || (_0x324371(_0x2f93cf) || _0x1e9f61(_0x2f93cf) || _0x3b2133(_0x2f93cf)) && !_0x2f93cf['length'] || _0x2979d1(_0x2f93cf) && !Object['keys'](_0x2f93cf)['length'];
-        };
-
-    function SetEvent(thisArg, object, evt) {
-        var _This = this,
-            isAdd = arguments['length'] > 0x3 && void 0x0 !== arguments[0x3] && arguments[0x3],
-            passive = !(arguments['length'] > 0x4 && void 0x0 !== arguments[0x4]) || arguments[0x4],
-            capture = arguments['length'] > 0x5 && void 0x0 !== arguments[0x5] && arguments[0x5];
+    function SetEvent(thisArg, object, evt, isAdd, passive, capture) {
+        passive = !passive || passive;
+        var E = this;
         if (thisArg && 'addEventListener' in thisArg && !I.empty(object) && I.func(evt)) {
             var eventTypes = object['split'](' '),
                 opt = capture;
@@ -450,8 +421,7 @@ var EJS = (function (modules) {
                 'capture': capture
             };
             eventTypes['forEach'](function (type) {
-
-                _This && _This['eventListeners'] && isAdd && _This['eventListeners']['push']({
+                E && E['eventListeners'] && isAdd && E['eventListeners']['push']({
                     'element': thisArg,
                     'type': type,
                     'callback': evt,
@@ -461,27 +431,17 @@ var EJS = (function (modules) {
         }
     }
 
-    function addEvent(object) {
-        var evt = arguments['length'] > 0x1 && void 0x0 !== arguments[0x1] ? arguments[0x1] : '',
-            func = arguments['length'] > 0x2 ? arguments[0x2] : void 0x0,
-            capture = !(arguments['length'] > 0x3 && void 0x0 !== arguments[0x3]) || arguments[0x3],
-            ext = arguments['length'] > 0x4 && void 0x0 !== arguments[0x4] && arguments[0x4];
-        SetEvent['call'](this, object, evt, func, !0x0, capture, ext);
+    function addEvent(object, evt, func, capture, opt) {
+        return SetEvent['call'](this, object, evt || '', func, !0x0, capture || true, opt);
     }
 
-    function saveEvent(object) {
-        var evt = arguments['length'] > 0x1 && void 0x0 !== arguments[0x1] ? arguments[0x1] : '',
-            func = arguments['length'] > 0x2 ? arguments[0x2] : void 0x0,
-            capture = !(arguments['length'] > 0x3 && void 0x0 !== arguments[0x3]) || arguments[0x3],
-            opt = arguments['length'] > 0x4 && void 0x0 !== arguments[0x4] && arguments[0x4];
-        SetEvent['call'](this, object, evt, func, !0x1, capture, opt);
+    function saveEvent(object, evt, func, capture, opt) {
+        return SetEvent['call'](this, object, evt || '', func, !0x1, capture || true, opt);
     }
 
-    function onceEvent(object) {
-        var evt = arguments['length'] > 0x1 && void 0x0 !== arguments[0x1] ? arguments[0x1] : '',
-            func = arguments['length'] > 0x2 ? arguments[0x2] : void 0x0,
-            passive = !(arguments['length'] > 0x3 && void 0x0 !== arguments[0x3]) || arguments[0x3],
-            capture = arguments['length'] > 0x4 && void 0x0 !== arguments[0x4] && arguments[0x4];
+    function onceEvent(object, evt, func, passive, capture) {
+        evt = evt || '';
+        passive = !passive || passive;
         SetEvent['call'](this, object, evt, function runfunc() {
 
             saveEvent(object, evt, runfunc, passive, capture);
@@ -490,28 +450,13 @@ var EJS = (function (modules) {
         }, !0x0, passive, capture);
     }
 
-    function callEvent(object) {
-        var type = arguments['length'] > 0x1 && void 0x0 !== arguments[0x1] ? arguments[0x1] : '',
-            bubbles = arguments['length'] > 0x2 && void 0x0 !== arguments[0x2] && arguments[0x2],
-            detail = arguments['length'] > 0x3 && void 0x0 !== arguments[0x3] ? arguments[0x3] : {};
-        if (I.elm(object) && !I.empty(type)) {
-            var event = new CustomEvent(type, {
-                'bubbles': bubbles,
-                'detail': Object['assign']({}, detail, {
-                    'emulator': this
-                })
-            });
-            object['dispatchEvent'](event);
-        }
-    }
-
-    function _0x3266c5(_0x54209e, _0x41bd08) {
-        var _0x2ac021 = _0x54209e['length'] ? _0x54209e : [_0x54209e];
-        Array['from'](_0x2ac021)['reverse']()['forEach'](function (_0x431437, _0x277867) {
-            var _0x2c1f39 = _0x277867 > 0x0 ? _0x41bd08['cloneNode'](!0x0) : _0x41bd08,
-                _0x2bb4e2 = _0x431437['parentNode'],
-                _0x5462ee = _0x431437['nextSibling'];
-            _0x2c1f39['appendChild'](_0x431437), _0x5462ee ? _0x2bb4e2['insertBefore'](_0x2c1f39, _0x5462ee) : _0x2bb4e2['appendChild'](_0x2c1f39);
+    function appendEJSChild(nodeElm, elm) {
+        var nodeElms = nodeElm['length'] ? nodeElm : [nodeElm];
+        Array['from'](nodeElms)['reverse']()['forEach'](function (topElm, index) {
+            var belm = index > 0x0 ? elm['cloneNode'](!0x0) : elm,
+                pelm = topElm['parentNode'],
+                nelm = topElm['nextSibling'];
+            belm['appendChild'](topElm), nelm ? pelm['insertBefore'](belm, nelm) : pelm['appendChild'](belm);
         });
     }
 
@@ -527,33 +472,28 @@ var EJS = (function (modules) {
         return elm;
     }
 
-    function _0x24b9ed(_0xbca52c) {
-
-        I.nodelist(_0xbca52c) || I.array(_0xbca52c) ? Array['from'](_0xbca52c)['forEach'](_0x24b9ed) : I.elm(_0xbca52c) && I.elm(_0xbca52c['parentNode']) && _0xbca52c['parentNode']['removeChild'](_0xbca52c);
-    }
-
-    function _0x4d33e3(_0x243508, _0x53790c) {
-
-        if (!I.str(_0x243508) || I.empty(_0x243508)) return {};
-        var _0x3f565c = {},
-            _0x487b80 = _0x53790c;
-        return _0x243508['split'](',')['forEach'](function (_0x1c8125) {
-            var _0x3609b0 = _0x1c8125['trim'](),
-                _0x319f0e = _0x3609b0['replace']('.', ''),
-                _0x5a3efe = _0x3609b0['replace'](/[[\]]/g, '')['split']('='),
-                _0x5eed0e = _0x5a3efe[0x0],
-                _0x4e1477 = _0x5a3efe['length'] > 0x1 ? _0x5a3efe[0x1]['replace'](/["']/g, '') : '';
-            switch (_0x3609b0['charAt'](0x0)) {
+    function resultAttrData(str, attr) {
+        if (!I.str(str) || I.empty(str)) return {};
+        var result = {};
+        I.toArr(str.split(','), (entry) => {
+            entry = entry['trim']();
+            var className = entry['replace']('.', ''),
+                classSplit = entry['replace'](/[[\]]/g, '')['split']('='),
+                classLeft = classSplit[0x0],
+                classRight = classSplit['length'] > 0x1 ? classSplit[0x1]['replace'](/["']/g, '') : '';
+            switch (entry['charAt'](0x0)) {
                 case '.':
-                    I.obj(_0x487b80) && I.str(_0x487b80['class']) && (_0x487b80['class'] += ' ' ['concat'](_0x319f0e)), _0x3f565c['class'] = _0x319f0e;
+                    I.obj(attr) && I.str(attr['class']) && (attr['class'] += ' ' ['concat'](className));
+                    result['class'] = className;
                     break;
                 case '#':
-                    _0x3f565c['id'] = _0x3609b0['replace']('#', '');
+                    result['id'] = entry['replace']('#', '');
                     break;
                 case '[':
-                    _0x3f565c[_0x5eed0e] = _0x4e1477;
+                    result[classLeft] = classRight;
             }
-        }), _0x3f565c;
+        });
+        return result;
     }
 
     function toggleHidden(elm, bool) {
@@ -584,13 +524,14 @@ var EJS = (function (modules) {
     }
 
     function _0xe124af() {
+        const E = this;
         var _0x4da8c8 = arguments['length'] > 0x0 && void 0x0 !== arguments[0x0] ? arguments[0x0] : null,
             _0x2b151e = arguments['length'] > 0x1 && void 0x0 !== arguments[0x1] && arguments[0x1];
         if (I.elm(_0x4da8c8)) {
-            var _0x1599d7 = this.SelectorAll('button:not(:disabled), input:not(:disabled), [tabindex]'),
+            var _0x1599d7 = E.SelectorAll('button:not(:disabled), input:not(:disabled), [tabindex]'),
                 _0x4e1cb5 = _0x1599d7[0x0],
                 _0x1c45af = _0x1599d7[_0x1599d7['length'] - 0x1];
-            SetEvent['call'](this, this['elements']['container'], 'keydown', function (_0x21378e) {
+            SetEvent['call'](E, E['elements']['container'], 'keydown', function (_0x21378e) {
 
                 if ('Tab' === _0x21378e['key'] && 0x9 === _0x21378e['keyCode']) {
                     var _0x4c4c4d = document['activeElement'];
@@ -600,19 +541,12 @@ var EJS = (function (modules) {
         }
     }
 
-    function _0x348ac8() {
+    function tabFocusAddRemoveClass() {
         var _0x1e3486 = arguments['length'] > 0x0 && void 0x0 !== arguments[0x0] ? arguments[0x0] : null,
             _0x2f6eb2 = arguments['length'] > 0x1 && void 0x0 !== arguments[0x1] && arguments[0x1];
         I.elm(_0x1e3486) && (_0x1e3486['focus'](), _0x2f6eb2 && elmAddRemoveClass(_0x1e3486, this['config']['classNames']['tabFocus']));
     }
 
-    /*
-    function getElmClassName(name) {
-        return (getClassName(name)  );
-        //console.log(name);
-        return n_export_129['a']['bind'](n__export_130['a'])(name);
-    }
-    */
     let ejs_ClassLists = {
         'ejs-wrapper': 'ejs--de6433374cb30211f10e148b320b2f',
         'ejs': 'ejs--7a5f920ceffb2913f6dbda780573cf',
@@ -926,7 +860,7 @@ var EJS = (function (modules) {
         }(_0x2c60fd)))['charAt'](0x0)['toLowerCase']() + _0x2c60fd['slice'](0x1);
     }
     var _0x1c59aa,
-        _0x1e8be3 = function (_0x35bbcb) {
+        outDpadHtml = function (_0x35bbcb) {
 
             ! function (_0x3d9906) {
 
@@ -964,6 +898,7 @@ var EJS = (function (modules) {
                 _0x1b5afa.innerHTML = '<div class="' ['concat'](getClassName('dpad-1'), '"><div class="')['concat'](getClassName('dpad-1-bg'), '"></div></div>\n    <div class="')['concat'](getClassName('dpad-2'), '"><div class="')['concat'](getClassName('dpad-2-bg'), '"></div></div>'), _0x391ce0['append'](_0x1b5afa), _0x391ce0['append'](_0x25a50e), addEvent(_0x25a50e, 'touchstart', _0x386078), addEvent(_0x25a50e, 'touchmove', _0x386078), addEvent(_0x25a50e, 'touchend', _0x54ac75), addEvent(_0x25a50e, 'touchcancel', _0x54ac75);
             }(_0x35bbcb);
         };
+
     function _0x163757(_0x501f7d) {
 
         return (_0x163757 = 'function' == typeof Symbol && 'symbol' == typeof Symbol['iterator'] ? function (_0x238f7e) {
@@ -974,103 +909,131 @@ var EJS = (function (modules) {
         })(_0x501f7d);
     }
 
-    function _0x761efe(_0x31a1ed, _0x35a474) {
+    class ejs_arraybuffer {
+        constructor(_0x31a1ed, _0x35a474) {
+            if ('object' === _0x163757(_0x31a1ed) && _0x31a1ed['files'] && (_0x31a1ed = _0x31a1ed['files'][0x0]), this['littleEndian'] = !0x1, this['offset'] = 0x0, this['_lastRead'] = null, 'object' === _0x163757(_0x31a1ed) && _0x31a1ed['name'] && _0x31a1ed['size']) {
+                if ('function' != typeof window['FileReader'])
+                    throw new Error('Incompatible Browser');
+                this['fileName'] = _0x31a1ed['name'], this['fileType'] = _0x31a1ed['type'], this['fileSize'] = _0x31a1ed['size'], this['_fileReader'] = new FileReader(), this['_fileReader']['marcFile'] = this, this['_fileReader']['addEventListener']('load', function () {
 
-        if ('object' === _0x163757(_0x31a1ed) && _0x31a1ed['files'] && (_0x31a1ed = _0x31a1ed['files'][0x0]), this['littleEndian'] = !0x1, this['offset'] = 0x0, this['_lastRead'] = null, 'object' === _0x163757(_0x31a1ed) && _0x31a1ed['name'] && _0x31a1ed['size']) {
-            if ('function' != typeof window['FileReader']) throw new Error('Incompatible Browser');
-            this['fileName'] = _0x31a1ed['name'], this['fileType'] = _0x31a1ed['type'], this['fileSize'] = _0x31a1ed['size'], this['_fileReader'] = new FileReader(), this['_fileReader']['marcFile'] = this, this['_fileReader']['addEventListener']('load', function () {
-
-                this['marcFile']['_u8array'] = new Uint8Array(this['result']), this['marcFile']['_dataView'] = new DataView(this['result']), _0x35a474 && _0x35a474['call']();
-            }, !0x1), this['_fileReader']['readAsArrayBuffer'](_0x31a1ed);
-        } else {
-            if ('object' === _0x163757(_0x31a1ed) && 'string' == typeof _0x31a1ed['fileName'] && 'boolean' == typeof _0x31a1ed['littleEndian']) {
-                this['fileName'] = _0x31a1ed['fileName'], this['fileType'] = _0x31a1ed['fileType'], this['fileSize'] = _0x31a1ed['fileSize'];
-                var _0x5a0c04 = new ArrayBuffer(_0x31a1ed);
-                this['_u8array'] = new Uint8Array(this['fileType']), this['_dataView'] = new DataView(this['fileType']), _0x31a1ed['copyToFile'](this, 0x0), _0x35a474 && _0x35a474['call']();
+                    this['marcFile']['_u8array'] = new Uint8Array(this['result']), this['marcFile']['_dataView'] = new DataView(this['result']), _0x35a474 && _0x35a474['call']();
+                }, !0x1), this['_fileReader']['readAsArrayBuffer'](_0x31a1ed);
             } else {
-                if ('object' === _0x163757(_0x31a1ed) && 'number' == typeof _0x31a1ed['byteLength']) this['fileName'] = 'file.bin', this['fileType'] = 'application/octet-stream', this['fileSize'] = _0x31a1ed['byteLength'], void 0x0 !== _0x31a1ed['buffer'] && (_0x31a1ed = _0x31a1ed['buffer']), this['_u8array'] = new Uint8Array(_0x31a1ed), this['_dataView'] = new DataView(_0x31a1ed), _0x35a474 && _0x35a474['call']();
-                else {
-                    if ('number' != typeof _0x31a1ed) throw new Error('Invalid source');
-                    this['fileName'] = 'file.bin', this['fileType'] = 'application/octet-stream', this['fileSize'] = _0x31a1ed, _0x5a0c04 = new ArrayBuffer(_0x31a1ed), (this['_u8array'] = new Uint8Array(_0x5a0c04), this['_dataView'] = new DataView(_0x5a0c04), _0x35a474 && _0x35a474['call']());
+                if ('object' === _0x163757(_0x31a1ed) && 'string' == typeof _0x31a1ed['fileName'] && 'boolean' == typeof _0x31a1ed['littleEndian']) {
+                    this['fileName'] = _0x31a1ed['fileName'], this['fileType'] = _0x31a1ed['fileType'], this['fileSize'] = _0x31a1ed['fileSize'];
+                    var _0x5a0c04 = new ArrayBuffer(_0x31a1ed);
+                    this['_u8array'] = new Uint8Array(this['fileType']), this['_dataView'] = new DataView(this['fileType']), _0x31a1ed['copyToFile'](this, 0x0), _0x35a474 && _0x35a474['call']();
+                } else {
+                    if ('object' === _0x163757(_0x31a1ed) && 'number' == typeof _0x31a1ed['byteLength'])
+                        this['fileName'] = 'file.bin', this['fileType'] = 'application/octet-stream', this['fileSize'] = _0x31a1ed['byteLength'], void 0x0 !== _0x31a1ed['buffer'] && (_0x31a1ed = _0x31a1ed['buffer']), this['_u8array'] = new Uint8Array(_0x31a1ed), this['_dataView'] = new DataView(_0x31a1ed), _0x35a474 && _0x35a474['call']();
+                    else {
+                        if ('number' != typeof _0x31a1ed)
+                            throw new Error('Invalid source');
+                        this['fileName'] = 'file.bin', this['fileType'] = 'application/octet-stream', this['fileSize'] = _0x31a1ed, _0x5a0c04 = new ArrayBuffer(_0x31a1ed), (this['_u8array'] = new Uint8Array(_0x5a0c04), this['_dataView'] = new DataView(_0x5a0c04), _0x35a474 && _0x35a474['call']());
+                    }
                 }
             }
         }
-    }
-    _0x761efe['IS_MACHINE_LITTLE_ENDIAN'] = (_0x1c59aa = new ArrayBuffer(0x2), new DataView(_0x1c59aa)['setInt16'](0x0, 0x100, !0x0), 0x100 === new Int16Array(_0x1c59aa)[0x0]), _0x761efe['prototype']['seek'] = function (_0x448d09) {
+        seek(_0x448d09) {
 
-        this['offset'] = _0x448d09;
-    }, _0x761efe['prototype']['skip'] = function (_0x3b38e1) {
-
-        this['offset'] += _0x3b38e1;
-    }, _0x761efe['prototype']['isEOF'] = function () {
-
-        return !(this['offset'] < this['fileSize']);
-    }, _0x761efe['prototype']['slice'] = function (_0x399f8a, _0x439f9c) {
-        var _0x41048c;
-        return _0x439f9c = _0x439f9c || this['fileSize'] - _0x399f8a, void 0x0 !== this['_u8array']['buffer']['slice'] ? ((_0x41048c = new _0x761efe(0x0))['fileSize'] = _0x439f9c, _0x41048c['_u8array'] = new Uint8Array(this['_u8array']['buffer']['slice'](_0x399f8a, _0x399f8a + _0x439f9c))) : (_0x41048c = new _0x761efe(_0x439f9c), this['copyToFile'](_0x41048c, _0x399f8a, _0x439f9c, 0x0)), _0x41048c['fileName'] = this['fileName'], _0x41048c['fileType'] = this['fileType'], _0x41048c['littleEndian'] = this['littleEndian'], _0x41048c;
-    }, _0x761efe['prototype']['copyToFile'] = function (_0x54d257, _0x23b48b, _0x2e15ac, _0x342caa) {
-
-        void 0x0 === _0x342caa && (_0x342caa = _0x23b48b), _0x2e15ac = _0x2e15ac || this['fileSize'] - _0x23b48b;
-        for (var _0x424317 = 0x0; _0x424317 < _0x2e15ac; _0x424317++) _0x54d257['_u8array'][_0x342caa + _0x424317] = this['_u8array'][_0x23b48b + _0x424317];
-    }, _0x761efe['prototype']['save'] = function () {
-        var _0x3d2138;
-        try {
-            _0x3d2138 = new Blob([this['_u8array']], {
-                'type': this['fileType']
-            });
-        } catch (_0x177f80) {
-            if (window['BlobBuilder'] = window['BlobBuilder'] || window['WebKitBlobBuilder'] || window['MozBlobBuilder'] || window['MSBlobBuilder'], 'InvalidStateError' !== _0x177f80['name'] || !window['BlobBuilder']) throw new Error('Incompatible Browser');
-            var _0x4f709a = new BlobBuilder();
-            _0x4f709a['append'](this['_u8array']['buffer']), _0x3d2138 = _0x4f709a['getBlob'](this['fileType']);
+            this['offset'] = _0x448d09;
         }
-        saveAs(_0x3d2138, this['fileName']);
-    }, _0x761efe['prototype']['readU8'] = function () {
+        skip(_0x3b38e1) {
 
-        return this['_lastRead'] = this['_u8array'][this['offset']], this['offset']++, this['_lastRead'];
-    }, _0x761efe['prototype']['readU16'] = function () {
+            this['offset'] += _0x3b38e1;
+        }
+        isEOF() {
 
-        return this['littleEndian'] ? this['_lastRead'] = this['_u8array'][this['offset']] + (this['_u8array'][this['offset'] + 0x1] << 0x8) : this['_lastRead'] = (this['_u8array'][this['offset']] << 0x8) + this['_u8array'][this['offset'] + 0x1], this['offset'] += 0x2, this['_lastRead'] >>> 0x0;
-    }, _0x761efe['prototype']['readU24'] = function () {
+            return !(this['offset'] < this['fileSize']);
+        }
+        slice(_0x399f8a, _0x439f9c) {
+            var _0x41048c;
+            return _0x439f9c = _0x439f9c || this['fileSize'] - _0x399f8a, void 0x0 !== this['_u8array']['buffer']['slice'] ? ((_0x41048c = new ejs_arraybuffer(0x0))['fileSize'] = _0x439f9c, _0x41048c['_u8array'] = new Uint8Array(this['_u8array']['buffer']['slice'](_0x399f8a, _0x399f8a + _0x439f9c))) : (_0x41048c = new ejs_arraybuffer(_0x439f9c), this['copyToFile'](_0x41048c, _0x399f8a, _0x439f9c, 0x0)), _0x41048c['fileName'] = this['fileName'], _0x41048c['fileType'] = this['fileType'], _0x41048c['littleEndian'] = this['littleEndian'], _0x41048c;
+        }
+        copyToFile(_0x54d257, _0x23b48b, _0x2e15ac, _0x342caa) {
 
-        return this['littleEndian'] ? this['_lastRead'] = this['_u8array'][this['offset']] + (this['_u8array'][this['offset'] + 0x1] << 0x8) + (this['_u8array'][this['offset'] + 0x2] << 0x10) : this['_lastRead'] = (this['_u8array'][this['offset']] << 0x10) + (this['_u8array'][this['offset'] + 0x1] << 0x8) + this['_u8array'][this['offset'] + 0x2], this['offset'] += 0x3, this['_lastRead'] >>> 0x0;
-    }, _0x761efe['prototype']['readU32'] = function () {
+            void 0x0 === _0x342caa && (_0x342caa = _0x23b48b), _0x2e15ac = _0x2e15ac || this['fileSize'] - _0x23b48b;
+            for (var _0x424317 = 0x0; _0x424317 < _0x2e15ac; _0x424317++)
+                _0x54d257['_u8array'][_0x342caa + _0x424317] = this['_u8array'][_0x23b48b + _0x424317];
+        }
+        save() {
+            var _0x3d2138;
+            try {
+                _0x3d2138 = new Blob([this['_u8array']], {
+                    'type': this['fileType']
+                });
+            } catch (_0x177f80) {
+                if (window['BlobBuilder'] = window['BlobBuilder'] || window['WebKitBlobBuilder'] || window['MozBlobBuilder'] || window['MSBlobBuilder'], 'InvalidStateError' !== _0x177f80['name'] || !window['BlobBuilder'])
+                    throw new Error('Incompatible Browser');
+                var _0x4f709a = new BlobBuilder();
+                _0x4f709a['append'](this['_u8array']['buffer']), _0x3d2138 = _0x4f709a['getBlob'](this['fileType']);
+            }
+            saveAs(_0x3d2138, this['fileName']);
+        }
+        readU8() {
 
-        return this['littleEndian'] ? this['_lastRead'] = this['_u8array'][this['offset']] + (this['_u8array'][this['offset'] + 0x1] << 0x8) + (this['_u8array'][this['offset'] + 0x2] << 0x10) + (this['_u8array'][this['offset'] + 0x3] << 0x18) : this['_lastRead'] = (this['_u8array'][this['offset']] << 0x18) + (this['_u8array'][this['offset'] + 0x1] << 0x10) + (this['_u8array'][this['offset'] + 0x2] << 0x8) + this['_u8array'][this['offset'] + 0x3], this['offset'] += 0x4, this['_lastRead'] >>> 0x0;
-    }, _0x761efe['prototype']['readBytes'] = function (_0x575b10) {
+            return this['_lastRead'] = this['_u8array'][this['offset']], this['offset']++, this['_lastRead'];
+        }
+        readU16() {
 
-        this['_lastRead'] = new Array(_0x575b10);
-        for (var _0x3280df = 0x0; _0x3280df < _0x575b10; _0x3280df++) this['_lastRead'][_0x3280df] = this['_u8array'][this['offset'] + _0x3280df];
-        return this['offset'] += _0x575b10, this['_lastRead'];
-    }, _0x761efe['prototype']['readString'] = function (_0x83afb5) {
+            return this['littleEndian'] ? this['_lastRead'] = this['_u8array'][this['offset']] + (this['_u8array'][this['offset'] + 0x1] << 0x8) : this['_lastRead'] = (this['_u8array'][this['offset']] << 0x8) + this['_u8array'][this['offset'] + 0x1], this['offset'] += 0x2, this['_lastRead'] >>> 0x0;
+        }
+        readU24() {
 
-        this['_lastRead'] = '';
-        for (var _0x126bb4 = 0x0; _0x126bb4 < _0x83afb5 && this['offset'] + _0x126bb4 < this['fileSize'] && this['_u8array'][this['offset'] + _0x126bb4] > 0x0; _0x126bb4++) this['_lastRead'] = this['_lastRead'] + String['fromCharCode'](this['_u8array'][this['offset'] + _0x126bb4]);
-        return this['offset'] += _0x83afb5, this['_lastRead'];
-    }, _0x761efe['prototype']['writeU8'] = function (_0x368acd) {
+            return this['littleEndian'] ? this['_lastRead'] = this['_u8array'][this['offset']] + (this['_u8array'][this['offset'] + 0x1] << 0x8) + (this['_u8array'][this['offset'] + 0x2] << 0x10) : this['_lastRead'] = (this['_u8array'][this['offset']] << 0x10) + (this['_u8array'][this['offset'] + 0x1] << 0x8) + this['_u8array'][this['offset'] + 0x2], this['offset'] += 0x3, this['_lastRead'] >>> 0x0;
+        }
+        readU32() {
 
-        this['_u8array'][this['offset']] = _0x368acd, this['offset']++;
-    }, _0x761efe['prototype']['writeU16'] = function (_0x594e82) {
+            return this['littleEndian'] ? this['_lastRead'] = this['_u8array'][this['offset']] + (this['_u8array'][this['offset'] + 0x1] << 0x8) + (this['_u8array'][this['offset'] + 0x2] << 0x10) + (this['_u8array'][this['offset'] + 0x3] << 0x18) : this['_lastRead'] = (this['_u8array'][this['offset']] << 0x18) + (this['_u8array'][this['offset'] + 0x1] << 0x10) + (this['_u8array'][this['offset'] + 0x2] << 0x8) + this['_u8array'][this['offset'] + 0x3], this['offset'] += 0x4, this['_lastRead'] >>> 0x0;
+        }
+        readBytes(_0x575b10) {
 
-        this['littleEndian'] ? (this['_u8array'][this['offset']] = 0xff & _0x594e82, this['_u8array'][this['offset'] + 0x1] = _0x594e82 >> 0x8) : (this['_u8array'][this['offset']] = _0x594e82 >> 0x8, this['_u8array'][this['offset'] + 0x1] = 0xff & _0x594e82), this['offset'] += 0x2;
-    }, _0x761efe['prototype']['writeU24'] = function (_0x581e87) {
+            this['_lastRead'] = new Array(_0x575b10);
+            for (var _0x3280df = 0x0; _0x3280df < _0x575b10; _0x3280df++)
+                this['_lastRead'][_0x3280df] = this['_u8array'][this['offset'] + _0x3280df];
+            return this['offset'] += _0x575b10, this['_lastRead'];
+        }
+        readString(_0x83afb5) {
 
-        this['littleEndian'] ? (this['_u8array'][this['offset']] = 0xff & _0x581e87, this['_u8array'][this['offset'] + 0x1] = (0xff00 & _0x581e87) >> 0x8, this['_u8array'][this['offset'] + 0x2] = (0xff0000 & _0x581e87) >> 0x10) : (this['_u8array'][this['offset']] = (0xff0000 & _0x581e87) >> 0x10, this['_u8array'][this['offset'] + 0x1] = (0xff00 & _0x581e87) >> 0x8, this['_u8array'][this['offset'] + 0x2] = 0xff & _0x581e87), this['offset'] += 0x3;
-    }, _0x761efe['prototype']['writeU32'] = function (_0x4cf7b9) {
+            this['_lastRead'] = '';
+            for (var _0x126bb4 = 0x0; _0x126bb4 < _0x83afb5 && this['offset'] + _0x126bb4 < this['fileSize'] && this['_u8array'][this['offset'] + _0x126bb4] > 0x0; _0x126bb4++)
+                this['_lastRead'] = this['_lastRead'] + String['fromCharCode'](this['_u8array'][this['offset'] + _0x126bb4]);
+            return this['offset'] += _0x83afb5, this['_lastRead'];
+        }
+        writeU8(_0x368acd) {
 
-        this['littleEndian'] ? (this['_u8array'][this['offset']] = 0xff & _0x4cf7b9, this['_u8array'][this['offset'] + 0x1] = (0xff00 & _0x4cf7b9) >> 0x8, this['_u8array'][this['offset'] + 0x2] = (0xff0000 & _0x4cf7b9) >> 0x10, this['_u8array'][this['offset'] + 0x3] = (0xff000000 & _0x4cf7b9) >> 0x18) : (this['_u8array'][this['offset']] = (0xff000000 & _0x4cf7b9) >> 0x18, this['_u8array'][this['offset'] + 0x1] = (0xff0000 & _0x4cf7b9) >> 0x10, this['_u8array'][this['offset'] + 0x2] = (0xff00 & _0x4cf7b9) >> 0x8, this['_u8array'][this['offset'] + 0x3] = 0xff & _0x4cf7b9), this['offset'] += 0x4;
-    }, _0x761efe['prototype']['writeBytes'] = function (_0x3eb2a0) {
+            this['_u8array'][this['offset']] = _0x368acd, this['offset']++;
+        }
+        writeU16(_0x594e82) {
 
-        for (var _0x5520af = 0x0; _0x5520af < _0x3eb2a0['length']; _0x5520af++) this['_u8array'][this['offset'] + _0x5520af] = _0x3eb2a0[_0x5520af];
-        this['offset'] += _0x3eb2a0['length'];
-    }, _0x761efe['prototype']['writeString'] = function (_0x52b17e, _0x4a5232) {
+            this['littleEndian'] ? (this['_u8array'][this['offset']] = 0xff & _0x594e82, this['_u8array'][this['offset'] + 0x1] = _0x594e82 >> 0x8) : (this['_u8array'][this['offset']] = _0x594e82 >> 0x8, this['_u8array'][this['offset'] + 0x1] = 0xff & _0x594e82), this['offset'] += 0x2;
+        }
+        writeU24(_0x581e87) {
 
-        _0x4a5232 = _0x4a5232 || _0x52b17e['length'];
-        for (var _0x91e34d = 0x0; _0x91e34d < _0x52b17e['length'] && _0x91e34d < _0x4a5232; _0x91e34d++) this['_u8array'][this['offset'] + _0x91e34d] = _0x52b17e['charCodeAt'](_0x91e34d);
-        for (; _0x91e34d < _0x4a5232; _0x91e34d++) this['_u8array'][this['offset'] + _0x91e34d] = 0x0;
-        this['offset'] += _0x4a5232;
-    };
-    var _0x2181ff = _0x761efe,
-        _0x20ca82 = 0x0;
+            this['littleEndian'] ? (this['_u8array'][this['offset']] = 0xff & _0x581e87, this['_u8array'][this['offset'] + 0x1] = (0xff00 & _0x581e87) >> 0x8, this['_u8array'][this['offset'] + 0x2] = (0xff0000 & _0x581e87) >> 0x10) : (this['_u8array'][this['offset']] = (0xff0000 & _0x581e87) >> 0x10, this['_u8array'][this['offset'] + 0x1] = (0xff00 & _0x581e87) >> 0x8, this['_u8array'][this['offset'] + 0x2] = 0xff & _0x581e87), this['offset'] += 0x3;
+        }
+        writeU32(_0x4cf7b9) {
+
+            this['littleEndian'] ? (this['_u8array'][this['offset']] = 0xff & _0x4cf7b9, this['_u8array'][this['offset'] + 0x1] = (0xff00 & _0x4cf7b9) >> 0x8, this['_u8array'][this['offset'] + 0x2] = (0xff0000 & _0x4cf7b9) >> 0x10, this['_u8array'][this['offset'] + 0x3] = (0xff000000 & _0x4cf7b9) >> 0x18) : (this['_u8array'][this['offset']] = (0xff000000 & _0x4cf7b9) >> 0x18, this['_u8array'][this['offset'] + 0x1] = (0xff0000 & _0x4cf7b9) >> 0x10, this['_u8array'][this['offset'] + 0x2] = (0xff00 & _0x4cf7b9) >> 0x8, this['_u8array'][this['offset'] + 0x3] = 0xff & _0x4cf7b9), this['offset'] += 0x4;
+        }
+        writeBytes(_0x3eb2a0) {
+
+            for (var _0x5520af = 0x0; _0x5520af < _0x3eb2a0['length']; _0x5520af++)
+                this['_u8array'][this['offset'] + _0x5520af] = _0x3eb2a0[_0x5520af];
+            this['offset'] += _0x3eb2a0['length'];
+        }
+        writeString(_0x52b17e, _0x4a5232) {
+
+            _0x4a5232 = _0x4a5232 || _0x52b17e['length'];
+            for (var _0x91e34d = 0x0; _0x91e34d < _0x52b17e['length'] && _0x91e34d < _0x4a5232; _0x91e34d++)
+                this['_u8array'][this['offset'] + _0x91e34d] = _0x52b17e['charCodeAt'](_0x91e34d);
+            for (; _0x91e34d < _0x4a5232; _0x91e34d++)
+                this['_u8array'][this['offset'] + _0x91e34d] = 0x0;
+            this['offset'] += _0x4a5232;
+        }
+    }
+    ejs_arraybuffer['IS_MACHINE_LITTLE_ENDIAN'] = (_0x1c59aa = new ArrayBuffer(0x2), new DataView(_0x1c59aa)['setInt16'](0x0, 0x100, !0x0), 0x100 === new Int16Array(_0x1c59aa)[0x0])
+    var _0x20ca82 = 0x0;
 
     function _0x445e21() {
 
@@ -1116,7 +1079,7 @@ var EJS = (function (modules) {
     }, _0x445e21['prototype']['export'] = function (_0x591388) {
 
         for (var _0x37c8b2 = 0x5, _0x14749d = 0x0; _0x14749d < this['records']['length']; _0x14749d++) this['records'][_0x14749d]['type'] === _0x20ca82 ? _0x37c8b2 += 0x8 : _0x37c8b2 += 0x5 + this['records'][_0x14749d]['data']['length'];
-        _0x37c8b2 += 0x3, this['truncate'] && (_0x37c8b2 += 0x3), tempFile = new _0x2181ff(_0x37c8b2), tempFile['fileName'] = _0x591388 + '.ips', tempFile['writeString']('PATCH');
+        _0x37c8b2 += 0x3, this['truncate'] && (_0x37c8b2 += 0x3), tempFile = new ejs_arraybuffer(_0x37c8b2), tempFile['fileName'] = _0x591388 + '.ips', tempFile['writeString']('PATCH');
         for (_0x14749d = 0x0; _0x14749d < this['records']['length']; _0x14749d++) {
             var _0x188618 = this['records'][_0x14749d];
             tempFile['writeU24'](_0x188618['offset']), _0x188618['type'] === _0x20ca82 ? (tempFile['writeU16'](0x0), tempFile['writeU16'](_0x188618['length']), tempFile['writeU8'](_0x188618['byte'])) : (tempFile['writeU16'](_0x188618['data']['length']), tempFile['writeBytes'](_0x188618['data']));
@@ -1130,7 +1093,7 @@ var EJS = (function (modules) {
                 var _0x2c0ab8 = this['records'][_0x404f02];
                 _0x2c0ab8['type'] === _0x20ca82 ? _0x2c0ab8['offset'] + _0x2c0ab8['length'] > _0x21bc72 && (_0x21bc72 = _0x2c0ab8['offset'] + _0x2c0ab8['length']) : _0x2c0ab8['offset'] + _0x2c0ab8['data']['length'] > _0x21bc72 && (_0x21bc72 = _0x2c0ab8['offset'] + _0x2c0ab8['data']['length']);
             }
-            _0x21bc72 === _0x58dba4['fileSize'] ? _0x36d089 = _0x58dba4['slice'](0x0, _0x58dba4['fileSize']) : (_0x36d089 = new _0x2181ff(_0x21bc72), _0x58dba4['copyToFile'](_0x36d089, 0x0));
+            _0x21bc72 === _0x58dba4['fileSize'] ? _0x36d089 = _0x58dba4['slice'](0x0, _0x58dba4['fileSize']) : (_0x36d089 = new ejs_arraybuffer(_0x21bc72), _0x58dba4['copyToFile'](_0x36d089, 0x0));
         }
         _0x58dba4['seek'](0x0);
         for (_0x404f02 = 0x0; _0x404f02 < this['records']['length']; _0x404f02++)
@@ -1238,7 +1201,7 @@ var EJS = (function (modules) {
     }, _0x238008['prototype']['apply'] = function (_0x57e076, _0x466b6e) {
 
         if (_0x466b6e && !this['validateSource'](_0x57e076)) throw new Error('error_crc_input');
-        for (var _0x1d8955 = new _0x2181ff(this['targetSize']), _0x35c896 = 0x0, _0x4ad173 = 0x0, _0x3f341a = 0x0; _0x3f341a < this['actions']['length']; _0x3f341a++) {
+        for (var _0x1d8955 = new ejs_arraybuffer(this['targetSize']), _0x35c896 = 0x0, _0x4ad173 = 0x0, _0x3f341a = 0x0; _0x3f341a < this['actions']['length']; _0x3f341a++) {
             var _0x141601 = this['actions'][_0x3f341a];
             if (_0x141601['type'] === _0x252f1b) _0x57e076['copyToFile'](_0x1d8955, _0x1d8955['offset'], _0x141601['length']), _0x1d8955['skip'](_0x141601['length']);
             else {
@@ -1264,7 +1227,7 @@ var EJS = (function (modules) {
         for (var _0x416358 = 0x0; _0x416358 < this['actions']['length']; _0x416358++) {
             _0x5775c6 += _0x2cbaf7(((_0x28dccd = this['actions'][_0x416358])['length'] - 0x1 << 0x2) + _0x28dccd['type']), _0x28dccd['type'] === _0x3295c2 ? _0x5775c6 += _0x28dccd['length'] : _0x28dccd['type'] !== _0x5e81be && _0x28dccd['type'] !== _0x3db972 || (_0x5775c6 += _0x2cbaf7((Math['abs'](_0x28dccd['relativeOffset']) << 0x1) + (_0x28dccd['relativeOffset'] < 0x0 ? 0x1 : 0x0)));
         }
-        var _0x3373ae = new _0x2181ff(_0x5775c6 += 0xc);
+        var _0x3373ae = new ejs_arraybuffer(_0x5775c6 += 0xc);
         _0x3373ae['fileName'] = _0x19844c + '.bps', _0x3373ae['littleEndian'] = !0x0, _0x3373ae['writeVLV'] = _0x46cc0e, _0x3373ae['writeString']('BPS1'), _0x3373ae['writeVLV'](this['sourceSize']), _0x3373ae['writeVLV'](this['targetSize']), _0x3373ae['writeVLV'](this['metaData']['length']), _0x3373ae['writeString'](this['metaData'], this['metaData']['length']);
         for (_0x416358 = 0x0; _0x416358 < this['actions']['length']; _0x416358++) {
             var _0x28dccd = this['actions'][_0x416358];
@@ -1335,7 +1298,7 @@ var EJS = (function (modules) {
         var _0x59a5b3 = _0x4bc4ab['length'];
         _0x59a5b3 += _0x1f9751(this['sizeInput']), _0x59a5b3 += _0x1f9751(this['sizeOutput']);
         for (var _0x28badf = 0x0; _0x28badf < this['records']['length']; _0x28badf++) _0x59a5b3 += _0x1f9751(this['records'][_0x28badf]['offset']), _0x59a5b3 += this['records'][_0x28badf]['XORdata']['length'] + 0x1;
-        _0x59a5b3 += 0xc, tempFile = new _0x2181ff(_0x59a5b3), tempFile['writeVLV'] = _0x23561c, tempFile['fileName'] = _0x5c3f14 + '.ups', tempFile['writeString'](_0x4bc4ab), tempFile['writeVLV'](this['sizeInput']), tempFile['writeVLV'](this['sizeOutput']);
+        _0x59a5b3 += 0xc, tempFile = new ejs_arraybuffer(_0x59a5b3), tempFile['writeVLV'] = _0x23561c, tempFile['fileName'] = _0x5c3f14 + '.ups', tempFile['writeString'](_0x4bc4ab), tempFile['writeVLV'](this['sizeInput']), tempFile['writeVLV'](this['sizeOutput']);
         for (_0x28badf = 0x0; _0x28badf < this['records']['length']; _0x28badf++) tempFile['writeVLV'](this['records'][_0x28badf]['offset']), tempFile['writeBytes'](this['records'][_0x28badf]['XORdata']), tempFile['writeU8'](0x0);
         return tempFile['littleEndian'] = !0x0, tempFile['writeU32'](this['checksumInput']), tempFile['writeU32'](this['checksumOutput']), tempFile['writeU32'](getCrc32int(tempFile, 0x0, !0x0)), tempFile;
     }, _0x50fdb2['prototype']['validateSource'] = function (_0xa205f4, _0x4721ec) {
@@ -1343,7 +1306,7 @@ var EJS = (function (modules) {
         return getCrc32int(_0xa205f4, _0x4721ec) === this['checksumInput'];
     }, _0x50fdb2['prototype']['apply'] = function (_0x1d2eff, _0x2767af) {
 
-        _0x2767af && this['validateSource'](_0x1d2eff), tempFile = new _0x2181ff(this['sizeOutput']), _0x1d2eff['copyToFile'](tempFile, 0x0, this['sizeInput']), _0x1d2eff['seek'](0x0);
+        _0x2767af && this['validateSource'](_0x1d2eff), tempFile = new ejs_arraybuffer(this['sizeOutput']), _0x1d2eff['copyToFile'](tempFile, 0x0, this['sizeInput']), _0x1d2eff['seek'](0x0);
         for (var _0x330f2c = 0x0; _0x330f2c < this['records']['length']; _0x330f2c++) {
             var _0x3e9369 = this['records'][_0x330f2c];
             tempFile['skip'](_0x3e9369['offset']), _0x1d2eff['skip'](_0x3e9369['offset']);
@@ -1363,7 +1326,7 @@ var EJS = (function (modules) {
         'saveFilenames': [],
         'FS': null,
         'Module': null,
-        'aspectRatio':null,
+        'aspectRatio': null,
         'memData': null,
         'wasmData': null,
         'coreFileData': {},
@@ -2049,7 +2012,6 @@ var EJS = (function (modules) {
         getDiskNum: null,
         setDisk: null,
         ejectDisk: null,
-        getGameCoreOptions: null,
         stateSupported: !0x1,
         saveSavFiles: null,
         contentCrc32: null,
@@ -3024,46 +2986,47 @@ var EJS = (function (modules) {
                                         if (!result['room_id']) throw result['error'];
                                         var nickname = result['nicknames'];
                                         nickname[0x1] && (ejs_Controller['playerName'] = nickname[0x1]);
-                                         _0x208711['classList']['remove'](getClassName('is-open'));
-                                         lobbyRoomHost = ejs_loader['servers'][_0x5f2c65]['url'];
-                                         webSocket = new WebSocket(lobbyRoomHost + 'room/' + result['room_id']);
-                                         T.on(webSocket,'open',(event)=>{
+                                        _0x208711['classList']['remove'](getClassName('is-open'));
+                                        lobbyRoomHost = ejs_loader['servers'][_0x5f2c65]['url'];
+                                        webSocket = new WebSocket(lobbyRoomHost + 'room/' + result['room_id']);
+                                        T.on(webSocket, 'open', (event) => {
 
                                             ejs_Controller['hideLoading']['call'](E);
                                             webSocket['send']('n:' ['concat'](encodeURIComponent(ejs_Controller['playerName'])));
-                                             E['playing'] || Array['from'](E['elements']['buttons']['play'])['forEach'](function (_0x5f4fd6) {
+                                            E['playing'] || Array['from'](E['elements']['buttons']['play'])['forEach'](function (_0x5f4fd6) {
 
                                                 E['callEvent'](_0x5f4fd6, 'click');
                                             });
                                             ejs_Controller['netPlayClient']();
-                                             ejs_Controller['stopLoadRooms']();
-                                             ejs_Controller['openRoom'](E);
-                                             _0x2fb1d8();
+                                            ejs_Controller['stopLoadRooms']();
+                                            ejs_Controller['openRoom'](E);
+                                            _0x2fb1d8();
                                         });
-                                        T.on(webSocket,'close',(event)=>{
+                                        T.on(webSocket, 'close', (event) => {
 
                                             ejs_Controller['hideLoading']['call'](E), ejs_Controller['loadRoomsList'](), _0x112810(), 0x3ed != event['code'] && (_0x26d33b['querySelector']('#modal-7d8fd50ed642340b-content').innerHTML = 'Error', _0x3e3214['show']('modal-7d8fd50ed642340b', {
                                                 'closeTrigger': 'data-modal-close'
                                             }));
-                                        
+
                                         });
-                                        T.on(webSocket,'message',(event)=>{
-                                            _0x2941ff(event);});
-                                        T.on(webSocket,'error',event=>console.log(event));
-                                        
+                                        T.on(webSocket, 'message', (event) => {
+                                            _0x2941ff(event);
+                                        });
+                                        T.on(webSocket, 'error', event => console.log(event));
+
                                         ejs_Controller['netPlayUsers'][0x0] = nickname[0x0];
-                                         ejs_Controller['netPlayUsers'][0x1] = nickname[0x1];
-                                          ejs_Controller['netPlayRoomname'] = result['room_name'];
-                                           ejs_Controller['netPlayPassword'] = _0x4c414d;
-                                            _0x5be3ac();
+                                        ejs_Controller['netPlayUsers'][0x1] = nickname[0x1];
+                                        ejs_Controller['netPlayRoomname'] = result['room_name'];
+                                        ejs_Controller['netPlayPassword'] = _0x4c414d;
+                                        _0x5be3ac();
                                     }
 
                                 },
                                 error(error) {
 
                                     ejs_Controller['hideLoading']['call'](E);
-                                     _0x26d33b['querySelector']('#modal-7d8fd50ed642340b-content').innerHTML = 'Error: ' + ('string' == typeof error ? error : '');
-                                      _0x3e3214['show']('modal-7d8fd50ed642340b', {
+                                    _0x26d33b['querySelector']('#modal-7d8fd50ed642340b-content').innerHTML = 'Error: ' + ('string' == typeof error ? error : '');
+                                    _0x3e3214['show']('modal-7d8fd50ed642340b', {
                                         'closeTrigger': 'data-modal-close'
                                     });
 
@@ -3118,7 +3081,7 @@ var EJS = (function (modules) {
                                         if (_0x6358e6 && ejs_loader['servers'][_0x6358e6]) {
                                             var _0x3c14fb = ejs_loader['servers'][_0x6358e6]['name'];
                                             _0x2265a8.innerHTML = '<td>' ['concat'](_0x3c14fb, '</td><td>')['concat'](_0x588cef)['concat'](_0x4a53f3)['concat'](_0x429b30['name'], '</td><td>')['concat'](_0x429b30['players'], '/2</td><td>')['concat'](_0x3b7651, '</td>');
-                                             E['addEvent'](_0x2265a8['querySelector'](getCtrlclassName('btn-join-room', !0)), 'click', _0x22cdbf), _0x55392d['appendChild'](_0x2265a8);
+                                            E['addEvent'](_0x2265a8['querySelector'](getCtrlclassName('btn-join-room', !0)), 'click', _0x22cdbf), _0x55392d['appendChild'](_0x2265a8);
                                         }
                                     }), _0x55392d['querySelectorAll']('tr')['forEach'](function (_0x326d67) {
 
@@ -3262,31 +3225,31 @@ var EJS = (function (modules) {
             }
         },
         setDiskContainer: function () {
-            var _0x860c5a = this;
-            if (!0x1 === ejs_loader['diskControl']) return _0x860c5a['elements']['container']['querySelector'](getClassName('ejs__disk', 1))['remove'](), !0x1;
+            var E = this;
+            if (!0x1 === ejs_loader['diskControl']) return E['elements']['container']['querySelector'](getClassName('ejs__disk', 1))['remove'](), !0x1;
             if (ejs_Controller['getDiskNum'] && ejs_Controller['getDiskNum']() > 0x1) {
-                for (var _0x162ee6, _0x2d4c03 = ejs_Controller['getDiskNum'](), _0x4b6173 = _0x860c5a['elements']['container']['querySelector']('.' ['concat'](getClassName('ejs__disk__container'), ' > div')), _0x20eb86 = function (_0x483aa9) {
+                for (var _0x162ee6, _0x2d4c03 = ejs_Controller['getDiskNum'](), _0x4b6173 = E['elements']['container']['querySelector']('.' ['concat'](getClassName('ejs__disk__container'), ' > div')), _0x20eb86 = function (_0x483aa9) {
 
                         (_0x162ee6 = createElm('div', {
                             'class': getClassName('ejs__disk__index')
-                        })).innerHTML = 'Disk ' ['concat'](_0x483aa9), addEvent['call'](_0x860c5a, _0x162ee6, 'click touchstart', function (_0x5310a2) {
+                        })).innerHTML = 'Disk ' ['concat'](_0x483aa9), E['addEvent'](_0x162ee6, 'click touchstart', function (_0x5310a2) {
 
                             ejs_Controller['ejectDisk'] && ejs_Controller['ejectDisk'](), ejs_Controller['setDisk'](_0x483aa9 - 0x1), ejs_Controller['ejectDisk'] && setTimeout(function () {
 
                                 ejs_Controller['ejectDisk']();
-                            }, 0x12c), 'psx' == _0x860c5a['system'] || 'psx-legacy' == _0x860c5a['system'] ? (_0x860c5a['elements']['buttons']['disk']['querySelector']('span').innerHTML = 'Current Disc: ' + _0x483aa9, _0x88c152['show'](_0x860c5a['elements']['container'], 'Change Disc: ' + _0x483aa9)) : (_0x860c5a['elements']['buttons']['disk']['querySelector']('span').innerHTML = 'Current Disk: ' + _0x483aa9, _0x88c152['show'](_0x860c5a['elements']['container'], 'Change Disk: ' + _0x483aa9)), toggleHidden(_0x860c5a['elements']['container']['querySelector'](getClassName('ejs__disk__container', 1)), !0x0);
+                            }, 0x12c), 'psx' == E['system'] || 'psx-legacy' == E['system'] ? (E['elements']['buttons']['disk']['querySelector']('span').innerHTML = 'Current Disc: ' + _0x483aa9, _0x88c152['show'](E['elements']['container'], 'Change Disc: ' + _0x483aa9)) : (E['elements']['buttons']['disk']['querySelector']('span').innerHTML = 'Current Disk: ' + _0x483aa9, _0x88c152['show'](E['elements']['container'], 'Change Disk: ' + _0x483aa9)), toggleHidden(E['elements']['container']['querySelector'](getClassName('ejs__disk__container', 1)), !0x0);
                             var _0x18598e = getClassName('ejs__tooltip--visible'),
-                                _0x1200ed = _0x860c5a['elements']['buttons']['disk']['querySelector'](getClassName('ejs__tooltip', 1));
+                                _0x1200ed = E['elements']['buttons']['disk']['querySelector'](getClassName('ejs__tooltip', 1));
                             elmAddRemoveClass(_0x1200ed, _0x18598e, !0x0), setTimeout(function () {
                                 elmAddRemoveClass(_0x1200ed, _0x18598e, !0x1);
                             }, 0x1388);
                         }), _0x4b6173['appendChild'](_0x162ee6);
                     }, _0x464a6e = _0x2d4c03; _0x464a6e >= 0x1; _0x464a6e--) _0x20eb86(_0x464a6e);
-                _0x860c5a['elements']['buttons']['disk']['querySelector']('span').innerHTML = 'Current Disk: 1', addEvent['call'](_0x860c5a, _0x860c5a['elements']['buttons']['disk'], 'click', function (_0x194d3d) {
+                E['elements']['buttons']['disk']['querySelector']('span').innerHTML = 'Current Disk: 1', E['addEvent'](E['elements']['buttons']['disk'], 'click', function (_0x194d3d) {
 
-                    toggleHidden(_0x860c5a['elements']['container']['querySelector'](getClassName('ejs__disk__container', 1)));
+                    toggleHidden(E['elements']['container']['querySelector'](getClassName('ejs__disk__container', 1)));
                 });
-            } else _0x860c5a['elements']['container']['querySelector'](getClassName('ejs__disk', 1))['remove']();
+            } else E['elements']['container']['querySelector'](getClassName('ejs__disk', 1))['remove']();
         },
         initKeyboard: function () {
             var _0x598c89 = this,
@@ -3828,7 +3791,7 @@ var EJS = (function (modules) {
                     //需要触摸板  异步
                     E['callaction']('JoystickGamepad');
                 }
-                _0x1e8be3({
+                outDpadHtml({
                     'container': E['Selector']('.' ['concat'](getClassName('ejs-virtual-gamepad'), ' .')['concat'](getClassName('dpad-container'))),
                     'event': function (_0x392b90, _0x1b225a, _0x4d23be, _0x289e63) {
 
@@ -3901,8 +3864,8 @@ var EJS = (function (modules) {
                     div.style.color = this['color'];
                     var color = getComputedStyle(div).color;
                     if (color) {
-                        I.setStyle(this['elements']['container'],{
-                            '--ejs-primary-color':color.replace(/rgb\((.+?)\)$/, '$1')
+                        I.setStyle(this['elements']['container'], {
+                            '--ejs-primary-color': color.replace(/rgb\((.+?)\)$/, '$1')
                         });
                     }
                     div.remove();
@@ -3910,7 +3873,7 @@ var EJS = (function (modules) {
                 this['elements']['wrapper'] = createElm('div', {
                     'class': this['config']['classNames']['video']
                 });
-                _0x3266c5(this['game'], this['elements']['wrapper']);
+                appendEJSChild(this['game'], this['elements']['wrapper']);
 
                 if (E['system'] != 'nds') eventTouchList.forEach(v => T.on(this['elements']['wrapper'], v, e => e.target == this['elements']['wrapper'] && T.stopEvent(e)));
                 if ('video' !== E['game']['tagName']['toLocaleLowerCase']()) {
@@ -3976,7 +3939,7 @@ var EJS = (function (modules) {
 
                 0x0 === _0x550e23 && E['addEvent'](_0x11755d, 'click', function (_0x204b73) {
                     var _0x130f28 = ejs_Controller['getScreenData']();
-                    T.down(E['startName'] + '.png',_0x130f28);
+                    T.down(E['startName'] + '.png', _0x130f28);
                     //_0xe3873()(new Blob([_0x130f28]), E['startName'] + '.png');
                     return !0x1;
                 }), 0x1 === _0x550e23 && E['addEvent'](_0x11755d, 'click', function (_0x3ad3cd) {
@@ -4198,7 +4161,6 @@ var EJS = (function (modules) {
             ejs_Controller['restartGame'] = Module['cwrap']('system_restart', '', []);
             ejs_Controller['currentFrameNum'] = Module['cwrap']('get_current_frame_count', '', []);
             Module['_cmd_savefiles'] && (ejs_Controller['saveSavFiles'] = Module['cwrap']('cmd_savefiles', '', []));
-            Module['_get_core_options'] && (ejs_Controller['getGameCoreOptions'] = Module['cwrap']('get_core_options', 'string', []));
             ejs_Controller['systemPause'] = function (_0x4c41aa) {
                 return !0x1;
             }, ejs_Controller['controllers'] = ejs_data['storage']['get']('controllers'), ejs_Controller['controllers'] || (ejs_Controller['controllers'] = ejs_Controller['defaultControllers']), ejs_Controller['remappingAxis'] = ejs_data['storage']['get']('remappingAxis'), ejs_Controller['remappingAxis'] || (ejs_Controller['remappingAxis'] = {});
@@ -4217,7 +4179,7 @@ var EJS = (function (modules) {
         }
     });
     var ejs_data = {
-        coreoptions:{},
+        coreoptions: {},
         'storage': null,
         'coreOptionsValues': {},
         'contextMenu': null,
@@ -4278,12 +4240,9 @@ var EJS = (function (modules) {
             }
             return _0x4a2c7d;
         },
-        'getCoreOptionsValues': function () {
-            var _0xee74d2 = ejs_data['storage']['get']('core-options');
-            return I.empty(_0xee74d2) && (_0xee74d2 = {}), _0xee74d2;
-        },
         getCoreOptions(bool) {
-            var E=this,CoreOptionData = {};
+            var E = this,
+                CoreOptionData = {};
             switch (E['system']) {
                 case 'nes':
                     CoreOptionData['fceumm_palette'] = {
@@ -4509,8 +4468,8 @@ var EJS = (function (modules) {
                 default:
                     CoreOptionData = {};
             };
-            if(ejs_loader['coreOptions'] && I.array(ejs_loader['coreOptions'])){
-                I.toArr(ejs_loader['coreOptions'],(entry,index)=>{
+            if (ejs_loader['coreOptions'] && I.array(ejs_loader['coreOptions'])) {
+                I.toArr(ejs_loader['coreOptions'], (entry, index) => {
                     CoreOptionData[entry['key']] = {
                         'label': entry['label'],
                         'options': entry['options'],
@@ -4519,45 +4478,7 @@ var EJS = (function (modules) {
                     };
                 });
             }
-            if(ejs_Controller['RF']('CM','get_core_options') === true){
-                var coresText  = ejs_Controller['RF']('get_core_options').trim().split('\n');
-                if(bool){
-                    CoreOptionData = {};
-                    console.log(bool);
-                }
-                !ejs_data['coresinstall']&&I.toArr(coresText,(entry, index)=>{
-                    var coreData = entry.trim()['split'](';'),
-                        coreKey = coreData[0].trim(),
-                        coreLable = coreKey&&coreKey.toString(),
-                        coreOption = coreData[1]&&coreData[1].split('|').map(e=>e.trim()).filter(e=>!I.empty(e)),
-                        coreDefault = coreOption&&coreOption[0]||undefined;
-                    if(ejs_data['coreoptions'][coreKey])return;
-                    if(coreLable&&coreOption.length>0){
-                        //itemData['default'] = itemData['options'][0];
-                    if(E['system']=='gba'){
-                        coreLable = coreLable.replace(/(mgba_)/g,'').replace(/_/g,' ').trim();
-                    }else if (0x0 === coreKey['indexOf']('fba-dipswitch-') || 0x0 === coreKey['indexOf']('fbneo-dipswitch-')) {
-                        var _0x3f3187 = coreData[0x1]['split']('|'),
-                            _0x573b9f = coreKey['replace'](/_/g, ' ')['replace'](/.+\-(.+)/, '$1'),
-                            _0x36f894 = 0x0 == coreKey['indexOf']('fbneo-dipswitch-') ? _0x3f3187['slice'](0x0, -0x1) : _0x3f3187['slice'](0x1, -0x1),
-                            _0x446996 = _0x3f3187[0x0]['replace']('(Default) ', '');
-                        CoreOptionData[coreKey] = {
-                            'label': _0x573b9f,
-                            'options': _0x36f894,
-                            'default': _0x446996,
-                            'netplay': !0x0
-                        };
-                    }
-                    CoreOptionData[coreKey] = {
-                        label:coreLable,
-                        options:coreOption,
-                        default:coreDefault
-                    };
-
-                }
-                });
-                if(coresText.length>0||bool)ejs_data['coresinstall']=true;
-            }
+            I.assign(ejs_data['coreoptions'], CoreOptionData);
             return CoreOptionData;
         },
         'supportNetPlay': function () {
@@ -4567,35 +4488,16 @@ var EJS = (function (modules) {
         'isNetPlay': function () {},
         'findElements': function () {
             const E = this;
-            var
-                buttons = E['config']['selectors']['buttons'];
-            try {
-                E['elements']['controls'] = E['Selector'](E['config']['selectors']['controls']['wrapper']);
-                E['elements']['buttons'] = {
-                    'play': E['SelectorAll'](buttons['play']),
-                    'pause': E['Selector'](buttons['pause']),
-                    'restart': E['Selector'](buttons['restart']),
-                    'mute': E['Selector'](buttons['mute']),
-                    'settings': E['Selector'](buttons['settings']),
-                    'fullscreen': E['Selector'](buttons['fullscreen']),
-                    'saveState': E['Selector'](buttons['saveState']),
-                    'loadState': E['Selector'](buttons['loadState']),
-                    'disk': E['Selector']('[data-btn="disk"]'),
-                    'gamepad': E['Selector'](buttons['gamepad']),
-                    'netplay': E['Selector'](buttons['netplay']),
-                    'cheat': E['Selector'](buttons['cheat']),
-                    'cache': E['Selector'](buttons['cache']),
-                    'autosave': E['Selector'](buttons['autosave']),
-                    'recorder': E['Selector'](buttons['recorder']),
-                    'fastforward': E['Selector'](buttons['fastforward'])
-                };
-                E['elements']['inputs'] = {
-                    'volume': E['Selector'](E['config']['selectors']['inputs']['volume'])
-                };
-                return !0x0;
-            } catch (_0x6ec76b) {
-                return E['debug']['warn']('It looks like there is a problem with your custom controls HTML', _0x6ec76b), !0x1;
-            }
+            E['elements']['controls'] = E['Selector'](E['config']['selectors']['controls']['wrapper']);
+            I.toArr(['play', 'pause', 'restart', 'mute', 'settings', 'fullscreen', 'saveState', 'loadState', 'disk', 'gamepad', 'netplay', 'cheat', 'cache', 'autosave', 'recorder', 'fastforward'], v => {
+                let x = v.replace(/([A-Z])/, (a, b, c) => '-' + b.toLocaleLowerCase()),
+                    elm = E['SelectorAll']('[data-btn="' + x + '"]');
+                if (elm) E['elements']['buttons'] = elm;
+            });
+            E['elements']['inputs'] = {
+                'volume': E['Selector'](E['config']['selectors']['inputs']['volume'])
+            };
+            return !0x0;
         },
         'createIcon': function (name, _0xece231) {
             var ElmSvg = document['createElementNS']('http://www.w3.org/2000/svg', 'svg');
@@ -4618,8 +4520,9 @@ var EJS = (function (modules) {
             return createElm('span', _0x3ee770, _0x580924);
         },
         'createBadge': function (_0x5bd767) {
-
+            
             if (I.empty(_0x5bd767)) return null;
+            console.log(_0x5bd767);
             var _0x3974e6 = createElm('span', {
                 'class': this['config']['classNames']['menu']['value']
             });
@@ -4655,10 +4558,10 @@ var EJS = (function (modules) {
                 'class': getClassName('icon--pressed')
             })), _0xa67a7a['appendChild'](ejs_data['createLabel']['call'](this, _0x18cedc, {
                 'class': getClassName('icon--not-pressed')
-            }))) : (_0xa67a7a['appendChild'](ejs_data['createIcon']['call'](this, _0x3c0ebc)), _0xa67a7a['appendChild'](ejs_data['createLabel']['call'](this, _0x18cedc))), _0x288469(_0x15b7b8, _0x4d33e3(this['config']['selectors']['buttons'][_0x4fabd0], _0x15b7b8)), setElmAttr(_0xa67a7a, _0x15b7b8), 'play' === _0x4fabd0 ? (I.array(this['elements']['buttons'][_0x4fabd0]) || (this['elements']['buttons'][_0x4fabd0] = []), this['elements']['buttons'][_0x4fabd0]['push'](_0xa67a7a)) : this['elements']['buttons'][_0x4fabd0] = _0xa67a7a, _0xa67a7a;
+            }))) : (_0xa67a7a['appendChild'](ejs_data['createIcon']['call'](this, _0x3c0ebc)), _0xa67a7a['appendChild'](ejs_data['createLabel']['call'](this, _0x18cedc))), _0x288469(_0x15b7b8, resultAttrData(this['config']['selectors']['buttons'][_0x4fabd0], _0x15b7b8)), setElmAttr(_0xa67a7a, _0x15b7b8), 'play' === _0x4fabd0 ? (I.array(this['elements']['buttons'][_0x4fabd0]) || (this['elements']['buttons'][_0x4fabd0] = []), this['elements']['buttons'][_0x4fabd0]['push'](_0xa67a7a)) : this['elements']['buttons'][_0x4fabd0] = _0xa67a7a, _0xa67a7a;
         },
         'createRange': function (_0x118684, _0x55c993) {
-            var _0x884a80 = createElm('input', _0x288469(_0x4d33e3(this['config']['selectors']['inputs'][_0x118684]), {
+            var _0x884a80 = createElm('input', _0x288469(resultAttrData(this['config']['selectors']['inputs'][_0x118684]), {
                 'type': 'range',
                 'min': 0x0,
                 'max': 0x64,
@@ -4680,7 +4583,7 @@ var EJS = (function (modules) {
                 if ([0x20, 0x26, 0x27, 0x28]['includes'](_0x3a1488['which']) && (_0x3a1488['preventDefault'](), _0x3a1488['stopPropagation'](), 'keydown' !== _0x3a1488['type'])) {
                     var _0xedfdac, _0xc18a0f = elmInNodeList(_0x330429, '[role="menuitemradio"]');
                     if (!_0xc18a0f && [0x20, 0x27]['includes'](_0x3a1488['which'])) ejs_data['showMenuPanel']['call'](_0xb35c69, _0x7ff691, !0x0);
-                    else 0x20 !== _0x3a1488['which'] && (0x28 === _0x3a1488['which'] || _0xc18a0f && 0x27 === _0x3a1488['which'] ? (_0xedfdac = _0x330429['nextElementSibling'], I.elm(_0xedfdac) || (_0xedfdac = _0x330429['parentNode']['firstElementChild'])) : (_0xedfdac = _0x330429['previousElementSibling'], I.elm(_0xedfdac) || (_0xedfdac = _0x330429['parentNode']['lastElementChild'])), _0x348ac8['call'](_0xb35c69, _0xedfdac, !0x0));
+                    else 0x20 !== _0x3a1488['which'] && (0x28 === _0x3a1488['which'] || _0xc18a0f && 0x27 === _0x3a1488['which'] ? (_0xedfdac = _0x330429['nextElementSibling'], I.elm(_0xedfdac) || (_0xedfdac = _0x330429['parentNode']['firstElementChild'])) : (_0xedfdac = _0x330429['previousElementSibling'], I.elm(_0xedfdac) || (_0xedfdac = _0x330429['parentNode']['lastElementChild'])), tabFocusAddRemoveClass['call'](_0xb35c69, _0xedfdac, !0x0));
                 }
             }, !0x1);
             addEvent(_0x330429, 'keyup', function (_0x198ac7) {
@@ -4689,45 +4592,55 @@ var EJS = (function (modules) {
             });
         },
         'createMenuItem': function (_0x58afec) {
-            var _0x5df23e = this,
-                _0x530751 = _0x58afec['value'],
-                _0x4eba24 = _0x58afec['list'],
-                _0x5e9f2b = _0x58afec['type'],
-                _0x5a91d6 = _0x58afec['title'],
-                _0x10b2d1 = _0x58afec['badge'],
-                _0x9dc0cf = void 0x0 === _0x10b2d1 ? null : _0x10b2d1,
+            var E = this,
+                optValue = _0x58afec['value'],
+                optList = _0x58afec['list'],
+                optType = _0x58afec['type'],
+                optTitle = _0x58afec['title'],
+                optbadge = _0x58afec['badge'],
+                ElmBadge = void 0x0 === optbadge ? null : optbadge,
                 _0xb9dfbf = _0x58afec['checked'],
                 _0x4f957f = void 0x0 !== _0xb9dfbf && _0xb9dfbf,
-                _0x4d8f4c = _0x4d33e3(this['config']['selectors']['inputs'][_0x5e9f2b]),
-                _0x151f44 = createElm('button', _0x288469(_0x4d8f4c, {
+                _0x4d8f4c = resultAttrData(this['config']['selectors']['inputs'][optType]),
+                ElmBtn = createElm('button', _0x288469(_0x4d8f4c, {
                     'type': 'button',
                     'role': 'menuitemradio',
                     'class': '' ['concat'](this['config']['classNames']['control'], ' ')['concat'](_0x4d8f4c['class'] ? _0x4d8f4c['class'] : '')['trim'](),
                     'aria-checked': _0x4f957f,
-                    'value': _0x530751
+                    'value': optValue
                 })),
-                _0x368d75 = createElm('span');
-            _0x368d75.innerHTML = T.getLang(_0x5a91d6), I.elm(_0x9dc0cf) && _0x368d75['appendChild'](_0x9dc0cf), _0x151f44['appendChild'](_0x368d75), Object['defineProperty'](_0x151f44, 'checked', {
+                ElmSpan = createElm('span');
+            ElmSpan.innerHTML = T.getLang(optTitle);
+             I.elm(ElmBadge) && ElmSpan['appendChild'](ElmBadge);
+             ElmBtn['appendChild'](ElmSpan);
+             Object['defineProperty'](ElmBtn, 'checked', {
                 'enumerable': !0x0,
                 'get': function () {
 
-                    return 'true' === _0x151f44['getAttribute']('aria-checked');
+                    return 'true' === ElmBtn['getAttribute']('aria-checked');
                 },
-                'set': function (_0xcf9b2d) {
+                'set': function (bool) {
 
-                    _0xcf9b2d && Array['from'](_0x151f44['parentNode']['children'])['filter'](function (_0x145fb3) {
-                        return elmInNodeList(_0x145fb3, '[role="menuitemradio"]');
-                    })['forEach'](function (_0x18304d) {
+                    bool && Array['from'](ElmBtn['parentNode']['children'])['filter'](function (nelm) {
+                        return elmInNodeList(nelm, '[role="menuitemradio"]');
+                    })['forEach'](function (nelm) {
 
-                        return _0x18304d['setAttribute']('aria-checked', 'false');
-                    }), _0x151f44['setAttribute']('aria-checked', _0xcf9b2d ? 'true' : 'false');
+                        return nelm['setAttribute']('aria-checked', 'false');
+                    });
+                    ElmBtn['setAttribute']('aria-checked', bool ? 'true' : 'false');
                 }
             });
-            var _0x448afd = ejs_data['coreoptions'];
-            this['listeners']['bind'](_0x151f44, 'click keyup', function (_0x1010f9) {
-
-                I.keyevt(_0x1010f9) && 0x20 !== _0x1010f9['which'] || (_0x1010f9['preventDefault'](), _0x1010f9['stopPropagation'](), _0x151f44['checked'] = !0x0, Object['keys'](ejs_data['normalOptions'])['includes'](_0x5e9f2b) && ejs_data['updateNormalOptions']['call'](_0x5df23e, _0x5e9f2b, _0x530751), Object['keys'](_0x448afd)['includes'](_0x5e9f2b) && (_0x448afd[_0x5e9f2b]['netplay'] && ejs_Controller['connected'] ? ejs_Controller['connection']['isInitiator'] && ejs_data['updateCoreOptions']['call'](_0x5df23e, _0x5e9f2b, _0x530751) : ejs_data['updateCoreOptions']['call'](_0x5df23e, _0x5e9f2b, _0x530751)), ejs_data['showMenuPanel']['call'](_0x5df23e, 'home', I.keyevt(_0x1010f9)));
-            }, _0x5e9f2b, !0x1), ejs_data['bindMenuItemShortcuts']['call'](this, _0x151f44, _0x5e9f2b), _0x4eba24['appendChild'](_0x151f44);
+            var coreOptions = ejs_data['coreoptions'];
+            this['listeners']['bind'](ElmBtn, 'click keyup', function (event) {
+                if (!I.keyevt(event) || 0x20 === event['which']) {
+                    console.log(event['preventDefault']);
+                    ElmBtn['checked'] = !0x0;
+                    Object['keys'](ejs_data['normalOptions'])['includes'](optType) && ejs_data['updateNormalOptions']['call'](E, optType, optValue);
+                    Object['keys'](coreOptions)['includes'](optType) && (coreOptions[optType]['netplay'] && ejs_Controller['connected'] ? ejs_Controller['connection']['isInitiator'] && ejs_data['updateCoreOptions']['call'](E, optType, optValue) : ejs_data['updateCoreOptions']['call'](E, optType, optValue));
+                    ejs_data['showMenuPanel']['call'](E, 'home', I.keyevt(event))
+                }
+            }, optType, !0x1);
+            ejs_data['bindMenuItemShortcuts']['call'](this, ElmBtn, optType), optList['appendChild'](ElmBtn);
         },
         'updateVolume': function () {
 
@@ -4770,18 +4683,25 @@ var EJS = (function (modules) {
             }
 
         },
-        'updateCoreOptions': function (_0x4b7720, _0x1a8f4f) {
+        'updateCoreOptions': function (coreKey, coreData) {
             console.log('更新 应用核心');
             if ('nds' == this['system'] && !EnvVariable['wasm']) return !0x0;
-            if (ejs_data['coreOptionsValues'][_0x4b7720] = _0x1a8f4f, 'psx' === this['system'] ? (setTimeout(function () {
+            if(!ejs_data['storage']['data']['core-options'])ejs_data['storage']['data']['core-options'] = {};
+            ejs_data['storage']['data']['core-options'][coreKey] = coreData;
+            if('psx' === this['system']){
+                setTimeout(function () {
 
-                    'pcsx_rearmed_frameskip' != _0x4b7720 && 'pcsx_rearmed_memcard2' != _0x4b7720 && ejs_Controller['CF']('setVariable', _0x4b7720, _0x1a8f4f);
-                }, 0x64), setTimeout(function () {}, 0xc8)) : setTimeout(function () {
+                'pcsx_rearmed_frameskip' != coreKey && 'pcsx_rearmed_memcard2' != coreKey && ejs_Controller['CF']('setVariable', coreKey, coreData);
+            }, 0x64), setTimeout(function () {}, 0xc8)
+            }else{
+                setTimeout(function () {
 
-                    ejs_Controller['CF']('setVariable', _0x4b7720, _0x1a8f4f);
-                }, 0x32), 'nds' === this['system'] && EnvVariable['wasm']) {
+                ejs_Controller['CF']('setVariable', coreKey, coreData);
+            }, 0x32)
+            }
+            if ('nds' === this['system'] && EnvVariable['wasm']) {
                 var ElmCanvas = this['elements']['wrapper']['querySelector']('canvas');
-                if ('screen_rotation' === _0x4b7720) switch (ElmCanvas['style']['transform'] = 'rotate(' + _0x1a8f4f + 'deg)', _0x1a8f4f) {
+                if ('screen_rotation' === coreKey) switch (ElmCanvas['style']['transform'] = 'rotate(' + coreData + 'deg)', coreData) {
                     case '0':
                         ejs_Controller['CF']('setVariable', 'desmume_input_rotation', '0');
                         break;
@@ -4797,30 +4717,30 @@ var EJS = (function (modules) {
             }
             if ('arcade' === this['system'] || 'fba0.2.97.29' === this['system']) {
                 var ElmCanvas = this['elements']['wrapper']['querySelector']('canvas');
-                ElmCanvas['height'] = 'fba-aspect' === _0x4b7720 && 'PAR' === _0x1a8f4f ? ElmCanvas['width'] / 0x10 * 0x9 : ElmCanvas['width'] / 0x4 * 0x3;
+                ElmCanvas['height'] = 'fba-aspect' === coreKey && 'PAR' === coreData ? ElmCanvas['width'] / 0x10 * 0x9 : ElmCanvas['width'] / 0x4 * 0x3;
             }
-            var _0xd1a01e = ejs_data['coreoptions'],
-                _0x39266e = ejs_data['storage']['get']('core-options');
-                I.empty(_0x39266e) && (_0x39266e = {});
-                 _0x39266e[_0x4b7720] = _0x1a8f4f, ejs_data['storage']['set']({
-                    'core-options': _0x39266e
-                });
-                if(_0xd1a01e[_0x4b7720]){
-                    if (this['elements']['settings']['buttons'][_0x4b7720]) {
-                        var _0x56b29f = this['elements']['settings']['buttons'][_0x4b7720]['querySelector']('.' ['concat'](this['config']['classNames']['menu']['value']));
-                        if(_0x56b29f){
-                            _0x56b29f.innerHTML = T.getLang(I.obj(_0xd1a01e[_0x4b7720]['options']) ? _0xd1a01e[_0x4b7720]['options'][_0x1a8f4f] : _0x1a8f4f);
-                        }
+            var coreOptions = ejs_data['coreoptions'];
+            ejs_data['storage']['data']['core-options'][coreKey] = coreData;
+            ejs_data['storage']['set']();
+            if (coreOptions[coreKey]) {
+                if (this['elements']['settings']['buttons'][coreKey]) {
+                    var ElmOpt = this['elements']['settings']['buttons'][coreKey]['querySelector']('.' ['concat'](this['config']['classNames']['menu']['value']));
+                    if (ElmOpt) {
+                        ElmOpt.innerHTML = T.getLang(I.obj(coreOptions[coreKey]['options']) ? coreOptions[coreKey]['options'][coreData] : coreData);
+                    }else{
+                        console.log(ElmOpt)
                     }
-
                 }
+
+            }
         },
         'setOptionMenuItem': function (_0x22245a, _0x314866) {
             var E = this,
                 ElmMenuHome = this['elements']['settings']['panels']['home']['querySelector']('[role="menu"]'),
-                _0x1295a7 = this['elements']['settings']['popup']['children'][0x0];
+                ElmMenuTop = this['elements']['settings']['popup']['children'][0x0];
             Object['keys'](_0x22245a)['forEach'](function (itemname) {
-                var itemElm = createElm('button', _0x288469(_0x4d33e3(E['config']['selectors']['buttons']['settings']), {
+
+                var itemElm = createElm('button', _0x288469(resultAttrData(E['config']['selectors']['buttons']['settings']), {
                     'type': 'button',
                     'class': getClassName({
                         'ejs__control': !0x0,
@@ -4841,7 +4761,10 @@ var EJS = (function (modules) {
                 I.obj(_0x314866) && (_0x297e7a = _0x314866[itemname]);
                 I.empty(_0x297e7a) && (_0x297e7a = _0x22245a[itemname]['default']);
 
-                I.obj(_0x22245a[itemname]['options']) ? _0x3e234f.innerHTML = T.getLang(_0x22245a[itemname]['options'][_0x297e7a]) : _0x3e234f.innerHTML = T.getLang(_0x297e7a), _0x31ed55['appendChild'](_0x3e234f), itemElm['appendChild'](_0x31ed55), ElmMenuHome['appendChild'](itemElm);
+                 _0x3e234f.innerHTML = T.getLang(
+                    I.obj(_0x22245a[itemname]['options'])? _0x22245a[itemname]['options'][_0x297e7a]: _0x297e7a
+                    );
+                _0x31ed55['appendChild'](_0x3e234f), itemElm['appendChild'](_0x31ed55), ElmMenuHome['appendChild'](itemElm);
                 var _0x59afee = createElm('div', {
                         'data-pane': escape(itemname),
                         'hidden': ''
@@ -4867,10 +4790,11 @@ var EJS = (function (modules) {
 
                     ejs_data['showMenuPanel']['call'](E, 'home', !0x1);
                 });
-                _0x59afee['appendChild'](_0x24ad2f), _0x59afee['appendChild'](createElm('div', {
+                _0x59afee['appendChild'](_0x24ad2f);
+                 _0x59afee['appendChild'](createElm('div', {
                     'role': 'menu'
                 }));
-                _0x1295a7['appendChild'](_0x59afee);
+                ElmMenuTop['appendChild'](_0x59afee);
                 E['elements']['settings']['buttons'][itemname] = itemElm, E['elements']['settings']['panels'][itemname] = _0x59afee;
                 var _0x171571 = _0x59afee['querySelector']('[role="menu"]');
                 ! function (_0x9e4960) {
@@ -4880,8 +4804,8 @@ var EJS = (function (modules) {
                     }
                 }(_0x171571);
                 //console.log(_0x22245a[itemname]['options']);
-                I.toArr(_0x22245a[itemname]['options'],entry=>{
-                    if(I.array(entry)&&entry.length==2){
+                I.toArr(_0x22245a[itemname]['options'], entry => {
+                    if (I.array(entry) && entry.length == 2) {
                         ejs_data['createMenuItem']['call'](E, {
                             'value': entry[0],
                             'list': _0x171571,
@@ -4890,7 +4814,7 @@ var EJS = (function (modules) {
                             'badge': null,
                             'checked': Boolean(_0x297e7a === entry[0])
                         });
-                    }else{
+                    } else {
                         ejs_data['createMenuItem']['call'](E, {
                             'value': entry,
                             'list': _0x171571,
@@ -4901,68 +4825,34 @@ var EJS = (function (modules) {
                         });
                     }
                 });
-                /*
-                I.obj(_0x22245a[itemname]['options']) ? Object['keys'](_0x22245a[itemname]['options'])['forEach'](function (_0x3c75dc) {
-
-                    ejs_data['createMenuItem']['call'](E, {
-                        'value': _0x3c75dc,
-                        'list': _0x171571,
-                        'type': itemname,
-                        'title': _0x22245a[itemname]['options'][_0x3c75dc],
-                        'badge': null,
-                        'checked': Boolean(_0x297e7a === _0x3c75dc)
-                    });
-                }) : I.array(_0x22245a[itemname]['options']) && _0x22245a[itemname]['options']['forEach'](function (_0x3bd564) {
-                    ejs_data['createMenuItem']['call'](E, {
-                        'value': _0x3bd564,
-                        'list': _0x171571,
-                        'type': itemname,
-                        'title': _0x3bd564,
-                        'badge': null,
-                        'checked': Boolean(_0x297e7a === _0x3bd564)
-                    });
-                });
-                */
             });
         },
         'setNormalOptionsMenu': function () {
-            var _0xcb1456 = this,
-                _0x4f935 = this,
+            var E = this,
                 _0x46fcad = {};
-            _0x46fcad['orientation'] = ejs_data['storage']['get']('orientation'), _0x46fcad['shader'] = ejs_data['storage']['get']('shader'), _0x4f935['touch'] ? (_0x46fcad['virtual-gamepad'] = ejs_data['storage']['get']('virtual-gamepad'), addEvent['call'](_0x4f935, _0x4f935['elements']['container'], 'start-game', function () {
+            _0x46fcad['orientation'] = ejs_data['storage']['get']('orientation');
+            _0x46fcad['shader'] = ejs_data['storage']['get']('shader');
+            E['touch'] ? (_0x46fcad['virtual-gamepad'] = ejs_data['storage']['get']('virtual-gamepad'), E['addEvent'](E['elements']['container'], 'start-game', function () {
 
-                ('enabled' === _0x46fcad['virtual-gamepad'] || I.empty(_0x46fcad['virtual-gamepad'])) && ejs_Controller['toggleVirtualGamepad']['call'](_0x4f935, !0x0);
-            })) : delete ejs_data['normalOptions']['virtual-gamepad'], ejs_data['setOptionMenuItem']['call'](this, ejs_data['normalOptions'], _0x46fcad), addEvent['call'](_0x4f935, _0x4f935['elements']['container'], 'start-game', function () {
-                var _0x520627 = _0xcb1456,
-                    _0x1b89fe = {};
-                (ejs_loader['coreOptions'] && I.array(ejs_loader['coreOptions']) && ejs_loader['coreOptions']['forEach'](function (_0x2bf902, _0x2bb17d) {
-                    var _0x5393be = _0x2bf902['key'];
-                    _0x1b89fe[_0x5393be] = {
-                        'label': _0x2bf902['label'],
-                        'options': _0x2bf902['options'],
-                        'default': _0x2bf902['default'],
-                        'netplay': _0x2bf902['netplay']
-                    };
-                }), ejs_Controller['getGameCoreOptions']) && ejs_Controller['getGameCoreOptions']()['split']('\x0a')['forEach'](function (_0x14ff2a, _0x5b91ba) {
-                    var _0x16bbaa = _0x14ff2a['split']('; '),
-                        _0xfb59f3 = _0x16bbaa[0x0];
-                    if (0x0 === _0xfb59f3['indexOf']('fba-dipswitch-') || 0x0 === _0xfb59f3['indexOf']('fbneo-dipswitch-')) {
-                        var _0x2bda8f = _0x16bbaa[0x1]['split']('|'),
-                            _0x2b4b34 = _0xfb59f3['replace'](/_/g, ' ')['replace'](/.+\-(.+)/, '$1'),
-                            _0x5bc293 = 0x0 == _0xfb59f3['indexOf']('fbneo-dipswitch-') ? _0x2bda8f['slice'](0x0, -0x1) : _0x2bda8f['slice'](0x1, -0x1),
-                            _0x4fc99a = _0x2bda8f[0x0]['replace']('(Default) ', '');
-                        _0x1b89fe[_0xfb59f3] = {
-                            'label': _0x2b4b34,
-                            'options': _0x5bc293,
-                            'default': _0x4fc99a,
-                            'netplay': !0x0
-                        };
-                    }
-                });
-                var _0x343115 = ejs_data['storage']['get']('core-options');
-                ejs_data['coreOptionsValues'] = _0x343115 || {}, ejs_data['setOptionMenuItem']['call'](_0x4f935, _0x1b89fe, ejs_data['coreOptionsValues']), Object['keys'](ejs_data['coreOptionsValues'])['forEach'](function (_0xc4e641, _0x1b276f) {
+                ('enabled' === _0x46fcad['virtual-gamepad'] || I.empty(_0x46fcad['virtual-gamepad'])) && ejs_Controller['toggleVirtualGamepad']['call'](E, !0x0);
+            })) : delete ejs_data['normalOptions']['virtual-gamepad'];
 
-                    ejs_data['updateCoreOptions']['call'](_0x520627, _0xc4e641, ejs_data['coreOptionsValues'][_0xc4e641]);
+            ejs_data['setOptionMenuItem']['call'](this, ejs_data['normalOptions'], _0x46fcad);
+
+
+            E['addEvent'](E['elements']['container'], 'start-game', function () {
+                /**
+                 * 游戏启动时 加载核心配置信息
+                 * 
+                 *  */
+                var coreOptions = E['callaction']('loadCoreOptions', ejs_loader['coreOptions']);
+                var storageOption = ejs_data['storage']['data']['core-options']||{};
+                ejs_data['setOptionMenuItem']['call'](E, coreOptions,storageOption);
+                I.toArr(storageOption, entry => {
+                    /*
+                     * 从本地数据更新核心默认数据
+                     */
+                    ejs_data['updateCoreOptions']['call'](E, entry[0], entry[1]);
                 });
             });
         },
@@ -4982,15 +4872,8 @@ var EJS = (function (modules) {
             console.log('核心设置');
             this['elements']['settings']['panels']['home']['querySelector']('[role="menu"]');
             this['elements']['settings']['popup']['children'][0x0];
-            var coreoptions = ejs_data['getCoreOptions']['call'](this,bool),
-                corestorage = ejs_data['storage']['get']('core-options');
-                if(bool){
-                    ejs_data['coreoptions'] = I.assign(ejs_data['coreoptions'],coreoptions)
-                }else{
-                    ejs_data['coreoptions'] = coreoptions;
-                }
-            ejs_data['coreOptionsValues'] = corestorage || {};
-            ejs_data['setOptionMenuItem']['call'](this, coreoptions, corestorage);
+            var coreoptions = ejs_data['getCoreOptions']['call'](this, bool);
+            ejs_data['setOptionMenuItem']['call'](this, coreoptions, ejs_data['storage']['data']['core-options']||{});
         },
         'checkMenu': function () {
             var _0x2b5fce = this['elements']['settings']['buttons'];
@@ -5007,7 +4890,7 @@ var EJS = (function (modules) {
                     return !_0x1b8186['hidden'];
                 }));
                 var subelm = elm['querySelector']('[role^="menuitem"]');
-                _0x348ac8['call'](this, subelm, bool);
+                tabFocusAddRemoveClass['call'](this, subelm, bool);
             }
         },
         'toggleMenu': function (ebool) {
@@ -5031,26 +4914,16 @@ var EJS = (function (modules) {
                 ElmBtnSetting['setAttribute']('aria-expanded', isPopuphidden2);
                 toggleHidden(ElmMenuPopup, !isPopuphidden2);
                 elmAddRemoveClass(this['elements']['container'], this['config']['classNames']['menu']['open'], isPopuphidden2);
-                isPopuphidden2 && I.keyevt(ebool) ? ejs_data['focusFirstMenuItem']['call'](this, null, !0x0) : isPopuphidden2 || isPopuphidden || _0x348ac8['call'](this, ElmBtnSetting, I.keyevt(ebool));
+                isPopuphidden2 && I.keyevt(ebool) ? ejs_data['focusFirstMenuItem']['call'](this, null, !0x0) : isPopuphidden2 || isPopuphidden || tabFocusAddRemoveClass['call'](this, ElmBtnSetting, I.keyevt(ebool));
 
                 if (!Elmtop['style']['height']) {
                     var o = Elmtop.querySelector('[data-pane="home"]').getBoundingClientRect();
-                    I.setStyle(Elmtop,{
-                        width:o.width+'px',
-                        height:o.height+'px'
+                    I.setStyle(Elmtop, {
+                        width: o.width + 'px',
+                        height: o.height + 'px'
                     });
                 }
             }
-        },
-        'getMenuSize': function (_0x530c62) {
-            var _0x14e63c = _0x530c62['cloneNode'](!0x0);
-            _0x14e63c['style']['position'] = 'absolute', _0x14e63c['style']['opacity'] = 0x0, _0x14e63c['removeAttribute']('hidden'), _0x530c62['parentNode']['appendChild'](_0x14e63c);
-            var _0x146388 = _0x14e63c['scrollWidth'],
-                _0x33f02e = _0x14e63c['scrollHeight'];
-            return _0x24b9ed(_0x14e63c), {
-                'width': _0x146388,
-                'height': _0x33f02e
-            };
         },
         'showLoadStatePanel': function () {},
         'showMenuPanel': function (itemname, bool) {
@@ -5062,73 +4935,25 @@ var EJS = (function (modules) {
             if (I.elm(ElmPane)) {
                 if (itemname) {
                     if ('ontransitionend' in document) {
-                        ElmPane.classList.add('active');
-                        var sizePane = ElmPane.getBoundingClientRect();
-                        //Elmtop['style']['cssText'] =`width:${sizePane['width']}px;height:${sizePane['height']}px;`;
                         I.toArr(E['SelectorAll']('[data-pane]'), elm => {
                             if (!elm.hidden) {
-                                I.setStyle(Elmtop,{
-                                    width:elm['scrollWidth']+'px',
-                                    height:elm['scrollHeight']+'px'
-                                });
                                 elm.hidden = true;
                             }
                         });
                         T.once(Elmtop, 'transitionend', e => {
                             ElmPane.classList.remove('active');
                         });
-                    }   
-                    //toggleHidden(ElmPane, !0x1);
+                    }
                 }
-                ElmPane.hidden = false;
-                I.setStyle(Elmtop,{
-                    width:sizePane['width']+'px',
-                    height:sizePane['height']+'px'
+                ElmPane.classList.add('active');
+                var sizePane = ElmPane.getBoundingClientRect();
+                I.setStyle(Elmtop, {
+                    width: sizePane['width'] + 'px',
+                    height: sizePane['height'] + 'px'
                 });
-                //Elmtop['style']['cssText'] = `width:${sizePane['width']}px;height:${sizePane['height']}px;`;
+                ElmPane.hidden = false;
             }
             ejs_data['focusFirstMenuItem']['call'](E, ElmPane, !0);
-            //toggleHidden(ElmNotHidden, !0x0);
-            /*
-            return;
-            //ElmPane.style.cssText = 'display: block !important;visibility: hidden;translate(-100%,-100%);';
-
-            //ElmPane['style']['cssText'] = '';
-            ElmPane.hidden = false;
-            if (Elmtop['style']['cssText']) {
-                T.once(Elmtop, 'transitionend', e => {
-                    Elmtop['style']['cssText'] = ``;
-                    Elmtop.parentNode.hidden = false;
-                    Elmtop.parentNode.focus();
-                    console.log(Elmtop.parentNode.hidden);
-                });
-            }
-            Elmtop['style']['cssText'] = `width:${sizePane['width']}px;height:${sizePane['height']}px;`;
-            toggleHidden(ElmNotHidden, !0x0);
-            toggleHidden(ElmPane, !0x1);
-            ejs_data['focusFirstMenuItem']['call'](E, ElmPane, bool);
-            return;
-
-            var Elmtop = ElmPane['parentNode'],
-                ElmNotHidden = Array['from'](Elmtop['children'])['find'](function (elmitem) {
-                    return !elmitem['hidden'];
-                });
-            if (EnvVariable['transitions'] && !EnvVariable['reducedMotion']) {
-                Elmtop['style']['width'] = '' ['concat'](ElmNotHidden['scrollWidth'], 'px');
-                Elmtop['style']['height'] = '' ['concat'](ElmNotHidden['scrollHeight'], 'px');
-                var sizePane = ejs_data['getMenuSize']['call'](E, ElmPane),
-                    _0x17ca9d = function _0x56bc49(e) {
-
-                        e['target'] === Elmtop && ['width', 'height']['includes'](e['propertyName']) && (Elmtop['style']['width'] = '', Elmtop['style']['height'] = '', saveEvent['call'](E, Elmtop, _0x2c3eed, _0x56bc49));
-                    };
-                E['addEvent'](Elmtop, _0x2c3eed, _0x17ca9d);
-                Elmtop['style']['width'] = '' ['concat'](sizePane['width'], 'px');
-                Elmtop['style']['height'] = '' ['concat'](sizePane['height'], 'px');
-            }
-            toggleHidden(ElmNotHidden, !0x0);
-            toggleHidden(ElmPane, !0x1);
-            ejs_data['focusFirstMenuItem']['call'](E, ElmPane, bool);
-            */
         },
         'setLoadState': function (_0x27ab32, _0x469e41) {
 
@@ -5211,16 +5036,16 @@ var EJS = (function (modules) {
         'setControllToggleWidgets': function () {
             const E = this;
             var
-                 ElmMobileMenu = createElm('div', {
+                ElmMobileMenu = createElm('div', {
                     'class': getClassName({
                         'ejs__widget': !0x0,
                         'ejs__widget_controls_toggle': !0x0
                     })
                 }, getSvgIcon('ctrltoggle')),
                 _0x168c70 = createElm('div');
-             ElmMobileMenu['appendChild'](_0x168c70);
-            this.Selector('.' ['concat'](getClassName('ejs__widgets')))['appendChild']( ElmMobileMenu);
-            this['elements']['widgets']['controlToggle'] =  ElmMobileMenu;
+            ElmMobileMenu['appendChild'](_0x168c70);
+            this.Selector('.' ['concat'](getClassName('ejs__widgets')))['appendChild'](ElmMobileMenu);
+            this['elements']['widgets']['controlToggle'] = ElmMobileMenu;
 
             /*
             addEvent(this['elements']['container'], 'click touchstart', function (_0x391cad) {
@@ -5229,11 +5054,13 @@ var EJS = (function (modules) {
                 E['elements']['controls']['contains'](_0x391cad['target']) ||  ElmMobileMenu['contains'](_0x391cad['target']) || (toggleHidden(E['elements']['controls']['querySelector'](getClassName('ejs__menu__container', 1)), !0x0), E['callaction']('toggleControls', !0x1), E['elements']['controls']['classList']['toggle'](getClassName('ejs__controls_show'), !0x1));
             });
             */
-            addEvent( ElmMobileMenu, 'click', function ( event) {
+            T.on(ElmMobileMenu, 'pointerdown', function (event) {
                 //手机模式 激活 底部菜单
-                let bool = E['elements']['controls']['classList']['toggle'](getClassName('ejs__controls_show'));
-                if(!bool)ejs_data['toggleMenu']['call'](E,event);
-                event['stopPropagation']();
+                //let bool = E['elements']['controls']['classList']['toggle'](getClassName('ejs__controls_show'));
+                if (!E['elements']['controls']['classList']['toggle'](getClassName('ejs__controls_show'))) {
+                    E['elements']['settings']['popup'].hidden = true;
+                }
+                T.stopEvent(event);
             });
             E['addEvent'](E['elements']['container'], 'start-game', function () {
                 ejs_loader['Module']['_event_load_save_files'] && ejs_loader['Module']['cwrap']('event_load_save_files', '', [])();
@@ -5327,7 +5154,7 @@ var EJS = (function (modules) {
         'create': function (objData) {
             const E = this;
             ejs_data['storage'] = new ejs_storage(E, 'ejs_' ['concat'](E['system'], '_settings'));
-            var ElmControls = createElm('div', _0x4d33e3(E['config']['selectors']['controls']['wrapper']));
+            var ElmControls = createElm('div', resultAttrData(E['config']['selectors']['controls']['wrapper']));
             ElmControls['classList']['add'](getClassName('ejs__controls_show'));
             /**
              * 右键菜单
@@ -5369,8 +5196,9 @@ var EJS = (function (modules) {
             ejs_data['setCheat']['call'](E, ElmControls, objData);
             ElmControls['appendChild'](ejs_data['createButton']['call'](E, 'cache')); //缓存按钮
             ElmControls['appendChild'](ejs_data['createButton']['call'](E, 'autosave')); //自动保存按钮
-            ElmControls['appendChild'](ejs_data['createButton']['call'](E, 'recorder')); //自动保存按钮
+            ElmControls['appendChild'](ejs_data['createButton']['call'](E, 'recorder')); //录制
             ElmControls['appendChild'](ejs_data['createButton']['call'](E, 'fastforward')); //加速
+            E['elements']['buttons']['recorder'].hidden = true;
             var ElmVolume = createElm('div', {
                 'class': getClassName('ejs__volume')
             });
@@ -5481,14 +5309,13 @@ var EJS = (function (modules) {
         }
     };
     class ejs_fullscreen {
-        constructor(player) {
-            this['player'] = player;
+        constructor(E) {
+            this['player'] = E;
             this['scrollPosition'] = {
                 'x': 0x0,
                 'y': 0x0
             };
-            addEvent['call'](
-                this['player'], document, 'ms' === this['prefix'] ? 'MSFullscreenChange' : '' ['concat'](this['prefix'], 'fullscreenchange'),
+            E['addEvent'](document, 'ms' === this['prefix'] ? 'MSFullscreenChange' : '' ['concat'](this['prefix'], 'fullscreenchange'),
                 () => this.setActive()
             );
             this['update']();
@@ -5539,7 +5366,8 @@ var EJS = (function (modules) {
             return _0x3c13c4;
         }
         scroll(bool) {
-            let F = this;
+            let F = this,
+                E = F['player'];
             if (bool) {
                 F['scrollPosition'] = {
                     'x': window['scrollX'] || 0x0,
@@ -5549,18 +5377,19 @@ var EJS = (function (modules) {
                 window['scrollTo'](F['scrollPosition']['x'], F['scrollPosition']['y'])
             }
             document['body']['style']['overflow'] = bool ? 'hidden' : '';
-            elmAddRemoveClass(F['target'], F['player']['config']['classNames']['fullscreen']['fallback'], bool);
+            elmAddRemoveClass(F['target'], E['config']['classNames']['fullscreen']['fallback'], bool);
             F.setActive();
         }
         setActive() {
-            let F = this;
+            let F = this,
+                E = F['player'];
             if (F['enabled']) {
-                var elmF = F['player']['elements']['buttons']['fullscreen'];
+                var elmF = E['elements']['buttons']['fullscreen'];
                 if (I.elm(elmF)) {
                     elmF['pressed'] = F['active'];
                 }
-                callEvent['call'](F['player'], F['target'], F['active'] ? 'enterfullscreen' : 'exitfullscreen', !0x0);
-                if (!ejs_Browser['isIos']) _0xe124af['call'](F['player'], F['target'], F['active']);
+                E['callEvent'](F['target'], F['active'] ? 'enterfullscreen' : 'exitfullscreen', !0x0);
+                if (!ejs_Browser['isIos']) _0xe124af['call'](E, F['target'], F['active']);
             }
         }
     }
@@ -5598,37 +5427,31 @@ var EJS = (function (modules) {
         }
         global() {
             var _0x823a6f = !(arguments['length'] > 0x0 && void 0x0 !== arguments[0x0]) || arguments[0x0],
-                _0x132ce5 = this['emulator'],
-                _0x250e02 = _0x132ce5;
-            SetEvent['call'](_0x250e02, document['body'], 'click', this['toggleMenu'], _0x823a6f), onceEvent['call'](_0x250e02, document['body'], 'touchstart', this['firstTouch']), SetEvent['call'](_0x250e02, document['body'], 'keydown focus blur', this['setTabFocus'], _0x823a6f, !0x1, !0x0), addEvent['call'](_0x250e02, document['body'], 'keyup', function (_0x2ecd9f) {
+                E = this['emulator'];
+            SetEvent['call'](E, document['body'], 'click', this['toggleMenu'], _0x823a6f), onceEvent['call'](E, document['body'], 'touchstart', this['firstTouch']), SetEvent['call'](E, document['body'], 'keydown focus blur', this['setTabFocus'], _0x823a6f, !0x1, !0x0), E['addEvent'](document['body'], 'keyup', function (_0x2ecd9f) {
 
-                _0x250e02['started'] && (0x71 === _0x2ecd9f['which'] && (_0x2ecd9f['shiftKey'] ? null === _0x250e02['elements']['buttons']['saveState']['getAttribute']('hidden') && callEvent['call'](_0x250e02, _0x250e02['elements']['buttons']['saveState'], 'click') : ejs_Controller['quickSaveState']()), 0x73 === _0x2ecd9f['which'] && (_0x2ecd9f['shiftKey'] ? null === _0x250e02['elements']['buttons']['loadState']['getAttribute']('hidden') && callEvent['call'](_0x250e02, _0x250e02['elements']['buttons']['loadState'], 'click') : ejs_Controller['quickLoadState']()), 0x78 === _0x2ecd9f['which'] && callEvent['call'](_0x250e02, _0x250e02['elements']['buttons']['mute'], 'click'));
+                E['started'] && (0x71 === _0x2ecd9f['which'] && (_0x2ecd9f['shiftKey'] ? null === E['elements']['buttons']['saveState']['getAttribute']('hidden') && E['callEvent'](E['elements']['buttons']['saveState'], 'click') : ejs_Controller['quickSaveState']()), 0x73 === _0x2ecd9f['which'] && (_0x2ecd9f['shiftKey'] ? null === E['elements']['buttons']['loadState']['getAttribute']('hidden') && E['callEvent'](E['elements']['buttons']['loadState'], 'click') : ejs_Controller['quickLoadState']()), 0x78 === _0x2ecd9f['which'] && E['callEvent'](E['elements']['buttons']['mute'], 'click'));
             });
         }
         container() {
             var E = this['emulator'],
                 Elms = E['elements'];
             E['addEvent'](Elms['container'], 'mousemove mouseleave touchstart touchmove enterfullscreen exitfullscreen start-game', function (event) {
+                //主容器事件  
                 var ElmCtrl = Elms['controls'];
                 ElmCtrl && 'enterfullscreen' === event['type'] && (ElmCtrl['pressed'] = !0x1, ElmCtrl['hover'] = !0x1);
-                /**
-                 * UI
-                 * 底部菜单激活
-                 */
-                /*
-                var _0x36900f,timecost = 0x0;
-                if(['touchstart', 'touchmove', 'mousemove', 'start-game']['includes'](event['type'])){
-                    E['callaction']('toggleControls', !0x0);
-                     timecost = E['touch'] ? 0xbb8 : 0x7d0;
-                }
-                clearTimeout(_0x36900f);
-                 _0x36900f = setTimeout(()=>E['callaction']('toggleControls', !0x1), timecost);
-                 Elms['controls']['setAttribute']('data-timer', _0x36900f);
-                 */
             });
             E['addEvent'](window, 'resize', function (event) {
                 var cHeight = E['elements']['container']['clientHeight'],
                     ElmMenuPopup = E['SelectorAll'](getClassName('ejs__menu__container', !0) + ' [role="menu"]');
+                let {
+                    width,
+                    height
+                } = E['elements']['container'].getBoundingClientRect();
+                I.setStyle(E['elements']['container'], {
+                    '--width': width + 'px',
+                    '--height': height + 'px',
+                });
                 Array['from'](ElmMenuPopup)['forEach'](function (_0x33d1de) {
 
                     _0x33d1de['style']['maxHeight'] = '' ['concat'](cHeight - 0x89, 'px'), _0x33d1de['style']['overflow'] = 'auto';
@@ -5679,37 +5502,39 @@ var EJS = (function (modules) {
             }
         }
         media() {
-            var _0x57af96 = this['emulator'],
-                _0x392b4c = _0x57af96['elements'],
-                _0x239e0a = _0x57af96;
-            addEvent['call'](_0x239e0a, _0x239e0a['game'], 'volumechange', function (_0x4471c0) {
+            var E = this['emulator'],
+                _0x392b4c = E['elements'];
+            E['addEvent'](E['game'], 'volumechange', function (_0x4471c0) {
 
-                return ejs_data['updateVolume']['call'](_0x239e0a, _0x4471c0);
+                return ejs_data['updateVolume']['call'](E, _0x4471c0);
             });
-            addEvent['call'](_0x239e0a, _0x392b4c['container'], 'contextmenu', function (_0x48dd70) {
+            E['addEvent'](_0x392b4c['container'], 'contextmenu', function (_0x48dd70) {
 
-                _0x239e0a['touch'] || _0x239e0a['lightgun'] || _0x239e0a['mouse'] || ejs_data['toggleContextMenu']['call'](_0x239e0a, _0x48dd70, !0x0), _0x48dd70['preventDefault']();
+                E['touch'] || E['lightgun'] || E['mouse'] || ejs_data['toggleContextMenu']['call'](E, _0x48dd70, !0x0);
+                 _0x48dd70['preventDefault']();
             }, !0x1);
-            addEvent['call'](_0x239e0a, _0x392b4c['container'], 'mousewheel', function (_0x84a53) {
+            T.on(document.body,'contextmenu',e=>T.stopEvent(e));
+            E['addEvent'](_0x392b4c['container'], 'mousewheel', function (_0x84a53) {
 
                 _0x84a53['stopPropagation']();
             }, !0x1);
-            addEvent['call'](_0x239e0a, _0x392b4c['container'], 'mousedown', function (_0xf614c8) {
+            E['addEvent'](_0x392b4c['container'], 'mousedown', function (_0xf614c8) {
 
-                _0x239e0a['touch'] || _0x239e0a['mouse'] || ejs_data['toggleContextMenu']['call'](_0x239e0a, _0xf614c8, !0x1);
+                E['touch'] || E['mouse'] || ejs_data['toggleContextMenu']['call'](E, _0xf614c8, !0x1);
             }, !0x1);
-            addEvent['call'](_0x239e0a, _0x239e0a['game'], 'volumechange', function () {
+            E['addEvent'](E['game'], 'volumechange', function () {
 
-                _0x239e0a['storage']['set']({
-                    'volume': _0x239e0a['volume'],
-                    'muted': _0x239e0a['muted']
+                E['storage']['set']({
+                    'volume': E['volume'],
+                    'muted': E['muted']
                 }), ejs_Controller['setVolume'] && ejs_Controller['setVolume']();
             });
-            var _0x5d664f = _0x239e0a['config']['events']['concat'](['keyup', 'keydown'])['join'](' ');
-            addEvent['call'](_0x239e0a, _0x239e0a['game'], _0x5d664f, function (_0x5a5f62) {
+            var _0x5d664f = E['config']['events']['concat'](['keyup', 'keydown'])['join'](' ');
+            E['addEvent'](E['game'], _0x5d664f, function (_0x5a5f62) {
                 var _0x2c34c7 = _0x5a5f62['detail'],
                     _0x392762 = void 0x0 === _0x2c34c7 ? {} : _0x2c34c7;
-                'error' === _0x5a5f62['type'] && (_0x392762 = _0x239e0a['game']['error']), callEvent['call'](_0x239e0a, _0x392b4c['container'], _0x5a5f62['type'], !0x0, _0x392762);
+                'error' === _0x5a5f62['type'] && (_0x392762 = E['game']['error']);
+                E['callEvent'](_0x392b4c['container'], _0x5a5f62['type'], !0x0, _0x392762);
             });
         }
         proxy(_0x6f8a15, _0x14fb57, _0x55f8ad) {
@@ -5794,6 +5619,7 @@ var EJS = (function (modules) {
                 //声音按钮 事件绑定
                 E['volume'] = event['target']['value'];
             }, 'volume');
+            /*
             L['bind'](Elms['controls'], 'mouseenter mouseleave', event => {
                 //底部菜单鼠标 事件绑定
                 if ('mouseleave' === event['type'] && null === event['toElement']) {
@@ -5802,12 +5628,13 @@ var EJS = (function (modules) {
                     Elms['controls']['hover'] = !E['touch'] && 'mouseenter' === event['type'];
                 }
             });
+            */
 
+            /*
             L['bind'](Elms['controls'], 'mousedown mouseup touchstart touchend touchcancel', event => {
 
                 //底部菜单 事件绑定
                 Elms['controls']['pressed'] = ['mousedown', 'touchstart']['includes'](event['type']);
-                /*
                 if (['mousedown', 'touchstart']['includes'](event['type'])) {
                     Elms['controls']['pressed'] = !0x0;
                     var _0x3fdd1b = Elms['controls']['getAttribute']('data-timer2');
@@ -5818,27 +5645,8 @@ var EJS = (function (modules) {
                     }, 0xfa0);
                     Elms['controls']['setAttribute']('data-timer2', timeId);
                 }
-                */
             });
-            L['bind'](Elms['controls'], 'focusin focusout', event => {
-                //底部菜单 选中 添加锁定显示菜单
-                var config = E['config'],
-                    bool = 'focusin' === event['type'];
-                //elmAddRemoveClass(Elms['controls'], config['classNames']['noTransition'], bool);
-                //elmAddRemoveClass(Elms['controls'], getClassName('ejs__controls_show'), bool);
-                //E['callaction']('toggleControls', bool);
-                /*
-                if (bool) {
-                    var timeint = Elms['controls']['getAttribute']('data-timer');
-                    setTimeout(() => {
-                        elmAddRemoveClass(Elms['controls'], config['classNames']['noTransition'], !0x1);
-                    }, 0x0);
-                    clearTimeout(timeint);
-                    timeint = setTimeout(() => E['callaction']('toggleControls', !0x1), L['touch'] ? 0xbb8 : 0xfa0);
-                    Elms['controls']['setAttribute']('data-timer', timeint);
-                }
                 */
-            });
             L['bind'](Elms['inputs']['volume'], 'wheel', event => {
                 var _0x2adb35 = [event['deltaX'], -event['deltaY']].map(value => event['webkitDirectionInvertedFromDevice'] ? -value : value),
                     _0x2197be = _0x2adb35[0x0],
@@ -5856,19 +5664,23 @@ var EJS = (function (modules) {
         }
     }
     class ejs_storage {
-        constructor(_0x4edbfc, _0x5d236b) {
+        constructor(E, key) {
             this['enabled'] = !0x0;
-            this['key'] = _0x5d236b;
+            this['key'] = key;
+            var localdata = window['localStorage']['getItem'](key);
+            this.data = !localdata?{}:JSON['parse'](localdata);
         }
-        get(_0x3a9ef2) {
-            var _0x46e17f = window['localStorage']['getItem'](this['key']);
-            if (I.empty(_0x46e17f)) return null;
-            var _0x186693 = JSON['parse'](_0x46e17f);
-            return I.str(_0x3a9ef2) && _0x3a9ef2['length'] ? _0x186693[_0x3a9ef2] : _0x186693;
+        data = {};
+        get(key) {
+            if(key)return this.data[key];
+            return this.data;
         }
-        set(_0x3b2eae) {
-            var _0x5551be = this['get']();
-            I.empty(_0x5551be) && (_0x5551be = {}), _0x288469(_0x5551be, _0x3b2eae), window['localStorage']['setItem'](this['key'], JSON['stringify'](_0x5551be));
+        set(data) {
+            /**
+             * 储存 避免多次读取写入
+             */
+            if(data)I.assign(this.data,data);
+            window['localStorage']['setItem'](this['key'], JSON['stringify'](this.data));
         }
     }
     class ejs_install {
@@ -6067,9 +5879,6 @@ var EJS = (function (modules) {
                     });
                 }
             });
-            if (!T.lang['restart']) {
-                I.assign(T.lang, E['config']['i18n']);
-            }
             E['config']['selectors']['controls']['wrapper'] = getClassName('ejs__controls', !0);
             E['config']['selectors']['container'] = getClassName('ejs', !0);
             E['config']['mute'] = !0x0;
@@ -6085,7 +5894,9 @@ var EJS = (function (modules) {
                 loader: ejs_loader,
                 controller: ejs_Controller,
             }, 1);
-            I.defines(ejs_install,{emulator:E},1,1)
+            I.defines(ejs_install, {
+                emulator: E
+            }, 1, 1)
             E['elements']['container']['appendChild'](createElm('div', {
                 'class': getClassName('ejs__widgets')
             }));
@@ -6138,8 +5949,14 @@ var EJS = (function (modules) {
         addEvent(...arg) {
             return addEvent.apply(this, arg);
         }
-        callEvent(...arg) {
-            return callEvent.apply(this, arg);
+        callEvent(object, type, bubbles, detail) {
+            if (I.elm(object) && !I.empty(type)) {
+                T.triger(object, type, I.assign({}, detail, {
+                    'emulator': this
+                }), {
+                    'bubbles': bubbles
+                });
+            }
         }
         off(evt, func) {
             saveEvent(this['elements']['container'], evt, func);
@@ -6219,6 +6036,64 @@ var EJS = (function (modules) {
                         E['toggleControls'](Boolean(bool || E['paused'] || ElmControls['pressed'] || ElmControls['hover']))
                     }
                 }
+            },
+            loadCoreOptions(coreOptions) {
+                /* 加载核心配置信息 */
+                var E = this,
+                    CoreOptionData = {},
+                    coresText = ejs_Controller['RF']('get_core_options'),
+                    storageOptions = ejs_data['storage']['data']['core-options']||{};
+                I.toArr(coreOptions, entry => {
+                    var coreKey = entry['key'];
+                    CoreOptionData[coreKey] = {
+                        'label': entry['label'],
+                        'options': entry['options'],
+                        'default': entry['default'],
+                        'netplay': entry['netplay']
+                    };
+                });
+                I.toArr(coresText&&coresText.trim().split('\n'), (entry, index) => {
+                    var coreData = entry.trim()['split'](';'),
+                        coreKey = coreData[0].trim(),
+                        coreLable = coreKey && coreKey.toString(),
+                        coreOption = coreData[1] && coreData[1].split('|').map(e => e.trim()).filter(e => !I.empty(e)),
+                        coreDefault;
+                    if (CoreOptionData[coreKey]) return;
+                    if (storageOptions[coreKey]) {
+                        coreDefault = storageOptions[coreKey];
+                    } else {
+                        coreDefault = coreOption.filter(v => /^(auto|autodetect|0|none|disabled|off|no|nul)$/i.test(v))[0];
+                        if (!coreDefault) {
+                            coreOption.push('nul');
+                            coreDefault = 'nul';
+
+                        }
+                    }
+                    if (coreLable && coreOption.length > 0) {
+                        //itemData['default'] = itemData['options'][0];
+                        if (0x0 === coreKey['indexOf']('fba-dipswitch-') || 0x0 === coreKey['indexOf']('fbneo-dipswitch-')) {
+                            var _0x3f3187 = coreData[0x1]['split']('|'),
+                                _0x573b9f = coreKey['replace'](/_/g, ' ')['replace'](/.+\-(.+)/, '$1'),
+                                _0x36f894 = 0x0 == coreKey['indexOf']('fbneo-dipswitch-') ? _0x3f3187['slice'](0x0, -0x1) : _0x3f3187['slice'](0x1, -0x1),
+                                _0x446996 = _0x3f3187[0x0]['replace']('(Default) ', '');
+                            CoreOptionData[coreKey] = {
+                                'label': _0x573b9f,
+                                'options': _0x36f894,
+                                'default': _0x446996,
+                                'netplay': !0x0
+                            };
+                        } else {
+                            if (E['system'] == 'gba') coreLable = coreLable.replace(/^mgba_/g, '').replace(/_/g, ' ').trim();
+                            CoreOptionData[coreKey] = {
+                                label: coreLable,
+                                options: coreOption,
+                                default: coreDefault
+                            };
+                        }
+                    }
+                });
+                I.assign(ejs_data['coreoptions'], CoreOptionData);
+                return CoreOptionData;
             },
             async JoystickGamepad() {
                 const E = this,
@@ -6326,7 +6201,7 @@ var EJS = (function (modules) {
             let i18n = data ? data || {} : this.config.i18n,
                 content = i18n[key] || null;
             if (I.empty(content)) return key;
-            content = content.replace(/{(.+?)}/g, (str, arg) => {
+            content = content.replace(/\{(.+?)\}/g, (str, arg) => {
                 console.log(arg);
                 return i18n[arg] || arg
             });
@@ -6433,12 +6308,12 @@ var EJS = (function (modules) {
                 ejs_install['icons'] = await T.FetchItem({
                     url: 'frontend/buttons.zip?' + T.time,
                     unpack: true,
-                    version:T.version,
+                    version: T.version,
                     store: DISK.DB.libjs,
                     decode: I.decode
                 });
             }
-            if(!T.Gamepad)await T.loadLibjs(T.RootPath+'gamepad.min.js');
+            if (!T.Gamepad) await T.loadLibjs(T.RootPath + 'gamepad.min.js');
             E['callaction']('addStyleHook');
             ejs_Controller['setup']['call'](E);
             E['callaction']('build');
@@ -6548,7 +6423,7 @@ var EJS = (function (modules) {
                 setTimeout(function () {
                     elmAddRemoveClass(ElmTooltips, ElmClassTooltip, !0x1);
                 }, 0x1388), toggleHidden(LoadingBtnStart, !0x0);
-                var _0x50da70 = _0x288469(ejs_data['defaultCoreOptionsValues']['call'](E), ejs_data['storage']['get']('core-options') || {});
+                var _0x50da70 = _0x288469(ejs_data['defaultCoreOptionsValues']['call'](E), ejs_data['storage']['data']['core-options'] || {});
                 'n64' === E['system'] && _0x50da70 && Object['keys'](_0x50da70)['forEach'](function (_0x4a2d30) {
 
                     'glupen64-aspect' === _0x4a2d30 && '16:9' === _0x50da70[_0x4a2d30] && (ElmCanvas['height'] = ElmCanvas['width'] / 0x10 * 0x9, ejs_loader['aspectRatio'] = 0x10 / 0x9);
@@ -6726,9 +6601,9 @@ var EJS = (function (modules) {
                     var fsgameBuf;
                     if (['snes', 'snes2002', 'snes2005', 'snes2010']['includes'](E['system'])) {
                         var snesLen = gameBuf['length'] % 0x400;
-                        fsgameBuf = new _0x2181ff(snesLen ? gameBuf['slice'] ? gameBuf['slice'](snesLen) : gameBuf['subarray'](snesLen) : gameBuf);
+                        fsgameBuf = new ejs_arraybuffer(snesLen ? gameBuf['slice'] ? gameBuf['slice'](snesLen) : gameBuf['subarray'](snesLen) : gameBuf);
                     } else {
-                        fsgameBuf = new _0x2181ff(gameBuf);
+                        fsgameBuf = new ejs_arraybuffer(gameBuf);
                     }
                     //be96d189
                     if (self.SparkMD5) E['hash'] = new SparkMD5.ArrayBuffer().append(fsgameBuf._u8array.buffer).end();
@@ -6759,22 +6634,22 @@ var EJS = (function (modules) {
                     _0x43e991 = _0x43e991['replace'](/\#/g, '');
                     var _0x4136ee = ejs_loader['gamePatch'];
                     if (ejs_loader.FS['rename'](E['startName'], _0x43e991), E['startName'] = _0x43e991, 'snes' === E['system'] || ['snes2002', 'snes2005', 'snes2010']['includes'](E['system'])) {
-                        var _0x2e6771 = new _0x2181ff(ejs_loader.FS['readFile'](E['startName'])),
+                        var _0x2e6771 = new ejs_arraybuffer(ejs_loader.FS['readFile'](E['startName'])),
                             _0x3d734d = getCrc32int(_0x2e6771);
                         ejs_Controller['romcrc32'] = _0x3d734d['toString'](0x10);
-                        var _0x30e2fc, _0x57a048, _0x2e3a2d, _0x367813 = new _0x2181ff(ejs_loader.FS['readFile'](_0x4136ee)),
+                        var _0x30e2fc, _0x57a048, _0x2e3a2d, _0x367813 = new ejs_arraybuffer(ejs_loader.FS['readFile'](_0x4136ee)),
                             _0x8bb892 = _0x367813['readString'](0x6),
                             _0x3bf629 = _0x2e6771['_u8array']['length'] % 0x400;
-                        _0x8bb892['startsWith']('PATCH') ? (_0x30e2fc = _0x31959e(_0x367813), 0x0 === _0x3bf629 && 'B19ED489' === _0x3d734d['toString'](0x10)['toUpperCase']() && ((_0x57a048 = new Uint8Array(_0x2e6771['_u8array']['length'] + 0x200))['set'](new Uint8Array(0x200), 0x0), _0x57a048['set'](_0x2e6771['_u8array'], 0x200), _0x2e6771 = new _0x2181ff(_0x57a048))) : _0x8bb892['startsWith'](_0x4bc4ab) ? _0x30e2fc = _0xe7d66e(_0x367813) : _0x8bb892['startsWith']('BPS1') && (_0x30e2fc = _0x291a53(_0x367813), _0x3bf629 > 0x0 && 'A31BEAD4' === _0x3d734d['toString'](0x10)['toUpperCase']() && (_0x57a048 = _0x2e6771['_u8array']['slice'] ? _0x2e6771['_u8array']['slice'](_0x3bf629) : _0x2e6771['_u8array']['subarray'](_0x3bf629), _0x2e6771 = new _0x2181ff(_0x57a048)));
+                        _0x8bb892['startsWith']('PATCH') ? (_0x30e2fc = _0x31959e(_0x367813), 0x0 === _0x3bf629 && 'B19ED489' === _0x3d734d['toString'](0x10)['toUpperCase']() && ((_0x57a048 = new Uint8Array(_0x2e6771['_u8array']['length'] + 0x200))['set'](new Uint8Array(0x200), 0x0), _0x57a048['set'](_0x2e6771['_u8array'], 0x200), _0x2e6771 = new ejs_arraybuffer(_0x57a048))) : _0x8bb892['startsWith'](_0x4bc4ab) ? _0x30e2fc = _0xe7d66e(_0x367813) : _0x8bb892['startsWith']('BPS1') && (_0x30e2fc = _0x291a53(_0x367813), _0x3bf629 > 0x0 && 'A31BEAD4' === _0x3d734d['toString'](0x10)['toUpperCase']() && (_0x57a048 = _0x2e6771['_u8array']['slice'] ? _0x2e6771['_u8array']['slice'](_0x3bf629) : _0x2e6771['_u8array']['subarray'](_0x3bf629), _0x2e6771 = new ejs_arraybuffer(_0x57a048)));
                         try {
                             if (_0x2e3a2d = _0x30e2fc['apply'](_0x2e6771, !0x1)) {
                                 var _0x27e145 = _0x2e3a2d['_u8array']['length'] % 0x400;
-                                _0x27e145 > 0x0 && (_0x57a048 = _0x2e3a2d['_u8array']['slice'] ? _0x2e3a2d['_u8array']['slice'](_0x27e145) : _0x2e3a2d['_u8array']['subarray'](_0x27e145), _0x2e3a2d = new _0x2181ff(_0x57a048)), ejs_loader.FS['unlink'](_0x4136ee), ejs_loader.FS['unlink'](E['startName']), ejs_loader.FS['writeFile'](E['startName'], _0x2e3a2d['_u8array']);
+                                _0x27e145 > 0x0 && (_0x57a048 = _0x2e3a2d['_u8array']['slice'] ? _0x2e3a2d['_u8array']['slice'](_0x27e145) : _0x2e3a2d['_u8array']['subarray'](_0x27e145), _0x2e3a2d = new ejs_arraybuffer(_0x57a048)), ejs_loader.FS['unlink'](_0x4136ee), ejs_loader.FS['unlink'](E['startName']), ejs_loader.FS['writeFile'](E['startName'], _0x2e3a2d['_u8array']);
                             }
                         } catch (_0x6cf446) {}
                     } else {
-                        var _0x23cafe, _0x157de4, _0x567245 = new _0x2181ff(ejs_loader.FS['readFile'](E['startName'])),
-                            _0xc9d854 = new _0x2181ff(ejs_loader.FS['readFile'](_0x4136ee)),
+                        var _0x23cafe, _0x157de4, _0x567245 = new ejs_arraybuffer(ejs_loader.FS['readFile'](E['startName'])),
+                            _0xc9d854 = new ejs_arraybuffer(ejs_loader.FS['readFile'](_0x4136ee)),
                             _0x386761 = _0xc9d854['readString'](0x6);
                         _0x386761['startsWith']('PATCH') ? _0x23cafe = _0x31959e(_0xc9d854) : _0x386761['startsWith'](_0x4bc4ab) ? _0x23cafe = _0xe7d66e(_0xc9d854) : _0x386761['startsWith']('BPS1') && (_0x23cafe = _0x291a53(_0xc9d854));
                         try {
@@ -7190,31 +7065,41 @@ var EJS = (function (modules) {
                             canvas: ElmCanvas,
                             coreFileData: {},
                             print(text) {
-                                'undefined' != typeof EJS_DEBUG_ && !0x0 === EJS_DEBUG_ && console['log'](text);
+                                //'undefined' != typeof EJS_DEBUG_ && !0x0 === EJS_DEBUG_ && console['log'](text);
                             },
                             printErr(text) {
                                 if (!text) return;
-                                'undefined' != typeof EJS_DEBUG_ && !0x0 === EJS_DEBUG_ && console['log'](text);
+                                //'undefined' != typeof EJS_DEBUG_ && !0x0 === EJS_DEBUG_ && console['log'](text);
                                 //if (RealSystemName) {
                                 //    if (SAVE_EVENT_TEXT[RealSystemName] && SAVE_EVENT_TEXT[RealSystemName].includes(text)) {
-                                        //ejs_Controller['saveSavFiles']();
-                                        //E['isAutoSave'] = true;
+                                //ejs_Controller['saveSavFiles']();
+                                //E['isAutoSave'] = true;
                                 //    }
                                 //}
                                 //fix aspect-ratio 强行修正纵横比
-                                console.log(text);
+                                //console.log(text);
                                 let videosize = text.match(/Video\s*@\s*(\d+)x(\d+)/);
                                 if (videosize) {
                                     console.log(videosize);
-                                    E['videosize'] = videosize[1] / videosize[2];
-                                    I.setStyle(E['elements']['container'],{
-                                        '--aspect-hw': videosize[2] / videosize[1],
-                                        '--aspect-wh':E['videosize'],
-                                    });
-                                    ejs_loader.aspectRatio = E['videosize'];
-                                    if (Module.setCanvasSize) {
-                                        Module.setCanvasSize(720, 720 / E['videosize']);
-                                    }
+                                    //E['videosize'] = videosize[1] / videosize[2];
+                                    Module.SetAspectRatio(videosize[1] / videosize[2]);
+                                }
+                                let newaspectRatio = text.match(/^\[INFO\]\s*SET_GEOMETRY:\s*\d+x\d+,\s*aspect:\s(.+?)\.$/);
+                                if (newaspectRatio) {
+                                    Module.SetAspectRatio(I.Int(newaspectRatio[1]));
+                                }
+
+                            },
+                            SetAspectRatio(aspectRatio) {
+                                console.log(aspectRatio);
+                                E['videosize'] = aspectRatio;
+                                I.setStyle(E['elements']['container'], {
+                                    '--aspect-hw': 1 / aspectRatio,
+                                    '--aspect-wh': E['videosize'],
+                                });
+                                ejs_loader.aspectRatio = E['videosize'];
+                                if (Module.setCanvasSize) {
+                                    Module.setCanvasSize(720, 720 / E['videosize']);
                                 }
 
                             },
@@ -7478,12 +7363,13 @@ var EJS = (function (modules) {
 
                         }
                         cfgText += 'video_smooth = false\x0a';
-                        var coresOptionData = _0x288469(_0xe4449b, ejs_data['storage']['get']('core-options') || {}),
+                        var coresOptionData = _0x288469(_0xe4449b, ejs_data['storage']['data']['core-options'] || {}),
                             coresOptionCfg = '';
                         if ('psx' == E['system']) {
                             coresOptionCfg = 'pcsx_rearmed_memcard2 = "disabled"\n'
                         }
                         I.toArr(coresOptionData, entry => {
+                            //if(entry[1]=='nul')return;
                             coresOptionCfg += `${entry[0]} = "${entry[1]}"\n`;
                             E['addEvent'](ElmContainer, 'start-game', function (_0x53ed11) {
                                 setTimeout(function () {
@@ -8037,9 +7923,9 @@ var EJS = (function (modules) {
                             if ('openbor' == E['system']) ArgInfo = ['-v', ejs_loader['newCoreKey2'] || hash];
                             console['log'](ArgInfo);
                             Module['callMain'](ArgInfo);
-                            E['callEvent'](ElmContainer, 'start-game');
-                            ejs_data['setCoreOptionsMenu']['call'](E,!0);
                             ejs_loader['loading'].remove();
+                            E['callEvent'](ElmContainer, 'start-game');
+                            T.triger(window, 'resize');
                         } catch (e) {
                             console.log(e);
                             LoadingP3.innerHTML = `<strong style="color:#f00;text-shadow: 0px 0px 3px;">${T.getLang('Failed to start game')}</strong>`;
@@ -8123,34 +8009,17 @@ var EJS = (function (modules) {
                  * 未设置游戏文件直接先运行后上传
                  */
                 toggleHidden(LoadingBtnStart, !0x0);
-                return E['callaction']('PlayNow');
+                E['callaction']('PlayNow');
             } else {
                 onceEvent(LoadingBtnStart, 'click touchstart', function (event) {
                     /*点击PLAY NOW 运行*/
                     toggleHidden(LoadingBtnStart, !0x0);
                     E['callaction']('PlayNow');
-                    return !1;
                 });
             }
         }
     }
     I.defines(ejs_install, {
-        /*
-        setup: {
-            value(DivIDs, Configs) {
-                let X = this;
-                if (I.str(DivIDs)) DivIDs = document['querySelectorAll'](DivIDs)
-                return I.toArr(DivIDs).map(
-                    elm => I.elm(elm) && new X(elm, Configs)
-                );
-            }
-        },
-        elements: {
-            value: [],
-            writable: true,
-
-        },
-        */
         defaults: {
             value: {},
             writable: true,
