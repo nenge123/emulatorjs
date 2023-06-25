@@ -398,7 +398,7 @@ var EJS = (function (modules) {
         I = T.I,
         DISK = new NengeDisk(T),
         eventMouseList = ['mousemove', 'mousedown', 'mouseup'],
-        eventTouchList = ['touchstart', 'touchsend', 'touchmove'];
+        eventTouchList = ['touchstart', 'touchend', 'touchmove'];
     DISK.SetDB({
         libjs: T.getStore('data-libjs'),
         patch: T.getStore('data-patch'),
@@ -4520,7 +4520,7 @@ var EJS = (function (modules) {
             return createElm('span', _0x3ee770, _0x580924);
         },
         'createBadge': function (_0x5bd767) {
-            
+
             if (I.empty(_0x5bd767)) return null;
             console.log(_0x5bd767);
             var _0x3974e6 = createElm('span', {
@@ -4843,7 +4843,7 @@ var EJS = (function (modules) {
             E['addEvent'](E['elements']['container'], 'start-game', function () {
                 /**
                  * 游戏启动时 加载核心配置信息
-                 * 
+                 *
                  *  */
                 var coreOptions = E['callaction']('loadCoreOptions', ejs_loader['coreOptions']);
                 var storageOption = ejs_data['storage']['data']['core-options']||{};
@@ -5437,7 +5437,7 @@ var EJS = (function (modules) {
             var E = this['emulator'],
                 Elms = E['elements'];
             E['addEvent'](Elms['container'], 'mousemove mouseleave touchstart touchmove enterfullscreen exitfullscreen start-game', function (event) {
-                //主容器事件  
+                //主容器事件
                 var ElmCtrl = Elms['controls'];
                 ElmCtrl && 'enterfullscreen' === event['type'] && (ElmCtrl['pressed'] = !0x1, ElmCtrl['hover'] = !0x1);
             });
@@ -6187,7 +6187,7 @@ var EJS = (function (modules) {
                 ///}
             },
             async button_fastforward(elm, bool) {
-                //'fast_forward_2', 
+                //'fast_forward_2',
                 let evt = I.toArr(['fast_forward']).filter(e => ejs_Controller['CF']('CM', e));
                 evt.forEach(v => ejs_Controller['RF'](v, bool ? 1 : 0));
             }
@@ -6509,6 +6509,12 @@ var EJS = (function (modules) {
                         passive: false
                     }));
                     I.toArr(eventTouchList, v => T.on(ElmContainer, v, event => {
+                        let touchEvent = null;
+                        if('touchend' == event['type']){
+                            touchEvent = event.changedTouches[0];
+                        } else{
+                            touchEvent = event.touches[0];
+                        }
                         var eventEvent, eventData = {
                             'isTrusted': !0x1,
                             'altKey': event['altKey'],
@@ -6517,29 +6523,29 @@ var EJS = (function (modules) {
                             'buttons': event['buttons'],
                             'cancelBubble': !0x1,
                             'cancelable': !0x0,
-                            'clientX': event['clientX'],
-                            'clientY': event['clientY'],
+                            'clientX': touchEvent['clientX'],
+                            'clientY': touchEvent['clientY'],
                             'composed': !0x0,
                             'ctrlKey': !0x1,
                             'defaultPrevented': !0x1,
                             'detail': event['detail'],
                             'eventPhase': event['eventPhase'],
-                            'layerX': event['layerX'],
-                            'layerY': event['layerY'],
+                            'layerX': touchEvent['clientX'],
+                            'layerY': touchEvent['clientY'],
                             'metaKey': event['metaKey'],
-                            'movementX': event['movementX'],
-                            'movementY': event['movementY'],
-                            'offsetX': event['offsetX'],
-                            'offsetY': event['offsetY'],
-                            'pageX': event['pageX'],
-                            'pageY': event['pageY'],
+                            'movementX': 0,
+                            'movementY': 0,
+                            'offsetX': touchEvent['clientX'],
+                            'offsetY': touchEvent['clientY'],
+                            'pageX': touchEvent['pageX'],
+                            'pageY': touchEvent['pageY'],
                             'which': event['which'],
-                            'x': event['x'],
-                            'y': event['y']
+                            'x': touchEvent['screenX'],
+                            'y': touchEvent['screenY']
                         };
                         if ('touchstart' == event['type']) {
                             eventEvent = new MouseEvent('mousedown', eventData)
-                        } else if ('touchsend' == event['type']) {
+                        } else if ('touchend' == event['type']) {
                             eventEvent = new MouseEvent('mouseup', eventData)
                         } else if ('touchmove' == event['type']) {
                             eventEvent = new MouseEvent('mousemove', eventData)
@@ -6807,7 +6813,7 @@ var EJS = (function (modules) {
                         ejs_Controller['stateSupported'] = CoreState;
                     },
                     /**
-                     * 
+                     *
                      * @returns 下载MAME核心
                      */
                     async Wasm_Mame_Check_Rooms() {
@@ -7453,7 +7459,7 @@ var EJS = (function (modules) {
                         FS['createDataFile']('/etc', 'retroarch-core-options.cfg', coresOptionCfg, !0x0, !0x0);
                         /*
                         if (E['config']['biosUrl']) {
-                           
+
                         } else {
                             E['callaction']('GAME_ParentData');
                         }
@@ -7907,7 +7913,7 @@ var EJS = (function (modules) {
                             var hash = ejs_loader['hash'] + ejs_loader['hash2'] + ejs_loader['hash3'],
                                 ArgInfo = ['-v', E['startName'], hash];
                             /**
-                             * 为什么离线不能运行 因为新版核心是使用随机hash,目前不知道他的算法,其HASH在获取api?name=gba中header头里面的key2 
+                             * 为什么离线不能运行 因为新版核心是使用随机hash,目前不知道他的算法,其HASH在获取api?name=gba中header头里面的key2
                              */
                             if (ejs_loader['newCore'] && ejs_loader['newCoreKey']) ArgInfo[2] = ejs_loader['newCoreKey'];
                             if (Module['_get_content_crc'] && ejs_loader['newCoreKey2']) ArgInfo[2] = ejs_loader['newCoreKey2'];
