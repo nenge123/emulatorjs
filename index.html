@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="emulatorjs.css" rel="stylesheet">
+    <title>Test</title>
+</head>
+<body>
+    <div style="position:fixed;left:0px;right:0px;top:0px;bottom:0px;">
+        <div id="game"></div>
+    </div>
+    <script src="common.js" type="text/javascript"></script>
+    <script src="nipplejs.js" type="text/javascript"></script>
+    <script src="gamepad.js" type="text/javascript"></script>
+    <script src="NengeDisk.js" type="text/javascript"></script>
+    <script src="emu_decode_058.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var EJS_DEBUG_ = true;
+        var EJS_EMU = new EJS('#game',{
+            gameUrl:'run/gb-test.zip',
+            system:'gba',
+            gameId:'', //set Unique ID on Netplay
+            biosurl:'', //set bios
+            cheats:'',//set check code like  'aabbccdd xx\naabbccdd xx\n'
+            gameparenturl:'',
+            gamepatchurl:'', //add ips .. game patch
+        });
+    </script>
+</body>
+</html>
