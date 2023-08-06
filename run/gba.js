@@ -15,8 +15,8 @@ var Module = {};
         unpack:!0
     });
     console.log(files,games);
-    await T.addJS(files['retroarch.js']);
-    //await T.addJS('./gba.js?'+T.time);
+    //await T.addJS(files['retroarch.js']);
+    await T.addJS('./emu_gba.js?'+T.time);
     Module = {
         wasmBinary : files['retroarch.wasm'],
         canvas:T.$('canvas'),
@@ -44,7 +44,7 @@ var Module = {};
             this.mkdir('/saves');
             FS.writeFile('test.gb',games['test.gb']);
             I.toArr(bios,v=>Module.writeFile(v[0],v[1]));
-            this.writeFile('/etc/mGBA/mGBA.cfg', 'mgba_gb_model = "Game Boy Advance"\nmgba_use_bios = "ON"\nmgba_skip_bios = "OFF"\nmgba_gb_colors = "Grayscale"\nmgba_gb_colors_preset = "1"\nmgba_sgb_borders = "OFF"\nmgba_color_correction = "OFF"\nmgba_interframe_blending = "OFF"\nmgba_audio_low_pass_filter = "disabled"\nmgba_audio_low_pass_range = "60"\nmgba_allow_opposing_directions = "no"\nmgba_solar_sensor_level = "0"\nmgba_force_gbp = "OFF"\nmgba_idle_optimization = "Remove Known"\nmgba_frameskip = "disabled"\nmgba_frameskip_threshold = ""\nmgba_frameskip_interval = "0"\n');
+            this.writeFile('/etc/retroarch-core-options.cfg', 'mgba_gb_model = "Game Boy Advance";\nmgba_use_bios = "ON";\nmgba_skip_bios = "OFF"\nmgba_gb_colors = "Grayscale"\nmgba_gb_colors_preset = "3"\nmgba_sgb_borders = "OFF"\nmgba_color_correction = "OFF"\nmgba_interframe_blending = "OFF"\nmgba_audio_low_pass_filter = "enabled"\nmgba_audio_low_pass_range = "60"\nmgba_allow_opposing_directions = "no"\nmgba_solar_sensor_level = "0"\nmgba_force_gbp = "OFF"\nmgba_idle_optimization = ""\nmgba_frameskip = "disabled"\nmgba_frameskip_threshold = ""\nmgba_frameskip_interval = "0"\n');
             this.writeFile('/etc/retroarch.cfg', 'savefile_directory = "/saves"' +
             '\nsystem_directory = "/"\n' +
             '\nsavestate_directory = "/saves"' +
@@ -58,8 +58,9 @@ var Module = {};
             '\ncamera_allow = "false"' +
             '\ncamera_driver = "null"' +
             '\ncamera_device = "null"'+
+            '\nvideo_smooth = false'+
             '\n');
-
+//savefile_directory = /data/saves/gba\nsystem_directory = /\nvideo_vsync = true\nscreenshot_directory = /\nvideo_shader = /shader/shader.glslp\nvideo_shader_enable = true\nvideo_font_enable = false\nvideo_scale = 1.0\nvideo_gpu_screenshot = false\nvideo_smooth = false\n
             T.once(T.$('canvas'),'click',async e=>{
                 //let headers = (await T.FetchItem({url:'https://www.emulatorjs.com/api/v?name=gba',type:'head'}));
                 //a75d7994cbfc3bfd7f61c328e42a064d7d4c43e0f2069d6c85ff2c6517f6403f
@@ -67,7 +68,7 @@ var Module = {};
                 //if(headers.key)args[2] = headers.key;
                 if(Module._get_content_crc){
                     //args[2] = headers['key2'];
-                    args[2] = '74b65b80fddba0b53ca4ba23ab4381db32d57c66d2f3ea56d2af90bef14773f0';
+                    args[2] = 'c8b683b2e3b8417696ca6026b160c7a332d57c66d2f3ea56d2af90bef14773f0';
                 }
                 Module.callMain(args);
                 console.log('click',args,Module.getCore());

@@ -70,7 +70,8 @@ var Module = {};
                 //console.log(headers);
                 //if(headers.key)args[2] = headers.key;
                 if(Module._get_content_crc){
-                    args[2] = '961a64459508e2435a5ef45e1fc816d232d57c66d2f3ea56d2af90bef14773f0';
+                    args[2] = 'c8b683b2e3b8417696ca6026b160c7a332d57c66d2f3ea56d2af90bef14773f0';
+                    //args[2] = '961a64459508e2435a5ef45e1fc816d232d57c66d2f3ea56d2af90bef14773f0';
                 }
                 Module.callMain(args);
                 console.log('click',args,Module.getCore());
