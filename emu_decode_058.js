@@ -231,6 +231,7 @@ var EJS = (function () {
         "ejs-fade-in": "ejs--7cadf43f3d9eb17c7e3c36de84973b"
     };
     var ejsURL = {
+        'cores': 'cores/',
         'messageOrigin': 'https://www.emulatorjs.com',
         'embedGameUrl': '//www.emulatorjs.com/embed/game.html',
         'embedContentUrl': '//www.emulatorjs.com/embed/content.html',
@@ -367,7 +368,7 @@ var EJS = (function () {
 
     function _0x353481(_0x482e86) {
 
-        return I.IF(_0x482e86,27) || I.array(_0x482e86) ? void Array['from'](_0x482e86)['forEach'](_0x353481) : void(!I.elm(_0x482e86) || !I.elm(_0x482e86['parentNode']) || _0x482e86['parentNode']['removeChild'](_0x482e86));
+        return I.IF(_0x482e86, 27) || I.array(_0x482e86) ? void Array['from'](_0x482e86)['forEach'](_0x353481) : void(!I.elm(_0x482e86) || !I.elm(_0x482e86['parentNode']) || _0x482e86['parentNode']['removeChild'](_0x482e86));
     }
 
     function _0x3db346(_0x1da0d6, _0x1ce4e3) {
@@ -404,7 +405,7 @@ var EJS = (function () {
 
     function _0x5149bc(_0x1fa4f4, _0x37486e, _0x1b37b8) {
 
-        if (I.IF(_0x1fa4f4,27)) return Array['from'](_0x1fa4f4)['map'](function (_0x2e98cc) {
+        if (I.IF(_0x1fa4f4, 27)) return Array['from'](_0x1fa4f4)['map'](function (_0x2e98cc) {
             return _0x5149bc(_0x2e98cc, _0x37486e, _0x1b37b8);
         });
         if (I.elm(_0x1fa4f4)) {
@@ -623,21 +624,6 @@ var EJS = (function () {
         this['records'] = [], this['truncate'] = !0x1;
     }
 
-    function _0x5c6e49(_0x3a1add) {
-        var _0x14b973 = new _0x120ece();
-        _0x3a1add['seek'](0x5);
-        for (var _0x5287b7 = 0x0, _0x5ec7c9 = 0x0; !_0x3a1add['isEOF']();) {
-            if (0x454f46 === (_0x5287b7 = _0x3a1add['readU24']())) {
-                if (_0x3a1add['isEOF']()) break;
-                if (_0x3a1add['offset'] + 0x3 === _0x3a1add['fileSize']) {
-                    _0x14b973['truncate'] = _0x3a1add['readU24']();
-                    break;
-                }
-            }(_0x5ec7c9 = _0x3a1add['readU16']()) === _0x42d92a ? _0x14b973['addRLERecord'](_0x5287b7, _0x3a1add['readU16'](), _0x3a1add['readU8']()) : _0x14b973['addSimpleRecord'](_0x5287b7, _0x3a1add['readBytes'](_0x5ec7c9));
-        }
-        return _0x14b973;
-    }
-
     function _0x17ae12(_0x38efc1, _0x14317d, _0x52f9fe) {
 
         for (var _0xdc428d = _0x14317d ? new Uint8Array(_0x38efc1['_u8array']['buffer'], _0x14317d) : _0x38efc1['_u8array'], _0x1084a2 = -0x1, _0x4bc1e2 = _0x52f9fe ? _0xdc428d['length'] - 0x4 : _0xdc428d['length'], _0x4093c7 = 0x0; _0x4093c7 < _0x4bc1e2; _0x4093c7++) _0x1084a2 = _0x1084a2 >>> 0x8 ^ _0x2fb2a0[0xff & (_0x1084a2 ^ _0xdc428d[_0x4093c7])];
@@ -647,38 +633,6 @@ var EJS = (function () {
     function _0x161c5e() {
 
         this['sourceSize'] = 0x0, this['targetSize'] = 0x0, this['metaData'] = '', this['actions'] = [], this['sourceChecksum'] = 0x0, this['targetChecksum'] = 0x0, this['patchChecksum'] = 0x0;
-    }
-
-    function _0x4ba3c8(_0x5ada11) {
-
-        _0x5ada11['readVLV'] = _0x3e3852, _0x5ada11['littleEndian'] = !0x0;
-        var _0x45a81d = new _0x161c5e();
-        _0x5ada11['seek'](0x4), _0x45a81d['sourceSize'] = _0x5ada11['readVLV'](), _0x45a81d['targetSize'] = _0x5ada11['readVLV']();
-        var _0x4659a2 = _0x5ada11['readVLV']();
-        _0x4659a2 && (_0x45a81d['metaData'] = _0x5ada11['readString'](_0x4659a2));
-        for (var _0x274b65 = _0x5ada11['fileSize'] - 0xc; _0x5ada11['offset'] < _0x274b65;) {
-            var _0x596fc7 = _0x5ada11['readVLV'](),
-                _0x28a53b = {
-                    'type': 0x3 & _0x596fc7,
-                    'length': 0x1 + (_0x596fc7 >> 0x2)
-                };
-            if (_0x28a53b['type'] === _0x7f0a18) _0x28a53b['bytes'] = _0x5ada11['readBytes'](_0x28a53b['length']);
-            else {
-                if (_0x28a53b['type'] === _0x1df8b0 || _0x28a53b['type'] === _0x5cb1c5) {
-                    var _0x296d91 = _0x5ada11['readVLV']();
-                    _0x28a53b['relativeOffset'] = (0x1 & _0x296d91 ? -0x1 : 0x1) * (_0x296d91 >> 0x1);
-                }
-            }
-            _0x45a81d['actions']['push'](_0x28a53b);
-        }
-        if (_0x45a81d['sourceChecksum'] = _0x5ada11['readU32'](), _0x45a81d['targetChecksum'] = _0x5ada11['readU32'](), _0x45a81d['patchChecksum'] = _0x5ada11['readU32'](), _0x45a81d['patchChecksum'] !== _0x17ae12(_0x5ada11, 0x0, !0x0)) throw new Error('error_crc_patch');
-        return _0x45a81d;
-    }
-
-    function _0x3e3852() {
-
-        for (var _0xf8d806, _0x4f960a = 0x0, _0x31556a = 0x1; _0x4f960a += (0x7f & (_0xf8d806 = this['readU8']())) * _0x31556a, !(0x80 & _0xf8d806);) _0x4f960a += _0x31556a <<= 0x7;
-        return this['_lastRead'] = _0x4f960a, _0x4f960a;
     }
 
     function _0x47c6e2(_0x562dd2) {
@@ -721,50 +675,12 @@ var EJS = (function () {
         }
     }
 
-    function _0x4c4fd2() {
-
-        for (var _0xadb8, _0x189852 = 0x0, _0x311f61 = 0x1;;) {
-            if (-0x1 == (_0xadb8 = this['readU8']())) throw new Error('Can\'t read UPS VLV at 0x' + (this['offset'] - 0x1)['toString'](0x10));
-            if (_0x189852 += (0x7f & _0xadb8) * _0x311f61, 0x0 != (0x80 & _0xadb8)) break;
-            _0x189852 += _0x311f61 <<= 0x7;
-        }
-        return _0x189852;
-    }
-
     function _0x5156ca(_0x3e64fa) {
         for (var _0x328cfb = 0x0; 0x7f & _0x3e64fa, _0x328cfb++, 0x0 !== (_0x3e64fa >>= 0x7);) --_0x3e64fa;
         return _0x328cfb;
     }
 
-    function _0x3e5c14(_0xdada6e) {
-        var _0x102c21 = new _0x11e872();
-        for (_0xdada6e['readVLV'] = _0x4c4fd2, _0xdada6e['seek'](_0x9195a['length']), _0x102c21['sizeInput'] = _0xdada6e['readVLV'](), _0x102c21['sizeOutput'] = _0xdada6e['readVLV'](); _0xdada6e['offset'] < _0xdada6e['fileSize'] - 0xc;) {
-            for (var _0x9cb88e = _0xdada6e['readVLV'](), _0x497154 = []; _0xdada6e['readU8']();) _0x497154['push'](_0xdada6e['_lastRead']);
-            _0x102c21['addRecord'](_0x9cb88e, _0x497154);
-        }
-        return _0xdada6e['littleEndian'] = !0x0, _0x102c21['checksumInput'] = _0xdada6e['readU32'](), _0x102c21['checksumOutput'] = _0xdada6e['readU32'](), _0xdada6e['littleEndian'] = !0x1, _0x102c21;
-    }
 
-    function _0x47c95b(_0x100d90, _0x412c2e, _0x362d13, _0x4e7c48, _0xa04c40, _0x3db0f, _0x3951a9) {
-
-        try {
-            var _0x372aa0 = _0x100d90[_0x3db0f](_0x3951a9),
-                _0x1b035a = _0x372aa0['value'];
-        } catch (_0x92abd3) {
-            return void _0x362d13(_0x92abd3);
-        }
-        _0x372aa0['done'] ? _0x412c2e(_0x1b035a) : Promise['resolve'](_0x1b035a)['then'](_0x4e7c48, _0xa04c40);
-    }
-
-    function _0x206d62(_0x2a6b28) {
-
-        return (_0x206d62 = 'function' == typeof Symbol && 'symbol' == typeof Symbol['iterator'] ? function (_0x5d746e) {
-            return typeof _0x5d746e;
-        } : function (_0x2d2b0) {
-
-            return _0x2d2b0 && 'function' == typeof Symbol && _0x2d2b0['constructor'] === Symbol && _0x2d2b0 !== Symbol['prototype'] ? 'symbol' : typeof _0x2d2b0;
-        })(_0x2a6b28);
-    }
 
     function _0x14195e(_0x2140e6) {
 
@@ -1079,7 +995,7 @@ var EJS = (function () {
                 '{seektime}': _0x45505e['seekTime'],
                 '{title}': _0x45505e['title']
             };
-            return I.toArr(_0x13214a,function (_0x143ea3) {
+            return I.toArr(_0x13214a, function (_0x143ea3) {
                 var _0x587520 = _0x387d82(_0x143ea3, 0x2),
                     _0x4ff8cb = _0x587520[0x0],
                     _0x2e6ab0 = _0x587520[0x1];
@@ -4275,7 +4191,7 @@ Output file checksu` + 'm: ' + padZeroes(_0x5e8f08['checksumOutput'], 0x4);
 
                     0x0 === _0x210b60 && _0x58fce2['call'](_0x29b581, _0x1d9fa9, 'click', function () {
                         var _0x19331d = _0x42a2['getScreenData']();
-                        return _0x284112()(new Blob([_0x19331d]), _0x29b581['startName'] + '.png'), !0x1;
+                        return T.download(_0x29b581['startName'] + '.png', _0x19331d), !0x1;
                     }), 0x1 === _0x210b60 && _0x58fce2['call'](_0x29b581, _0x1d9fa9, 'click', function () {
 
                         _0x42a2['quickSaveState'](), _0x28f202['contextMenu']['style']['display'] = 'none';
@@ -4299,7 +4215,7 @@ Output file checksu` + 'm: ' + padZeroes(_0x5e8f08['checksumOutput'], 0x4);
                     }, '*') : I.func(_0x29b581['config']['onsavestate']) ? _0x29b581['config']['onsavestate']['call'](null, {
                         'screenshot': _0x1a79dc['detail']['screenshot'],
                         'state': _0x43a744
-                    }, _0x2ddf80, _0x29b581['elements']['container']) : _0x284112()(_0x4ca4d8, _0x2ddf80), _0x29b581['elements']['container']['focus']();
+                    }, _0x2ddf80, _0x29b581['elements']['container']) : T.download(_0x2ddf80, _0x4ca4d8), _0x29b581['elements']['container']['focus']();
                 }), _0x29b581['game']['stateloadField'] = _0x110b30('input'), _0x29b581['game']['stateloadField']['type'] = 'file', _0x29b581['game']['stateloadField']['onchange'] = function _0x545f98(_0xbdeff9) {
                     var _0x2b343d, _0x4a2e77 = _0xbdeff9['target']['files'];
                     0x0 < _0x4a2e77['length'] && ((_0x2b343d = new FileReader())['file_name'] = _0x4a2e77[0x0]['name'], _0x2b343d['onload'] = function () {
@@ -4698,7 +4614,7 @@ Output file checksu` + 'm: ' + padZeroes(_0x5e8f08['checksumOutput'], 0x4);
                 var _0x5230fc = _0xa436b2['getCoreOptions']['call'](this);
                 this['listeners']['bind'](_0x417a26, 'click keyup', function (_0xdeebd3) {
 
-                    I.IF(_0xdeebd3,18) && 0x20 !== _0xdeebd3['which'] || (_0xdeebd3['preventDefault'](), _0xdeebd3['stopPropagation'](), _0x417a26['checked'] = !0x0, Object['keys'](_0xa436b2['normalOptions'])['includes'](_0x2beee2) && _0xa436b2['updateNormalOptions']['call'](_0x1383de, _0x2beee2, _0xc73cef), Object['keys'](_0x5230fc)['includes'](_0x2beee2) && (_0x5230fc[_0x2beee2]['netplay'] && _0x46cf61['connected'] || _0xa436b2['updateCoreOptions']['call'](_0x1383de, _0x2beee2, _0xc73cef)), _0xa436b2['showMenuPanel']['call'](_0x1383de, 'home', I.IF(_0xdeebd3,18)));
+                    I.IF(_0xdeebd3, 18) && 0x20 !== _0xdeebd3['which'] || (_0xdeebd3['preventDefault'](), _0xdeebd3['stopPropagation'](), _0x417a26['checked'] = !0x0, Object['keys'](_0xa436b2['normalOptions'])['includes'](_0x2beee2) && _0xa436b2['updateNormalOptions']['call'](_0x1383de, _0x2beee2, _0xc73cef), Object['keys'](_0x5230fc)['includes'](_0x2beee2) && (_0x5230fc[_0x2beee2]['netplay'] && _0x46cf61['connected'] || _0xa436b2['updateCoreOptions']['call'](_0x1383de, _0x2beee2, _0xc73cef)), _0xa436b2['showMenuPanel']['call'](_0x1383de, 'home', I.IF(_0xdeebd3, 18)));
                 }, _0x2beee2, !0x1), _0xa436b2['bindMenuItemShortcuts']['call'](this, _0x417a26, _0x2beee2), _0x3392f5['appendChild'](_0x417a26);
             },
             'updateVolume': function () {
@@ -4710,7 +4626,7 @@ Output file checksu` + 'm: ' + padZeroes(_0x5e8f08['checksumOutput'], 0x4);
                 I.elm(_0x1c3ef7) && (_0x1c3ef7['value'] = _0x7a3c97, _0xa436b2['updateRangeFill']['call'](this, _0x1c3ef7));
             },
             'updateRangeFill': function (_0x44c215) {
-                var _0x59885b = I.IF(_0x44c215,17) ? _0x44c215['target'] : _0x44c215;
+                var _0x59885b = I.IF(_0x44c215, 17) ? _0x44c215['target'] : _0x44c215;
                 if (I.elm(_0x59885b) && 'range' === _0x59885b['getAttribute']('type')) {
                     if (_0x4e2906(_0x59885b, this['config']['selectors']['inputs']['volume'])) {
                         var _0x41f0a7 = 0x64 * _0x59885b['value'];
@@ -4944,15 +4860,15 @@ Output file checksu` + 'm: ' + padZeroes(_0x5e8f08['checksumOutput'], 0x4);
                         _0x254f41 = _0x50ad54;
                     if (I.bool(_0x1923bd)) _0x254f41 = _0x1923bd;
                     else {
-                        if (I.IF(_0x1923bd,18) && 0x1b === _0x1923bd['which']) _0x254f41 = !0x1;
+                        if (I.IF(_0x1923bd, 18) && 0x1b === _0x1923bd['which']) _0x254f41 = !0x1;
                         else {
-                            if (I.IF(_0x1923bd,17)) {
+                            if (I.IF(_0x1923bd, 17)) {
                                 var _0x2a7d2f = _0x16f0a8['contains'](_0x1923bd['target']);
                                 if (_0x2a7d2f || !_0x2a7d2f && _0x1923bd['target'] !== _0x33bdfa && _0x254f41) return;
                             }
                         }
                     }
-                    _0x33bdfa['setAttribute']('aria-expanded', _0x254f41), _0x9268bd(_0x16f0a8, !_0x254f41), _0x5149bc(this['elements']['container'], this['config']['classNames']['menu']['open'], _0x254f41), _0x254f41 && I.IF(_0x1923bd,18) ? _0xa436b2['focusFirstMenuItem']['call'](this, null, !0x0) : !_0x254f41 && !_0x50ad54 && _0x173c20['call'](this, _0x33bdfa, I.IF(_0x1923bd,18));
+                    _0x33bdfa['setAttribute']('aria-expanded', _0x254f41), _0x9268bd(_0x16f0a8, !_0x254f41), _0x5149bc(this['elements']['container'], this['config']['classNames']['menu']['open'], _0x254f41), _0x254f41 && I.IF(_0x1923bd, 18) ? _0xa436b2['focusFirstMenuItem']['call'](this, null, !0x0) : !_0x254f41 && !_0x50ad54 && _0x173c20['call'](this, _0x33bdfa, I.IF(_0x1923bd, 18));
                 }
             },
             'getMenuSize': function (_0x561935) {
@@ -5528,7 +5444,7 @@ Output file checksu` + 'm: ' + padZeroes(_0x5e8f08['checksumOutput'], 0x4);
                 }), _0x2d34c7 = !0x1);
                 var _0x350bec, _0x130722 = function (_0x68ff81) {
                     var _0x1318c7 = _0x68ff81;
-                    return I.toArr(_0x2a3d18,function (_0x262e5d) {
+                    return I.toArr(_0x2a3d18, function (_0x262e5d) {
                         var _0x400be9 = _0x55699e(_0x262e5d, 0x2),
                             _0x38f7b1 = _0x400be9[0x0],
                             _0x331023 = _0x400be9[0x1];
@@ -5551,7 +5467,7 @@ Output file checksu` + 'm: ' + padZeroes(_0x5e8f08['checksumOutput'], 0x4);
                     };
                     Object['values'](this['elements']['buttons'])['filter'](Boolean)['forEach'](function (_0x154aa2) {
 
-                        I.array(_0x154aa2) || I.IF(_0x154aa2,27) ? Array['from'](_0x154aa2)['filter'](Boolean)['forEach'](_0x1d0bfb) : _0x1d0bfb(_0x154aa2);
+                        I.array(_0x154aa2) || I.IF(_0x154aa2, 27) ? Array['from'](_0x154aa2)['filter'](Boolean)['forEach'](_0x1d0bfb) : _0x1d0bfb(_0x154aa2);
                     });
                 }
                 window['navigator']['userAgent']['includes']('Edge') && _0x2e127f(_0x350bec), _0xa436b2['fixMenuPos']['call'](this);
@@ -5902,17 +5818,16 @@ Output file checksu` + 'm: ' + padZeroes(_0x5e8f08['checksumOutput'], 0x4);
                     'mame2003': 'mame2003',
                     'mame0.193': 'mame',
                     'mame0.243': 'mame0.243'
-                },
-                _0x5bf9bf = E['system'];
-            var _0x15bb15 = 'https://www.emulatorjs.com/worker/extractor.js',
-                _0x228ce3 = '';
-            '127.0.0.1' === document['location']['hostname'] && '8002' === document['location']['port'] || (_0x228ce3 = '//www.emulatorjs.com');
+                };
             var _0x99e2d1 = document['createElement']('canvas'),
                 _0x2af7fe = document['createElement']('input');
-            _0x9268bd(_0x2af7fe, !0x0), this['game']['appendChild'](_0x99e2d1), this['game']['appendChild'](_0x2af7fe);
+            _0x9268bd(_0x2af7fe, !0x0);
+            this['game']['appendChild'](_0x99e2d1);
+            this['game']['appendChild'](_0x2af7fe);
             _0xb3d5b3['loading'] = _0x110b30('div', {
                 'class': this['config']['classNames']['loading']
-            }), this['elements']['container']['appendChild'](_0xb3d5b3['loading']);
+            });
+            this['elements']['container']['appendChild'](_0xb3d5b3['loading']);
             var _0x58c6c3 = {
                 'loading-info': _0xa96c03({
                     'loading-info': !0x0
@@ -6207,7 +6122,7 @@ Output file checksu` + 'm: ' + padZeroes(_0x5e8f08['checksumOutput'], 0x4);
                 }, 0x64), setTimeout(function () {
 
                     E['elements']['container']['focus']();
-                }, 0x1e), void 0x0 === window['addRunDependency'] && (window['Module'] = void 0x0);
+                }, 0x1e), void 0x0 === window['addRunDependency'];
                 var _0x41b3a0 = _0xb3d5b3['FS']['readFile'](E['startName']);
                 if (0x8000000 >= _0x41b3a0['length']) {
                     var _0x1383d0;
@@ -6250,7 +6165,7 @@ Output file checksu` + 'm: ' + padZeroes(_0x5e8f08['checksumOutput'], 0x4);
 
                         return _0x35f66d >>= 0x0, _0x5b70f6 = (void 0x0 === _0x5b70f6 ? ' ' : _0x5b70f6) + '', this['length'] > _0x35f66d ? this + '' : ((_0x35f66d -= this['length']) > _0x5b70f6['length'] && (_0x5b70f6 += _0x5b70f6['repeat'](_0x35f66d / _0x5b70f6['length'])), _0x5b70f6['slice'](0x0, _0x35f66d) + (this + ''));
                     });
-                    if ( _0x28f202['supportNetPlay']['call'](E) && _0x46cf61['netPlayHost']) {
+                    if (_0x28f202['supportNetPlay']['call'](E) && _0x46cf61['netPlayHost']) {
                         if (_0x46cf61['contentCrc32']) _0x46cf61['romcrc32'] = _0x46cf61['contentCrc32']();
                         else {
                             var _0x466e84 = _0x17ae12(_0x1383d0);
@@ -6264,406 +6179,29 @@ Output file checksu` + 'm: ' + padZeroes(_0x5e8f08['checksumOutput'], 0x4);
 
                 E['started'] && _0xb3d5b3['loading']['querySelector']('.' ['concat'](_0x58c6c3['ad']))['parentNode']['removeChild'](_0xb3d5b3['loading']['querySelector']('.' ['concat'](_0x58c6c3['ad']))), E['elements']['container']['focus']();
             });
-            var install_info = function () {
-                    var _0x54d2eb = _0xb3d5b3['loading']['querySelector']('.' ['concat'](_0x58c6c3['p1'])),
-                        _0x13759d = E;
-                    _0x54d2eb['innerHTML'] = 'Loading...', window['Module'] = {
-                        'TOTAL_MEMORY': 0x10000000,
-                        'noInitialRun': !0x0,
-                        'arguments': [],
-                        'preRun': [],
-                        'postRun': [],
-                        'canvas': _0x99e2d1,
-                        'print': function (_0x13e172) {
-
-                            'undefined' != typeof EJS_DEBUG_ && !0x0 === EJS_DEBUG_ && console['log'](_0x13e172);
-                        },
-                        'printErr': function (_0x57ac99) {
-
-                            _0xb3d5b3['firstErr'] || (_0xb3d5b3['firstErr'] = _0x57ac99), 'undefined' != typeof EJS_DEBUG_ && !0x0 === EJS_DEBUG_ && console['log'](_0x57ac99);
-                        },
-                        'totalDependencies': 0x0,
-                        'monitorRunDependencies': function (_0x3c8db5) {},
-                        'locateFile': function (_0x304cf1) {
-                            var _0x109fef = null;
-                            if (_0x304cf1['includes']('.wasm')) {
-                                Object['keys'](_0xb3d5b3['coreFileData'])['includes'](_0x304cf1) && (_0x109fef = _0xb3d5b3['coreFileData'][_0x304cf1], _0xb3d5b3['wasmData'] = null);
-                                var _0x250d2c = new Blob([_0x109fef], {
-                                    'type': 'application/wasm'
-                                });
-                                return window['URL']['createObjectURL'](_0x250d2c);
-                            }
-                            if (_0x304cf1['includes']('.worker.js')) return Object['keys'](_0xb3d5b3['coreFileData'])['includes'](_0x304cf1) && (_0x109fef = _0xb3d5b3['coreFileData'][_0x304cf1]), _0x250d2c = new Blob([_0x109fef], {
-                                'type': 'application/javascript'
-                            }), window['URL']['createObjectURL'](_0x250d2c);
-                            if (_0x304cf1['includes']('.js.mem') && (Object['keys'](_0xb3d5b3['coreFileData'])['includes'](_0x304cf1) && (_0x109fef = _0xb3d5b3['coreFileData'][_0x304cf1]), _0x109fef)) return _0xb3d5b3['memData'] = null, _0x250d2c = new Blob([_0x109fef], {
-                                'type': 'application/octet.stream'
-                            }), window['URL']['createObjectURL'](_0x250d2c);
-                            return _0x304cf1;
-                        },
-                        'readAsync': function (_0x450254, _0x41e334, _0x3c558d) {
-
-                            if (_0x450254 instanceof ArrayBuffer) setTimeout(function () {
-                                _0x41e334(_0x450254);
-                            }, 0x1f4);
-                            else {
-                                var _0x215862 = new XMLHttpRequest();
-                                _0x215862['open']('GET', _0x450254, !0x0), _0x215862['responseType'] = 'arraybuffer', _0x215862['onload'] = function () {
-
-                                    return 0xc8 == _0x215862['status'] || 0x0 == _0x215862['status'] && _0x215862['response'] ? void _0x41e334(_0x215862['response']) : void _0x3c558d();
-                                }, _0x215862['onerror'] = _0x3c558d, _0x215862['send'](null);
-                            }
-                        }
-                    }, 'openbor' == _0x13759d['system'] && (window['Module']['preRun'] = [function () {
-
-                        ENV['SDL_EMSCRIPTEN_KEYBOARD_ELEMENT'] = '#canvas';
-                    }]);
-
-                    function download_wasm(_0x511ae9, _0x5c94d6) {
-                        _0x511ae9 = _0x511ae9.replace(/\.data$/, '.7z');
-                        T.FetchItem({
-                            url: 'cores/' + _0x511ae9,
-                            key: _0x511ae9,
-                            store: 'data-system',
-                            version: _0x5c94d6,
-                            /*
-                            Filter(wasmU8) {
-                                let mime = T.F.CheckExt(wasmU8);
-                                console.log(mime);
-                                if (!mime) {
-                                    wasmU8 = wasmU8['slice'](0xc);
-                                    wasmU8['set']([0x37, 0x7a, 0xbc, 0xaf, 0x27, 0x1c, 0x0, 0x3], 0x0);
-                                }
-                                return wasmU8;
-                            },
-                            */
-                            success(_0x43b9d0, headers) {
-                                install_wasm(_0x43b9d0);
-                            },
-                            progress(_0x16879b, current, toled) {
-                                _0x54d2eb['innerHTML'] = 'Download Game Core ' ['concat'](_0x16879b);
-                            },
-                            error() {
-                                _0x54d2eb['innerHTML'] = '<strong style="color:#f00;text-shadow: 0px 0px 3px;">Network Error</strong>';
-                            },
-                            unpack: !0
-                        });
-                    };
-                    T.FetchItem({
-                        url: ejsURL['versionjson'] + _0x13759d['system'] + '.json',
-                        store: 'data-system',
-                        type: 'json',
-                        success(result, headers) {
-                            var _0x41cb55 = _0x30632c[_0x13759d['system']];
-                            result['core'] && (_0x41cb55 = result['core']), _0x41cb55 || (_0x41cb55 = _0x13759d['system']);
-                            var _0x20e427 = result[_0x13759d['system']];
-                            result['extensions'] && (_0x5bf649[_0x41cb55] = result['extensions']), result['options'] && (_0xb3d5b3['coreOptions'] = result['options']), result['shaders'] && (_0xb3d5b3['shaders'] = result['shaders']), !0x1 === result['disk-control'] && (_0xb3d5b3['diskControl'] = !0x1);
-                            var _0x76b4f5 = !0x1;
-                            'undefined' != typeof SharedArrayBuffer && (_0x76b4f5 = !0x0);
-                            var _0x2b3a29 = !0x1;
-                            result['threads'] && (_0x2b3a29 = result['threads']), result['buttons'] && (_0xb3d5b3['buttonMaps'] = result['buttons']), result['savepath'] && (_0x13759d['savepath'] = result['savepath']), result['servers'] && (_0xb3d5b3['servers'] = result['servers']);
-                            var _0x1126aa = !0x0,
-                                _0x1bd892 = !0x0,
-                                _0xbcd9b = !0x0,
-                                _0x15fbba = !0x0,
-                                _0x119508 = !0x0;
-                            'restart' in result && (_0x1126aa = result['restart']), 'pause' in result && (_0x1bd892 = result['pause']), 'settings' in result && (_0xbcd9b = result['settings']), 'volume' in result && (_0x15fbba = result['volume']), 'screenshot' in result && (_0x119508 = result['screenshot']), 'keyboard' in result && result['keyboard'] && (_0x13759d['keyboard'] = !0x0), 'pointerlock' in result && result['pointerlock'] && (_0x13759d['pointerlock'] = !0x0), !_0x1126aa && I.elm(_0x13759d['elements']['buttons']['restart']) && _0x9268bd(_0x13759d['elements']['buttons']['restart'], !0x0), _0x1bd892 || Array['from'](_0x13759d['elements']['buttons']['play'] || [])['forEach'](function (_0x7f333d) {
-                                _0x9268bd(_0x7f333d, !0x0);
-                            }), _0xbcd9b || _0x9268bd(_0x13759d['elements']['buttons']['settings'], !0x0), _0x15fbba || _0x9268bd(_0x13759d['elements']['container']['querySelector'](getClassName('ejs__volume', !0)), !0x0), _0xbcd9b || _0x15fbba || (_0x13759d['elements']['buttons']['fullscreen']['style']['marginLeft'] = 'auto'), _0x119508 || _0x9268bd(_0x13759d['elements']['container']['querySelector']('.' ['concat'](_0xa96c03({
-                                'ejs__contextmenu': !0x0
-                            }), ' li:nth-child(1)')), !0x0);
-                            var _0x4da793 = 0x1,
-                                _0x46e5c5 = !0x1,
-                                _0x2751db = !0x1,
-                                _0x423298 = !0x1,
-                                _0x13ea39 = !0x1;
-                            _0x20e427 instanceof Array ? (_0x4da793 = _0x20e427[0x0] ? _0x20e427[0x0] : 0x1, _0x46e5c5 = !!(_0x20e427[0x1] >> 0x0), _0x2751db = !!(_0x20e427[0x2] >> 0x0), _0x423298 = !!(_0x20e427[0x3] >> 0x0), _0x13ea39 = !!(_0x20e427[0x4] >> 0x0)) : (!!_0x20e427['netplay'], _0x4da793 = _0x20e427['version'] ? _0x20e427['version'] : 0x1, _0x46e5c5 = !!_0x20e427['state'], _0x2751db = !!_0x20e427['asmjs'], _0x423298 = !!_0x20e427['wasm'], _0x13ea39 = !!_0x20e427['cheat']), _0x13ea39 && (_0x46cf61['allowCheat'] = !0x0), _0xb3d5b3['newCoreKey'] = headers['key'], _0x13759d['key'] && (_0xb3d5b3['newCoreKey2'] = _0x13759d['key']), 'nds' != _0x13759d['system'] || _0x236fc8['wasm'] || (_0x46e5c5 = !0x1), _0xb3d5b3['coreFileVersion'] = _0x4da793, _0xb3d5b3['coreFileName'] = _0x41cb55;
-                            var _0x1059f6, _0x56290a = !0x1;
-                            ['webgl2', 'experimental-webgl2']['includes'](_0x236fc8['webgl']['WEBGL_CONTEXT']) && (_0x56290a = !0x0), 'undefined' != typeof EJS_N64_LEGACY && 0x1 == EJS_N64_LEGACY && (_0x56290a = !0x1), _0xb3d5b3['arcadeCores']['includes'](E['system']) && (_0xb3d5b3['isArcadeCore'] = !0x0);
-                            var _0x347004, _0x300c2e = _0x13759d['config'],
-                                _0x4bf7df = (_0x300c2e['gameId'], _0x300c2e['gameUrl']['split']('/')),
-                                _0x23596f = _0x4bf7df[_0x4bf7df['length'] - 0x1];
-                            if (-0x1 < _0x23596f['indexOf']('?') && (_0x23596f = _0x23596f['substr'](0x0, _0x23596f['indexOf']('?'))), 'fbneo' == _0x13759d['system'] || 'arcade' == _0x13759d['system']) _0x347004 = '' ['concat'](ejsURL['fbneoUrl'], '?name=')['concat'](_0x23596f), 'arcade' == _0x13759d['system'] && (_0x347004 = '' ['concat'](ejsURL['fbaUrl'], '?name=')['concat'](_0x23596f)), _0x236fc8['wasm'] && _0x423298 ? (_0x1059f6 = '' ['concat'](_0x41cb55, '-wasm.data'), _0x2cba0a = !0x0) : _0x2751db && (_0x1059f6 = '' ['concat'](_0x41cb55, '-asmjs.data')),
 
 
-                                download_wasm(_0x1059f6, _0x4da793);
-                            else {
-                                if ('mame' == _0x13759d['system'] || 'mame0.193' == _0x13759d['system'] || 'mame0.243' == _0x13759d['system']) {
-                                    var _0x2ef29c;
-                                    _0x23596f['split']('.')['pop']();
 
-                                    _0x2ef29c = '' ['concat'](ejsURL['mameUrl'], '?name=')['concat'](_0x23596f);
-                                    'mame0.243' == _0x13759d['system'] && (_0x2ef29c = '' ['concat'](ejsURL['mame0243Url'], '?name=')['concat'](_0x23596f));
-                                    var mameURL = ejsURL['mameUrl'],
-                                        mameType = 'text';
-                                    if('mame0.243' == _0x13759d['system']){
-                                        mameURL = ejsURL['mame0243Url'];
-                                        mameType = 'json';
-                                    }
-                                    T.ajax({
-                                        url:mameURL+'?name='+_0x23596f,
-                                        type:mameType,
-                                        success(result,headers){
-                                            if(result){
-                                                if(mameType=='text'){
-                                                    var _0x400af3 = result['split']('|');
-                                                    _0xb3d5b3['coreFileName'] = '' ['concat'](_0x13759d['system'], '-')['concat'](_0x400af3[0x0]), _0x46e5c5 = '1' === _0x400af3[0x1], I.elm(_0x13759d['elements']['buttons']['saveState']) && _0x9268bd(_0x13759d['elements']['buttons']['saveState'], !_0x46e5c5), I.elm(_0x13759d['elements']['buttons']['loadState']) && _0x9268bd(_0x13759d['elements']['buttons']['loadState'], !_0x46e5c5), _0x400af3[0x0] ? (_0x236fc8['wasm'] && _0x423298 ? (_0x1059f6 = '' ['concat'](_0x13759d['system'], '-')['concat'](_0x400af3[0x0], '-wasm.data'), _0x2cba0a = !0x0) : (_0x400af3['innerHTML'] = '<strong style="color:#f00;text-shadow: 0px 0px 3px;">Webassembly support is not detected in this browser</strong>', _0x1059f6 = ''), download_wasm(_0x1059f6, _0x4da793)) : _0x400af3['innerHTML'] = '<strong style="color:#f00;text-shadow: 0px 0px 3px;">Unsupported Game</strong>';
-
-                                                }else{
-                                                    for (var _0x2ab4e2 in (_0x46e5c5 = 'supported' == result['savestate'], result['files'])) _0x13759d['config']['gameParentUrl']['push'](result['files'][_0x2ab4e2]);
-                                                    _0xb3d5b3['coreFileName'] = '' ['concat'](_0x13759d['system'], '-')['concat'](result['index']), I.elm(_0x13759d['elements']['buttons']['saveState']) && _0x9268bd(_0x13759d['elements']['buttons']['saveState'], !_0x46e5c5), I.elm(_0x13759d['elements']['buttons']['loadState']) && _0x9268bd(_0x13759d['elements']['buttons']['loadState'], !_0x46e5c5), _0x9268bd(_0x28f202['contextMenu']['querySelectorAll']('ul li')['item'](0x1), !_0x46e5c5), _0x9268bd(_0x28f202['contextMenu']['querySelectorAll']('ul li')['item'](0x2), !_0x46e5c5), _0x46cf61['stateSupported'] = _0x46e5c5, !_0x46e5c5 && I.elm(_0x13759d['elements']['buttons']['netplay']) && _0x13759d['elements']['buttons']['netplay']['remove'](), 0x0 == result['length'] ? _0x54d2eb['innerHTML'] = '<strong style="color:#f00;text-shadow: 0px 0px 3px;">Unsupported Game</strong>' : (_0x236fc8['wasm'] && _0x423298 ? (_0x1059f6 = '' ['concat'](_0x13759d['system'], '-')['concat'](result['index'], '-wasm.data'), _0x2cba0a = !0x0) : (_0x54d2eb['innerHTML'] = '<strong style="color:#f00;text-shadow: 0px 0px 3px;">Webassembly support is not detected in this browser</strong>', _0x1059f6 = ''), download_wasm(_0x1059f6, _0x4da793));
-
-                                                }
-                                            }
-
-                                        },
-                                        error(_0x29ce42){
-                                            console['log'](_0x29ce42), _0x54d2eb['innerHTML'] = '<strong style="color:#f00;text-shadow: 0px 0px 3px;">Network Error</strong>';
-                                        }
-                                    });
-                                } else {
-                                    var _0x38e8ee = 'Please upgrade your browser to the latest version';
-                                    _0x236fc8['wasm'] && _0x423298 ? (_0x1059f6 = '' ['concat'](_0x41cb55, '-wasm.data'), 'n64' === _0x13759d['system'] && !_0x56290a && (_0x1059f6 = '' ['concat'](_0x41cb55, '-legacy-wasm.data'), _0x46e5c5 = !0x1), _0x2cba0a = !0x0) : _0x2751db && (_0x1059f6 = '' ['concat'](_0x41cb55, '-asmjs.data'), 'n64' === _0x13759d['system'] && !_0x56290a && (_0x1059f6 = '' ['concat'](_0x41cb55, '-legacy-asmjs.data'))), _0x2b3a29 && _0x76b4f5 && (_0x1059f6 = '' ['concat'](_0x41cb55, '-wasm-threads.data')), 'undefined' != typeof EJS_CUSTOM_COREFILE && (_0x1059f6 = EJS_CUSTOM_COREFILE), ['mupen64plus', 'mupen64plus-nx']['includes'](_0x13759d['system']) && !_0x56290a && (_0x38e8ee = 'Your browser does not support WebGL2', _0x1059f6 = null), _0x1059f6 ? download_wasm(_0x1059f6, _0x4da793) : _0x54d2eb['innerHTML'] = ('<strong style="color:#f00;text-shadow: 0px 0px 3px;">')['concat'](_0x38e8ee, '</strong>');
-                                }
-                            }
-                            I.elm(_0x13759d['elements']['buttons']['saveState']) && _0x9268bd(_0x13759d['elements']['buttons']['saveState'], !_0x46e5c5), I.elm(_0x13759d['elements']['buttons']['loadState']) && _0x9268bd(_0x13759d['elements']['buttons']['loadState'], !_0x46e5c5), _0x9268bd(_0x28f202['contextMenu']['querySelectorAll']('ul li')['item'](0x1), !_0x46e5c5), _0x9268bd(_0x28f202['contextMenu']['querySelectorAll']('ul li')['item'](0x2), !_0x46e5c5), _0x46cf61['stateSupported'] = _0x46e5c5;
-
-
-                        },
-                        error() {
-                            _0x54d2eb['innerHTML'] = '<strong style="color:#f00;text-shadow: 0px 0px 3px;">Network Error</strong>';
-                        }
-                    });
-                },
-                _0x235b28 = !0x1;
 
             function REST_MEMORY() {
 
                 _0x2cba0a ? (window['Module']['TOTAL_MEMORY'] = 0x0, ['jaguar']['includes'](E['system']) && (window['Module']['TOTAL_MEMORY'] = 0x10000000), ['nds', 'nes', 'snes', 'arcade', 'mame']['includes'](E['system']) && (window['Module']['TOTAL_MEMORY'] = 0x0), ['snes2002', 'snes2005', 'snes2010']['includes'](E['system']) && (window['Module']['TOTAL_MEMORY'] = 0x0), 'gba' == E['system'] && (window['Module']['TOTAL_MEMORY'] = 0x0), '3do' == E['system'] && (window['Module']['TOTAL_MEMORY'] = 0x0), 'n64' == E['system'] && (window['Module']['TOTAL_MEMORY'] = 0x0)) : ('nes' === E['system'] && (window['Module']['TOTAL_MEMORY'] = 0x8000000), window['Module']['TOTAL_MEMORY'] = _0x256faf + 0x4000000, _0xb3d5b3['arcadeCores']['includes'](E['system']) && (window['Module']['TOTAL_MEMORY'] = _0x256faf + 0x10000000, _0xb3d5b3['isMobileDevice'] && (window['Module']['TOTAL_MEMORY'] = 0x12c00000)), ['n64', 'nds', 'jaguar']['includes'](E['system']) && (window['Module']['TOTAL_MEMORY'] = _0x256faf + 0x10000000, _0xb3d5b3['isMobileDevice'] && (window['Module']['TOTAL_MEMORY'] = 0x12c00000)), 'gba' == E['system'] && (window['Module']['TOTAL_MEMORY'] = 0x10000000)), 'undefined' != typeof EJS_MEMORY && (window['Module']['TOTAL_MEMORY'] = EJS_MEMORY);
             }
-            async function install_cores() {
-                _0xb3d5b3['loading']['querySelector']('.' ['concat'](_0x58c6c3['p1']))['innerHTML'] = 'Game Core ready';
-
-                I.toArr(await T.FetchItem({
-                    url: 'bios/shader.zip',
-                    unpack: !0,
-                    store: 'data-libjs',
-                }), entry => {
-                    _0xb3d5b3['Module'].writeFile('/shaders/' + entry[0], entry[1]);
-                    _0x256faf += entry[1].length;
-                });
-                var _0x280d63 = E['config']['biosUrl'];
-                _0x46cf61['bindFunction']['call'](E);
-                _0x46cf61['setGamepadDialog']['call'](E);
-                _0x46cf61['setCacheDialog']['call'](E);
-                _0x46cf61['setLoadingDialog']['call'](E);
-                _0x46cf61['setNetplayDialog']['call'](E);
-                _0x46cf61['setCheatDialog']['call'](E);
-                _0x46cf61['initGamepad']['call'](E);
-                _0x46cf61['initKeyboard']['call'](E);
-                _0x46cf61['listeners']['call'](E);
-                _0xb3d5b3['FS']['createFolder'] ? _0xb3d5b3['FS']['createFolder']('/', 'etc', !0x0, !0x0) : _0xb3d5b3['FS']['createPath']('/', 'etc', !0x0, !0x0);
-                'openbor' == E['system'] && (_0xb3d5b3['FS']['mkdir']('/Saves'), 0x2 == E['mode'] && _0xb3d5b3['FS']['mount'](_0xb3d5b3['FS']['filesystems']['IDBFS'], {}, '/Saves'));
-                _0xb3d5b3['FS']['mkdir']('/data');
-                _0xb3d5b3['FS']['mkdir']('/data/saves');
-                0x2 == E['mode'] && ('undefined' == typeof IDBFS ? _0xb3d5b3['FS']['mount'](_0xb3d5b3['FS']['filesystems']['IDBFS'], {}, '/data/saves') : _0xb3d5b3['FS']['mount'](IDBFS, {}, '/data/saves'));
-                _0xb3d5b3['FS']['mkdir']('/shader');
-                0x2 == E['mode'] && _0xb3d5b3['FS']['syncfs'](!0x0, function () {});
-                'openbor' != E['system'] && _0xb3d5b3['FS']['mkdir']('/data/saves/' ['concat'](E['savepath']));
-                var _0x3ba2d7 = !0x1,
-                    _0x3fc5d1 = null,
-                    _0x540ad4 = null,
-                    _0x401e7d = null;
-                _0x58fce2['call'](E, E['elements']['container'], 'start-game', function () {
-
-                    if ('' != E['config']['savename']) {
-                        var _0x1ab7ac = 'srm';
-                        'nds' === E['system'] && (_0x1ab7ac = 'dsv'), ['melonds', 'zc210']['includes'](E['system']) && (_0x1ab7ac = 'sav');
-                        var _0x126d42 = E['startName']['split']('/')['pop']()['split']('.'),
-                            _0xf0b1b = _0x126d42['slice'](0x0, _0x126d42['length'] - 0x1)['join']('.');
-                        try {
-                            var _0x329826 = _0xb3d5b3['FS']['readFile']('/data/saves/' ['concat'](E['savepath'], '/')['concat'](E['config']['savename'], '.')['concat'](_0x1ab7ac));
-                            _0xb3d5b3['FS']['writeFile']('/data/saves/' ['concat'](E['savepath'], '/')['concat'](_0xf0b1b, '.')['concat'](_0x1ab7ac), new Uint8Array(_0x329826)), _0xb3d5b3['Module']['_event_load_save_files']();
-                        } catch (_0x1f7241) {}
-                    }
-                }), _0xb3d5b3['FS']['trackingDelegate']['onWriteToFile'] = function (_0x248d7f) {
-
-                    if (E['started']) {
-                        var _0x1e8a47, _0x38580c = E['startName']['split']('/')['pop']()['split']('.'),
-                            _0x35c7e1 = _0x38580c['slice'](0x0, _0x38580c['length'] - 0x1)['join']('.'),
-                            _0x2a80f4 = 'srm';
-                        if ('nds' === E['system'] && (_0x2a80f4 = 'dsv'), ['melonds', 'zc210']['includes'](E['system']) && (_0x2a80f4 = 'sav'), '/data/saves/' == _0x248d7f['substr'](0x0, 0xc)) {
-                            _0x540ad4 = '/data/saves/' ['concat'](E['savepath'], '/')['concat'](_0x35c7e1, '.')['concat'](_0x2a80f4), '' != E['config']['savename'] && (_0x540ad4 = '/data/saves/' ['concat'](E['savepath'], '/')['concat'](E['config']['savename'], '.')['concat'](_0x2a80f4));
-                            var _0xa025ed = function () {
-
-                                _0x3ba2d7 = !0x0;
-                                try {
-                                    _0x1e8a47 = _0xb3d5b3['FS']['readFile'](_0x540ad4);
-                                    var _0x4c59fb = _0x17ae12(new _0x47ef4e(_0x1e8a47));
-                                    null == _0x3fc5d1 && (_0x3fc5d1 = _0x4c59fb), _0x3fc5d1 != _0x4c59fb && (0x2 == E['mode'] ? _0xb3d5b3['FS']['syncfs'](function () {
-                                        _0x3ba2d7 = !0x1;
-                                    }) : window['parent'] && window['parent']['parent'] && window['parent']['parent']['postMessage']({
-                                        'act': 'ejs-idb-2',
-                                        'data': _0x1e8a47,
-                                        'path': _0x540ad4
-                                    }, '*'), _0x3fc5d1 = _0x4c59fb);
-                                } catch (_0x96e04d) {}
-                                _0x3ba2d7 = !0x1;
-                            };
-                            _0x540ad4 != _0x248d7f || _0x3ba2d7 || (_0x401e7d ? (clearTimeout(_0x401e7d), _0x401e7d = null, _0x401e7d = setTimeout(_0xa025ed, 0x64)) : _0x401e7d = setTimeout(_0xa025ed, 0x64));
-                        }
-                        if ('/Saves/' == _0x248d7f['substr'](0x0, 0x7)) {
-                            _0x1e8a47 = _0xb3d5b3['FS']['readFile'](_0x248d7f), _0x540ad4 = _0x248d7f;
-                            _0xb3d5b3['FS']['syncfs'](function () {
-                                _0x3ba2d7 = !0x1;
-                            })
-                        }
-                    }
-                }, (function () {
-                    var _0x5971e4 = 'srm';
-                    'nds' === E['system'] && (_0x5971e4 = 'dsv'), ['melonds', 'zc210']['includes'](E['system']) && (_0x5971e4 = 'sav'), window['setInterval'](function () {
-
-                        if (E['started']) {
-                            var _0x4e9ee3 = E['startName']['split']('/')['pop']()['split']('.'),
-                                _0x4bfccb = _0x4e9ee3['slice'](0x0, _0x4e9ee3['length'] - 0x1)['join']('.'),
-                                _0x4c365c = [];
-                            _0x46cf61['saveSavFiles'] && _0x46cf61['saveSavFiles']();
-                            try {
-                                '' != E['config']['savename'] && (_0x4c365c = _0xb3d5b3['FS']['readFile']('/data/saves/' ['concat'](E['savepath'], '/')['concat'](_0x4bfccb, '.')['concat'](_0x5971e4)), _0xb3d5b3['FS']['writeFile']('/data/saves/' ['concat'](E['savepath'], '/')['concat'](E['config']['savename'], '.')['concat'](_0x5971e4), new Uint8Array(_0x4c365c)));
-                            } catch (_0x14be78) {}
-                        }
-                    }, 0xfa0);
-                }()), _0x46cf61['initShaders']();
-                var _0x39446c = 'camera_allow = "false"' +
-                    '\ncamera_driver = "null"' +
-                    '\ncamera_device = "null"';
-                _0x39446c += ('savefile_directory = /data/saves/')['concat'](E['savepath'], '\n'), _0x39446c += 'system_directory = /\n', _0x39446c += 'video_vsync = true\n', _0x39446c += 'screenshot_directory' + ` = /
-`, _0x39446c += 'video_shader = /shader/shader.glslp\n', _0x39446c += 'video_shader_enable ' + `= true
-`, _0x39446c += 'video_font_enable = ' + `false
-`, _0x39446c += `video_scale = 1.0
-`, _0x39446c += 'video_gpu_screenshot' + ` = false
-`;
-                var _0x5cb8fd = _0x28f202['defaultCoreOptionsValues']['call'](E);
-                E['lightgun'] && ('nes' === E['system'] && (_0x39446c += 'input_libretro_devic' + `e_p2 = "258"
-`), ('segaMD' === E['system'] || 'segaCD' === E['system']) && (_0x5cb8fd['genesis_plus_gx_gun_cursor'] = 'yes', _0x5cb8fd['genesis_plus_gx_invert_mouse'] = 'yes', _0x5cb8fd['genesis_plus_gx_bram'] = 'per game', 0x1 == E['lightgun'] ? _0x39446c += 'input_libretro_devic' + `e_p2 = "260"
-` : 0x2 == E['lightgun'] ? _0x39446c += 'input_libretro_devic' + `e_p2 = "516"
-` : 0x3 == E['lightgun'] && (_0x39446c += 'input_libretro_devic' + `e_p2 = "772"
-`)), 'segaMS' === E['system'] && (_0x5cb8fd['genesis_plus_gx_gun_cursor'] = 'yes', _0x5cb8fd['genesis_plus_gx_invert_mouse'] = 'yes', _0x5cb8fd['genesis_plus_gx_bram'] = 'per game', _0x39446c += 'input_libretro_devic' + `e_p1 = "260"
-`), 'snes' === E['system'] && (_0x39446c += 'input_libretro_device_p2 = "260"\n'), ['snes2002', 'snes2005', 'snes2010']['includes'](E['system']) && (_0x39446c += 'input_libretro_devic' + `e_p2 = "260"
-`), ['fbneo']['includes'](E['system']) && (_0x39446c += 'input_libretro_devic' + `e_p1 = "514"
-`)), E['mouse'] && ('snes' === E['system'] && (_0x39446c += 'input_libretro_devic' + `e_p1 = 2
-`), ['snes2002', 'snes2005', 'snes2010']['includes'](E['system']) && (_0x39446c += 'input_libretro_devic' + `e_p1 = 2
-`), 'segaMD' === E['system'] && (_0x39446c += 'input_libretro_devic' + `e_p2 = 2
-`)), E['multitap'] && ('snes' === E['system'] && (_0x39446c += 'input_libretro_devic' + `e_p2 = 257
-`), ['snes2002', 'snes2005', 'snes2010']['includes'](E['system']) && (_0x39446c += 'input_libretro_device_p2 = 257\n')), ['n64', 'mupen64plus', 'mupen64plus2', 'mupen64plus-nx']['includes'](E['system']) && (_0x39446c += 'input_libretro_devic' + `e_p1 = 5
-`, _0x39446c += 'input_libretro_devic' + `e_p2 = 5
-`, _0x39446c += 'input_libretro_devic' + `e_p3 = 5
-`, _0x39446c += 'input_libretro_devic' + `e_p4 = 5
-`), _0xb3d5b3['arcadeCores']['includes'](E['system']) && (_0x39446c += 'input_libretro_devic' + `e_p1 = 5
-`, _0x39446c += 'input_libretro_devic' + `e_p2 = 5
-`, _0x39446c += 'input_libretro_devic' + `e_p3 = 5
-`, _0x39446c += 'input_libretro_devic' + `e_p4 = 5
-`), 'msx' === E['system'] && (_0x39446c += 'input_libretro_devic' + `e_p1 = 1
-`), 'fmsx' === E['system'] && (_0x39446c += 'input_libretro_devic' + `e_p1 = "257"
-`), ['psx']['includes'](E['system']) && (_0x39446c += 'input_libretro_devic' + `e_p1 = "1"
-`, _0x39446c += 'input_libretro_devic' + `e_p2 = "1"
-`, _0x39446c += 'input_libretro_devic' + `e_p3 = "1"
-`, _0x39446c += 'input_libretro_devic' + `e_p4 = "1"
-`), 'dos' === E['system'] && (_0x39446c += 'input_libretro_devic' + `e_p1 = 3
-`, _0x39446c += 'input_libretro_device_p2 = 3\n'), _0x39446c += 'video_smooth = false\n';
-                var _0x4e876c = _0x23c7cf(_0x5cb8fd, _0x28f202['storage']['get']('core-options') || {}),
-                    _0x2e8b8d = '';
-                if (!_0x2e8b8d) {
-                    if (E['system'] == 'gba') {
-                        _0x2e8b8d = '\nmgba_use_bios = "ON";\nmgba_skip_bios = "OFF"\nmgba_sgb_borders = "OFF"';
-
-                    }
-                }
-                'psx' == E['system'] && (_0x2e8b8d = 'pcsx_rearmed_memcard' + `2 = "disabled"
-`, _0x2e8b8d += 'pcsx_rearmed_multitap = "both"\n');
-                _0x4e876c && Object['keys'](_0x4e876c)['forEach'](function (_0x2e82ca) {
-
-                    _0x2e8b8d += '' ['concat'](_0x2e82ca, ' = "')['concat'](_0x4e876c[_0x2e82ca], '"\n');
-                    _0x58fce2['call'](E, E['elements']['container'], 'start-game', function () {
-
-                        'fmsx' == E['system'] || setTimeout(function () {
-
-                            'pcsx_rearmed_frameskip' != _0x2e82ca && 'pcsx_rearmed_memcard2' != _0x2e82ca && _0x46cf61['setVariable'](_0x2e82ca, _0x4e876c[_0x2e82ca]);
-                        }, 0x32);
-                    });
-                });
-
-                _0xb3d5b3['FS']['createDataFile']('/etc', 'retroarch.cfg', _0x39446c, !0x0, !0x0);
-                _0xb3d5b3['FS']['createFolder'] ? (_0xb3d5b3['FS']['createFolder']('/home/web_user', '.config', !0x0, !0x0), _0xb3d5b3['FS']['createFolder']('/home/web_user/.config', 'retroarch', !0x0, !0x0)) : (_0xb3d5b3['FS']['createPath']('/home/web_user', '.config', !0x0, !0x0), _0xb3d5b3['FS']['createPath']('/home/web_user/.config', 'retroarch', !0x0, !0x0));
-                _0xb3d5b3['cheatString'] && (_0xb3d5b3['FS']['mkdirTree'](_0xb3d5b3['cheatPath']), _0xb3d5b3['FS']['writeFile'](_0xb3d5b3['cheatPath'] + _0xb3d5b3['cheatFileName'], _0xb3d5b3['cheatString']), _0xb3d5b3['cheatPath'] = '', _0xb3d5b3['cheatString'] = '', _0xb3d5b3['cheatFileName'] = '');
-                0x1 == E['lightgun'] && 'mame0.243' == E['system'] && (_0xb3d5b3['Module']['canvas']['addEventListener']('mousemove', function (_0x3cb437) {
-                    var _0x47642b = _0xb3d5b3['Module']['canvas']['clientWidth'],
-                        _0x449e54 = _0xb3d5b3['Module']['canvas']['clientHeight'],
-                        _0x12c963 = _0x47642b / 0x2,
-                        _0x4a87ab = _0x449e54 / 0x2,
-                        _0x5162b9 = 0x0,
-                        _0x909072 = 0x0,
-                        _0x11693f = 0x0;
-                    0x0 > _0x3cb437['offsetX'] || _0x3cb437['offsetY'] > _0x47642b || (_0x3cb437['offsetX'] > _0x12c963 ? (_0x5162b9 = (_0x3cb437['offsetX'] - _0x12c963) / _0x47642b * 0x2 * 0x7fff, _0x11693f = 0x10, _0x46cf61['simulateInput'](0x0, 0x11, 0x0), _0x46cf61['simulateInput'](0x0, _0x11693f, _0x5162b9)) : (_0x5162b9 = (_0x3cb437['offsetX'] - _0x12c963) / _0x47642b * 0x2 * 0x7fff, _0x11693f = 0x11, _0x46cf61['simulateInput'](0x0, 0x10, 0x0), _0x46cf61['simulateInput'](0x0, _0x11693f, _0x5162b9)), _0x3cb437['offsetY'] > _0x4a87ab ? (_0x909072 = (_0x3cb437['offsetY'] - _0x4a87ab) / _0x449e54 * 0x2 * 0x7fff, _0x11693f = 0x12, _0x46cf61['simulateInput'](0x0, 0x13, 0x0), _0x46cf61['simulateInput'](0x0, _0x11693f, _0x909072)) : (_0x909072 = (_0x3cb437['offsetY'] - _0x4a87ab) / _0x449e54 * 0x2 * 0x7fff, _0x11693f = 0x13, _0x46cf61['simulateInput'](0x0, 0x12, 0x0), _0x46cf61['simulateInput'](0x0, _0x11693f, _0x909072)));
-                }, !0x1), E['elements']['container']['addEventListener']('mousedown', function (_0x860158) {
-
-                    switch (_0x860158['which']) {
-                        case 0x1:
-                            _0x46cf61['simulateInput'](0x0, 0x8, 0x1);
-                            break;
-                        case 0x2:
-                            break;
-                        case 0x3:
-                            _0x46cf61['simulateInput'](0x0, 0x0, 0x1);
-                    }
-                }, !0x1), E['elements']['container']['addEventListener']('mouseup', function (_0xc1f09e) {
-
-                    switch (_0xc1f09e['which']) {
-                        case 0x1:
-                            _0x46cf61['simulateInput'](0x0, 0x8, 0x0);
-                            break;
-                        case 0x2:
-                            break;
-                        case 0x3:
-                            _0x46cf61['simulateInput'](0x0, 0x0, 0x0);
-                    }
-                }, !0x1));
-                _0xb3d5b3['FS']['createDataFile']('/home/web_user/.config/retroarch', 'retroarch-core-options.cfg', _0x2e8b8d, !0x0, !0x0);
-                _0xb3d5b3['FS']['createDataFile']('/etc', 'retroarch-core-options.cfg', _0x2e8b8d, !0x0, !0x0);
-                if (_0x280d63) {
-                    write_bios(_0x280d63);
-                } else write_parent();
-            };
             async function start_rooms(_0x16da6b) {
                 try {
                     REST_MEMORY();
                     //_0x356200(E),
                 } catch (_0x3037d6) {
                     console['log'](_0x3037d6);
-                }
-                !E['startName'] && _0x16da6b && (E['startName'] = _0x16da6b);
+                }!E['startName'] && _0x16da6b && (E['startName'] = _0x16da6b);
                 var _0x404b09 = [E['startName'],
                     [_0xb3d5b3['hash'], _0xb3d5b3['hash2'], _0xb3d5b3['hash3']]['join']('')
                 ];
-                if(!1&&_0xb3d5b3['Module']._get_content_crc){
-                    await I.Async(re=>{
-                                T.once(window,'message',e=>{
-                                    console.log(e.data);
-                                    E['key'] = e.data.key;
-                                    re(!0);
-                                    elm.remove();
-                                });
-                                let elm = T.$append(document.body,T.$ct('iframe',null,{
-                                    src:'https://www.emulatorjs.com/embed/load.html?_t='+(T.time/100000).toFixed(0),
-                                    hidden:!0
-                                }));
-                        })
-                    }
                 E['key'] && (_0xb3d5b3['newCoreKey2'] = E['key']);
-                 _0xb3d5b3['newCore'] && (_0x404b09 = [E['startName'], _0xb3d5b3['newCoreKey']]);
-                 _0xb3d5b3['Module']['_get_content_crc'] && (_0x404b09 = [E['startName'], _0xb3d5b3['newCoreKey2']]);
-                  _0xb3d5b3['Module']['specialHTMLTargets'] && (_0xb3d5b3['Module']['specialHTMLTargets']['#canvas'] = _0xb3d5b3['Module']['canvas'], _0xb3d5b3['Module']['specialHTMLTargets']['#canvas-input'] = _0xb3d5b3['Module']['canvas']['parentElement']['querySelector']('input'), _0xb3d5b3['Module']['specialHTMLTargets']['#canvas-mouse'] = E['elements']['wrapper']);
-                   'undefined' != typeof EJS_DEBUG_ && !0x0 === EJS_DEBUG_ && (_0x404b09['unshift']('-v'), console['log'](_0x404b09)), 'openbor' == E['system'] && (_0x404b09 = [_0xb3d5b3['newCoreKey2']]);
+                _0xb3d5b3['newCore'] && (_0x404b09 = [E['startName'], _0xb3d5b3['newCoreKey']]);
+                _0xb3d5b3['Module']['_get_content_crc'] && (_0x404b09 = [E['startName'], _0xb3d5b3['newCoreKey2']]);
+                _0xb3d5b3['Module']['specialHTMLTargets'] && (_0xb3d5b3['Module']['specialHTMLTargets']['#canvas'] = _0xb3d5b3['Module']['canvas'], _0xb3d5b3['Module']['specialHTMLTargets']['#canvas-input'] = _0xb3d5b3['Module']['canvas']['parentElement']['querySelector']('input'), _0xb3d5b3['Module']['specialHTMLTargets']['#canvas-mouse'] = E['elements']['wrapper']);
+                'undefined' != typeof EJS_DEBUG_ && !0x0 === EJS_DEBUG_ && (_0x404b09['unshift']('-v'), console['log'](_0x404b09)), 'openbor' == E['system'] && (_0x404b09 = [_0xb3d5b3['newCoreKey2']]);
                 var _0xba82bb = _0xb3d5b3['loading']['querySelector']('.' ['concat'](_0x58c6c3['p3']));
                 _0xb3d5b3['Module']['callMain'](_0x404b09);
                 E['started'] = !0;
@@ -6671,7 +6209,7 @@ Output file checksu` + 'm: ' + padZeroes(_0x5e8f08['checksumOutput'], 0x4);
 
                     try {
                         'openbor' != E['config']['system'] && _0x46cf61['getStateInfo']();
-                         _0x1edc67['call'](E, E['elements']['container'], 'start-game');
+                        _0x1edc67['call'](E, E['elements']['container'], 'start-game');
                     } catch (_0x211935) {
                         console.log(_0x211935);
                         _0xb3d5b3['loading']['querySelector']('.' ['concat'](_0x58c6c3['p1']))['innerHTML'] = '', _0xb3d5b3['loading']['querySelector']('.' ['concat'](_0x58c6c3['p2']))['innerHTML'] = '', _0xba82bb['innerHTML'] = '<strong style="color' + ':#f00;text-shadow: 0' + 'px 0px 3px;">Failed ' + 'to start game</stron' + 'g>', _0xb3d5b3['firstErr'] = null;
@@ -6835,79 +6373,509 @@ Output file checksu` + 'm: ' + padZeroes(_0x5e8f08['checksumOutput'], 0x4);
                     }
                 });
             }
-            async function install_wasm(_0x5bed4d) {
-                var _0x2cb667 = '';
-                I.toArr(_0x5bed4d, _0x1e5b23 => {
-                    let _0x5e132d = _0x1e5b23[0];
-                    let _0xbd83bc = F.getExt(_0x5e132d);
-                    _0xb3d5b3['coreFileData'][_0x5e132d] = _0x1e5b23[1];
-                    if (_0xbd83bc == 'js' && !_0x5e132d['includes']('.worker.js')) {
-                        _0x2cb667 = _0x1e5b23[1];
-                    }
-                    if (_0xbd83bc == 'wasm') {
-                        _0xb3d5b3['memData'] = _0x1e5b23[1];
-                    }
-                });
+            var CREATE = new class {
+                constructor() {
+                    let btn = this.$('.' ['concat'](_0x58c6c3['start-game'])),
+                        startEvent = e => {
+                            _0x9268bd(btn, !0x0);
+                            this.initModule()
 
-                REST_MEMORY();
-                var _0x520a18 = !0x1;
-                var _0x440c41 = I[1].assign(window['Module'], {
-                    onRuntimeInitialized() {
-                        _0x520a18 || (_0x520a18 = !0x0);
-                        if (this.wasmBinary) {
-                            this.wasmBinary = null;
-                            delete this.wasmBinary;
+                        };
+                    T.once(btn, 'click', async e => {
+                        if (!E['key']) {
+                            btn.innerHTML = 'Loading...';
+                            let text  = await T.ajax({url:'hash.php'}).catch(e=>{
+                                throw e
+                            });
+                            text&&text.indexOf('new')===0&&(text = eval(text));
+                            if(!I.await(text)) alert('hash key using php script to get');
+                            E['key'] = await text;
+                            startEvent();
+                            /*
+                            let func = e => {
+                                console.log(e.data);
+                                if (e.data && e.data.key) {
+                                    E['key'] = e.data.key.slice(0,32)+E['basekey'];
+                                    elm.remove();
+                                    T.un(window, 'message', func);
+                                    startEvent();
+                                }
+                            };
+                            T.on(window, 'message', func);
+                            let elm = T.$append(I[31].body, T.$ct('iframe',null,{
+                                src:'https://www.emulatorjs.com/embed/game.html?_t=' + (T.time / 100000).toFixed(0),
+                                hidden: !0
+                            }));
+                            */
+                        } else {
+                            startEvent();
                         }
-                        _0xb3d5b3['FS'] = this['FS'] ? this['FS'] : window['FS'];
-                        _0xb3d5b3['Module'] = this;
-                        install_cores()
-                    },
-                    getCore() {
-                        let data = this['cwrap']('get_core_options', 'string', [])();
-                        if (data) {
-                            let list = data.split('\n');
-                            return Object.fromEntries(
-                                list.map(v => {
-                                    let s = v.split(';');
-                                    return [s[0], s[1] && s[1].trim().split('|').map(v => v.trim())];
-                                }));
-                        }
-                    },
-                    readFile(name) {
-                        return I.decode(this.FS.readFile(name))
-                    },
-                    mkdir(path) {
-                        let FS = this.FS;
-                        if (!FS.analyzePath(path).exists) {
-                            let p = path.split('/');
-                            let name = p.pop();
-                            let newpath = p.join('/');
-                            this.mkdir(newpath);
-                            FS.createPath(newpath, name, !0x0, !0x0);
-                        }
-                    },
-                    writeFile(path, data) {
-                        let newpath = path.split('/').slice(0, -1).join('/');
-                        newpath && this.mkdir(newpath);
-                        this.FS.writeFile(path, data);
-
-
-                    },
-                    wasmBinary: _0xb3d5b3['memData']
-                });
-                await T.addJS(_0x2cb667);
-                if (typeof EmulatorJS_ != 'undefined') {
-                    await EmulatorJS_(_0x440c41);
-                } else if (typeof EmulatorJS != 'undefined') {
-                    EmulatorJS(_0x440c41)
+                    });
                 }
+                initModule() {
+                    var _0x54d2eb = CREATE.$('.' ['concat'](_0x58c6c3['p1']));
+                    _0x54d2eb['innerHTML'] = 'Loading...';
+                    window['Module'] = {
+                        TOTAL_MEMORY: 0x10000000,
+                        noInitialRun: !0x0,
+                        arguments: [],
+                        preRun: [],
+                        postRun: [],
+                        canvas: _0x99e2d1,
+                        print(_0x13e172) {
+
+                            'undefined' != typeof EJS_DEBUG_ && !0x0 === EJS_DEBUG_ && console['log'](_0x13e172);
+                        },
+                        printErr(_0x57ac99) {
+                            _0xb3d5b3['firstErr'] || (_0xb3d5b3['firstErr'] = _0x57ac99), 'undefined' != typeof EJS_DEBUG_ && !0x0 === EJS_DEBUG_ && console['log'](_0x57ac99);
+                        },
+                        totalDependencies: 0x0,
+                        monitorRunDependencies: function (_0x3c8db5) {},
+                        urls: {},
+                        locateFile(url) {
+                            if (!this.urls[url] && _0xb3d5b3['coreFileData'][url]) {
+                                _0x256faf += _0xb3d5b3['coreFileData'][url].byteLength;
+                                this.urls[url] = F.URL(_0xb3d5b3['coreFileData'][url], F.getMime(url));
+                                delete _0xb3d5b3['coreFileData'][url];
+                            }
+                            return this.urls[url] || url;
+                        },
+                        readAsync(url, loadbuf, error) {
+                            if (I.buf(url)) {
+                                loadbuf(url);
+                            } else {
+                                T.FetchItem({
+                                    url
+                                }).then(buf => loadbuf(buf.buffer)).catch(error);
+                            }
+                        },
+                        getCore() {
+                            let data = this['cwrap']('get_core_options', 'string', [])();
+                            if (data) {
+                                let list = data.split('\n');
+                                return Object.fromEntries(
+                                    list.map(v => {
+                                        let s = v.split(';');
+                                        return [s[0], s[1] && s[1].trim().split('|').map(v => v.trim())];
+                                    }));
+                            }
+                        },
+                        readFile(name) {
+                            return I.decode(this.FS.readFile(name))
+                        },
+                        mkdir(path) {
+                            let FS = this.FS;
+                            if (!FS.analyzePath(path).exists) {
+                                let p = path.split('/');
+                                let name = p.pop();
+                                let newpath = p.join('/');
+                                this.mkdir(newpath);
+                                FS.createPath(newpath, name, !0x0, !0x0);
+                            }
+                        },
+                        writeFile(path, data) {
+                            let newpath = path.split('/').slice(0, -1).join('/');
+                            newpath && this.mkdir(newpath);
+                            this.FS.writeFile(path, data);
+
+
+                        },
+                    };
+                    'openbor' == E['system'] && (window['Module']['preRun'] = [function () {
+                        ENV['SDL_EMSCRIPTEN_KEYBOARD_ELEMENT'] = '#canvas';
+                    }]);
+                    T.FetchItem({
+                        url: ejsURL['versionjson'] + E['system'] + '.json',
+                        store: 'data-system',
+                        type: 'json',
+                        success(result, headers) {
+                            var realSystem = _0x30632c[E['system']];
+                            result['core'] && (realSystem = result['core']), realSystem || (realSystem = E['system']);
+                            var systemInfo = result[E['system']];
+                            result['extensions'] && (_0x5bf649[realSystem] = result['extensions']);
+                            result['options'] && (_0xb3d5b3['coreOptions'] = result['options']);
+                            result['shaders'] && (_0xb3d5b3['shaders'] = result['shaders']);
+                            !0x1 === result['disk-control'] && (_0xb3d5b3['diskControl'] = !0x1);
+                            var _0x76b4f5 = !0x1;
+                            'undefined' != typeof SharedArrayBuffer && (_0x76b4f5 = !0x0);
+                            var _0x2b3a29 = !0x1;
+                            result['threads'] && (_0x2b3a29 = result['threads']);
+                            result['buttons'] && (_0xb3d5b3['buttonMaps'] = result['buttons']);
+                            result['savepath'] && (E['savepath'] = result['savepath']);
+                            result['servers'] && (_0xb3d5b3['servers'] = result['servers']);
+                            var _0x1126aa = !0x0,
+                                _0x1bd892 = !0x0,
+                                _0xbcd9b = !0x0,
+                                _0x15fbba = !0x0,
+                                _0x119508 = !0x0;
+                            'restart' in result && (_0x1126aa = result['restart']);
+                            'pause' in result && (_0x1bd892 = result['pause']);
+                            'settings' in result && (_0xbcd9b = result['settings']);
+                            'volume' in result && (_0x15fbba = result['volume']);
+                            'screenshot' in result && (_0x119508 = result['screenshot']);
+                            'keyboard' in result && result['keyboard'] && (E['keyboard'] = !0x0);
+                            'pointerlock' in result && result['pointerlock'] && (E['pointerlock'] = !0x0);
+                            !_0x1126aa && I.elm(E['elements']['buttons']['restart']) && _0x9268bd(E['elements']['buttons']['restart'], !0x0);
+
+                            _0x1bd892 || I.toArr(E['elements']['buttons']['play'], _0x7f333d => _0x9268bd(_0x7f333d, !0x0));
+                            _0xbcd9b || _0x9268bd(E['elements']['buttons']['settings'], !0x0);
+                            _0x15fbba || _0x9268bd(E['elements']['container']['querySelector'](getClassName('ejs__volume', !0)), !0x0);
+                            _0xbcd9b || _0x15fbba || (E['elements']['buttons']['fullscreen']['style']['marginLeft'] = 'auto');
+                            _0x119508 || _0x9268bd(E['elements']['container']['querySelector']('.' ['concat'](_0xa96c03({
+                                'ejs__contextmenu': !0x0
+                            }), ' li:nth-child(1)')), !0x0);
+                            var _0x4da793 = 0x1,
+                                _0x46e5c5 = !0x1,
+                                _0x2751db = !0x1,
+                                _0x423298 = !0x1,
+                                _0x13ea39 = !0x1;
+                            systemInfo instanceof Array ? (_0x4da793 = systemInfo[0x0] ? systemInfo[0x0] : 0x1, _0x46e5c5 = !!(systemInfo[0x1] >> 0x0), _0x2751db = !!(systemInfo[0x2] >> 0x0), _0x423298 = !!(systemInfo[0x3] >> 0x0), _0x13ea39 = !!(systemInfo[0x4] >> 0x0)) : (!!systemInfo['netplay'], _0x4da793 = systemInfo['version'] ? systemInfo['version'] : 0x1, _0x46e5c5 = !!systemInfo['state'], _0x2751db = !!systemInfo['asmjs'], _0x423298 = !!systemInfo['wasm'], _0x13ea39 = !!systemInfo['cheat']);
+
+                            _0x13ea39 && (_0x46cf61['allowCheat'] = !0x0);
+                            _0xb3d5b3['newCoreKey'] = headers['key'];
+                            E['key'] && (_0xb3d5b3['newCoreKey2'] = E['key']);
+                            'nds' != E['system'] || _0x236fc8['wasm'] || (_0x46e5c5 = !0x1);
+                            _0xb3d5b3['coreFileVersion'] = _0x4da793;
+                            _0xb3d5b3['coreFileName'] = realSystem;
+                            var _0x1059f6, _0x56290a = !0x1;
+                            ['webgl2', 'experimental-webgl2']['includes'](_0x236fc8['webgl']['WEBGL_CONTEXT']) && (_0x56290a = !0x0);
+                            'undefined' != typeof EJS_N64_LEGACY && 0x1 == EJS_N64_LEGACY && (_0x56290a = !0x1);
+                            _0xb3d5b3['arcadeCores']['includes'](E['system']) && (_0xb3d5b3['isArcadeCore'] = !0x0);
+                            var _0x347004, _0x300c2e = E['config'],
+                                _0x4bf7df = (_0x300c2e['gameId'], _0x300c2e['gameUrl']['split']('/')),
+                                _0x23596f = _0x4bf7df[_0x4bf7df['length'] - 0x1]; - 0x1 < _0x23596f['indexOf']('?') && (_0x23596f = _0x23596f['substr'](0x0, _0x23596f['indexOf']('?')));
+                            if ('fbneo' == E['system'] || 'arcade' == E['system']) {
+                                _0x347004 = '' ['concat'](ejsURL['fbneoUrl'], '?name=')['concat'](_0x23596f), 'arcade' == E['system'] && (_0x347004 = '' ['concat'](ejsURL['fbaUrl'], '?name=')['concat'](_0x23596f)), _0x236fc8['wasm'] && _0x423298 ? (_0x1059f6 = '' ['concat'](realSystem, '-wasm.data'), _0x2cba0a = !0x0) : _0x2751db && (_0x1059f6 = '' ['concat'](realSystem, '-asmjs.data')),
+
+
+                                    CREATE.initWASM(_0x1059f6, _0x4da793);
+                            } else {
+                                if ('mame' == E['system'] || 'mame0.193' == E['system'] || 'mame0.243' == E['system']) {
+                                    var _0x2ef29c;
+                                    _0x23596f['split']('.')['pop']();
+
+                                    _0x2ef29c = '' ['concat'](ejsURL['mameUrl'], '?name=')['concat'](_0x23596f);
+                                    'mame0.243' == E['system'] && (_0x2ef29c = '' ['concat'](ejsURL['mame0243Url'], '?name=')['concat'](_0x23596f));
+                                    var mameURL = ejsURL['mameUrl'],
+                                        mameType = 'text';
+                                    if ('mame0.243' == E['system']) {
+                                        mameURL = ejsURL['mame0243Url'];
+                                        mameType = 'json';
+                                    }
+                                    T.ajax({
+                                        url: mameURL + '?name=' + _0x23596f,
+                                        type: mameType,
+                                        success(result, headers) {
+                                            if (result) {
+                                                if (mameType == 'text') {
+                                                    var _0x400af3 = result['split']('|');
+                                                    _0xb3d5b3['coreFileName'] = '' ['concat'](E['system'], '-')['concat'](_0x400af3[0x0]), _0x46e5c5 = '1' === _0x400af3[0x1], I.elm(E['elements']['buttons']['saveState']) && _0x9268bd(E['elements']['buttons']['saveState'], !_0x46e5c5), I.elm(E['elements']['buttons']['loadState']) && _0x9268bd(E['elements']['buttons']['loadState'], !_0x46e5c5), _0x400af3[0x0] ? (_0x236fc8['wasm'] && _0x423298 ? (_0x1059f6 = '' ['concat'](E['system'], '-')['concat'](_0x400af3[0x0], '-wasm.data'), _0x2cba0a = !0x0) : (_0x400af3['innerHTML'] = '<strong style="color:#f00;text-shadow: 0px 0px 3px;">Webassembly support is not detected in this browser</strong>', _0x1059f6 = ''), CREATE.initWASM(_0x1059f6, _0x4da793)) : _0x400af3['innerHTML'] = '<strong style="color:#f00;text-shadow: 0px 0px 3px;">Unsupported Game</strong>';
+
+                                                } else {
+                                                    for (var _0x2ab4e2 in (_0x46e5c5 = 'supported' == result['savestate'], result['files'])) E['config']['gameParentUrl']['push'](result['files'][_0x2ab4e2]);
+                                                    _0xb3d5b3['coreFileName'] = '' ['concat'](E['system'], '-')['concat'](result['index']), I.elm(E['elements']['buttons']['saveState']) && _0x9268bd(E['elements']['buttons']['saveState'], !_0x46e5c5), I.elm(E['elements']['buttons']['loadState']) && _0x9268bd(E['elements']['buttons']['loadState'], !_0x46e5c5), _0x9268bd(_0x28f202['contextMenu']['querySelectorAll']('ul li')['item'](0x1), !_0x46e5c5), _0x9268bd(_0x28f202['contextMenu']['querySelectorAll']('ul li')['item'](0x2), !_0x46e5c5), _0x46cf61['stateSupported'] = _0x46e5c5, !_0x46e5c5 && I.elm(E['elements']['buttons']['netplay']) && E['elements']['buttons']['netplay']['remove'](), 0x0 == result['length'] ? _0x54d2eb['innerHTML'] = '<strong style="color:#f00;text-shadow: 0px 0px 3px;">Unsupported Game</strong>' : (_0x236fc8['wasm'] && _0x423298 ? (_0x1059f6 = '' ['concat'](E['system'], '-')['concat'](result['index'], '-wasm.data'), _0x2cba0a = !0x0) : (_0x54d2eb['innerHTML'] = '<strong style="color:#f00;text-shadow: 0px 0px 3px;">Webassembly support is not detected in this browser</strong>', _0x1059f6 = ''), CREATE.initWASM(_0x1059f6, _0x4da793));
+
+                                                }
+                                            }
+
+                                        },
+                                        error(_0x29ce42) {
+                                            console['log'](_0x29ce42), _0x54d2eb['innerHTML'] = '<strong style="color:#f00;text-shadow: 0px 0px 3px;">Network Error</strong>';
+                                        }
+                                    });
+                                } else {
+                                    var _0x38e8ee = 'Please upgrade your browser to the latest version';
+                                    _0x236fc8['wasm'] && _0x423298 ? (_0x1059f6 = '' ['concat'](realSystem, '-wasm.data'), 'n64' === E['system'] && !_0x56290a && (_0x1059f6 = '' ['concat'](realSystem, '-legacy-wasm.data'), _0x46e5c5 = !0x1), _0x2cba0a = !0x0) : _0x2751db && (_0x1059f6 = '' ['concat'](realSystem, '-asmjs.data'), 'n64' === E['system'] && !_0x56290a && (_0x1059f6 = '' ['concat'](realSystem, '-legacy-asmjs.data')));
+                                    _0x2b3a29 && _0x76b4f5 && (_0x1059f6 = '' ['concat'](realSystem, '-wasm-threads.data')), 'undefined' != typeof EJS_CUSTOM_COREFILE && (_0x1059f6 = EJS_CUSTOM_COREFILE), ['mupen64plus', 'mupen64plus-nx']['includes'](E['system']) && !_0x56290a && (_0x38e8ee = 'Your browser does not support WebGL2', _0x1059f6 = null), _0x1059f6 ? CREATE.initWASM(_0x1059f6, _0x4da793) : _0x54d2eb['innerHTML'] = ('<strong style="color:#f00;text-shadow: 0px 0px 3px;">')['concat'](_0x38e8ee, '</strong>');
+                                }
+                            }
+                            I.elm(E['elements']['buttons']['saveState']) && _0x9268bd(E['elements']['buttons']['saveState'], !_0x46e5c5), I.elm(E['elements']['buttons']['loadState']) && _0x9268bd(E['elements']['buttons']['loadState'], !_0x46e5c5), _0x9268bd(_0x28f202['contextMenu']['querySelectorAll']('ul li')['item'](0x1), !_0x46e5c5), _0x9268bd(_0x28f202['contextMenu']['querySelectorAll']('ul li')['item'](0x2), !_0x46e5c5), _0x46cf61['stateSupported'] = _0x46e5c5;
+
+
+                        },
+                        error() {
+                            _0x54d2eb['innerHTML'] = '<strong style="color:#f00;text-shadow: 0px 0px 3px;">Network Error</strong>';
+                        }
+                    });
+
+                }
+                initWASM(_0x511ae9, _0x5c94d6) {
+                    var _0x54d2eb = CREATE.$('.' ['concat'](_0x58c6c3['p1']));
+                    var Fitler;
+                    /*
+                    Filter = (wasmU8)=>{
+                        let mime = T.F.CheckExt(wasmU8);
+                        console.log(mime);
+                        if (!mime) {
+                            wasmU8 = wasmU8['slice'](0xc);
+                            wasmU8['set']([0x37, 0x7a, 0xbc, 0xaf, 0x27, 0x1c, 0x0, 0x3], 0x0);
+                        }
+                        return wasmU8;
+                    };
+                    */
+                    _0x511ae9 = _0x511ae9.replace(/\.data$/, '.7z');
+                    T.FetchItem({
+                        url: ejsURL['cores'] + _0x511ae9,
+                        key: _0x511ae9,
+                        store: 'data-system',
+                        version: _0x5c94d6,
+                        Fitler,
+                        async success(_0x5bed4d, headers) {
+                            var WASM_JS = '';
+                            I.toArr(_0x5bed4d, _0x1e5b23 => {
+                                let _0xbd83bc = F.getExt(_0x1e5b23[0]);
+                                if (_0xbd83bc == 'js' && !_0x1e5b23[0]['includes']('.worker.js')) {
+                                    WASM_JS = _0x1e5b23[1];
+                                } else if (_0xbd83bc == 'wasm') {
+                                    _0x256faf += _0x1e5b23[1].byteLength;
+                                    window['Module'].wasmBinary = _0x1e5b23[1];
+                                } else {
+                                    _0xb3d5b3['coreFileData'][_0x1e5b23[0]] = _0x1e5b23[1];
+                                }
+                                delete _0x5bed4d[_0x1e5b23[0]];
+                            });
+                            _0x5bed4d = null;
+                            REST_MEMORY();
+                            var _0x520a18 = !0x1;
+                            var _0x440c41 = I[1].assign(window['Module'], {
+                                onRuntimeInitialized() {
+                                    _0x520a18 || (_0x520a18 = !0x0);
+                                    if (this.wasmBinary) {
+                                        this.wasmBinary = null;
+                                        delete this.wasmBinary;
+                                    }
+                                    _0xb3d5b3['FS'] = this['FS'] ? this['FS'] : window['FS'];
+                                    _0xb3d5b3['Module'] = this;
+                                    CREATE.initCoreData()
+                                },
+                            });
+                            await T.addJS(WASM_JS);
+                            if (typeof EmulatorJS_ != 'undefined') {
+                                await EmulatorJS_(_0x440c41);
+                            } else if (typeof EmulatorJS != 'undefined') {
+                                EmulatorJS(_0x440c41)
+                            }
+                        },
+                        progress(_0x16879b, current, toled) {
+                            _0x54d2eb['innerHTML'] = 'Download Game Core ' ['concat'](_0x16879b);
+                        },
+                        error() {
+                            _0x54d2eb['innerHTML'] = '<strong style="color:#f00;text-shadow: 0px 0px 3px;">Network Error</strong>';
+                        },
+                        unpack: !0
+                    });
+                }
+                async initCoreData() {
+                    CREATE.$('.' ['concat'](_0x58c6c3['p1']))['innerHTML'] = 'Game Core ready';
+                    I.toArr(await T.FetchItem({
+                        url: 'bios/shader.zip',
+                        unpack: !0,
+                        store: 'data-libjs',
+                    }), entry => {
+                        _0xb3d5b3['Module'].writeFile('/shaders/' + entry[0], entry[1]);
+                        _0x256faf += entry[1].length;
+                    });
+                    var _0x280d63 = E['config']['biosUrl'];
+                    _0x46cf61['bindFunction']['call'](E);
+                    _0x46cf61['setGamepadDialog']['call'](E);
+                    _0x46cf61['setCacheDialog']['call'](E);
+                    _0x46cf61['setLoadingDialog']['call'](E);
+                    _0x46cf61['setNetplayDialog']['call'](E);
+                    _0x46cf61['setCheatDialog']['call'](E);
+                    _0x46cf61['initGamepad']['call'](E);
+                    _0x46cf61['initKeyboard']['call'](E);
+                    _0x46cf61['listeners']['call'](E);
+                    _0xb3d5b3['FS']['createFolder'] ? _0xb3d5b3['FS']['createFolder']('/', 'etc', !0x0, !0x0) : _0xb3d5b3['FS']['createPath']('/', 'etc', !0x0, !0x0);
+                    'openbor' == E['system'] && (_0xb3d5b3['FS']['mkdir']('/Saves'), 0x2 == E['mode'] && _0xb3d5b3['FS']['mount'](_0xb3d5b3['FS']['filesystems']['IDBFS'], {}, '/Saves'));
+                    _0xb3d5b3['FS']['mkdir']('/data');
+                    _0xb3d5b3['FS']['mkdir']('/data/saves');
+                    0x2 == E['mode'] && ('undefined' == typeof IDBFS ? _0xb3d5b3['FS']['mount'](_0xb3d5b3['FS']['filesystems']['IDBFS'], {}, '/data/saves') : _0xb3d5b3['FS']['mount'](IDBFS, {}, '/data/saves'));
+                    _0xb3d5b3['FS']['mkdir']('/shader');
+                    0x2 == E['mode'] && _0xb3d5b3['FS']['syncfs'](!0x0, function () {});
+                    'openbor' != E['system'] && _0xb3d5b3['FS']['mkdir']('/data/saves/' ['concat'](E['savepath']));
+                    var _0x3ba2d7 = !0x1,
+                        _0x3fc5d1 = null,
+                        _0x540ad4 = null,
+                        _0x401e7d = null;
+                    _0x58fce2['call'](E, E['elements']['container'], 'start-game', function () {
+
+                        if ('' != E['config']['savename']) {
+                            var _0x1ab7ac = 'srm';
+                            'nds' === E['system'] && (_0x1ab7ac = 'dsv'), ['melonds', 'zc210']['includes'](E['system']) && (_0x1ab7ac = 'sav');
+                            var _0x126d42 = E['startName']['split']('/')['pop']()['split']('.'),
+                                _0xf0b1b = _0x126d42['slice'](0x0, _0x126d42['length'] - 0x1)['join']('.');
+                            try {
+                                var _0x329826 = _0xb3d5b3['FS']['readFile']('/data/saves/' ['concat'](E['savepath'], '/')['concat'](E['config']['savename'], '.')['concat'](_0x1ab7ac));
+                                _0xb3d5b3['FS']['writeFile']('/data/saves/' ['concat'](E['savepath'], '/')['concat'](_0xf0b1b, '.')['concat'](_0x1ab7ac), new Uint8Array(_0x329826)), _0xb3d5b3['Module']['_event_load_save_files']();
+                            } catch (_0x1f7241) {}
+                        }
+                    }), _0xb3d5b3['FS']['trackingDelegate']['onWriteToFile'] = function (_0x248d7f) {
+
+                        if (E['started']) {
+                            var _0x1e8a47, _0x38580c = E['startName']['split']('/')['pop']()['split']('.'),
+                                _0x35c7e1 = _0x38580c['slice'](0x0, _0x38580c['length'] - 0x1)['join']('.'),
+                                _0x2a80f4 = 'srm';
+                            if ('nds' === E['system'] && (_0x2a80f4 = 'dsv'), ['melonds', 'zc210']['includes'](E['system']) && (_0x2a80f4 = 'sav'), '/data/saves/' == _0x248d7f['substr'](0x0, 0xc)) {
+                                _0x540ad4 = '/data/saves/' ['concat'](E['savepath'], '/')['concat'](_0x35c7e1, '.')['concat'](_0x2a80f4), '' != E['config']['savename'] && (_0x540ad4 = '/data/saves/' ['concat'](E['savepath'], '/')['concat'](E['config']['savename'], '.')['concat'](_0x2a80f4));
+                                var _0xa025ed = function () {
+
+                                    _0x3ba2d7 = !0x0;
+                                    try {
+                                        _0x1e8a47 = _0xb3d5b3['FS']['readFile'](_0x540ad4);
+                                        var _0x4c59fb = _0x17ae12(new _0x47ef4e(_0x1e8a47));
+                                        null == _0x3fc5d1 && (_0x3fc5d1 = _0x4c59fb), _0x3fc5d1 != _0x4c59fb && (0x2 == E['mode'] ? _0xb3d5b3['FS']['syncfs'](function () {
+                                            _0x3ba2d7 = !0x1;
+                                        }) : window['parent'] && window['parent']['parent'] && window['parent']['parent']['postMessage']({
+                                            'act': 'ejs-idb-2',
+                                            'data': _0x1e8a47,
+                                            'path': _0x540ad4
+                                        }, '*'), _0x3fc5d1 = _0x4c59fb);
+                                    } catch (_0x96e04d) {}
+                                    _0x3ba2d7 = !0x1;
+                                };
+                                _0x540ad4 != _0x248d7f || _0x3ba2d7 || (_0x401e7d ? (clearTimeout(_0x401e7d), _0x401e7d = null, _0x401e7d = setTimeout(_0xa025ed, 0x64)) : _0x401e7d = setTimeout(_0xa025ed, 0x64));
+                            }
+                            if ('/Saves/' == _0x248d7f['substr'](0x0, 0x7)) {
+                                _0x1e8a47 = _0xb3d5b3['FS']['readFile'](_0x248d7f), _0x540ad4 = _0x248d7f;
+                                _0xb3d5b3['FS']['syncfs'](function () {
+                                    _0x3ba2d7 = !0x1;
+                                })
+                            }
+                        }
+                    }, (function () {
+                        var _0x5971e4 = 'srm';
+                        'nds' === E['system'] && (_0x5971e4 = 'dsv'), ['melonds', 'zc210']['includes'](E['system']) && (_0x5971e4 = 'sav'), window['setInterval'](function () {
+
+                            if (E['started']) {
+                                var _0x4e9ee3 = E['startName']['split']('/')['pop']()['split']('.'),
+                                    _0x4bfccb = _0x4e9ee3['slice'](0x0, _0x4e9ee3['length'] - 0x1)['join']('.'),
+                                    _0x4c365c = [];
+                                _0x46cf61['saveSavFiles'] && _0x46cf61['saveSavFiles']();
+                                try {
+                                    '' != E['config']['savename'] && (_0x4c365c = _0xb3d5b3['FS']['readFile']('/data/saves/' ['concat'](E['savepath'], '/')['concat'](_0x4bfccb, '.')['concat'](_0x5971e4)), _0xb3d5b3['FS']['writeFile']('/data/saves/' ['concat'](E['savepath'], '/')['concat'](E['config']['savename'], '.')['concat'](_0x5971e4), new Uint8Array(_0x4c365c)));
+                                } catch (_0x14be78) {}
+                            }
+                        }, 0xfa0);
+                    }()), _0x46cf61['initShaders']();
+                    var _0x39446c = 'camera_allow = "false"' +
+                        '\ncamera_driver = "null"' +
+                        '\ncamera_device = "null"'; +
+                    '\nsavefile_directory = /data/saves/' + E['savepath'] +
+                        '\nsystem_directory = /' +
+                        '\nvideo_vsync = true' +
+                        '\nscreenshot_directory = /' +
+                        '\nvideo_shader = /shader/shader.glslp' +
+                        '\nvideo_shader_enable = true' +
+                        '\nvideo_font_enable = false' +
+                        '\nvideo_scale = 1.0' +
+                        '\nvideo_gpu_screenshot = false\n';
+
+                    var _0x5cb8fd = _0x28f202['defaultCoreOptionsValues']['call'](E);
+                    if (E['lightgun']) {
+                        'nes' === E['system'] && (_0x39446c += 'input_libretro_devic' + `e_p2 = "258"
+    `);
+                        ('segaMD' === E['system'] || 'segaCD' === E['system']) && (_0x5cb8fd['genesis_plus_gx_gun_cursor'] = 'yes', _0x5cb8fd['genesis_plus_gx_invert_mouse'] = 'yes', _0x5cb8fd['genesis_plus_gx_bram'] = 'per game', 0x1 == E['lightgun'] ? _0x39446c += 'input_libretro_devic' + `e_p2 = "260"
+    ` : 0x2 == E['lightgun'] ? _0x39446c += 'input_libretro_devic' + `e_p2 = "516"
+    ` : 0x3 == E['lightgun'] && (_0x39446c += 'input_libretro_devic' + `e_p2 = "772"
+    `));
+                        'segaMS' === E['system'] && (_0x5cb8fd['genesis_plus_gx_gun_cursor'] = 'yes', _0x5cb8fd['genesis_plus_gx_invert_mouse'] = 'yes', _0x5cb8fd['genesis_plus_gx_bram'] = 'per game', _0x39446c += 'input_libretro_devic' + `e_p1 = "260"
+    `);
+                        'snes' === E['system'] && (_0x39446c += 'input_libretro_device_p2 = "260"\n');
+                        ['snes2002', 'snes2005', 'snes2010']['includes'](E['system']) && (_0x39446c += 'input_libretro_devic' + `e_p2 = "260"
+    `);
+                        ['fbneo']['includes'](E['system']) && (_0x39446c += 'input_libretro_devic' + `e_p1 = "514"
+    `);
+
+                    }
+                    E['mouse'] && ('snes' === E['system'] && (_0x39446c += 'input_libretro_devic' + `e_p1 = 2
+    `), ['snes2002', 'snes2005', 'snes2010']['includes'](E['system']) && (_0x39446c += 'input_libretro_devic' + `e_p1 = 2
+    `), 'segaMD' === E['system'] && (_0x39446c += 'input_libretro_devic' + `e_p2 = 2
+    `));
+                    E['multitap'] && ('snes' === E['system'] && (_0x39446c += 'input_libretro_devic' + `e_p2 = 257
+    `), ['snes2002', 'snes2005', 'snes2010']['includes'](E['system']) && (_0x39446c += 'input_libretro_device_p2 = 257\n'));
+                    ['n64', 'mupen64plus', 'mupen64plus2', 'mupen64plus-nx']['includes'](E['system']) && (_0x39446c += 'input_libretro_devic' + `e_p1 = 5
+    `, _0x39446c += 'input_libretro_devic' + `e_p2 = 5
+    `, _0x39446c += 'input_libretro_devic' + `e_p3 = 5
+    `, _0x39446c += 'input_libretro_devic' + `e_p4 = 5
+    `), _0xb3d5b3['arcadeCores']['includes'](E['system']) && (_0x39446c += 'input_libretro_devic' + `e_p1 = 5
+    `, _0x39446c += 'input_libretro_devic' + `e_p2 = 5
+    `, _0x39446c += 'input_libretro_devic' + `e_p3 = 5
+    `, _0x39446c += 'input_libretro_devic' + `e_p4 = 5
+    `), 'msx' === E['system'] && (_0x39446c += 'input_libretro_devic' + `e_p1 = 1
+    `), 'fmsx' === E['system'] && (_0x39446c += 'input_libretro_devic' + `e_p1 = "257"
+    `), ['psx']['includes'](E['system']) && (_0x39446c += 'input_libretro_devic' + `e_p1 = "1"
+    `, _0x39446c += 'input_libretro_devic' + `e_p2 = "1"
+    `, _0x39446c += 'input_libretro_devic' + `e_p3 = "1"
+    `, _0x39446c += 'input_libretro_devic' + `e_p4 = "1"
+    `), 'dos' === E['system'] && (_0x39446c += 'input_libretro_devic' + `e_p1 = 3
+    `, _0x39446c += 'input_libretro_device_p2 = 3\n'), _0x39446c += 'video_smooth = false\n';
+                    var _0x4e876c = _0x23c7cf(_0x5cb8fd, _0x28f202['storage']['get']('core-options') || {}),
+                        _0x2e8b8d = '';
+                    if (!_0x2e8b8d) {
+                        if (E['system'] == 'gba') {
+                            _0x2e8b8d = '\nmgba_use_bios = "ON";\nmgba_skip_bios = "OFF"\nmgba_sgb_borders = "OFF"';
+
+                        }
+                    }
+                    'psx' == E['system'] && (_0x2e8b8d = 'pcsx_rearmed_memcard' + `2 = "disabled"
+    `, _0x2e8b8d += 'pcsx_rearmed_multitap = "both"\n');
+                    _0x4e876c && Object['keys'](_0x4e876c)['forEach'](function (_0x2e82ca) {
+
+                        _0x2e8b8d += '' ['concat'](_0x2e82ca, ' = "')['concat'](_0x4e876c[_0x2e82ca], '"\n');
+                        _0x58fce2['call'](E, E['elements']['container'], 'start-game', function () {
+
+                            'fmsx' == E['system'] || setTimeout(function () {
+
+                                'pcsx_rearmed_frameskip' != _0x2e82ca && 'pcsx_rearmed_memcard2' != _0x2e82ca && _0x46cf61['setVariable'](_0x2e82ca, _0x4e876c[_0x2e82ca]);
+                            }, 0x32);
+                        });
+                    });
+
+                    _0xb3d5b3['FS']['createDataFile']('/etc', 'retroarch.cfg', _0x39446c, !0x0, !0x0);
+                    _0xb3d5b3['FS']['createFolder'] ? (_0xb3d5b3['FS']['createFolder']('/home/web_user', '.config', !0x0, !0x0), _0xb3d5b3['FS']['createFolder']('/home/web_user/.config', 'retroarch', !0x0, !0x0)) : (_0xb3d5b3['FS']['createPath']('/home/web_user', '.config', !0x0, !0x0), _0xb3d5b3['FS']['createPath']('/home/web_user/.config', 'retroarch', !0x0, !0x0));
+                    _0xb3d5b3['cheatString'] && (_0xb3d5b3['FS']['mkdirTree'](_0xb3d5b3['cheatPath']), _0xb3d5b3['FS']['writeFile'](_0xb3d5b3['cheatPath'] + _0xb3d5b3['cheatFileName'], _0xb3d5b3['cheatString']), _0xb3d5b3['cheatPath'] = '', _0xb3d5b3['cheatString'] = '', _0xb3d5b3['cheatFileName'] = '');
+                    0x1 == E['lightgun'] && 'mame0.243' == E['system'] && (_0xb3d5b3['Module']['canvas']['addEventListener']('mousemove', function (_0x3cb437) {
+                        var _0x47642b = _0xb3d5b3['Module']['canvas']['clientWidth'],
+                            _0x449e54 = _0xb3d5b3['Module']['canvas']['clientHeight'],
+                            _0x12c963 = _0x47642b / 0x2,
+                            _0x4a87ab = _0x449e54 / 0x2,
+                            _0x5162b9 = 0x0,
+                            _0x909072 = 0x0,
+                            _0x11693f = 0x0;
+                        0x0 > _0x3cb437['offsetX'] || _0x3cb437['offsetY'] > _0x47642b || (_0x3cb437['offsetX'] > _0x12c963 ? (_0x5162b9 = (_0x3cb437['offsetX'] - _0x12c963) / _0x47642b * 0x2 * 0x7fff, _0x11693f = 0x10, _0x46cf61['simulateInput'](0x0, 0x11, 0x0), _0x46cf61['simulateInput'](0x0, _0x11693f, _0x5162b9)) : (_0x5162b9 = (_0x3cb437['offsetX'] - _0x12c963) / _0x47642b * 0x2 * 0x7fff, _0x11693f = 0x11, _0x46cf61['simulateInput'](0x0, 0x10, 0x0), _0x46cf61['simulateInput'](0x0, _0x11693f, _0x5162b9)), _0x3cb437['offsetY'] > _0x4a87ab ? (_0x909072 = (_0x3cb437['offsetY'] - _0x4a87ab) / _0x449e54 * 0x2 * 0x7fff, _0x11693f = 0x12, _0x46cf61['simulateInput'](0x0, 0x13, 0x0), _0x46cf61['simulateInput'](0x0, _0x11693f, _0x909072)) : (_0x909072 = (_0x3cb437['offsetY'] - _0x4a87ab) / _0x449e54 * 0x2 * 0x7fff, _0x11693f = 0x13, _0x46cf61['simulateInput'](0x0, 0x12, 0x0), _0x46cf61['simulateInput'](0x0, _0x11693f, _0x909072)));
+                    }, !0x1), E['elements']['container']['addEventListener']('mousedown', function (_0x860158) {
+
+                        switch (_0x860158['which']) {
+                            case 0x1:
+                                _0x46cf61['simulateInput'](0x0, 0x8, 0x1);
+                                break;
+                            case 0x2:
+                                break;
+                            case 0x3:
+                                _0x46cf61['simulateInput'](0x0, 0x0, 0x1);
+                        }
+                    }, !0x1), E['elements']['container']['addEventListener']('mouseup', function (_0xc1f09e) {
+
+                        switch (_0xc1f09e['which']) {
+                            case 0x1:
+                                _0x46cf61['simulateInput'](0x0, 0x8, 0x0);
+                                break;
+                            case 0x2:
+                                break;
+                            case 0x3:
+                                _0x46cf61['simulateInput'](0x0, 0x0, 0x0);
+                        }
+                    }, !0x1));
+                    _0xb3d5b3['FS']['createDataFile']('/home/web_user/.config/retroarch', 'retroarch-core-options.cfg', _0x2e8b8d, !0x0, !0x0);
+                    _0xb3d5b3['FS']['createDataFile']('/etc', 'retroarch-core-options.cfg', _0x2e8b8d, !0x0, !0x0);
+                    if (_0x280d63) {
+                        write_bios(_0x280d63);
+                    } else write_parent();
+                }
+                $ = s => T.$(s, _0xb3d5b3['loading']);
             }
-            _0x58fce2(_0xb3d5b3['loading']['querySelector']('#' ['concat'](_0xb3d5b3['startGameId'])), 'click touchstart', function () {
-                if (_0x235b28) return !0x1;
-                _0x235b28 = !0x0, E['key'] || (_0xb3d5b3['loading']['querySelector']('.' ['concat'](_0x58c6c3['start-game']))['innerHTML'] = 'Loading...');
-                _0x9268bd(_0xb3d5b3['loading']['querySelector']('.' ['concat'](_0x58c6c3['start-game'])), !0x0);
-                install_info()
-            });
+            E.CREATE = CREATE;
+
         }
         constructor(elm, configs) {
             var E = this;
@@ -7032,7 +7000,10 @@ Output file checksu` + 'm: ' + padZeroes(_0x5e8f08['checksumOutput'], 0x4);
         }
         mode = 0x2;
         version = '0.5.8';
-        key = '54f99f60901cd32e55c5ef323c27d0e232d57c66d2f3ea56d2af90bef14773f0';
+        //4bf51c875c23238fba5f9aa0bb80ac3c  32d57c66d2f3ea56d2af90bef14773f0
+        //key = '7e311922f3ebb2828be430121192f88a32d57c66d2f3ea56d2af90bef14773f0';
+        //key = '54f99f60'+'901cd32e'+'65c5ef32'+'3c27d0e3'+'32d57c66d2f3ea56d2af90bef14773f0';
+        basekey = '32d57c66d2f3ea56d2af90bef14773f0';
         system = '';
         hash = '';
         lightgun = !0x1;
