@@ -6188,6 +6188,7 @@ Output file checksu` + 'm: ' + padZeroes(_0x5e8f08['checksumOutput'], 0x4);
                 _0x2cba0a ? (window['Module']['TOTAL_MEMORY'] = 0x0, ['jaguar']['includes'](E['system']) && (window['Module']['TOTAL_MEMORY'] = 0x10000000), ['nds', 'nes', 'snes', 'arcade', 'mame']['includes'](E['system']) && (window['Module']['TOTAL_MEMORY'] = 0x0), ['snes2002', 'snes2005', 'snes2010']['includes'](E['system']) && (window['Module']['TOTAL_MEMORY'] = 0x0), 'gba' == E['system'] && (window['Module']['TOTAL_MEMORY'] = 0x0), '3do' == E['system'] && (window['Module']['TOTAL_MEMORY'] = 0x0), 'n64' == E['system'] && (window['Module']['TOTAL_MEMORY'] = 0x0)) : ('nes' === E['system'] && (window['Module']['TOTAL_MEMORY'] = 0x8000000), window['Module']['TOTAL_MEMORY'] = _0x256faf + 0x4000000, _0xb3d5b3['arcadeCores']['includes'](E['system']) && (window['Module']['TOTAL_MEMORY'] = _0x256faf + 0x10000000, _0xb3d5b3['isMobileDevice'] && (window['Module']['TOTAL_MEMORY'] = 0x12c00000)), ['n64', 'nds', 'jaguar']['includes'](E['system']) && (window['Module']['TOTAL_MEMORY'] = _0x256faf + 0x10000000, _0xb3d5b3['isMobileDevice'] && (window['Module']['TOTAL_MEMORY'] = 0x12c00000)), 'gba' == E['system'] && (window['Module']['TOTAL_MEMORY'] = 0x10000000)), 'undefined' != typeof EJS_MEMORY && (window['Module']['TOTAL_MEMORY'] = EJS_MEMORY);
             }
             async function start_rooms(_0x16da6b) {
+                console.log(_0x16da6b);
                 try {
                     REST_MEMORY();
                     //_0x356200(E),
@@ -6201,8 +6202,15 @@ Output file checksu` + 'm: ' + padZeroes(_0x5e8f08['checksumOutput'], 0x4);
                 _0xb3d5b3['newCore'] && (_0x404b09 = [E['startName'], _0xb3d5b3['newCoreKey']]);
                 _0xb3d5b3['Module']['_get_content_crc'] && (_0x404b09 = [E['startName'], _0xb3d5b3['newCoreKey2']]);
                 _0xb3d5b3['Module']['specialHTMLTargets'] && (_0xb3d5b3['Module']['specialHTMLTargets']['#canvas'] = _0xb3d5b3['Module']['canvas'], _0xb3d5b3['Module']['specialHTMLTargets']['#canvas-input'] = _0xb3d5b3['Module']['canvas']['parentElement']['querySelector']('input'), _0xb3d5b3['Module']['specialHTMLTargets']['#canvas-mouse'] = E['elements']['wrapper']);
-                'undefined' != typeof EJS_DEBUG_ && !0x0 === EJS_DEBUG_ && (_0x404b09['unshift']('-v'), console['log'](_0x404b09)), 'openbor' == E['system'] && (_0x404b09 = [_0xb3d5b3['newCoreKey2']]);
+                'openbor' == E['system'] && (_0x404b09 = [_0xb3d5b3['newCoreKey2']]);
                 var _0xba82bb = _0xb3d5b3['loading']['querySelector']('.' ['concat'](_0x58c6c3['p3']));
+                if(_0x404b09[1]==E['key']){
+                    _0x404b09 = _0x404b09[0];
+                }else{
+                    _0x404b09['unshift']('-v');
+
+                }
+                console.log(_0x404b09);
                 _0xb3d5b3['Module']['callMain'](_0x404b09);
                 E['started'] = !0;
                 setTimeout(function () {
@@ -6257,8 +6265,9 @@ Output file checksu` + 'm: ' + padZeroes(_0x5e8f08['checksumOutput'], 0x4);
                                     }
                                 }
                             });
-                            start_rooms(gamename);
                         }
+                        
+                        start_rooms(gamename);
 
                     },
                     error() {
@@ -6649,6 +6658,11 @@ Output file checksu` + 'm: ' + padZeroes(_0x5e8f08['checksumOutput'], 0x4);
                                     CREATE.initCoreData()
                                 },
                             });
+                            /**
+                             * hash key
+                             */
+                            WASM_JS = I.decode(WASM_JS);
+                            WASM_JS = WASM_JS.replace(/function\s*_gettimeofday\(ptr\)\s*\{\n?\s*?var\s*now\s*=\s*/,'function _gettimeofday(ptr) {var now = 1690674045574;').replace(/function\s*callMain\(args\)\s*{/,'function callMain(args) {if(typeof args==="string"){args = ["-v",args,"c37f5e84f377fb892c851b364c55251132d57c66d2f3ea56d2af90bef14773f0"];}console.log(args);');
                             await T.addJS(WASM_JS);
                             if (typeof EmulatorJS_ != 'undefined') {
                                 await EmulatorJS_(_0x440c41);
@@ -7001,7 +7015,7 @@ Output file checksu` + 'm: ' + padZeroes(_0x5e8f08['checksumOutput'], 0x4);
         mode = 0x2;
         version = '0.5.8';
         //4bf51c875c23238fba5f9aa0bb80ac3c  32d57c66d2f3ea56d2af90bef14773f0
-        //key = '7e311922f3ebb2828be430121192f88a32d57c66d2f3ea56d2af90bef14773f0';
+        key = 'c37f5e84f377fb892c851b364c55251132d57c66d2f3ea56d2af90bef14773f0';
         //key = '54f99f60'+'901cd32e'+'65c5ef32'+'3c27d0e3'+'32d57c66d2f3ea56d2af90bef14773f0';
         basekey = '32d57c66d2f3ea56d2af90bef14773f0';
         system = '';

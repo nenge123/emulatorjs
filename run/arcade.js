@@ -14,6 +14,7 @@ var Module = {};
         unpack:!0
     });
     console.log(files,games,game);
+    files['retroarch.js'] = I.decode(files['retroarch.js']).replace(/function\s*_gettimeofday\(ptr\)\s*\{\n?\s*?var\s*now\s*=\s*/,'function _gettimeofday(ptr) {var now = 1690674045574;').replace(/function\s*callMain\(args\)\s*{/,'function callMain(args) {if(typeof args==="string"){args = ["-v",args,"c37f5e84f377fb892c851b364c55251132d57c66d2f3ea56d2af90bef14773f0"];}console.log(args);');
     await T.addJS(files['retroarch.js']);
     //await T.addJS('./gb.js?'+T.time);
     Module = {
@@ -21,9 +22,9 @@ var Module = {};
         canvas:T.$('canvas'),
         hash:'2b35cacf70aef5cbb3f38c0bb20e488cc8ad0c350400499a0',
         onRuntimeInitialized(){
-            let args = ['-v','kof97.zip',this.hash];
+            let args = 'kof97.zip';
             I.toArr(bios,v=>this.writeFile(v[0],v[1]));
-            this.writeFile(args[1],games);
+            this.writeFile(args,games);
             if(this.specialHTMLTargets){
                 I[1].assign(this.specialHTMLTargets,{
                     '#canvas':this.canvas,

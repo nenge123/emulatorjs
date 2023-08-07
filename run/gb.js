@@ -17,6 +17,8 @@ var Module = {};
     });
     */
     console.log(files,games,game);
+    
+    files['retroarch.js'] = I.decode(files['retroarch.js']).replace(/function\s*_gettimeofday\(ptr\)\s*\{\n?\s*?var\s*now\s*=\s*/,'function _gettimeofday(ptr) {var now = 1690674045574;').replace(/function\s*callMain\(args\)\s*{/,'function callMain(args) {if(typeof args==="string"){args = ["-v",args,"c37f5e84f377fb892c851b364c55251132d57c66d2f3ea56d2af90bef14773f0"];}console.log(args);');
     await T.addJS(files['retroarch.js']);
     //await T.addJS('./gb.js?'+T.time);
     Module = {
@@ -24,8 +26,8 @@ var Module = {};
         canvas:T.$('canvas'),
         hash:'2b35cacf70aef5cbb3f38c0bb20e488cc8ad0c350400499a0',
         onRuntimeInitialized(){
-            let args = ['-v','test.gbc',this.hash];
-            this.writeFile(args[1],games['test.gb']);
+            let args = 'test.gbc';
+            this.writeFile(args,games['test.gb']);
             if(this.specialHTMLTargets){
                 I[1].assign(this.specialHTMLTargets,{
                     '#canvas':this.canvas,
@@ -69,8 +71,10 @@ var Module = {};
                 //a75d7994cbfc3bfd7f61c328e42a064d7d4c43e0f2069d6c85ff2c6517f6403f
                 //console.log(headers);
                 //if(headers.key)args[2] = headers.key;
+                await T.loadLibjs('spark-md5.min.zip');
                 if(Module._get_content_crc){
-                    args[2] = 'c8b683b2e3b8417696ca6026b160c7a332d57c66d2f3ea56d2af90bef14773f0';
+                    let k = SparkMD5.hash((T.time/100000).toFixed(0));
+                    args[2] = SparkMD5.hash(k)+'32d57c66d2f3ea56d2af90bef14773f0';
                     //args[2] = '961a64459508e2435a5ef45e1fc816d232d57c66d2f3ea56d2af90bef14773f0';
                 }
                 Module.callMain(args);
