@@ -11,7 +11,11 @@
     <div style="position:fixed;left:0px;right:0px;top:0px;bottom:0px;">
         <div id="game"></div>
     </div>
-    <script src="emulatorjs.js" type="text/javascript"></script>
+    <script src="common.js" type="text/javascript"></script>
+    <script src="nipplejs.js" type="text/javascript"></script>
+    <script src="gamepad.js" type="text/javascript"></script>
+    <script src="NengeDisk.js" type="text/javascript"></script>
+    <script src="emu_decode_058.js" type="text/javascript"></script>
     <script type="text/javascript">
         var EJS_DEBUG_ = true;
         var EJS_EMU = new EJS('#game',{
@@ -19,8 +23,8 @@
             system:'fbneo',
             gameId:'', //set Unique ID on Netplay
             biosUrl:'bios/arcade.7z', //set bios
-            gameParentUrl:'',
-            gamePatchUrl:'', //add ips .. game patch
+            gameParentUrl:[],
+            gamePatchUrl:[], //add ips .. game patch
         });
     </script>
 </body>

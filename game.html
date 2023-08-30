@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="origin-trial" content="AkXYHVgJ19SKDnjrbroT9D1VQUeP6Ube40EEY5V0+7mGx8Y/YdOQvAWAiBpf2CfCG54wxCklxw1upV/LsqslXAgAAAB8eyJvcmlnaW4iOiJodHRwczovL3d3dy5lbXVsYXRvcmpzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVW5yZXN0cmljdGVkU2hhcmVkQXJyYXlCdWZmZXIiLCJleHBpcnkiOjE3MDk4NTU5OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+  <title>EmulatorJS</title>
+  <style>
+    .ejs--d31688f864f56d6426ebbf2217d6ee {
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .ejs--5e71fd80268afbb1d588e40b993508 {
+      user-select: auto;
+      -webkit-user-select: auto;
+    }
+  </style>
+</head>
+
+<body style="width: 100%;height: 100%;margin:0">
+  <div id="game" style="width: 100%;height: 100%;">
+  </div>
+  <script>
+    var loaderWindow = window.parent.parent;
+    EJS_DEBUG_ = true;
+        var options = {};
+        var load = function(i, s, o, g) {
+          const a = s.createElement(o);
+          const m = s.getElementsByTagName(o)[0];
+          a.async = 1;
+          a.src = g;
+          m.parentNode.insertBefore(a, m);
+          a.onload = function() {
+            EJS_emulator = new EJS('#game', options);
+          }
+        };
+        window.addEventListener('message', function(e) {
+          if (e.data['act'] == 'ejs-game-init') {
+            options = e.data.options;
+            if (e.data.script) {
+              var index;
+              index = e.data.script.indexOf('|');
+              var g = URL.createObjectURL(new Blob([e.data.script.substring(index + 1)], {
+                type: 'text/javascript'
+              }));
+              load(window, document, 'script', g);
+            } else {
+              var d = new Date();
+              var q = d.getFullYear().toString() + (d.getMonth() + 1).toString() + d.getDate().toString();
+              var surl = 'emulator.js';
+              load(window, document, 'script', surl + '?_t=' + q);
+            }
+          }
+        });
+        window.parent.postMessage({
+          'act': 'ejs-gameframe-ready'
+        }, '*');
+  </script>
+</body>
+
+</html>

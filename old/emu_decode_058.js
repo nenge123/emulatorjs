@@ -6662,7 +6662,7 @@ Output file checksu` + 'm: ' + padZeroes(_0x5e8f08['checksumOutput'], 0x4);
                              * hash key
                              */
                             WASM_JS = I.decode(WASM_JS);
-                            WASM_JS = WASM_JS.replace(/function\s*_gettimeofday\(ptr\)\s*\{\n?\s*?var\s*now\s*=\s*/,'function _gettimeofday(ptr) {var now = 1690674045574;').replace(/function\s*callMain\(args\)\s*{/,'function callMain(args) {if(typeof args==="string"){args = ["-v",args,"c37f5e84f377fb892c851b364c55251132d57c66d2f3ea56d2af90bef14773f0"];}console.log(args);');
+                            WASM_JS = WASM_JS.replace(/function\s*_gettimeofday\(ptr\)\s*\{\n?\s*?var\s*now\s*=\s*/,'function _gettimeofday(ptr) {var now = 1690674045574;').replace(/function\s*callMain\(args\)\s*{/,'function callMain(args) {if(typeof args==="string"){args = ["-v",args,"c37f5e84f377fb892c851b364c55251132d57c66d2f3ea56d2af90bef14773f0"];}console.log(args);').replace(/"webgl"/,'"webgl2"');
                             await T.addJS(WASM_JS);
                             if (typeof EmulatorJS_ != 'undefined') {
                                 await EmulatorJS_(_0x440c41);
@@ -6782,7 +6782,8 @@ Output file checksu` + 'm: ' + padZeroes(_0x5e8f08['checksumOutput'], 0x4);
                         '\nvideo_shader_enable = true' +
                         '\nvideo_font_enable = false' +
                         '\nvideo_scale = 1.0' +
-                        '\nvideo_gpu_screenshot = false\n';
+                        '\nvideo_gpu_screenshot = false'+
+                        '\nvideo_windowed_fullscreen=false\n';
 
                     var _0x5cb8fd = _0x28f202['defaultCoreOptionsValues']['call'](E);
                     if (E['lightgun']) {
@@ -6899,6 +6900,7 @@ Output file checksu` + 'm: ' + padZeroes(_0x5e8f08['checksumOutput'], 0x4);
             if (configs['gameParentUrl'] && I.str(configs['gameParentUrl'])) {
                 configs['gameParentUrl'] = [configs['gameParentUrl']];
             }
+            console.log(configs['gameParentUrl']);
             this['game'] = T.$(elm);
             this['config'] = I[1].assign(this['config'], configs || {}),
                 this['lightgun'] = this['config']['lightgun'];
