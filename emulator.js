@@ -13517,7 +13517,7 @@ var EJS = function (_0x494315) {
                     _0x3486ee = this,
                     _0x622442 = _0x3486ee['system'];
                 0x1 == _0x3486ee['mode'] && _0x567341['call'](_0x3486ee);
-                var _0x3dbaf3 = _0x10834b['a']['extractorPath'] + 'extractor.js?'+Date.now();
+                var _0x3dbaf3 = _0x10834b['a']['extractorPath'] + 'extractor-new.js?'+Date.now();
                 var _0x22ec58 = document['createElement']('canvas'),
                     _0x5bb611 = document['createElement']('input');
                 _0x58b4ac(_0x5bb611, !0x0),
@@ -13846,12 +13846,15 @@ var EJS = function (_0x494315) {
                         return 0x50 === _0x590c5c[0x0] && 0x4b === _0x590c5c[0x1] && 0x3 === _0x590c5c[0x2] && 0x4 === _0x590c5c[0x3] ? _0x5c251e = 'zip' : 0x50 === _0x590c5c[0x0] && 0x4b === _0x590c5c[0x1] && 0x5 === _0x590c5c[0x2] && 0x6 === _0x590c5c[0x3] ? _0x5c251e = 'zip' : 0x50 === _0x590c5c[0x0] && 0x4b === _0x590c5c[0x1] && 0x7 === _0x590c5c[0x2] && 0x8 === _0x590c5c[0x3] ? _0x5c251e = 'zip' : 0x37 === _0x590c5c[0x0] && 0x7a === _0x590c5c[0x1] && 0xbc === _0x590c5c[0x2] && 0xaf === _0x590c5c[0x3] && 0x27 === _0x590c5c[0x4] && 0x1c === _0x590c5c[0x5] ? _0x5c251e = '7z' : 0x52 === _0x590c5c[0x0] && 0x61 === _0x590c5c[0x1] && 0x72 === _0x590c5c[0x2] && 0x21 === _0x590c5c[0x3] && 0x1a === _0x590c5c[0x4] && 0x7 === _0x590c5c[0x5] && (_0x5c251e = 0x0 == _0x590c5c[0x6] ? 'rar' : 'rar5'),
                             _0x5c251e;
                     },
-                    _0x4cb1c8 = function (_0x32f4d7) {
-                        var _0x2bd668 = ('\nvar dataToPass = {};\nvar Module = {};\nModule = {\n    noInitialRun: true,\n    onRuntimeInitialized: function() {\n        setTimeout(function() {\n            if (dataToPass) extractor(dataToPass);\n            dataToPass = null;\n        }, 10);\n    },\n    monitorRunDependencies: function (left) {\n    },\n    locateFile: function(file) {\n        return \'')['concat'](_0x10834b['a']['extractorPath'], 'extractor.wasm\';\n    }\n};\n\nvar extractor = function(data) {\n    let blobs = [];\n    Module.FS.mkdir(\'/work\');\n    if (0 && Module.FS.filesystems.WORKERFS) {\n        blobs.push({\n            name: data.filename,\n            data: new Blob([data.data])\n        });\n        Module.FS.mount(Module.FS.filesystems.WORKERFS, { \n            files: [], \n            blobs: blobs, \n            encoding: \'binary\', \n            canOwn: true, \n            flags: \'w+\' \n        }, \'/work\');\n    } else {\n        Module.FS.writeFile(\'/work/\'+ data.filename, data.data);\n    }\n    \n    Module.callMain([\'/work/\'+ data.filename, \"')['concat'](_0x3486ee['key'], '\"]);\n    Module.FS.unlink(\'/work/\'+ data.filename);\n    close();\n};\nonmessage = function(e) {\nconsole.log(e.data);    dataToPass = {filename:  e.data.filename, data: new Uint8Array(e.data.data)};\n    \n    importScripts(\"')['concat'](_0x32f4d7, '\");\n};\n            '),
+                    _0x4cb1c8 = async function (_0x32f4d7) {
+                        return new Worker(_0x32f4d7);
+                        /*var _0x2bd668 = ('importScripts(\"')['concat'](_0x32f4d7, '\");'),
                             _0x30685a = new Blob([_0x2bd668], {
                                 'type': 'application/javascript'
                             }),
                             _0x5b4a62 = window['URL']['createObjectURL'](_0x30685a);
+
+                        */
                         return new Promise(function (_0x46347e) {
                             _0x46347e(new Worker(_0x5b4a62));
                         });
