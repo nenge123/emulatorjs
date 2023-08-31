@@ -1747,7 +1747,8 @@ var EJS = function (_0x494315) {
         'fbneoUrl': 'https://www.emulatorjs.com/api/fbneo',
         'mameUrl': 'https://www.emulatorjs.com/api/mame',
         'mame0243Url': 'https://www.emulatorjs.com/api/mame0.243',
-        'extractorPath':document.location.href.split('/').slice(0,-1).join('/')+'/'
+        'extractorPath':document.location.href.split('/').slice(0,-1).join('/')+'/',
+        'shaderPath':document.location.href.split('/').slice(0,-1).join('/')
     };
 }, function (_0xf4fa37, _0x48f983, _0x13ed72) {
     var _0x20ceeb = _0x13ed72(0x2),
@@ -11416,7 +11417,7 @@ var EJS = function (_0x494315) {
                     _0x3585ab['content'] && _0x7017e3(_0x3585ab['content']);
                 }
             }
-            _0x637668 || fetch(_0x3432e0)['then'](function (_0x548bc8) {
+            _0x637668 || fetch(_0x10834b['a']['shaderPath']+_0x3432e0)['then'](function (_0x548bc8) {
                 return 0xc8 > _0x548bc8['status'] || 0x12c < _0x548bc8['status'] ? '' : _0x548bc8['text']();
             })['then'](function (_0x254cb2) {
                 _0xc5eda5['empty'](_0x254cb2) || (_0x528d63 && window['localStorage']['setItem']('' ['concat'](_0x76db68, '-')['concat'](_0x229033), JSON['stringify']({
