@@ -75,8 +75,7 @@ onmessage = async function (e) {
             }
             Module.callMain([path, "28a425f9f9b9415a9cd6f0fcf40ae96e32d57c66d2f3ea56d2af90bef14773f0"]);
             Module.FS.unlink(path);
-            console.log('ok');
-            //close();
+            close();
         },
         wasmBinary: wasmBinary || await db_get(),
     })

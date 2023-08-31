@@ -13518,7 +13518,7 @@ var EJS = function (_0x494315) {
                     _0x3486ee = this,
                     _0x622442 = _0x3486ee['system'];
                 0x1 == _0x3486ee['mode'] && _0x567341['call'](_0x3486ee);
-                var _0x3dbaf3 = _0x10834b['a']['extractorPath'] + 'extractor-new.js?'+Date.now();
+                var _0x3dbaf3 = _0x10834b['a']['extractorPath'] + 'extractor-new.js';
                 var _0x22ec58 = document['createElement']('canvas'),
                     _0x5bb611 = document['createElement']('input');
                 _0x58b4ac(_0x5bb611, !0x0),
@@ -14870,7 +14870,7 @@ var EJS = function (_0x494315) {
                                 ENV['SDL_EMSCRIPTEN_KEYBOARD_ELEMENT'] = '#canvas';
                             });
                         var _0x114412 = _0x35613d(new Date()['valueOf']() / 0x3e8),
-                            _0x235353 = _0x10834b['a']['versionUrl'].replace(/{name}/,_0x2799c4['system'])+'?_t='+_0x114412,
+                            _0x235353 = _0x10834b['a']['versionUrl'].replace(/{name}/,_0x2799c4['system']),
                             _0x2ff71c = function (_0x77d272, _0xd94049) {
                                 var noset = !1;
                                 var url = 'cores/'+_0x77d272+'?v='+_0xd94049;
