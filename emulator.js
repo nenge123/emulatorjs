@@ -1738,7 +1738,7 @@ var EJS = function (_0x494315) {
     _0x3cf721['exports'] = {
         'messageOrigin': 'https://www.emulatorjs.com',
         'embedGameUrl': 'game.html',
-        'embedContentUrl': 'content.html',
+        'embedContentUrl': 'content.html?ver=2',
         'loadUrl': 'load.html',
         'scriptKey': 'emulator.js',
         'styleFile': 'emulatorjs.css',
@@ -13518,7 +13518,7 @@ var EJS = function (_0x494315) {
                     _0x3486ee = this,
                     _0x622442 = _0x3486ee['system'];
                 0x1 == _0x3486ee['mode'] && _0x567341['call'](_0x3486ee);
-                var _0x3dbaf3 = _0x10834b['a']['extractorPath'] + 'extractor-new.js';
+                var _0x3dbaf3 = _0x10834b['a']['extractorPath'] + 'extractor-new.js?ver=2';
                 var _0x22ec58 = document['createElement']('canvas'),
                     _0x5bb611 = document['createElement']('input');
                 _0x58b4ac(_0x5bb611, !0x0),
